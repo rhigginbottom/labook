@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-dimension" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Dimension</title>
+  <introduction>
+    <p>
+      In this section we will define the <em>dimension</em> of a vector space, finally delivering on the promise made in the introduction to this chapter to describe an intrinsic quality of vector spaces that allows a comparison between spaces.
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-dimension">
+  <title>The Dimension of a Vector Space</title>
+
+<p>
+  We begin with a lemma that relates span and linear independence and the number of vectors in sets with these properties. We will omit the proof.
+</p>
+
+  <lemma xml:id="lem-dim-lin-ind">
+    <statement>
+      <p>
+        Suppose that <m>V</m> is a vector space and that <m>V \subseteq \spn\{\bfv_1, \ldots \bfv_m \}</m>. If <m>\{\bfw_1, \ldots, \bfw_n \}</m> is a linearly independent subset of <m>V</m>, then <m>m \ge n</m>.
+      </p>
+    </statement>
+    <!-- <proof>
+      <p>
+        Proof needed. This is lemma 3.17 in Meckes
+      </p>
+    </proof> -->
+  </lemma>
+
+  <p>
+    We will now use this lemma to prove a result related to dimension. 
+  </p>
+  
+<theorem xml:id="thm-inf-dimensional">
+  <statement>
+    <p>
+      Suppose that, for every <m>n \ge 1</m>, a vector space <m>V</m> contains a linearly independent subset of size <m>n</m>. Then <m>V</m> is infinite-dimensional. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will prove the contrapositive. If <m>V</m> is finite-dimensional, then there exists a set <m>V' = \{\bfv_1, \ldots, \bfv_m\}</m> such that <m>V = \spn(V')</m>. By <xref ref="lem-dim-lin-ind"/>, for any <m>n > m</m>, <m>V</m> cannot contain a linearly independent set of <m>n</m> vectors. This completes the proof of the contrapositive. 
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  This theorem gives us an introduction to our first infinite-dimensional example. 
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>P</m> be the vector space of all polynomials with real coefficients. (We do not restrict the degree of polynomials in <m>P</m>.) For any <m>n</m>, <m>P</m> contains the linearly independent set 
+      <me>
+        \{ 1, t, \ldots, t^n \}
+      </me>.
+      Therefore, <m>P</m> is infinite-dimensional.
+    </p>
+  </statement>
+</example>
+
+<p>
+  We now come to the bedrock result of this section, the result that makes the definition of <em>dimension</em> possible. 
+</p>
+
+<theorem xml:id="thm-bases-same-size">
+  <statement>
+    <p>
+      Suppose that <m>\{\bfv_1, \ldots, \bfv_m \}</m> and <m>\{ \bfw_1, \ldots, \bfw_n \}</m> are both bases for a vector space <m>V</m>. Then <m>m=n</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Since <m>V \subseteq \spn\{\bfv_1, \ldots, \bfv_m \}</m> and <m>\{ \bfw_1, \ldots, \bfw_n \}</m> is a linearly independent set, <xref ref="lem-dim-lin-ind"/> implies that <m>m \ge n</m>. However, since <m>V \subseteq \spn\{\bfw_1, \ldots, \bfw_n \}</m> and <m>\{ \bfv_1, \ldots, \bfv_m \}</m> is a linearly independent set, <xref ref="lem-dim-lin-ind"/> also implies that <m>n \ge m</m>. Therefore, <m>m=n</m>. 
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  Even though a vector space may have a huge number of bases, all of those bases have the same size. This is a number intrinsic to the vector space, not to any specific basis of that vector space. This is what we mean by the <em>dimension</em> of a vector space.
+</p>
+
+<definition xml:id="def-dimension">
+  <statement>
+    <p>
+      Let <m>V</m> be a finite-dimensional vector space. If <m>V \neq \{\bfo\}</m>, then the <term>dimension</term> of <m>V</m>, written <m>\dim(V)</m>, is the size of any basis of <m>V</m>. If <m>\dim(V)=n</m>, we say that <m>V</m> is <term><m>n</m>-dimensional</term>. 
+    </p>
+    <p>
+      If <m>V = \{\bfo\}</m>, then we define the dimension of <m>V</m> to be 0. 
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Two of the families of vector spaces we frequently discuss have easy-to-determine dimensions, as the next two examples illustrate. 
+</p>
+
+<example>
+  <statement>
+    <p>
+      Since <m>\{\bfe_1, \ldots, \bfe_n \}</m> is a basis for <m>\ff^n</m>, then <m>\dim(\ff^n)=n</m>. 
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Since <m>\{1, t, \ldots, t^n\}</m> is a basis for <m>P_n</m>, then <m>\dim(P_n)=n+1</m>. 
+    </p>
+  </statement>
+</example>
+
+<p>
+  The proof of the next two results are a consequence of <xref ref="lem-dim-lin-ind"/> and will appear in the exercises. 
+</p>
+
+<proposition xml:id="prop-dim-less-spanning">
+  <statement>
+    <p>
+      The dimension of any vector space is less than or equal to the size of any spanning set. 
+    </p>
+  </statement>
+</proposition>
+
+<proposition xml:id="prop-dim-greater-lin-ind">
+  <statement>
+    <p>
+      If a vector space <m>V</m> is finite-dimensional and <m>\{\bfw_1, \ldots, \bfw_n\}</m> is a linearly independent set in <m>V</m>, then <m>\dim(V) \ge n</m>. 
+    </p>
+  </statement>
+</proposition>
+
+<p>
+  When we view dimension as an intrinsic quality of a vector space that allows comparison between spaces, we find something surprising about vector spaces with the same dimension. They are essentially the same! (Note: the reader should read <xref ref="apdx-isomorphisms"/> before going further as some of the ideas, notation, and results used in this proof are found there.)
+</p>
+
+<theorem xml:id="thm-same-dim-isomorphic">
+  <statement>
+    <p>
+      Let <m>V</m> and <m>W</m> be finite-dimensional vector spaces over <m>\ff</m>. Then <m>\dim(V) = \dim(W)</m> if and only if <m>V</m> and <m>W</m> are isomorphic. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Suppose that <m>\dim(V) = \dim(W) = n</m>. Let <m>\{\bfv_1, \ldots, \bfv_n\}</m> be a basis for <m>V</m> and let <m>\{\bfw_1, \ldots, \bfw_n \}</m> be a basis for <m>w</m>. By <xref ref="thm-lt-basis"/>, we can find <m>T \in L(V,W)</m> such that <m>T(\bfv_i) = \bfw_i</m> for each <m>i</m>, <m>1 \le i \le n</m>. Then by <xref ref="thm-isomorphism-basis"/>, <m>T</m> is an isomorphism. 
+    </p>
+    <p>
+      To prove the claim in the other direction, suppose that <m>T \in L(V,W)</m> is an isomorphism. If <m>\{\bfv_1, \ldots, \bfv_n \}</m> is a basis for <m>V</m>, then <m>\{T(\bfv_1), \ldots, T(\bfv_n) \}</m> is a basis for <m>W</m> by <xref ref="thm-isomorphism-basis"/>. Thus <m>\dim(V) = \dim(W)</m>. 
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  Here is an immediate consequence of this result. 
+</p>
+
+<corollary xml:id="cor-iso-fn">
+  <statement>
+    <p>
+      If <m>V</m> is a finite-dimensional vector space over <m>\ff</m> and <m>\dim(V) = n</m>, then <m>V</m> is isomorphic to <m>\ff^n</m>. 
+    </p>
+  </statement>
+</corollary>
+
+<example>
+  <statement>
+    <p>
+      Since <m>P_2</m> is a three-dimensional vector space over <m>\rr</m>, <m>\rr^3</m> and <m>P_2</m> are isomorphic. 
+    </p>
+  </statement>
+</example>
+
+<!-- <algorithm xml:id="alg-find-basis-for-span">
+  <statement>
+    <p>
+      Let <m>V' = \{\bfv_1, \ldots, \bfv_n \}</m> be a subset of <m>\ff^m</m>. To find the dimension of <m>\spn(V')</m>, we do the following. 
+      <ol>
+        <li>
+          <p>
+            Put the matrix <m>A = [\bfv_1 \cdots \bfv_n]</m> into RREF. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The number of pivots in this RREF is the dimension of <m>\spn(V')</m>. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Proof needed. 
+    </p>
+  </proof>
+</algorithm> -->
+
+</subsection>
+
+<subsection xml:id="subsec-dim-subspace">
+  <title>Dimension and Subspaces</title>
+
+<p>
+  If we know the dimension of a vector space, then we sometimes have a quicker path to finding a basis for that space. This next result says that if we have a spanning set of the same size as a basis, then it must be a basis. 
+</p>
+  
+<theorem xml:id="thm-span-is-basis">
+  <statement>
+    <p>
+      Suppose that <m>V</m> is a vector space with <m>\dim(V) = n > 0</m>. If <m>B = \{\bfv_1, \ldots, \bfv_n \}</m> is such that <m>V = \spn(B)</m>, then <m>B</m> is a basis for <m>V</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      By The Spanning Set Theorem (<xref ref="thm-spanning-set"/>), we know that a subset <m>B'</m> of <m>B</m> will be a basis for <m>V</m>. But since <m>\dim(V)=n</m>, the size of <m>B'</m> must be <m>n</m>. Therefore, <m>B'=B</m> and <m>B</m> is a basis for <m>V</m>. 
+    </p>
+  </proof>
+</theorem>
+
+<!-- <p>
+  Examples here. 
+</p> -->
+
+<p>
+  What is true in <xref ref="thm-span-is-basis"/> for a spanning set is also true for a linearly independent set. To prove that, however, we first need the analog to The Spanning Set Theorem for linearly independent sets. 
+</p>
+
+<theorem xml:id="thm-extend-lin-ind-to-basis">
+  <statement>
+    <p>
+      Suppose that <m>V</m> is a finite-dimensional vector space and that <m>V'</m> is a linearly independent set of vectors in <m>V</m>. Then there is a basis of <m>V</m> which contains <m>V'</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>V' = \{\bfv_1, \ldots \bfv_n \}</m> be a linearly independent set of vectors in <m>V</m>. If <m>V = \spn(V')</m>, then <m>V'</m> is a basis and we are done. If <m>V \neq \spn(V')</m>, then there exists some vector <m>\bfv_{n+1} \in V - \spn(V')</m>. By the Linear Dependence Lemma (<xref ref="thm-lin-dep-lemma"/>), the set <m>V_1 = V' \cup \{\bfv_{n+1} \}</m> is linearly independent. 
+    </p>
+    <p>
+      We can repeat this process. If <m>V = \spn(V_1)</m>, we are done; otherwise, we create <m>V_2 = V_1 \cup \{\bfv_{n+2} \}</m> in the same fashion that we created <m>V_1</m>. We can continue doing this, adding one vector at a time to this set and maintaining linear independence. Eventually we must reach the point where <m>V = \spn\{ \bfv_1, \ldots, \bfv_n, \bfv_{n+1}, \ldots, \bfv_{n+k} \}</m>, since otherwise <xref ref="lem-dim-lin-ind"/> would imply that <m>V</m> is infinite-dimensional. 
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  We now have the machinery necessary to prove the following theorem. The proof will appear in the exercises. 
+</p>
+
+<theorem xml:id="thm-lin-ind-is-basis">
+  <statement>
+    <p>
+      Suppose that <m>V</m> is a vector space with <m>\dim(V)=n</m> and that <m>B</m> is a linearly independent subset of <m>V</m> of size <m>n</m>. Then <m>B</m> is a basis for <m>V</m>. 
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  The final result of this section collects some facts about dimension and subspaces which we will use in some of the sections that follow.
+</p>
+
+<theorem xml:id="thm-dim-subspaces">
+  <statement>
+    <p>
+      Suppose that <m>V</m> is a finite-dimensional vector space and that <m>U</m> is a subspace of <m>V</m>. Then the following hold. 
+      <ol>
+        <li>
+          <p>
+            The subspace <m>U</m> is finite-dimensional. 
+          </p>
+        </li>
+        <li>
+          <p>
+            We have <m>\dim(U) \le \dim(V)</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            We have <m>\dim(U) = \dim(V)</m> if and only if <m>U=V</m>. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will prove these facts in order. If the subspace <m>U</m> is <m>\{\bfo \}</m>, then we have nothing to prove. If not, then there is some non-zero vector <m>\bfu_1 \in U</m>. If <m>U = \spn\{\bfu_1\}</m>, we are done; if not, then there exists <m>\bfu_2 \in U - \spn\{\bfu_1\}</m>. By <xref ref="thm-lin-dep-lemma"/>, the set <m>\{\bfu_1, \bfu_2\}</m> is linearly independent. We can continue to repeat this process. At each stage we have a linearly independent set <m>U_k = \{\bfu_1, \ldots, \bfu_k\}</m>, and this cannot continue indefinitely since <m>U</m> is a subspace of <m>V</m>, which is finite-dimensional. Thus this process must eventually stop when <m>U = \spn(U_j)</m> for some <m>j</m>, and that proves that <m>U</m> is finite dimensional.
+    </p>
+    <p>
+      The space <m>U</m> is finite dimensional, so it has a basis <m>B</m>. This is a linearly independent set of vectors in <m>V</m>, so <xref ref="thm-extend-lin-ind-to-basis"/> says that <m>B</m> can be extended to a basis <m>B'</m> of <m>V</m>. This means that <m>B'</m> will have at least as many vectors in it as <m>B</m>, so <m>\dim(V) \ge \dim(U)</m>. 
+    </p>
+    <p>
+      If <m>U=V</m> it is obvious that <m>\dim(U)=\dim(V)</m>, so we only need to prove the claim in the other direction. We will prove the contrapositive, so we assume <m>U \neq V</m>. Let <m>B = \{\bfu_1, \ldots, \bfu_n \}</m> be a basis for <m>U</m>. Since <m>U \neq V</m>, there exists a vector <m>\bfv_1 \in V - \spn(B)</m>. By <xref ref="thm-lin-dep-lemma"/> the set <m>\{\bfu_1, \ldots, \bfu_n, \bfv_1 \}</m> is linearly independent in <m>V</m>, implying that <m>\dim(V) \ge n+1</m>. Therefore <m>\dim(U) \neq \dim(V)</m>. 
+    </p>
+  </proof>
+</theorem>
+
+<example>
+  <statement>
+    <p>
+      We can apply this latest result to the vector space <m>\rr^3</m>. The familiar subspaces of <m>\rr^3</m> are <em>all</em> of the subspaces of <m>\rr^3</m>. 
+      <ol>
+        <li>
+          <p>
+            The only subspace of dimension 0 in <m>\rr^3</m> is the zero subspace <m>\{\bfo \}</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            One-dimensional subspaces of <m>\rr^3</m> are lines through the origin. These can all be written as the span of a single (non-zero) vector. 
+          </p>
+        </li>
+        <li>
+          <p>
+            Two-dimensional subspaces of <m>\rr^3</m> are planes through the origin. These are all spanned by sets of two linearly independent vectors. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The only three-dimensional subspace of <m>\rr^3</m> is <m>\rr^3</m> itself. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</example>
+
+</subsection>
+
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      Consider the following vectors in <m>\rr^2</m>:
+      <me>
+        \bfv_1 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}, \hspace{12pt} 
+        \bfv_2 = \begin{bmatrix} -2 \\ 1 \end{bmatrix}
+      </me>. 
+      By inspection, why is the set <m>\{\bfv_1, \bfv_2 \}</m> a basis for <m>\rr^2</m>? 
+    </p>
+    <!-- <p>
+      linearly independent set by inspection, correct dimension for basis 
+    </p> -->
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Let <m>\bfv_1</m>, <m>\bfv_2</m>, <m>\bfv_3</m>, and <m>\bfv_4</m> be vectors in <m>\rr^3</m>. 
+    <ol>
+      <li>
+        <p>
+          The set <m>S = \{\bfv_1, \bfv_2, \bfv_3, \bfv_4 \}</m> is not a basis for <m>\rr^3</m>, and there's a very short argument why. What is that argument?
+        </p>
+        <!-- <p>
+          A set of that size in <m>\rr^3</m> cannot be linearly independent! Dimension is 3 
+        </p> -->
+      </li>
+      <li>
+        <p>
+          Must there be a subset of <m>S</m> which is a basis of <m>\rr^3</m>? Why or why not? 
+        </p>
+        <!-- <p>
+          No, only if these vectors are known to span <m>\rr^3</m> beforehand.
+        </p> -->
+      </li>
+    </ol>
+  </p>
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Find the dimension of the subspace of <m>\rr^3</m> consisting of all vectors whose first and third coordinates are equal. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following sets of vectors in the given vector space, find the dimension of the subspace spanned by that set of vectors. 
+        <ol>
+          <li>
+            <p>
+              <m>\{\bfv_1, \bfv_2, \bfv_3, \bfv_4\}</m> in <m>\rr^3</m> if 
+              <me>
+                \bfv_1 = \begin{bmatrix} 
+                -8 \\ 6 \\ -1
+                \end{bmatrix}, \hspace{6pt} 
+                \bfv_2 = \begin{bmatrix} 
+                5 \\ 3 \\ -3
+                \end{bmatrix}, \hspace{6pt} 
+                \bfv_3 = \begin{bmatrix} 
+                44 \\ -6 \\ -9
+                \end{bmatrix}, \hspace{6pt} 
+                \bfv_4 = \begin{bmatrix} 
+                -31 \\ 3 \\ 7
+                \end{bmatrix}
+              </me>              
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\{\bfv_1, \bfv_2, \bfv_3, \bfv_4\}</m> in <m>\ff_5^3</m> if 
+              <me>
+                \bfv_1 = \begin{bmatrix} 
+                2 \\ 0 \\ 0
+                \end{bmatrix}, \hspace{6pt} 
+                \bfv_2 = \begin{bmatrix} 
+                0 \\ 3 \\ 2
+                \end{bmatrix}, \hspace{6pt} 
+                \bfv_3 = \begin{bmatrix} 
+                4 \\ 2 \\ 3
+                \end{bmatrix}, \hspace{6pt} 
+                \bfv_4 = \begin{bmatrix} 
+                3 \\ 1 \\ 1
+                \end{bmatrix}
+              </me> 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following matrices <m>A</m>, determine the dimensions of <m>\nll(A)</m> and <m>\col(A)</m>. 
+        <ol>
+          <li>
+            <p>
+              <m>A \in M_{4,5}(\rr)</m>, 
+              <me>
+                A = \begin{bmatrix}
+                7 \amp 5 \amp 73 \amp 0 \amp 11 \\ 
+                2 \amp -3 \amp 12 \amp -7 \amp -26 \\ 
+                -3 \amp 6 \amp -15 \amp 3 \amp 39 \\ 
+                1 \amp 6 \amp 21 \amp -3 \amp 25
+                \end{bmatrix} 
+              </me>              
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A \in M_{2,4}(\ff_5)</m>, 
+              <me>
+                A = \begin{bmatrix}
+                3 \amp 1 \amp 3 \amp 0 \\ 
+                1 \amp 2 \amp 0 \amp 1
+                \end{bmatrix} 
+              </me>              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exer-num-pivots-matrix">
+    <statement>
+      <p>
+        Let <m>A</m> be a matrix. 
+        <ol>
+          <li>
+            <p>
+              Prove that <m>\dim(\nll(A))</m> is the number of non-pivot columns in <m>A</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove that <m>\dim(\col(A))</m> is the number of pivot columns of <m>A</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Determine whether the following statements are true or false. Justify your answer either way.
+        <ol>
+          <li>
+            <p>
+              If a set <m>\{\bfv_1, \ldots, \bfv_m \}</m> spans a finite-dimensional space <m>V</m>, and if <m>V'</m> is a set of more than <m>m</m> vectors in <m>V</m>, then <m>V'</m> is linearly dependent.
+            </p>
+          </li>
+          <li>
+            <p>
+              The vector space <m>\rr^2</m> is a subspace of <m>\rr^3</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              A vector space is infinite-dimensional if it is spanned by an infinite set.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Determine whether the following statements are true or false. Justify your answer either way.
+        <ol>
+          <li>
+            <p>
+              If <m>\dim(V) = m</m>, then there exists a spanning set of <m>m+1</m> vectors in <m>V</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              If every set of <m>m</m> vectors in <m>V</m> fails to span <m>V</m>, then <m>\dim(V) > m</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>m \ge 2</m> and <m>\dim(V) = m</m>, then every set of <m>m-1</m> non-zero vectors in <m>V</m> is linearly independent. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        The first four Hermite polynomials are <m>1</m>, <m>2t</m>, <m>-2 + 4t^2</m>, and <m>-12t+8t^3</m>. Show that the set of these polynomials is a basis for <m>P_3</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        The first four Laguerre polynomials are <m>1</m>, <m>1-t</m>, <m>2-4t+t^2</m>, and <m>6-18t+9t^2-t^3</m>. Show that the set of these polynomials is a basis for <m>P_3</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>V</m> be the set of all functions <m>\rr\to\rr</m>. Prove that <m>V</m> is infinite-dimensional.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>T:V\to W</m> is a linear transformation between vector spaces and that <m>V</m> is finite-dimensional. Prove that <m>\dim(\range(T)) \le \dim(V)</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that <m>\cc^2</m> is two-dimensional as a vector space over <m>\cc</m> but four-dimensional as a vector space over <m>\rr</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="prop-dim-less-spanning"/>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="prop-dim-greater-lin-ind"/>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="thm-lin-ind-is-basis"/>. 
+      </p>
+    </statement>
+  </exercise>
+</exercises> 
+
+
+</section>

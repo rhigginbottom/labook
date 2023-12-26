@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-orthonormal-bases" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Orthonormal Bases</title>
+  <introduction>
+    <p>
+      While the previous section extended the dot product in <m>\rr^n</m> to the notion of an inner product in <m>V</m>, in this section we focus on bases for a vector space. One remarkably nice feature of the standard basis in <m>\rr^n</m> is that, with respect to the dot product, it is an orthogonal set in which every vector is a unit vector. In this section we will see that such a basis exists in every inner product space.
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-orthonormality">
+  <title>Orthonormality</title>
+
+  <p>
+    Our first definition is the most important in the section, as we generalize the important characteristics of the standard basis in <m>\rr^n</m>.
+  </p>
+
+  <definition xml:id="def-orthonormal">
+    <statement>
+      <p>
+        Let <m>V</m> be an inner product space, and let <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> be a subset of <m>V</m>. Then <m>V'</m> is an <term>orthonormal</term> set if it is an orthogonal set and <m>\vnorm{\bfv_i}=1</m> for all <m>\bfv_i \in V'</m>. If <m>V'</m> is a basis for <m>V</m>, then it is called an <term>orthonormal basis</term>. 
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        The standard basis is an orthonormal basis of either <m>\rr^n</m> or <m>\cc^n</m>. 
+      </p>
+    </statement>
+  </example>
+
+  <example xml:id="examp-onb1">
+    <statement>
+      <p>
+        The following is an orthonormal basis of either <m>\rr^2</m> or <m>\cc^2</m>: 
+        <me>
+          \mcb = \left\{  \begin{bmatrix} \frac{1}{\sqrt{2}} \\[6pt] \frac{1}{\sqrt{2}} \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\[6pt] -\frac{1}{\sqrt{2}} \end{bmatrix} \right\}
+        </me>.        
+      </p>
+    </statement>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        For any fixed <m>\theta \in \rr</m>, the following is an orthonormal basis of <m>\rr^2</m> or <m>\cc^2</m>: 
+        <me>
+          \mcb = \left\{ \begin{bmatrix} \cos(\theta) \\ \sin(\theta) \end{bmatrix}, \begin{bmatrix} -\sin(\theta) \\ \cos(\theta) \end{bmatrix} \right\}
+        </me>.        
+      </p>
+    </statement>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Because of the requirement that each vector be a unit vector, the vectors in an orthonormal basis aren't the prettiest to behold. Here is an orthonormal basis of <m>\rr^3</m>:
+        <me>
+          \mcb = \left\{ \begin{bmatrix} \frac{1}{\sqrt{5}} \\[6pt] \frac{2}{\sqrt{5}} \\[6pt] 0 \end{bmatrix}, \begin{bmatrix} -\frac{\sqrt{2}}{\sqrt{15}} \\[6pt] \frac{1}{\sqrt{30}} \\[6pt] -\frac{\sqrt{5}}{\sqrt{6}} \end{bmatrix}, \begin{bmatrix} -\frac{\sqrt{2}}{\sqrt{3}} \\[6pt] \frac{1}{\sqrt{6}} \\[6pt] \frac{1}{\sqrt{6}} \end{bmatrix} \right\}
+        </me>.        
+      </p>
+    </statement>
+  </example>
+
+  <example xml:id="examp-p1-onb">
+    <statement>
+      <p>
+        Consider the following inner product on the space <m>P_1</m>: 
+        <me>
+          \ip{p,q} = p(0)q(0) + p(1)q(1)
+        </me>.
+        The set <m>\mcb = \{t, 1-t \}</m> is an orthonormal basis for <m>P_1</m>. We first verify that this is an orthogonal set: 
+        <me>
+          \ip{t, 1-t} = (0)(1) + (1)(0) = 0
+        </me>.
+        We can also see that each of these are unit vectors: 
+        <md>
+          <mrow>\ip{t,t} \amp = 0^2 + 1^2 = 1</mrow>
+          <mrow>\ip{1-t, 1-t} \amp = 1^2 + 0^2 = 1</mrow>
+        </md>.
+        Thus, <m>\mcb</m> is an orthonormal basis for <m>P_1</m> with this inner product.
+      </p>
+    </statement>
+  </example>
+
+</subsection>
+
+<subsection xml:id="subsec-orthonormal-coordinates">
+  <title>Coordinates in Orthonormal Bases</title>
+  
+<p>
+  Having an orthonormal basis makes some tasks easier than they would be otherwise. In particular, when we need to find coordinates of vectors with respect to an orthonormal basis, the path is fairly gentle to walk.
+</p>
+
+<theorem xml:id="thm-coords-orthonorm-basis">
+  <statement>
+    <p>
+      Let <m>V</m> and <m>W</m> be inner product spaces, and let <m>\mcb = \{\bfv_1, \ldots, \bfv_n \}</m> be an orthonormal basis for <m>V</m> and <m>\mcc = \{ \bfw_1, \ldots, \bfw_m \}</m> be an orthonormal basis for <m>W</m>. For every <m>\bfv \in V</m> and every <m>T \in L(V,W)</m>, we have 
+      <men xml:id="eqn-cob-thm-1">
+        [\bfv]_{\mcb} = \begin{bmatrix} \ip{\bfv, \bfv_1} \\ \vdots \\ \ip{\bfv,\bfv_n} \end{bmatrix}
+      </men>
+      and 
+      <men xml:id="eqn-cob-thm-2">
+        [[T]_{\mcb,\mcc}]_{jk} = \ip{T(\bfv_k),\bfw_j}
+      </men>.       
+    </p>
+  </statement>
+  <proof>
+    <p>
+      For <m>\bfv \in V</m>, we have 
+      <me>
+        \bfv = \sum_{i=1}^n c_i\bfv_i
+      </me>
+      for some <m>c_i \in \ff</m> since <m>\mcb</m> is a basis of <m>V</m>. If we take the inner product of both sides of this equation with <m>\bfv_k</m> and use both the linearity of the inner product and the orthonormality of <m>\mcb</m>, we have 
+      <me>
+        \ip{\bfv, \bfv_k} = \ip{\sum_{i=1}^n c_i\bfv_i, \bfv_k} = \sum_{i=1}^n c_i \ip{\bfv_i, \bfv_k} = c_k
+      </me>.
+      This means that 
+      <me>
+        \bfv = \sum_{i=1}^n \ip{\bfv, \bfv_i} \bfv_i
+      </me>,
+      which is the same as <xref ref="eqn-cob-thm-1"/>. 
+    </p>
+    <p>
+      We proceed similarly for the second statement in the theorem. For any <m>\bfw \in W</m>, we have 
+      <me>
+        \bfw = \sum_{i=1}^m \ip{\bfw,\bfw_i}\bfw_i
+      </me>.
+      Since <m>T(\bfv_i) \in W</m>, this must also be true for each <m>T(\bfv_i)</m>: 
+      <me>
+        T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i
+      </me>.
+      This is the same as <xref ref="eqn-cob-thm-2"/>.
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  We can illustrate one part of this theorem with an example.
+</p>
+
+<example>
+  <statement>
+    <p>
+      In <m>\rr^2</m> with the dot product, we consider the basis <m>\mcb = \{\bfv_1, \bfv_2\}</m> from <xref ref="examp-onb1"/>. Then the coordinate vector of <m>\bfv = \begin{bmatrix} 2 \\ -5 \end{bmatrix}</m> with respect to <m>\mcb</m> is 
+      <me>
+        [\bfv]_{\mcb} = \begin{bmatrix} \ip{\bfv, \bfv_1} \\ \ip{\bfv, \bfv_2} \end{bmatrix} = 
+        \begin{bmatrix} -\frac{3}{\sqrt{2}} \\[6pt] \frac{7}{\sqrt{2}} \end{bmatrix}
+      </me>.      
+    </p>
+  </statement>
+</example>
+
+<p>
+  The previous theorem has an important consequence. The inner product of any two vectors in an inner product space is the same as the usual inner product of their coordinate vectors in <m>\cc^n</m>. 
+</p>
+
+<theorem xml:id="thm-ip-coords">
+  <statement>
+    <p>
+      Let <m>\mcb = \{ \bfv_1, \ldots, \bfv_n \}</m> be an orthonormal basis for an inner product space <m>V</m>. Then, for any vectors <m>\bfu, \bfv \in V</m>, we have 
+      <me>
+        \ip{\bfu, \bfv} = \sum_{i=1}^n \ip{\bfu, \bfv_i} \overline{\ip{\bfv,\bfv_i}}
+      </me>
+      and 
+      <me>
+        \vnorm{\bfv}^2 = \sum_{i=1}^n |\ip{\bfv, \bfv_i}|^2
+      </me>.      
+    </p>
+  </statement>
+  <proof>
+    <p>
+      By <xref ref="thm-coords-orthonorm-basis"/>, we have 
+      <me>
+        \bfu = \sum_{i=1}^n \ip{\bfu, \bfv_i}\bfv_i \hspace{6pt} \text{and} \hspace{6pt} 
+        \bfv = \sum_{i=1}^n \ip{\bfv, \bfv_i}\bfv_i
+      </me>.
+      So, using the properties of the inner product and the orthonormality of <m>\mcb</m>, we have 
+      <md>
+        <mrow>\ip{\bfu, \bfv} \amp = \ip{\sum_{i=1}^n \ip{\bfu, \bfv_i}\bfv_i, \sum_{j=1}^n \ip{\bfv, \bfv_j}\bfv_j}</mrow>
+        <mrow> \amp = \sum_{i=1}^n \sum_{j=1}^n \ip{\bfu,\bfv_i} \overline{\ip{\bfv,\bfv_j}} \ip{\bfv_i, \bfv_j}</mrow>
+        <mrow> \amp = \sum_{i=1}^n \ip{\bfu, \bfv_i} \overline{\ip{\bfv, \bfv_i}}</mrow>
+      </md>.
+    </p>
+  </proof>
+</theorem>
+
+</subsection>
+
+<subsection xml:id="subsec-gram-schmidt">
+  <title>The Gram-Schmidt Process</title>
+  
+<p>
+  Orthonormal bases are quite useful, but they do not appear around every corner. In this section we will describe a reliable process to produce an orthonormal basis of an inner product space.
+</p>
+
+<algorithm xml:id="alg-gram-schmidt">
+<title>The Gram-Schmidt Process</title>
+  <statement>
+    <p>
+      This process results in an orthonormal basis for any finite-dimensional inner product space <m>V</m>. 
+      <ol>
+        <li>
+          <p>
+            Start with a basis <m>\{ \bfv_1, \ldots, \bfv_n \}</m> of <m>V</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            Define <m>\bfe_1 = \frac{1}{\vnorm{\bfv_1}} \bfv_1</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>j = 2, \ldots, n</m>, define <m>\bfe_j</m> recursively by 
+            <me>
+              \bfe_j' = \bfv_j - \sum_{k=1}^{j-1} \ip{\bfv_j,\bfe_k} \bfe_k
+            </me>
+            and
+            <me>
+              \bfe_j = \frac{1}{\vnorm{\bfe_j'}}\bfe_j'
+            </me>.            
+          </p>
+        </li>
+      </ol>
+      Then <m>\{ \bfe_1, \ldots, \bfe_n \}</m> is an orthonormal basis of <m>V</m>. Additionally, for each <m>j=1, \ldots, n</m>, <m>\spn\{\bfe_1, \ldots, \bfe_j \} = \spn\{\bfv_1, \ldots, \bfv_j \}</m>. 
+    </p>
+  </statement>
+</algorithm>
+
+<note>
+  <p>
+    We omit the proof that the Gram-Schmidt process does what it claims to do, as the proof is on the long and technical side. However, it may be helpful for the readers to have a non-technical description of the process. Starting with the original basis, for each vector we strip away the parts of the vector that point in the direction of previous basis vectors. (We understand that <q>direction</q> only makes geometric sense in <m>\rr^n</m>, but perhaps the reader will allow this use of analogy.) What remains gets normalized to be a unit vector and then added to the growing orthonormal basis.
+  </p>
+</note>
+
+<p>
+  To get a good handle on this algorithm, we now present some examples. 
+</p>
+
+<example>
+  <statement>
+    <p>
+    Consider the vector space <m>P_1</m> with the inner product introduced in <xref ref="examp-p1-onb"/>. The standard basis for <m>P_1</m> is <m>\{1, t\}</m>, but this is not an orthonormal basis. We will apply the Gram-Schmidt process to this basis.   
+    </p>
+    <p>
+      First, we calculate that <m>\ip{1,1} = \sqrt{2}</m>, so our first vector in the orthonormal basis should be <m>\bfe_1 = \frac{1}{\sqrt{2}}\bfv_1 = \frac{1}{\sqrt{2}}</m>. Then, for the second calculation we need 
+      <me>
+        \ip{t, \bfe_1} = (0)\left(\frac{1}{\sqrt{2}}\right) + (1)\left(\frac{1}{\sqrt{2}}\right) = \frac{1}{\sqrt{2}}
+      </me>.
+      So, we have 
+      <me>
+        \bfe_2' = t - \frac{1}{\sqrt{2}}\frac{1}{\sqrt{2}} = t- \frac{1}{2}
+      </me>.
+      Our final step is to normalize <m>\bfe_2'</m>. We find that <m>\vnorm{\bfe_2'} = \frac{1}{\sqrt{2}}</m>, meaning that 
+      <me>
+        \bfe_2 = \sqrt{2}\bfe_2' = \sqrt{2}t - \frac{\sqrt{2}}{2}
+      </me>.
+      The reader may want to verify that <m>\{ \bfe_1. \bfe_2\}</m> is indeed an orthonormal set in <m>P_1</m> with this inner product.
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      We will carry out the Gram-Schmidt process on a basis for <m>\rr^3</m> where we will use the standard dot product in <m>\rr^3</m>. Consider the set <m>\mcb = \{\bfv_1, \bfv_2, \bfv_3 \}</m>, where 
+      <me>
+        \bfv_1 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}, \hspace{6pt}
+        \bfv_2 = \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix}, \hspace{6pt}
+        \bfv_3 = \begin{bmatrix} -1 \\ 1 \\ -1 \end{bmatrix}
+      </me>.
+      It is easily checked that <m>\mcb</m> is a basis for <m>\rr^3</m>. Now <m>\vnorm{\bfv_1} = \sqrt{2}</m>, so we have 
+      <me>
+        \bfe_1 = \begin{bmatrix} \frac{1}{\sqrt{2}} \\ 0 \\ \frac{1}{\sqrt{2}} \end{bmatrix}
+      </me>.
+      Next, we need <m>\bfv_2 \cdot \bfe_1 = \frac{2}{\sqrt{2}}</m> for the next calculation: 
+      <me>
+        \bfe_2' = \bfv_2 - (\bfv_2 \cdot \bfe_1)\bfe_1 = \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}
+      </me>.
+      Since <m>\vnorm{\bfe_2'} = \sqrt{3}</m>, we have 
+      <me>
+        \bfe_2 = \begin{bmatrix} \frac{1}{\sqrt{3}} \\[6pt] \frac{1}{\sqrt{3}} \\[6pt] -\frac{1}{\sqrt{3}} \end{bmatrix}
+      </me>.
+      Finally, we will calculate <m>\bfe_3'</m> and <m>\bfe_3</m>. We need these two dot product calculations first: 
+      <me>
+        \bfv_3 \cdot \bfe_1 = -\frac{2}{\sqrt{2}}, \hspace{6pt}
+        \bfv_3 \cdot \bfe_2 = \frac{1}{\sqrt{3}}
+      </me>.
+      Then we have 
+      <md>
+        <mrow>\bfe_3' \amp = \bfv_3 - (\bfv_3 \cdot \bfe_1)\bfe_1 - (\bfv_3 \cdot \bfe_2)\bfe_2</mrow>
+        <mrow> \amp = \begin{bmatrix} -1 \\[6pt] 1 \\[6pt] -1 \end{bmatrix} + \begin{bmatrix} 1 \\[6pt] 0 \\[6pt] 1 \end{bmatrix} - \begin{bmatrix} \frac{1}{3} \\[6pt] \frac{1}{3} \\[6pt] -\frac{1}{3} \end{bmatrix}</mrow>
+        <mrow> \amp = \begin{bmatrix} -\frac{1}{3} \\[6pt] \frac{2}{3} \\[6pt] \frac{1}{3} \end{bmatrix}</mrow>
+      </md>.
+      Since <m>\vnorm{\bfe_3'} = \frac{\sqrt{6}}{3}</m>, we have 
+      <me>
+        \bfe_3 = \frac{3}{\sqrt{6}} \bfe_3' = \begin{bmatrix} -\frac{1}{\sqrt{6}} \\[6pt] \frac{2}{\sqrt{6}} \\[6pt] \frac{1}{\sqrt{6}} \end{bmatrix}
+      </me>.
+      The set <m>\{ \bfe_1, \bfe_2, \bfe_3 \}</m> is an orthonormal basis of <m>\rr^3</m>. 
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      In our final example we will consider <m>\rr^2</m> with the alternative inner product introduced in <xref ref="examp-alt-ip-r2"/>. We consider a basis <m>\{\bfv_1, \bfv_2 \}</m> for <m>\rr^2</m>, where 
+      <me>
+        \bfv_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \hspace{12pt}
+        \bfv_2 = \begin{bmatrix} 3 \\ 0 \end{bmatrix}
+      </me>.
+      For the Gram-Schmidt process, we first need to calculate <m>\vnorm{\bfv_1} = \sqrt{3}</m>. So, we have 
+      <me>
+        \bfe_1 = \frac{1}{\sqrt{3}} \bfv_1 = \begin{bmatrix} \frac{1}{\sqrt{3}} \\[6pt] \frac{1}{\sqrt{3}} \end{bmatrix}
+      </me>.
+      Then we need <m>\ip{\bfv_2, \bfe_1} = \frac{6}{\sqrt{3}}</m> for the next step of the process:
+      <me>
+        \bfe_2' = \bfv_2 - \ip{\bfv_2,\bfe_1}\bfe_1 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}
+      </me>.
+      Finally, we normalize <m>\bfe_2'</m> in order to get <m>\bfe_2</m>. We find that <m>\vnorm{\bfe_2'} = \sqrt{6}</m>, so 
+      <me>
+        \bfe_2 = \begin{bmatrix} \frac{1}{\sqrt{6}} \\[6pt] -\frac{2}{\sqrt{6}} \end{bmatrix}
+      </me>.      
+    </p>
+  </statement>
+</example>
+
+<p>
+  While the Gram-Schmidt process has obvious computational implications, it also has some theoretical consequences.
+</p>
+
+<corollary xml:id="cor-exist-orthonormal-basis">
+  <statement>
+    <p>
+      Every finite-dimensional inner product space <m>V</m> has an orthonormal basis.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Since we know that every finite-dimensional vector space has a basis (<xref ref="cor-basis-fin-dim"/>), we can apply the Gram-Schmidt process to that basis. This proves that such a <m>V</m> always has an orthonormal basis.
+    </p>
+  </proof>
+</corollary>
+
+<corollary xml:id="cor-extend-to-orthonormal-basis">
+  <statement>
+    <p>
+      Suppose that <m>V' = \{\bfv_1, \ldots, \bfv_k \}</m> is an orthonormal set in a finite-dimensional inner product space <m>V</m>. Then <m>V'</m> can be extended to an orthonormal basis of <m>V</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      By <xref ref="thm-extend-lin-ind-to-basis"/>, <m>V'</m> can be extended to a basis <m>\mcb = \{ \bfv_1, \ldots, \bfv_n \}</m> of <m>V</m>. We can apply the Gram-Schmidt process to <m>\mcb</m>, producing an orthonormal basis <m>\{ \bfe_1, \ldots, \bfe_n \}</m> of <m>V</m>. Since <m>V'</m> is an orthonormal set, the Gram-Schmidt process will produce vectors <m>\bfe_i</m> such that <m>\bfe_j = \bfv_j</m> for <m>j=1, \ldots, k</m>, meaning that <m>V'</m> is a subset of <m>\mcb</m>. This justifies the claim that <m>\mcb</m> is an extension of <m>V'</m>. 
+    </p>
+  </proof>
+</corollary>
+</subsection>
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      Define the following inner product on <m>P_1</m>: 
+      <me>
+        \ip{p,q} = p(-2)q(-2) + p(2)q(2)
+      </me>.
+      (You do not need to prove that this is an inner product.) Let <m>p_1 = \frac{1}{4}t+\frac{1}{2}</m> and <m>p_2 = \frac{1}{4}t - \frac{1}{2}</m>. Prove or disprove that <m>\{ p_1, p_2 \}</m> is an orthonormal basis of <m>P_1</m>. Show your work.
+    </p>
+    <!-- <p>
+      Yes, it's an orthonormal basis. 
+    </p> -->
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Consider the set <m>\{ \bfv_1, \bfv_2 \}</m> of vectors in <m>\rr^2</m>, where 
+    <me>
+      \bfv_1 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}, \hspace{12pt}
+      \bfv_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+    </me>.
+    Using the standard dot product in <m>\rr^2</m>, use the Gram-Schmidt process on this basis to produce an orthonormal basis for <m>\rr^2</m>. 
+  </p>
+  <!-- <p>
+    <m>\bfe_1 = \begin{bmatrix} \frac{1}{\sqrt{5}} \\ -\frac{2}{\sqrt{5}} \end{bmatrix}</m>, 
+    <m>\bfe_2 = \begin{bmatrix} -\frac{2}{\sqrt{5}} \\ -\frac{1}{\sqrt{5}} \end{bmatrix}</m>
+  </p> -->
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following basis for <m>\rr^2</m>: 
+        <me>
+          \mcb = \left\{ \begin{bmatrix}
+          2 \\ -3 \end{bmatrix}, \begin{bmatrix} 
+          -1 \\ 2 \end{bmatrix}
+          \right\}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Use the Gram-Schmidt process to create an orthonormal basis from <m>\mcb</m>. (Use the standard dot product on <m>\rr^2</m>.)
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>\bfv = \begin{bmatrix} 3 \\ 3 \end{bmatrix}</m>. Use <xref ref="thm-coords-orthonorm-basis"/> to find the coordinate vector of <m>\bfv</m> with respect to the orthonormal basis of <m>\rr^2</m> you created in part (a). 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the basis <m> \mcb = \{p_1, p_2 \}</m> for <m>P_1</m>, where 
+        <me>
+          p_1 = 2+t, \hspace{12pt} p_2 = 1-2t
+        </me>.
+        Consider the inner product on <m>P_1</m> defined by 
+        <me>
+          \ip{p, q} = 2p(0)q(0) + p(1)q(1)
+        </me>.
+        (You do not need to prove that this is an inner product.)
+        <ol>
+          <li>
+            <p>
+              Use the Gram-Schmidt process to create an orthonormal basis from <m>\mcb</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>p = 1 + t</m>. Use <xref ref="thm-coords-orthonorm-basis"/> to find the coordinate vector of <m>p</m> with respect to the orthonormal basis of <m>P_1</m> you created in part (a).
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Carry out the Gram-Schmidt process on the following set of vectors in <m>\cc^3</m>. Use the standard dot product in <m>\cc^3</m>:
+        <me>
+          \left\{ \begin{bmatrix} 
+          1 \\ i \\ 0 \end{bmatrix}, \begin{bmatrix} 
+          0 \\ 1 \\ i \end{bmatrix}, \begin{bmatrix} 
+          i \\ 0 \\ 1
+          \end{bmatrix}
+          \right\}
+        </me>.        
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the standard basis of the vector space <m>P_2</m>. Carry out the Gram-Schmidt process on this basis with respect to the following inner product on <m>P_2</m>: 
+        <me>
+          \ip{p,q} = \int_0^1 p(t)q(t)\; dt
+        </me>.        
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be the following matrix in <m>M_3(\rr)</m>: 
+        <me>
+          A = \begin{bmatrix} 
+          1 \amp 0 \amp 2 \\ 
+          -1 \amp 1 \amp 0 \\ 
+          0 \amp -2 \amp 1
+          \end{bmatrix}
+        </me>.
+        Consider the inner product on <m>\rr^3</m> defined by 
+        <me>
+          \ip{\bfu, \bfv} = (A\bfu) \cdot (A\bfv)
+        </me>,
+        where the standard dot product is in view on the right side of this equation. Find an orthonormal basis of <m>\rr^3</m> with respect to this inner product.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that the matrix of <m>T \in L(V)</m> with respect to some basis <m>\mcb</m> is upper triangular. Show that if <m>\mcc</m> is the orthonormal basis obtained by applying the Gram-Schmidt process to <m>\mcb</m>, then <m>[T]_{\mcc}</m> is also upper triangular.
+      </p> <!-- Meckes 4.2.20 -->
+    </statement>
+  </exercise>
+</exercises> 
+
+
+</section>

@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-coordinates" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Coordinates</title>
+  <introduction>
+    <p>
+      We have recently shown (<xref ref="cor-iso-fn"/>) that all <m>n</m>-dimensional vector spaces over <m>\ff</m> are isomorphic to <m>\ff^n</m>. In this section we explore the vast implications of this isomorphism.
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-coord-vectors">
+  <title>Coordinates of Vectors</title>
+
+  <p>
+    If <m>V</m> is a finite-dimensional vector space over <m>\ff</m>, then it has a basis <m>\mcb</m>. We have seen (<xref ref="thm-unique-rep"/>) that each vector in <m>V</m> then has a <em>unique</em> representation as a linear combination of these basis vectors. In the definition that follows, we focus on the coefficients in these linear combinations.
+  </p>
+
+  <definition xml:id="def-coordinates">
+    <statement>
+      <p>
+        The <term>coordinates</term> of a vector <m>\bfv \in V</m> with respect to a basis <m>\mcb = \{\bfv_1, \ldots, \bfv_n\}</m> are the unique scalars <m>c_1, \ldots, c_n</m> such that 
+        <me>
+          \bfv = c_1 \bfv_1 + \cdots + c_n\bfv_n
+        </me>. 
+        The <term>coordinate vector of <m>\bfv</m> with respect to <m>\mcb</m></term> is the vector <m>[\bfv]_{\mcb} \in \ff^n</m>, 
+        <me>
+          [\bfv]_{\mcb} = \begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix}
+        </me>.         
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      When the basis <m>\mcb</m> we are using is unambiguous, we may drop a bit of the cumbersome terminology contained in the phrase <q>coordinate vector of <m>\bfv</m> with respect to <m>\mcb</m></q> and simply refer to the <q>coordinate vector of <m>\bfv</m>.</q>
+    </p>
+  </note>
+
+  <p>
+    This process of assigning to a vector <m>\bfv \in V</m> a vector <m>[\bfv]_{\mcb} \in \ff^n</m> is sometimes called a <term>coordinate mapping</term>, and it defines a function <m>V \to \ff^n</m>. This function is actually an isomorphism of vector spaces.
+  </p>
+
+  <theorem xml:id="thm-coord-map-isomorphism">
+    <statement>
+      <p>
+        Let <m>V</m> be an <m>n</m>-dimensional vector space over <m>\ff</m>, and let <m>\mcb</m> be a basis for <m>V</m>. Consider the coordinate map <m>C_{\mcb}:V \to \ff^n</m> given by 
+        <me>
+          C_{\mcb}(\bfv) = [\bfv]_{\mcb}
+        </me>. 
+        Then <m>C_{\mcb}</m> is an isomorphism.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The function <m>C_{\mcb}</m> is a linear transformation. (We ask the reader to verify this in the exercises.) We note that <m>C_{\mcb}</m> maps the basis vectors in <m>\mcb</m> to the standard basis in <m>\ff^n</m>. So, by <xref ref="thm-isomorphism-basis"/>, <m>C_{\mcb}</m> is an isomorphism.
+      </p>
+    </proof>
+  </theorem>
+
+<p>
+  The existence of coordinate vectors means that just about everything for finite-dimensional vector spaces can be accomplished with vectors and matrices over <m>\ff</m>. We explore this in the following examples.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>\mcb = \{ 1, t, t^2 \}</m> be the standard basis of the vector space <m>P_2</m>. If <m>p_1</m> and <m>p_2</m> are 
+      <me>
+        p_1 = 2 - t + 4t^2, \hspace{12pt} p_2 = -3t^2 + 10
+      </me>,
+      then the coordinate vectors of <m>p_1</m> and <m>p_2</m> are 
+      <me>
+        [p_1]_{\mcb} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}, \hspace{12pt}
+        [p_2]_{\mcb} = \begin{bmatrix} 10 \\ 0 \\ -3 \end{bmatrix}
+      </me>. 
+      Note that the order of the coordinates really matters, so in this case the terms in <m>p_2</m> had to be reordered (in increasing powers of <m>t</m>) before the coefficients were entered as the coordinate vector.
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Within <m>\ff_5^3</m>, consider <m>W = \spn\{\bfv_1, \bfv_2 \}</m>, where 
+      <me>
+        \bfv_1 = \begin{bmatrix} 2 \\ 3 \\ 1 \end{bmatrix}, \hspace{12pt}
+        \bfv_2 = \begin{bmatrix} 1 \\ 0 \\ 3 \end{bmatrix}
+      </me>. 
+      Since neither of these vectors is a scalar multiple of the other, <m>\mcb = \{\bfv_1, \bfv_2 \}</m> is a linearly independent set and therefore a basis for <m>W</m>. If we let <m>\bfv_3</m> be 
+      <me>
+        \bfv_3 = \begin{bmatrix} 0 \\ 3 \\ 0 \end{bmatrix}
+      </me>,
+      we can verify that <m>\bfv_3 \in W</m> by row-reducing the appropriate matrix: 
+      <me>
+        \begin{bmatrix} 
+        2 \amp 1 \amp 0 \\ 
+        3 \amp 0 \amp 3 \\ 
+        1 \amp 3 \amp 0
+        \end{bmatrix} \sim 
+        \begin{bmatrix} 
+        1 \amp 0 \amp 1 \\ 
+        0 \amp 1 \amp 3 \\ 
+        0 \amp 0 \amp 0
+        \end{bmatrix} 
+      </me>.
+      Since there is no pivot in the final column, we see that <m>\bfv_3 \in W</m>. Further, we can write down the coordinate vector of <m>\bfv_3</m> with respect to <m>\mcb</m> by studying this row-reduced matrix. We see that 
+      <me>
+        [\bfv_3]_{\mcb} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+      </me>.
+      It may seem strange for a vector in the three-dimensional space <m>\ff_5^3</m> to have a coordinate vector with only two entries, but this is due to the fact that <m>W</m> is two-dimensional. (It has a basis of only two vectors!) The coordinate mapping in this case says that <m>W</m> is isomorphic to <m>\ff_5^2</m>, and this is why the coordinate vector for any vector in <m>W</m> has only two entries.
+    </p>
+  </statement>
+</example>
+
+<p>
+  There are some consequences of <xref ref="thm-coord-map-isomorphism"/> that we want to spell out explicitly because of their usefulness. The proof of the following proposition can be found as part of the proof of <xref ref="thm-isomorphism-basis"/>. 
+</p>
+
+<proposition xml:id="prop-coord-map-li-span">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space of dimension <m>m</m> over <m>\ff</m>. Since the coordinate mapping <m>C_{\mcb}:V \to \ff^m</m> is an isomorphism, then the following statements are true.
+      <ol>
+        <li>
+          <p>
+            A set of vectors <m>\{\bfv_1, \ldots, \bfv_n \}</m> in <m>V</m> is linearly independent if and only if the set of coordinate vectors <m>\{C_{\mcb}(\bfv_1), \ldots, C_{\mcb}(\bfv_n) \}</m> is linearly independent in <m>\ff^m</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            A set of vectors <m>\{\bfv_1, \ldots, \bfv_n \}</m> spans <m>V</m> if and only if the set of coordinate vectors <m>\{C_{\mcb}(\bfv_1), \ldots, C_{\mcb}(\bfv_n) \}</m> spans <m>\ff^m</m>. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</proposition>
+
+<p>
+  Hopefully the reader can now see exactly how helpful the coordinate mapping isomorphism is. The following example spells this out explicitly.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Consider the set of vectors <m>Y = \{p_1, p_2, p_3 \}</m> in <m>P_3</m>, where 
+      <md>
+        <mrow>p_1 \amp = 1-t-3t^2+2t^3</mrow>
+        <mrow>p_2 \amp = -5 +4t +2t^2 - t^3</mrow> 
+        <mrow>p_3 \amp = 1 + 3t +4t^2 - 3t^3</mrow>
+      </md>.
+      With respect to the standard basis <m>\mcb</m> of <m>P_3</m>, these are the coordinate vectors:
+      <me>
+        [p_1]_{\mcb} = \begin{bmatrix} 1 \\ -1 \\ -3 \\ 2 \end{bmatrix}, \hspace{6pt}
+        [p_2]_{\mcb} = \begin{bmatrix} -5 \\ 4 \\ 2 \\ -1 \end{bmatrix}, \hspace{6pt}
+        [p_3]_{\mcb} = \begin{bmatrix} 1 \\ 3 \\ 4 \\ -3 \end{bmatrix}
+      </me>.
+      By row-reducing the matrix which has these coordinate vectors as its columns, we can see that the set of coordinate vectors <m>\{[p_1]_{\mcb}, [p_2]_{\mcb}, [p_3]_{\mcb} \}</m> is linearly independent in <m>\rr^4</m>:
+      <me>
+        \begin{bmatrix} 
+        1 \amp -5 \amp 1 \\ 
+        -1 \amp 4 \amp 3 \\ 
+        -3 \amp 2 \amp 4 \\ 
+        2 \amp -1 \amp -3
+        \end{bmatrix} \sim 
+        \begin{bmatrix} 
+        1 \amp 0 \amp 0 \\ 
+        0 \amp 1 \amp 0 \\ 
+        0 \amp 0 \amp 1 \\ 
+        0 \amp 0 \amp 0
+        \end{bmatrix}
+      </me>.
+      This shows that the set <m>Y</m> is linearly independent in <m>P_3</m>. 
+    </p>
+    <p>
+      For dimension reasons, we already knew that the set <m>Y</m> cannot span <m>P_3</m>, however this row-reduced matrix confirms it. Since there is not a pivot in each row, the set of coordinate vectors does not span <m>\rr^4</m>, and this means that <m>Y</m> does not span <m>P_3</m>.
+    </p>
+  </statement>
+</example>
+
+</subsection>
+
+<subsection xml:id="subsec-coordinates-matrices">
+  <title>Coordinates and Linear Transformations</title>
+  
+<p>
+  Back in <xref ref="sec-matrix-linear-trans"/>, we showed how every linear transformation <m>\ff^n \to \ff^m</m> could be realized as multiplication by a matrix over <m>\ff</m>. We now bring that understanding into contact with coordinate vectors. While not every linear transformation between vector spaces is multiplication by a matrix, every linear transformation between finite-dimensional vector spaces can be represented as multiplication by a matrix when considering the relevant coordinate vectors. 
+</p>
+
+<definition xml:id="def-coordinate-matrix">
+  <statement>
+    <p>
+      Let <m>V</m> and <m>W</m> be <m>n</m>- and <m>m</m>-dimensional vector spaces over <m>\ff</m>, respectively, and let <m>T:V \to W</m> be a linear transformation. Further, suppose that <m>\mcb = \{ \bfv_1, \ldots, \bfv_n \}</m> is a basis for <m>V</m> and <m>\mcc = \{\bfw_1, \ldots, \bfw_m \}</m> is a basis for <m>W</m>. If, for each <m>j</m>, <m>1 \le j \le n</m>, we have <m>a_{1j}, \ldots, a_{mj}</m> as the coordinates of <m>T(\bfv_j)</m> with respect to <m>\mcc</m>, then the <term>matrix of <m>T</m> with respect to <m>\mcb</m> and <m>\mcc</m></term> is the matrix <m>A = [a_{ij}]</m>. (In other words, column <m>j</m> of this matrix is the coordinate vector <m>[T(\bfv_j)]_{\mcc}</m>.) We denote this matrix as <m>[T]_{\mcb,\mcc}</m>. 
+    </p>
+    <p>
+      When <m>V = W</m> and <m>\mcb = \mcc</m>, then we use the notation <m>[T]_{\mcb}</m> and refer to the <term>matrix of <m>T</m> with respect to <m>\mcb</m></term>.
+    </p>
+    <p>
+      Finally, when the basis/bases we are using are unambiguous, we may refer to <m>[T]_{\mcb}</m> or <m>[T]_{\mcb,\mcc}</m> as the <term>coordinate matrix</term> of <m>T</m>. 
+    </p>
+  </statement>
+</definition>
+
+<p>
+  The point of this rather long (and cumbersome!) definition is that we can represent a linear transformation <m>T</m> as multiplication by a matrix. That's what the following proposition shows.
+</p>
+
+<proposition xml:id="prop-matrix-linear-tran-coordinates">
+  <statement>
+    <p>
+      Let <m>T:V \to W</m> be a linear transformation between finite-dimensional vector spaces. Suppose that <m>V</m> and <m>W</m> have bases <m>\mcb</m> and <m>\mcc</m>, respectively. Let <m>A = [T]_{\mcb,\mcc}</m>. Then, for any <m>\bfv \in V</m>, 
+      <me>
+        [T(\bfv)]_{\mcc} = A[\bfv]_{\mcb}
+      </me>.      
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let the bases <m>\mcb</m> and <m>\mcc</m> be <m>\mcb = \{\bfv_1, \ldots, \bfv_n \}</m> and <m>\mcc = \{ \bfw_1, \ldots, \bfw_m \}</m>. For <m>\bfv \in V</m>, suppose that 
+      <me>
+        \bfv = c_1 \bfv_1 + \cdots + c_n\bfv_n
+      </me>,
+      or, in other words,
+      <me>
+        [\bfv]_{\mcb} = \begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix} 
+      </me>. 
+      We also assume that, for each <m>j</m>, <m>1 \le j \le n</m>, the coordinates of <m>T(\bfv_j)</m> with respect to <m>\mcc</m> are <m>a_{1j}, \ldots, a_{mj}</m>. 
+    </p>
+    <p>
+      Then, using the linearity of <m>T</m>, we have 
+      <me>
+        T(\bfv) = \sum_{j=1}^n c_jT(\bfv_j) = \sum_{j=1}^n c_j \left( \sum_{i=1}^m a_{ij}\bfw_i \right)
+        = \sum_{i=1}^m \left( \sum_{j=1}^n a_{ij}c_j \right) \bfw_i
+      </me>. 
+      This says that the <m>i</m>th coordinate of <m>T(\bfv)</m> with respect to <m>\mcc</m> is <m>\sum a_{ij}c_j</m>, which is the same as the <m>i</m>th entry of <m>A [\bfv]_{\mcb}</m>. 
+    </p>
+  </proof>
+</proposition>
+
+<note>
+  <p>
+    According to this proposition, here is the way to realize a linear transformation as a matrix. Form <m>[T]_{\mcb, \mcc}</m> by calculating the coordinate vector <m>[T(\bfv_j)]_{\mcc}</m> for every vector <m>\bfv_j \in \mcb</m>. Then, to use this matrix to determine what happens to a vector <m>\bfv \in V</m>, find the coordinate vector <m>[\bfv]_{\mcb}</m>. After multiplying this vector by <m>[T]_{\mcb, \mcc}</m>, the result will be the coordinate vector <m>[T(\bfv)]_{\mcc}</m>. In order to recover the value of <m>T(\bfv)</m>, use the basis vectors in <m>\mcc</m> and this coordinate vector to find the correct  linear combination.
+  </p>
+</note>
+
+<example>
+  <statement>
+    <p>
+      Let <m>D: P_3 \to P_2</m> be the differentiation function. (We proved that a very similar function was a linear transformation in <xref ref="examp-deriv-lin-trans"/>.) Let <m>\mcb</m> be the standard basis for <m>P_3</m>, and let <m>\mcc</m> be the standard basis for <m>P_2</m>. Here we calculate the coordinate vectors for the derivative of each of the polynomials in <m>\mcb</m>: 
+      <me>
+        [D(1)]_{\mcc} = \begin{bmatrix} 0 \\  0 \\ 0 \end{bmatrix}, \hspace{6pt}
+        [D(t)]_{\mcc} = \begin{bmatrix} 1 \\  0 \\ 0 \end{bmatrix}, \hspace{6pt}
+        [D(t^2)]_{\mcc} = \begin{bmatrix} 0  \\ 2 \\ 0 \end{bmatrix}, \hspace{6pt}
+        [D(t^3)]_{\mcc} = \begin{bmatrix} 0  \\ 0 \\ 3 \end{bmatrix}
+      </me>.
+      These coordinate vectors form the columns of the matrix <m>[D]_{\mcb,\mcc}</m>. 
+    </p>
+    <p>
+      We will now use this matrix to carry out the action of <m>D</m>. Let's take the derivative of <m>p = -2 - 4t - t^2 - t^3</m>. Since the coordinate vector of <m>p</m> with respect to <m>\mcb</m> is 
+      <me>
+        [p]_{\mcb} = \begin{bmatrix} -2 \\ -4 \\ -1 \\ -1 \end{bmatrix}
+      </me>,
+      we can multiply this vector by <m>[D]_{\mcb,\mcc}</m> to get <m>[D(p)]_{\mcc}</m>: 
+      <me>
+        [D(p)]_{\mcc} = \begin{bmatrix}
+        0 \amp 1 \amp 0 \amp 0 \\ 
+        0 \amp 0 \amp 2 \amp 0 \\ 
+        0 \amp 0 \amp 0 \amp 3
+        \end{bmatrix} \begin{bmatrix} -2 \\ -4 \\ -1 \\ -1 \end{bmatrix} = 
+        \begin{bmatrix} -4 \\ -2 \\ -3 \end{bmatrix}
+      </me>.
+      This tells us that the coordinates for <m>D(p)</m> with respect to <m>\mcc</m> are <m>-4</m>, <m>-2</m>, and <m>-3</m>. In other words, 
+      <me>
+        D(p) = -4(1) - 2(t) - 3(t^2)
+      </me>,
+      and this matches what we know to be the derivative of <m>p</m>. 
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      We consider a linear transformation <m>T: \rr^3 \to P_2</m> defined by 
+      <me>
+        T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) = (a+2b) + (-3a+4b-c)t + (2a - 4c)t^2
+      </me>.
+      We let <m>\mcb</m> be the standard basis for <m>\rr^3</m> and <m>\mcc</m> be the standard basis for <m>P_2</m>. We now write <m>[T(\bfe_i)]_{\mcc}</m> for each <m>\bfe_i \in \mcb</m>: 
+      <me>
+        [T(\bfe_1)]_{\mcc} = \begin{bmatrix} 1 \\ -3 \\ 2 \end{bmatrix}, \hspace{6pt}
+        [T(\bfe_2)]_{\mcc} = \begin{bmatrix} 2 \\ 4 \\ 0 \end{bmatrix}, \hspace{6pt}
+        [T(\bfe_3)]_{\mcc} = \begin{bmatrix} 0 \\ -1 \\ -4 \end{bmatrix}
+      </me>.
+      These coordinate vectors make up the columns of the matrix <m>[T]_{\mcb,\mcc}</m>. If we wanted to calculate <m>T(\bfv)</m>, where 
+      <me>
+        \bfv = \begin{bmatrix} 1 \\ -3 \\ 4 \end{bmatrix}
+      </me>,
+      we can do so using coordinate vectors and the matrix <m>[T]_{\mcb, \mcc}</m>. Since the coordinate vector of <m>\bfv</m> with respect to <m>\mcb</m> is fairly obvious<mdash></mdash>it is <m>\bfv</m> itself<mdash></mdash>we can proceed with this calculation: 
+      <me>
+        [T(\bfv)]_{\mcc} = [T]_{\mcb,\mcc} [\bfv]_{\mcb} = 
+        \begin{bmatrix}
+        1 \amp 2 \amp 0 \\ 
+        -3 \amp 4 \amp -1 \\ 
+        2 \amp 0 \amp -4
+        \end{bmatrix} \begin{bmatrix} 1 \\ -3 \\ 4 \end{bmatrix} = 
+        \begin{bmatrix} -5 \\ -19 \\ -14 \end{bmatrix}
+      </me>. 
+      This tells us that <m>T(\bfv) = -5 - 19t - 14t^2</m>.
+    </p>
+  </statement>
+</example>
+
+<p>
+  We will end this section with two results related to coordinate matrices. This first result says that the composition of linear transformation really does match up with the multiplication of matrices.
+</p>
+
+<theorem xml:id="thm-mult-coord-matrices">
+  <statement>
+    <p>
+      Let <m>U</m>, <m>V</m>, and <m>W</m> be finite-dimensional vector spaces with bases <m>\mcb</m>, <m>\mcc</m>, and <m>\mathcal{D}</m>, respectively. Suppose that <m>T \in L(U,V)</m> and that <m>S \in L(V,W)</m>. Then 
+      <me>
+        [ST]_{\mcb, \mathcal{D}} = [S]_{\mcc,\mathcal{D}}[T]_{\mcb,\mcc}
+      </me>.       
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  This final result states that the invertibility of a linear transformation and the invertibility of its coordinate matrix are tied together in the predictable way.
+</p>
+
+<corollary xml:id="cor-coord-matrix-inverse">
+  <statement>
+    <p>
+      Let <m>V</m> and <m>W</m> be finite-dimensional vector spaces with bases <m>\mcb</m> and <m>\mcc</m>, respectively. Suppose that <m>T \in L(V,W)</m> and that <m>A = [T]_{\mcb,\mcc}</m>. Then <m>A</m> is invertible if and only if <m>T</m> is invertible, and in that case, <m>[T^{-1}]_{\mcc,\mcb} = A^{-1}</m>. 
+    </p>
+  </statement>
+</corollary>
+
+
+
+</subsection>
+
+  
+<reading-questions>
+  <!-- <exercise>
+  <statement>
+    <p>
+      Let <m>\mcb</m> be the standard basis for <m>P_2</m>. Let <m>p \in P_2</m> be 
+      <me>
+        p = -2t + 6 - 5t^2
+      </me>. 
+      Write down the coordinate vector of <m>p</m> with respect to <m>\mcb</m>. 
+    </p>
+  </statement>
+</exercise> -->
+<exercise> 
+<statement>
+  <p>
+    Let <m>\bfv_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</m> and <m>\bfv_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}</m>. 
+    <ol>
+      <li>
+        <p>
+          The set <m>\mcb = \{\bfv_1, \bfv_2 \}</m> is a basis for <m>\rr^2</m>. Without doing any calculations, explain why this is so. (I'm not looking for the definition of a basis, I want an explanation as to why this set satisfies that definition.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>\bfw = \begin{bmatrix} 0 \\ 4 \end{bmatrix}</m>. What is the coordinate vector of <m>\bfw</m> with respect to <m>\mcb</m>?
+        </p>
+        <!-- <p>
+          <m>\begin{bmatrix} 1 \amp -1 \amp 0 \\ 
+          2 \amp 1 \amp 4 \end{bmatrix} \sim 
+          \begin{bmatrix} 1 \amp 0 \amp \frac{4}{3} \\ 
+          0 \amp 1 \amp \frac{4}{3} \end{bmatrix}</m>
+        </p> -->
+      </li>
+    </ol>
+  </p>
+</statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>T:P_2 \to P_2</m> be the following function:
+      <me>
+        T(p) = p(-1) + p(0)t + p(1)t^2
+      </me>.
+      Let <m>\mcb</m> be the standard basis for <m>P_2</m>. 
+      <ol>
+        <li>
+          <p>
+            Find the coordinate matrix <m>[T]_{\mcb}</m> for <m>T</m>. 
+          </p>
+          <!-- <p>
+            <m>\begin{bmatrix} 1 \amp -1 \amp 1 \\ 
+            1 \amp 0 \amp 0 \\ 
+            1 \amp 1 \amp 1 \end{bmatrix}</m>
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Use this coordinate matrix to calculate <m>T(q)</m>, if 
+            <me>
+              q = -3 -5t + 3t^2
+            </me>.            
+          </p>
+          <!-- <p>
+            <m>[T(q)]_{\mcb} = \begin{bmatrix} 5 \\ -3 \\ -5 \end{bmatrix}</m>
+          </p> -->
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        For the given basis <m>\mcb</m> of <m>\rr^2</m> and the given coordinate vector <m>[\bfv]_{\mcb}</m>, find <m>\bfv</m>.
+        <ol>
+          <li>
+            <p>
+              <m>[\bfv]_{\mcb} = \begin{bmatrix} -1 \\ -2 \end{bmatrix}</m>, <m>\mcb = \left\{ \begin{bmatrix} 2 \\ 5 \end{bmatrix}, \begin{bmatrix} -3 \\ 1 \end{bmatrix} \right\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>[\bfv]_{\mcb} = \begin{bmatrix} 3 \\ -4 \end{bmatrix}</m>, <m>\mcb = \left\{ \begin{bmatrix} -1 \\ 2 \end{bmatrix}, \begin{bmatrix} 4 \\ 2 \end{bmatrix} \right\}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For the basis <m>\mcb = \{ p_1, p_2, p_3 \}</m> of <m>P_2</m> and the coordinate vector <m>[p]_{\mcb}</m>, find <m>p</m> if 
+              <me>
+                p_1 = 2 - 4t^2, \hspace{6pt} p_2 = -1 - t, \hspace{6pt} p_3 = 3t + 2t^2
+              </me>
+              and 
+              <me>
+                [p]_{\mcb} = \begin{bmatrix} -2 \\ 0 \\ 5 \end{bmatrix}
+              </me>.                             
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the coordinate vectors <m>[\bfv]_{\mcb}</m> for each of the following vectors <m>\bfv</m> with respect to the basis <m>\mcb = \{ \bfv_1, \bfv_2, \bfv_3 \}</m> of <m>\rr^3</m>, if 
+        <me>
+          \bfv_1 = \begin{bmatrix} -2 \\ 5 \\ 3 \end{bmatrix}, \hspace{6pt}
+          \bfv_2 = \begin{bmatrix} 7 \\ 4 \\ -4 \end{bmatrix}, \hspace{6pt}
+          \bfv_3 = \begin{bmatrix} 2 \\ -7 \\ 2 \end{bmatrix}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              <m>\bfv = \begin{bmatrix} 16 \\ 5 \\ -16 \end{bmatrix} </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\bfv = \begin{bmatrix} 6 \\ -23 \\ 11 \end{bmatrix} </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the coordinate vectors <m>[p]_{\mcb}</m> for each of the following polynomials <m>p</m> with respect to the basis <m>\mcb = \{ p_1, p_2, p_3 \}</m> of <m>P_2</m>, if 
+        <me>
+          p_1 = 8 + 4t - 4t^2, \hspace{6pt}
+          p_2 = 5 + 8t + 3t^2, \hspace{6pt}
+          p_3 = -6 - 2t - 5t^2
+        </me>.
+        <ol>
+          <li>
+            <p>
+              <m>p = -2 + 2t - 23t^2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>p = 23 + 28t + 5t^2</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Use coordinate vectors to test the linear independence of the following sets of polynomials in <m>P_3</m>. 
+        <ol>
+          <li>
+            <p>
+              <m>\{p_1, p_2, p_3 \}</m> if 
+              <md>
+                <mrow>p_1 \amp = -6 + 7t + 6t^2 + 3t^3</mrow>
+                <mrow>p_2 \amp = 2t - 4t^2 + 7t^3</mrow>
+                <mrow>p_3 \amp = 2 + 6t - t^2 - 5t^3</mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\{p_1, p_2, p_3 \}</m> if 
+              <md>
+                <mrow>p_1 \amp = 6 + 7t -t^2 - 2t^3</mrow>
+                <mrow>p_2 \amp = -5 - 7t - 6t^2 + 8t^3</mrow>
+                <mrow>p_3 \amp = 7 + 7t - 8t^2 + 4t^3</mrow>
+              </md>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Use coordinate vectors to test whether the following sets of vectors span <m>P_2</m>. 
+        <ol>
+          <li>
+            <p>
+              <m>\{p_1, p_2, p_3, p_4 \}</m> if 
+              <md>
+                <mrow>p_1 \amp = -4 + t + t^2</mrow>
+                <mrow>p_2 \amp = 3 + 5t + t^2</mrow>
+                <mrow>p_3 \amp = -2 -4t + 2t^2</mrow>
+                <mrow>p_4 \amp = 2 - 4t - t^2</mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\{p_1, p_2, p_3, p_4 \}</m> if 
+              <md>
+                <mrow>p_1 \amp = 4 + 6t + 5t^2</mrow>
+                <mrow>p_2 \amp = -3 t^2</mrow>
+                <mrow>p_3 \amp = 4 + 6t - 4t^2</mrow>
+                <mrow>p_4 \amp = 8 +12t + t^2</mrow>
+              </md>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T: P_2 \to \rr^2</m> be the linear transformation 
+        <me>
+          T(p) = \begin{bmatrix} p(0) + p(1) \\ p(1) - p(2) \end{bmatrix} 
+        </me>. 
+        Let <m>\mcb</m> be the standard basis for <m>P_2</m> and let <m>\mce</m> be the standard basis for <m>\rr^2</m>.
+        <ol>
+          <li>
+            <p>
+              Find the coordinate matrix <m>[T]_{\mcb, \mce}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use this coordinate matrix to calculate <m>T(-10 + 3t^2)</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T: \rr^3 \to P_2</m> be the linear transformation 
+        <me>
+          T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) = (2a-b) + (b-3c)t + (a-b+c)t^2
+        </me>. 
+        Let <m>\mce</m> be the standard basis for <m>\rr^3</m> and let <m>\mcb</m> be the standard basis for <m>P_2</m>.
+        <ol>
+          <li>
+            <p>
+              Find the coordinate matrix <m>[T]_{\mce, \mcb}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use this coordinate matrix to calculate <m>T(\bfv)</m> for 
+              <me>
+                \bfv = \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix} 
+              </me>.              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T: P_2 \to P_2</m> be the linear transformation 
+        <me>
+          T(p) = p' + p(1)t^2
+        </me>. 
+        Let <m>\mcb</m> be the standard basis for <m>P_2</m>.
+        <ol>
+          <li>
+            <p>
+              Choose a basis <m>\mcc</m> for <m>P_2</m> which is <em>not</em> the standard basis. Prove that your set of polynomials is a basis.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the coordinate matrix <m>[T]_{\mcc, \mcb}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use this coordinate matrix to calculate <m>T(2 + t -  4t^2)</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>D:P_3 \to P_2</m> be the derivative and let <m>T:P_2 \to P_3</m> be the linear transformation which is multiplication by <m>t</m>. Let <m>\mcb</m> be the standard basis for <m>P_2</m> and let <m>\mcc</m> be the standard basis for <m>P_3</m>. <ol>
+          <li>
+            <p>
+              Find the coordinate matrix <m>[T]_{\mcb, \mcc}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the coordinate matrix <m>[DT]_{\mcb}</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the coordinate matrix <m>[TD]_{\mcc}</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Verify that the coordinate mapping in <xref ref="thm-coord-map-isomorphism"/> is a linear transformation.
+      </p>
+    </statement>
+  </exercise>
+</exercises> 
+
+
+</section>

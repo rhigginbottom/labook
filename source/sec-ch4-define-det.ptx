@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-define-det" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Defining the Determinant</title>
+  <introduction>
+    <p>
+      In the previous chapter, we learned an algorithm for finding the inverse of an invertible <m>n\times n</m> matrix <m>A</m>. This algorithm also told us when a matrix is <em>not invertible</em><mdash></mdash>that is, when it is singular. The centerpiece of the algorithm was the row reduction of an <m>n\times 2n</m> matrix. 
+    </p>
+    <p>
+      In this section, we will learn about the useful and powerful function called <em>the determinant</em>. The determinant by itself will not give us the inverse of a matrix, but it will reveal whether or not a matrix is invertible.
+    </p>
+  </introduction>
+
+<subsection xml:id="initial-defn-det">
+  <title>The Definition of the Determinant</title>
+
+  <p>
+    In <xref ref="exer-2b2-det"/>, we saw that when a matrix <m>A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m> has the property that <m>ad-bc \neq 0</m>, <m>A</m> is row equivalent to <m>I_2</m>. (In that context we were working over <m>\rr</m>, but this is true over any field.) The converse is also true, though we haven't yet established it.
+  </p>
+
+  <p>
+    If we connect this fact with <xref ref="thm-find-inverse-matrix"/>, we see that when <m>ad-bc \neq 0</m>, the <m>2\times 2</m> matrix <m>A</m> is invertible. (We will see that the converse of this statement is also true.)
+  </p>
+
+  <p>
+    This quantity <m>ad-bc</m> for <m>A</m> is special<mdash></mdash>it is the <em>determinant</em> of <m>A</m>, and this relationship to invertibility will also hold for larger matrices. The goal of this section is to define a number for any <m>n\times n</m> matrix which functions the same way that <m>ad-bc</m> does for a <m>2\times 2</m> matrix.
+  </p>
+
+<definition xml:id="def-submatrix">
+  <statement>
+    <p>
+      For an <m>m\times n</m> matrix <m>A</m>, we define <m>A_{ij}</m> to be the submatrix of <m>A</m> that results from deleting row <m>i</m> and column <m>j</m> from <m>A</m>. 
+    </p>
+  </statement>
+</definition>
+
+<example>
+  <statement>
+    <p>
+      If <m>A</m> is the following matrix, 
+      <me>
+        A = \begin{bmatrix}
+        3 \amp -7 \amp -4 \amp -7 \\ 
+        2 \amp 0 \amp -8 \amp -2 \\
+        8 \amp 6 \amp 2 \amp 2
+        \end{bmatrix}
+      </me>,
+      then the submatrices <m>A_{13}</m> and <m>A_{22}</m> are  
+      <me>
+        A_{13} = \begin{bmatrix}
+        2 \amp 0 \amp -2 \\ 
+        8 \amp 6 \amp 2
+        \end{bmatrix}, \hspace{6pt}
+        A_{22} = \begin{bmatrix}
+        3 \amp -4 \amp -7 \\
+        8 \amp 2 \amp 2
+        \end{bmatrix}
+      </me>.      
+    </p>
+  </statement>
+</example>
+
+<p>
+  Perhaps surprisingly, this bit of notation is all we need to define the determinant. We note that this is a <em>recursive</em> definition, which means that the calculation happens in stages by reducing the size of the matrix. 
+</p>
+
+<definition xml:id="def-determinant">
+  <statement>
+    <p>
+      Suppose that <m>A \in M_n(\ff)</m> with <m>n \ge 1</m>, and let the entries of <m>A</m> be denoted <m>a_{ij}</m>. Then the <term>determinant</term> of <m>A</m>, denoted <m>\det(A)</m> or <m>|A|</m>, is defined as follows. If <m>n=1</m>, then <m>\det(A) = a_{11}</m>. If <m>n \ge 2</m>, then 
+      <md>
+        <mrow>\det(A) \amp = a_{11}\det(A_{11}) - a_{12}\det(A_{12}) + \cdots + (-1)^{1+n}a_{1n}\det(A_{1n})</mrow>
+        <mrow> \amp = \sum_{j=1}^n (-1)^{1+j}a_{1j}\det(A_{1j})</mrow>
+      </md>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  To calculate the determinant of an <m>n\times n</m> matrix, we need to know the determinant of a lot of <m>(n-1)\times (n-1)</m> submatrices<mdash></mdash>in fact, we need to know the determinant of <m>n</m> submatrices. The reader will appreciate that when we begin with a small matrix, this is a manageable calculation; when the matrix is larger, carrying out this calculation by hand would be a decidedly less pleasant task.
+</p>
+
+<note>
+  <statement>
+    <p>
+      When <m>n=2</m>, the formula for the determinant of <m>A</m> reduces to the familiar expression with which we opened this section. Note that, in this case, <m>A_{11} = [a_{22}]</m> and <m>A_{12} = [a_{21}]</m> are both <m>1\times 1</m> matrices. We have  
+      <md>
+        <mrow>\det(A) \amp = a_{11}\det(A_{11}) - a_{12}\det(A_{12}) </mrow> 
+        <mrow> \amp = a_{11}a_{22} - a_{12}a_{21}</mrow>
+      </md>.
+      This last expression is precisely <m>ad-bc</m> with different symbols.
+    </p>
+  </statement>
+</note>
+
+<p>
+  We will put our new definition to use in the following example.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A</m> be the following matrix over <m>\rr</m>:
+      <me>
+        A = \begin{bmatrix} 
+        2 \amp -4 \amp -1 \\ 
+        6 \amp -6 \amp 0 \\ 
+        -5 \amp -3 \amp -5
+        \end{bmatrix}
+      </me>.
+      We will find <m>\det(A)</m> using the formula: 
+      <md>
+        <mrow>\det(A) \amp = 2 \begin{vmatrix} -6 \amp 0 \\ -3 \amp -5 \end{vmatrix} - (-4) \begin{vmatrix} 6 \amp 0 \\ -5 \amp -5 \end{vmatrix} + (-1) \begin{vmatrix} 6 \amp -6 \\ -5 \amp -3 \end{vmatrix}</mrow>
+        <mrow> \amp = 2(30-0) + 4(-30-0) - (-18-30)</mrow>
+        <mrow> \amp = 60 - 120 + 48 = -12</mrow>
+      </md>.
+      We see that <m>\det(A) = -12</m>. 
+    </p>
+  </statement>
+</example>
+
+<note>
+  <statement>
+    <p>
+      For the purposes of what follows, we will introduce another bit of notation. If <m>A = [a_{ij}]</m>, then the <term><m>(i,j)</m>-cofactor
+      </term> of <m>A</m>, denoted by <m>C_{ij}</m>, is 
+      <me>
+        C_{ij} = (-1)^{i+j}\det(A_{ij})
+      </me>.
+      Our first determinant formula could then be written
+      <me>
+        \det(A) = \sum_{j=1}^n a_{1j}C_{1j}
+      </me>.      
+    </p>
+  </statement>
+</note>
+</subsection>
+
+<subsection xml:id="subsec-det-alternative">
+  <title>Additional Ways to Calculate the Determinant</title>
+  
+<p>
+  The definition of the determinant uses the first row of the matrix as its <q>home base</q> for calculations. For this reason, the original formula is sometimes referred to as <em>cofactor expansion along the first row</em> of <m>A</m>. A perhaps surprising result, and one we will not prove here because of its complicated nature, asserts that the determinant can be calculated using expansion along any row, not just the first.
+</p>
+
+<theorem xml:id="thm-det-any-row">
+  <statement>
+    <p>
+      Suppose that <m>A = [a_{ij}]</m> and that <m>A \in M_n(\ff)</m> with <m>n \ge 2</m>. Then <m>\det(A)</m> can be calculated using cofactor expansion across any row of <m>A</m>. In other words, for any <m>1 \le i \le n</m>, we have 
+      <me>
+        \det(A) = \sum_{j=1}^n a_{ij}C_{ij}
+      </me>.       
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  Because we can target any row of a matrix in our calculation of the determinant, rows which contain several zero entries are particularly attractive.
+</p>
+
+<example>
+  <statement>
+    <p>
+      We consider the following matrix <m>A</m>:
+      <me>
+        A = \begin{bmatrix} 
+        2 \amp 1 \amp -3 \\ 0 \amp 4 \amp 0 \\ -1 \amp -5 \amp -2
+        \end{bmatrix} 
+      </me>.
+      Since we can expand along any row to calculate the determinant, and since the second row contains two zeros, we will expand along the second row. The zeros make it unnecessary to calculate the cofactors <m>C_{21}</m> and <m>C_{23}</m>:
+      <me>
+        \det(A) = 0\cdot C_{21} + 4\cdot C_{22} + 0\cdot C_{23} = (-1)^{2+2}(4) \begin{vmatrix} 2 \amp -3 \\ -1 \amp -2 \end{vmatrix} = 
+        4 (-4-3) = -28
+      </me>.      
+    </p>
+  </statement>
+</example>
+
+<p>
+  In addition to expanding along any row of a matrix to calculate the determinant, we can also use any column. Instead of proving this directly using the definition of the determinant, we will follow <url href="http://linear.ups.edu/fcla/section-DM.html#theorem-DT" visual="linear.ups.edu">Beezer</url> and prove that a matrix and its transpose have the same determinant. The result about using columns to calculate the determinant will follow. 
+</p>
+
+<theorem xml:id="thm-det-transpose">
+  <statement>
+    <p>
+      Let <m>A \in M_n(\ff)</m>. Then <m>\det(A) = \det(A^T)</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will proceed using induction on the size of the matrix. When <m>n=1</m>, a matrix <m>A</m> and its transpose are identical, so <m>\det(A) = \det(A^T)</m> trivially. 
+    </p>
+    <p>
+      We now suppose that for any square matrix of size <m>n-1</m>, the determinant of the matrix and its transpose are equal. In the calculation below, we will employ a trick at the beginning in order to have a second summation sign later on. The first equation here is true because taking the average of one number <m>n</m> times will give the same quantity again. We will use the notation <m>[A^T]_{ij}</m> to indicate the <m>(i,j)</m>-entry of <m>A^T</m>. We have 
+      <md>
+        <mrow>\det(A^T) \amp = \frac{1}{n} \sum_{i=1}^n \det(A^T)</mrow>
+        <mrow> \amp = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} [A^T]_{ij} \det(A^T_{ij})</mrow>        
+      </md>. 
+      By the definition of the transpose, we have <m>[A^T]_{ij} = a_{ji}</m> and <m>A^T_{ij} = (A_{ji})^T</m>. So 
+      <me>
+        \det(A^T) = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det((A_{ji}^T))
+      </me>. 
+      We now invoke the induction hypothesis. Since <m>A_{ji}</m> is a square matrix of size <m>n-1</m>, we have <m>\det((A_{ji})^T) = \det(A_{ji})</m>. This, along with <xref ref="thm-det-any-row"/>, allows us to finish the argument: 
+      <md>
+        <mrow>\det(A^T) \amp = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det(A_{ji})</mrow>
+        <mrow> \amp = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{j+i} a_{ji} \det(A_{ji})</mrow>
+        <mrow> \amp = \frac{1}{n} \sum_{j=1}^n \sum_{i=1}^n (-1)^{j+i} a_{ji} \det(A_{ji})</mrow>
+        <mrow> \amp = \frac{1}{n} \sum_{j=1}^n \det(A) = \det(A)</mrow>
+      </md>. 
+      As a final note, we were able to switch the summation signs toward the end of this calculation due to the fact that addition is commutative in any field <m>\ff</m>.       
+    </p>
+  </proof>
+</theorem>
+
+<corollary xml:id="cor-det-columns">
+  <statement>
+    <p>
+      Suppose that <m>A = [a_{ij}]</m> and that <m>A \in M_n(\ff)</m> with <m>n \ge 2</m>. Then <m>\det(A)</m> can be calculated using cofactor expansion along any column of <m>A</m>. In other words, for any <m>1 \le i \le n</m>, we have 
+      <me>
+        \det(A) = \sum_{j=1}^n a_{ji}C_{ji}
+      </me>.    
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We note that column <m>i</m> of <m>A</m> is the same as row <m>i</m> of <m>A^T</m>. So, calculating <m>\det(A)</m> using expansion along column <m>i</m> is the same as calculating <m>\det(A^T)</m> using expansion along row <m>i</m>. But since <m>\det(A^T) = \det(A)</m>, this calculation will result in <m>\det(A)</m>. 
+    </p>
+  </proof>
+</corollary>
+
+<p>
+  The following example shows how we can use this flexibility in calculating the determinant.
+</p>
+
+<example>
+  <statement>
+    <p>
+      We will calculate the determinant of the following matrix: 
+      <me>
+        A = \begin{bmatrix} 
+        3 \amp 1 \amp 0 \amp -1 \\ 
+        -2 \amp -1 \amp 2 \amp 4 \\ 
+        1 \amp 3 \amp 0 \amp -3 \\ 
+        2 \amp -2 \amp 0 \amp 0
+        \end{bmatrix} 
+      </me>. 
+      Since the third column of <m>A</m> has three zeros, we will expand along that column: 
+      <me>
+        \det(A) = \sum_{i=1}^4 a_{i3}C_{i3} = 2 \cdot C_{23}
+      </me>. 
+      Just for this example, we will rename <m>A_{23} = B</m>, so <m>\det(A) = -2\det(B)</m>. Here is <m>B</m>: 
+      <me>
+        B = \begin{bmatrix} 
+        3 \amp 1 \amp -1 \\ 
+        1 \amp 3 \amp -3 \\ 
+        2 \amp -2 \amp 0 
+        \end{bmatrix}
+      </me>. 
+      We will take advantage of the zero in the <m>(3,3)</m>-entry of <m>B</m> by expanding along the third row to calculate <m>\det(B)</m>: 
+      <md>
+        <mrow>\det(B) \amp = (-1)^{3+1} (2) \begin{vmatrix} 1 \amp -1 \\ 3 \amp -3 \end{vmatrix} + (-1)^{3+2}(-2) 
+          \begin{vmatrix} 3 \amp -1 \\ 1 \amp -3 \end{vmatrix}
+        </mrow>
+        <mrow> \amp = 2 (0) + 2(-8) = -16</mrow>
+      </md>. 
+      Since we determined that <m>\det(A) = -2\det(B)</m>, this means that <m>\det(A) = 32</m>.       
+    </p>
+  </statement>
+</example>
+
+<p>
+  We will close this section with one final result, the proof of which will be <xref ref="exer-det-triangular"/>. The truth of this proposition also relies on rows/columns with many zeros. By a <q>triangular</q> matrix we mean either an upper triangular or a lower triangular matrix.
+</p>
+
+<proposition xml:id="prop-det-triangular">
+  <statement>
+    <p>
+      Let <m>A \in M_n(\ff)</m> be a triangular matrix. Then <m>\det(A)</m> is the product of the entries along the main diagonal of <m>A</m>. 
+    </p>
+  </statement>
+</proposition>
+
+
+  
+</subsection>
+
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      Compute the determinant of the matrix <m>A</m> by cofactor expansion across the first row. Write out all of your calculations.
+      <me>
+        A = \begin{bmatrix}
+        2 \amp 1 \amp -1 \\
+        0 \amp 3 \amp 4 \\
+        1 \amp -1 \amp 5
+        \end{bmatrix}
+      </me>.       
+    </p> <!-- 45 -->
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Consider the following matrix <m>B</m>:
+    <me>
+      B = \begin{bmatrix}
+      2 \amp 3 \amp 1 \\
+      6 \amp -2 \amp -1 \\
+      0 \amp 0 \amp 4
+      \end{bmatrix}
+    </me>. 
+    <ol>
+      <li>
+        <p>
+          Compute the determinant of <m>B</m> by cofactor expansion down the third column. Write out all of your calculations.
+        </p>
+        <!-- <p>
+          -88 
+        </p> -->
+      </li>
+      <li>
+        <p>
+          There is a better row or column to use for this calculation. Which one is it? Choose that row or column and compute the determinant of <m>B</m> by cofactor expansion along that row or column. Why is this easier?
+        </p>
+        <!-- <p>
+          row 3
+        </p> -->
+      </li>
+    </ol>
+  </p>
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following matrices over <m>\rr</m>, find the determinant by hand using cofactor expansion along a row or column of your choice.
+        <ol>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix}
+                3 \amp 3 \amp -0.5 \\
+                2 \amp -3 \amp 0 \\
+                -1 \amp 2 \amp 2
+                \end{bmatrix}
+              </m>  
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix}
+                2 \amp -4 \amp 4 \amp -1 \\
+                -1 \amp 0 \amp -4 \amp 3 \\
+                2 \amp 2 \amp -4 \amp 0 \\
+                4 \amp 0 \amp -2 \amp 1
+                \end{bmatrix}
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following matrices over <m>\rr</m>, find the determinant by hand using cofactor expansion along a row or column of your choice.
+        <ol>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix}
+                -3 \amp 3 \amp 0 \\
+                0 \amp 4 \amp -2 \\
+                -1 \amp -4 \amp 2
+                \end{bmatrix}
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix}
+                -2 \amp 4 \amp 0 \amp 0 \\
+                0.5 \amp -3.5 \amp -2 \amp -4 \\
+                0.5 \amp 0 \amp 0 \amp -2 \\
+                1 \amp -2 \amp 3 \amp -3 
+                \end{bmatrix}
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following matrix <m>A</m> with entries in <m>\ff_5</m>:
+        <me>
+          A = \begin{bmatrix}
+          3 \amp 1 \amp 4 \\ 
+          0 \amp 4 \amp 1 \\ 
+          4 \amp 2 \amp 4
+          \end{bmatrix}
+        </me>.
+        Find <m>\det(A)</m> by hand using cofactor expansion along a row or column of your choice. (The answer should be a number in <m>\ff_5</m>.)
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following, write down the elementary matrix that performs the given elementary row operation on a <m>3\times 3</m> matrix. Then, calculate the determinant of that elementary matrix.
+        <ol>
+          <li>
+            <p>
+              Multiply row 2 by <m>-3</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Switch rows 2 and 3
+            </p>
+          </li>
+          <li>
+            <p>
+              Replace the third row with the sum of the third row and seven times the first row 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A = \begin{bmatrix} 3 \amp 1 \\ 2 \amp -2 \end{bmatrix}</m>. Write down the matrix <m>5A</m>. How are <m>\det(A)</m> and <m>\det(5A)</m> related? 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m> be a matrix over <m>\rr</m> and let <m>k \in \rr</m>. Find a formula that relates <m>\det(kA)</m> to <m>k</m> and <m>\det(A)</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A = \begin{bmatrix} 1 \amp -2 \\ 2.5 \amp c \end{bmatrix}</m> be a matrix over <m>\rr</m>. Find a value of <m>c</m> so that <m>\det(A) = 0</m> or explain why it is not possible.   
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be the following matrix over <m>\rr</m>: 
+        <me>
+        A = \begin{bmatrix} 2 \amp -2 \amp 1 \\ 3 \amp -2 \amp 0 \\ 2 \amp 3 \amp c \end{bmatrix}  
+        </me>.        
+        Find a value of <m>c</m> so that <m>\det(A) = 0</m> or explain why it is not possible.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be the following matrix over <m>\rr</m>:
+        <me>
+          A = \begin{bmatrix}
+          x-5 \amp 1 \\ 4 \amp x-2
+          \end{bmatrix}
+        </me>.
+        Find all values of <m>x</m> such that <m>\det(A) = 0</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exer-det-triangular">
+    <statement>
+      <p>
+        Prove that the determinant of a triangular matrix is the product of the entries along the main diagonal.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exer-det-switch-rows">
+    <statement>
+      <p>
+        Prove that if <m>A</m> is a <m>2\times 2</m> matrix and if <m>B</m> is the result of switching the rows in <m>A</m>, then <m>\det(B) = -\det(A)</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exer-det-replace-row">
+    <statement>
+      <p>
+        Suppose that <m>A</m> is a <m>2\times 2</m> matrix and that <m>B</m> is the result of applying the <em>replace</em> row operation to <m>A</m>. Prove that <m>\det(B) = \det(A)</m>.
+      </p>
+    </statement>
+  </exercise>
+</exercises> 
+
+
+</section>

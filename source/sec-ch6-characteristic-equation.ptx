@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-char-eqn" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Characteristic Equation</title>
+  <introduction>
+    <p>
+      In the previous section we were able to check whether or not a given vector (scalar) was an eigenvector (eigenvalue) for a matrix <m>A</m>. What was missing was a process for finding the eigenvalues and eigenvectors for a matrix from scratch. This section will outline such a process. (Once we find the eigenvalues, we can use the method of <xref ref="sec-eigenvalues"/> to find bases for the eigenspaces.)
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-char-eqn">
+  <title>How to Find Eigenvalues</title>
+
+  <p>
+    We recall from <xref ref="sec-eigenvalues"/> that a scalar <m>\lambda \in \ff</m> is an eigenvalue for a matrix <m>A \in M_n(\ff)</m> if there is a nontrivial solution to the equation <m>(A- \lambda I)\bfx = \bfo</m>. Since this happens precisely when <m>A - \lambda I</m> is <em>not</em> invertible, by <xref ref="thm-ivt"/> we can use the determinant to find the eigenvalues for <m>A</m>. 
+  </p>
+
+  <p>
+    Specifically, <m>\lambda</m> is an eigenvalue for <m>A</m> if and only if <m>\det(A - \lambda I) = 0</m>. If we introduce <m>\lambda</m> as a variable, we can begin the process of finding the eigenvalues for square matrices. We will illustrate this method in the following example before making all of the steps explicit (with the appropriate notation and terminology). 
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Let <m>A \in M_2(\rr)</m> be the following matrix: 
+        <me>
+          A = \begin{bmatrix} 2 \amp -2 \\ 2 \amp 7 \end{bmatrix}
+        </me>.
+        A scalar <m>\lambda</m> is an eigenvalue for <m>A</m> if and only if <m>\det(A - \lambda I) = 0</m>. Since <m>A - \lambda I</m> is <m>2\times 2</m>, we can find the determinant with ease:
+        <me>
+          \det (A - \lambda I) = \begin{vmatrix} 2-\lambda \amp -2 \\ 2 \amp 7-\lambda \end{vmatrix} = (2-\lambda)(7-\lambda) + 4
+        </me>.
+        With some algebra, we can see that 
+        <me>
+          \det(A - \lambda I) = \lambda^2 - 9\lambda + 18 = (\lambda - 6)(\lambda - 3)
+        </me>.
+        Since <m>\lambda</m> is an eigenvalue when <m>\det(A - \lambda I)=0</m>, we see that the eigenvalues of <m>A</m> are <m>\lambda = 6</m> and <m>\lambda = 3</m>. 
+      </p>
+      <p>
+        Let's verify this method by showing that <m>\lambda=6</m> and <m>\lambda=3</m> are eigenvalues for <m>A</m> and finding bases for their eigenspaces. First, if <m>\lambda = 6</m>, then 
+        <me>
+          A - 6 I = \begin{bmatrix} -4 \amp -2 \\ 2 \amp 1 \end{bmatrix} \sim 
+          \begin{bmatrix} 1 \amp \frac{1}{2} \\ 0 \amp 0 \end{bmatrix}
+        </me>. 
+        From this we see that <m>\mathrm{eig}_6(A)</m> is one-dimensional with basis <m>\left\{ \begin{bmatrix} -1 \\ 2 \end{bmatrix} \right\}</m>.
+      </p>
+      <p>
+        Now, when <m>\lambda = 3</m>, we have 
+        <me>
+          A - 3 I = \begin{bmatrix} -1 \amp -2 \\ 2 \amp 4 \end{bmatrix} \sim 
+          \begin{bmatrix} 1 \amp 2 \\ 0 \amp 0 \end{bmatrix}
+        </me>.
+        Thus <m>\mathrm{eig}_3(A)</m> is also one-dimensional with basis <m>\left\{ \begin{bmatrix} -2 \\ 1 \end{bmatrix} \right\}</m>.
+      </p>
+    </statement>
+  </example>
+
+<p>
+  We now give some names and notation to the elements of this method to find the eigenvalues of a matrix.
+</p>
+
+<definition xml:id="def-char-eqn">
+  <statement>
+    <p>
+      If <m>A \in M_n(\ff)</m>, then <m>\det(A - \lambda I)=0</m> is called the <term>characteristic equation</term> of <m>A</m>. 
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Based on our previous discussion, we can say that <m>\lambda</m> is an eigenvalue of <m>A</m> if and only if <m>\lambda</m> satisfies the characteristic equation of <m>A</m>. 
+</p>
+
+<p>
+  It is occasionally useful to have a term and notation for just one piece of the characteristic equation.
+</p>
+
+<definition xml:id="def-char-poly">
+  <statement>
+    <p>
+      For a matrix <m>A \in M_n(\ff)</m>, <m>\det(A - \lambda I)</m> is a degree <m>n</m> polynomial referred to as the <term>characteristic polynomial</term> of <m>A</m>. Sometimes the notation <m>p_A(\lambda)</m> is used for this polynomial.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  We will see that the characteristic equation can get quite difficult to solve as the size of the matrix increases. The next example provides a glimpse of this for a <m>3\times 3</m> matrix.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A \in M_3(\rr)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix}
+        1 \amp -3 \amp -1 \\ 
+        2 \amp 6 \amp 1 \\ 
+        -4 \amp -10 \amp -1
+        \end{bmatrix} 
+      </me>.
+      To find the characteristic polynomial of <m>A</m>, we will use cofactor expansion along the first row of <m>A - \lambda I</m>:
+      <md>
+        <mrow><!-- \begin{vmatrix} 1-\lambda \amp -3 \amp -1 \\ 
+        2 \amp 6-\lambda \amp 1 \\ 
+        -4 \amp -10 \amp -1-\lambda \end{vmatrix} --> 
+        \det(A - \lambda I) \amp = (1-\lambda)\begin{vmatrix} 6-\lambda \amp 1 \\ -10 \amp -1-\lambda \end{vmatrix} 
+        + 3 \begin{vmatrix} 2 \amp 1 \\ -4 \amp -1-\lambda \end{vmatrix} - 1
+        \begin{vmatrix} 2 \amp 6-\lambda \\ -4 \amp -10 \end{vmatrix} </mrow>
+        <mrow> \amp = (1-\lambda)(\lambda^2 - 5\lambda + 4) + 3(2-2\lambda) - (4-4\lambda)</mrow>
+        <mrow> \amp = -\lambda^3 + 6\lambda^2 - 11\lambda + 6</mrow>
+      </md>.
+      For the matrix <m>A</m> given above, we have <m>p_A(\lambda) = -\lambda^3 + 6\lambda^2 - 11\lambda + 6</m>.
+    </p>
+  </statement>
+</example>
+
+<p>
+  Since we can solve a quadratic equation easily<mdash></mdash>either by factoring or using the quadratic formula<mdash></mdash>we mistakenly think that all polynomial equations are easy to solve. Not so. As we consider the characteristic polynomial for the matrix in the previous example, we find the task of finding the eigenvalues quite challenging.
+</p>
+
+<p>
+  While there is a formula for solving a cubic polynomial, it is not nearly as nice as the quadratic formula. It is, in fact, something that should rarely see the light of day. It is ugly.
+</p>
+
+<p>
+  In practice, the eigenvalues of an <m>n\times n</m> matrix are usually found with a computer algebra system when <m>n \ge 3</m>. However, there is one way that we could describe an eigenvalue problem and still have a reasonable expectation that the reader could find a solution.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Consider the following matrix <m>A \in M_3(\rr)</m> (from the previous example): 
+      <me>
+        A = \begin{bmatrix}
+        1 \amp -3 \amp -1 \\ 
+        2 \amp 6 \amp 1 \\ 
+        -4 \amp -10 \amp -1
+        \end{bmatrix} 
+      </me>.
+      If we know that <m>\lambda = 1</m> is an eigenvalue for <m>A</m>, we can find all of the eigenvalues.
+    </p>
+    <p>
+      Our previous work showed that <m>p_A(\lambda) = -\lambda^3 + 6\lambda^2 - 11\lambda + 6</m>. If we know that <m>\lambda=1</m> is an eigenvalue, that means that <m>(\lambda - 1)</m> must be a factor of this polynomial. Using long division of polynomials, we can complete the factorization:
+      <me>
+        p_A(\lambda) = (\lambda - 1)(-\lambda^2 + 5\lambda - 6) = -(\lambda - 1)(\lambda - 2)(\lambda - 3)
+      </me>.
+      This shows that the eigenvalues for <m>A</m> are <m>\lambda = 1, 2, 3</m>. 
+    </p>
+  </statement>
+</example>
+
+<p>
+  When a characteristic polynomial is factored to reveal the eigenvalues, we might see some of those eigenvalues repeated. We now introduce a term to describe this repetition.
+</p>
+
+<definition xml:id="def-multiplicity">
+  <statement>
+    <p>
+      The <term>multiplicity</term> of an eigenvalue is the number of times it appears as a root of the characteristic polynomial for a matrix. Sometimes this is referred to as the <term>algebraic multiplicity</term> of an eigenvalue.
+    </p>
+  </statement>
+</definition>
+
+<example>
+  <statement>
+    <p>
+      We consider the matrix from <xref ref="examp-evalues1"/> in the previous section: 
+      <me>
+        A = \begin{bmatrix}
+        4.5 \amp -2.5 \amp -2.5 \\ 
+        2.5 \amp -0.5 \amp -2.5 \\ 
+        5 \amp -5 \amp -3
+        \end{bmatrix}
+      </me>.
+      The characteristic polynomial for this matrix is 
+      <me>
+        p_A(\lambda) = -\lambda^3 + \lambda^2 + 8\lambda - 12 = -(\lambda - 2)^2(\lambda + 3)
+      </me>.
+      From this we see that <m>A</m> has an eigenvalue of 2 with multiplicity 2 and an eigenvalue of <m>-3</m> with multiplicity 1.
+    </p>
+  </statement>
+</example>
+
+<p>
+  Before we move to the second half of this section, we point out that not every matrix over <m>\ff</m> has eigenvalues in <m>\ff</m>. The following example illustrates this, but we can understand this intuitively by recognizing that (for example) not every polynomial over <m>\rr</m> can be completely factored into linear terms.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A \in M_2(\rr)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix} -5 \amp -4 \\ 5 \amp -6 \end{bmatrix}
+      </me>.
+      We can calculate the characteristic polynomial for <m>A</m>: 
+      <md>
+      <mrow>\det(A - \lambda I) \amp = \begin{vmatrix} -5-\lambda \amp -4 \\ 5 \amp -6-\lambda \end{vmatrix} </mrow>
+      <mrow> \amp = (-5-\lambda)(-6-\lambda) + 20 </mrow>    
+      <mrow> \amp = \lambda^2+11\lambda+50</mrow>      
+      </md>.
+      This quadratic polynomial has no real roots, as the reader can check by verifying that the discriminant (the expression under the square root in the quadratic formula) is negative. 
+    </p>
+    <p>
+      If <m>A</m> is considered as a matrix over <m>\cc</m>, then it has two complex eigenvalues. But it has no real eigenvalues.
+    </p>
+  </statement>
+</example>
+
+<p>
+  One of the major differences between <m>\rr</m> and <m>\cc</m> is that <m>\cc</m> is an <term>algebraically closed field</term>, while <m>\rr</m> is not. The fact that <m>\cc</m> is algebraically closed is another way to restate the famous Fundamental Theorem of Algebra, which says that every polynomial with coefficients in <m>\cc</m> can be completely reduced to linear factors. There are interesting, deep waters to explore here, but perhaps not in the present text.
+</p>
+  
+</subsection>
+
+<subsection xml:id="subsec-similarity">
+  <title>Similarity</title>
+  
+<p>
+  Earlier in this book we have discussed one way that matrices can be related<mdash></mdash>row equivalence. We now introduce another way they can be related which has connections to the characteristic equation.
+</p>
+
+<definition xml:id="def-similarity">
+  <statement>
+    <p>
+      Suppose that <m>A, B \in M_n(\ff)</m>. Then <m>A</m> <term>is similar to</term> <m>B</m> if there exists an invertible matrix <m>P \in M_n(\ff)</m> such that <m>P^{-1}AP = B</m> or <m>A = PBP^{-1}</m>. 
+    </p>
+  </statement>
+</definition>
+
+<note>
+  <p>
+    Since we could write <m>Q = P^{-1}</m> in the previous definition and have <m>Q^{-1}BQ = A</m> when <m>P^{-1}AP = B</m>, we see that <m>B</m> is similar to <m>A</m> when <m>A</m> is similar to <m>B</m>. For this reason, we can say that <m>A</m> and <m>B</m> are <term>similar</term>. 
+  </p>
+</note>
+
+<p>
+  The next theorem presents one of the most compelling reasons for studying similarity in matrices.
+</p>
+
+<theorem xml:id="thm-similar-matrices-char-poly">
+  <statement>
+    <p>
+      If matrices <m>A, B \in M_n(\ff)</m> are similar, then they have the same characteristic polynomials and therefore the same eigenvalues (with the same multiplicities). 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      If <m>A</m> and <m>B</m> are similar, then there exists an invertible matrix <m>P</m> such that <m>B = P^{-1}AP</m>. When forming <m>B - \lambda I</m>, we have 
+      <me>
+        B - \lambda I = P^{-1}AP - \lambda P^{-1}P = P^{-1}(AP - \lambda P) = P^{-1}(A - \lambda I) P
+      </me>.
+      Since the determinant is multiplicative (<xref ref="thm-det-matrix-product"/>), we have 
+      <md>
+      <mrow> \det(B - \lambda I) \amp = \det(P^{-1})\det(A - \lambda I) \det(P) </mrow>
+      <mrow> \amp = \det(P^{-1})\det(P)\det(A - \lambda I)</mrow>
+      <mrow> \amp = \det(P^{-1}P)\det(A - \lambda I)   </mrow> 
+      <mrow> \amp = \det(I)\det(A - \lambda I)</mrow>
+      <mrow> \amp = \det(A - \lambda I)</mrow>         
+      </md>.
+      This shows that <m>A</m> and <m>B</m> have the same characteristic polynomials. 
+    </p>
+  </proof>
+</theorem>
+
+
+<p>
+  The next example showcases two similar matrices.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A</m> and <m>B</m> be the following matrices over <m>\rr</m>:
+      <me>
+        A = \begin{bmatrix} -10 \amp -5 \\ 24 \amp 13 \end{bmatrix}, \hspace{12pt}
+        B = \begin{bmatrix} 1 \amp -4 \\ -3 \amp 2 \end{bmatrix}
+      </me>.
+      We will show that these are similar matrices by considering the matrix <m>P</m>:
+      <me>
+        P = \begin{bmatrix} -4 \amp -1 \\ -5 \amp -2 \end{bmatrix}
+      </me>.
+      The reader can check that <m>P</m> is invertible and that <m>A = P^{-1}BP</m>. This shows that <m>A</m> and <m>B</m> are similar.
+    </p>
+    <p>
+      Further calculation shows that <m>p_B(\lambda) = \lambda^2-3\lambda-10</m> and that this is the same as <m>p_A(\lambda)</m>. 
+    </p>
+  </statement>
+</example>
+
+<p>
+  It is important to note the direction of logical implication that <xref ref="thm-similar-matrices-char-poly"/> provides. <em>If</em> two matrices are similar, <em>then</em> they have the same eigenvalues. However, we may have two matrices with the same eigenvalues which are not similar.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A, B \in M_2(\rr)</m> be the following matrices: 
+      <me>
+        A = \begin{bmatrix} 5 \amp 0 \\ 0 \amp 5 \end{bmatrix}, \hspace{12pt}
+        B = \begin{bmatrix} 5 \amp -2 \\ 0 \amp 5 \end{bmatrix}
+      </me>.
+      Since both <m>A</m> and <m>B</m> are triangular matrices, we can see that they have the same eigenvalues (with the same multiplicity). However, these matrices are <em>not</em> similar. In fact, we will show in the exercises that a matrix <m>kI</m>, for <m>k \in \ff</m>, is only similar to itself. In this example, <m>A = 5I</m>. 
+    </p>
+  </statement>
+</example>
+
+<p>
+  We end this section with a small note of caution. Similarity and row equivalence are not the same thing, and the distinction between these two relations is important to keep in mind. In particular, elementary row operations usually alter the eigenvalues of a matrix, while we have seen that a similarity transformation does not.
+</p>
+
+</subsection>
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      Let <m>A</m> be the following matrix over <m>\rr</m>: 
+      <me>
+        A = \begin{bmatrix} 
+        2 \amp -1 \\ -6 \amp -3
+        \end{bmatrix}
+      </me>.      
+      <ol>
+        <li>
+          <p>
+            Write down the characteristic equation for <m>A</m>. (Feel free to use <m>t</m> instead of <m>\lambda</m> if typing <m>\lambda</m> is difficult.)
+          </p>
+          <!-- <p>
+            <m>\lambda^2 + \lambda - 12 = 0</m>
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Determine the two eigenvalues for <m>A</m>.
+          </p>
+          <!-- <p>
+            <m>\lambda = 3, -4</m>
+          </p> -->
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Consider the matrix <m>A</m> from the previous reading question. Write down two separate matrices which are similar to <m>A</m>. Explain how you obtained these matrices. 
+  </p>
+  <!-- <p>
+    An infinite number of possible answers! <m>P^{-1}AP</m> for any <m>2\times 2</m> invertible <m>P</m>
+  </p> -->
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+<exercise>
+  <statement>
+    <p>
+      Let <m>A \in M_2(\rr)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix}
+        -7 \amp 8 \\ -6 \amp 7
+        \end{bmatrix}
+      </me>. <!-- 1, -1 -->
+      Find the characteristic polynomial and the eigenvalues of <m>A</m>. 
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>A \in M_2(\rr)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix}
+        7 \amp -3 \\ 6 \amp -2
+        \end{bmatrix}
+      </me>. <!-- 1, 4 -->
+      Find the characteristic polynomial and the eigenvalues of <m>A</m>. 
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>A \in M_2(\ff_5)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix}
+        0 \amp 2 \\ 1 \amp 1
+        \end{bmatrix}
+      </me>. <!-- 2, 4 -->
+      Find the characteristic polynomial and the eigenvalues of <m>A</m>. 
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>A \in M_2(\ff_5)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix}
+        2 \amp 4 \\ 4 \amp 2
+        \end{bmatrix}
+      </me>. <!-- 1, 3 -->
+      Find the characteristic polynomial and the eigenvalues of <m>A</m>. 
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>A \in M_3(\rr)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix}
+        3 \amp 0 \amp 0 \\ 
+        5 \amp -1 \amp 1 \\ 
+        3 \amp -1 \amp 1
+        \end{bmatrix}
+      </me>. <!-- 0, 3 -->
+      Find the characteristic polynomial and the eigenvalues of <m>A</m>. 
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>A \in M_3(\rr)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix}
+        5 \amp 8 \amp -8 \\ 
+        -4 \amp -11 \amp 16 \\ 
+        0 \amp -4 \amp 9
+        \end{bmatrix}
+      </me>. <!-- 1, -3, 5 -->
+      Find the characteristic polynomial of <m>A</m>. If <m>\lambda = 1</m> is an eigenvalue of <m>A</m>, find the other eigenvalues of <m>A</m>.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>A \in M_n(\rr)</m> have <m>n</m> real eigenvalues, <m>\lambda_1, \ldots, \lambda_n</m>, repeated according to their multiplicities, so that 
+      <me>
+        \det(A - \lambda I) = (\lambda_1 - \lambda) \cdots (\lambda_n - \lambda)
+      </me>.
+      Prove that <m>\det(A)</m> is the product of the <m>n</m> eigenvalues of <m>A</m>. 
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="exerc-similarity-equiv-rel">
+  <statement>
+    <p>
+      Prove that similarity is an equivalence relation on the set <m>M_n(\ff)</m>. 
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>I_n \in M_n(\ff)</m> be the identity matrix and let <m>k \in \ff</m> be a scalar. If <m>A = kI_n</m>, prove that the only matrix <m>A</m> is similar to is itself.
+    </p>
+  </statement>
+</exercise>
+  <exercise xml:id="exer-det-invariant-similar">
+    <statement>
+      <p>
+        Prove that if <m>A</m> and <m>B</m> are similar, then <m>\det(A) = \det(B)</m>. 
+      </p>
+    </statement>
+  </exercise>
+</exercises> 
+
+
+</section>

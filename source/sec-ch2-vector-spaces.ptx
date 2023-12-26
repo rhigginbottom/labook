@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-vector-spaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector Spaces</title>
+  <introduction>
+    <p>
+      We now move to our next task of abstraction. We have generalized the real numbers and introduced the idea of a field, and we will now generalize the set and structure of the vectors <m>\rr^n</m> (see <xref ref="sec-vectors"/>) to a vector space.
+    </p>
+  </introduction>
+
+<definition xml:id="def-vector-space">
+  <statement>
+    <p>
+      A <term>vector space</term> over a field <m>\ff</m> is a set <m>V</m> on which are defined the operations of <em>addition</em> and <em>scalar multiplication</em> such that all of the following properties hold.
+      <ol>
+        <li>
+          For all <m>\bfu, \bfv \in V</m>, <m>\bfu+\bfv \in V</m>. (The sum of two vectors is a vector.)
+        </li>
+        <li>
+          For all <m>c \in \ff</m> and all <m>\bfv \in V</m>, <m>c\bfv \in V</m>. (The scalar multiple of a vector is a vector.)
+        </li>
+        <li>
+          For all <m>\bfu, \bfv \in V</m>, <m>\bfu+\bfv=\bfv+\bfu</m>. (Vector addition is commutative.)
+        </li>
+        <li>
+          For all <m>\bfu, \bfv, \bfw \in V</m>, <m>(\bfu+\bfv)+\bfw = \bfu+(\bfv+\bfw)</m>. (Vector addition is associative.)
+        </li>
+        <li>
+          There is a vector <m>\mathbf{0} \in V</m> such that <m>\bfv + \mathbf{0} = \bfv</m> for all <m>\bfv \in V</m>. (There is a vector which is the identity for vector addition. We call this the <em>zero vector</em>.)
+        </li>
+        <li>
+          For each <m>\bfu \in V</m> there exists a vector <m>\bfv \in V</m> such that <m>\bfu + \bfv = \mathbf{0}</m>. (Each vector has an additive inverse.)
+        </li>
+        <li>
+          For each <m>\bfv \in V</m>, <m>1\bfv = \bfv</m>. (Scalar multiplication by <m>1</m> is an identity.)
+        </li>
+        <li>
+          For each <m>\bfv \in V</m> and all <m>c, d \in \ff</m>, <m>c(d\bfv)=(cd)\bfv</m>. (Scalar multiplication of a vector is associative.)
+        </li>
+        <li>
+          For all <m>\bfu, \bfv \in V</m> and each <m>c \in \ff</m>, <m>c(\bfu+\bfv) = c\bfu + c\bfv</m>. (Scalar multiplication distributes over the sum of vectors.)
+        </li>
+        <li>
+          For each <m>\bfv \in V</m> and all <m>c, d \in \ff</m>, <m>(c+d)\bfv = c\bfv + d\bfv</m>. (Scalar multiplication distributes over the sum of field elements.)
+        </li>
+      </ol>
+      The elements of <m>V</m> are called <em>vectors</em> and the elements of <m>\ff</m> are called <em>scalars</em>.
+    </p>
+  </statement>
+</definition>
+
+<note>
+  The reader will want to note when the multiplication of field elements is in view and when scalar multiplication (of a scalar times a vector) is in view. The context should help, as should our practice of using bold notation for vectors. The product of vectors (in the way that we take the product of field elements) is not a defined construction in a general vector space.
+</note>
+
+<p>
+  Faced with this rather abstract definition, some examples are in order.
+</p>
+
+<example xml:id="ex-rn">
+  <statement>
+    <p>
+      The set <m>\rr^n</m>, with the operations of scalar multiplication and vector addition defined in <xref ref="def-vectors-algebra"/>, is a vector space over <m>\rr</m>. As with our definition of a field, if <m>\rr^n</m> is not a vector space then we have carried out the enterprise of abstraction rather poorly. (See <xref ref="fact-alg-props-vectors-rn"/> where we stated most of the properties of a vector space for <m>\rr^n</m>, though we did not use that language.)
+    </p>
+  </statement>
+</example>
+
+<example xml:id="ex-fn">
+  <statement>
+    <p>
+      Let <m>\ff</m> be a field and let <m>\ff^n</m> be defined in the following way:
+      <me>
+        \ff^n = \left\{ \left[\begin{array}{@{}c@{}}
+          a_1 \\ a_2 \\ \vdots \\ a_n
+        \end{array}\right]
+         \Bigm\vert a_i \in \ff \right\}
+      </me>.
+      The operations of scalar multiplication and vector addition are defined for <m>\ff^n</m> over <m>\ff</m> in the same way that the operations of scalar multiplication and vector addition are defined for <m>\rr^n</m> over <m>\rr</m>. Then <m>\ff^n</m> is a vector space.
+    </p>
+    <p>
+      This should be relatively easy for the reader to believe, but checking the details could be a helpful exercise in the definitions of both fields and vector spaces.
+    </p>
+  </statement>
+</example>
+
+<example xml:id="ex-real-functions">
+  <statement>
+    <p>
+      Let <m>A</m> be a subset of the real numbers. Define the set <m>V</m> as the set of all functions <m>A \to \rr</m>. Given appropriate operations, this is a vector space.
+    </p>
+    <p>
+      If <m>f</m> and <m>g</m> are elements of <m>V</m>, then we define the sum as
+      <me>
+        (f+g)(t) = f(t)+g(t)
+      </me>
+      for all <m>t \in A</m>. Additionally, if <m>c \in \rr</m> and <m>f \in V</m>, then we define scalar multiplication as
+      <me>
+        (cf)(t) = cf(t)
+      </me>
+      for all <m>t \in A</m>. We will now argue that <m>V</m> is a vector space.
+    </p>
+    <p>
+      Looking back at <xref ref="def-vector-space"/>, the first two axioms hold by the way we defined the operations. Axioms three and four hold because addition in <m>\rr</m> is both commutative and associative. (Since these vectors in <m>V</m> are functions which take values in <m>\rr</m>, the properties of <m>\rr</m> are once again crucial.)
+    </p>
+    <p>
+      The zero vector in <m>V</m> is the function <m>f(t)=0</m>, the function which is uniformly zero for each value <m>t \in A</m>. This function has the properties of the zero vector mandated by axiom five.
+    </p>
+    <p>
+      The additive inverse of a function <m>g \in V</m> is the function <m>(-1)g=-g</m> since
+      <me>
+        (g+(-g))(t) = g(t)+(-g)(t)=g(t)-g(t)=0
+      </me>
+      for all <m>t \in A</m>. This shows that axiom six holds.
+    </p>
+    <p>
+      The rest of the axioms hold because of the definitions of vector addition and scalar multiplication and the properties of the real numbers.
+    </p>
+  </statement>
+</example>
+
+<note>
+  The previous example can be difficult to digest, because we are considering functions to be vectors. It may take some adjustment to think of functions<mdash/>rather than single real numbers (or even ordered lists of real numbers)<mdash/>as the objects of study .
+</note>
+
+<example xml:id="ex-real-polys">
+  <statement>
+    <p>
+      Let <m>P_n</m> denote the set of all real-valued polynomials of degree less than or equal to <m>n</m> with real coefficients. (Recall that the <em>degree</em> of a polynomial is the largest exponent of the variable that has a nonzero coefficient.) This means that the polynomial <m>p(x) = 7x^{10}-\tfrac{1}{2}x^6 + 9</m> has degree <m>10</m> and is an element of <m>P_n</m> for all <m>n \ge 10</m>.
+    </p>  
+    <p> 
+      We consider vector addition to be the usual algebraic sum of polynomials and scalar multiplication to be the usual product of a polynomial by a constant. Then <m>P_n</m> is a vector space over <m>\rr</m>.
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Consider the set <m>V=\rr^2</m> but with non-standard operations. (In this example and the next, we will use horizontal instead of vertical notation for <m>\rr^2</m>. This is purely for ease of notation in these limited instances.) We define the sum of two vectors <m>\bfu=(u_1,u_2)</m> and <m>\bfv=(v_1,v_2)</m> to be
+      <me>
+        \bfu\oplus \bfv = (u_1v_1,1)
+      </me>,
+      and we define scalar multiplication of a vector <m>\bfu=(u_1,u_2)</m> by a real number <m>c</m> to be
+      <me>
+        c\odot \bfu = (cu_1,1)
+      </me>.
+      It is a good exercise to grapple with the axioms and determine whether or not <m>V</m> with these operations is a vector space.
+    </p>
+    <p>
+      (We are using the symbols <m>\oplus</m> and <m>\odot</m> because these operations we are defining are not familiar ones, and most readers likely have no previous associations with these symbols. For our purposes, these symbols have no overarching meaning; they will be redefined for the purposes of specific examples.)
+    </p>
+    <p>
+      With some work, the reader will find that this is <em>not</em> a vector space. All we need to do in order to show this is not a vector space is to find one axiom that does not hold. We will show that the fifth axiom (regarding the zero vector) does not hold.
+    </p>
+    <p>
+      We must be careful here, because the terminology can become confusing. By <q>zero vector</q> we do not always mean in <m>\rr^2</m> the ordered pair <m>(0,0)</m>. Depending on the operations that are in view, the zero vector may exist in a form other than <m>(0,0)</m>. To show this axiom does not hold, we must argue that <em>no</em> element of <m>\rr^2</m> can have the properties of a zero vector given these operations.
+    </p>
+    <p>
+      We will argue by contradiction. Suppose there is a vector <m>\bfu = (u_1,u_2)</m> which has the properties of a zero vector. This means that, for any <m>\bfv \in V</m>, we have <m>\bfu \oplus \bfv = \bfv \oplus \bfu = \bfv</m>. We consider the vector <m>\bfv = (2,2)</m>. If <m>\bfu</m> is the zero vector, then we must have
+      <me>
+        (u_1,u_2) \oplus (2,2) = (2,2)
+      </me>,
+      but the addition on this set means
+      <me>
+        (u_1,u_2) \oplus (2,2) = (2u_1,1)
+      </me>.
+      Since it is impossible to have <m>(2,2)=(2u_1,1)</m> as the second coordinates are not equal as elements of <m>\rr</m>, we have a contradiction, and therefore there can be no zero vector in <m>V</m> with these operations.
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      We again consider the set <m>V=\rr^2</m>. Vector addition will be the usual sum in <m>\rr^2</m>, but scalar multiplication will be different. For any real number <m>c</m> and any <m>\bfu = (u_1,u_2) \in \rr^2</m>, we define <m>c\odot \bfu</m> by
+      <me>
+        c\odot \bfu = (cu_1,\tfrac{1}{2}cu_2)
+      </me>.
+      Once again we pose the question: Is this a vector space?
+    </p>
+    <p>
+      While it is good practice to check all of the axioms, again we only need to find one axiom which does not hold in order to show this is not a vector space. (If it were a vector space, we would need to prove that all of the axioms hold.) We will show that scalar multiplication by <m>1</m> is not an identity (axiom 7).
+    </p>
+    <p>
+      We will examine the scalar product <m>1\odot (1,1)</m>:
+      <me>
+        1\odot (1,1) = (1,\tfrac{1}{2})
+      </me>.
+      If axiom 7 were to hold, we would have <m>1\odot (1,1)=(1,1)</m>. Since <m>(1,1)\neq (1,\tfrac{1}{2})</m>, we have shown that axiom 7 does not hold. Therefore, this is not a vector space.
+    </p>
+  </statement>
+</example>
+
+<p>
+  As evidence of the fact that <m>\rr^n</m> is the model for our general definition of a vector space, we now repeat the definitions of <em>linear combination</em> and <em>span</em>. These definitions in the general setting will be necessaary for the following section. (See the original definitions in <xref ref="def-lin-comb-span"/>.)
+</p>
+
+<definition xml:id="def-lin-comb-span-general">
+  <statement>
+    <p>
+      Let <m>\ff</m> be a field and let <m>c_1, c_2, \ldots, c_m \in \ff</m>. Let <m>V</m> be a vector space over <m>\ff</m> and let <m>\bfv_1, \bfv_2, \ldots, \bfv_m \in V</m>. Then the <term>linear combination</term> of the vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_m </m> with <term>weights</term> <m>c_1, c_2, \ldots, c_m</m> is
+      <me>
+        c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m
+      </me>.
+    </p>
+    <p>
+    The <term>span</term> of the vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_m</m> is the set of all possible linear combinations of <m>\bfv_1, \bfv_2, \ldots, \bfv_m</m> and is written <m>\spn\{\bfv_1, \ldots, \bfv_m\}</m>. In other words, the span is defined to be
+    <me>
+      \spn\{\bfv_1,\ldots,\bfv_m\} = \left\{ \sum_{i=1}^m c_i\bfv_i \mid c_1,\ldots,c_m \in \ff \right\}
+    </me>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  The final result in this section is similar to <xref ref="thm-field-arithmetic"/> in which we summarize some of the <q>obvious</q> facts which are true in any vector space. We will prove a few of these facts here and leave some others as exercises.
+</p>
+
+<theorem xml:id="thm-vspace-arithmetic">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space over a field <m>\ff</m>. Then all of the following hold.
+      <ol>
+        <li xml:id="zero-vect-unique">
+          The zero vector in <m>V</m> is unique.
+        </li>
+        <li>
+          Additive inverses of vectors in <m>V</m> are unique.
+        </li>
+        <li>
+          For every <m>\bfv \in V</m>, <m>-(-\bfv)=\bfv</m>.
+        </li>
+        <li>
+          For every <m>\bfv \in V</m>, <m>0\bfv = \mathbf{0}</m>.
+        </li>
+        <li xml:id="const-mult-zero">
+          For every <m>c \in \ff</m>, <m>c\mathbf{0}=\mathbf{0}</m>.
+        </li>
+        <li>
+          For every <m>\bfv \in V</m>, <m>(-1)\bfv = -\bfv</m>.
+        </li>
+        <li xml:id="no-zero-divs">
+          If <m>c \in \ff</m>, <m>\bfv \in V</m>, and <m>c\bfv=\mathbf{0}</m>, then either <m>c=0</m> or <m>\bfv = \mathbf{0}</m>.
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will first prove property 2. Suppose that <m>\bfu \in V</m> and that both <m>\bfv, \bfw \in V</m> have the properties of being additive inverses of <m>\bfu</m>. We will show that <m>\bfv=\bfw</m>.
+    </p>
+    <p>
+      Since <m>\bfu+\bfv = \mathbf{0}</m> and <m>\bfu+\bfw=\mathbf{0}</m>, we have
+      <me>
+        \bfu+\bfv = \bfu+\bfw
+      </me>.
+      Adding <m>\bfv</m> to both sides (and using both the associative law and the properties of the zero vector) we have
+      <md>
+        <mrow>(\bfv+\bfu)+\bfv \amp = (\bfv+\bfu)+\bfw </mrow>
+        <mrow>\mathbf{0}+\bfv \amp =\mathbf{0}+\bfw </mrow>
+        <mrow> \bfv  \amp = \bfw </mrow>
+      </md>.
+    </p>
+    <p>
+      We will now show that property 4 holds. Since <m>0=0+0</m> in <m>\ff</m>, we can use the distributive property (axiom 10 in <xref ref="def-vector-space"/>) to find the following:
+      <me>
+        0\bfv = (0+0)\bfv = 0\bfv + 0\bfv
+      </me>.
+      We have <m>0\bfv=0\bfv+0\bfv</m>, and subtracting <m>0\bfv</m> from both sides gives us <m>\mathbf{0}=0\bfv</m>. (The reader should recall that by <q>subtracting</q> we mean adding the additive inverse, which every vector in a vector space possesses.)
+    </p>
+    <p>
+      To prove property 6, we must show that <m>(-1)\bfv</m> has the properties of the additive inverse of <m>\bfv</m>. (Then, by property 2, we can conclude what we want.) We will use the distributive law (axiom 10 again) as well as the just-proved property 4:
+      <md>
+        <mrow>\bfv + (-1)\bfv \amp =1\bfv + (-1)\bfv</mrow>
+        <mrow> \amp =(1-1)\bfv</mrow>
+        <mrow>  \amp =0\bfv = \mathbf{0}</mrow>
+      </md>.
+    </p>
+  </proof>
+
+</theorem>
+
+<reading-questions>
+<exercise>
+  <statement>
+    <p>
+      In this question we will explore <m>\ff_5^3</m>. (See <xref ref="ex-fn"/>. The vector space <m>\ff_5^3</m> should be thought of as being the same as <m>\rr^3</m> except that the entries and the operations are coming from <m>\ff_5</m>.) 
+      <ol>
+        <li>
+          <p>
+            Write down two nonzero elements of <m>\ff_5^3</m> and compute their sum.
+          </p>
+        </li>
+        <li>
+          <p>
+            Write down one nonzero element of <m>\ff_5^3</m> and compute the scalar multiple of this vector by the element <m>3</m> of <m>\ff_5</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Write down one element of <m>P_4</m>. (See <xref ref="ex-real-polys"/>.)
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Consider the vector <m>\bfu = (1,3)</m> in <m>\ff_5^2</m>. (Again, we are writing the vector horizontally for convenience.) How many elements does <m>\mathrm{Span}\{\bfu\}</m> contain? Write all of them down.
+    </p>
+  </statement>
+</exercise>
+</reading-questions>
+
+<exercises xml:id="exercises-2-3">
+  <exercise>
+    <statement>
+      <p>
+        For each of the following, determine whether the given subset <m>V\subseteq \rr^2</m> is a real vector space, using the usual operations of vector addition and scalar multiplication in <m>\rr^2</m>. 
+        <ol>
+          <li>
+            <p>
+              <m>V = \{ (x,y) \mid x,y \ge 0 \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>V = \{ (x,y) \mid xy \ge 0 \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>V = \{ (x,y) \mid y = x \}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the set <m>V = \ff_5^2</m> with the usual scalar multiplication but with vector addition defined this way: 
+        <me>
+          (u_1,v_1) \oplus (u_2,v_2) = (u_1 + u_2, v_1+v_2+1)
+        </me>.
+        This is not a vector space over <m>\ff_5</m>. Determine which of the vector space axioms fail, and give an explanation for each such axiom.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the set <m>V = \qq^2</m> with the usual vector addition but with scalar multiplication defined this way: 
+        <me>
+          c \odot (x,y) = (0, cy)
+        </me>.
+        This is not a vector space over <m>\qq</m>. Determine which of the vector space axioms fail, and give an explanation for each such axiom.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following subset of <m>\rr^2</m>:
+        <me>
+          V = \{ (x,y) \mid y = 4x \}
+        </me>.
+        Prove that <m>V</m>, with the usual operations of vector addition and scalar multiplication in <m>\rr^2</m>, is a vector space over <m>\rr</m>. (Hint: Since <m>V</m> is a subset of <m>\rr^2</m> with the same operations as <m>\rr^2</m>, some of the axioms may not need to be proved from scratch.)
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following three elements of <m>P_3</m>:
+        <md>
+          <mrow>p_1 \amp = 2t^2 - t + 6</mrow>
+          <mrow>p_2 \amp = -t^3 - t^2 + 4t</mrow>
+          <mrow>p_3 \amp = 4t^3 + \tfrac{1}{2}t^2 + 2t + 1</mrow>
+        </md>.
+        Calculate the linear combination of <m>p_1</m>, <m>p_2</m>, and <m>p_3</m> with weights <m>2</m>, <m>-3</m>, and <m>-2</m>, respectively.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following three elements of <m>\ff_3^2</m>:
+        <me>
+          \bfu = \begin{bmatrix}
+          1 \\ 2
+          \end{bmatrix}, \hspace{6pt}
+          \bfu = \begin{bmatrix}
+          2 \\ 0
+          \end{bmatrix}, \hspace{6pt}
+          \bfw = \begin{bmatrix}
+          1 \\ 1
+          \end{bmatrix}
+        </me>.
+        Calculate the linear combination of <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m> with weights <m>1</m>, <m>2</m>, and <m>2</m>, respectively.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the vector space <m>\ff_2^3</m>.
+        <ol>
+          <li>
+            <p>
+              How many distinct vectors are in <m>\ff_2^3</m>?
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>\bfu</m> and <m>\bfv</m> are the following vectors, 
+              <me>
+                \bfu = \begin{bmatrix}
+                1 \\ 0 \\ 1
+                \end{bmatrix}, \hspace{12pt}
+                \bfv = \begin{bmatrix}
+                0 \\ 1 \\ 1
+                \end{bmatrix}
+              </me>,
+              how many distinct vectors are in <m>\mathrm{Span}\{\bfu, \bfv\}</m>?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the vector space <m>V</m> of all functions <m>\rr \to \rr</m>. (This general setting was introduced in <xref ref="ex-real-functions"/>.) Let <m>f</m> and <m>g</m> be the following vectors in <m>V</m>:
+        <me>
+          f(t) = \sin^2(t), \hspace{12pt} g(t) = \cos^2(t)
+        </me>.
+        Is the constant function <m>h(t) = 4</m> an element of <m>\mathrm{Span}\{f, g\}</m>? Explain your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following vectors in <m>\ff_5^3</m>:
+        <me>
+          \bfu = \begin{bmatrix}
+          2 \\ 4 \\ 0
+          \end{bmatrix}, \hspace{6pt}
+          \bfv = \begin{bmatrix}
+          3 \\ 0 \\ 2
+          \end{bmatrix}, \hspace{6pt}
+          \bfw = \begin{bmatrix}
+          1 \\ 1 \\ 2
+          \end{bmatrix}
+        </me>.
+        Is <m>\bfw \in \mathrm{Span}\{\bfu, \bfv\}</m>? Explain your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following vectors in <m>\cc^3</m>:
+        <me>
+          \bfu = \begin{bmatrix}
+          2i \\ 1-i \\ 2-i 
+          \end{bmatrix}, \hspace{6pt}
+          \bfv = \begin{bmatrix}
+          1+2i \\ 0 \\ 4+i
+          \end{bmatrix}, \hspace{6pt}
+          \bfw = \begin{bmatrix}
+          2+2i \\ 2 - i \\ 3i
+          \end{bmatrix}
+        </me>.
+        Is <m>\bfw \in \mathrm{Span}\{\bfu, \bfv\}</m>? Explain your answer.
+      </p>
+    </statement>
+  </exercise>
+  <subexercises>
+  <title>Writing Exercises</title>  
+  <exercise>
+    <statement>
+      <p>
+        Is <m>\rr</m> a vector space over <m>\qq</m>? (Addition and scalar multiplication should be understood as the obvious operations in <m>\rr</m>.) Explain your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Is <m>\qq</m> a vector space over <m>\rr</m>? (Addition and scalar multiplication should be understood as the obvious operations in <m>\qq</m>.) Explain your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that <m>\cc</m> is a vector space over <m>\rr</m>. (Addition and scalar multiplication should be understood as the obvious operations in <m>\cc</m>.)
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that every vector space over <m>\cc</m> is a vector space over <m>\rr</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="zero-vect-unique"/> in <xref ref="thm-vspace-arithmetic"/>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="const-mult-zero"/> in <xref ref="thm-vspace-arithmetic"/>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="no-zero-divs"/> in <xref ref="thm-vspace-arithmetic"/>.
+      </p>
+    </statement>
+  </exercise>
+</subexercises>
+</exercises>
+
+</section>

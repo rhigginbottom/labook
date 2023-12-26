@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-inverting-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Inverting a Matrix</title>
+  <introduction>
+    <p>
+      In <xref ref="sec-matrix-linear-trans"/>, we introduced the definition of an <em>invertible matrix</em> and discussed some properties of the <em>inverse</em> of a matrix. We will now introduce a method to determine whether or not a matrix is invertible. Additionally, when a matrix is invertible we will be able to calculate its inverse.
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-elementary-matrices">
+  <title>Elementary Matrices</title>
+
+  <p>
+    The method we will present in this section begins with a simple definition.
+  </p>
+
+  <definition xml:id="def-elementary-matrix">
+    <statement>
+      <p>
+        An <term>elementary matrix</term> is one that is formed by performing a single elementary row operation on an identity matrix.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Because elementary matrices are related to elementary row operations, there are three types of elementary matrices. The following example provides one elementary matrix of each type.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Our first elementary matrix results from switching the second and third in <m>I_3</m>:
+        <me>
+          \begin{bmatrix}
+          1 \amp 0 \amp 0 \\ 
+          0 \amp 0 \amp 1 \\ 
+          0 \amp 1 \amp 0
+          \end{bmatrix}
+        </me>.
+        Next we will look at a matrix which comes by adding 4 times the first row of <m>I_2</m> to the second row:
+        <men xml:id="el-matrix-2">
+          \begin{bmatrix}
+          1 \amp 0 \\ 
+          4 \amp 1
+          \end{bmatrix}
+        </men>.
+        Finally, we have a matrix which is formed by multiplying the second row of <m>I_4</m> by 7:
+        <me>
+          \begin{bmatrix}
+          1 \amp 0 \amp 0 \amp 0 \\ 
+          0 \amp 7 \amp 0 \amp 0 \\ 
+          0 \amp 0 \amp 1 \amp 0 \\ 
+          0 \amp 0 \amp 0 \amp 1
+          \end{bmatrix}
+        </me>.        
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    Multiplying by an elementary matrix has the effect of carrying out an elementary row operation. In other words, if the <m>n\times n</m> matrix <m>E</m> results from applying an elementary row operation to <m>I_n</m>, and if <m>A</m> is another <m>n\times n</m> matrix, then <m>EA</m> is the matrix <m>A</m> after this same elementary row operation has been applied. We will demonstrate this in an example before stating the relevant theorem. (The proof of the theorem is saved for the exercises.)
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Let <m>A</m> be the following matrix over <m>\rr</m>:
+        <me>
+          A = \begin{bmatrix}
+          -2 \amp 1 \\ 3 \amp 2
+          \end{bmatrix}
+        </me>.
+        If we label as <m>E</m> the matrix in <xref ref="el-matrix-2"/>, then we can calculate <m>EA</m>:
+        <me>
+          EA = \begin{bmatrix}
+          1 \amp 0 \\ 
+          4 \amp 1
+          \end{bmatrix} \begin{bmatrix}
+          -2 \amp 1 \\ 3 \amp 2
+          \end{bmatrix} = \begin{bmatrix}
+          -2 \amp 1 \\ -5 \amp 6
+          \end{bmatrix}
+        </me>.
+        The reader can verify that <m>EA</m> is the result of adding four times the first row of <m>A</m> to the second row of <m>A</m>.        
+      </p>
+    </statement>
+  </example>
+  
+  <theorem xml:id="thm-el-matrices-action">
+    <statement>
+      <p>
+        If the elementary matrix <m>E</m> results from performing an elementary row operation on <m>I_n</m>, and if <m>A</m> is an <m>n\times n</m> matrix, then <m>EA</m> is the matrix that results from applying this same elementary row operation to <m>A</m>. 
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Each elementary row operation is <q>reversible</q> in the sense that there is another elementary row operation which reverses the work that was done by the first. (This appears as <xref ref="exer-reversible"/>.) We can use this fact to establish the following useful proposition.
+  </p>
+
+  <proposition xml:id="prop-el-matrices-invertible">
+    <statement>
+      <p>
+        Every elementary matrix is invertible.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>E</m> be an elementary matrix and let <m>E'</m> denote the elementary matrix which represents the reverse elementary row operation from <m>E</m>. By the definition of these matrices and <xref ref="thm-el-matrices-action"/>, we see that 
+        <me>
+          EE' = I_n, \hspace{6pt} \text{and} \hspace{6pt} E'E = I_n 
+        </me>.
+        This shows that <m>E</m> and <m>E'</m> are inverses of each other and, in particular, this proves that <m>E</m> is invertible.
+      </p>
+    </proof>
+  </proposition>
+
+  <p>
+    We will now connect elementary matrices to the RREF of a matrix in the following proposition. This is largely a restatement of <xref ref="alg-row-reduction"/> using elementary matrices.
+  </p>
+
+  <proposition xml:id="prop-el-matrices-rref">
+    <statement>
+      <p>
+        If <m>A \in M_{m,n}(\ff)</m>, then there exists <m>B \in M_{m,n}(\ff)</m> in RREF and elementary matrices <m>E_1,\ldots,E_k \in M_m(\ff)</m> such that 
+        <me>
+          A = E_1\cdots E_kB
+        </me>.        
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Since each matrix can be reduced to a matrix in RREF, and since elementary row operations are accomplished by multiplying by elementary matrices, there exist elementary matrices <m>D_1, \ldots, D_k \in M_m(\ff)</m> such that 
+        <me>
+          B = D_k\cdots D_1A
+        </me>.
+        Since elementary matrices are invertible, by repeated application of <xref ref="prop-matrix-inverse-product"/> we see that <m>D_k\cdots D_1</m> is invertible and <m>(D_k\cdots D_1)^{-1} = D_1^{-1}\cdots D_k^{-1}</m>. Then we have 
+        <md>
+          <mrow>B \amp = (D_k\cdots D_1)A</mrow>
+          <mrow>(D_k\cdots D_1)^{-1}B \amp = (D_k\cdots D_1)^{-1}(D_k\cdots D_1)A </mrow>
+          <mrow>D_1^{-1}\cdots D_k^{-1}B \amp = A </mrow>
+        </md>. 
+        We note that each <m>D_i^{-1}</m> is an elementary matrix, and if we define <m>E_i = D_i^{-1}</m> for each <m>i=1,\ldots,k</m>, we have our result.
+      </p>
+    </proof>
+  </proposition>
+</subsection>
+
+<subsection xml:id="subsec-finding-inverses">
+  <title>Finding the Inverse of a Matrix</title>
+  
+  <p>
+    We will now move on to develop an algorithm for finding the inverse of a matrix (when one exists). We need a lemma before stating our most important result of the section.
+  </p>
+
+  <lemma xml:id="lem-inv-matrix-unique-sol">
+    <statement>
+      <p>
+        If <m>A \in M_n(\ff)</m> is invertible, then for every <m>\mathbf{b} \in \ff^n</m>, the equation <m>A\bfx = \mathbf{b}</m> has a unique solution.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>\bfb</m> be any vector in <m>\ff^n</m>. Since <m>A</m> is invertible, <m>A^{-1}</m> exists, and we can show that <m>\bfx = A^{-1}\bfb</m> is a solution to the equation <m>A\bfx = \bfb</m>:
+        <me>
+          A(A^{-1}\bfb) = (AA^{-1})\bfb = I_n\bfb = \bfb
+        </me>. 
+        To show that this solution is unique, suppose <m>\bfv</m> is another solution to this equation, so <m>A\bfv = \bfb</m>. Then we have 
+        <md>
+          <mrow>A\bfv \amp = \bfb</mrow>
+          <mrow>A^{-1}(A\bfv) \amp = A^{-1}\bfb</mrow>
+          <mrow>(A^{-1}A)\bfv \amp = A^{-1}\bfb</mrow>
+          <mrow>I_n\bfv \amp = A^{-1}\bfb</mrow>
+          <mrow>\bfv \amp = A^{-1}\bfb</mrow>
+        </md>.
+      </p>
+    </proof>
+  </lemma>
+
+  <theorem xml:id="thm-find-inverse-matrix">
+    <statement>
+      <p>
+        A matrix <m>A \in M_n(\ff)</m> is invertible if and only if <m>A</m> is row equivalent to <m>I_n</m>. When <m>A</m> is invertible, any sequence of elementary row operations that reduces <m>A</m> to <m>I_n</m> also transforms <m>I_n</m> into <m>A^{-1}</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        If <m>A</m> is invertible, then by <xref ref="lem-inv-matrix-unique-sol"/> the equation <m>A\bfx = \bfb</m> has a unique solution for every <m>\bfb \in \ff^n</m>. Now <xref ref="thm-unique-soln-system"/> means that the RREF of <m>A</m> has a pivot in each of its <m>n</m> columns. Since <m>A</m> is square, this means the RREF has a pivot in each row as well, meaning that the RREF of <m>A</m> must be <m>I_n</m>. 
+      </p>
+      <p>
+        Conversely, suppose that <m>A</m> is row equivalent to <m>I_n</m>. By <xref ref="prop-el-matrices-rref"/>, there exist elementary matrices <m>E_1,\ldots,E_k</m> such that <men xml:id="eqn-reduce-A">A = E_1\cdots E_kI_n</men>. This means that <m>A = E_1\cdots E_k</m>, and since the product of invertible matrices is invertible, this proves that <m>A</m> is invertible. 
+      </p>
+      <p>
+        If we multiply both sides of <xref ref="eqn-reduce-A"/> by <m>(E_1\cdots E_k)^{-1}</m>, we get 
+        <me>
+          E_k^{-1}\cdots E_1^{-1}A = I_n
+        </me>,
+        which shows the sequence of elementary row operations (through multiplication by elementary matrices) used to transform <m>A</m> into <m>I_n</m>. On the other hand, if we take the equation <m>A = E_1\cdots E_k</m> from the previous paragraph and invert both sides, we get 
+        <me>
+          A^{-1} = E_k^{-1}\cdots E_1^{-1}
+        </me>,
+        which we can easily adjust to
+        <me>
+          A^{-1} = E_k^{-1}\cdots E_1^{-1}I_n
+        </me>.
+        This establishes the final claim in the theorem.
+      </p>
+    </proof>
+  </theorem>
+
+  <p>
+    This theorem provides an algorithm for us to determine when a matrix is invertible and, in the case it is invertible, to calculate its inverse. 
+  </p>
+
+  <algorithm xml:id="alg-matrix-inverse">
+    <statement>
+      <p>
+        In order to determine whether or not a matrix <m>A \in M_n(\ff)</m> is invertible, follow these steps.
+        <ol>
+          <li>
+            <p>
+              Reduce the matrix <m>[A \mid I_n]</m> to its RREF. 
+            </p>
+          </li>
+          <li>
+            <p>
+              If the RREF has the form <m>[I_n \mid B]</m>, then <m>A</m> is invertible and <m>B = A^{-1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If the RREF does not have <m>I_n</m> in its left <m>n</m> columns, then <m>A</m> is not invertible.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </algorithm>
+
+  <p>
+    We will end this section with several examples in which we work through this algorithm.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Consider the following matrix <m>A \in M_3(\rr)</m>:
+        <me>
+          A = \begin{bmatrix}
+          2 \amp 0 \amp -3 \\ 
+          1 \amp -1 \amp -2 \\ 
+          0 \amp 3 \amp 2
+          \end{bmatrix}
+        </me>.
+        To determine whether or not this matrix is invertible, we row reduce the matrix <m>[A \mid I_3]</m>: 
+        <me>
+          \left[\begin{array}{@{}ccc|ccc@{}}
+          2 \amp 0 \amp  -3 \amp  1 \amp 0 \amp 0 \\ 
+          1 \amp -1 \amp -2 \amp 0 \amp 1 \amp 0 \\ 
+          0 \amp 3 \amp 2 \amp 0 \amp 0 \amp 1
+          \end{array}\right] \sim 
+          \left[\begin{array}{@{}ccc|ccc@{}}
+          1 \amp 0 \amp 0 \amp -4 \amp 9 \amp 3 \\ 
+          0 \amp 1 \amp 0 \amp 2 \amp -4 \amp -1 \\ 
+          0 \amp 0 \amp 1 \amp -3 \amp 6 \amp 2
+          \end{array}\right]
+        </me>.
+        We see that <m>A</m> is invertible and that 
+        <me>
+          A^{-1} = \begin{bmatrix}
+          -4 \amp 9 \amp 3 \\ 
+          2 \amp -4 \amp -1 \\ 
+          -3 \amp 6 \amp 2
+          \end{bmatrix}
+        </me>.                
+      </p>
+    </statement>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Consider the following matrix <m>A \in M_4(\qq)</m>:
+        <me>
+          A = \begin{bmatrix}
+          2 \amp 3 \amp 0 \amp 1 \\ 
+          1 \amp 1 \amp -3 \amp 7 \\ 
+          0 \amp -2 \amp 1 \amp 0 \\ 
+          -1 \amp -4 \amp 2 \amp -2
+          \end{bmatrix}
+        </me>. 
+        We now row reduce <m>[A \mid I_4]</m> to determine whether or not <m>A</m> is invertible. We find that <m>[A\mid I_4]</m> is row equivalent to 
+        <me>
+          \left[\begin{array}{@{}cccc|cccc@{}}
+          1 \amp 0 \amp 0 \amp 2 \amp 0 \amp 0 \amp 2 \amp -1 \\ 
+          0 \amp 1 \amp 0 \amp -1 \amp 0 \amp -1/5 \amp -1/5 \amp -1/5 \\ 
+          0 \amp 0 \amp 1 \amp -2 \amp 0 \amp -2/5 \amp 3/5 \amp -2/5 \\ 
+          0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 3/5 \amp -17/5 \amp 13/5
+          \end{array}\right]
+        </me>.
+        This calculation shows that <m>A</m> is not invertible.
+      </p>
+    </statement>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Consider the following matrix <m>A \in M_2(\ff_3)</m>:
+        <me>
+          A = \begin{bmatrix}
+          1 \amp 2 \\ 2 \amp 0
+          \end{bmatrix}
+        </me>.
+        We now row reduce <m>[A \mid I_2]</m>:
+        <me>
+          \left[\begin{array}{@{}cc|cc@{}}
+          1 \amp 2 \amp 1 \amp 0 \\
+          2 \amp 0 \amp 0 \amp 1
+          \end{array}\right] \sim 
+          \left[\begin{array}{@{}cc|cc@{}}
+          1 \amp 0 \amp 0 \amp 2 \\ 
+          0 \amp 1 \amp 2 \amp 2
+          \end{array}\right]
+        </me>.
+        This proves that <m>A</m> is invertible and that 
+        <me>
+          A^{-1} = \begin{bmatrix}
+          0 \amp 2 \\ 2 \amp 2
+          \end{bmatrix}
+        </me>.        
+      </p>
+    </statement>
+  </example>
+  
+</subsection>
+
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      Consider the following matrix defined over <m>\rr</m>:
+      <me>
+        A = \begin{bmatrix}
+        2 \amp 1 \\ -1 \amp -1
+        \end{bmatrix}
+      </me>.
+      Write down elementary matrices <m>E_1, \ldots, E_n</m> which reduce <m>A</m> to <m>I_2</m>. In other words, find elementary matrices <m>E_1, \ldots, E_n</m> such that <m>I_2 = E_n\cdots E_1A</m>.
+    </p>
+    <!-- <p>
+      switch rows <m>E_1 = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m>
+      multiply row 1 by <m>-1</m> <m>E_2 = \begin{bmatrix} -1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m> 
+      add <m>-2</m> times row 1 to row 2 <m>E_3 = \begin{bmatrix} 1 \amp 0 \\ -2 \amp 1 \end{bmatrix}</m> 
+      multiply row 2 by <m>-1</m> <m>E_4 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m> 
+      add <m>-2</m> times row 2 to row 1 <m>E_5 = \begin{bmatrix} 1 \amp -1 \\ 0 \amp 1 \end{bmatrix}</m> 
+      <m>I_2 = E_5E_4E_3E_2E_1A</m>
+    </p> -->
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Consider the following matrix defined over <m>\ff_5</m>:
+    <me>
+      A = \begin{bmatrix}
+      4 \amp 0 \amp 4 \\ 
+      3 \amp 3 \amp 1 \\ 
+      1 \amp 0 \amp 3
+      \end{bmatrix}
+    </me>.
+    Determine whether or not <m>A</m> is invertible. Explain your answer. If <m>A</m> is invertible, find the inverse.
+  </p>
+  <!-- <p>
+    Yes, invertible. Inverse is <m>\begin{bmatrix} 1 \amp 0 \amp 2 \\ 3 \amp 2 \amp 2 \\ 3 \amp 0 \amp 3 \end{bmatrix{</m>
+  </p> -->
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following matrices <m>A</m>, find the RREF of <m>A</m> (call it <m>B</m>), and elementary matrices <m>E_1, \ldots, E_k</m> such that <m>B = E_k \cdots E_1 A</m>.
+        <ol>
+          <li>
+            <p>
+              <m>A \in M_{2,3}(\rr)</m>: 
+              <me>
+                A = \begin{bmatrix}
+                -4 \amp 6 \amp 1 \\ -5 \amp 2 \amp -1
+                \end{bmatrix}
+              </me>              
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A \in M_2(\ff_5)</m>: 
+              <me>
+                A = \begin{bmatrix} 
+                1 \amp 4 \\ 3 \amp 0 
+                \end{bmatrix}
+              </me>              
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A \in M_2(\cc)</m>: 
+              <me>
+                A = \begin{bmatrix} 
+                -1-i \amp -3 \\ -3 \amp 2-3i 
+                \end{bmatrix}
+              </me>              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following matrices <m>A</m>, find the RREF of <m>A</m> (call it <m>B</m>), and elementary matrices <m>E_1, \ldots, E_k</m> such that <m>B = E_k \cdots E_1 A</m>.
+        <ol>
+          <li>
+            <p>
+              <m>A \in M_3(\rr)</m>: 
+              <me>
+                A = \begin{bmatrix} 
+                3 \amp 2 \amp -2 \\ 2 \amp -3 \amp 1 \\ -2 \amp -2 \amp 0 
+                \end{bmatrix}
+              </me>              
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A \in M_3(\ff_3)</m>: 
+              <me>
+                A = \begin{bmatrix} 
+                1 \amp 1 \amp 2 \\ 1 \amp 1 \amp 1 \\ 0 \amp 1 \amp 1 
+                \end{bmatrix}
+              </me>              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following matrices <m>A</m> in <m>M_3(\rr)</m>, determine whether or not <m>A</m> is invertible using the algorithm from this section. In the cases where <m>A</m> is invertible, find the inverse.
+        <ol>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix} 
+                -5 \amp -5 \amp 20 \\ 4 \amp -4 \amp 32 \\ 0 \amp -1 \amp 6
+                \end{bmatrix}
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix} 
+                -1 \amp -1 \amp -6 \\ -3 \amp 0 \amp -5 \\ 3 \amp 6 \amp 5
+                \end{bmatrix}
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following matrices <m>A</m> in <m>M_3(\ff_5)</m>, determine whether or not <m>A</m> is invertible using the algorithm from this section. In the cases where <m>A</m> is invertible, find the inverse.
+        <ol>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix} 
+                4 \amp 3 \amp 0 \\ 2 \amp 3 \amp 1 \\ 2 \amp 4 \amp 3 
+                \end{bmatrix}
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix} 
+                0 \amp 3 \amp 4 \\ 4 \amp 0 \amp 4 \\ 4 \amp 3 \amp 3 
+                \end{bmatrix} 
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Use an inverse matrix to solve the following linear system over <m>\ff_3</m>: 
+        <md>
+          <mrow>x+2y \amp = 1</mrow>
+          <mrow>x+y \amp = 2</mrow>
+        </md>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Use an inverse matrix to solve the following linear system over <m>\ff_5</m>:
+        <md>
+          <mrow>2x + 4y \amp = 1</mrow>
+          <mrow>x + 3y \amp = 4</mrow>
+        </md>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Use an inverse matrix to solve the following linear system over <m>\rr</m>: 
+        <md>
+          <mrow>-4x + 2y + 4z \amp = 1</mrow>
+          <mrow>-2x + y -6z \amp = -2</mrow>
+          <mrow>-3x - y + 2z \amp = 3</mrow>
+        </md>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>AB=AC</m>, where <m>B</m> and <m>C</m> are <m>n\times p</m> matrices. 
+        <ol>
+          <li>
+            <p>
+              Show that if <m>A</m> is invertible, then <m>B=C</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Provide an example where <m>A</m> is not invertible and <m>B \neq C</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>(B-C)D=0</m>, where <m>B</m> and <m>C</m> are <m>m\times n</m> matrices. 
+        <ol>
+          <li>
+            <p>
+              Show that if <m>D</m> is invertible, then <m>B=C</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Provide an example where <m>D</m> is not invertible and <m>B \neq C</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exer-invertible-product">
+    <statement>
+      <p>
+        Suppose that <m>A</m> and <m>B</m> are <m>n\times n</m> matrices and that <m>AB</m> is invertible. Prove that <m>A</m> is invertible. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>A \in M_n(\ff)</m> is upper triangular and invertible. (A matrix is <term>upper triangular</term> when all entries below the main diagonal are <m>0</m>.) Prove that <m>A^{-1}</m> is also upper triangular. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        How many matrices in <m>M_2(\ff_2)</m> are invertible? What proportion of the matrices in <m>M_2(\ff_2)</m> are invertible?
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        How many matrices in <m>M_2(\ff_3)</m> are invertible? What proportion of the matrices in <m>M_2(\ff_3)</m> are invertible?
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="thm-el-matrices-action"/>. (You will need three cases.)
+      </p>
+    </statement>
+  </exercise>
+  <!-- <exercise>
+    <statement>
+      <p>
+        prop 2.27 in Meckes about one-sided inverses
+      </p>
+    </statement>
+  </exercise> -->
+</exercises> 
+
+
+</section>

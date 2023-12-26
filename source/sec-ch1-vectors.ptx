@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vectors</title>
+  <introduction>
+    <p>
+      Up to this point in the chapter, we have been concerned with solving systems of linear equations, and we have used the tool of matrices to great effect. In this section we will connect linear systems to some basic geometric concepts, and this will result in alternate ways of writing linear systems which, at times, will be more helpful.
+    </p>
+  </introduction>
+<subsection xml:id="subsec-vector-basics">
+  <title>The Basics of Vectors</title>
+  <p>
+    Although we will shortly connect <q>vectors</q> to geometric notions, at the beginning a vector will be strictly an algebraic object.
+  </p>
+
+  <definition xml:id="def-vector">
+    <statement>
+      <p>
+        An <term><m>n</m>-dimensional vector</term> over <m>\rr</m> is an ordered list of <m>n</m> real numbers. We will adopt the convention that, unless stated otherwise, vectors are column vectors written in this form:
+        <me>
+          \bfv = \begin{bmatrix}
+          v_1 \\ v_2 \\ \vdots \\ v_n
+          \end{bmatrix}
+        </me>,
+        where <m>v_i \in \rr</m> for all <m>i</m>. (Column vectors are therefore matrices with a single column.) The set of all <m>n</m>-dimensional vectors over <m>\rr</m> is denoted <m>\rr^n</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <note xml:id="note-equal-vect">
+    <p>
+      We say that two vectors <m>\bfu</m> and <m>\bfv</m> in <m>\rr^n</m> are equal if <m>u_i=v_i</m> for each <m>i=1,\ldots,n</m>. This means that an equation involving vectors in <m>\rr^n</m> captures the same information as <m>n</m> equations involving real numbers.
+    </p>
+  </note>
+
+  <p>
+    As we have said, vectors should be thought of first as algebraic objects, and there are several ways to combine these objects.
+  </p>
+
+  <definition xml:id="def-vectors-algebra">
+    <statement>
+      <p>
+        We can combine and modify vectors through addition and a form of multiplication. We will describe the multiplication first.
+      </p>
+      <p>
+        Let <m>\bfv \in \rr^n</m> have the form
+        <me>
+          \bfv = \left[ \begin{array}{c}
+          v_1 \\ v_2 \\ \vdots \\ v_n
+          \end{array} \right]
+        </me>,
+        and let <m>c \in \rr</m>. Then the <term>scalar multiple</term> of <m>\bfv</m> by <m>c</m> is the vector <m>c\bfv</m> in <m>\rr^n</m> obtained by multiplying each entry of <m>\bfv</m> by <m>c</m>; that is,
+        <me>
+          c\bfv = \left[ \begin{array}{c}
+          cv_1 \\ cv_2 \\ \vdots \\ cv_n
+          \end{array} \right]
+        </me>.
+        In this context, we will often refer to real numbers as <term>scalars</term>.
+      </p>
+      <p>
+        If <m>\bfu</m> and <m>\bfv</m> are vectors in <m>\rr^n</m> with the form
+        <me>
+          \bfu = \left[ \begin{array}{@{}c@{}}
+          u_1 \\ u_2 \\ \vdots \\ u_n
+          \end{array} \right] \hspace{.3in} \text{and} \hspace{.3in}
+          \bfv = \left[ \begin{array}{c}
+          v_1 \\ v_2 \\ \vdots \\ v_n
+          \end{array} \right]
+        </me>,
+        then the <term>sum</term> of <m>\bfu</m> and <m>\bfv</m> is the vector <m>\bfu + \bfv</m> in <m>\rr^n</m> obtained by adding the corresponding entries in <m>\bfu</m> and <m>\bfv</m>. That is,
+        <me>
+          \bfu+\bfv = \left[ \begin{array}{c}
+          u_1+v_1 \\ u_2+v_2 \\ \vdots \\ u_n+v_n
+          \end{array} \right]
+        </me>.
+      </p>
+    </statement>
+  </definition>
+
+<note xml:id="note-special-vectors">
+  <p>
+    We will use the notation <m>\mathbf{0}</m> to denote the <term>zero vector</term><mdash />that is, the vector in <m>\rr^n</m> whose entries are all <m>0</m>. We will also use the notation <m>-\bfu</m> to indicate the scalar multiple <m>(-1)\bfu</m>.
+  </p>
+</note>
+
+<p>
+  We present some quick calculations in the following example.
+</p>
+
+  <example xml:id="ex-vector-sum">
+    <statement>
+      <p>
+        Let <m>\bfu \in \rr^2</m> and let <m>\bfv, \bfw \in \rr^3</m> such that
+        <me>
+          \bfu = \left[\begin{array}{@{}c@{}}
+            -3 \\ 5
+          \end{array}\right], \hspace{.3in}
+          \bfv = \left[\begin{array}{@{}c@{}}
+            2 \\ 1 \\ -4
+          \end{array}\right], \hspace{.3in}
+          \bfw = \left[\begin{array}{@{}c@{}}
+            -6 \\ -3 \\ 3
+          \end{array}\right]
+        </me>.
+        Then we can calculate <m>2\bfu</m> and <m>\bfv + \bfw</m> using <xref ref="def-vectors-algebra"/>:
+        <me>
+          2\bfu = \left[\begin{array}{@{}c@{}}
+            -6 \\ 10
+          \end{array}\right], \hspace{.3in}
+          \bfv+\bfw = \left[\begin{array}{@{}c@{}}
+            -4 \\ -2 \\ -1
+          \end{array}\right]
+        </me>.
+        </p>
+    </statement>
+  </example>
+
+<p>
+  When combining vectors, we are limited to adding vectors of the same dimension<mdash />that is, vectors with the same number of entries. However, we are not limited to either addition <em>or</em> scalar multiplication; we can certainly do both at once. Nor are we limited to adding only two vectors at a time. The following definition provides the correct generalization.
+</p>
+
+<definition xml:id="def-lin-comb-span">
+  <statement>
+    <p>
+      Let <m>c_1, c_2, \ldots, c_m</m> be real numbers and let <m>\bfv_1, \bfv_2, \ldots, \bfv_m \in \rr^n</m>. Then the <term>linear combination</term> of the vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_m </m> with <term>weights</term> <m>c_1, c_2, \ldots, c_m</m> is
+      <me>
+        c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m
+      </me>.
+    </p>
+    <p>
+    The <term>span</term> of the vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_m</m> is the set of all possible linear combinations of <m>\bfv_1, \bfv_2, \ldots, \bfv_m</m> and is written <m>\spn\{\bfv_1, \ldots, \bfv_m\}</m>. In other words, the span is defined to be
+    <me>
+      \spn\{\bfv_1,\ldots,\bfv_m\} = \left\{ \sum_{i=1}^m c_i\bfv_i \mid c_1,\ldots,c_m \in \rr \right\}
+    </me>.
+    </p>
+  </statement>
+</definition>
+
+<example>
+  <statement>
+    <p>
+      Taking <m>\bfv</m> and <m>\bfw</m> from <xref ref="ex-vector-sum"/>, we can calculate the linear combination of these vectors with weights <m>2</m> and <m>-1</m>:
+      <me>
+        2\bfv - \bfw = \left[\begin{array}{@{}c@{}}
+        4 \\ 2 \\ -8
+        \end{array}\right] +
+        \left[\begin{array}{@{}c@{}}
+          6 \\ 3 \\ -3
+        \end{array}\right] =
+        \left[\begin{array}{@{}c@{}}
+          10 \\ 5 \\ -11
+        \end{array}\right]
+      </me>.
+    </p>
+  </statement>
+</example>
+
+<note xml:id="note-intro-matrix-ops">
+  <p>
+    We have defined addition and scalar multiplication for vectors here, but these concepts also make sense for matrices. We will set the stage briefly here for a return in <xref ref="sec-vector-spaces"/>. 
+  </p>
+  <p>
+    If we think of an <m>m\times n</m> matrix <m>A</m> in terms of its columns, then the <m>n</m> columns of <m>A</m> are all vectors in <m>\rr^m</m>. For two <m>m\times n</m> matrices <m>A</m> and <m>B</m>, we define the sum <m>A + B</m> in this way: column <m>j</m> of <m>A + B</m> is the sum of the two vectors in <m>\rr^m</m> which are the <m>j</m>th columns of <m>A</m> and <m>B</m>. Similarly, if <m>c \in \rr</m>, then we can define the scalar multiple <m>cA</m> in terms of its columns: column <m>j</m> of <m>cA</m> is the scalar multiple of the <m>j</m>th column of <m>A</m> by <m>c</m>. In this way these algebraic notions for matrices are built upon the corresponding notions for vectors.
+  </p>
+  <p>
+    We include two initial calculations as examples. If <m>A</m> and <m>B</m> are defined as
+    <me>
+      A = \begin{bmatrix} 2 \amp -1 \amp 0 \\ 
+      3 \amp 4 \amp -5 \end{bmatrix}, \hspace{.3in}
+      B = \begin{bmatrix} -3 \amp 2 \amp 7 \\ 
+      0 \amp -4 \amp 4 \end{bmatrix}
+    </me>,
+    then we have 
+    <me>
+      A + B = \begin{bmatrix} -1 \amp 1 \amp 7 \\ 
+      3 \amp 0 \amp -1 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt} 
+      -2A = \begin{bmatrix} -4 \amp 2 \amp 0 \\ 
+      -6 \amp -8 \amp 10 \end{bmatrix}
+    </me>.    
+  </p>
+  <p>
+    We finally note that, as with vectors, the sum (and thus the linear combination) of two or more matrices only makes sense if all involved matrices are of the same size.
+  </p>
+</note>
+
+<p>
+  Before we explore the concept of span, we need to discuss the connection between systems of linear equations and vector equations. We saw a glimpse of this connection in <xref ref="note-equal-vect"/>, and we will develop it further here.
+</p>
+
+<p>
+  Let us consider the following simple linear system:
+  <men xml:id="lin-sys-1">
+    \begin{aligned}
+    3x_1 - 8x_2 \amp =9 \\
+    -2x_1+5x_2 \amp =-1.
+    \end{aligned}
+  </men>
+  Solving this linear system involves (as always) investigating whether there are values of <m>x_1</m> and <m>x_2</m> which satisfy both of these equations simultaneously. We will now arrive at this same question from a different angle.
+</p>
+
+<p>
+  Let's consider the following three vectors in <m>\rr^2</m>:
+  <me>
+    \bfu = \left[\begin{array}{@{}c@{}}
+      3 \\ -2
+    \end{array}\right], \hspace{.3in}
+    \bfv = \left[\begin{array}{@{}c@{}}
+      -8 \\ 5
+    \end{array}\right], \hspace{.3in} \text{and} \hspace{.3in}
+    \bfw = \left[\begin{array}{@{}c@{}}
+      9 \\ -1
+    \end{array}\right]
+  </me>.
+  Since all of these vectors are in <m>\rr^2</m>, we can ask this question: Can <m>\bfw</m> be written as a linear combination of <m>\bfu</m> and <m>\bfv</m>? (This question is equivalent to asking if <m>\bfw</m> belongs to <m>\spn\{\bfu,\bfv\}</m>.) In other words, do there exist scalars <m>x_1</m> and <m>x_2</m> such that <m>x_1\bfu + x_2\bfv = \bfw</m>?
+</p>
+
+<p>
+  The equation in this final question is equivalent to other vector equations:
+  <md>
+    <mrow>x_1\bfu + x_2\bfv \amp =\bfw</mrow>
+    <mrow>x_1 \left[\begin{array}{@{}c@{}}
+      3 \\ -2
+    \end{array}\right] + x_2 \left[\begin{array}{@{}c@{}}
+      -8 \\ 5
+    \end{array}\right] \amp = \left[\begin{array}{@{}c@{}}
+      9 \\ -1
+    \end{array}\right] </mrow>
+    <mrow> \left[\begin{array}{@{}c@{}}
+      3x_1 \\ -2 x_1
+    \end{array}\right] + \left[\begin{array}{@{}c@{}}
+      -8x_2 \\ 5x_2
+    \end{array}\right] \amp = \left[\begin{array}{@{}c@{}}
+      9 \\ -1
+    \end{array}\right] </mrow>
+    <mrow> \left[\begin{array}{@{}c@{}}
+      3x_1 - 8x_2 \\ -2x_1 + 5x_2
+    \end{array}\right] \amp = \left[\begin{array}{@{}c@{}}
+      9 \\ -1
+    \end{array}\right] </mrow>
+  </md>.
+  Because of <xref ref="note-equal-vect"/>, this last vector equation is equivalent to the linear system in <xref ref="lin-sys-1"/>.
+</p>
+
+<example xml:id="vect-eqn-ex">
+  <statement>
+    <p>
+      Consider the following vectors in <m>\rr^3</m>:
+      <me>
+        \bfv_1 = \left[\begin{array}{@{}c@{}}
+          0 \\ 2 \\ -1
+        \end{array}\right], \hspace{.3in}
+        \bfv_2 = \left[\begin{array}{@{}c@{}}
+          3 \\ -2 \\ 4
+        \end{array}\right], \hspace{.3in} \text{and} \hspace{.3in}
+        \bfv_3 = \left[\begin{array}{@{}c@{}}
+          5 \\ -3 \\ 1
+        \end{array}\right]
+      </me>.
+      Is <m>\bfv_3</m> in <m>\spn\{\bfv_1,\bfv_2\}</m>?
+    </p>
+    <p>
+      We have written this question in terms of a vector equation, but by the previous discussion we should be able to translate this question to a more familiar one about solutions to linear systems and answer the question using <xref ref="alg-solving-system"/>.
+    </p>
+    <p>
+      The question about vectors is the same as asking if this linear system is consistent:
+      <md>
+        <mrow>3x_2 \amp =5</mrow>
+        <mrow>2x_1-2x_2 \amp =-3</mrow>
+        <mrow> -x_1+4x_2 \amp =1</mrow>
+      </md>.
+      The augmented matrix for this system is
+        <me>
+          \left[\begin{array}{@{}cc|c@{}}
+            0 \amp 3 \amp 5 \\
+            2 \amp -2 \amp -3 \\
+            -1 \amp 4 \amp 1
+          \end{array}\right]
+        </me>,
+      and the RREF of this matrix is
+      <me>
+        \left[\begin{array}{@{}cc|c@{}}
+          1 \amp 0 \amp 0 \\
+          0 \amp 1 \amp 0 \\
+          0 \amp 0 \amp 1
+        \end{array}\right]
+      </me>.
+      Since there is a pivot in the final column of this matrix, we conclude (by invoking <xref ref="thm-consistent-system"/>) that the linear system is inconsistent. This means that the answer to the original question is no, <m>\bfv_3</m> is not in <m>\spn\{\bfv_1,\bfv_2\}</m>.
+    </p>
+  </statement>
+</example>
+
+<p>
+  <xref ref="vect-eqn-ex"/> illustrates a general workflow for questions like this. There is no need to explicitly write out the intermediate step involving linear systems; instead, we can form a matrix using the given vectors as the appropriate columns, row reduce the matrix, and answer the question.
+</p>
+
+<p>
+  Combining vectors in <m>\rr^n</m> is already (or soon will be) fairly natural for readers of this chapter. Under the operations of scalar multiplication and addition, vectors in <m>\rr^n</m> have some useful properties, which we record in the following fact. We will not spend time with these properties now, but we will look at them intently in <xref ref="sec-vector-spaces"/>. These properties can all be verified using the corresponding properties of addition and multiplication of real numbers. (And the fact that real numbers have these properties is <em>essential</em>!)
+</p>
+
+<fact xml:id="fact-alg-props-vectors-rn">
+  <statement>
+    <p>
+      For all vectors <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m> in <m>\rr^n</m>, and for all real numbers <m>c</m> and <m>d</m>, the following properties hold.
+      <ol>
+        <li>
+          <m>\bfu + \bfv = \bfv + \bfu</m>
+        </li>
+        <li>
+          <m>(\bfu + \bfv) + \bfw = \bfu + (\bfv+\bfw)</m>
+        </li>
+        <li>
+          <m>\bfu + \mathbf{0} = \mathbf{0}+\bfu = \bfu</m>
+        </li>
+        <li>
+          <m>\bfu + (-\bfu) = (-\bfu) + \bfu = \mathbf{0}</m>
+        </li>
+        <li>
+          <m>c(\bfu+\bfv) = c\bfu + c\bfv</m>
+        </li>
+        <li>
+          <m>(c+d)\bfu = c\bfu + d\bfu</m>
+        </li>
+        <li>
+          <m>c(d\bfu) = (cd)\bfu</m>
+        </li>
+        <li>
+          <m>1\bfu = \bfu</m>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</fact>
+
+<p>
+  Thinking about linear systems through the lens of vectors also brings some structure to the solutions to consistent linear systems. When a linear system is consistent and the solution is unique, we have recorded this in terms of the variables involved. For example, we recorded the solution to the linear system in <xref ref="examp-lin-system-use-alg"/> as <m>x = -1/9</m>, <m>y = 4/3</m>, and <m>z = 2/9</m>. However, if we think of these variables as forming a vector in <m>\rr^3</m>, then we can record the solution this way: 
+  <me>
+    \bfx = \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} -1/9 \\ 4/3 \\ 2/9 \end{bmatrix}
+  </me>.  
+</p>
+
+<p>
+  Similarly, when a consistent system does not have a unique solution, we can again use vector notation. (This would replace the parametric description of the solution set we presented in <xref ref="ex-matrix-inf-solns"/>.) In <xref ref="ex-matrix-inf-solns"/> we considered such a linear system. The solution set can now be written this way: 
+  <me>
+    \bfx = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 5 + 3x_3 \\ 7 - 2x_3 \\ x_3 \end{bmatrix} = \begin{bmatrix} 5 \\ 7 \\ 0 \end{bmatrix} + x_3 \begin{bmatrix} 3 \\ -2 \\ 1 \end{bmatrix}
+  </me>.
+  If we label the vectors <m>\bfv</m> and <m>\bfw</m> as 
+  <me>
+    \bfv = \begin{bmatrix} 5 \\ 7 \\ 0 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
+    \bfw = \begin{bmatrix} 3 \\ -2 \\ 1 \end{bmatrix}
+  </me>,
+  then all solutions to this system can be written as <m>\bfv + t\bfw</m>, where <m>t</m> can be any real number. As we learn more about the geometric interpretations of the solutions to linear systems, this phrasing in terms of vectors will be useful.
+</p>
+
+</subsection>
+
+<subsection xml:id="subsec-geometry-vectors">
+  <title>Vectors and Geometry</title>
+  <p>
+    Before we leave this chapter, we need to introduce the connection between vectors and geometry. Readers who have taken multivariable calculus are likely aware of some of these concepts. For the sake of simplicity, we will restrict most of our discussion (and all of our illustrations) to <m>\rr^2</m> in this section.
+  </p>
+
+  <p>
+    We will visualize a vector <m>\bfv = \left[\begin{array}{@{}c@{}}
+      a \\ b
+    \end{array}\right]</m> by identifying it with the point <m>(a,b)</m> in the plane. We will draw an arrow from the origin to <m>(a,b)</m> to aid this visualization. So, for example, the vectors <m>\bfu = \left[\begin{array}{@{}c@{}}
+      1 \\ -2
+    \end{array}\right]</m> and <m>\bfv = \left[\begin{array}{@{}c@{}}
+      -3 \\ 1
+    \end{array}\right]</m> would be visualized in the following picture.
+  </p>
+
+  <figure>
+    <caption>Illustration of two vectors in the plane</caption>
+    <image xml:id="two-vectors" width="50%">
+      <description>Drawing of the vectors u and v in the plane</description>
+    <latex-image>
+      \begin{tikzpicture}
+      \begin{axis}[axis lines=center, x=.75cm, y=.75cm, xmin=-4,ymin=-3,xmax=4,ymax=3,
+        axis line style = {line width=1pt, color=lightgray,Stealth-Stealth}, %xlabel={$x$}, ylabel={$y$},
+        label style={font=\scriptsize},tick label style={font=\scriptsize}, major tick length=4pt, xtick align=outside,
+        ytick align=outside,
+        xtick={-3,-2,...,3}, ytick={-2,-1,...,2}]
+        %\addplot[domain=-1:3.25, line width=1pt,Stealth-Stealth]{x-1};
+        %\addplot[domain=-1:3.25, line width=1pt,Stealth-Stealth]{5-2*x};
+        \node[above] at (-3,1) {\scriptsize $\bfv$};
+        \node[right] at (1,-2) {\scriptsize $\bfu$};
+        \draw[line width=1pt,color=blue,-Stealth] (0,0) --  (1,-2);
+        \draw[line width=1pt,color=red,-Stealth] (0,0) --  (-3,1);
+      \end{axis}
+      \end{tikzpicture}
+    </latex-image>
+    </image>
+  </figure>
+
+<p>
+  Scalar multiplication of a vector can be seen as stretching or contracting the vector, if the scalar is positive. If the scalar is negative, the vector will be pointing in the opposite direction, then stretched or contracted. Here is an example using the vector <m>\bfv</m> previously defined.
+</p>
+
+<figure>
+  <caption>Illustration of scalar multiplication</caption>
+  <image xml:id="scalar-mult" width="50%">
+    <description>Drawing of the vector v scaled by one, one half, and negative one</description>
+    <latex-image>
+      \begin{tikzpicture}
+      \begin{axis}[axis lines=center, x=.75cm, y=.75cm, xmin=-4,ymin=-3,xmax=4,ymax=3,
+        axis line style = {line width=1pt, color=lightgray,Stealth-Stealth}, %xlabel={$x$}, ylabel={$y$},
+        label style={font=\scriptsize},tick label style={font=\scriptsize}, major tick length=4pt, xtick align=outside,
+        ytick align=outside,
+        xtick={-3,-2,...,3}, ytick={-2,-1,...,2}]
+        %\addplot[domain=-1:3.25, line width=1pt,Stealth-Stealth]{x-1};
+        %\addplot[domain=-1:3.25, line width=1pt,Stealth-Stealth]{5-2*x};
+        \node[above] at (-3,1) {\scriptsize $\bfv$};
+        \node[above] at (-1.5,.5) {\scriptsize $\tfrac{1}{2}\bfv$};
+        \node[below] at (3,-1) {\scriptsize $-\bfv$};
+        %\node[right] at (1,-2) {\scriptsize $\bfu$};
+        %\draw[line width=1pt,color=blue,-Stealth] (0,0) --  (1,-2);
+        \draw[line width=1pt,color=red,-Stealth] (0,0) --  (-3,1);
+        \draw[line width=1pt,color=blue,-Stealth] (0,0) --  (-1.5,.5);
+        \draw[line width=1pt,color=green,-Stealth] (0,0) --  (3,-1);
+      \end{axis}
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+</figure>
+
+<p>
+  Addition of vectors is also easy to visualize. To add two vectors, move the second vector from the origin so that its beginning coincides with the end of the first vector. The vector sum can be represented by the arrow from the origin to the end of this relocated second vector. (The dashed arrow in the following diagram is the relocated vector <m>\bfv</m>.)
+</p>
+
+<figure>
+  <caption>Illustration of vector addition</caption>
+  <image xml:id="vector-sum" width="50%">
+    <description>Drawing of the sum of vectors u and v</description>
+    <latex-image>
+      \begin{tikzpicture}
+      \begin{axis}[axis lines=center, x=.75cm, y=.75cm, xmin=-4,ymin=-3,xmax=4,ymax=3,
+        axis line style = {line width=1pt, color=lightgray,Stealth-Stealth}, %xlabel={$x$}, ylabel={$y$},
+        label style={font=\scriptsize},tick label style={font=\scriptsize}, major tick length=4pt, xtick align=outside,
+        ytick align=outside,
+        xtick={-3,-2,...,3}, ytick={-2,-1,...,2}]
+        \node[above] at (-3,1) {\scriptsize $\bfv$};
+        \node[below] at (-1.1,-1.4) {\scriptsize $\bfv$};
+        \node[right] at (1,-2) {\scriptsize $\bfu$};
+        \node[left] at (-2,-1) {\scriptsize $\bfu+\bfv$};
+        \draw[line width=1pt,color=blue,-Stealth] (0,0) --  (1,-2);
+        \draw[line width=1pt,color=red,-Stealth] (0,0) --  (-3,1);
+        \draw[line width=1pt,color=red,dashed,-Stealth] (1,-2) --  (-2,-1);
+        \draw[line width=1pt,color=black,-Stealth] (0,0) --  (-2,-1);
+        %\draw[line width=.6pt,color=black] (-1,0.25) -- (-.75,-.2);
+      \end{axis}
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+</figure>
+
+<p>
+  We can put these previous two ideas together to explain the way to visualize linear combinations (and spans). Let's consider the vectors <m>\bfu</m> and <m>\bfv</m> as previously defined, and we will also define <m>\bfw</m> as <m>\bfw = \left[\begin{array}{@{}c@{}}
+    2 \\ 2   \end{array}\right]</m>.
+</p>
+
+<p>
+  When we ask whether <m>\bfw</m> is in <m>\spn\{\bfu,\bfv\}</m>, this is the same as asking whether we can form <m>\bfw</m> as a linear combination of <m>\bfu</m> and <m>\bfv</m>. We answer this question by forming a matrix with the appropriate columns and row reducing. We find the matrix
+  <me>
+    \left[\begin{array}{@{}cc|c@{}}
+      \bfu \amp \bfv \amp \bfw
+    \end{array}\right] = \left[\begin{array}{@{}cc|c@{}}
+      1 \amp -3 \amp 2 \\
+      -2 \amp 1 \amp 2
+    \end{array}\right]
+  </me>,
+  and the RREF of this matrix is
+  <me>
+    \left[\begin{array}{@{}cc|c@{}}
+      1 \amp 0 \amp -1.6 \\
+      0 \amp 1 \amp -1.2
+    \end{array}\right]
+  </me>.
+  This tells us that <m>\bfw</m> <em>is</em> in the span of <m>\bfu</m> and <m>\bfv</m>, and that
+  <me>
+    \bfw = -1.6\bfu - 1.2\bfv
+  </me>.
+  Here is the picture illustrating this.
+</p>
+
+<figure>
+  <caption>Illustration of a linear combination</caption>
+  <image xml:id="linear-comb" width="50%">
+    <description>Drawing of w as a linear combination of u and v</description>
+    <latex-image>
+      \begin{tikzpicture}
+      \begin{axis}[axis lines=center, x=.75cm, y=.75cm, xmin=-4,ymin=-2,xmax=4,ymax=4,
+        axis line style = {line width=1pt, color=lightgray,Stealth-Stealth}, %xlabel={$x$}, ylabel={$y$},
+        label style={font=\scriptsize},tick label style={font=\scriptsize}, major tick length=4pt, xtick align=outside,
+        ytick align=outside,
+        xtick={-3,-2,...,3}, ytick={-1,0,...,3}]
+        \node[above] at (2,2) {\scriptsize $\bfw$};
+        \node[left] at (-1.6,3.2) {\scriptsize $-1.6\bfu$};
+        \node[below left] at (3.6,-1.2) {\scriptsize $-1.2\bfv$};
+        \node[above] at (1,2.5) {\scriptsize $-1.2\bfv$};
+        \draw[line width=1pt,color=blue,-Stealth] (0,0) --  (-1.6,3.2);
+        \draw[line width=1pt,color=red,-Stealth] (0,0) --  (3.6,-1.2);
+        \draw[line width=1pt,color=red,dashed,-Stealth] (-1.6,3.2) --  (2,2);
+        \draw[line width=1pt,color=black,-Stealth] (0,0) --  (2,2);
+        %\draw[line width=.6pt,color=black] (-1,0.25) -- (-.75,-.2);
+      \end{axis}
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+</figure>
+
+<p>
+  The reader may be able to see that no matter what vector <m>\bfw</m> in <m>\rr^2</m> was chosen in this last instance, that vector would be in <m>\spn\{\bfu,\bfv\}</m>. (This means that <m>\spn\{\bfu,\bfv\}=\rr^2</m>.) This has everything to do with the relationship between <m>\bfu</m> and <m>\bfv</m>.
+</p>
+
+<p>
+  We will discuss this more carefully in <xref ref="ch-dimension"/>, but this brief comment will suffice for now. As long as <m>\bfu \neq \mathbf{0}</m> in <m>\rr^2</m>, then <m>\spn\{\bfu\}</m> is a line through the origin. (Remember that the span in this case consists of <em>all</em> multiples of <m>\bfu</m>.) Similarly, as long as neither <m>\bfu</m> nor <m>\bfv</m> is a multiple of the other vector, then <m>\spn\{\bfu,\bfv\}</m> is <em>all of</em> <m>\rr^2</m>. (If we were talking about vectors in <m>\rr^3</m> instead of <m>\rr^2</m> this span would be a plane through the origin.)
+</p>
+
+</subsection>
+
+<reading-questions>
+<exercise>
+  <statement>
+    <p>
+      Let <m>\bfu</m> and <m>\bfv</m> be the following vectors:
+      <me>
+        \bfu = \left[\begin{array}{@{}c@{}}
+        2 \\ -7 \\ 4   \end{array}\right], \hspace{.3in}
+        \bfv = \left[\begin{array}{@{}c@{}}
+        3 \\ 1 \\ -1   \end{array}\right]
+      </me>.
+      Calculate each of the following vectors.
+      <ol>
+        <li>
+          <p>
+            <m>-2\bfu</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\bfu - \bfv</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3\bfu - 4\bfv</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <!-- <solution>
+    <p>
+
+    </p>
+  </solution> -->
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m> be the following vectors:
+      <me>
+        \bfu = \left[\begin{array}{@{}c@{}}
+        2 \\ 0 \\ -1   \end{array}\right], \hspace{.3in}
+        \bfv = \left[\begin{array}{@{}c@{}}
+        -1 \\ 2 \\ 3   \end{array}\right], \hspace{.3in}
+        \bfw = \left[\begin{array}{@{}c@{}}
+        1 \\ 1 \\ 5   \end{array}\right]
+      </me>.
+      Is the vector 
+      <me>
+        \left[\begin{array}{@{}c@{}}
+        7 \\ -1 \\ 8   \end{array}\right]
+      </me>
+      in <m>\mathrm{Span}\{\bfu,\bfv,\bfw\}</m>? Explain your answer using techniques from this section. (See especially <xref ref="vect-eqn-ex"/>.)
+    </p>
+  </statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Write a linear system that is equivalent to the following vector equation:
+        <me>
+          x\begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix} + y\begin{bmatrix} 0 \\ -3 \\ 1 \end{bmatrix} = \begin{bmatrix} 7 \\ -1 \\ -1 \end{bmatrix}.
+        </me>        
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Write a vector equation that is equivalent to the following linear system:
+        <md>
+          <mrow>2x - 5z \amp = 9</mrow>
+          <mrow>x + 3y + z \amp = -1</mrow>
+          <mrow>-y - 7z \amp = 0</mrow>
+        </md>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\bfu</m> and <m>\bfv</m> be the following vectors:
+        <me>
+          \bfu = \begin{bmatrix}
+          -1 \\ 2 \\ 4
+          \end{bmatrix}, \hspace{.2in}
+          \bfv = \begin{bmatrix}
+          3 \\ 1 \\ -2
+          \end{bmatrix}
+        </me>.
+        List five vectors in <m>\mathrm{Span}\{\bfu, \bfv\}</m>. For each vector, write down the specific linear combination of <m>\bfu</m> and <m>\bfv</m> used to generate the vector.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Describe all possible ways of writing <m>\begin{bmatrix} -1 \\ 1 \end{bmatrix}</m> as a linear combination of <m>\begin{bmatrix} 2 \\ 3 \end{bmatrix}</m>, <m>\begin{bmatrix} -1 \\ 0 \end{bmatrix}</m>, and <m>\begin{bmatrix} 4 \\ 1 \end{bmatrix}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following, determine whether <m>\mathbf{b}</m> is a linear combination of <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m>. Explain your answer.
+        <ol>
+          <li>
+            <p>
+              <me>
+                \bfu = \begin{bmatrix}
+                1 \\ 1 \\ 0
+                \end{bmatrix}, \hspace{.15in}
+                \bfv = \begin{bmatrix}
+                2 \\ -1 \\ -3
+                \end{bmatrix}, \hspace{.15in}
+                \bfw = \begin{bmatrix}
+                5 \\ -4 \\ -2
+                \end{bmatrix}, \hspace{.15in}
+                \mathbf{b} = \begin{bmatrix}
+                6 \\ 1 \\ 0
+                \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>
+                \bfu = \begin{bmatrix}
+                2 \\ 3 \\ -1
+                \end{bmatrix}, \hspace{.15in}
+                \bfv = \begin{bmatrix}
+                5 \\ -1 \\ -2
+                \end{bmatrix}, \hspace{.15in}
+                \bfw = \begin{bmatrix}
+                7 \\ 2 \\ -3
+                \end{bmatrix}, \hspace{.15in}
+                \mathbf{b} = \begin{bmatrix}
+                10 \\ -1 \\ 4
+                \end{bmatrix}                
+              </me>              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\bfu</m>, <m>\bfv</m>, and <m>\mathbf{b}</m> be the following vectors:
+        <me>
+          \bfu = \begin{bmatrix}
+          1 \\ 3 \\ -2
+          \end{bmatrix}, \hspace{.2in}
+          \bfv = \begin{bmatrix}
+          2 \\ -2 \\ -6
+          \end{bmatrix}, \hspace{.2in}
+          \mathbf{b} = \begin{bmatrix}
+          5 \\ -1 \\ h
+          \end{bmatrix}
+        </me>.
+        For what value(s) of <m>h</m> is <m>\mathbf{b}</m> in the plane spanned by <m>\bfu</m> and <m>\bfv</m>? Explain your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\bfu</m>, <m>\bfv</m>, and <m>\mathbf{b}</m> be the following vectors:
+        <me>
+          \bfu = \begin{bmatrix}
+          2 \\ -1 \\ 1
+          \end{bmatrix}, \hspace{.2in}
+          \bfv = \begin{bmatrix}
+          1 \\ 3 \\ 2
+          \end{bmatrix}, \hspace{.2in}
+          \mathbf{b} = \begin{bmatrix}
+          b_1 \\ b_2 \\ b_3
+          \end{bmatrix}
+        </me>.
+        Under what conditions is <m>\mathbf{b}</m> in <m>\mathrm{Span}\{\bfu, \bfv\}</m>? This will be an equation (or equations) satisfied by the <m>b_i</m>. Explain your answer. 
+        </p>
+    </statement>
+  </exercise>
+  <subexercises>
+  <title>Writing Exercises</title>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}</m> and <m>\bfv = \begin{bmatrix} -1 \\ 4 \end{bmatrix}</m>. Show that <m>\begin{bmatrix} h \\ k \end{bmatrix}</m> is in <m>\mathrm{Span}\{\bfu, \bfv\}</m> for all <m>h</m> and <m>k</m>. Explain your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Two vectors <m>\bfu</m> and <m>\bfv</m> in <m>\rr^n</m> are called <em>collinear</em> if <m>\bfu = k\bfv</m> or <m>\bfv= k \bfu</m> for some <m>k \in \rr</m>. Show that the span of any two nonzero vectors in <m>\rr^2</m> which are not collinear is all of <m>\rr^2</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Give an example of three vectors <m>\bfu</m>, <m>\bfv</m>, <m>\bfw</m> in <m>\rr^3</m> such that no two of them are collinear but <m>\mathrm{Span}\{\bfu, \bfv, \bfw\} \neq \rr^3</m>. Explain why your example works.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        State criteria on vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_n</m> in <m>\rr^3</m> such that <m>\mathrm{Span}\{\bfv_1,\ldots,\bfv_n\} = \rr^3</m>. Explain your answer.
+      </p>
+    </statement>
+  </exercise>
+<exercise>
+  <statement>
+    <p>
+      Prove property 5 from <xref ref="fact-alg-props-vectors-rn"/>. Note which properties of the real numbers you use in this proof.
+    </p>
+  </statement>
+</exercise>  
+</subexercises>
+</exercises>
+</section>

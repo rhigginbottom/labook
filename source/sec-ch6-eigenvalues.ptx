@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-eigenvalues" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Eigenvalues and Eigenvectors</title>
+  <introduction>
+    <p>
+      For linear transformations <m>T:V \to W</m>, there isn't often a connection between <m>\bfv</m> and <m>T(\bfv)</m> that is easy to describe. These vectors, after all, live in different vector spaces, so they need not have any obvious relationship to each other. When <m>W=V</m>, sometimes we have a different story for some vectors.
+    </p>
+    <p>
+      For a transformation <m>T \in L(V)</m>, <m>\bfv</m> and <m>T(\bfv)</m> live in the same space, so there can occasionally be an easy-to-define relationship between these two vectors. Sometimes, the action of <m>T</m> on a vector turns out to be rather simple.
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-eigenvalues">
+  <title>Defining Eigenvalues and Eigenvectors</title>
+
+  <p>
+    We first define the sorts of vectors we alluded to in the previous paragraphs.
+  </p>
+
+  <definition xml:id="def-eigenvalues">
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space over <m>\ff</m>, and let <m>T \in L(V)</m>. A nonzero vector <m>\bfv \in V</m> is an <term>eigenvector</term> for <m>T</m> if <m>T(\bfv) = \lambda \bfv</m> for some <m>\lambda \in \ff</m>. A scalar <m>\lambda</m> is called an <term>eigenvalue</term> of <m>T</m> if there is a nontrivial solution to the equation <m>T(\bfx) = \lambda \bfx</m>. Such a solution is called an <term>eigenvector for <m>T</m> corresponding to <m>\lambda</m></term>.
+      </p>
+      <p>
+        If <m>A \in M_n(\ff)</m>, the eigenvectors and eigenvalues of <m>A</m> are the eigenvectors and eigenvalues of the transformation <m>T \in L(\ff^n)</m> defined by <m>T(\bfx) = A\bfx</m>. 
+      </p>
+    </statement>
+  </definition>
+
+<p>
+  Informally, eigenvectors for <m>T</m> are nonzero vectors on which <m>T</m> acts by simple scalar multiplication. The next example shows that for a <m>T</m> that has eigenvectors, it is not (always) <em>every</em> vector in <m>V</m> that has this special property.
+</p>
+
+<example xml:id="examp-first-eigen">
+  <statement>
+    <p>
+      When we are given a matrix <m>A</m> and a vector <m>\bfv</m>, it is easy to determine whether or not <m>\bfv</m> is an eigenvector for <m>A</m>. Consider the following:
+      <me>
+        A = \begin{bmatrix} 3 \amp 0 \\ 7 \amp -1 \end{bmatrix}, \hspace{6pt}
+        \bfu = \begin{bmatrix} 4 \\ 7 \end{bmatrix}, \hspace{6pt}
+        \bfv = \begin{bmatrix} -2 \\ 1 \end{bmatrix}
+      </me>. 
+      We take the product <m>A\bfu</m>, 
+      <me>
+        \begin{bmatrix} 3 \amp 0 \\ 7 \amp -1 \end{bmatrix} \begin{bmatrix} 4 \\ 7 \end{bmatrix} = 
+        \begin{bmatrix} 12 \\ 21 \end{bmatrix}
+      </me>.
+      Since <m>A\bfu = 3 \bfu</m>, <m>\bfu</m> is an eigenvector for <m>A</m> with eigenvalue <m>3</m>. Also, since 
+      <me>
+        A \bfv = \begin{bmatrix} 3 \amp 0 \\ 7 \amp -1 \end{bmatrix} \begin{bmatrix} -2 \\ 1 \end{bmatrix} = 
+        \begin{bmatrix} -6 \\ -15 \end{bmatrix}
+      </me>,
+      we can say that <m>\bfv</m> is not an eigenvector for <m>A</m>, because <m>A\bfv</m> is not a scalar multiple of <m>\bfv</m>. 
+    </p>
+  </statement>
+</example>
+
+<p>
+  When <m>\bfv</m> is an eigenvector of <m>T</m>, then applying <m>T</m> may change the <em>length</em> of <m>\bfv</m> but it will not change the <em>direction</em> of <m>\bfv</m>. (To say this we must include <q>pointing in the exact opposite direction</q> as being in the same direction.) This is a simplification, because not every vector space has a neat, geometric interpretation.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>T:P_2 \to P_2</m> be the following linear transformation: 
+      <me>
+        T(a + bt + ct^2) = (4a-b+6c) + (2a+b+6c)t + (2a-b+8c)t^2
+      </me>.
+      If <m>p = 1 + t + t^2</m>, it is not difficult to check that 
+      <me>
+        T(p) = 9 + 9t + 9t^2 = 9p
+      </me>. 
+      Therefore, <m>p</m> is an eigenvector for <m>T</m> with eigenvalue <m>9</m>. 
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which is counterclockwise rotation about the origin by an angle of <m>\theta</m>. We can see that <m>T</m> will have an eigenvector if and only if <m>\theta</m> is an integer multiple of <m>\pi</m> radians. If <m>\theta</m> is an even integer multiple of <m>\pi</m>, then every vector in <m>\rr^2</m> is an eigenvector for <m>T</m> with eigenvalue <m>1</m>, and if <m>\theta</m> is an odd integer multiple of <m>\pi</m>, then every vector in <m>\rr^2</m> is an eigenvector for <m>T</m> with eigenvalue <m>-1</m>. 
+    </p>
+  </statement>
+</example>
+
+<p>
+  We take a slightly different approach in this next example. Instead of verifying that a vector is an eigenvector, we provide the eigenvalue and then search for the eigenvector(s).
+</p>
+
+<example xml:id="examp-find-evectors">
+  <statement>
+    <p>
+      We consider the matrix <m>A</m> from <xref ref="examp-first-eigen"/>. Let's show that <m>-1</m> is an eigenvalue of <m>A</m> and find the corresponding eigenvectors.
+    </p>
+    <p>
+      We know that <m>-1</m> is an eigenvalue of <m>A</m> if the equation <m>A\bfx = -\bfx</m> has a nontrivial solution for some <m>\bfx \in \rr^2</m>. This is equivalent to saying that the equation <m>A\bfx + \bfx = \bfo</m> has a nontrivial solution. We can also view <m>\bfx</m> as <m>I\bfx</m>, so if <m>-1</m> is an eigenvalue of <m>A</m>, there is a nonzero vector <m>\bfx</m> which satisfies 
+      <men xml:id="eqn-eigen1">
+        (A + I)\bfx = \bfo
+      </men>. 
+      Viewed from the correct angle, we have reduced this problem to finding the null space of a matrix.
+    </p>
+    <p>
+      We will calculate <m>A + I</m>:
+      <me>
+        A + I = \begin{bmatrix} 3 \amp 0 \\ 7 \amp -1 \end{bmatrix} + \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} = 
+        \begin{bmatrix} 4 \amp 0 \\ 7 \amp 0 \end{bmatrix}
+      </me>. 
+      We can see that the columns of <m>(A+I)</m> are linearly dependent, so we know that <xref ref="eqn-eigen1"/> has nontrivial solutions. This proves that <m>-1</m> is an eigenvalue of <m>A</m>. 
+    </p>
+    <p>
+      In order to find the eigenvectors of <m>A</m> that correspond to <m>\lambda = -1</m>, we describe the null space of the appropriate matrix. We row-reduce <m>(A + I)</m>: 
+      <me>
+        \begin{bmatrix} 4 \amp 0 \\ 7 \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}
+      </me>. 
+      This shows that every eigenvector of <m>A</m> has the form <m>x_2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>, as long as <m>x_2 \neq 0</m>. The interested/vigilant reader can check that, for example, <m>A \begin{bmatrix} 0 \\ 3 \end{bmatrix} = \begin{bmatrix} 0 \\ -3 \end{bmatrix}</m>.  
+    </p>
+  </statement>
+</example>
+
+<p>
+  The process we undertook in the previous example showed that there are almost always multiple eigenvectors for a linear transformation which correspond to a specific eigenvalue. In fact, the collection of such vectors forms almost an entire subspace.
+</p>
+
+<theorem xml:id="thm-eigenspace">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space over <m>\ff</m>, let <m>T \in L(V)</m>, and let <m>\lambda \in \ff</m> be an eigenvalue of <m>T</m>. Then the set of all eigenvectors for <m>T</m> corresponding to <m>\lambda</m>, along with the zero vector, is a subspace of <m>V</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We note that a nonzero vector <m>\bfv \in V</m> is an eigenvector for <m>T</m> corresponding to <m>\lambda</m> if and only if <m>T(\bfv) = \lambda \bfv</m>. The vector <m>\bfv</m> satisfies this equation if and only if <m>T(\bfv) - \lambda I(\bfv) = \bfo</m>, which is true exactly when <m>(T - \lambda I) \bfv = \bfo</m>. This shows that a nonzero <m>\bfv</m> is an eigenvector for <m>T</m> corresponding to <m>\lambda</m> if and only if <m>\bfv \in \kerr(T- \lambda I)</m>. 
+    </p>
+    <p>
+      Since we already know (<xref ref="thm-kernel-subspace"/>) that the kernel of a linear transformation is a subspace, this completes the proof of this theorem.
+    </p>
+  </proof>
+</theorem>
+
+<note>
+  <p>
+    The awkwardness in the statement of this theorem regarding the zero vector is only present because the zero vector (by definition) cannot be an eigenvector.
+  </p>
+</note>
+
+<p>
+  This previous theorem justifies the following definition.
+</p>
+
+<definition xml:id="def-eigenspace">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space and let <m>T \in L(V)</m>. If <m>\lambda \in \ff</m> is an eigenvalue of <m>T</m>, then the <term>eigenspace</term> of <m>T</m> corresponding to <m>\lambda</m> is the subspace of <m>V</m> defined by 
+      <me>
+        \mathrm{eig}_{\lambda}(T) = \{ \bfv \in V \mid T(\bfv) = \lambda \bfv \}
+      </me>. 
+      We will sometimes refer to the eigenspace corresponding to <m>\lambda</m> as the <term><m>\lambda</m>-eigenspace</term>. 
+    </p>
+  </statement>
+</definition>
+
+<p>
+  In the following example, we will calculate the eigenspace corresponding to an eigenvalue.
+</p>
+
+<example xml:id="examp-evalues1">
+  <statement>
+    <p>
+      We consider the following matrix <m>A</m>:
+      <me>
+        A = \begin{bmatrix}
+        4.5 \amp -2.5 \amp -2.5 \\ 
+        2.5 \amp -0.5 \amp -2.5 \\ 
+        5 \amp -5 \amp -3
+        \end{bmatrix}
+      </me>.
+      Let <m>T \in L(\rr^3)</m> be multiplication by <m>A</m>. If we know that <m>\lambda = 2</m> is an eigenvalue for <m>A</m>, we can calculate a basis for <m>\mathrm{eig}_2(T)</m>. 
+    </p>
+    <p>
+      We need to form the matrix <m>A - 2I</m> and then find the RREF: 
+      <me>
+        A-2I = \begin{bmatrix}
+        2.5 \amp -2.5 \amp -2.5 \\ 
+        2.5 \amp -2.5 \amp -2.5 \\ 
+        5 \amp -5 \amp -5
+        \end{bmatrix} \sim \begin{bmatrix}
+        1 \amp -1 \amp -1 \\ 
+        0 \amp 0 \amp 0 \\ 
+        0 \amp 0 \amp 0
+        \end{bmatrix}
+      </me>.
+      The presence of free variables here confirms that <m>2</m> is an eigenvalue of <m>A</m>. If <m>\bfx \in \nll(A-2I)</m>, then 
+      <me>
+        \bfx = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
+         = \begin{bmatrix} x_2 + x_3 \\ x_2 \\ x_3 \end{bmatrix}
+         = x_2 \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} + x_3 \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}
+      </me>. 
+      From this calculation we can see that <m>\mathrm{eig}_2(T)</m> is two-dimensional, with basis <m>\mcb = \{\bfv_1, \bfv_2 \}</m>, where 
+      <me>
+        \bfv_1 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \hspace{12pt}
+        \bfv_2 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}
+      </me>.      
+    </p>
+  </statement>
+</example>
+
+</subsection>
+
+<subsection xml:id="subsec-results-eigenvectors">
+  <title>Results About Eigenvalues and Eigenvectors</title>
+
+<p>
+  In general, the eigenvalues of a linear transformation are not easy to spot. There are some situations, however, when we can identify eigenvalues at a glance.
+</p>
+
+<theorem xml:id="thm-evalues-triangular">
+  <statement>
+    <p>
+      The eigenvalues of a triangular matrix <m>A \in M_n(\ff)</m> are the entries on the main diagonal of <m>A</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Suppose <m>A \in M_n(\ff)</m> is an upper triangular matrix. Then <m>A-\lambda I</m> is 
+      <me>
+        A - \lambda I = \begin{bmatrix} a_{11} - \lambda \amp a_{12} \amp a_{13} \amp  \cdots \amp a_{1n} \\ 
+        0 \amp a_{22} - \lambda \amp a_{23} \amp \cdots \amp a_{2n} \\ 
+        0 \amp 0 \amp a_{33} - \lambda \amp \cdots \amp a_{3n} \\ 
+        \vdots \amp \vdots \amp \vdots \amp \ddots \amp \vdots \\ 
+        0 \amp 0 \amp 0 \amp 0 \amp a_{nn} - \lambda
+        \end{bmatrix} 
+      </me>.
+      We can see that <m>\lambda</m> is an eigenvalue for <m>A</m> if and only if <m>\nll(A-\lambda I) \neq \{ \bfo \}</m>, and this happens if and only if <m>A - \lambda I</m> has at least one non-pivot column. Because <m>A</m> (and therefore <m>A-\lambda I</m>) is upper triangular, <m>A - \lambda I</m> has at least one non-pivot column if and only if at least one of the entries on the main diagonal of <m>A - \lambda I</m> is zero. This happens if and only if <m>\lambda</m> equals one of the entries on the main diagonal of <m>A</m>. 
+    </p>
+    <p>
+      We have saved the case of a lower triangular matrix for the exercises.
+    </p>
+  </proof>
+</theorem>
+
+<example>
+  <statement>
+    <p>
+      If <m>A \in M_3(\ff_5)</m> is given by 
+      <me>
+        A = \begin{bmatrix} 
+        4 \amp 0 \amp 3 \\ 
+        0 \amp 2 \amp 3 \\ 
+        0 \amp 0 \amp 1
+        \end{bmatrix}
+      </me>,
+      the eigenvalues of <m>A</m> are <m>4</m>, <m>2</m>, and <m>1</m>. The reader might use this opportunity to find the associated eigenvectors!
+    </p>
+  </statement>
+</example>
+
+<p>
+  Of all possible scalars <m>\lambda \in \ff</m>, it is especially noteworthy when <m>\lambda = 0</m> is an eigenvalue for <m>T \in L(V)</m>. In this situation, there is a nonzero vector <m>\bfx</m> such that <m>T(\bfx) = \bfo</m>. In other words, <m>\bfx</m> is a nonzero vector in <m>\kerr(T)</m>. 
+</p>
+
+<p>
+  This short argument establishes a connection between the injectivity of <m>T</m> and the presence of <m>\lambda = 0</m> as an eigenvalue for <m>T</m>. Because of previous results, we have the following theorem. (We leave the proof of both statements in this theorem as exercises so the reader might get practice connecting the logic of various chapters of the book.)
+</p>
+
+<theorem xml:id="thm-invertible-0-evalue">
+  <statement>
+    <p>
+      Suppose <m>V</m> is a finite dimensional vector space and <m>T \in L(V)</m>. Then <m>0</m> is an eigenvalue of <m>T</m> if and only if <m>T</m> is not invertible. 
+    </p>
+    <p>
+      If <m>A \in M_n(\ff)</m>, then <m>0</m> is an eigenvalue of <m>A</m> if and only if <m>A</m> is not invertible.
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  The final result in this section will be useful later, but we have all of the tools we need to prove it now.
+</p>
+
+<theorem xml:id="thm-lin-ind-eigenvectors">
+  <statement>
+    <p>
+      Suppose that <m>\bfv_1, \ldots, \bfv_k</m> are eigenvectors of <m>T \in L(V)</m> corresponding to distinct eigenvalues <m>\lambda_1, \ldots, \lambda_k</m>. Then the set <m>\{ \bfv_1, \ldots, \bfv_k \}</m> is linearly independent.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We argue by contradiction. Suppose that the set <m>\{ \bfv_1, \ldots, \bfv_k \}</m> is linearly dependent. Since <m>\bfv_1 \neq \bfo</m> (because eigenvectors cannot be <m>\bfo</m>), we can apply the Linear Dependence Lemma (<xref ref="thm-lin-dep-lemma"/>). Therefore, there is some <m>j \ge 2</m> such that <m>\bfv_j \in \spn\{ \bfv_1, \ldots, \bfv_{j-1} \}</m>. There may be multiple subscripts <m>j</m> for which this is true; we use the smallest such <m>j</m>. We therefore have 
+      <men xml:id="eqn1-lin-ind-evect">
+        \bfv_j = a_1\bfv_1 + \cdots + a_{j-1}\bfv_{j-1}
+      </men>,
+      for scalars <m>a_i \in \ff</m>.
+    </p>
+    <p>
+      We now apply <m>T</m> to both sides of this equation and use the eigenvector assumptions (as well as the linearity of <m>T</m>) to get
+      <mdn>
+        <mrow number = "no">T(\bfv_j) \amp = T(a_1\bfv_1 + \cdots + a_{j-1}\bfv_{j-1})</mrow>
+        <mrow number = "no">T(\bfv_j) \amp = a_1T(\bfv_1) + \cdots + a_{j-1}T(\bfv_{j-1})</mrow>
+        <mrow xml:id="eqn2-lin-ind-evect">\lambda_j\bfv_j \amp = a_1\lambda_1\bfv_1 + \cdots + a_{j-1}\lambda_{j-1}\bfv_{j-1}</mrow>
+      </mdn>.
+      If we multiply both sides of <xref ref="eqn1-lin-ind-evect"/> by <m>\lambda_j</m> and subtract the result from <xref ref="eqn2-lin-ind-evect"/>, we get 
+      <me>
+        \bfo = a_1(\lambda_1 - \lambda_j)\bfv_1 + \cdots + a_{j-1}(\lambda_{j-1} - \lambda_j)\bfv_{j-1}
+      </me>.      
+    </p>
+    <p>
+      Since <m>\{ \bfv_1, \ldots, \bfv_{j-1} \}</m> is linearly independent by assumption, we must have <m>a_i(\lambda_i - \lambda_j) = 0</m> for each <m>i</m>, <m>1 \le i \le j-1</m>. But we assumed that the eigenvalues are all distinct, so this means that <m>\lambda_i - \lambda_j \neq 0</m> for all <m>i</m>, and therefore we must have <m>a_i = 0</m> for all <m>i</m>. But this implies, from <xref ref="eqn1-lin-ind-evect"/>, that <m>\bfv_j = \bfo</m>, which is a contradiction  as <m>\bfo</m> cannot be an eigenvector. 
+    </p>
+    <p>
+      This contradiction proves that <m>\{ \bfv_1, \ldots, \bfv_k \}</m> must be linearly independent.
+    </p>
+  </proof>
+</theorem>
+
+
+</subsection>
+
+  
+<reading-questions>
+  <exercise xml:id="rq1-sec61">
+  <statement>
+    <p>
+      Consider the following matrix <m>A \in M_2(\rr)</m> and the vectors <m>\bfu, \bfv \in \rr^2</m>:
+      <me>
+        A = \begin{bmatrix} -1 \amp 2 \\ 3 \amp 4 \end{bmatrix}, \hspace{6pt}
+        \bfu = \begin{bmatrix} 1 \\ 5 \end{bmatrix}, \hspace{6pt}
+        \bfv = \begin{bmatrix} 3 \\ 9 \end{bmatrix}
+      </me>.
+      <ol>
+        <li>
+          <p>
+            Is <m>\bfu</m> an eigenvector for <m>A</m>? How do you know? 
+          </p>
+          <!-- <p>
+            No, <m>A\bfu = \begin{bmatrix} 9 \\ 23 \end{bmatrix}</m>, which is not <m>\lambda \bfu</m> for any <m>\lambda</m>.
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Is <m>\bfv</m> an eigenvector for <m>A</m>? How do you know? 
+          </p>
+          <!-- <p>
+            Yes, <m>A\bfv = \begin{bmatrix} 15 \\ 45 \end{bmatrix} = 5\bfv</m>. 
+          </p> -->
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Consider the matrix <m>A</m> from the previous reading question. Show that <m>-2</m> is an eigenvalue of <m>A</m> and find the corresponding eigenvectors. Follow <xref ref="examp-find-evectors"/>. 
+  </p>
+  <p>
+    Eigenspace is <m>\spn\{ \begin{bmatrix} -2 \\ 1 \end{bmatrix} \}</m>. 
+  </p>
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A \in M_2(\rr)</m> be the matrix 
+        <me>
+          A = \begin{bmatrix}
+          -12 \amp -14 \\ 7 \amp 9
+          \end{bmatrix}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Is <m>\bfu = \begin{bmatrix} -2 \\ 1 \end{bmatrix}</m> an eigenvector for <m>A</m>? If so, find the eigenvalue.
+            </p>
+          </li>
+          <li>
+            <p>
+              Is <m>\bfv = \begin{bmatrix} 2 \\ -4 \end{bmatrix}</m> an eigenvector for <m>A</m>? If so, find the eigenvalue.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A \in M_3(\rr)</m> be the matrix 
+        <me>
+          A = \begin{bmatrix}
+          1 \amp -3 \amp -1 \\ 2 \amp 6 \amp 1 \\ -4 \amp -10 \amp -1
+          \end{bmatrix}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Is <m>4</m> an eigenvalue for <m>A</m>? If so, find at least one eigenvector.
+            </p>
+          </li>
+          <li>
+            <p>
+              Is <m>3</m> an eigenvalue for <m>A</m>? If so, find at least one eigenvector.
+            </p>
+          </li>
+        </ol>
+       </p> 
+      </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A \in M_3(\rr)</m> be the following matrix 
+        <me>
+          A = \begin{bmatrix} 
+          -8 \amp 20 \amp 10 \\ 4 \amp -6 \amp -4 \\ -12 \amp 24 \amp 14
+          \end{bmatrix} 
+        </me>. 
+        <ol>
+          <li>
+            <p>
+              Show that <m>\lambda = -4</m> is an eigenvalue for <m>A</m> and find a basis for <m>\mathrm{eig}_{-4}(A)</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that <m>\lambda = 2</m> is an eigenvalue for <m>A</m> and find a basis for <m>\mathrm{eig}_{2}(A)</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A \in M_3(\rr)</m> be the following matrix 
+        <me>
+          A = \begin{bmatrix} 
+          -3 \amp 1 \amp -1 \\ 8 \amp 4 \amp 1 \\ 7 \amp 7 \amp -2
+          \end{bmatrix} 
+        </me>. 
+        <ol>
+          <li>
+            <p>
+              Show that <m>\lambda = 5</m> is an eigenvalue for <m>A</m> and find a basis for <m>\mathrm{eig}_{5}(A)</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that <m>\lambda = -2</m> is an eigenvalue for <m>A</m> and find a basis for <m>\mathrm{eig}_{-2}(A)</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A \in M_3(\ff_5)</m> be the following matrix
+        <me>
+          A = \begin{bmatrix} 
+          4 \amp 0 \amp 0 \\ 
+          4 \amp 0 \amp 3 \\ 
+          1 \amp 4 \amp 1
+          \end{bmatrix}
+        </me>. 
+        <ol>
+          <li>
+            <p>
+              Show that <m>\lambda = 4</m> is an eigenvalue for <m>A</m> and find a basis for <m>\mathrm{eig}_{4}(A)</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that <m>\lambda = 2</m> is an eigenvalue for <m>A</m> and find a basis for <m>\mathrm{eig}_{2}(A)</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be the following matrix: 
+        <me>
+          A = \begin{bmatrix}
+          1 \amp 3 \amp 5 \\ 
+          1 \amp 3 \amp 5 \\ 
+          1 \amp 3 \amp 5
+          \end{bmatrix}
+        </me>.
+        Find one eigenvalue of <m>A</m> without any calculation. Explain your reasoning.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that if <m>A^2</m> is the zero matrix, then the only eigenvalue of <m>A</m> is 0.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that an <m>n\times n</m> matrix <m>A</m> can have at most <m>n</m> distinct eigenvalues.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        If <m>\lambda</m> is an eigenvalue for an invertible linear transformation <m>T</m>, prove that <m>\lambda^{-1}</m> is an eigenvalue for <m>T^{-1}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Let <m>A</m> be an <m>n\times n</m> matrix. Prove that <m>\lambda</m> is an eigenvalue for <m>A</m> if and only if <m>\lambda</m> is an eigenvalue for <m>A^T</m>. (Hint: Figure out how <m>A - \lambda I</m> and <m>A^T - \lambda I</m> are related.)
+            </p>
+          </li>
+          <li>
+            <p>
+              Use part (a) to complete the proof of <xref ref="thm-evalues-triangular"/> for lower triangular matrices.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        In a matrix, a <em>row sum</em> refers to the sum of all of the entries in a particular row.
+      </p>
+      <p> Let <m>A</m> be an <m>n\times n</m> matrix where all of the row sums are equal to the same number <m>k</m>. Show that <m>k</m> is an eigenvalue of <m>A</m>. (Hint: Find an eigenvector.)
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which is orthogonal projection onto the line <m>y=5x</m>. Find all eigenvalues and all eigenvectors of this transformation.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T:\rr^3 \to \rr^3</m> be the linear transformation which is reflection across the <m>xy</m>-plane. Find all eigenvalues and all eigenvectors of this transformation.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A \in M_n(\rr)</m> be the matrix with the number 1 in every entry. Find all eigenvalues and eigenvectors for <m>A</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>A \in M_n(\ff)</m> and that for each <m>j = 1, \ldots, n</m>, <m>\bfe_j</m> is an eigenvector of <m>A</m>. Prove that <m>A</m> is a diagonal matrix.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Suppose that <m>\lambda</m> is an eigenvalue of <m>T \in L(V)</m> and that <m>k \in \nn</m>. Prove that <m>\lambda^k</m> is an eigenvalue of <m>T^k</m> and that <m>\mathrm{eig}_{\lambda}(T) \subseteq \mathrm{eig}_{\lambda^k}(T^k)</m>. (Here <m>T^k</m> means the composition of <m>T</m> with itself <m>k</m> times.)
+            </p>
+          </li>
+          <li>
+            <p>
+              Give an example of a linear transformation <m>T:V \to V</m> with an eigenvalue <m>\lambda</m> such that <m>\mathrm{eig}_{\lambda}(T) \neq \mathrm{eig}_{\lambda^2}(T^2)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Complete the proof of both halves of <xref ref="thm-invertible-0-evalue"/>.
+      </p>
+    </statement>
+  </exercise>
+</exercises> 
+
+
+</section>

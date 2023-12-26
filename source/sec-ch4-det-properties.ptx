@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-det-properties" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Properties of the Determinant</title>
+  <introduction>
+    <p>
+      We have introduced the determinant, but we have not yet backed up our assertion that the determinant is <em>useful</em> or <em>powerful</em>. Our goal in this section is to establish just that. In particular, by the end of this section we will be able to conclude that the determinant gives a characterization of the invertibility of a square matrix. 
+    </p>
+  </introduction>
+
+<subsection xml:id="det-elem-row-ops">
+  <title>The Determinant and Elementary Row Operations</title>
+
+  <p>
+    In this subsection we will discover how elementary row operations affect the determinant of a matrix. These will be essential facts for proving the big theorems of this chapter. We begin with a result that is obvious in light of <xref ref="thm-det-any-row"/>. 
+  </p>
+
+  <proposition xml:id="prop-det-row-zeros">
+    <statement>
+      <p>
+        Let <m>A \in M_n(\ff)</m>. If <m>A</m> has a row of zeros, then <m>\det(A)=0</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        To calculate <m>\det(A)</m>, we use cofactor expansion along the row of zeros. This immediately shows that <m>\det(A)=0</m>.
+      </p>
+    </proof>
+  </proposition>
+
+  <note>
+    <p>
+      We observe that <xref ref="prop-det-row-zeros"/> is also true if the word <q>row</q> is replaced by <q>column</q> since a matrix and its transpose have equal determinants. The reader should consider each result in this section and reflect on whether the statement would still hold after making the same word exchange.
+    </p>
+  </note>
+
+<p>
+  Now, we examine the effect of the <em>switch</em> elementary row operation.
+</p>
+
+<theorem xml:id="thm-det-switch">
+  <statement>
+    <p>
+      Let <m>A \in M_n(\ff)</m> and let <m>B</m> be the result of switching two rows in <m>A</m>. Then <m>\det(B) = -\det(A)</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will proceed by induction on <m>n</m>. This result only makes sense for <m>n \ge 2</m>, and the base case of <m>n=2</m> was covered in <xref ref="exer-det-switch-rows"/>. 
+    </p>
+    <p>
+      We let <m>k</m> be an integer such that <m>k \ge 2</m> and we assume the result is true for all <m>k\times k</m> matrices. Let <m>A</m> be a <m>(k+1)\times (k+1)</m> matrix and let <m>B</m> be the result of switching two rows in <m>A</m>. We want to show that <m>\det(B)=-\det(A)</m>. 
+    </p>
+    <p>
+      Since <m>k \ge 2</m>, we have <m>k+1 \ge 3</m>, which means that we can calculate <m>\det(B)</m> by expansion along a row that is not involved in the row exchange. Suppose that <m>B</m> was produced by switching rows <m>p</m> and <m>q</m>. We will calculate <m>\det(B)</m> by expanding along row <m>i</m>, which is distinct from both <m>p</m> and <m>q</m>. We have 
+      <me>
+        \det(B) = \sum_{j=1}^n (-1)^{i+j}[B]_{ij} \det(B_{ij})
+      </me>.
+      We note that since <m>i</m> will never be <m>p</m> or <m>q</m>, <m>[B]_{ij} = [A]_{ij}</m> and <m>B_{ij}</m> can be obtained by performing a switch row operation on <m>A_{ij}</m>. This means that, by the inductive hypothesis, we have <m>\det(B_{ij}) = -\det(A_{ij})</m> for all <m>j</m> since these matrices are <m>k\times k</m>. So, we have
+      <md>
+        <mrow>\det(B) \amp = \sum_{j=1}^n (-1)^{i+j}[A]_{ij}(-1) \det(A_{ij}) </mrow>
+        <mrow> \amp = - \sum_{j=1}^n (-1)^{i+j}[A]_{ij} \det(A_{ij})</mrow> 
+        <mrow> \amp = -\det(A)</mrow>
+      </md>. 
+      This completes the inductive step.
+    </p>
+    <p>
+      We have shown that the result holds for all <m>n \ge 2</m> by the Principle of Mathematical Induction.
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  The second elementary row operation we will consider is the <em>scale</em> operation. How is the determinant of a matrix affected if one row is multiplied by a non-zero element of the field? 
+</p>
+
+<theorem xml:id="thm-det-scale">
+  <statement>
+    <p>
+      Let <m>A \in M_n(\ff)</m> and let <m>B</m> be the result of multiplying a row in <m>A</m> by a non-zero <m>c \in \ff</m>. Then <m>\det(B) = c\det(A)</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will not need induction here. Suppose that <m>B</m> is formed by multiplying row <m>i</m> in <m>A</m> by <m>c \in \ff</m> where <m>c \neq 0</m>. We will calculate <m>\det(B)</m> by expanding along row <m>i</m>. Note that since row <m>i</m> is the only row affected by this operation, <m>B_{ij}=A_{ij}</m> for all <m>1 \le j \le n</m>. Additionally, we note that <m>[B]_{ij} = c[A]_{ij}</m> for all <m>1 \le j \le n</m>. Now we have 
+      <md>
+        <mrow>\det(B) \amp = \sum_{j=1}^n (-1)^{i+j}[B]_{ij} \det(B_{ij})</mrow>
+        <mrow> \amp = \sum_{j=1}^n (-1)^{i+j}c[A]_{ij} \det(A_{ij})</mrow>
+        <mrow> \amp = c\sum_{j=1}^n (-1)^{i+j}[A]_{ij} \det(A_{ij})</mrow>
+        <mrow> \amp = c\det(A)</mrow>
+      </md>.
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  We now present the result related to the final elementary row operation, the <em>replace</em> operation.
+</p>
+
+<theorem xml:id="thm-det-replace">
+  <statement>
+    <p>
+      Let <m>A \in M_n(\ff)</m> and let <m>B</m> be the result of replacing a row in <m>A</m> with the sum of that row and <m>c</m> times another row in <m>A</m>. Then <m>\det(B) = \det(A)</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We proceed by induction on <m>n</m>. This result only makes sense when <m>n \ge 2</m>, and the base case of <m>n=2</m> is covered in <xref ref="exer-det-replace-row"/>. 
+    </p>
+    <p>
+      We let <m>k</m> be an integer such that <m>k \ge 2</m> and we assume the result is true for all <m>k\times k</m> matrices. Let <m>A</m> be a <m>(k+1)\times (k+1)</m> matrix and let <m>B</m> be the result of replacing row <m>q</m> in <m>A</m> with the sum of row <m>q</m> and <m>c</m> times row <m>p</m> in <m>A</m>. We want to show that <m>\det(B)=\det(A)</m>. 
+    </p>
+    <p>
+      We observe that <m>k</m> is large enough that we can calculate <m>\det(B)</m> by expanding along a row which is not row <m>q</m>; we will call it row <m>i</m>. Since <m>i \neq q</m>, we have <m>[B]_{ij} = [A]_{ij}</m> for all <m>1 \le j \le n</m>. Additionally, for each <m>j</m>, <m>B_{ij}</m> is a <m>k\times k</m> matrix which has been obtained from <m>A_{ij}</m> by a <em>replace</em> row operation. The inductive hypothesis means that <m>\det(B_{ij}) = \det(A_{ij})</m> for all <m>1 \le j \le n</m>. Therefore, we have the following: 
+      <md>
+        <mrow>\det(B) \amp = \sum_{j=1}^n (-1)^{i+j} [B]_{ij} \det(B_{ij})</mrow>
+        <mrow> \amp = \sum_{j=1}^n (-1)^{i+j} [A]_{ij} \det(A_{ij})</mrow>
+        <mrow> \amp = \det(A)</mrow>
+      </md>.
+      This completes the inductive step.
+    </p>
+    <p>
+      We have shown that the result holds for all <m>n \ge 2</m> by the Principle of Mathematical Induction.
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  The following example shows how these three theorems can be used to calculate the determinant of a matrix using row reduction.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix} 
+        2 \amp 0 \amp -3 \\ 1 \amp -1 \amp 2 \\ -2 \amp 3 \amp 0
+        \end{bmatrix}
+      </me>. 
+      We will find <m>\det(A)</m> using row reduction. We first switch rows 1 and 2, which introduces a negative sign: 
+      <me>
+        \det(A) = - \begin{vmatrix} 
+        1 \amp -1 \amp 2 \\ 2 \amp 0 \amp -3 \\ -2 \amp 3 \amp 0
+        \end{vmatrix} 
+      </me>.
+      Once we reduce the matrix to a triangular form, we can use <xref ref="prop-det-triangular"/>, so we do not need to reduce the matrix to RREF, only to REF. This means that the rest of the row reduction can be performed using only the <em>replace</em> operation, which does not change the determinant: 
+      <md>
+        <mrow>\det(A) \amp = - \begin{vmatrix} 
+          1 \amp -1 \amp 2 \\ 2 \amp 0 \amp -3 \\ 0 \amp 3 \amp -3
+          \end{vmatrix}  = - \begin{vmatrix} 
+          1 \amp -1 \amp 2 \\ 0 \amp 2 \amp -7 \\ 0 \amp 3 \amp -3
+          \end{vmatrix} = - \begin{vmatrix} 
+            1 \amp -1 \amp 2 \\ 0 \amp 2 \amp -7 \\ 0 \amp 0 \amp \tfrac{15}{2}
+            \end{vmatrix}</mrow>
+      </md>. 
+      We have reduced the matrix far enough so that we can calculate its determinant using the product of the entries along the main diagonal: 
+      <me>
+        \det(A) = (-1)(1)(2)(\tfrac{15}{2}) = -15
+      </me>.      
+    </p>
+  </statement>
+</example>
+
+</subsection>
+
+<subsection xml:id="subsec-det-main-results">
+  <title>Invertibility and the Determinant</title>
+  
+  <p>
+    We will use the results that have accumulated thus far in this section to prove two major results. First, we need to record an easy fact.
+  </p>
+
+<lemma xml:id="lem-det-identity">
+  <statement>
+    <p>
+      For any <m>n \ge 1</m>, we have <m>\det(I_n)=1</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Since the identity matrix is, among other things, a triangular matrix, <xref ref="prop-det-triangular"/> applies. The entries along the main diagonal are all <m>1</m>, so <m>\det(I_n)=1</m>. 
+    </p>
+  </proof>
+</lemma>
+
+<p>
+  We will now apply this lemma to record the determinant of any elementary matrix.
+</p>
+
+<proposition xml:id="prop-det-elem-matrices">
+  <statement>
+    <p>
+      Let <m>E \in M_n(\ff)</m> be an elementary matrix. 
+      <ol>
+        <li>
+          <p>
+            If <m>E</m> performs the <em>switch</em> elementary row operation, then <m>\det(E)=-1</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>E</m> performs the <em>scale</em> elementary row operation, and if the scaling is by <m>c \in \ff</m>, then <m>\det(E) = c</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>E</m> performs the <em>replace</em> elementary row operation, then <m>\det(E) = 1</m>. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Every elementary matrix in <m>M_n(\ff)</m> is the result of performing a single elementary row operation on <m>I_n</m>. We have theorems in this section which tell us how these elementary row operations affect the determinant of a matrix, and since from <xref ref="lem-det-identity"/> we know that <m>\det(I_n)=1</m>, we will be able to arrive at our result. 
+    </p>
+    <p>
+      If <m>E</m> performs a <em>switch</em> row operation, then by <xref ref="thm-det-switch"/> we have <m>\det(E) = \det(EI_n) = -\det(I_n)=-1</m>.
+    </p>
+    <p>
+      If <m>E</m> scales one row of a matrix by a non-zero <m>c \in \ff</m>, then by <xref ref="thm-det-scale"/> we have <m>\det(E) = \det(EI_n) = c\det(I_n) = c</m>. 
+    </p>
+    <p>
+      Finally, if <m>E</m> performs a <em>replace</em> row operation, then by <xref ref="thm-det-replace"/> we have <m>\det(E) = \det(EI_n) = \det(I_n) = 1</m>, which completes the proof.
+    </p>
+  </proof>
+</proposition>
+
+<example>
+  <statement>
+    <p>
+      Sometimes, the easiest way to find a determinant by hand is to use a combination of cofactor expansion and row reduction techniques. Let <m>A \in M_4(\rr)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix} 
+        0 \amp 1 \amp -1 \amp 2 \\ 
+        1 \amp 3 \amp 0 \amp -2 \\ 
+        2 \amp 4 \amp 1 \amp -1 \\ 
+        -2 \amp 0 \amp -1 \amp -3
+        \end{bmatrix}
+      </me>.
+      To find <m>\det(A)</m>, we first use the <em>replace</em> row operation, using the <m>1</m> in the <m>(2,1)</m> position to put zeros in the column below it: 
+      <me>
+        A \sim \begin{bmatrix} 
+        0 \amp 1 \amp -1 \amp 2 \\ 
+        1 \amp 3 \amp 0 \amp -2 \\ 
+        0 \amp -2 \amp 1 \amp 3 \\ 
+        0 \amp 6 \amp -1 \amp -7
+        \end{bmatrix} = B
+      </me>.
+      Since the <em>replace</em> row operation doesn't change the determinant, we have <m>\det(A) = \det(B)</m>. We now use cofactor expansion along the first column to calculate <m>\det(B)</m>. Since there is only one non-zero entry in that column, we have 
+      <me>
+        \det(B) = - \begin{vmatrix} 
+        1 \amp -1 \amp 2 \\ 
+        -2 \amp 1 \amp 3 \\ 
+        6 \amp -1 \amp -7
+        \end{vmatrix} 
+      </me>. 
+      We can now use the <em>replace</em> row operation three more times, to produce zeros in the <m>(2,1)</m>, <m>(3,1)</m>, and <m>(3,2)</m> positions of this <m>3\times 3</m> matrix: 
+      <me>
+        \det(B) = - \begin{vmatrix} 
+        1 \amp -1 \amp 2 \\ 
+        0 \amp -1 \amp 7 \\ 
+        0 \amp 5 \amp -19
+        \end{vmatrix} = - \begin{vmatrix} 
+        1 \amp -1 \amp 2 \\ 
+        0 \amp -1 \amp 7 \\ 
+        0 \amp 0 \amp 16
+        \end{vmatrix} 
+      </me>.
+      We now invoke <xref ref="prop-det-triangular"/> to see that <m>\det(B) = -(-1)(16) = 16</m>. Since <m>\det(B)=\det(A)</m>, we have <m>\det(A)=16</m>. 
+    </p>
+  </statement>  
+</example>
+
+<p>
+  In this next result, we use <xref ref="prop-det-elem-matrices"/> to show that the determinant respects matrix multiplication, at least when one of the factors is an elementary matrix.
+</p>
+
+<theorem xml:id="thm-det-prod-elem">
+  <statement>
+    <p>
+      Let <m>A, E \in M_n(\ff)</m>, and let <m>E</m> be an elementary matrix. Then 
+      <me>
+        \det(EA) = \det(E)\det(A)
+      </me>.      
+    </p>
+  </statement>
+  <proof>
+    <p>
+      This argument uses <xref ref="prop-det-elem-matrices"/> and requires three cases. If <m>E</m> performs a <em>switch</em> row operation, then we know from <xref ref="thm-det-switch"/> that <m>\det(EA) = -\det(A)</m>. Since we now know that <m>\det(E)=-1</m>, we have 
+      <me>
+        \det(EA) = -\det(A) = \det(E)\det(A)
+      </me>.      
+    </p>
+    <p>
+      If <m>E</m> performs a <em>scale</em> row operation, and if the scaling is by a non-zero <m>c \in \ff</m>, then we know from <xref ref="thm-det-scale"/> that <m>\det(EA) = c\det(A)</m>. Since <m>\det(E)=c</m>, we have 
+      <me>
+        \det(EA) = c\det(A) = \det(E)\det(A)
+      </me>.      
+    </p>
+    <p>
+      Finally, if <m>E</m> performs a <em>replace</em> row operation, then we know from <xref ref="thm-det-replace"/> that <m>\det(EA) = \det(A)</m>. We know that <m>\det(E)=1</m>, so 
+      <me>
+        \det(EA) = \det(A) =  1\cdot \det(A) = \det(E)\det(A)
+      </me>.      
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  Armed with this result, we can now prove one of the most useful facts about determinants. 
+</p>
+
+<theorem xml:id="thm-det-invertible">
+  <statement>
+    <p>
+      For any <m>n\times n</m> matrix <m>A</m> over <m>\ff</m>, <m>A</m> is invertible if and only if <m>\det(A) \neq 0</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      For <m>A \in M_n(\ff)</m>, let <m>B\in M_n(\ff)</m> be the unique RREF of <m>A</m>. From <xref ref="prop-el-matrices-rref"/>, we know there exist elementary matrices <m>E_1, \ldots, E_k</m> such that 
+      <me>
+        A = E_1 \cdots E_k B
+      </me>.
+      We can apply <xref ref="thm-det-prod-elem"/> repeatedly to see that 
+      <me>
+        \det(A) = \det(E_1 \cdots E_k B) = \det(E_1)\cdots \det(E_k)\det(B)
+      </me>.
+      Since <m>\det(E_i) \neq 0</m> for each <m>i</m> by <xref ref="prop-det-elem-matrices"/>, we conclude that <m>\det(A) \neq 0</m> if and only if <m>\det(B) \neq 0</m>.
+    </p>
+    <p>
+      We now assume that <m>A</m> is invertible. <xref ref="thm-find-inverse-matrix"/> tells us that <m>B = I_n</m>, so <m>\det(B) \neq 0</m>. This proves one direction of the theorem.
+    </p>
+    <p>
+      We will prove the contrapositive of the other direction of the theorem. We now assume that <m>A</m> is not invertible, which means that <m>B \neq I_n</m>. Specifically, <m>B</m> must have fewer than <m>n</m> pivots, which means that <m>B</m> must have at least one row of zeros. By <xref ref="prop-det-row-zeros"/> we have <m>\det(B)=0</m>. Therefore, we must also have <m>\det(A)=0</m>. 
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  If a casual math student spends some time away from linear algebra, this previous theorem might be the one and only fact they remember about the determinant. It is powerful and used <em>frequently</em>. 
+</p>
+
+<example>
+  <statement>
+    <p>
+      Using this theorem, if <m>A \in M_3(\rr)</m> is 
+      <me>
+        A = \begin{bmatrix} 
+        2 \amp -4 \amp 2 \\ 
+        1 \amp 0 \amp 3 \\ 
+        3.5 \amp 2 \amp 12.5
+        \end{bmatrix}
+      </me>,
+      then we can say that <m>A</m> is not invertible since <m>\det(A)=0</m>. 
+    </p>
+    <p> 
+      We can also analyze the invertibility of matrices over other fields. Consider the matrix <m>B \in M_3(\ff_5)</m> given by
+      <me>
+        B = \begin{bmatrix}
+        3 \amp 4 \amp 1 \\
+        1 \amp 4 \amp 0 \\ 
+        1 \amp 2 \amp 4
+        \end{bmatrix}
+      </me>.
+      We find that <m>\det(B)=0</m>, so <m>B</m> is not invertible. (If <m>B</m> were a matrix over <m>\rr</m>, we would have <m>\det(B)=30</m>. But this means that, in <m>\ff_5</m>, <m>\det(B)=0</m>.)
+    </p>
+    <p>
+      Finally, we consider another matrix <m>C \in M_3(\ff_5)</m>:
+      <me>
+        C = \begin{bmatrix} 
+        0 \amp 2 \amp 3 \\ 
+        1 \amp 2 \amp 1 \\ 
+        2 \amp 2 \amp 1
+        \end{bmatrix}
+      </me>.
+      Since <m>\det(C)=1</m> in <m>\ff_5</m>, <m>C</m> is invertible. 
+    </p>
+  </statement>  
+</example>
+
+<p>
+  We present one final, important result about determinants in the last theorem of this chapter.
+</p>
+
+<theorem xml:id="thm-det-matrix-product">
+  <statement>
+    <p>
+      Let <m>A, B \in M_n(\ff)</m>. Then <m>\det(AB) = \det(A)\det(B)</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      If <m>A</m> is not invertible, then neither is <m>AB</m>, by <xref ref="exer-invertible-product"/>. This means that <m>\det(AB)=\det(A)\det(B)</m> since, by <xref ref="thm-det-invertible"/>, both sides of the equation are zero. 
+    </p>
+    <p>
+      If <m>A</m> is invertible, then <m>A</m> is row equivalent to <m>I_n</m>, and there exist elementary matrices <m>E_1, \ldots, E_k</m> such that 
+      <me>
+        A = E_1 \cdots E_kI_n = E_1 \cdots E_k 
+      </me>. 
+      In the calculation that follows, we use this factorization as well as repeated application of <xref ref="thm-det-prod-elem"/>. We first use <xref ref="thm-det-prod-elem"/> to peel the determinant of elementary matrices away from <m>\det(B)</m>; we then use the same result to put those determinants back together to form <m>\det(A)</m>. Here is the argument: 
+      <md>
+        <mrow>\det(AB) \amp = \det(E_1\cdots E_kB)</mrow>
+        <mrow> \amp = \det(E_1) \det(E_2 \cdots E_kB)</mrow>
+        <mrow> \amp = \det(E_1) \det(E_2) \det(E_3 \cdots E_kB) = \cdots </mrow>
+        <mrow> \amp = \det(E_1) \cdots \det(E_k)\det(B)</mrow>
+        <mrow> \amp = \det(E_1E_2) \cdots \det(E_k)\det(B) = \cdots </mrow>
+        <mrow> \amp = \det(E_1 \cdots E_k) \det(B) = \det(A)\det(B)</mrow>
+      </md>.
+      This completes the proof.
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  We take a step back for a moment to marvel at this theorem. We defined matrix multiplication in the context of the composition of linear transformations (see <xref ref="subsec-matrix-mult"/>), and the calculations were quite involved. The definition of the determinant was also complicated, so the fact that these two notions fit together so nicely is worthy of our admiration.
+</p>
+
+<example xml:id="examp-verify-det-product">
+  <statement>
+    <p>
+      In this example, we will verify <xref ref="thm-det-matrix-product"/> for a specific example. Let <m>A</m> and <m>B</m> be the following matrices: 
+      <me>
+      A = \begin{bmatrix}
+      -1 \amp -2 \\ -3 \amp -4
+      \end{bmatrix}, \hspace{12pt} 
+      B = \begin{bmatrix} 
+      -2 \amp 4 \\ 4 \amp 2
+      \end{bmatrix}
+      </me>.
+      We calculate <m>AB</m> as 
+      <me>
+        AB = \begin{bmatrix} 
+        -6 \amp -8 \\ -10 \amp -20
+        \end{bmatrix}
+      </me>.
+      We see that <m>\det(A)=-2</m>, <m>\det(B)=-20</m>, and <m>\det(AB)=40</m>, so the relationship <m>\det(AB)=\det(A)\det(B)</m> holds.
+    </p>
+  </statement>  
+</example>
+
+</subsection>
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      Consider the following three matrices: 
+      <me>
+        A = \begin{bmatrix} 
+        3 \amp -1 \amp -2 \\ 
+        1 \amp 2 \amp 0 \\ 
+        1 \amp 1 \amp 2
+        \end{bmatrix}, \hspace{6pt} A_1 = \begin{bmatrix} 
+        1 \amp 1 \amp 2 \\ 
+        1 \amp 2 \amp 0 \\ 
+        3 \amp -1 \amp -2  
+        \end{bmatrix}, \hspace{6pt} A_2 = \begin{bmatrix} 
+        3 \amp -1 \amp -2 \\ 
+        1 \amp 2 \amp 0 \\ 
+        0 \amp -1 \amp 2
+        \end{bmatrix}
+      </me>. 
+      <ol>
+        <li>
+          <p>
+            Calculate <m>\det(A)</m> using cofactor expansion along some row or column.
+          </p>
+          <!-- <p>
+            16, use row 2
+          </p> -->
+        </li>
+        <li>
+          <p>
+            The matrix <m>A_1</m> was obtained from <m>A</m> by a single elementary row operation. Which one?
+          </p>
+          <!-- <p>
+            switch rows 1 and 3
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Knowing <m>\det(A)</m> and given your answer to (b), what do you predict <m>\det(A_1)</m> to be? (Consult <xref ref="thm-det-switch"/>.)
+          </p>
+          <!-- <p>
+            <m>-16</m>
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Calculate <m>\det(A_1)</m> using cofactor expansion along some row or column.
+          </p>
+          <!-- <p>
+            16, use col 3
+          </p> -->
+        </li>
+        <li>
+          <p>
+            The matrix <m>A_2</m> was obtained from <m>A</m> by a single elementary row operation. Which one?
+          </p>
+          <!-- <p>
+            add <m>-R_2</m> to <m>R_3</m>
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Knowing <m>\det(A)</m> and given your answer to (e), what do you predict <m>\det(A_2)</m> to be? (Consult <xref ref="thm-det-replace"/>.)
+          </p>
+          <!-- <p>
+            16
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Calculate <m>\det(A_2)</m> using cofactor expansion along some row or column.
+          </p>
+          <!-- <p>
+            16, use row 3
+          </p> -->
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Verify <xref ref="thm-det-matrix-product"/> for the following two matrices <m>A</m> and <m>B</m>:
+    <me>
+      A = \begin{bmatrix} 
+      4 \amp 1 \\ 5 \amp 2
+      \end{bmatrix}, \hspace{12pt} 
+      B = \begin{bmatrix} 
+      -1 \amp 2 \\ 1 \amp -3
+      \end{bmatrix}
+    </me>.
+    (You should follow <xref ref="examp-verify-det-product"/>)
+  </p>
+  <!-- <p>
+    <m>\det(A) = 3</m>, <m>\det(B) = 1</m>, <m>AB = \begin{bmatrix} -3 \amp 5 \\ -3 \amp 4 \end{bmatrix}</m> <m>\det(AB) = 3</m>
+  </p> -->
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Find the determinant of the matrix using row reduction. 
+        <ol>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix}
+                1 \amp 2 \amp -1 \\ 
+                2 \amp -4 \amp -2 \\ 
+                -4 \amp -3 \amp 2
+                \end{bmatrix}
+              </m> <!-- 16 -->
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix}
+                -1 \amp -2 \amp 0 \amp 3 \\ 
+                -2 \amp -2 \amp 0 \amp -2 \\ 
+                0 \amp 2 \amp 1 \amp 0 \\ 
+                3 \amp 8 \amp 3 \amp 7
+                \end{bmatrix}
+              </m> <!-- 0 -->
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the determinant of the matrix using row reduction.
+        <ol>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix}
+                -2 \amp -1 \amp 2 \\ 
+                -1 \amp 0 \amp 2 \\ 
+                3 \amp -3 \amp 0
+                \end{bmatrix}
+              </m> <!-- -12 -->
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix}
+                1 \amp 0 \amp 2 \amp -1 \\ 
+                2 \amp 0 \amp -2 \amp 1 \\ 
+                3 \amp 1 \amp 1 \amp -2 \\ 
+                -1 \amp -2 \amp -1 \amp 3
+                \end{bmatrix}
+              </m> <!-- -3 -->
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the determinant using a combination of row reduction and cofactor expansion:
+        <me>
+          A = \begin{bmatrix}
+          2 \amp 1 \amp -3 \amp 1 \\ 
+          4 \amp 3 \amp -1 \amp 0 \\ 
+          0 \amp -1 \amp 3 \amp -1 \\ 
+          -2 \amp 1 \amp 2 \amp 1
+          \end{bmatrix}
+        </me>. <!-- 30 -->        
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the determinant using a combination of row reduction and cofactor expansion:
+        <me>
+          A = \begin{bmatrix} 
+          -1 \amp 2 \amp 1 \amp 4 \\ 
+          3 \amp -4 \amp 1 \amp -3 \\ 
+          4 \amp -10 \amp -1 \amp 0 \\ 
+          -1 \amp 4 \amp 2 \amp 3
+          \end{bmatrix}
+        </me>. <!-- -10 -->        
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Use the determinant to determine whether or not the matrix is invertible. (Note that not all fields are <m>\rr</m>!)
+        <ol>
+          <li>
+            <p>
+              <m>A \in M_3(\ff_3)</m>, <m>A = \begin{bmatrix}
+                2 \amp 0 \amp 1 \\ 
+                0 \amp 0 \amp 2 \\ 
+                2 \amp 2 \amp 0
+                \end{bmatrix}
+              </m> <!-- 1 -->
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A \in M_3(\rr)</m>, <m>A = \begin{bmatrix}
+                -3 \amp -1 \amp -1 \\ 
+                0 \amp -3 \amp -3 \\ 
+                2 \amp -3 \amp 3    
+                \end{bmatrix}
+              </m> <!-- 54 -->
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A \in M_3(\ff_5)</m>, <m>A = \begin{bmatrix}
+                3 \amp 1 \amp 0 \\ 
+                0 \amp 3 \amp 1 \\ 
+                4 \amp 1 \amp 3
+                \end{bmatrix}
+              </m> <!-- 3 -->
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A \in M_2(\cc)</m>, <m>A = \begin{bmatrix}
+                2+i \amp 2-3i \\ 
+                4-i \amp -2+4i 
+                \end{bmatrix}
+              </m> <!-- -13+20i -->
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A \in M_3(\cc)</m>, <m>A = \begin{bmatrix}
+                0 \amp 3-2i \amp -2-4i \\ 
+                -2 \amp 2+4i \amp 0 \\ 
+                3+i \amp -1+i \amp 0
+                \end{bmatrix}
+              </m> <!-- -64+32i -->
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Calculate <m>\det(A^3)</m> if 
+        <me>
+          A = \begin{bmatrix}
+          2 \amp 1 \amp 0 \\ 
+          0 \amp 1 \amp 1 \\ 
+          1 \amp 1 \amp 2
+          \end{bmatrix}
+        </me>. <!-- det(A)=3 -->        
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>A</m> is a square matrix with two identical columns. Prove that <m>\det(A)=0</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>A \in M_n(\ff)</m> is invertible. Prove that <m>\det(A^{-1})= \dfrac{1}{\det(A)}</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Suppose that <m>A \in M_n(\rr)</m> and that <m>\det(A^4)=0</m>. Prove that <m>A</m> is not invertible.
+            </p>
+          </li>
+          <li>
+            <p>
+              Does the result or your argument in part (a) change if <m>\rr</m> is replaced with <m>\ff_7</m>? Explain.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>A, B \in M_n(\ff)</m>. Show that <m>\det(AB)=\det(BA)</m> regardless of whether or not <m>AB=BA</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A \in M_n(\ff)</m> and let <m>k \in \ff</m>. Find a formula for <m>\det(kA)</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Verify that <m>\det(A) = \det(B) + \det(C)</m> where <m>A</m>, <m>B</m>, and <m>C</m> are 
+              <me>
+                A = \begin{bmatrix}
+                a+e \amp b+f \\ c \amp d
+                \end{bmatrix}, \hspace{6pt}
+                B = \begin{bmatrix}
+                a \amp b \\ c \amp d
+                \end{bmatrix}, \hspace{6pt} 
+                C = \begin{bmatrix}
+                e \amp f \\ c \amp d
+                \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>A</m> and <m>B</m> be 
+              <me>
+                A = \begin{bmatrix} 
+                1 \amp 0 \\ 0 \amp 1 
+                \end{bmatrix}, \hspace{12pt} 
+                B = \begin{bmatrix} 
+                a \amp b \\ c \amp d 
+                \end{bmatrix} 
+              </me>.
+              Show that <m>\det(A+B) = \det(A) + \det(B)</m> if and only if <m>a+d=0</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Provide an example where <m>A, B \in M_3(\rr)</m> to prove that <m>\det(A+B) = \det(A) + \det(B)</m> is not always true.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Construct an invertible matrix <m>A \in M_3(\rr)</m>. For each entry of <m>A</m>, compute the corresponding cofactor. Create a new <m>3\times 3</m> matrix with these cofactors in the same position as the entry of <m>A</m> on which they were based; call this matrix <m>C</m>. Calculate <m>AC^T</m>. What do you observe? 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following matrix (called a <em>Vandermond</em> matrix): 
+        <me>
+          V = \begin{bmatrix}
+          1 \amp a \amp a^2 \\ 
+          1 \amp b \amp b^2 \\ 
+          1 \amp c \amp c^2
+          \end{bmatrix}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Use row operations to explain why <m>\det(V) = (b-a)(c-a)(c-b)</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Explain why <m>V</m> is invertible if and only if <m>a</m>, <m>b</m>, and <m>c</m> are all distinct real numbers.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+</exercises> 
+
+
+</section>

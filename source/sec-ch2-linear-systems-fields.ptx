@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-linear-systems-fields" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Solving Linear Systems Over Fields</title>
+  <introduction>
+    <p>
+      Having now defined a field, in this section we will show how the problems of chapter 1 can be solved in this general setting. We have laid the groundwork for reproducing the results of the first three sections of <xref ref="ch-first"/> for a field <m>\ff</m> instead of the real numbers.
+    </p>
+  </introduction>
+
+  <p>
+    We now return to where we began in <xref ref="sec-intro-systems"/>: the humble linear equation. If fields are generalizations of the real numbers, and if we can solve linear equations when everything in sight comes from the real numbers, we should be able to solve linear equations when everything in sight comes from a general field.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Consider the following equation where all variable values, constants, and coefficients are drawn from <m>\ff_5</m>:
+        <me>
+          3x + 2 = 1
+        </me>.
+        Solving this equation in <m>\rr</m> would be easy; let's solve it in <m>\ff_5</m>.
+      </p>
+      <p>
+        We first note that the additive inverse of <m>2</m> in <m>\ff_5</m> is <m>3</m>, so our first step is to add <m>3</m> to both sides of the equation:
+        <md>
+          <mrow>3x + 2 + 3 \amp =1 + 3</mrow>
+          <mrow>3x \amp =4</mrow>
+        </md>.
+        We now need the multiplicative inverse of <m>3</m> in <m>\ff_5</m>, which is <m>2</m>. We multiply both sides by <m>2</m> to get our answer:
+        <md>
+          <mrow>2(3x) \amp = 2(4)</mrow>
+          <mrow>x \amp =3</mrow>
+        </md>.
+      </p>
+      <p>
+        When we check that our solution works (we plug <m>x=3</m> back into the original equation and perform the computations in <m>\ff_5</m>), we find that it does:
+        <me>
+          3x+2 = 3(3)+2 = 9+2=11 = 1
+        </me>.
+      </p>
+    </statement>
+  </example>
+
+<p>
+  The point of this section is that the algorithm for solving linear systems (<xref ref="alg-solving-system"/>) which worked for <m>\rr</m> also works for a general field <m>\ff</m>. In order to be comfortable with this notion, we need to talk quickly through the development of that algorithm in this general setting.
+</p>
+
+<p>
+  Because a general field contains both <m>0</m> and <m>1</m> (or rather, an additive and a multiplicative identity), and because within a field we can perform all of the operations needed to solve linear systems, everything we want to do is legitimate. The definitions of the coefficient and augmented matrices, the elementary row operations, the echelon forms, pivots, and the row reduction algorithm (all found in <xref ref="sec-matrices"/> and <xref ref="sec-results"/>) are the same once we move away from <m>\rr</m>. Similarly, the three important theorems we have encountered so far (which we will reproduce below) all hold over a general field <m>\ff</m>. We will omit the proofs of these theorems because the earlier proofs, when translated from <m>\rr</m> to <m>\ff</m>, are still valid.
+</p>
+
+<theorem xml:id="thm-consistent-system-f">
+  <statement>
+    <p>
+      Suppose <m>A</m> is the augmented matrix of a linear system over a field <m>\ff</m>, and suppose that <m>A</m> is in reduced row-echelon form. Then the linear system is consistent if and only if there is no pivot in the final column of <m>A</m>.
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="thm-unique-soln-system-f">
+  <statement>
+    <p>
+      Suppose that <m>A</m> is the augmented matrix corresponding to a consistent <m>m\times n</m> linear system over a field <m>\ff</m>, and suppose that <m>A</m> is in reduced row-echelon form. Then the system has a unique solution if and only if there is a pivot in each of the first <m>n</m> columns of <m>A</m>.
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="thm-rref-unique-f">
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix with entries in a field <m>\ff</m> and let <m>A</m> be row equivalent to both <m>B</m> and <m>C</m>. If <m>B</m> and <m>C</m> are in reduced row-echelon form, then <m>B=C</m>.
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  The algorithm for solving a linear system, supported by these theorems, remains the same as in <xref ref="alg-solving-system"/>. We will finish this section with two examples where we go through this algorithm carefully.
+</p>
+
+<example>
+  <statement>
+    <p>
+      The following is a linear system over <m>\ff_3</m>:
+      <md>
+        <mrow>x_1 + 2x_2 + x_3 \amp =1</mrow>
+        <mrow>2x_1 + 2x_2 \amp =1</mrow>
+        <mrow> x_1+2x_3 \amp =0</mrow>
+      </md>.
+      We will begin to solve this system by forming the augmented matrix:
+      <me>
+        \left[\begin{array}{@{}ccc|c@{}}
+          1 \amp 2 \amp 1 \amp 1 \\
+          2 \amp 2 \amp 0 \amp 1 \\
+          1 \amp 0 \amp 2 \amp 0
+        \end{array}\right]
+      </me>.
+      Since working with fields other than <m>\rr</m> is still new, we will explain all of the steps needed to reduce this matrix to its RREF. We first add the first row to the second row to produce a <m>0</m> in the <m>(2,1)</m> position. (Remember that <m>1</m> is the additive inverse of <m>2</m> in <m>\ff_3</m>!) This matrix is the result:
+      <me>
+        \left[\begin{array}{@{}ccc|c@{}}
+          1 \amp 2 \amp 1 \amp 1 \\
+          0 \amp 1 \amp 1 \amp 2 \\
+          1 \amp 0 \amp 2 \amp 0
+        \end{array}\right]
+      </me>.
+      </p>
+      <p>
+        We now add twice the first row to the third to produce a <m>0</m> in the <m>(3,1)</m> position. Here is that matrix: 
+      <me>
+        \left[\begin{array}{@{}ccc|c@{}}
+            1 \amp 2 \amp 1 \amp 1 \\
+            0 \amp 1 \amp 1 \amp 2 \\
+            0 \amp 1 \amp 1 \amp 2
+        \end{array}\right]
+      </me>.
+      </p>
+      <p>
+        We now notice that the second and third rows are the same. This means the third row will end up being a row of zeros, and we can achieve this by adding twice the second row to the third (in <m>\ff_3</m>, this is the same as subtracting the second row from the third):
+      <me>
+        \left[\begin{array}{@{}ccc|c@{}}
+          1 \amp 2 \amp 1 \amp 1 \\
+          0 \amp 1 \amp 1 \amp 2 \\
+          0 \amp 0 \amp 0 \amp 0
+        \end{array}\right]
+      </me>.
+      </p>
+      <p>
+        The final step in reducing this matrix is to take care of the entry which is above the pivot in the <m>(2,2)</m> position. We add the second row to the first, and this is the matrix which results:
+        <me>
+          \left[\begin{array}{@{}ccc|c@{}}
+            1 \amp 0 \amp 2 \amp 0 \\
+            0 \amp 1 \amp 1 \amp 2 \\
+            0 \amp 0 \amp 0 \amp 0
+          \end{array}\right]
+        </me>.
+      </p>
+      <p>
+        Our matrix is now in RREF, and from <xref ref="thm-consistent-system-f"/> we can conclude that this linear system is consistent. Further, from <xref ref="thm-unique-soln-system-f"/> we can see that there is not a unique solution to this system. We can write the solutions to this system, however:
+        <me>
+          \left\{ \begin{array}{l}
+          x_1 = x_3 \\
+          x_2 = 2+2x_3 \\
+          x_3 \text{ is free.}
+          \end{array} \right.
+        </me>
+        Since <m>\ff_3</m> has three elements, there are three possible values for <m>x_3</m>, meaning that there are three solutions to this linear system.
+      </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      The following is a linear system over <m>\cc</m>:
+      <md>
+        <mrow>(2-i)x_1 + (2+4i)x_2 + (-7+6i)x_3 \amp = 2-6i </mrow>
+        <mrow>(1-2i)x_1 + (5+2i)x_2 + (-2+12i)x_3 \amp = -3-8i </mrow>
+        <mrow> -3x_1 + (1-5i)x_2 + 9x_3 \amp =-4+3i </mrow>
+      </md>.
+      This example may seem a bit intimidating at first, especially for readers who have not dealt much with <m>\cc</m>. But when we follow our step-by-step approach, we should arrive at a solution with minimal problems.
+    </p>
+    <p>
+      First, we write down the augmented matrix of this system:
+      <me>
+        \left[\begin{array}{@{}ccc|c@{}}
+          2-i \amp 2+4i \amp -7+6i \amp 2-6i \\
+          1-2i \amp 5+2i \amp -2+12i \amp -3-8i \\
+          -3 \amp 1-5i \amp 9 \amp -4+3i
+        \end{array}\right]
+      </me>.
+      To start row reducing this matrix, we need a <m>1</m> in the <m>(1,1)</m> entry. Instead of following <xref ref="alg-solving-system"/> rigidly by exchanging rows and then dividing (or multiplying by an inverse), we will skip the first step and handle the rows as they are.
+    </p>
+    <p>
+      For a nonzero element <m>a+bi</m> of <m>\cc</m>, the multiplicative inverse is
+      <me>
+        \frac{a}{a^2+b^2} - \frac{b}{a^2+b^2}i
+      </me>.
+      This means that the inverse of <m>2-i</m> is <m>\frac{2}{5}+\frac{1}{5}i</m>. So, in order to get a <m>1</m> in the <m>(1,1)</m> position, we multiply the first row of the matrix by <m>\frac{2}{5}+\frac{1}{5}i</m>. Here is the result:
+      <me>
+        \left[\begin{array}{@{}ccc|c@{}}
+          1 \amp 2i \amp -4+i \amp 2-2i \\
+          1-2i \amp 5+2i \amp -2+12i \amp -3-8i \\
+          -3 \amp 1-5i \amp 9 \amp -4+3i
+        \end{array}\right]
+      </me>.
+    </p>
+    <p>
+      We now work to clear out the other entries in the first column. We add <m>(-1+2i)</m> times the first row to the second and we add <m>3</m> times the first row to the third. (We are taking care of two steps at once here.) This is the result:
+      <me>
+        \left[\begin{array}{@{}ccc|c@{}}
+          1 \amp 2i \amp -4+i \amp 2-2i \\
+          0 \amp 1 \amp 3i \amp -1-2i \\
+          0 \amp 1+i \amp -3+3i \amp 2-3i
+        \end{array}\right]
+      </me>.
+      (For readers who are new to <m>\cc</m>, verifying these calculations would be an excellent exercise!)
+    </p>
+    <p>
+      Since we already have a <m>1</m> in the <m>(2,2)</m> entry, we can use that to produce a zero below it in that column. We add <m>(-1-i)</m> times the second row to the third row, and we get this:
+      <me>
+        \left[\begin{array}{@{}ccc|c@{}}
+          1 \amp 2i \amp -4+i \amp 2-2i \\
+          0 \amp 1 \amp 3i \amp -1-2i \\
+          0 \amp 0 \amp 0 \amp 1
+        \end{array}\right]
+      </me>.
+    </p>
+    <p>
+      Even though this matrix is not yet in RREF, we do not need to continue with our algorithm. <xref ref="thm-consistent-system-f"/> tells us that the original system is inconsistent because of the pivot in the final column. Therefore, this system has no solution.
+    </p>
+  </statement>
+</example>
+
+<reading-questions>
+<exercise>
+  <statement>
+    <p>
+      Solve the following linear equation over <m>\cc</m>. List the steps you take in solving the equation in terms of the axioms of a field.
+      <me>
+        (1-3i)x + (4+2i) = -1-3i
+      </me>      
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      The following is a matrix with entries from <m>\ff_5</m>. Reduce this matrix to REF. (It is not necessary to reduce the matrix to RREF.) Describe each step you take.
+      <me>
+        \begin{bmatrix}
+        4 \amp 2 \amp 0 \amp 1 \\ 
+        3 \amp 1 \amp 1 \amp 3 \\ 
+        2 \amp 0 \amp 4 \amp 4
+        \end{bmatrix}
+      </me>      
+    </p>
+  </statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+<exercise>
+  <statement>
+    <p>
+      Solve the following linear system over <m>\ff_2</m>:
+      <md>
+        <mrow>x + z \amp = 1</mrow>
+        <mrow>y+z \amp = 0</mrow>
+        <mrow>x+y+z \amp = 1</mrow>
+      </md>.
+      <!-- 1 & 0 & 0 & 1 \\ 
+      0 & 1 & 0 & 0 \\ 
+      0 & 0 & 1 & 0  -->
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Solve the following linear system over <m>\ff_3</m>:
+      <md>
+        <mrow>2x + y + z \amp =0</mrow>
+        <mrow>x + 2z \amp = 2</mrow>
+        <mrow>y + z \amp = 1</mrow>
+        <mrow>2x + 2y  \amp = 1</mrow>
+      </md>.
+      <!-- 1 & 2 & 2 & 0 \\ 
+      0 & 1 & 0 & 2 \\ 
+      0 & 0 & 1 & 2 \\ 
+      0 & 0 & 0 & 1 
+      inconsistent -->
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Solve the following linear system over <m>\ff_7</m>:
+      <md>
+        <mrow>2x_1 + 3x_2 + x_4 \amp = 4</mrow>
+        <mrow>3x_1 + x_3 + 5x_4 \amp = 6</mrow>
+        <mrow>4x_1 + x_2 + 2x_3 \amp = 5</mrow>
+      </md>.
+      <!-- 1 & 0 & 0 & 3 & 4 \\ 
+      0 & 1 & 0 & 3 & 1 \\ 
+      0 & 0 & 1 & 3 & 1 -->
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      The following matrix <m>A</m> is defined over <m>\cc</m>:
+      <me>
+        A = \begin{bmatrix}
+        i \amp 1+i \amp 3 \\ 
+        1-i \amp -3+2i \amp 6+10i 
+        \end{bmatrix}
+      </me>.
+      Put this matrix into RREF.
+      <!-- 1 & 0 & 2+i \\ 
+      0 & 1 & 1-3i  -->
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Solve the following linear system over <m>\cc</m>:
+      <md>
+        <mrow>(-i)x + (3-i)z \amp = -1</mrow>
+        <mrow>(3+2i)x + y + (-1+9i)z \amp = 6-3i</mrow>
+        <mrow>(1+i)x + (2-i)y - (2i)z \amp = 10-5i</mrow>
+      </md>.
+      <!-- 1 & 0 & 1+3i & 0 \\ 
+      0 & 1 & 2-2i & 0 \\ 
+      0 & 0 & 0 & 1   -->
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Solve the following linear system over <m>\ff_5</m>:
+      <md>
+        <mrow>4x + y \amp = 2</mrow>
+        <mrow>3x + 2y + 2z \amp = 1</mrow>
+        <mrow>x + 3y + z \amp = 0</mrow>
+      </md>.
+      <!-- 1 & 0 & 0 & 2 \\ 
+      0 & 1 & 0 & 4 \\ 
+      0 & 0 & 1 & 1 -->
+    </p>
+  </statement>
+  <!-- <answer>
+    <p>
+      The unique solution is <m>x = 2</m>, <m>y = 4</m>, and <m>z = 1</m>.
+    </p>
+  </answer> -->
+  <!-- <solution>
+    <p>
+      When we form the augmented matrix for this system, we get 
+      <me>
+        \left[\begin{array}{@{}ccc|c@{}} 4 \amp 1 \amp 0 \amp 2 \\ 
+        3 \amp 2 \amp 2 \amp 1 \\ 
+        1 \amp 3 \amp 1 \amp 0 \end{array}\right]
+      </me>.
+      The reduced row echelon form of this matrix (over <m>\ff_5</m>) is 
+      <me>
+        \left[\begin{array}{@{}ccc|c@{}} 1 \amp 0 \amp 0 \amp 2 \\ 
+        0 \amp 1 \amp 0 \amp 4 \\ 
+        0 \amp 0 \amp 1 \amp 1 \end{array}\right]
+      </me>.
+      This shows that there is only one solution to this linear system, and it is <m>x = 2</m>, <m>y = 4</m>, and <m>z = 1</m>.
+    </p>
+  </solution> -->
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      The following matrix <m>A</m> is defined over <m>\qq[\sqrt{2}]</m> (see <xref ref="exer-q-root-2"/>):
+      <me>
+        A = \begin{bmatrix}
+        1+\sqrt{2} \amp 2 \amp 3 \amp -1+2\sqrt{2} \\ 
+        3\sqrt{2} \amp 1-\sqrt{2} \amp 0 \amp 2+\sqrt{2} \\ 
+        4 \amp -5+2\sqrt{2} \amp 3 + \sqrt{2} \amp -1
+        \end{bmatrix}
+      </me>.
+      Put this matrix into RREF.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      The following matrix <m>A</m> is defined over <m>\ff_3[\alpha]</m> (see <xref ref="exer-f3-alpha"/>):
+      <me>
+        A = \begin{bmatrix}
+        2 + \alpha \amp 2\alpha \amp 1 \\ 
+        1+2\alpha \amp \alpha \amp 2 \\ 
+        0 \amp 1+\alpha \amp 2+2\alpha 
+        \end{bmatrix}
+      </me>.
+      Put this matrix into RREF.      
+    </p>
+  </statement>
+</exercise>
+<subexercises>
+<title>Writing Exercises</title>
+<exercise>
+  <statement>
+    <p>
+      Suppose that we have a consistent linear system over <m>\ff_p</m> which has <m>j</m> free variables. Exactly how many solutions does this linear system have? Explain your answer.
+    </p>
+  </statement>
+</exercise>
+</subexercises>
+</exercises>
+</section>

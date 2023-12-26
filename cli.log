@@ -1,0 +1,28 @@
+INFO    : PreTeXt project found in `C:\Users\rhigginbottom\la-book`.
+INFO    : No change in assets requiring generating detected.  To force regeneration of assets, use `-g` flag.
+
+INFO    : Preparing to build into C:\Users\rhigginbottom\la-book\output\subset.
+INFO    : 
+Now building HTML into C:\Users\rhigginbottom\la-book\output\subset
+
+INFO    : Only building @xml:id `ch-first`
+
+INFO    : discovering source file's directory name: C:\Users\rhigginbottom\la-book\source
+INFO    : verifying and expanding input directory: C:\Users\rhigginbottom\la-book\source\../generated-assets
+INFO    : input directory expanded to absolute path: C:\UWARNING : Port 8000 could not be used.
+WARNING : Trying port 58848 instead.
+
+nput directory: C:\Users\rhigginbottom\la-book\source\../assets
+INFO    : input directory expanded to absolute path: C:\Users\rhigginbottom\la-book\assets
+INFO    : Runestone Services (via PreTeXt repository): version 6.5.0
+INFO    : Runestone Services (using newer, via online CDN query): version 7.1.7
+INFO    : converting C:\Users\rhigginbottom\la-book\source\main.ptx to HTML in C:\Users\RHIGGI~1\AppData\Local\Temp\tmpy2eije3w
+INFO    : XSL conversion of C:\Users\rhigginbottom\la-book\source\main.ptx by C:\Users\rhigginbottom\.ptx\xsl\pretext-html.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [def-row-reduction-alg] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
+INFO    :     *              located within: "thm-consistent-system" (xml:id)
+INFO    : successful application of C:\Users\rhigginbottom\.ptx\xsl\pretext-html.xsl
+INFO    : Removing temporary directory C:\Users\RHIGGI~1\AppData\Local\Temp\tmpy2eije3w
+INFO    : 
+Success! Run `pretext view subset` to see the results.
+

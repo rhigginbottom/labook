@@ -1,0 +1,5 @@
+file:/C:/Users/rhigginbottom/la-book/source/sec-ch3-linear-trans.ptx:115:14:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: example line 93 and solution
+file:/C:/Users/rhigginbottom/la-book/source/sec-ch3-linear-trans.ptx:116:11:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: subsection line 86 and example
+file:/C:/Users/rhigginbottom/la-book/source/sec-ch3-linear-trans.ptx:118:14:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: section line 3 and subsection
+file:/C:/Users/rhigginbottom/la-book/source/sec-ch3-linear-trans.ptx:120:1:FATAL:PARSER:ERR_DOCUMENT_END: Extra content at the end of the document
+file:/C:/Users/rhigginbottom/la-book/source/main.ptx:19:0:ERROR:XINCLUDE:XINCLUDE_NO_FALLBACK: could not load file:/C:/Users/rhigginbottom/la-book/source/sec-ch3-linear-trans.ptx, and no fallback was found

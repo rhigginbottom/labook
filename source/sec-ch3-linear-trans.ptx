@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-linear-trans" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Transformations</title>
+  <introduction>
+    <p>
+      Speaking broadly, mathematicians are often concerned about (mathematical) objects and the functions between those objects. The structure of specific objects can be illuminated by a look at the functions to and from those objects. In linear algebra, the objects in view are vector spaces (see <xref ref="def-vector-space"/>), and the functions between these objects are called <em>linear transformations</em>.
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-lin-trans">
+  <title>Introduction to Linear Transformations</title>
+
+  <definition xml:id="def-lin-trans">
+    <statement>
+      <p>
+       If <m>V</m> and <m>W</m> are vector spaces over a field <m>\ff</m>, then a function <m>T:V \to W</m> is called a <term>linear transformation</term> if both of the following properties hold.
+       <ul>
+         <li>
+           <p>
+             For all <m>\bfu, \bfv \in V</m>, we have <m>T(\bfu+\bfv) = T(\bfu) + T(\bfv)</m>.
+           </p>
+         </li>
+         <li>
+           <p>
+             For all <m>\bfv \in V</m> and all <m>c \in \ff</m>, we have <m>T(c\bfv) = cT(\bfv)</m>.
+           </p>
+         </li>
+       </ul>
+       These functions are sometimes referred to as <em>linear maps</em> or <em>linear operators</em>.
+      </p>
+      <p>
+        If <m>T:V \to W</m> is a linear transformation, then <m>V</m> is the <term>domain</term> of <m>T</m> and <m>W</m> is the <term>codomain</term> of <m>T</m>. 
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      Many readers will be more familiar with the idea of the <em>range</em> of a function than the <em>codomain</em> of a function. The <term>range</term> of a linear transformation <m>T:V \to W</m> is the set <m>\{T(\bfv) \in W \mid \bfv \in V\}</m>. In words, the range is the subset of the codomain consisting of the <q>outputs</q> of the function for all elements of the domain. Importantly, we will often use the term <term>image</term> when discussing the range of a linear transformation.
+    </p>
+  </note>
+
+  <p>
+    Linear transformations are the <q>right</q> function to study between vector spaces because they preserve the primary vector space operations. The first property of linear transformations means that such a function respects vector addition, and the second property means that such a function respects scalar multiplication.
+  </p>
+
+  <example xml:id="examp-deriv-lin-trans">
+    <statement>
+      <p>
+        We consider the real vector spaces <m>P_5</m> and <m>P_4</m>, along with the function <m>D:P_5 \to P_4</m> which takes the derivative. That is, <m>D(p) = p'</m> for all <m>p \in P_5</m>. So if <m>p = 3t^5-2t^3+10t</m>, then <m>D(p) = 15t^4 - 6t^2+10</m>. We note that <m>p \in P_5</m> and <m>D(p) \in P_4</m>.
+      </p>
+      <p>
+        The fact that our function <m>D</m> is a linear transformation between these vector spaces is a consequence of calculus. For all differentiable functions <m>f</m> and <m>g</m>, and all real numbers <m>c</m>, it is true that
+        <md>
+          <mrow> [f+g]' \amp = f'+g' </mrow>
+          <mrow> [cf]' \amp = cf' </mrow>
+        </md>.
+        (If the reader doubts or has forgotten these facts, the closest textbook on single-variable calculus should be consulted <em>posthaste</em>.)
+      </p>
+      <p>
+        These calculus facts confirm that <m>D(p+q) = D(p) + D(q)</m> and <m>D(cp) = cD(p)</m> for all <m>p,q \in P_5</m> and all <m>c \in \rr</m>. This proves that <m>D:P_5 \to P_4</m> is a linear transformation.
+      </p>
+    </statement>
+  </example>
+
+  <example xml:id="examp-rotate-reflect">
+    <statement>
+      <p>
+        Let <m>T:\rr^2 \to \rr^2</m> be the function which reflects a vector in the Cartesian plane across the <m>x</m>-axis. So <m>T(x,y)=(x,-y)</m>. Additionally, let <m>S:\rr^2\to\rr^2</m> be the function which rotates a vector counter-clockwise around the origin by <m>\frac{\pi}{2}</m> radians. So <m>S(x,y)=(-y,x)</m>. Then both <m>T</m> and <m>S</m> are linear transformations.
+      </p>
+      <p>
+        We will supply two calculations here to give the sense of these functions. The reader should note that <m>T</m> takes the vector <m>(-3,2)</m> in the second quadrant and reflects it across the <m>x</m>-axis to the vector <m>(-3,-2)</m> in the third quadrant. Also, <m>S</m> rotates the vector <m>(-3,2)</m> counter-clockwise around the origin by <m>\frac{\pi}{2}</m> radians to the vector <m>(-2,-3)</m>. (It is fairly obvious that the length of the vectors <m>(-3,2)</m> and <m>(-2,-3)</m> are the same. To check the claim about the angles, one would calculate the angles between the positive <m>x</m>-axis and both the vectors <m>(-3,2)</m> and <m>(-2,-3)</m>. The first angle is roughly <m>2.55</m> radians and the second is <m>4.12</m>, giving a difference of <m>1.57</m> radians, or roughly <m>\frac{\pi}{2}</m>.)
+      </p>
+      <p>
+        We first check the additivity condition. Let <m>(x_1,y_1), (x_2,y_2) \in \rr^2</m>. Then we have
+        <md>
+          <mrow>T((x_1,y_1)+(x_2,y_2)) \amp = T(x_1+x_2,y_1+y_2) = (x_1+x_2,-(y_1+y_2)) </mrow>
+          <mrow>T(x_1,y_1) + T(x_2,y_2) \amp = (x_1,-y_1) + (x_2,-y_2) = (x_1+x_2,-y_1-y_2) </mrow>
+        </md>.
+        From the distributive property of the real numbers (in the second coordinate of these calculations), we can see that the additive property holds for <m>T</m>. (The calculation for <m>S</m> is similar.)
+      </p>
+      <p>
+        We now check the scalar multiplication property. (Again, the calculations for <m>T</m> and <m>S</m> are similar, so we will only show one of them.) Let <m>c \in \rr</m> and let <m>(x,y) \in \rr^2</m>. Then we have
+        <md>
+          <mrow>S(c(x,y)) \amp = S(cx,cy) = (-cy,cx) </mrow>
+          <mrow>cS(x,y) \amp = c(-y,x) = (-cy,cx)</mrow>
+        </md>.
+        Note that we used the commutativity of multiplication in <m>\rr</m> in this calculation.
+      </p>
+      <p>
+        These brief calculations show that both <m>T</m> and <m>S</m> are linear transformations.
+      </p>
+    </statement>
+  </example>
+</subsection>
+
+<subsection xml:id="subsec-lin-trans-matrices">
+  <title>Linear Transformations and Matrices</title>
+
+<p>
+  While linear algebra is not <em>only</em> about matrices, matrices are valuable tools and provide a rich source of examples in this subject. In fact, matrices are so central to the notion of linear transformations that we will devote this subsection to their discussion.
+</p>
+
+<example xml:id="examp-matrix-vector-prod">
+  <statement>
+    <p>
+      Let <m>\ff</m> be a field and let <m>A</m> be an <m>m\times n</m> matrix with entries from <m>\ff</m>. (We will refer to this in what follows as <q>a matrix over <m>\ff</m>.</q>) Then multiplication by <m>A</m> is a linear transformation from <m>\ff^n</m> to <m>\ff^m</m>. We will denote this by <m>T_A:\ff^n \to \ff^m</m>.
+    </p>
+    <p>
+      To justify this claim we must first explain what we mean by <q>multiplication by <m>A</m>.</q> We will let <m>\bfv \in \ff^n</m> and denote entry <m>(i,j)</m> in <m>A</m> by <m>a_{ij}</m>. We will further denote the entries of <m>\bfv</m> by
+      <me>
+        \bfv = \left[\begin{array}{@{}c@{}}
+          v_1 \\ \vdots \\ v_n
+        \end{array}\right]
+      </me>.
+       Then the <term>matrix-vector product</term> <m>A\bfv</m> is defined to be the following vector in <m>\ff^m</m>:
+       <men xml:id="form-matrix-vect-prod">
+         A\bfv = \left[\begin{array}{@{}c@{}}
+           a_{11}v_1 + \cdots + a_{1n}v_n \\ \vdots \\
+           a_{m1}v_1 + \cdots + a_{mn}v_n
+         \end{array}\right]
+       </men>.
+       One way to state this is that entry <m>j</m> in <m>A\bfv</m> is the sum of the entry-wise product of row <m>j</m> in <m>A</m> with <m>\bfv</m>. Since <m>A\bfv</m> is an element of <m>\ff^m</m>, the domain and codomain of <m>T_A</m> are correct.
+    </p>
+    <p>
+      What we have defined is the product of a matrix and a vector. However, an alternate description of this product will be more useful in proving that <m>T_A</m> is a linear transformation.
+    </p>
+    <p>
+      If the columns of <m>A</m> are thought of as vectors <m>\mathbf{a}_1, \ldots, \mathbf{a}_n</m>, then the product <m>A\bfv</m> is also
+      <men xml:id="matrix-vector-def2">
+        A\bfv = v_1\mathbf{a}_1 + \cdots + v_n\mathbf{a}_n = \sum_{i=1}^n v_i\mathbf{a}_i
+      </men>.
+      In words, <m>A\bfv</m> is a linear combination of the columns of <m>A</m> with weights coming from the entries of <m>\bfv</m>.
+      (We have reserved proving the equivalence of these two formulations to <xref ref="exer-matrix-vector-mult"/>.)
+    </p>
+    <p>
+      With this equivalent definition, proving that <m>T_A</m> is a linear transformation is a snap. Let <m>\bfu</m> and <m>\bfv</m> be vectors in <m>\ff^n</m> and let <m>c \in \ff</m>. We will further denote the entries of <m>\bfu</m> and <m>\bfv</m> by
+      <me>
+        \bfu = \left[\begin{array}{@{}c@{}}
+          u_1 \\ \vdots \\ u_n
+        \end{array}\right] \hspace{.3in} \bfv = \left[\begin{array}{@{}c@{}}
+          v_1 \\ \vdots \\ v_n
+        \end{array}\right]
+      </me>. Then we have the following:
+      <md>
+        <mrow>T_A(\bfu + \bfv) \amp = A(\bfu+\bfv) = \sum_{i=1}^n(u_i+v_i)\mathbf{a}_i</mrow>
+        <mrow>T_A(\bfu) + T_A(\bfv) \amp = A\bfu + A\bfv = \sum_{i=1}^n u_i\mathbf{a}_i + \sum_{i=1}^n v_i\mathbf{a}_i</mrow>
+      </md>.
+      These two expressions are equal due to the fact that <m>\ff^m</m> is a vector space.
+    </p>
+    <p>
+      We'll finish up the final calculation now. Let <m>\bfv</m> be a vector in <m>\ff^n</m> and let <m>c</m> be in <m>\ff</m>. Then we have 
+      <md>
+        <mrow>T_A(c\bfv) \amp = A(c\bfv) = \sum_{i=1}^n (cv_i)\mathbf{a}_i</mrow>
+        <mrow>cT_A(\bfv) \amp = c A(\bfv) = c \sum_{i=1}^n v_i\mathbf{a}_i.</mrow>
+      </md>
+      Once again, thsse expressions are equal because <m>\ff^m</m> is a vector space. 
+    </p>
+    <p>
+      These calculations prove that <m>T_A</m> is a linear transformation.
+    </p>
+  </statement>
+</example>
+
+<note>
+  <p>
+    To summarize, when <m>\ff</m> is a field, multiplication by an <m>m\times n</m> matrix <m>A</m> is a linear transformation <m>T_A:\ff^n \to \ff^m</m>.
+  </p>
+</note>
+
+<p>
+  General matrices are rectangular, not necessarily square. When a matrix is square, however, we have additional properties to discuss. 
+</p>
+
+<definition xml:id="def-diag-identity-matrices">
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix. (So <m>A</m> is <em>square</em>.) We say that <m>A</m> is a <term>diagonal matrix</term> if <m>a_{ij} = 0</m> for all <m>i \neq j</m>. If <m>A</m> is diagonal and <m>a_{ii}=1</m> for all <m>i = 1,\ldots,n</m>, then <m>A</m> is called an <term>identity matrix</term>.
+    </p>
+  </statement>
+</definition>
+
+<note xml:id="note-define-ej">
+  <p>
+    We often use the notation <m>\mathbf{e}_1,\ldots, \mathbf{e}_n</m> to refer to the columns of the <m>n\times n</m> identity matrix. In other words, <m>\mathbf{e}_j</m> is the vector with a <m>1</m> in entry <m>j</m> and zeros elsewhere.
+  </p>
+</note> 
+</subsection>
+
+<subsection xml:id="subsec-props-linear-trans">
+  <title>Properties of Linear Transformations</title>
+  <p>
+    Recall that while linear transformations must have special properties, they are first of all <em>functions</em>. And, as functions, properties like injectivity and surjectivity can apply to linear transformations.
+  </p>
+
+  <definition xml:id="def-injective-surjective-bijective">
+    <statement>
+      <p>
+        Let <m>T:V \to W</m> be a linear transformation between vector spaces. We say that <m>T</m> is <term>injective</term> if <m>T(\bfv_1)=T(\bfv_2)</m> implies <m>\bfv_1=\bfv_2</m> for all <m>\bfv_1, \bfv_2 \in V</m>. Injective linear transformations are also referred to as <em>one-to-one</em> since no two distinct elements of the domain may correspond to the same element of the range.
+      </p>
+      <p>
+        The linear transformation <m>T</m> is called <term>surjective</term> if for every <m>\bfw \in W</m> there exists a vector <m>\bfv \in V</m> such that <m>T(\bfv) = \bfw</m>. For surjective functions, the image/range is the same as the codomain. (The range is always a subset of the codomain, but these sets are not always equal.) Sometimes surjective functions are referred to as <em>onto</em> functions.
+      </p>
+      <p>
+        If a linear transformation is both injective and surjective, we say that it is <term>bijective</term>.
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Let's reconsider the linear transformation <m>D:P_5 \to P_4</m> which appeared in <xref ref="examp-deriv-lin-trans"/>. We observe that <m>D</m> is surjective but not injective. 
+      </p>
+      <p>
+        The transformation is surjective because we know about the antiderivative. Let <m>q \in P_4</m> have the form 
+        <me>
+          q(t) = a_4t^4 + a_3t^3 + a_2t^2 + a_1t + a_0
+        </me>.
+        This is a generic element of <m>P_4</m>, so we only need to supply an element <m>p \in P_5</m> such that <m>D(p)=q</m>, and this will prove that <m>D</m> is surjective. Consider the element <m>p</m> defined as 
+        <me>
+          p(t) = \tfrac{1}{5}a_4t^5 + \tfrac{1}{4}a_3t^4 + \tfrac{1}{3}a_2t^3 + \tfrac{1}{2}a_1t^2 + a_0t
+        </me>.
+        It is but the work of a Calculus I student to verify that <m>D(p)=q</m>, thus showing that <m>D</m> is surjective. (We note that we could have chosen <m>p</m> to have any constant term at all; we used the constant term of <m>0</m>.)
+      </p>
+      <p>
+        Finally, we will show that <m>D</m> is not injective by looking at an example of two elements of <m>P_5</m> which have the same image under <m>D</m> in <m>P_4</m>. Let <m>p_1 = t^2 + 10</m> and <m>p_2 = t^2 + 20</m>. Then we see that even though <m>p_1 \neq p_2</m>, we have <m>D(p_1)=D(p_2)</m>, and this proves that <m>D</m> is not injective. 
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    We will define one more property of linear transformations here that will resurface in <xref ref="sec-matrix-linear-trans"/>.
+  </p>
+
+  <definition xml:id="def-lin-trans-invertible">
+    <statement>
+      <p>
+        Let <m>T:V \to W</m> be a linear transformation between vector spaces. The <term>identity transformation</term> on <m>V</m> is the linear transformation <m>I_V:V \to V</m> which is <m>I_V(\bfv)=\bfv</m> for each <m>\bfv \in V</m>. (If the vector space we have in mind is clear, we will drop the subscript and use the notation <m>I</m>.)
+      </p>
+      <p>
+        We say that the linear transformation <m>T</m> is <term>invertible</term> if there exists a linear transformation <m>S:W \to V</m> such that <m>S \circ T = I_V</m>.
+      </p>
+    </statement>
+  </definition>
+</subsection>
+
+<subsection xml:id="subsec-matrix-vector-form-lin-system">
+  <title>The Matrix-Vector Form of a Linear System</title>
+  <p>
+    Having defined the product of a matrix and a vector in <xref ref="examp-matrix-vector-prod"/>, we can reformulate one of the foundational (and introductory) matters of this book. We will now put the notion of a linear system<mdash></mdash>in particular, the solutions to linear systems<mdash></mdash>in a different context.
+  </p>
+  <p>
+    Let's consider the following system of linear equations over a field <m>\ff</m>, as we saw in <xref ref="sec-linear-systems-fields"/>:
+    <mdn>
+      <mrow number="no">a_{11}x_1 + \cdots + a_{1n}x_n \amp = b_1</mrow>
+      <mrow number="no">a_{21}x_1 + \cdots + a_{2n}x_n \amp = b_2</mrow>
+      <mrow number="no">\vdots \hspace{10pt} \amp\phantom{ = } \hspace{6pt} \vdots </mrow>
+      <mrow number="no">a_{m1}x_1 + \cdots + a_{mn}x_n \amp = b_m</mrow>
+    </mdn>.
+    If we let <m>A</m> be the matrix <m>A = [a_{ij}]</m>, <m>\bfx</m> be the vector of variables <m>\bfx=[x_j]</m>, and <m>\mathbf{b}</m> be the vector of constants <m>\mathbf{b} = [b_j]</m>, then this linear system can be written efficiently as <m>A\bfx = \bfb</m>.
+  </p>
+  <p>
+    With this reformulation, the questions of the existence and uniqueness of solutions to a system of equations (see the end of <xref ref="sec-intro-systems"/>) can now be stated in the language of the injectivity and surjectivity of linear transformations.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Consider the linear transformation <m>T_A:\rr^3 \to \rr^3</m> which is multiplication by this matrix: 
+        <me>
+          A = \begin{bmatrix}
+          2 \amp 3 \amp 2 \\ 
+          1 \amp -2 \amp 8 \\ 
+          -1 \amp 4 \amp -12
+          \end{bmatrix}
+        </me>.
+        We will show that <m>T_A</m> is neither injective nor surjective.
+      </p>
+      <p>
+        Let <m>\bfu</m> and <m>\bfv</m> be the following vectors in <m>\rr^3</m>:
+        <me>
+          \bfu = \begin{bmatrix}
+          -1 \\ -2 \\ 3
+          \end{bmatrix}, \hspace{12pt}
+          \bfv = \begin{bmatrix}
+          7 \\ 0 \\ 2
+          \end{bmatrix}
+        </me>.
+        By forming and row-reducing the augmented matrices <m>[A \mid \bfu]</m> and <m>[A \mid \bfv]</m>, we can determine how many solutions there are to the equations <m>T_A(\bfx) = \bfu</m> and <m>T_A(\bfx)=\bfv</m>, respectively. Here are the calculations:
+        <men xml:id="eqn-mat-not-surj">
+          \left[\begin{array}{@{}c|c@{}}
+          A \amp \bfu 
+          \end{array}\right] \sim
+          \left[\begin{array}{@{}ccc|c@{}}
+          1 \amp 0 \amp 4 \amp 0 \\ 
+          0 \amp 1 \amp -2 \amp 0 \\ 
+          0 \amp 0 \amp 0 \amp 1
+          \end{array}\right]
+        </men>,
+        <men xml:id="eqn-mat-not-inj">
+          \left[\begin{array}{@{}c|c@{}}
+          A \amp \bfv 
+          \end{array}\right] \sim
+          \left[\begin{array}{@{}ccc|c@{}}
+          1 \amp 0 \amp 4 \amp 2 \\ 
+          0 \amp 1 \amp -2 \amp 1 \\ 
+          0 \amp 0 \amp 0 \amp 0
+          \end{array}\right]
+        </men>.        
+      </p>
+      <p>
+        From <xref ref="eqn-mat-not-surj"/>, since there is a pivot in the final column of the RREF of <m>[A \mid \bfu]</m>, we see that <m>\bfu</m> is not in the image of <m>T_A</m>. This means that the matrix equation <m>A\bfx = \bfu</m> has no solution, so <m>T_A</m> is not surjective; equivalently, the linear system which corresponds to the augmented matrix <m>[A \mid \bfu]</m> is inconsistent.
+      </p>
+      <p>
+        From <xref ref="eqn-mat-not-inj"/>, we see that <m>\bfv</m> is in the image of <m>T_A</m>. Since there is no pivot in the final column of the RREF of <m>[A \mid \bfv]</m>, and since there is a free variable in that same RREF, this means that the matrix equation <m>A\bfx = \bfv</m> has multiple solutions, so <m>T_A</m> is not injective. Specifically, if 
+        <me>
+          \bfx_1 = \begin{bmatrix}
+          2 \\ 1 \\ 0
+          \end{bmatrix}, \hspace{12pt}
+          \bfx_2 = \begin{bmatrix}
+          -2 \\ 3 \\ 1
+          \end{bmatrix}
+        </me>,
+        then we have both <m>T_A(\bfx_1)=\bfv</m> and <m>T_A(\bfx_2)=\bfv</m>. (The vector <m>\bfx_1</m> results from setting the free variable equal to <m>0</m>, and we obtain <m>\bfx_2</m> by setting the free variable equal to <m>1</m>.) Finally, we note that the linear system which corresponds to the augmented matrix <m>[A \mid \bfv]</m> is consistent with many solutions<mdash></mdash>that is, a solution is not unique.
+      </p>
+    </statement>
+  </example>
+</subsection>
+
+<reading-questions>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following, determine the number of rows and columns that a matrix would have if multiplication by that matrix is a linear transformation with the given domain and codomain.
+        <ol>
+          <li>
+            <p>
+              domain: <m>\rr^2</m>, codomain: <m>\rr^3</m>
+            </p>
+            <!-- <p>
+              <m>3\times 2</m>
+            </p> -->
+          </li>
+          <li>
+            <p>
+              domain: <m>\qq^4</m>, codomain: <m>\qq^2</m>
+            </p>
+            <!-- <p>
+              <m>2\times 4</m>
+            </p> -->
+          </li>
+        </ol>        
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m>, <m>\bfu</m>, <m>\mathbf{b}</m>, and <m>\mathbf{c}</m> be defined as follows:
+        <me>
+          A = \begin{bmatrix}
+          2 \amp 0 \amp 6 \\
+          1 \amp 3 \amp 6 \\
+          -1 \amp 5 \amp 2
+          \end{bmatrix}, \hspace{6pt} \bfu = \begin{bmatrix}
+          3 \\ -2 \\ -1
+          \end{bmatrix}, \hspace{6pt} \mathbf{b} = \begin{bmatrix}
+          3 \\ 6 \\ 6
+          \end{bmatrix}, \hspace{6pt} \mathbf{c} = \begin{bmatrix}
+          -1 \\ -4 \\ 3
+          \end{bmatrix}
+        </me>.
+        Define a linear transformation <m>T_A:\rr^3 \to \rr^3</m> to be multiplication by <m>A</m>. 
+        <ol>
+          <li>
+            <p>
+              Find <m>T_A(\bfu)</m>.  
+            </p>
+            <!-- <p>
+              <m>\begin{bmatrix} 0 \\ -9 \\ -18 \end{bmatrix}</m>
+            </p> -->
+          </li>
+          <li>
+            <p>
+              Find an <m>\bfx</m> in <m>\rr^3</m> such that <m>T_A(\bfx)=\mathbf{b}</m>. 
+            </p>
+            <!-- <p>
+              <m>\begin{bmatrix} \frac{3}{2} \\ \frac{3}{2} \\ 0 \end{bmatrix} - x_3 \begin{bmatrix} 3 \\ 1 \\ 1 \end{bmatrix}</m>
+            </p> -->
+          </li>
+          <li>
+            <p>
+              Is there more than one <m>\bfx</m> whose image under <m>T_A</m> is <m>\mathbf{b}</m>? How do you know?
+            </p>
+            <!-- <p>
+              yes, free variable!
+            </p> -->
+          </li>
+          <li>
+            <p>
+              Determine whether or not <m>\mathbf{c}</m> is in the range of <m>T_A</m>.
+            </p>
+            <!-- <p>
+              No, matrix reduces to <m>\begin{bmatrix} 1 \amp 0 \amp 3 \amp 0 \\ 
+              0 \amp 1 \amp 1 \amp 0 \\ 
+              0 \amp 0 \amp 0 \amp 1 \end{bmatrix} </m>
+            </p> -->
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <!-- <exercise>
+    <statement>
+      <p>
+        rotation/reflection injective? surjective?
+      </p>
+    </statement>
+  </exercise> -->
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Consider the function <m>T:P_2 \to P_3</m> defined by <m>T(p) = tp</m>. (So, for example, <m>T(2+t)=2t+t^2</m>.) Is <m>T</m> a linear transformation? Justify your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the function <m>T:P_2 \to P_2</m> defined by <m>T(p) = p(0)+p(1)t+p(2)t^2</m>. Is <m>T</m> a linear transformation? Justify your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the function <m>T:P_2 \to P_1</m> defined by <m>T(p) = p(0) + p'(0)t</m>. Is <m>T</m> a linear transformation? Justify your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T:\ff_5^3 \to \ff_5^2</m> be the function defined by <m>T(x,y,z)=(3x+y-2z, -xy)</m>. Is <m>T</m> a linear transformation? Justify your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T:\rr^2 \to \rr^3</m> be the function defined by <m>T(x,y) = (2x, z-3y, 0)</m>. Is <m>T</m> a linear transformation? Justify your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Define the function <m>T:C[0,\infty) \to C[0,\infty)</m> to be the following:
+        <me>
+          (T(f))(x) = \int_0^x f(y)\;dy
+        </me>.
+        Prove that <m>T</m> is a linear transformation.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following matrix over <m>\ff_3</m>:
+        <me>
+          A = \begin{bmatrix}
+          2 \amp 1 \amp 1 \\ 
+          0 \amp 1 \amp 2 \\
+          1 \amp 2 \amp 2
+          \end{bmatrix}
+        </me>.
+        For each of the following vectors <m>\bfv</m>, calculate the matrix-vector product <m>A\bfv</m>. 
+        <ol>
+          <li>
+            <p>
+              <m>\bfv = (1,1,0)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\bfv = (2,1,2)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\bfv = (0,2,1)</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exer-lin-trans-comp">
+    <statement>
+      <p>
+        Let <m>T:U \to V</m> and <m>S:V \to W</m> be linear transformations between vector spaces over a field <m>\ff</m>. Prove that <m>S \circ T</m> is also a linear transformation.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T:U \to V</m> and <m>S:V \to W</m> be linear transformations between vector spaces over a field <m>\ff</m>. 
+        <ol>
+          <li>
+            <p>
+              Prove that if <m>S\circ T</m> is injective, then <m>T</m> must be injective.
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove that if <m>S\circ T</m> is surjective, then <m>S</m> must be surjective.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="lin-trans-zero">
+    <statement>
+      <p>
+        Let <m>T:V \to W</m> be a function between vector spaces over <m>\ff</m>. 
+        <ol>
+          <li>
+            <p>
+              If <m>T</m> is a linear transformation, must it be true that <m>T(\mathbf{0}_V) = \mathbf{0}_W</m>? Either prove this is true or produce a counterexample.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>T(\mathbf{0}_V) = \mathbf{0}_W</m>, must <m>T</m> be a linear transformation? Either prove this is true or produce a counterexample.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following matrix over <m>\rr</m>:
+        <me>
+          A = \begin{bmatrix}
+          -1 \amp 2 \amp 3 \\
+          -2 \amp 5 \amp 0
+          \end{bmatrix}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              If <m>T</m> is the linear transformation which is multiplication by <m>A</m>, what are the domain and codomain of <m>T</m>?
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate the image of the vector <m>\bfv = (-3, 1, 4)</m> under the linear transformation <m>T</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Is the vector <m>\bfw = (-2,-1)</m> in the image of <m>T</m>? Explain your answer.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be the following matrix over <m>\rr</m>:
+        <me>
+          A = \begin{bmatrix}
+          3 \amp -2 \\ 
+          1 \amp 4 \\ 
+          -1 \amp 0
+          \end{bmatrix}
+        </me>.
+        Let <m>T</m> be the linear transformation which is multiplication by <m>A</m>. 
+        <ol> 
+        <li>
+          <p>
+            Is the vector <m>(1,1,1)</m> in the image of <m>T</m>? Explain your answer.
+          </p>
+        </li>
+        <li>
+          <p>
+            Is <m>T</m> surjective? Explain your answer.
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be the following matrix over <m>\ff_7</m>:
+        <me>
+          A = \begin{bmatrix}
+          2 \amp 0 \amp 4 \\ 
+          4 \amp 3 \amp 5 \\ 
+          5 \amp 1 \amp 2
+          \end{bmatrix}
+        </me>.
+        Let <m>T</m> be the linear transformation which is multiplication by <m>A</m>. 
+        <ol> 
+        <li>
+          <p>
+            Is the vector <m>(3,1,1)</m> in the image of <m>T</m>? Explain your answer.
+          </p>
+        </li>
+        <li>
+          <p>
+            The vector <m>\bfw=(5,4,0)</m> is in the image of <m>T</m>. Find one <m>\bfx \in \ff_7^3</m> such that <m>T(\bfx) = \bfw</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Is there more than one <m>\bfx \in \ff_7^3</m> such that <m>T(\bfx) = \bfw</m>? How do you know?
+          </p>
+        </li>
+        <li>
+          <p>
+            Is <m>T</m> injective? Is <m>T</m> surjective? Explain your answers.
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T:\rr^3 \to \rr^2</m> be the linear transformation which is multiplication by the following matrix:
+        <me>
+          A = \begin{bmatrix}
+          4 \amp -2 \amp 0 \\ 
+          3 \amp 2 \amp 3
+          \end{bmatrix}
+        </me>. 
+        Give a description of all vectors <m>\bfx \in \rr^3</m> such that <m>T(\bfx) = \mathbf{0}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\bfv_1, \ldots, \bfv_m</m> be vectors which span a vector space <m>V</m>. If <m>T:V \to V</m> is a linear transformation for which <m>T(\bfv_i)=\mathbf{0}</m> for all <m>i=1,\ldots,m</m>, prove that <m>T</m> is the zero transformation. (In other words, prove that <m>T(\bfx)=\mathbf{0}</m> for all <m>\bfx \in V</m>.)
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exer-matrix-vector-mult">
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>m\times n</m> matrix over a field <m>\ff</m>, and let <m>\bfv</m> be a vector in <m>\ff^n</m>. Prove that the formulations of the matrix-vector product given in <xref ref="form-matrix-vect-prod"/> and <xref ref="matrix-vector-def2"/> are equivalent.
+      </p>
+    </statement>
+  </exercise>
+</exercises>
+</section>

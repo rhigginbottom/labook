@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-rank" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Rank and Nullity</title>
+  <introduction>
+    <p>
+      In this section we will connect dimension with the subspaces that are associated with linear transformations (see <xref ref="sec-subspaces-lt"/>).
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-define-rank-nullity">
+  <title>Defining Rank and Nullity</title>
+
+  <p>
+    We begin by defining the dimension of the range of a linear transformation.
+  </p>
+
+  <definition xml:id="def-rank">
+    <statement>
+      <p>
+        Let <m>T</m> be a linear transformation. Then the <term>rank</term> of <m>T</m>, denoted <m>\rank(T)</m>, is the dimension of the range of <m>T</m>: 
+        <me>
+          \rank(T) = \dim(\range(T))
+        </me>. 
+        The <term>rank</term> of a matrix <m>A</m> is the dimension of the column space of <m>A</m>: 
+        <me>
+          \rank(A) = \dim(\col(A))
+        </me>.         
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    It may seem strange to define the same word in two ways. However, since the range of <m>T</m> is exactly the column space of <m>A</m> when <m>T</m> is multiplication by <m>A</m>, these two definitions coincide. 
+  </p>
+
+<p>
+  When <m>A</m> is an <m>m\times n</m> matrix over <m>\ff</m>, its rows are vectors in <m>\ff^n</m> and its columns are vectors in <m>\ff^m</m>. This is why the column space of <m>A</m> is a subspace of <m>\ff^m</m>. We can also examine the analogous space for the rows.
+</p>
+
+<definition xml:id="def-row-space">
+  <statement>
+    <p>
+      The set of all linear combinations of the rows of a matrix <m>A</m> is called the <term>row space</term> of <m>A</m>. We denote this by <m>\row(A)</m>. 
+    </p>
+  </statement>
+</definition>
+
+<note>
+  <p>
+    Since the rows of <m>A</m> are the columns of <m>A^T</m>, we have <m>\row(A) = \col(A^T)</m>. 
+  </p>
+</note>
+  
+<p>
+  With the definition of the row space it is natural to wonder how the sizes of the row and column spaces compare to each other. The following results will help us settle this matter.
+</p>
+
+<proposition xml:id="prop-row-equiv-row-spaces">
+  <statement>
+    <p>
+      If <m>A</m> and <m>B</m> are row equivalent matrices, then <m>\row(A) = \row(B)</m>. Further, if <m>B</m> is in REF, then the non-zero rows of <m>B</m> form a basis for <m>\row(B)</m> (and <m>\row(A)</m>). 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      If <m>A</m> is reduced to <m>B</m>, then the rows of <m>B</m> are linear combinations of the rows of <m>A</m>. (The elementary row operations produce linear combinations of the original rows.) Therefore, any linear combination of the rows of <m>B</m> can be written as a linear combination of the rows of <m>A</m>. This proves that <m>\row(B) \subseteq \row(A)</m>. Since all row operations are reversible, we can use row operations to produce <m>A</m> from <m>B</m>, and this same argument shows that <m>\row(A) \subseteq \row(B)</m>. This proves that <m>\row(A) = \row(B)</m>. 
+    </p>
+    <p>
+      If the matrix <m>B</m> is in REF, the nonzero rows are linearly independent because no nonzero row is a linear combination of the rows below it. Here we are applying the Linear Dependence Lemma (<xref ref="thm-lin-dep-lemma"/>) to the nonzero rows from bottom to top. Since the rows of <m>B</m> span <m>\row(B)</m> by definition, the fact that they are linearly independent means that they form a basis for <m>\row(B)</m>. 
+    </p>
+  </proof>
+</proposition>
+
+<theorem xml:id="thm-row-space-dim">
+  <statement>
+    <p>
+      Let <m>A \in M_{m,n}(\ff)</m>. Then <m>\rank(A) = \dim(\row(A))</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      If we put <m>A</m> into REF, then <xref ref="prop-row-equiv-row-spaces"/> tells us that the number of pivots is <m>\dim(\row(A))</m> since that is the number of vectors in a basis of <m>\row(A)</m>. However, the number of pivots in a REF (or the RREF) of <m>A</m> is also <m>\rank(A)</m>. (See <xref ref="exer-num-pivots-matrix"/>.) This proves that <m>\rank(A) = \dim(\row(A))</m>. 
+    </p>
+  </proof>
+</theorem>
+
+<note>
+  <p>
+    This theorem says that <m>\rank(A) = \rank(A^T)</m>. This theorem also answers the question about the relative sizes of <m>\col(A)</m> and <m>\row(A)</m><mdash></mdash>they are the same size!
+  </p>
+</note>
+
+<example>
+  <statement>
+    <p>
+      Consider the following matrix <m>A \in M_{4,5}(\ff_5)</m>: 
+      <me>
+        A = \begin{bmatrix} 
+        0 \amp 2 \amp 2 \amp 1 \amp 2 \\ 
+        4 \amp 3 \amp 4 \amp 1 \amp 3 \\ 
+        0 \amp 0 \amp 3 \amp 3 \amp 2 \\ 
+        4 \amp 2 \amp 0 \amp 0 \amp 0
+        \end{bmatrix}
+      </me>.
+      We will find a basis for <m>\row(A)</m>. Here is the RREF of <m>A</m>: 
+      <me>
+        A \sim \begin{bmatrix} 
+        1 \amp 0 \amp 0 \amp 4 \amp 4 \\ 
+        0 \amp 1 \amp 0 \amp 2 \amp 2 \\ 
+        0 \amp 0 \amp 1 \amp 1 \amp 4 \\ 
+        0 \amp 0 \amp 0 \amp 0 \amp 0
+        \end{bmatrix}
+      </me>.
+      We have used the RREF of a matrix in the past to find bases for the null space and column space of a matrix. Now, we will use it to find a basis for the row space. <xref ref="prop-row-equiv-row-spaces"/> tells us that the nonzero rows of this RREF are the basis we seek, therefore a basis for <m>\row(A)</m> is <m>\{\bfv_1, \bfv_2, \bfv_3 \}</m>, where 
+      <md>
+        <mrow>\bfv_1 \amp = [1\; 0\; 0\; 4\; 4 ]</mrow>
+        <mrow>\bfv_2 \amp = [0\; 1\; 0\; 2\; 2 ]</mrow>
+        <mrow>\bfv_3 \amp = [0\; 0\; 1\; 1\; 4 ]</mrow>
+      </md>.
+    </p>
+  </statement>
+</example>
+
+<p>
+  We have defined the dimension of the range of a linear transformation <m>T</m>, so we now turn to the kernel.
+</p>
+
+<definition xml:id="def-nullity">
+  <statement>
+    <p>
+      If <m>T</m> is a linear transformation, then the <term>nullity</term> of <m>T</m> is the dimension of the kernel of <m>T</m>. If <m>A</m> is a matrix, then the <term>nullity</term> of <m>A</m> is the dimension of the null space of <m>A</m>. 
+    </p>
+  </statement>
+</definition>
+
+<note>
+  <p>
+    As we saw with rank, these two uses of <q>nullity</q> coincide for the situation when <m>T</m> is multiplication by <m>A</m>. 
+  </p>
+  <p>
+    Some other texts use the notation <m>\nll</m> to indicate nullity instead of null space. We will not introduce any additional notation for the nullity, but we will use <m>\dim(\ker(T))</m> or <m>\dim(\nll(A))</m> as appropriate. 
+  </p>
+</note>
+
+</subsection>
+
+<subsection xml:id="subsec-rank-thm">
+  <title>The Rank-Nullity Theorem</title>
+  
+<p>
+  The following theorem brings together the rank and nullity of a matrix/linear transformation. 
+</p>
+
+<theorem xml:id="thm-rank-nullity">
+  <title>The Rank-Nullity Theorem</title> 
+  <statement>
+    <p>
+      If <m>A \in M_{m,n}(\ff)</m>, then 
+      <me>
+        \rank(A) + \dim(\nll(A)) = n
+      </me>.
+      If <m>T \in L(V,W)</m>, then 
+      <me>
+        \rank(T) + \dim(\ker(T)) = \dim(V)
+      </me>.       
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will prove the result for matrices. The proof for linear transformations is a bit more technical. (The reader should note that the result for linear transformations implies the result for matrices!)
+    </p>
+    <p>
+      If <m>A \in M_{m,n}(\ff)</m>, let <m>B</m> be the RREF of <m>A</m>. Then <m>\rank(A)</m> is the number of pivot columns in <m>B</m>. Further, <m>\dim(\nll(A))</m> is the number of non-pivot columns in <m>B</m>. (See <xref ref="exer-num-pivots-matrix"/>.) Since each of the <m>n</m> columns of <m>B</m> must be either a pivot or a non-pivot column, and since <m>A</m> and <m>B</m> have the same number of columns, this proves the theorem.
+    </p>
+  </proof>
+</theorem>
+
+<example>
+  <statement>
+    <p>
+      If <m>A</m> is a <m>5\times 6</m> matrix with a three-dimensional null space, this theorem tells us that the rank of <m>A</m> is <m>6-3=3</m>. 
+    </p>
+    <p>
+      Let us consider an additional scenario: Could a <m>6\times 8</m> matrix <m>A</m> have a one-dimensional null space? If such a matrix existed, it would have a rank of <m>8-1=7</m>, according to <xref ref="thm-rank-nullity"/>. But the largest rank that a <m>6\times 8</m> matrix can have is 6, since there cannot be more pivots than there are rows. So the answer is no, a <m>6\times 8</m> matrix cannot have a one-dimensional null space. 
+    </p>
+  </statement>
+</example>
+
+<p>
+  When the dimensions of the domain and codomain of a linear transformation are equal, some properties of such a transformation are easier to prove.
+</p>
+
+<corollary xml:id="cor-lin-trans-dimensions">
+  <statement>
+    <p>
+      If <m>T \in L(V,W)</m> and <m>\dim(V) = \dim(W)</m>, then the following are equivalent.
+      <ol>
+        <li>
+          <p>
+            The transformation <m>T</m> is injective. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The transformation <m>T</m> is surjective. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The transformation <m>T</m> is an isomorphism. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      By <xref ref="thm-injective-kernel"/>, <m>T</m> is injective if and only if <m>\kerr(T) = \{\bfo\}</m>. In other words, <m>T</m> is injective if and only if <m>\dim(\kerr(T)) = 0</m>. By <xref ref="thm-rank-nullity"/>, this happens if and only if <m>\rank(T) = \dim(V)</m>, and if <m>\dim(V) = \dim(W)</m>, <m>\rank(T)=\dim(W)</m> if and only if <m>T</m> is injective. This proves that <m>T</m> is injective if and only if <m>T</m> is surjective. Since a bijective linear transformation is an isomorphism, our proof is complete. 
+    </p>
+  </proof>
+</corollary>
+
+<p>
+  To close out this section, we present a long theorem with many equivalent statements. We will omit a proof, because the equivalence of most of these statements has been already established at various places in this text. (In other books, this theorem forms the central focus of the text. It is certainly important, but we have chosen a different emphasis.)
+</p>
+
+<theorem xml:id="thm-ivt">
+  <title>The Invertible Matrix Theorem</title> 
+  
+  <statement>
+    <p>
+      Let <m>A \in M_n(\ff)</m>. Then the following statements are equivalent.
+      <ol>
+        <li>
+          <p>
+            The matrix <m>A</m> is invertible.
+          </p>
+        </li>
+        <li>
+          <p>
+            The matrix <m>A</m> is row equivalent to <m>I_n</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The matrix <m>A</m> has <m>n</m> pivots. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The equation <m>A\bfx = \bfo</m> has only the trivial solution. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The columns of <m>A</m> form a linearly independent set. 
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>T_A:\ff^n \to \ff^n</m> is multiplication by <m>A</m>, then <m>T</m> is injective. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The equation <m>A\bfx = \bfb</m> has a solution for all <m>\bfb \in \ff^n</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The columns of <m>A</m> span <m>\rr^n</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The linear transformation <m>T_A</m> is surjective. 
+          </p>
+        </li>
+        <li>
+          <p>
+            There is an <m>n\times n</m> matrix <m>B</m> such that <m>AB = BA = I_n</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The matrix <m>A^T</m> is invertible. 
+          </p>
+        </li>
+        <li>
+          <p>
+            We have <m>\det(A) \neq 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The columns of <m>A</m> form a basis for <m>\ff^n</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            We have <m>\col(A) = \ff^n</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            We have <m>\rank(A) = n</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            We have <m>\nll(A) = \{\bfo\}</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            We have <m>\dim(\nll(A)) = 0</m>. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  This theorem ties together threads from almost every section we've covered, which is quite an achievement! The reader should note that this result only applies to <em>square</em> matrices. 
+</p>
+
+
+</subsection>
+
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      Consider the following matrix <m>A</m>: 
+      <me>
+        A = \begin{bmatrix} 
+        2 \amp 0 \amp 2 \amp 4 \amp 0 \\ 
+        -1 \amp 1 \amp -4 \amp 6 \amp -7 \\ 
+        6 \amp 3 \amp -3 \amp 2 \amp 13
+        \end{bmatrix} 
+      </me>. 
+      Find a basis for <m>\row(A)</m>. 
+    </p>
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Suppose that <m>T: V \to W</m> is a linear transformation and that <m>\dim(V) = 4</m> and <m>\dim(W) = 5</m>. What are the possible values for <m>\dim(\kerr(T))</m>? Explain. 
+  </p>
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Find the rank and nullity of each of the following matrices.
+        <ol>
+          <li>
+            <p>
+              <m>A \in M_{3,4}(\rr)</m>, 
+              <me>
+                A = \begin{bmatrix}
+                2 \amp -3 \amp 4 \amp 1 \\ 
+                -1 \amp 2 \amp -3 \amp 1 \\ 
+                4 \amp -3 \amp 2 \amp 11
+                \end{bmatrix}
+              </me>              
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A \in M_{4,5}(\ff_3)</m>, 
+              <me>
+                A = \begin{bmatrix}
+                1 \amp 2 \amp 2 \amp 1 \amp 0 \\ 
+                1 \amp 2 \amp 2 \amp 1 \amp 1 \\ 
+                2 \amp 1 \amp 2 \amp 0 \amp 1 \\ 
+                2 \amp 1 \amp 2 \amp 0 \amp 2
+                \end{bmatrix}
+              </me>              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>D: P_n \to P_{n-1}</m> be the differentiation linear transformation. Calculate <m>\rank(D)</m> and <m>\dim(\ker(D))</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        If <m>A</m> and <m>B</m> are matrices, prove that <m>\rank(AB) \le \min\{\rank(A), \rank(B) \}</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>T \in L(V,W)</m> and that <m>V</m> and <m>W</m> are both finite-dimensional.
+        <ol>
+          <li>
+            <p>
+              Prove that <m>T</m> is surjective if and only if <m>\rank(T) = \dim(W)</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove that <m>T</m> is injective if and only if <m>\rank(T) = \dim(V)</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>A\bfx = \bfb</m> is a <m>6\times 6</m> linear system which is consistent but which does <em>not</em> have a unique solution. Prove that there must be a vector <m>\mathbf{c} \in \ff^6</m> such that the system <m>A\bfx = \mathbf{c}</m> is inconsistent.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              If a <m>5\times 3</m> matrix <m>A</m> has rank 3, find <m>\dim(\nll(A))</m>, <m>\dim(\row(A))</m>, and <m>\rank(A^T)</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              If the null space of a <m>7\times 6</m> matrix <m>A</m> is 5-dimensional, what is the dimension of the column space of <m>A</m>? 
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>A</m> is a <m>7\times 9</m> matrix, what is the smallest possible dimension of <m>\nll(A)</m>? 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose a nonhomogeneous linear system of nine equations and ten variables has a solution for all possible constants on the right side of the equations. Is it possible to find two nonzero solutions of the associated homogeneous system that are not multiples of each other? Explain. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>A \in M_{m,n}(\ff)</m> and <m>\bfb \in \ff^m</m>. What has to be true about the two numbers <m>\rank([A\; \bfb ])</m> and <m>\rank(A)</m> in order for the equation <m>A\bfx = \bfb</m> to be consistent? Explain.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that if <m>T \in L(V,W)</m>, then <m>\rank(T) \le \min \{\dim(V), \dim(W) \}</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that if <m>A \in M_{m,n}(\ff)</m>, then <m>\rank(A) \le \min \{m,n \}</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T \in L(V,W)</m>. 
+        <ol>
+          <li>
+            <p>
+              Prove that if <m>\dim(V) > \dim(W)</m>, then <m>T</m> cannot be injective.
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove that if <m>\dim(W) > \dim(V)</m>, then <m>T</m> cannot be surjective.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+</exercises> 
+
+
+</section>

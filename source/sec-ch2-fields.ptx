@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-fields" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Fields</title>
+  <introduction>
+    <p>
+      In this section we will consider the real numbers and study their most important properties in a general setting. In the process, we will learn how to handle axioms and abstract algebraic concepts.
+    </p>
+  </introduction>
+
+<p>
+  In <xref ref="ch-first"/>, we used the real numbers as the familiar world within which all of our calculations took place. Before we offer any definitions or results in this chapter, we will ponder exactly what properties of the real numbers were essential to these calculations. (The reader is likely so familiar with the real numbers that its important properties have been internalized and are not in the conscious mind. In this section we will make those properties explicit.)
+</p>
+
+<p>
+  The most basic concept in this book is the linear equation. What properties of the real numbers are used to solve a simple linear equation? In what follows we will solve the equation <m>2x+7=12</m> and draw to the surface some of these important properties:
+  <mdn>
+    <mrow>2x + 7 \amp =12</mrow>
+    <mrow xml:id="lin-eqn-st2">(2x+7)-7 \amp =12-7</mrow>
+    <mrow xml:id="lin-eqn-st3"> 2x + (7-7) \amp =5</mrow>
+    <mrow xml:id="lin-eqn-st4"> 2x + 0 \amp =5</mrow>
+    <mrow xml:id="lin-eqn-st5"> 2x \amp =5</mrow>
+    <mrow xml:id="lin-eqn-st6"> \frac{1}{2}(2x) \amp = \frac{1}{2}5</mrow>
+    <mrow xml:id="lin-eqn-st7"> (\frac{1}{2}2)x \amp = \frac{5}{2}</mrow>
+    <mrow xml:id="lin-eqn-st8"> (1)x \amp = \frac{5}{2}</mrow>
+    <mrow xml:id="lin-eqn-st9"> x \amp = \frac{5}{2}</mrow>
+  </mdn>.
+</p>
+
+<p>
+No student wants to write out all of these steps, and no instructor wants to grade such a solution! But the point is to notice the properties of the real numbers which are vital to solving an equation like this and which we usually ignore.
+  <ul>
+    <li> In <xref ref="lin-eqn-st3"/> we used the <em>associativity</em> of addition in <m>\rr</m>. That is, we can move the parentheses around in addition and still have an equivalent expression. (The reader should see subtraction as a form of addition.)
+    </li>
+    <li> In <xref ref="lin-eqn-st4"/> we used the fact that <m>7</m> has an <em>additive inverse</em><mdash />a number we can add to <m>7</m> to get <m>0</m>. (The additive inverse of <m>7</m> is <m>-7</m>.)
+    </li>
+    <li> In <xref ref="lin-eqn-st5"/> we used the fact that <m>0</m> is an <em>additive identity</em> in <m>\rr</m><mdash />when we add <m>0</m> to any real number <m>r</m>, we get <m>r</m> again.
+    </li>
+    <li> In <xref ref="lin-eqn-st7"/> we used the <em>associativity</em> of multiplication in <m>\rr</m>. We can move the parentheses around in multiplication just like we can in addition.
+    </li>
+    <li> In <xref ref="lin-eqn-st8"/> we used the fact that <m>\frac{1}{2}</m> is the <em>multiplicative inverse</em> of <m>2</m> in <m>\rr</m>. In other words, we can multiply <m>2</m> by <m>\frac{1}{2}</m> to get <m>1</m>.
+    </li>
+    <li> Finally, in <xref ref="lin-eqn-st9"/> we used the fact that <m>1</m> is a <em>multiplicative identity</em> in <m>\rr</m><mdash />when we multiply any real number by <m>1</m>, that real number is unchanged.
+    </li>
+  </ul>
+</p>
+
+<p>
+  By identifying these properties, our goal is to envision other mathematical realms in which solving linear equations would work the same way it does within <m>\rr</m>. Toward this end, we now define an algebraic object called a <q>field</q> which has all of the properties used above (plus a few we haven't yet mentioned).
+</p>
+
+<definition xml:id="def-field">
+  <statement>
+    <p>
+      A <term>field</term> is a set <m>\ff</m> with operations <m>+</m> and <m>\cdot</m> and distinct elements <m>0, 1 \in \ff</m> such that all of the following properties hold.
+      <ol>
+        <li>
+          <p>
+            For all <m>a, b \in \ff</m>, <m>a+b \in \ff</m>. (We say that <m>\ff</m> is <term>closed under addition</term>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            For all <m>a, b \in \ff</m>, <m>a\cdot b \in \ff</m>. (We say that <m>\ff</m> is <term>closed under multiplication</term>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            For all <m>a, b \in \ff</m>, <m>a+b = b+a</m>. (We say that addition in <m>\ff</m> is <term>commutative</term>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            For all <m>a, b, c \in \ff</m>, <m>a+(b+c)=(a+b)+c</m>. (We say that addition in <m>\ff</m> is <term>associative</term>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            For each <m>a \in \ff</m>, <m>a+0=0+a=a</m>. (We say that <m>0</m> is an <term>additive identity</term> in <m>\ff</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            For each <m>a \in \ff</m>, there exists an element <m>b \in \ff</m>, such that <m>a+b=b+a=0</m>. (We say that each <m>a</m> has an <term>additive inverse</term> in <m>\ff</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            For each <m>a, b \in \ff</m>, <m>a\cdot b = b\cdot a</m>. (We say that multiplication is <term>commutative</term> in <m>\ff</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            For each <m>a, b, c \in \ff</m>, <m>a \cdot (b \cdot c) = (a\cdot b) \cdot c</m>. (We say that multiplication is <term>associative</term> in <m>\ff</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            For each <m>a \in \ff</m>, <m>a \cdot 1 = 1 \cdot a = a</m>. (We say that <m>1</m> is a <term>multiplicative identity</term> in <m>\ff</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            For each <m>a \in \ff</m> with <m>a \neq 0</m>, there exists an element <m>c \in \ff</m> such that <m>a\cdot c = c \cdot a = 1</m>. (We say that every nonzero element <m>a</m> in <m>\ff</m> has a <term>multiplicative inverse</term>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            For each <m>a, b, c \in \ff</m>, <m>a \cdot (b+c) = (a\cdot b) + (a\cdot c)</m>. (We say that addition and multiplication in <m>\ff</m> satisfy the <term>distributive law</term>.)
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</definition>
+
+<paragraphs xml:id="pars-axioms">
+  <title>A note about axioms</title>
+  <p>
+    What are presented in <xref ref="def-field"/> are known as the <term>axioms</term> of a field. This may be the reader's first exposure to axioms in mathematics, and this is worthy of a comment or two.
+  </p>
+  <p>
+    Much of theoretical mathematics is built upon axiomatic reasoning. The thinking goes like this: If we assume a limited number of properties are true, and we assume nothing beyond those properties, what else follows <em>necessarily?</em> So, we can ask what is true of a field, not just what is true of the real numbers. While the real numbers may have specific properties that a general field does not, anything that is true of a general field must be true of the real numbers.
+  </p>
+</paragraphs>
+
+<p>
+  Working through some examples (and non-examples) will help us make sense of this definition.
+</p>
+
+<example>
+  <statement>
+    <p>
+    The set of real numbers <m>\rr</m> is a field. (If the real numbers were not a field, then we wouldn't have done a very good job of abstracting the properties of the real numbers for this definition!)
+    </p>
+  </statement>
+</example>
+
+<example xml:id="ex-complex-field">
+  <statement>
+    <p>
+      The complex numbers are defined in this way:
+      <me>
+        \cc = \{a + bi \mid a, b \in \rr \}
+      </me>,
+      where <m>i^2 = -1</m>. Addition and multiplication are defined in this way:
+      <md>
+        <mrow>(a+bi) + (c+di) \amp =(a+c) + (b+d)i</mrow>
+        <mrow>(a+bi) \cdot (c+di) \amp =(ac-bd)+(ad+bc)i</mrow>
+      </md>.
+      Notice that the addition and multiplication occuring within the parentheses on the right side of these equations are happening within <m>\rr</m>. In this way, showing that some of the field axioms hold for <m>\cc</m> depends on <m>\rr</m> being a field.
+    </p>
+      <p>
+      The elements <m>0</m> and <m>1</m> in <m>\cc</m> are
+      <md>
+        <mrow>0 \amp =0+0i</mrow>
+        <mrow>1 \amp =1+0i</mrow>
+      </md>,
+      and these elements are not equal. (We recall that part of the definition of a field is that the elements <m>0</m> and <m>1</m> are distinct.)
+    </p>
+    <p>
+      With these definitions, one can check that <m>\cc</m> satisfies the properties of a field. We will prove a few of these properties, and we will assign a few of these proofs in the exercises.
+    </p>
+    <p>
+      The definitions of <m>+</m> and <m>\cdot</m> in <m>\cc</m> show that <m>\cc</m> is closed under addition and multiplication. (Notably, this relies on <m>\rr</m> being closed under addition and multiplication!) To prove that the addition in <m>\cc</m> is commutative, we consider two complex numbers <m>a+bi</m> and <m>c+di</m>. Then
+      <mdn>
+        <mrow xml:id="c-comm-st1">(a+bi) + (c+di) \amp = (a+c) + (b+d)i </mrow>
+        <mrow xml:id="c-comm-st2"> \amp = (c+a) + (d+b)i</mrow>
+        <mrow xml:id="c-comm-st3">  \amp = (c+di) + (a+bi)</mrow>
+      </mdn>.
+      (We note that line <xref ref="c-comm-st2"/> used the fact that addition of real numbers is commutative.) This proves that addition in <m>\cc</m> is commutative.
+    </p>
+    <p>
+      We will also prove that <m>0</m> is an additive identity in <m>\cc</m>. If <m>a+bi \in \cc</m>, then
+      <me>
+        (a+bi)+ (0+0i) = (a+0) + (b+0)i = a+bi
+      </me>.
+      (This uses the fact that <m>0 \in \rr</m> is an additive identity.) We note that although the definition of a field requires us to examine addition by <m>0</m> <q>on both sides,</q> since we just proved that addition is commutative, what we have already shown is sufficient.
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      The set of non-negative real numbers <m>\rr^{\ge 0}</m> is not a field. (When thinking about a subset of the real numbers, we will assume that the usual addition and multiplication are in view unless otherwise stated.) While this set is closed under addition and multiplication, it does not contain <em>additive inverses</em> for positive real numbers. For example, the number <m>9</m> has no additive inverse in this set.
+    </p>
+  </statement>
+</example>
+<example xml:id="ex-rational-field">
+  <statement>
+    <p>
+      The set of <term>rational numbers</term> <m>\qq</m> is a field. The rational numbers are defined as the set of all quotients (hence the symbol <m>\qq</m>) of integers; more formally,
+      <me>
+        \qq = \left\{ \frac{a}{b} \mid a, b \in \zz, b \neq 0 \right\}
+      </me>.
+      We do not need to show that all of the field axioms hold in order to prove that <m>\qq</m> is a field. Since <m>\qq</m> is a subset of <m>\rr</m>, and since it therefore inherits its operations from <m>\rr</m>, some of the field axioms hold automatically. (These would include the associativity and commutativity of addition. What else holds <q>by inheritance?</q>) Checking some of these details is left to the exercises.
+    </p>
+  </statement>
+</example>
+
+<p>
+  We refer the reader to <xref ref="apdx-mod-arith"/> for the definitions of <m>\zz_n</m> and <m>\ff_p</m>, related notational conventions, and a refresher on modular arithmetic. All of this is necessary for the following example.
+</p>
+
+<example>
+  <statement>
+    <p>
+      When <m>p</m> is a prime integer, then <m>\ff_p</m> is a field. 
+    </p>
+    <p>
+      Working within <m>\ff_p</m> can be a bit destabilizing at first, as the calculations take some practice. However, this effort pays off because the smallest finite fields offer some of the most tangible sandboxes in which to play. We will be using <m>\ff_p</m> for small <m>p</m> throughout this chapter to develop some interesting examples.
+    </p>
+    <p>
+      Part of the definition of a field is that one can divide by any nonzero element. But because we work within <m>\rr</m> so often, division within <m>\ff_p</m> is strange. In <m>\ff_3</m>, for instance, the multiplicative inverse of <m>2</m> is <m>2</m>. (Another way to say this is that, within <m>\ff_3</m>, the element that acts the most like <m>\frac{1}{2}</m> is <m>2</m>.)
+    </p>
+    <p>
+      The field <m>\ff_2</m> contains only the elements <m>0</m> and <m>1</m>, and it therefore is a model for anything that is <em>binary</em>. For this reason, working in <m>\ff_2</m> is often very useful in computer science.
+    </p>
+  </statement>
+</example>
+
+<p>
+  Having defined fields, we now turn to the consequences of this definition. In other words, if a set with two operations meets the definition of a field, what else must also be true? The following theorem presents some basic results that flow from the axioms of a field. Some of these will look familiar because they are true in <m>\rr</m> and that's where most people are comfortable working.
+</p>
+
+<theorem xml:id="thm-field-arithmetic">
+  <statement>
+    <p>
+      For any field <m>\ff</m>, the following are true.
+      <ol>
+        <li xml:id="thm-pt1">
+          <p>
+            The additive identity in <m>\ff</m> is unique.
+          </p>
+        </li>
+        <li xml:id="thm-pt2">
+          <p>
+            The multiplicative identity in <m>\ff</m> is unique.
+          </p>
+        </li>
+        <li xml:id="thm-pt3">
+          <p>
+            Additive inverses in <m>\ff</m> are unique. (This means that for every element <m>x \in \ff</m>, there exists a unique element <m>y \in \ff</m> which is the additive inverse of <m>x</m>. The truth of this statement justifies our use of the notation <m>-x</m> for the additive inverse of an element <m>x \in \ff</m>.)
+          </p>
+        </li>
+        <li xml:id="thm-pt4">
+          <p>
+            Multiplicative inverses in <m>\ff</m> are unique. (The truth of this statement justifies our use of the notation <m>x^{-1}</m> for the multiplicative inverse of a nonzero element <m>x \in \ff</m>.)
+          </p>
+        </li>
+        <li xml:id="thm-pt5">
+          <p>
+            For every <m>x \in \ff</m>, <m>-(-x) = x</m>.
+          </p>
+        </li>
+        <li xml:id="thm-pt6">
+          <p>
+            For every nonzero <m>x \in \ff</m>, <m>(x^{-1})^{-1} = x</m>.
+          </p>
+        </li>
+        <li xml:id="thm-pt7">
+          <p>
+            For every <m>x \in \ff</m>, <m>0 \cdot x = 0</m>.
+          </p>
+        </li>
+        <li xml:id="thm-pt8">
+          <p>
+            For every <m>x \in \ff</m>, <m>(-1)\cdot x = -x</m>.
+          </p>
+        </li>
+        <li xml:id="thm-pt9">
+          <p>
+            If <m>x, y \in \ff</m> and <m>x\cdot y = 0</m>, then either <m>x=0</m> or <m>y=0</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will prove a few of these and leave the rest as exercises.
+    </p>
+    <p>
+      To prove (<xref ref="thm-pt1"/>) that the additive identity is unique, we must prove that <m>0</m> is the only element in <m>\ff</m> which has the properties of an additive identity. We suppose that <m>a \in \ff</m> is such that <m>a+x=x+a=x</m> for every element <m>x \in \ff</m>. Since this must be true for every <m>x</m>, it must be true for <m>x=0</m>. The previous equation then becomes
+        <me>
+          a+0=0+a=0
+        </me>.
+      Since <m>0</m> is an additive identity, <m>a+0=a</m>, which combined with the fact that <m>a+0=0</m> means that <m>a=0</m>. This proves that the additive identity, <m>0</m>, is unique.
+    </p>
+    <p>
+      To prove (<xref ref="thm-pt3"/>) that additive inverses are unique, we must prove that for any element <m>x \in \ff</m>, there is a unique element that behaves like an additive inverse of <m>x</m>. We let <m>x \in \ff</m> and we suppose that <m>y, z \in \ff</m> are both additive inverses of <m>x</m>. We wish to show that <m>y=z</m>.
+    </p>
+    <p>
+      Our assumptions mean that
+      <md>
+        <mrow>x+y \amp =y+x=0</mrow>
+        <mrow>x+z \amp =z+x=0</mrow>
+      </md>.
+      We then use these assumptions, along with some of the properties of fields (the associativity of addition and the properties of the additive identity) in this calculation:
+      <md>
+        <mrow>x+y \amp =0</mrow>
+        <mrow>z+(x+y) \amp =z+0</mrow>
+        <mrow> (z+x)+y \amp =z</mrow>
+        <mrow> 0+y \amp =z</mrow>
+        <mrow> y \amp =z </mrow>
+      </md>.
+      This proves that additive inverses are unique.
+    </p>
+  </proof>
+
+</theorem>
+
+<p>
+  We offer one final note on notation. We will often use juxtaposition to denote multiplication within a field. That is, we may write <m>xy</m> instead of <m>x \cdot y</m> to indicate the product of two elements in a field. We trust the reader will adjust quickly to this seismic shift.
+</p>
+
+<reading-questions>
+<exercise>
+  <statement>
+    <p>
+      Carry out the following calculations within <m>\ff_7</m>.
+      <ol>
+        <li>
+          <p>
+            <m>4 + 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>5 \cdot 6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2\cdot (3+6)</m> (Complete this calculation in the two different ways present in the distributive law and verify that they are equal.)
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      What is the additive inverse of <m>3</m> in <m>\ff_5</m>? What is the multiplicative inverse of <m>3</m> in <m>\ff_7</m>? Explain your answers.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <xref ref="thm-field-n-prime"/> says that <m>\zz_9</m> is not a field because 9 is not prime. Identify an element of <m>\zz_9</m> that does not have a multiplicative inverse and explain why it does not have an inverse.
+    </p>
+  </statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Carry out the following calculations in <m>\zz_8</m>. (Remember that your answer for calculations in <m>\zz_n</m> should be a number between <m>0</m> and <m>n-1</m>.)
+        <ol>
+          <li>
+            <p>
+              <m>6 + 7</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>3 + 7 + 5</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>7 \cdot 3</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>6 \cdot 4 \cdot 3</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-3)\cdot (5 + 3 + (-4))</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        We know that since <m>12</m> is not a prime, <m>\zz_{12}</m> is not a field. In particular, the axiom about multiplicative inverses does not hold. For each nonzero element of <m>\zz_{12}</m>, determine whether or not it has a multiplicative inverse. If the element has a multiplicative inverse, state that inverse.
+      </p>
+      <!-- <p>
+        The only elements of <m>\zz_{12}</m> that have multiplicative inverses are 1, 5, 7, and 11. They are all their own multiplicative inverses!
+      </p> -->
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each nonzero element of <m>\ff_{11}</m>, find the multiplicative inverse.
+      </p>
+      <!-- <p>
+        Note that <m>1\cdot 1 = 1</m>, <m>2 \cdot 6 = 1</m>, <m>3\cdot 4 = 1</m>, <m>5\cdot 9 = 1</m>, <m>7\cdot 8 = 1</m>, and <m>10 \cdot 10 = 1</m>.
+      </p> -->
+    </statement>
+  </exercise>
+  <subexercises>
+  <title>Writing Exercises</title>
+  <exercise>
+    <statement>
+      <p>
+        Finish <xref ref="ex-complex-field"/>. In other words, complete the proof begun in <xref ref="ex-complex-field"/> that <m>\cc</m> is a field.
+      </p>
+    </statement>
+  </exercise>
+<exercise>
+  <statement>
+    <p>
+      Consider <xref ref="ex-rational-field"/>. Which of the field axioms for <m>\qq</m> hold <q>by inheritance</q> and for which of the axioms is there something that needs to be proved? Put each of the field axioms into one of these two categories. For each axiom that doesn't hold merely <q>by inheritance,</q> prove that it holds for <m>\qq</m>.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      For a set <m>A</m>, define the set of polynomials over <m>A</m> in the usual way:
+      <me>
+        A[x] = \{a_0 + a_1x + a_2x^2 + \cdots \mid a_i \in A\}.
+      </me>
+      <ol>
+        <li>
+          <p>
+            Is <m>\zz[x]</m> a field? Justify your answer.
+          </p>
+        </li>
+        <li>
+          <p>
+            Is <m>\rr[x]</m> a field? Justify your answer.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="exer-f3-alpha">
+  <statement>
+    <p>
+      In this problem we consider <q>adding</q> an element to <m>\ff_3</m>. If <m>\ff_3[\alpha]</m> is defined by
+      <me>
+        \ff_3[\alpha] = \{a + b\alpha \mid a,b \in \ff_3, \alpha^2 = -1\},
+      </me>
+      is <m>\ff_3[\alpha]</m> a field? Justify your answer.  
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      In this problem we consider <q>adding</q> an element to <m>\ff_5</m>.
+      <ol>
+        <li>
+          <p>
+            If <m>\ff_5[\alpha]</m> is defined by
+            <me>
+              \ff_5[\alpha] = \{a + b\alpha \mid a,b \in \ff_5, \alpha^2 = 4\},
+            </me>
+            is <m>\ff_5[\alpha]</m> a field? Justify your answer.            
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\ff_5[\alpha]</m> is defined by
+            <me>
+              \ff_5[\alpha] = \{a + b\alpha \mid a,b \in \ff_5, \alpha^2 = 2\},
+            </me>
+            is <m>\ff_5[\alpha]</m> a field? Justify your answer.            
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="exer-q-root-2">
+  <statement>
+    <p>
+      Define <m>\qq[\sqrt{2}]</m> by 
+      <me>
+        \qq[\sqrt{2}] = \{a + b\sqrt{2} \mid a,b \in \qq\}. 
+      </me>
+      Is <m>\qq[\sqrt{2}]</m> a field? Justify your answer.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Consider the set <m>\rr^2</m> with operations defined as follows: 
+      <md>
+        <mrow>(a,b) \oplus (c,d) \amp = (a+c,b+d)</mrow>
+        <mrow>(a,b) \otimes (c,d) \amp = (ac - 2bd, ad+bc)</mrow>
+      </md>. 
+      Is <m>\rr^2</m> with these operations a field? Justify your answer.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Prove <xref ref="thm-pt2"/> of <xref ref="thm-field-arithmetic"/>.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Prove <xref ref="thm-pt4"/> of <xref ref="thm-field-arithmetic"/>.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Prove <xref ref="thm-pt7"/> of <xref ref="thm-field-arithmetic"/>.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Prove <xref ref="thm-pt8"/> of <xref ref="thm-field-arithmetic"/>.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Prove <xref ref="thm-pt9"/> of <xref ref="thm-field-arithmetic"/>.
+    </p>
+  </statement>
+</exercise>
+</subexercises>
+</exercises>
+</section>

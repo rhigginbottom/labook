@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-inner-products" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Inner Products</title>
+  <introduction>
+    <p>
+      A general vector space need not have any relevant geometry, and in most of our work up to this point, geometric notions did not play a central role. In this chapter, however, we will begin to take advantage of the geometry present in <em>some</em> vector spaces.
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-dot-product">
+  <title>The Dot Product</title>
+
+  <p>
+    In Euclidean geometry, we are introduced to the <em>dot product</em> quite early. The dot product in <m>\rr^n</m> is essential to our understandings of length and distance. 
+  </p>
+
+  <definition xml:id="def-dot-prod">
+    <statement>
+      <p>
+        For two vectors <m>\bfx, \bfy \in \rr^n</m>, we have the <term>dot product</term> of <m>\bfx</m> and <m>\bfy</m> given by 
+        <me>
+          \bfx \cdot \bfy = \sum_{i=1}^n x_iy_i
+        </me>,
+        where <m>\bfx = [x_i]</m> and <m>\bfy = [y_i]</m>.
+      </p>
+    </statement>
+  </definition>
+
+<example xml:id="dot-prod-ex1">
+  <statement>
+    <p>
+      Suppose that <m>\bfx</m> and <m>\bfy</m> are the following two vectors in <m>\rr^3</m>: 
+      <me>
+        \bfx = \begin{bmatrix} -1 \\ 2 \\ -2 \end{bmatrix}, \hspace{12pt}
+        \bfy = \begin{bmatrix} 0 \\ 1 \\ -3 \end{bmatrix}
+      </me>.
+      Then <m>\bfx \cdot \bfy = (-1)(0) + 2(1) + (-2)(-3) = 8</m>.
+    </p>
+  </statement>
+</example>
+
+  <note>
+    <p>
+      Having facility with matrix multiplication now, the observant reader will notice that <m>\bfx \cdot \bfy = \bfy^T \bfx</m>. 
+    </p>
+  </note>
+
+  <definition xml:id="def-length-dot">
+    <statement>
+      <p>
+        The <term>length</term> or <term>norm</term> of a vector <m>\bfx \in \rr^n</m> is the nonnegative scalar <m>\vnorm{\bfx}</m> defined by 
+        <me>
+          \vnorm{\bfx} = \sqrt{\bfx \cdot \bfx} = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}
+        </me>.        
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        If <m>\bfx \in \rr^3</m> is the same as in <xref ref="dot-prod-ex1"/>, then 
+        <me>
+          \vnorm{\bfx} = \sqrt{(-1)^2 + 2^2 + (-2)^2} = \sqrt{9} = 3
+        </me>.        
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    Of special usefulness for us is the fact that the dot product gives us a notion of angles and perpendicularity. 
+  </p>
+
+  <definition xml:id="def-orthogonal">
+    <statement>
+      <p>
+        Two vectors <m>\bfx</m> and <m>\bfy</m> in <m>\rr^n</m> are <term>orthogonal</term> if <m>\bfx \cdot \bfy = 0</m>. 
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      The word <q>orthogonal</q> is another way of saying <q>perpendicular</q>, but <q>orthogonal</q> is used much more frequently in linear algebra.
+    </p>
+  </note>
+
+  <example>
+    <statement>
+      <p>
+        Let <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m> be the following vectors in <m>\rr^2</m>:
+        <me>
+          \bfu = \begin{bmatrix} -2 \\ 3 \end{bmatrix}, \hspace{6pt}
+          \bfv = \begin{bmatrix} 1 \\ 4 \end{bmatrix}, \hspace{6pt}
+          \bfw = \begin{bmatrix} 6 \\ 4 \end{bmatrix}
+        </me>.
+        We can see that <m>\bfu</m> and <m>\bfv</m> are not orthogonal, since <m>\bfu \cdot \bfv = 10</m>. However, <m>\bfu</m> and <m>\bfw</m> are orthogonal, as <m>\bfu \cdot \bfw = 0</m>. 
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    As this chapter continues, the reader will see just how important orthogonality is. For now, we note that all of the vectors in the standard basis of <m>\rr^n</m>, <m>\bfe_1, \ldots, \bfe_n</m>, are orthogonal to each other. That is, <m>\bfe_i \cdot \bfe_j = 0</m> whenever <m>i \neq j</m>. 
+  </p>
+
+<p>
+  A consequence of this last fact is stated in the following proposition.
+</p>
+
+<proposition xml:id="prop-coords-dot-prod">
+  <statement>
+    <p>
+      If <m>\bfv \in \rr^n</m> is given by <m>\bfv = [v_i]</m>, then <m>v_i = \bfv \cdot \bfe_i</m> for each <m>i</m>, <m>1 \le i \le n</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      By definition of the dot product, we have 
+      <me>
+        \bfv \cdot \bfe_i = \sum_{j=1}^n v_j (\bfe_i)_j = v_j
+      </me>,
+      since the only nonzero entry of <m>\bfe_i</m> is <m>(\bfe_i)_i = 1</m>. 
+    </p>
+  </proof>
+</proposition>
+
+<p>
+  This has been a very brief review/introduction to the dot product. As we generalize this function in the remainder of this section, we will continue to remind the reader of important facts and properties as we need them.
+</p>
+
+</subsection>
+
+<subsection xml:id="subsec-general-inner-prod">
+  <title>The Inner Product</title>
+  
+<p>
+  In the same way that vectors in <m>\rr^n</m> gave us the intuition to consider a general vector space, the dot product in <m>\rr^n</m> points us toward a more general function on vector spaces. Our generalization of the dot product is called the <em>inner product</em>.
+</p>
+
+<note>
+  <p>
+    Before this definition we need a quick reminder. For a complex number <m>z = a + bi</m>, recall that the <term>complex conjugate</term> of <m>z</m> is defined by <m>\overline{z} = a-bi</m>. This will be used in the following definition.
+  </p>
+</note>
+
+<definition xml:id="def-inner-product">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space over a field <m>\ff</m>, where <m>\ff</m> is either <m>\rr</m> or <m>\cc</m>. An <term>inner product</term> on <m>V</m> is a function that associates to each pair of vectors <m>\bfu</m> and <m>\bfv</m> in <m>V</m> an element of the field <m>\lla \bfu, \bfv \rra</m> satisfying all of the following axioms. For all <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m> in <m>V</m>, and all <m>c \in \ff</m>:
+      <ol>
+        <li>
+          <p>
+            <m>\lla \bfu, \bfv \rra = \overline{\lla \bfv, \bfu \rra}</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\lla \bfu + \bfv, \bfw \rra = \lla \bfu, \bfw \rra + \lla \bfv, \bfw \rra</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\lla c\bfu, \bfv \rra = c\lla \bfu, \bfv \rra</m>; and 
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\lla \bfu, \bfu \rra \ge 0</m> and <m>\lla \bfu, \bfu \rra = 0</m> if and only if <m>\bfu = \bfo</m>. 
+          </p>
+        </li>
+      </ol>      
+    </p>
+    <p>
+      A vector space together with an inner product is called an <term>inner product space</term>. 
+    </p>
+  </statement>
+</definition>
+
+<note>
+  <p>
+    If the field we have in mind is <m>\rr</m> instead of <m>\cc</m>, then the first property listed in the definition is just <m>\lla \bfu, \bfv \rra = \lla \bfv, \bfu \rra</m>. (If <m>x \in \rr</m>, then <m>\overline{x}=x</m>.) Also, if our field is <m>\cc</m>, we still require <m>\lla \bfu, \bfu \rra</m> to be a real number, as this is implicit in the fourth property where <m>\lla \bfu, \bfu \rra \ge 0</m>. 
+  </p>
+</note>
+
+<p>
+  Before we introduce examples, we want to comment here on why the only fields we allow for inner product spaces are <m>\rr</m> and <m>\cc</m>. The inner product requires that a notion of <em>order</em> be present in any field over which a vector space is defined. This is inherent in the fourth property listed in the definition of an inner product, where we must have <m>\lla \bfu, \bfu \rra \ge 0</m> for all <m>\bfu \in V</m>. We do not have this sort of ordering in a finite field like <m>\ff_5</m>. Since, for example, 6 and 1 and <m>-4</m> all represent the same number in <m>\ff_5</m>, we cannot in any coherent way say that this value of the field is <q>greater than or equal to 0.</q> Because of this lack of ordering, finite fields do not have the sort of geometric properties that we require for an inner product space.
+</p>
+
+<example>
+  <statement>
+    <p>
+      All real vector spaces <m>\rr^n</m> with the dot product are inner product spaces. (Once again, we would be particularly bad at generalizing if the motivating case were not an example of the general situation!)
+    </p>
+  </statement>
+</example>
+
+<example xml:id="examp-std-ip-cn">
+  <statement>
+    <p>
+      For vectors <m>\bfu, \bfv \in \cc^n</m>, the standard inner product is defined by 
+      <me>
+        \lla \bfu, \bfv \rra = \sum_{i=1}^n u_i\overline{v_i}
+      </me>,
+      where <m>\bfu = [u_i]</m> and <m>\bfv = [v_i]</m>. 
+    </p>
+    <p>
+      As an example calculation, we consider the following two vectors in <m>\cc^2</m>: 
+      <me>
+        \bfu = \begin{bmatrix} 1 + i \\ -2i \end{bmatrix}, \hspace{6pt} 
+        \bfv = \begin{bmatrix} 2-i \\ 3+4i \end{bmatrix}
+      </me>.
+      Then we have 
+      <md>
+      <mrow>\lla \bfu, \bfv \rra \amp = (1+i)\overline{(2-i)} + (-2i)\overline{(3+4i)}</mrow>         
+        <mrow> \amp = (1+i)(2+i) + (-2i)(3-4i)</mrow>
+        <mrow> \amp = -7-3i</mrow>
+      </md>.      
+    </p>
+    <p>
+      We will leave for the exercises the proof that the inner product axioms hold for this function.
+    </p>
+  </statement>
+</example>
+
+<example xml:id="examp-ip-fn-space">
+  <statement>
+    <p>
+      Let <m>C([0,1])</m> denote the vector space of continuous real-valued functions on the interval <m>[0,1]</m>. (See <xref ref="ex-real-functions"/> for a discussion of vector spaces like this one.) We can study an inner product on this space defined by the following: 
+      <me>
+        \lla f,g \rra = \int_0^1 f(x)g(x)\; dx
+      </me>.
+      Again, we provide an example of a calculation. If <m>f(x) = 2x</m> and <m>g(x) = x^2-4</m>, then 
+      <me>
+        \lla f,g \rra = \int_0^1 2x(x^2-4)\; dx = \int_0^1 (2x^3 - 8x)\; dx = -\frac{7}{2}
+      </me>.      
+    </p>
+    <p>
+      Proving that the inner product axioms hold requires recalling a few facts from calculus. We leave this to the exercises.
+    </p>
+  </statement>
+</example>
+
+<p>
+  The following properties flow fairly quickly from the definition of an inner product.
+</p>
+
+<proposition xml:id="prop-inner-product-properties">
+  <statement>
+    <p>
+      Suppose that <m>V</m> is an inner product space. Then the following statements are all true.
+      <ol>
+        <li>
+          <p>
+            For each <m>\bfu, \bfv, \bfw \in V</m>, <m>\lla \bfu, \bfv + \bfw \rra = \lla \bfu, \bfv \rra + \lla \bfu, \bfw \rra</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            For each <m>\bfu, \bfv \in V</m> and each <m>c \in \ff</m>, <m>\lla \bfu, c\bfv \rra = \overline{c} \lla \bfu, \bfv \rra</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            For each <m>\bfu \in V</m>, <m>\lla \bfo, \bfu \rra = \lla \bfu, \bfo \rra = 0</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\bfu \in V</m> and <m>\lla \bfu, \bfv \rra = 0</m> for every <m>\bfv \in V</m>, then <m>\bfu = \bfo</m>. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will prove the second property and leave the others for the exercises. Using the first and third axioms from the definition of the inner product, we have 
+      <me>
+        \lla \bfu, c\bfv \rra = \overline{\lla c\bfv, \bfu \rra} = \overline{c\lla \bfv, \bfu \rra} = 
+        \overline{c} \overline{\lla \bfv, \bfu \rra } = \overline{c} \lla \bfu, \bfv \rra
+      </me>.      
+    </p>
+  </proof>
+</proposition>
+
+<p>
+  The presence of an inner product gives us a good way to define the length of a vector.
+</p>
+
+<definition xml:id="def-norm">
+  <statement>
+    <p>
+      Let <m>V</m> be an inner product space and let <m>\bfv \in V</m>. Then the <term>norm</term> of <m>\bfv</m> is 
+      <me>
+        \vnorm{\bfv} = \sqrt{\ip{\bfv, \bfv}}
+      </me>.
+      If <m>\vnorm{\bfv} = 1</m>, then <m>\bfv</m> is called a <term>unit vector</term>. 
+    </p>
+  </statement>
+</definition>
+
+<p>
+  In the following examples we calculate the norm of a few vectors in different vector spaces.
+</p>
+
+<example>
+  <statement>
+    <p>
+      We consider the following vector in <m>\cc^3</m>:
+      <me>
+        \bfv = \begin{bmatrix} 2 + 4i \\ -2 + 4i \\ 2i \end{bmatrix}
+      </me>.
+      Using the standard inner product on <m>\cc^3</m>, we have 
+      <me>
+        \vnorm{\bfv} = \sqrt{(4+16) + (4+16) +4} = \sqrt{44}
+      </me>.      
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Returning to the vector space <m>C([0,1])</m> with the inner product defined in <xref ref="examp-ip-fn-space"/>, we can find the norm of <m>f(x)=2+x</m>:
+      <me>
+        \int_0^1 (2+x)^2\; dx = \int_0^1 (4+4x+x^2)\; = \frac{19}{3}
+      </me>.      
+      This means that <m>\vnorm{f} = \sqrt{\frac{19}{3}}</m>. 
+    </p>
+  </statement>
+</example>
+
+<p>
+  Using the definition of the norm, we can examine what happens to the <q>length</q> of a vector when it is multiplied by a scalar: 
+  <me>
+    \vnorm{c\bfv} = \sqrt{\ip{c\bfv, c\bfv}} = \sqrt{|c|^2\ip{\bfv, \bfv}} = |c| \vnorm{\bfv}
+  </me>.
+  (Note that when <m>\cc</m> is our field, <m>|c|</m> for a scalar <m>c = a + bi</m> is <m>|c| = \sqrt{a^2+b^2}</m>.) From this calculation we can see that when a vector gets multiplied by a scalar, its length is multiplied by that same scalar, in a way. (We can make the most geometric sense of this when <m>\rr</m> is our field and when <m>c</m> is positive.)
+</p>
+
+<example>
+  <statement>
+    <p>
+      Often we will want a <em>unit vector</em> that points in the same direction as a given vector. We accomplish this by dividing a vector by its length in order to form a vector of length 1. 
+    </p>
+    <p>
+      If we consider the vector <m>\bfv = \begin{bmatrix} -1 \\ 4 \end{bmatrix}</m> in <m>\rr^2</m> with the dot product, then we have 
+      <me>
+        \vnorm{\bfv} = \sqrt{1 + 16} = \sqrt{17}
+      </me>.
+      Therefore, a unit vector in the direction of <m>\bfv</m> would be 
+      <me>
+        \frac{1}{\sqrt{17}} \bfv = \begin{bmatrix} -\frac{1}{\sqrt{17}} \\ \frac{4}{\sqrt{17}} \end{bmatrix}
+      </me>.      
+    </p>
+  </statement>
+</example>
+
+
+</subsection>
+
+<subsection xml:id="subsec-orthogonality">
+  <title>Orthogonality</title>
+  
+<p>
+  In the same way that we used the dot product to define orthogonality in <m>\rr^n</m>, we can now extend that definition to our more general setting.
+</p>
+
+<definition xml:id="def-orthogonal-general">
+  <statement>
+    <p>
+      Two vectors <m>\bfu</m> and <m>\bfv</m> in an inner product space <m>V</m> are <term>orthogonal</term> if <m>\ip{\bfu, \bfv} = 0</m>. A set of vectors <m>\{\bfv_1, \ldots, \bfv_n \}</m> is orthogonal if <m>\ip{\bfv_i, \bfv_j} = 0</m> whenever <m>i \neq j</m>. 
+    </p>
+  </statement>
+</definition>
+
+<p>
+  One of the ways that orthogonality is used is through the following result.
+</p>
+
+<proposition xml:id="prop-orthogonality-lin-ind">
+  <statement>
+    <p>
+      An orthogonal set of nonzero vectors in an inner product space <m>V</m> is linearly independent.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> be an orthogonal set of vectors in <m>V</m>. Suppose that 
+      <me>
+        c_1 \bfv_1 + \cdots + c_n\bfv_n = \bfo
+      </me>
+      for some scalars <m>c_1, \ldots, c_n \in \ff</m>. We want to show that all the scalars must be zero. Then, for each <m>k</m>, we have 
+      <me>
+        0 = \ip{\bfo, \bfv_k} = \ip{\sum_{i=1}^n c_i\bfv_i, \bfv_k} = \sum_{i=1}^n c_i \ip{\bfv_i, \bfv_k} = c_k \ip{\bfv_k, \bfv_k} = c_k \vnorm{\bfv_k}^2
+      </me>.
+      Since <m>c_k \vnorm{\bfv_k}^2 = 0</m> but <m>\bfv_k \neq \bfo</m>, we know that <m>\vnorm{\bfv_k}^2 \neq 0</m>, so <m>c_k = 0</m>. This is true for each <m>k</m>, <m>1 \le k \le n</m>, so <m>V'</m> is linearly independent.
+    </p>
+  </proof>
+</proposition>
+
+<p>
+  The next result is sometimes referred to as the Pythagorean Theorem for general inner product spaces. When there are only two orthogonal vectors, the reader will recognize the reference to the Pythagorean Theorem.
+</p>
+
+<theorem xml:id="thm-pythag-inner-prods">
+  <statement>
+    <p>
+      If <m>\{ \bfv_1, \ldots, \bfv_n \}</m> is an orthogonal set of vectors in an inner product space <m>V</m>, then 
+      <me>
+        \vnorm{\bfv_1 + \cdots + \bfv_n}^2 = \vnorm{\bfv_1}^2 + \cdots + \vnorm{\bfv_n}^2
+      </me>.      
+    </p>
+  </statement>
+</theorem>
+
+
+</subsection>
+
+<subsection xml:id="subsec-results-inner-products">
+  <title>Results for Inner Product Spaces</title>
+  
+<p>
+  The property of orthogonality is so powerful that we will occasionally want to call upon it even when it is not already on the scene. 
+</p>
+
+<lemma xml:id="lem-pair-orthog">
+  <statement>
+    <p>
+      Let <m>V</m> be an inner product space and let <m>\bfu, \bfv \in V</m>. Then <m>\bfu</m> can be written as 
+      <men xml:id="eqn-pair-orthog">
+        \bfu = c\bfv + \bfw
+      </men>,
+      where <m>c \in \ff</m> and <m>\bfw</m> is orthogonal to <m>\bfv</m>. Specifically, if <m>\bfv \neq \bfo</m>, then 
+      <me>
+        c = \frac{\ip{\bfu, \bfv}}{\vnorm{\bfv}^2}, \hspace{6pt} \text{and} \hspace{6pt} 
+        \bfw = \bfu - \frac{\ip{\bfu, \bfv}}{\vnorm{\bfv}^2}\bfv
+      </me>.      
+    </p>
+  </statement>
+  <proof>
+    <p>
+      If <m>\bfv = \bfo</m>, then we can take <m>\bfw = \bfu</m> and <m>c = 1</m>, as every vector is orthogonal to <m>\bfo</m>. So, we now suppose that <m>\bfv \neq \bfo</m>. 
+    </p>
+    <p>
+      If there exists <m>c \in \ff</m> such that <m>\bfu = c\bfv + \bfw</m> with <m>\bfw</m> orthogonal to <m>\bfv</m>, then we must have
+      <me>
+        \ip{\bfu, \bfv} = \ip{c\bfv + \bfw, \bfv} = c\ip{\bfv,\bfv} + \ip{\bfw, \bfv} = c \vnorm{\bfv^2}
+      </me>.
+      This shows that the only possibility for <m>c</m> is <m>c = \frac{\ip{\bfu, \bfv}}{\vnorm{\bfv}^2}</m>. 
+    </p>
+    <p>
+      Once <m>c</m> has been determined, then the choice of <m>\bfw</m> is determined by <xref ref="eqn-pair-orthog"/><mdash></mdash>we must have <m>\bfw = \bfu - c\bfv</m>. Now it is easy to check that, with these values, we indeed have <m>\ip{\bfv,\bfw}=0</m> and that <xref ref="eqn-pair-orthog"/> holds.
+    </p>
+  </proof>
+</lemma>
+
+<example>
+  <statement>
+    <p>
+      We consider two vectors in <m>\rr^2</m> to understand the relationship in this lemma: 
+      <me>
+        \bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}, \hspace{12pt} 
+        \bfv = \begin{bmatrix} -1 \\ 2 \end{bmatrix}
+      </me>.
+      The lemma specifies our calculations: 
+      <me>
+        c = \frac{\ip{\bfu,\bfv}}{\vnorm{\bfv}^2} = \frac{4}{5}, \hspace{6pt} 
+        \bfw = \bfu - c\bfv = \begin{bmatrix} \frac{14}{5} \\ \frac{7}{5} \end{bmatrix}
+      </me>.
+      The reader can check that <m>\ip{\bfv,\bfw}=0</m> and that <m>\bfu = c\bfv + \bfw</m>.
+    </p>
+  </statement>
+</example>
+
+<p>
+  There are two famous results which involve the norm in an inner product space. We present them without proof.
+</p>
+
+<theorem xml:id="thm-cauchy-schwarz">
+  <title>The Cauchy-Schwarz Inequality</title>
+  <statement>
+    <p>
+      For every pair of vectors <m>\bfu, \bfv</m> in an inner product space <m>V</m>, we have 
+      <me>
+        |\ip{\bfu,\bfv}| \le \vnorm{\bfu}\vnorm{\bfv}
+      </me>,
+      with equality holding if and only if one vector is a scalar multiple of the other.
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="thm-triangle-ineq">
+  <title>The Triangle Inequality</title>
+  <statement>
+    <p>
+      For every pair of vectors <m>\bfu, \bfv</m> in an inner product space <m>V</m>, we have 
+      <me>
+        \vnorm{\bfu + \bfv} \le \vnorm{\bfu} + \vnorm{\bfv}
+      </me>.      
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  We end this section with one final example of an inner product space.
+</p>
+
+<example xml:id="examp-alt-ip-r2">
+  <statement>
+    <p>
+      We consider the vector space <m>\rr^2</m> with a modified inner product:
+      <me>
+        \ip{\bfu,\bfv} = 2u_1v_1 + u_2v_2
+      </me>.
+      The only change from the dot product in <m>\rr^2</m> is the coefficient 2 on the first term. It is not difficult to verify that this is an inner product.
+    </p>
+    <p>
+      Since an inner product provides a way to measure distance and length (as well as angles), it is instructive to consider how this inner product changes our experience of <m>\rr^2</m>. Just to take one example, if we think of the <q>unit circle</q> as the collection of all unit vectors in <m>\rr^2</m>, then using this inner product we no longer have a circle but an ellipse. The radii of this ellipse would be <m>\frac{1}{\sqrt{2}}</m> horizontally and 1 vertically.
+    </p>
+  </statement>
+</example>
+
+
+</subsection>
+
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      Consider <xref ref="examp-alt-ip-r2"/> and the inner product on <m>\rr^2</m> defined there. 
+      <ol>
+        <li>
+          <p>
+            If <m>\bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}</m>, calculate <m>\vnorm{\bfu}</m>. 
+          </p>
+          <!-- <p>
+            <m>\vnorm{\bfu} = \sqrt{17}</m>
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Describe all of the vectors in <m>\rr^2</m> which are orthogonal to <m>\bfu</m> using this inner product. All of these vectors fall on a line through the origin<mdash></mdash>what is that line?
+          </p>
+          <!-- <p>
+            the line is <m>y = -\frac{4}{3}x</m>
+          </p> -->
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Consider the following function on <m>P_1</m>. For polynomials <m>p</m> and <m>q</m>, define <m>\ip{p,q}</m> by 
+    <me>
+      \ip{p,q} = p(0)q(0) - p(1)q(1)
+    </me>.
+    Explain why this function is not an inner product on <m>P_1</m>. (You must show why one of the inner product axioms fails, and to do this you should use an example.)
+  </p>
+  <!-- <p>
+    Not an inner product because if <m>p</m> is a constant, then <m>\ip{p,p} = 0</m> even if <m>p \neq 0</m>
+  </p> -->
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following inner product on <m>P_2</m>. For <m>p, q \in P_2</m>, 
+        <me>
+          \ip{p,q} = p(-1)q(-1) + p(0)q(0) + p(1)q(1)
+        </me>.
+        (You do not need to prove that this is an inner product.)
+        <ol>
+          <li>
+            <p>
+              Calculate <m>\ip{p,q}</m> where <m>p = 3-t</m> and <m>q = 2+2t^2</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Find a nonzero vector <m>r \in P_2</m> which is orthogonal to the vector <m>p</m> from part (a). 
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate <m>\vnorm{p}</m> and <m>\vnorm{q}</m> for <m>p,q</m> from part (a).
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Use <xref ref="prop-orthogonality-lin-ind"/> to prove that the following set of vectors in <m>\cc^3</m> is linearly independent: <m>\{\bfv_1, \bfv_2, \bfv_3 \}</m>, where 
+        <me>
+          \bfv_1 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}, \hspace{6pt} 
+          \bfv_2 = \begin{bmatrix} 1+2i \\ -3+i \\ 2-3i \end{bmatrix}, \hspace{6pt} 
+          \bfv_3 = \begin{bmatrix} 21-16i \\ -21-i \\ 17i \end{bmatrix}
+        </me>.         
+      </p>
+    </statement>
+  </exercise><!-- 
+  <exercise>
+    <statement>
+      <p>
+        4.1.7 in Meckes
+      </p>
+    </statement>
+  </exercise> -->
+  <exercise>
+    <statement>
+      <p>
+        Consider the following inner product on <m>\rr^2</m>: 
+        <me>
+          \ip{\bfu,\bfv} = u_1v_1 + 3u_2v_2
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Give an example of two vectors in <m>\rr^2</m> which are orthogonal with respect to the dot product but which are not orthogonal with respect to this inner product.
+            </p>
+          </li>
+          <li>
+            <p>
+              Give an example of two vectors in <m>\rr^2</m> which are orthogonal with respect to this inner product but which are not orthogonal with respect to the dot product.
+            </p>
+          </li> <!-- Veryify this is an inner product using T inner product below! -->
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+       Let <m>A</m> be the following matrix over <m>\rr</m>:
+       <me>
+        A = \begin{bmatrix} 1 \amp 1 \\ 3 \amp 0 \end{bmatrix}
+       </me>.
+       Define a function on <m>\rr^2</m> by 
+       <me>
+        \ip{\bfu, \bfv} = (A\bfu) \cdot (A\bfv)
+       </me>,
+       where the right side of the equals sign uses the standard dot product in <m>\rr^2</m>. Prove that this function is an inner product.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+       Define the following function on <m>M_2(\rr)</m>: 
+       <me>
+        \ip{A,B} = \tr(A^TB)
+       </me>.
+       Prove that this is an inner product.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following function defined on <m>P_2</m>: 
+        <me>
+          \ip{p,q} = p(-1)q(-1) + p(2)q(2)
+        </me>.
+        Prove that this function is not an inner product.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following function defined on <m>\rr^2</m>: 
+        <me>
+          \ip{\bfu,\bfv} = u_1v_2 + u_2v_1
+        </me>.
+        Prove or disprove: this function is an inner product.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following function defined on <m>M_2(\rr)</m>: 
+        <me>
+          \ip{A,B} = \det(A) \cdot \det(B)
+        </me>.
+        Prove that this function is not an inner product.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that the standard inner product on <m>\cc^n</m>, defined in <xref ref="examp-std-ip-cn"/>, is an inner product.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that the inner product defined in <xref ref="examp-ip-fn-space"/> is an inner product.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>V</m> is a vector space, <m>W</m> is an inner product space, and that <m>T \in L(V,W)</m> is injective. For <m>\bfv_1, \bfv_2 \in V</m>, define <m>\ip{\bfv_1,\bfv_2}_T</m> by 
+        <me>
+          \ip{\bfv_1,\bfv_2}_T = \ip{T(\bfv_1),T(\bfv_2)}
+        </me>,
+        where the right-hand side is the inner product on <m>W</m>. Prove that this defines an inner product on <m>V</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove properties 1, 3, and 4 of <xref ref="prop-inner-product-properties"/>.
+      </p>
+    </statement>
+  </exercise><!-- 
+  <exercise>
+    <statement>
+      <p>
+        cor 4.8 in Meckes
+      </p>
+    </statement>
+  </exercise> -->
+</exercises> 
+
+
+</section>

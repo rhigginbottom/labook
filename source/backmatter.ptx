@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains all of the "backmatter" material  -->
+<!-- We show examples of how to have hints to divisional  -->
+<!-- excercies appear in a section, and then their        -->
+<!-- solutions in the next.  Then there is an appendix    -->
+<!-- with all notation generated, and finally the index.  -->
+<backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="backmatter">
+  <title>Backmatter</title>
+
+  <!-- <solutions divisional="hint">
+    <title>Selected Hints</title>
+  </solutions>
+
+  <solutions divisional="solution">
+    <title>Selected Solutions</title>
+  </solutions>
+
+  <appendix>
+    <title>List of Symbols</title>
+    <notation-list/>
+  </appendix>
+
+  <index>
+    <title>Index</title>
+    <index-list/>
+  </index> -->
+
+  <appendix xml:id="apdx-mod-arith">
+    <title>The Integers Modulo <m>n</m></title>
+    <p>
+      In this short appendix we will define modular arithmetic. There are other books and sources that develop these ideas in a more thorough, formal manner. However, we are primarily aiming for a streamlined approach that will serve our discussion of finite fields in <xref ref="sec-fields"/>.
+    </p>
+
+    <p>
+      The Division Algorithm is essential to what follows.
+    </p>
+
+    <theorem xml:id="thm-div-alg">
+      <title>The Division Algorithm</title>
+      <statement>
+        <p>
+          Let <m>a</m> be an integer and let <m>b</m> be a positive integer. Then there exist unique integers <m>q</m> and <m>r</m> for which
+          <me>
+            a = qb+r
+          </me>,
+          and <m>0 \le r &lt; b</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      In this statement of the Division Algorithm, the reader should think of dividing <m>a</m> by <m>b</m>, where <m>q</m> is the quotient and <m>r</m> is the remainder. For example,
+      <me>
+        17 = 5(3) + 2
+      </me>
+      captures the information that dividing <m>17</m> by <m>3</m> leaves a remainder of <m>2</m>. Similarly, the equation
+      <me>
+        -10 = -2(7) + 4
+      </me>
+      tells us that dividing <m>-10</m> by <m>7</m> gives a remainder of <m>4</m>. It is crucial for uniqueness in the Division Algorithm that we insist the remainder <m>r</m> is in the specified range. (In other words, it is <em>not</em> appropriate to write <m>-10=-1(7)+(-3)</m> as an application of the Division Algorithm to <m>a=-10</m> and <m>b=7</m>.)
+    </p>
+    <p>
+      The Division Algorithm provides a necessary link between the following definition and what follows.
+    </p>
+
+    <definition xml:id="def-congruence">
+      <statement>
+        <p>
+          Let <m>a</m> and <m>b</m> be integers and let <m>n</m> be a natural number. Then we say that <m>a</m> and <m>b</m> are <term>congruent modulo <m>n</m></term> if <m>n \mid (a-b)</m>. We write this as <m>a \equiv b \pmod{n}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <proposition xml:id="prop-congruence-remainder">
+      <statement>
+        <p>
+          Let <m>a</m> and <m>b</m> be integers and let <m>n</m> be a natural number. Then <m>a \equiv b \pmod{n}</m> if and only if <m>a</m> and <m>b</m> have the same remainder when divided by <m>n</m>.
+        </p>
+      </statement>
+    </proposition>
+
+    <p>
+      We now define a relation on <m>\zz</m>. Let <m>n</m> be a natural number. If <m>a</m> and <m>b</m> are integers, then we say that <m>a</m> is related to <m>b</m> when <m>a \equiv b \pmod{n}</m>. (<xref ref="prop-congruence-remainder"/> gives us an intuitive way to understand this relation<mdash />two integers are related if they have the same remainder when divided by <m>n</m>.) It is a good (and not terribly difficult) exercise to show that this is an <em>equivalence relation</em> on <m>\zz</m>. For an integer <m>m</m>, we will use the notation <m>[m]</m> to denote the equivalence class of <m>m</m> under this relation.
+    </p>
+
+    <definition xml:id="def-integers-mod-n">
+      <statement>
+        <p>
+          Let <m>n \in \nn</m>. Then the equivalence classes of the <em>congruence mod <m>n</m></em> equivalence relation are <m>[0], [1], \ldots, [n-1]</m>. The <term>integers modulo <m>n</m></term> is the set
+          <me>
+            \zz_n = \{[0], [1], \ldots, [n-1]\}
+          </me>.
+          Addition and multiplication can be defined on this set in the following way. For any <m>[a], [b] \in \zz_n</m>,
+          <md>
+            <mrow>[a]+[b] \amp :=[a+b]</mrow>
+            <mrow>[a]\cdot [b] \amp :=[ab]</mrow>
+          </md>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      It takes a little bit of work (but not too much!) to show that these operations are well-defined.
+    </p>
+
+    <p>
+      When performing calculations in <m>\zz_n</m>, we will prefer to use one of the numbers <m>0, 1, \ldots, n-1</m> as the equivalence class representative. For example, though it is correct to write <m>[5]+[6]=[11]</m> in <m>\zz_7</m>, we will prefer to write <m>[5]+[6]=[4]</m>. (Note that knowing the integer <m>n</m> is <em>essential</em> in these calculations!)
+    </p>
+
+    <example xml:id="exam-mod-n-calcs">
+      <statement>
+        <p>
+          Let's carry out some basic arithmetic within <m>\zz_8</m>.
+          <ol>
+            <li>
+              <p>
+                <m>[3]+[5]=[0]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>[6]+[4]=[2]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>[2]\cdot [7]=[6]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>[3]\cdot [5] = [7]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>[3]([4]+[5]) = [3]</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      At this point the reader may see that <m>\zz_n</m> is its own set, just like <m>\zz</m> or <m>\rr</m>, with its own calculations and quirks. In particular, it is illuminating to think about what properties of addition and multiplication <m>\zz_n</m> shares with <m>\rr</m>. (Also: In which cases does the value of <m>n</m> affect whether or not these properties hold?)
+    </p>
+
+    <p>
+      While the full impact of those questions is best pursued in an abstract algebra class, one question has immediate relevance for our current subject: For which <m>n \in \nn</m> do all nonzero elements in <m>\zz_n</m> have multiplicative inverses?
+    </p>
+
+    <p>
+      In <xref ref="exam-mod-n-calcs"/> we carried out calculations in <m>\zz_8</m>, so let's examine that set again. By multiplying every element in <m>\zz_8</m> by <m>[2]</m>, we can see that <m>[1]</m> is never the result. This shows that <m>[2]</m> has no multiplicative inverse in <m>\zz_8</m>. Further, it is illuminating to note that the elements <m>[1]</m>, <m>[3]</m>, <m>[5]</m>, and <m>[7]</m> have multiplicative inverses in <m>\zz_8</m> while the elements <m>[2]</m>, <m>[4]</m>, and <m>[6]</m> do not. However, the issue is deeper than the parity of the elements of the equivalence class; the key ingredient is relative primeness with <m>n</m>.
+    </p>
+
+    <p>
+      We hope this discussion makes the following theorem believable.
+    </p>
+
+    <theorem xml:id="thm-field-n-prime">
+      <statement>
+        <p>
+          The set <m>\zz_n</m> has the property that all nonzero elements have a multiplicative inverse if and only if <m>n</m> is prime.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      In the context of <xref ref="sec-fields"/>, <xref ref="thm-field-n-prime"/> leads to the result that <m>\zz_n</m> is a field if and only if <m>n</m> is prime. In this case, we will use the notation <m>\ff_n</m> in place of <m>\zz_n</m>. We will also often drop the square-bracket notation and, for example, refer to <m>2</m> instead of <m>[2]</m> as an element of <m>\ff_3</m>.
+    </p>
+
+
+
+  </appendix>
+
+  <appendix xml:id="apdx-isomorphisms">
+<title>Isomorphisms</title>
+
+<p>
+  We have arrived at a point in the book where I am noticing material that should have been included earlier. In a future edition of the book, this will appear in earlier chapters/sections, but for this edition I need to stick it in this appendix. Apologies!
+</p>
+
+<p>
+  Bijective functions are important in almost all settings, and the linear algebra setting is no exception. We have a specific name for bijective linear transformations. 
+</p>
+
+<definition xml:id="def-isomorphism">
+  <statement>
+    <p>
+      A bijective linear transformation <m>T</m> between vector spaces <m>V</m> and <m>W</m> is called an <term>isomorphism</term>. If there exists an isomorphism between vector spaces <m>V</m> and <m>W</m>, then these spaces are said to be <term>isomorphic</term>. 
+    </p>
+  </statement>
+</definition>
+
+<p>
+  The reader should think of isomorphic vector spaces as <em>essentially the same</em>. Such spaces will not be exactly the same, of course, in the same way that two finite sets of the same size are not necessarily identical. But the presence of an isomorphism means that the vector space operations are compatible in such a way that such spaces share many of the same properties. 
+</p>
+
+<note xml:id="notation-set-lts">
+  <p>
+    If <m>V</m> and <m>W</m> are vector spaces, then the set of all linear transformations from <m>V\to W</m> is denoted <m>L(V,W)</m>. When <m>W=V</m>, we will write <m>L(V)</m> instead of <m>L(V,V)</m>. 
+  </p>
+</note>
+
+<p>
+  In this next proposition, note that we will be referring to <xref ref="def-lin-trans-invertible"/>.
+</p>
+
+<proposition xml:id="prop-isomorphism-invertible">
+  <statement>
+    <p>
+      Let <m>V</m> and <m>W</m> be vector spaces over <m>\ff</m>, and let <m>T \in L(V,W)</m>. Then <m>T</m> is an isomorphism if and only if <m>T</m> is invertible. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      This fact is true for functions without any of the linear transformation properties being involved. (A function is bijective if and only if it has an inverse.)
+    </p>
+  </proof>
+</proposition>
+
+<proposition xml:id="prop-inverse-lt">
+  <statement>
+    <p>
+      If <m>T \in L(V,W)</m> is invertible, then <m>T^{-1}:W \to V</m> is also a linear transformation. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will check the two properties of a linear transformation. Suppose that <m>\bfw_1, \bfw_2 \in W</m>. Since <m>T \circ T^{-1} = I_W</m>, we have 
+      <me>
+        \bfw_1 + \bfw_2 = T(T^{-1}(\bfw_1)) + T(T^{-1}(\bfw_2)) = T(T^{-1}(\bfw_1) + T^{-1}(\bfw_2))
+      </me>.
+      When we apply <m>T^{-1}</m> to the beginning and end of this equality, using <m>T^{-1}\circ T = I_V</m>, we get 
+      <me>
+        T^{-1}(\bfw_1 + \bfw_2) = T^{-1}(\bfw_1) + T^{-1}(\bfw_2)
+      </me>.     
+    </p>
+    <p>
+      We will now check the scalar multiple property in a similar fashion. Let <m>\bfw \in W</m> and let <m>c \in \ff</m>. Then we have 
+      <me>
+        c\bfw = cT(T^{-1}(\bfw)) = T(cT^{-1}(\bfw))
+      </me>.
+      Applying <m>T^{-1}</m> to both sides again we get 
+      <me>
+        T^{-1}(c\bfw) = cT^{-1}(\bfw)
+      </me>.
+      This proves that <m>T^{-1} \in L(W,V)</m>. 
+    </p>
+  </proof>
+</proposition>
+
+
+<p>
+  The following results require background from <xref ref="sec-basis"/>. 
+</p>
+
+<theorem xml:id="thm-lt-basis">
+  <statement>
+    <p>
+      Suppose that <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> is a basis for a vector space <m>V</m>. Let <m>\{\bfw_1, \ldots, \bfw_n \}</m> be a subset of a vector space <m>W</m>. Then there is a unique linear transformation <m>T:V \to W</m> such that <m>T(\bfv_i)=\bfw_i</m> for each <m>i</m>, <m>1 \le i \le n</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Given <m>\bfv \in V</m>, there exists a unique linear combination 
+      <me>
+        \bfv = \sum_{i=1}^n c_i \bfv_i
+      </me>
+      by <xref ref="thm-unique-rep"/>. We define the function <m>T</m> by 
+      <me>
+        T(\bfv) = \sum_{i=1}^n c_i \bfw_i
+      </me>. 
+      This gives <m>T(\bfv_i)=\bfw_i</m> for each <m>i</m>, so we only need to show that <m>T</m> is a linear transformation. 
+    </p>
+    <p>
+      Suppose that <m>\bfu, \bfv \in V</m> with 
+      <me>
+        \bfv = \sum_{i=1}^n c_i \bfv_i, \hspace{12pt} \bfu = \sum_{i=1}^n d_i \bfv_i
+      </me>.
+      Then we have 
+      <md>
+        <mrow>T(\bfu + \bfv)  \amp = T \left( \sum_{i=1}^n (c_i+d_i)\bfv_i \right)</mrow>
+        <mrow> \amp = \sum_{i=1}^n (c_i+d_i)\bfw_i</mrow>
+        <mrow> \amp = \sum_{i=1}^n c_i\bfw_i + \sum_{i=1}^n d_i\bfw_i</mrow>
+        <mrow> \amp = T(\bfu) + T(\bfv)</mrow>
+      </md>.
+      Now we let <m>\bfv \in V</m> and <m>c \in \ff</m>. Then, if 
+      <me>
+        \bfv = \sum_{i=1}^n c_i \bfv_i
+      </me>,
+      we have 
+      <md>
+        <mrow> T(c\bfv) \amp = T\left( \sum_{i=1}^n (cc_i) \bfv_i \right)</mrow>
+        <mrow> \amp = \sum_{i=1}^n (cc_i) \bfw_i</mrow>
+        <mrow> \amp = c\sum_{i=1}^n c_i \bfw_i</mrow>
+        <mrow> \amp = cT(\bfv)</mrow>
+      </md>.      
+    </p>
+    <p>
+      We finally need to justify the claim that <m>T</m> is unique. Suppose that <m>T' \in L(V,W)</m> with <m>T'(\bfv_i)=\bfw_i</m> for each <m>i</m>. Then, if <m>\bfv \in V</m> with 
+      <me>
+        \bfv = \sum_{i=1}^n c_i \bfv_i
+      </me>,
+      we have 
+      <me>
+        T'(\bfv) = T'\left( \sum_{i=1}^n c_i \bfv_i \right) = \sum_{i=1}^n c_i T'(\bfv_i) = \sum_{i=1}^n c_i \bfw_i
+      </me>.
+      This shows that <m>T'(\bfv)=T(\bfv)</m> for every <m>\bfv \in V</m>, so <m>T'=T</m> and <m>T</m> is unique. 
+    </p>
+  </proof>
+</theorem>
+
+<theorem xml:id="thm-isomorphism-basis">
+  <statement>
+    <p>
+      Let <m>T \in L(V,W)</m> and let <m>B = \{\bfv_1, \ldots, \bfv_n \}</m> be a basis for <m>V</m>. Then <m>T</m> is an isomorphism if and only if <m>T(B) = \{T(\bfv_1), \ldots, T(\bfv_n) \}</m> is a basis for <m>W</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We first suppose that <m>T</m> is an isomorphism. We want to show that <m>T(B)</m> is a basis for <m>W</m>, so we begin with linear independence. Suppose that <m>c_1, \ldots, c_n \in \ff</m> such that 
+      <me>
+        \bfo = \sum_{i=1}^n c_i T(\bfv_i)
+      </me>. 
+      Then we have 
+      <me>
+        \bfo = \sum_{i=1}^n T(c_i\bfv_i) = T\left( \sum_{i=1}^n c_i\bfv_i \right)
+      </me>. 
+      Since <m>T</m> is injective, by <xref ref="thm-injective-kernel"/> we must have 
+      <me>
+        \bfo = \sum_{i=1}^n c_i\bfv_i
+      </me>. 
+      But since <m>B</m> is a linearly independent set, we have <m>c_i=0</m> for all <m>i</m>. This proves that <m>T(B)</m> is linearly independent. 
+    </p>
+    <p>
+      We now prove that <m>T(B)</m> spans <m>W</m>. Let <m>\bfw \in W</m>. Since <m>T</m> is surjective, there exists <m>\bfv \in V</m> such that <m>T(\bfv)=\bfw</m>. Since <m>B</m> is a basis for <m>V</m>, we have 
+      <me>
+        \bfv = \sum_{i=1}^n c_i\bfv_i
+      </me>.
+      Then 
+      <me>
+        \bfw = T(\bfv) = T\left( \sum_{i=1}^n c_i\bfv_i \right) = \sum_{i=1}^n c_iT(\bfv_i)
+      </me>. 
+      This proves that <m>W = \spn(T(B))</m>, so <m>T(B)</m> is a basis for <m>W</m>.  
+    </p>
+    <p>
+      We now need to prove the other implication, and we assume that <m>T(B)</m> is a basis for <m>W</m>. We need to show that <m>T</m> is an isomorphism. To show that <m>T</m> is injective, suppose that <m>\bfv \in V</m> such that <m>T(\bfv)=\bfo</m>. We have 
+      <me>
+        \bfv = \sum_{i=1}^n c_i\bfv_i
+      </me>,
+      so 
+      <me>
+        \bfo = T(\bfv) = T\left( \sum_{i=1}^n c_i\bfv_i \right) = \sum_{i=1}^n c_iT(\bfv_i)
+      </me>.
+      But since <m>T(B)</m> is a linearly independent set by assumption, this implies that <m>c_i=0</m> for all <m>i</m>. This means that <m>\bfv = \bfo</m>, so <m>T</m> is injective. 
+    </p>
+    <p>
+      To prove that <m>T</m> is surjective, we assume that <m>\bfw \in W</m>. Since <m>T(B)</m> spans <m>W</m>, we have 
+      <me>
+        \bfw = \sum_{i=1}^n d_iT(\bfv_i)
+      </me>
+      for some <m>d_i \in \ff</m>. We claim that if 
+      <me>
+        \bfv = \sum_{i=1}^n d_i \bfv_i
+      </me>,
+      then <m>T(\bfv) = \bfw</m>. Here is the justification:
+      <me>
+        T(\bfv) = T\left( \sum_{i=1}^n d_i \bfv_i \right) = \sum_{i=1}^n d_i T(\bfv_i) = \bfw
+      </me>.
+      This proves that <m>T</m> is surjective and is thus an isomorphism.
+    </p>
+  </proof>
+</theorem>
+
+
+  </appendix>
+
+  <colophon>
+    <p>
+      This book was authored in <pretext />.
+    </p>
+  </colophon>
+</backmatter>

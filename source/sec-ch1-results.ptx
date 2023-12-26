@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-results" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Results</title>
+  <introduction>
+    <p>
+      In the previous section, we learned how to write the augmented matrix of a linear system and <xref ref="alg-row-reduction"/> provided a process to reduce any matrix to RREF. In this section, we will learn how to use the RREF of a matrix to solve the corresponding linear system. We will also prove some important results related to these solutions.
+    </p>
+  </introduction>
+
+  <p>
+    We first introduce some terminology. These terms relate what we saw in <xref ref="def-pivots"/> back to the corresponding linear systems.
+  </p>
+
+  <definition xml:id="def-free-vars">
+    <statement>
+      <p>
+        Suppose that <m>A</m> is the coefficient matrix corresponding to a system of linear equations and  that <m>A</m> is in REF. Then a variable corresponding to a pivot column in <m>A</m> is called a <term>basic variable</term> (or <term>pivot variable</term>), and a variable corresponding to a non-pivot column in <m>A</m> is called a <term>free variable</term>.
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      Note that in this definition <m>A</m> is the <em>coefficient matrix</em> (not the augmented matrix) of the linear system. We are using the coefficient matrix because we are making a definition concerning variables, and the rightmost column in the augmented matrix does not correspond to a variable in the linear system.
+    </p>
+  </note>
+
+  <p>
+    The augmented matrix of an <m>m\times n</m> linear system is of size <m>m\times (n+1)</m>. This puts some limitations on the different reduced row-echelon forms that we could see in this context. In the following two examples, we will consider specific reduced row-echelon forms and what they say about the linear systems to which they correspond.
+  </p>
+
+  <example xml:id="ex-matrix-inconsistent">
+    <statement>
+      <p>
+        Consider the following as the augmented matrix corresponding to a system of linear equations:
+        <me>
+          A = \left[\begin{array}{@{}ccc|c@{}}
+          1 \amp 0 \amp 3 \amp 0 \\
+          0 \amp 1 \amp 2 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 1
+        \end{array}\right]
+      </me>.
+      This is a <m>3\times 4</m> matrix, so the original linear system has three equations and three variables. Hopefully the reader can see that this matrix is indeed in RREF. (Consult <xref ref="def-REF"/> for a refresher.)
+      </p>
+      <p>
+        We will now write the equations which correspond to each row of the matrix, and we will pay special attention to the final row:
+        <md>
+          <mrow>x_1 + 0x_2+3x_3  \amp =0</mrow>
+          <mrow>0x_1+x_2 + 2x_3 \amp =0</mrow>
+          <mrow> 0x_1+0x_2+0x_3 \amp =1</mrow>
+        </md>.
+        Usually we omit terms in linear equations when the coefficient is <m>0</m>, but we are including those terms here to make a point. When the coefficient of a variable is <m>0</m>, the entire linear term disappears since no value of the variable could make the product with the coefficient anything other than <m>0</m>. This means that each of these equations can be written in a more simple form. In particular, the third equation can be written as <m>0=1</m>.
+      </p>
+
+    <p>
+      This may feel rather elementary, but there are no possible variable values to make <m>0=1</m> a true statement. It is false <em>all of the time</em>. Since we are searching for values of the variables which satisfy all the equations simultaneously, and since one of the equations has no solution, the linear system has no solution. This is an <em>inconsistent</em> linear system.
+    </p>
+
+    <p>
+      We proved in <xref ref="thm-row-equiv-matrices-systems"/> that row-equivalent matrices correspond to equivalent linear systems. Therefore, we can say that the original linear system for this example is inconsistent.
+    </p>
+    </statement>
+  </example>
+
+  <p>
+    What we saw in <xref ref="ex-matrix-inconsistent"/> we will be able to generalize (see <xref ref="thm-consistent-system"/>) in our effort to categorize inconsistent linear systems. Before we do that, let's look at an augmented matrix which has a different RREF.
+  </p>
+
+  <example xml:id="ex-matrix-inf-solns">
+    <statement>
+      <p>
+        Consider the following matrix as the augmented matrix of a linear system:
+        <me>
+          A = \left[\begin{array}{@{}ccc|c@{}}
+            1 \amp 0 \amp -3 \amp 5 \\
+            0 \amp 1 \amp 2 \amp 7 \\
+            0 \amp 0 \amp 0 \amp 0 \\
+          \end{array}\right]
+        </me>.
+        (Again, the reader should verify that this matrix is in reduced row-echelon form.)
+      </p>
+
+      <p>
+        The final row of this matrix corresponds to the equation <m>0=0</m>. Since this equation is true all the time, for all values of the involved variables, we won't consider it any longer as it places no further restrictions on the solutions.
+      </p>
+
+      <p>
+        The first two rows of <m>A</m> correspond to the following two linear equations:
+        <md>
+          <mrow>x_1 - 3x_3 \amp =5</mrow>
+          <mrow>x_2 + 2x_3 \amp =7</mrow>
+        </md>.
+      </p>
+      <p>
+        From <xref ref="def-free-vars"/>, we see that in this system <m>x_1</m> and <m>x_2</m> are basic variables and <m>x_3</m> is a free variable. What does that mean for the solutions of this system? We call <m>x_3</m> <q>free</q> because any element of <m>\rr</m> that we put into <m>x_3</m> will produce a solution for this system. The variable <m>x_3</m> is <q>free</q> to take on any value, and then the values of the basic variables <m>x_1</m> and <m>x_2</m> are determined by that value and the linear equations.
+      </p>
+
+      <p>
+        For example, in this system of equations, if <m>x_3=2</m>, then <m>x_1=11</m> and <m>x_2=3</m>, giving <m>(11,3,2)</m> as a solution to the linear system. If <m>x_3=-1</m>, then <m>x_1=2</m> and <m>x_2=9</m>, giving <m>(2,9,-1)</m> as a solution to the system. Since <m>x_3</m> can take on any value in <m>\rr</m>, and since we have a solution to the system for each value of <m>x_3</m>, this means we have a solution to the system for each element of <m>\rr</m>. We conclude that there are an infinite number of solutions to this system.
+      </p>
+
+      <p>
+        The solutions to this linear system can be written in a number of ways. We will prefer the following form:
+        <me>
+          \left\{ \begin{array}{l}
+          x_1 = 5 + 3x_3 \\
+          x_2 = 7-2x_3 \\
+          x_3 \text{ is free.}
+          \end{array} \right.
+        </me>
+        This is called a <term>parametric description</term> of the solution set. Sometimes solutions like this are written with the letter <m>t</m> or <m>s</m> in place of <m>x_3</m> to better match the usage of the word <q>parameter</q> elsewhere. We will follow the convention of using the free variables as parameters in our solutions.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    In <xref ref="ex-matrix-inf-solns"/>, we saw that having a free variable corresponded to having an infinite number of solutions. But we need to be careful about our conclusions, because there was also a free variable (<m>x_3</m>) in <xref ref="ex-matrix-inconsistent"/>, and in that case there were <em>no solutions</em> to the system. A free variable only indicates an infinite number of solutions when the system is consistent.
+  </p>
+
+<p>
+  The two previous examples, combined with <xref ref="best-matrix"/>, give us a sense of what solutions to linear systems can look like given certain characteristics of the augmented matrices. We can now state in theorem form what we observed to be true in these examples.
+</p>
+
+<theorem xml:id="thm-consistent-system">
+  <statement>
+    <p>
+      Suppose <m>A</m> is the augmented matrix of a linear system, and suppose that <m>A</m> is in reduced row-echelon form. Then the linear system is consistent if and only if there is no pivot in the final column of <m>A</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We note that the pivot columns do not change when a matrix goes from row-echelon form to reduced row-echelon form (see <xref ref="alg-row-reduction"/>), so we are not losing any generality with our assumption that <m>A</m> is in RREF.
+    </p>
+    <p>
+      This theorem is a biconditional statement, and we will prove one implication directly. We assume there is no pivot in the final column of <m>A</m>. Then when we consider the linear equations which correspond to the rows of <m>A</m>, we see that each of the basic variables can be written in terms of the free variables, if any free variables exist. If no free variables exist, then all basic variables have an assigned value and the system is consistent. In the case that there is at least one free variable, we can pick an element of <m>\rr</m><mdash />let's say, <m>0</m><mdash />to assign to each of the free variables. This produces a solution to the linear system, and our system is consistent.
+    </p>
+    <p>
+      We will prove the contrapositive of the other implication. If there is a pivot in the final column of <m>A</m>, then the corresponding linear equation reduces to <m>0=1</m>. This means that there is no solution to the linear system, so the system is inconsistent.
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  Given that two major questions about the solutions to linear systems involve <em>consistency</em> and <em>uniqueness</em>, the next natural theorem to consider is related to this second concept.
+</p>
+
+<theorem xml:id="thm-unique-soln-system">
+  <statement>
+    <p>
+      Suppose that <m>A</m> is the augmented matrix corresponding to a consistent <m>m\times n</m> linear system, and suppose that <m>A</m> is in reduced row-echelon form. Then the system has a unique solution if and only if there is a pivot in each of the first <m>n</m> columns of <m>A</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      As with the proof of <xref ref="thm-consistent-system"/>, we are not losing any generality by assuming that <m>A</m> is in RREF.
+    </p>
+    <p>
+      We first suppose that there is a pivot in each of the first <m>n</m> columns of <m>A</m>; this implies that <m>m \ge n</m>. We also recall that the linear system is assumed to be consistent, meaning that the first <m>n</m> rows of <m>A</m> have the following form:
+      <me>
+        \left[\begin{array}{@{}cccc|c@{}}
+          1 \amp 0 \amp \cdots \amp 0 \amp b_1 \\
+          0 \amp 1 \amp \cdots \amp 0 \amp b_2 \\
+          \vdots \amp \vdots \amp \ddots \amp \vdots \amp \vdots \\
+          0 \amp 0 \amp \cdots \amp 1 \amp b_n
+        \end{array}\right]
+      </me>.
+      (The matrix <m>A</m> may have rows of all zeros below the <m>n</m> rows here, but that will not affect our discussion.)
+    </p>
+    <p>
+      If the matrix <m>A</m> has the form we have just detailed, then the original linear system is equivalent to one with equations of the form <m>x_1=b_1</m>, <m>x_2=b_2</m>, <m>\ldots</m>, <m>x_n=b_n</m>. That is, the system has a unique solution.
+    </p>
+    <p>
+      We will prove the contrapositive of the other implication. We suppose that there is at least one free variable (call it <m>x_j</m>) in the linear system. We recall (see <xref ref="ex-matrix-inf-solns"/>) that when the matrix for a consistent system is in RREF, all solutions can be written by expressing basic variables in terms of any existing free variables. Therefore, this system has a solution in which all free variables are set equal to <m>0</m>. Further, this system has a solution in which all free variables except <m>x_j</m> are set equal to <m>0</m> and <m>x_j=1</m>. This may not change the value of any of the basic variables, and there may not be any free variables aside from <m>x_j</m>, but these two solutions we have just described are not the same since <m>x_j</m> has a different value in each one. Therefore, this system has more than one solution, meaning that the system does not have a unique solution.
+    </p>
+  </proof>
+
+</theorem>
+
+<corollary xml:id="cor-underdetermined-system">
+  <statement>
+    <p>
+      If <m>m</m> and <m>n</m> are natural numbers and <m>m &lt; n</m>, then an <m>m\times n</m> linear system cannot have a unique solution.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Suppose <m>A</m> is the augmented matrix corresponding to an <m>m\times n</m> linear system with <m>m &lt; n</m>. The RREF of <m>A</m> can have at most <m>m</m> pivots, so by <xref ref="thm-unique-soln-system"/> the system cannot have a unique solution.
+    </p>
+  </proof>
+
+</corollary>
+
+<p>
+  There are two natural definitions related to <xref ref="cor-underdetermined-system"/> which we now state.
+</p>
+
+<definition xml:id="def-under-overdetermined">
+  <statement>
+    <p>
+      An <m>m\times n</m> linear system is called <term>underdetermined</term> if <m>m &lt; n</m>. An <m>m\times n</m> linear system is called <term>overdetermined</term> if <m>m &gt; n</m>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  The two previous theorems provide the last step to an algorithm for solving any linear system.
+</p>
+
+<algorithm xml:id="alg-solving-system">
+<title>Algorithm for Solving Linear Systems</title>
+  <statement>
+    <p>
+      Suppose that we have an <m>m\times n</m> system of linear equations. Here are the steps to solve the system.
+      <ol>
+        <li>
+          Form the augmented matrix of the linear system. We will call this matrix <m>A</m>.
+        </li>
+        <li>
+          Find the reduced row-echelon form of <m>A</m>. (If <m>A</m> is small, this can be done by hand; if <m>A</m> is not small, technology should be used to complete this step.)
+        </li>
+        <li>
+          Determine whether or not the system is consistent by observing the location of the pivots in the RREF of <m>A</m>. If there is a pivot in the rightmost column, the linear system is inconsistent and we need not proceed any further in the algorithm. If there is no pivot in the rightmost column, the system is consistent.
+        </li>
+        <li>
+          Determine whether or not the system has a unique solution. If there is a pivot in each of the first <m>n</m> columns, then the system has a unique solution which can be recorded. If there is not a pivot in each of the first <m>n</m> columns, then the system does not have a unique solution; in this case, a parametric description of the solution set can be recorded.
+        </li>
+      </ol>
+    </p>
+  </statement>
+</algorithm>
+
+<p>
+  The earlier examples in this section can be completed using this algorithm. We will include an additional example so the reader can practice using the algorithm once more.
+</p>
+
+<example xml:id="examp-lin-system-use-alg">
+  <statement>
+    <p>
+      Consider the following linear system:
+      <md>
+        <mrow>-7x - 4y + 7z \amp = -3</mrow>
+        <mrow>-2x + 2y - 4z \amp = 2</mrow>
+        <mrow>5x + 4y + z \amp = 5</mrow>
+      </md>.
+      Does this system have a solution? If the system has a solution, write down the solution.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We follow <xref ref="alg-solving-system"/> and form the augmented matrix <m>A</m> for this system. When we row reduce this matrix, we find 
+      <me>
+        A = \left[\begin{array}{@{}ccc|c@{}} -7 \amp -4 \amp 7 \amp -3 \\ 
+        -2 \amp 2 \amp -4 \amp 2 \\ 
+        5 \amp 4 \amp 1 \amp 5 \end{array}\right] \sim 
+        \left[\begin{array}{@{}ccc|c@{}} 1 \amp 0 \amp 0 \amp -1/9 \\ 
+        0 \amp 1 \amp 0 \amp 4/3 \\ 
+        0 \amp 0 \amp 1 \amp 2/9 \end{array}\right]
+      </me>.
+      We will refer to the RREF of <m>A</m> as <m>B</m>. Since <m>B</m> has no pivot in the rightmost column, our linear system is consistent. Secondly, since <m>B</m> has a pivot in each of the first three columns, the solution to our linear system is unique. We record this solution as <m>x = -1/9</m>, <m>y = 4/3</m>, and <m>z = 2/9</m>.
+    </p>
+  </solution>
+</example>
+
+<p>
+  The rest of this section will be devoted to proving <xref ref="thm-rref-unique"/>, which states that the RREF of a matrix is unique. (There are actually a couple of places so far in this section where we have been a bit sloppy and referred to <em>the</em> RREF of a matrix, but in each of these cases the uniqueness of the RREF was not essential to the argument.)
+</p>
+
+<p>
+  We will begin with a lemma. (Our approach to proving <xref ref="thm-rref-unique"/> has been heavily influenced by <url href="https://math.libretexts.org/Bookshelves/Linear_Algebra/A_First_Course_in_Linear_Algebra_(Kuttler)/01%3A_Systems_of_Equations/1.04%3A_Uniqueness_of_the_Reduced_Row-Echelon_Form" visual="math.libretexts.org/Bookshelves/Linear_Algebra/A_First_Course_in_Linear_Algebra_(Kuttler)/">Kuttler's treatment</url>.)
+</p>
+
+<lemma xml:id="lem-solns-free-vars">
+  <statement>
+    <p>
+      In a consistent <m>m\times n</m> linear system, all solutions can be expressed by writing the basic variables as linear functions of the free variables (if they exist). Further, each basic variable <m>x_i</m> can be written as a linear function of only those free variables <m>x_j</m> with <m>j &gt; i</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      The first sentence in this lemma has essentially been proved in the discussion within <xref ref="ex-matrix-inf-solns"/>. We will prove the second statement directly. We consider <m>A</m> as the augmented matrix of a consistent <m>m\times n</m> linear system. Suppose <m>A</m> is row equivalent to <m>B</m>, where <m>B</m> is in RREF. Recall that part of the definition of RREF (<xref ref="def-REF"/>) is that pivots are the leftmost non-zero number in their row.
+    </p>
+    <p>
+      Consider the linear equation corresponding to row <m>d</m> of <m>B</m>; this equation will begin with a basic variable <m>x_i</m> and will possibly involve other variables <m>x_j</m>, with <m>j &gt; i</m>, before the equals sign. However, all of these other variables <m>x_j</m> will be free variables, because any other basic variable <m>x_k</m>, with <m>k &gt; i</m>, will correspond to a column in which that pivot is the only non-zero number. In other words, all entries <m>b_{dk}</m> along row <m>d</m> in <m>B</m> which correspond to pivot columns <m>k</m>, for <m>k &gt; i</m>, will be zero.
+    </p>
+  </proof>
+
+</lemma>
+
+<p>
+  The basic idea for the proof of <xref ref="thm-rref-unique"/> is to prove the result for homogeneous linear systems first and then to obtain the proof for general linear systems as an extension. We turn to our first result about homogeneous linear systems. (For a refresher on homogeneous systems, see <xref ref="def-linear-system"/>.)
+</p>
+
+<lemma xml:id="lem-homog-free-zero">
+  <statement>
+    <p>
+      If <m>x_i</m> is a basic variable of a homogeneous linear system, then any solution of the system with <m>x_j=0</m> for all free variables <m>x_j</m> with <m>j &gt; i</m>, must have <m>x_i=0</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We will prove this directly. Suppose that <m>x_i</m> is a basic variable of a homogeneous linear system and that in a solution of this system, <m>x_j=0</m> for all free variables <m>x_j</m> with <m>j &gt; i</m>. From <xref ref="lem-solns-free-vars"/> we know that in the description of the solution to this system, <m>x_j</m> will be written as a linear function of the free variables with larger indices. But the nature of a homogeneous linear system demands that such a linear function will involve <em>only</em> free variables and no constants (the constants are all <m>0</m>). Therefore, if <m>x_j=0</m> for all free variables <m>x_j</m> with <m>j &gt; i</m>, we must have <m>x_i=0</m> as well.
+    </p>
+  </proof>
+
+</lemma>
+
+<p>
+  We will now prove the uniqueness result for augmented matrices of homogeneous systems. (We should note here, perhaps, that while we introduced the notions of REF and RREF for augmented matrices, the row reduction algorithm can be applied to any matrix at all.)
+</p>
+
+<proposition xml:id="prop-result-for-homog-systems">
+  <statement>
+    <p>
+      Let <m>A</m> be the augmented matrix corresponding to a homogeneous linear system. Suppose that <m>A</m> is row equivalent to matrices <m>B</m> and <m>C</m>, both of which are in reduced row-echelon form. Then <m>B=C</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We proceed by contradiction and assume that <m>B \neq C</m>. Since <m>B</m> and <m>C</m> are row equivalent and both are in RREF, they must have the same pivot positions. (The reader is asked to prove this in <xref ref="exer-same-pivots"/>.) Since <m>B \neq C</m>, these matrices must differ in some row, call it row <m>k</m>. Since <m>B</m> and <m>C</m> have the same pivot positions, we assume there is a pivot in column <m>i</m> of row <m>k</m> in both matrices. There must be some position <m>j</m>, with <m>j &gt; i</m>, such that <m>b_{kj} \neq c_{kj}</m>. The variable <m>x_j</m> must not be a basic variable in the linear system, because if so, we would have <m>b_{kj} = c_{kj} = 0</m>. So <m>x_j</m> is a free variable.
+    </p>
+    <p>
+      Homogeneous linear systems are always consistent. (The reader is asked to prove this in <xref ref="exer-homog-consist"/>.) There must exist a solution to the linear system where <m>x_j=1</m> and all other free variables take on the value of <m>0</m>. In this solution, using the linear equations that correspond to the rows in <m>B</m>, we solve and obtain <m>x_i=-b_{kj}</m>. Using the linear equations that correspond to the rows in <m>C</m>, we find <m>x_i=-c_{kj}</m>. Since a solution is completely determined by the values of the free variables, this implies that <m>b_{kj} = c_{kj}</m>, which is a contradiction.
+    </p>
+  </proof>
+</proposition>
+
+<p>
+  With this proposition in hand, we can state and prove our first large result.
+</p>
+
+<theorem xml:id="thm-rref-unique">
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix and let <m>A</m> be row equivalent to both <m>B</m> and <m>C</m>. If <m>B</m> and <m>C</m> are in reduced row-echelon form, then <m>B=C</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We first form the matrix <m>A'</m> by augmenting the matrix <m>A</m> with an additional column on the right consisting of all zeros. We similarly form the matrices <m>B'</m> and <m>C'</m> from <m>B</m> and <m>C</m>. We note that <m>B'</m> and <m>C'</m> are also in RREF and they are obtained from <m>A'</m> using the same row operations that reduced <m>A</m> to <m>B</m> and <m>C</m>.
+    </p>
+    <p>
+      We can consider <m>A'</m>, <m>B'</m>, and <m>C'</m> as augmented matrices corresponding to <m>m\times n</m> homogeneous linear systems. By <xref ref="prop-result-for-homog-systems"/>, since <m>A'</m> is row equivalent to both <m>B'</m> and <m>C'</m>, where both <m>B'</m> and <m>C'</m> are in RREF, we must have <m>B'=C'</m>. By the construction of <m>B'</m> and <m>C'</m>, this implies <m>B=C</m>.
+    </p>
+  </proof>
+
+</theorem>
+
+<reading-questions>
+<exercise>
+  <statement>
+    <p>
+      Consider the following linear system:
+      <md>
+        <mrow>4x_1 + 7x_2 + 17x_3 \amp = 23</mrow>
+        <mrow>-3x_1 - 5x_2 - 12x_3 \amp = -17</mrow>
+      </md>.
+      Determine which of the variables are basic variables and which are free variables. Explain your answer.
+      <!-- rref: <me>
+        1 \amp 0 \amp -1 \amp 4 \\
+        0 \amp 1 \amp 3 \amp 1
+      </me>
+      basic: <m>x_1, x_2</m>, free: <m>x_3</m> -->
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Consider the following linear system:
+      <md>
+        <mrow>x_1 - 2x_2 + 2x_3 \amp = -1</mrow>
+        <mrow>-x_1 + 2x_2 - x_3 \amp = -1</mrow>
+        <mrow>3x_1 - 6x_2 + 7x_3 \amp = -5</mrow>
+      </md>.
+      Write a parametric description of the solution set of this system. (Follow <xref ref="ex-matrix-inf-solns"/>.)
+      <!-- rref: <me>
+        1 \amp -2 \amp 0 \amp 3 \\
+        0 \amp 0 \amp 1 \amp -2 \\
+        0 \amp 0 \amp 0 \amp 0
+        </me> -->      
+    </p>
+  </statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+<exercise>
+  <statement>
+    <p>
+      In each of the following, suppose the augmented matrix for a linear system has been reduced to the following RREF. Write down the solution(s) to the system (if they exist).
+      <ol>
+        <li>
+          <p>
+            <m>
+              \left[\begin{array}{@{}ccc|c@{}} 
+              1 \amp 0 \amp 0 \amp -4 \\
+              0 \amp 1 \amp 0 \amp 5 \\
+              0 \amp 0 \amp 1 \amp 0  
+              \end{array}\right]
+            </m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>
+              \left[\begin{array}{@{}ccc|c@{}} 
+              1 \amp -2 \amp 0 \amp 2 \\
+              0 \amp 0 \amp 1 \amp -3 \\
+              0 \amp 0 \amp 0 \amp 0
+               \end{array}\right]
+            </m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>
+              \left[\begin{array}{@{}ccc|c@{}} 
+              1 \amp 0 \amp -3 \amp 0 \\
+              0 \amp 1 \amp 5 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 1
+               \end{array}\right]
+            </m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>
+              \left[\begin{array}{@{}ccccc|c@{}} 
+              1 \amp 0 \amp 2 \amp -4 \amp 0 \amp 7 \\
+              0 \amp 1 \amp 9 \amp -1 \amp 0 \amp -4 \\
+              0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 4
+               \end{array}\right]
+            </m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Solve the following linear system.
+      <md>
+        <mrow>2x - 3y + 5z \amp = 0</mrow>
+        <mrow>-x + 2y -3z \amp = 0</mrow>
+        <mrow>x + 4y - 4z \amp = 0</mrow>
+      </md>
+    </p>
+    <!-- only trivial soln  -->
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Solve the following linear systems.
+      <ol>
+        <li>
+          <p>
+            <md>
+              <mrow>x - 2y + 3z \amp = 4</mrow>
+              <mrow>5x - 6y + 7z \amp = 5</mrow>
+            </md>
+            <!-- 1 & 0 & -1 & 7/2
+            0 & 1 & -2 & -15/4 -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>x - 2y + 2z - w \amp = 1</mrow>
+              <mrow>3x - 7y - z + 5w \amp =2</mrow>
+            </md>
+            <!-- 1 & 0 & 16 & -17 & 3
+            0 & 1 & 7 & -8 & 1 -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>2x-y+z \amp = 3</mrow>
+              <mrow>-x+3y+2z \amp = 1</mrow>
+              <mrow>3x+y+4z \amp = 7</mrow>
+            </md>
+            <!-- 1 & 0 & 1 & 2 
+            0 & 1 & 1 & 1 -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>4x - 2y \amp = -4</mrow>
+              <mrow>2x+5y+6z  \amp = 2</mrow>
+              <mrow>3x-y + \tfrac{1}{2}z \amp = 0</mrow>
+            </md>
+            <!-- inconsistent -->
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Determine the values of <m>a</m> for which the following linear system has no solutions, exactly one solution, or infinitely many solutions. Explain your answers.
+      <md>
+        <mrow>x + 2y + 2z \amp = -4</mrow>
+        <mrow>2x - 2y + 4z \amp = 7</mrow>
+        <mrow>x + 2y - (a^2-5)z \amp = a+1</mrow>
+      </md>
+      <!-- inconsistent: a = \pm \sqrt{3}, unique: anything else  -->
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Under what conditions is the following linear system consistent? Your answer should be an equation or equations that must be satisfied by the <m>b_i</m>. Explain your answer.
+      <md>
+        <mrow>x + 2y \amp = b_1</mrow>
+        <mrow>-2x -5y + 3z \amp = b_2</mrow>
+        <mrow>x + 4y - 6z \amp = b_3</mrow>
+      </md>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Solve the following system for <m>x</m>, <m>y</m>, and <m>z</m>. (Hint: define new variables to produce a linear system.) Explain your solution.
+      <md>
+        <mrow>-\frac{1}{x} + \frac{2}{y} - \frac{4}{z} \amp = 2</mrow> \vspace{6pt} 
+        <mrow>-\frac{2}{x} + \frac{2}{y} - \frac{4}{z} \amp = 6</mrow>
+        <mrow>-\frac{3}{x} + \frac{4}{y} + \frac{4}{z} \amp = -4</mrow>
+      </md>
+      <!-- x = -1/4, y = -1/3, z = -1 -->
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Answer the question posed in <xref ref="exer-coins"/> by solving the linear system that was created in that exercise.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Answer the question posed in <xref ref="exer-quadratic"/> by solving the linear system that was created in that exercise.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Suppose that the graph of the function <m>f(x) = ax^3+bx^2+cx+d</m> passes through the points <m>(-1,2)</m>, <m>(-2,-9)</m>, <m>(1,4)</m>, and <m>(2,15)</m>. Determine the values of <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m>.
+    </p>
+  </statement>
+</exercise>
+<subexercises>
+<title>Writing Exercises</title>
+<exercise xml:id="exer-homog-consist">
+  <statement>
+    <p>
+      Prove that every homogeneous linear system is consistent.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      If <m>A</m> is a <m>3\times 5</m> matrix whose final column is all zeros, what is the maximum possible number of parameters in the solution of the linear system which has augmented matrix <m>A</m>? Explain your answer.
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="exer-2b2-det">
+  <statement>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Prove that if <m>ad-bc \neq 0</m>, then the reduced row-echelon form of <m>\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m> is <m>\begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use part (a) to prove that if <m>ad-bc \neq 0</m>, then the linear system 
+            <md>
+              <mrow>ax + by \amp = p</mrow>
+              <mrow>cx + dy \amp = q</mrow>
+            </md>
+            has exactly one solution.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Explain why every linear system over <m>\rr</m> has either no solutions, exactly one solution, or an infinite number of solutions.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Suppose that a <m>3\times 4</m> coefficient matrix for a linear system has three pivot columns. Is the system consistent? Explain. 
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      What would you have to know about the pivot columns in an augmented matrix in order to know that the linear system has exactly one solution? Explain. 
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="exer-same-pivots">
+  <statement>
+    <p>
+      Suppose that matrices <m>A</m> and <m>B</m> are row equivalent and both matrices are in REF. Prove that <m>A</m> and <m>B</m> have the same pivot positions.
+    </p>
+  </statement>
+</exercise>
+</subexercises>
+</exercises>
+
+</section>

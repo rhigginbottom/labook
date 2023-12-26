@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-subspaces-lt" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Subspaces and Linear Transformations</title>
+  <introduction>
+    <p>
+      Every linear transformation between vector spaces brings with it some descriptions of related subspaces of the domain and codomain. We will explore some of these subspaces in this section.
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-kernel">
+  <title>The Kernel of a Linear Transformation</title>
+
+  <p>
+    The <em>kernel</em> of a linear transformation <m>T</m> is the set of all vectors that <m>T</m> sends to <m>\bfo</m>. 
+  </p>
+
+  <definition xml:id="def-kernel">
+    <statement>
+      <p>
+        If <m>T:V\to W</m> is a linear transformation between vector spaces, then the <term>kernel</term> of <m>T</m> is the set 
+        <me>
+          \kerr(T) = \{ \bfv \in V \mid T(\bfv) = \bfo \}
+        </me>.        
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    While it may seem strange to single out the vectors that are sent to <m>\bfo</m>, this set reveals a lot about <m>T</m>.
+  </p>
+
+  <theorem xml:id="thm-kernel-subspace">
+    <statement>
+      <p>
+        Let <m>T:V\to W</m> be a linear transformation. Then <m>\kerr(T)</m> is a subspace of <m>V</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Since <m>T(\bfo_V) = \bfo_W</m>, we have <m>\bfo_V \in \kerr(T)</m>. (The fact that <m>T(\bfo_V)=\bfo_W</m> is found in <xref ref="lin-trans-zero"/>.)
+      </p>
+      <p>
+        Let <m>\bfv_1,\bfv_2 \in \kerr(T)</m>. Using the additive property of <m>T</m> and the fact that these vectors are in the kernel, we have 
+        <me>
+          T(\bfv_1 + \bfv_2) = T(\bfv_1) + T(\bfv_2) = \bfo_W + \bfo_W = \bfo_W
+        </me>.        
+      </p>
+      <p>
+        Finally, we let <m>\bfv \in \kerr(T)</m> and <m>k \in \ff</m>. Then we have 
+        <me>
+          T(k\bfv) = kT(\bfv) = k\bfo_W = \bfo_W
+        </me>.
+        This calculation used the fact that <m>\bfv</m> was assumed to be in the kernel and the scalar multiplication property of <m>T</m>. 
+      </p>
+    </proof>
+  </theorem>
+
+  <example>
+    <statement>
+      <p>
+        Let <m>V=D[a,b]</m> be the set of all differentiable functions from <m>[a,b]\to \rr</m>. Let <m>T:V \to V</m> be the linear transformation which takes the derivative. (We proved a very similar function was a linear transformation in <xref ref="examp-deriv-lin-trans"/>.) What is the kernel of <m>T</m>?
+      </p>
+      <p>
+        We recall from calculus that a function <m>f</m> has <m>f'(x)=0</m> for all <m>x</m> in an interval if and only if <m>f</m> is a constant function. This proves that <m>\kerr(T)</m> is the set of all constant functions, and it further establishes that set as a subspace of <m>D[a,b]</m>. 
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    While not all linear transformations are linked to matrices, some are. The kernel has an alternate name in those situations.
+  </p>
+
+  <definition xml:id="def-null-space">
+    <statement>
+      <p>
+        If <m>A \in M_{m,n}(\ff)</m>, then the <term>null space</term> of <m>A</m> is
+        <me>
+          \nll(A) = \{ \bfv \in \ff^n \mid A\bfv = \bfo \}
+        </me>.         
+      </p>
+    </statement>
+  </definition>
+  
+<p>
+  Since we have shown that the kernel is a subspace, the word <q>space</q> in the term <em>null space</em> is justified. 
+</p>
+
+<p>
+  We also recall the link between matrix-vector equations like <m>A\bfx = \bfb</m> and linear systems. The definition of the null space shows that the set of solutions to a <em>homogeneous</em> linear system can be described as the null space of a matrix.
+</p>
+
+<example xml:id="examp-find-null-space">
+  <statement>
+    <p>
+      Let <m>A</m> be the matrix 
+      <me>
+        A = \begin{bmatrix}
+        3 \amp 1 \amp -3 \\ 
+        -1 \amp 0 \amp 2 \\ 
+        2 \amp -2 \amp -10
+        \end{bmatrix}
+      </me>. 
+      We can find <m>\nll(A)</m> by row reducing the matrix <m>[A \mid \bfo]</m>. Here is the RREF:
+      <me>
+        \left[ \begin{array}{@{}ccc|c@{}}
+        1 \amp 0 \amp -2 \amp 0 \\ 
+        0 \amp 1 \amp 3 \amp 0 \\ 
+        0 \amp 0 \amp 0 \amp 0
+        \end{array}\right]
+      </me>.
+      From this we see that <m>x_1 = 2x_3</m>, <m>x_2=-3x_3</m>, and <m>x_3</m> is free. In other words, any vector <m>\bfx</m> in <m>\nll(A)</m> looks like 
+      <me>
+        \bfx = \begin{bmatrix}
+        2x_3 \\ -3x_3 \\ x_3
+        \end{bmatrix} = x_3\begin{bmatrix}
+        2 \\ -3 \\ 1
+        \end{bmatrix}
+      </me>.
+      So we have 
+      <me>
+        \nll(A) = \spn\{\bfv\}
+      </me>
+      if 
+      <me>
+        \bfv = \begin{bmatrix}
+        2 \\ -3 \\ 1
+        \end{bmatrix}
+      </me>.      
+    </p>
+  </statement>
+</example>
+
+<note>
+  <statement>
+    <p>
+      There is an important fact buried in this last example. When we have a homogeneous system, we can always pay attention to just the coefficient matrix instead of the augmented matrix. None of the elementary row operations can produce a non-zero entry in a column of zeros.
+    </p>
+  </statement>
+</note>
+
+<p>
+  The following theorem is one of the reasons that the kernel is so useful.
+</p>
+
+<theorem xml:id="thm-injective-kernel">
+  <statement>
+    <p>
+      Let <m>T:V\to W</m> be a linear transformation. Then <m>T</m> is injective if and only if <m>\kerr(T) = \{\bfo\}</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We first suppose that <m>T</m> is injective. Since <m>T(\bfo_V) = \bfo_W</m>, the injectivity of <m>T</m> implies that <m>\bfv = \bfo_V</m> if <m>T(\bfv)=\bfo_W</m> for any <m>\bfv \in V</m>. Therefore, <m>\kerr(T) = \{\bfo\}</m>. 
+    </p>
+    <p>
+      Next, we suppose that <m>\kerr(T) = \{\bfo\}</m>. We want to prove that <m>T</m> is injective, so we let <m>\bfv_1, \bfv_2 \in V</m> with <m>T(\bfv_1)=T(\bfv_2)</m>. We want to show that <m>\bfv_1=\bfv_2</m>. By the linearity of <m>T</m> we have 
+      <md>
+        <mrow>T(\bfv_1)-T(\bfv_2) \amp = \bfo</mrow>
+        <mrow>T(\bfv_1-\bfv_2) \amp = \bfo</mrow>
+      </md>.
+      Since <m>\kerr(T) = \{\bfo \}</m>, we must have <m>\bfv_1-\bfv_2 = \bfo</m>, meaning that <m>\bfv_1=\bfv_2</m>. This proves that <m>T</m> is injective.
+    </p>
+  </proof>
+</theorem>
+
+<example>
+  <statement>
+    <p>
+      Consider the linear transformation <m>T:P_1 \to \rr^2</m> given by 
+      <me>
+        T(p) = \begin{bmatrix}
+        p(0) \\ p'(0) 
+        \end{bmatrix}
+      </me>.
+      To examine <m>\kerr(T)</m>, we need to look at polynomials <m>p \in P_1</m> such that <m>p(0)=0</m> and <m>p'(0)=0</m>. If <m>p(t) = a + bt</m>, then <m>a = p(0)</m> and <m>b = p'(0)</m>, so if <m>T(p)= \bfo</m>, we must have <m>a=0</m> and <m>b=0</m>. This means that the only polynomial in <m>\kerr(T)</m> is the zero polynomial. Therefore, <m>T</m> is injective.
+    </p>
+  </statement>
+</example>
+
+<p>
+  We have one final fact related to the kernel before we move on. 
+</p>
+
+<corollary xml:id="cor-unique-soln">
+  <statement>
+    <p>
+      Suppose that the linear system represented by the equation <m>A\bfx = \bfb</m> is consistent. Then this system has a unique solution if and only if <m>\nll(A) = \{\bfo\} </m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We first assume that the system has a unique solution. Since the linear system is consistent, then there exists a vector <m>\bfv</m> such that <m>A\bfv = \bfb</m>. If <m>\bfw \in \nll(A)</m>, then <m>A(\bfv + \bfw) A\bfv + A\bfw = \bfb + \bfo = \bfb</m>, so <m>\bfv + \bfw</m> is also a solution. But since there is a unique solution, we must have <m>\bfv = \bfv+\bfw</m>, so <m>\bfw = \bfo</m>. This shows that <m>\nll(A) = \{\bfo\}</m>.
+    </p>
+    <p>
+      We now assume that <m>\nll(A) = \{\bfo\}</m>. From <xref ref="thm-injective-kernel"/> we know that the associated linear transformation is injective. Since the system is consistent, there must be only one vector that the transformation sends to <m>\bfb</m> so the system has a unique solution.
+    </p>
+  </proof>
+</corollary>  
+</subsection>
+
+<subsection xml:id="subsec-range">
+  <title>The Range as a Subspace</title>
+  <p>
+    We now turn to a subspace of the codomain that a linear transformation defines. The reader will already be familiar with the range (or image) of a linear transformation. We can now prove that this is a subspace.
+  </p>
+
+<theorem xml:id="thm-range-subspace">
+  <statement>
+    <p>
+      Let <m>T:V\to W</m> be a linear transformation between vector spaces over <m>\ff</m>. Then <m>\range(T)</m> is a subspace of <m>W</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Since we know that <m>T(\bfo_V) = \bfo_W</m>, we know that <m>\bfo_W \in \range(T)</m>. We now need to show the other properties demanded by <xref ref="thm-prove-subspace"/>. 
+    </p>
+    <p>
+      If <m>\bfw_1, \bfw_2 \in \range(T)</m>, then there exist vectors <m>\bfv_1, \bfv_2 \in V</m> such that <m>T(\bfv_1)=\bfw_1</m> and <m>T(\bfv_2)=\bfw_2</m>. Then, using the linearity of <m>T</m>, we have 
+      <me>
+        \bfw_1 + \bfw_2 = T(\bfv_1) + T(\bfv_2) = T(\bfv_1+\bfv_2)
+      </me>. 
+      This proves that <m>\bfw_1+\bfw_2 \in \range(T)</m>, so <m>\range(T)</m> is closed under addition.
+    </p>
+    <p>
+      Finally, we let <m>k \in \ff</m> and <m>\bfw \in \range(T)</m>, so there exists a vector <m>\bfv \in V</m> such that <m>T(\bfv) = \bfw</m>. Then, using the fact that <m>T</m> is a linear transformation, we have 
+      <me>
+        k\bfw = kT(\bfv) = T(k\bfv)
+      </me>,
+      which proves that <m>k\bfw \in \range(T)</m>. Thus, <m>\range(T)</m> is closed under scalar multiplication. We conclude that <m>\range(T)</m> is a subspace of <m>W</m>. 
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  As usual, when our linear transformation is linked to a matrix, we have more to say.
+</p>
+
+<definition xml:id="def-column-space">
+  <statement>
+    <p>
+      If <m>A \in M_{m,n}(\ff)</m>, then the <term>column space</term> of <m>A</m>, written <m>\col(A)</m>, is the set of all linear combinations of the columns of <m>A</m>. If <m>A = [\mathbf{a}_1 \cdots \mathbf{a}_n]</m>, then 
+      <me>
+        \col(A) = \spn\{\mathbf{a}_1, \ldots, \mathbf{a}_n \}
+      </me>.       
+    </p>
+  </statement>
+</definition>
+
+<p>
+  When we introduced the matrix-vector product in <xref ref="examp-matrix-vector-prod"/>, we noted that <m>A\bfv</m> is a linear combination of the columns of <m>A</m> with weights coming from the entries in <m>\bfv</m>. So, a vector in <m>\col(A)</m> can be written as <m>A\bfx</m> for some <m>\bfx</m>. Therefore, another way to write the column space is 
+  <me>
+    \col(A) = \{ \bfw \in \ff^m \mid \bfw = A\bfx \text{ for some } \bfx \in \ff^n \}
+  </me>. 
+  From this description, we can see that the <em>column space</em> of a matrix and the <em>range</em> of a linear transformation are the same.
+</p>
+
+<fact xml:id="fact-range-col-space">
+  <statement>
+    <p>
+      If <m>T:\ff^n \to \ff^m</m> is a linear transformation given by multiplication by a matrix <m>A</m>, then 
+      <me>
+        \range(T) = \col(A)
+      </me>.      
+    </p>
+  </statement>
+</fact>
+
+<p>
+  We can also restate the consistency of linear systems using the language of the column space.
+</p>
+
+<fact xml:id="fact-consistent-column-space">
+  <statement>
+    <p>
+      If <m>A \in M_{m,n}(\ff)</m>, then the linear system <m>A\bfx = \bfb</m> is consistent if and only if <m>\bfb \in \col(A)</m>.
+    </p>
+  </statement>
+</fact>
+
+<p>
+  Since the column space of a matrix is a subspace of the codomain of the associated linear transformation, there will be some occasions when that subspace is as large as it could be. The next theorem gives conditions for just that situation. 
+</p>
+
+<theorem xml:id="thm-vectors-span-fm">
+  <statement>
+    <p>
+      A set of vectors <m>\{\bfv_1, \ldots, \bfv_n \}</m> spans <m>\ff^m</m> if and only if the RREF of the matrix <m>A = [\bfv_1 \cdots \bfv_n]</m> has a pivot in every row.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      The set of vectors <m>\{\bfv_1, \ldots, \bfv_n \}</m> spans <m>\ff^m</m> if and only if <m>\bfb \in \col(A)</m> for every <m>\bfb \in \ff^m</m>. This happens when the linear system with augmented matrix <m>[A \mid \bfb]</m> is consistent for each <m>\bfb</m>. 
+    </p>
+    <p>
+      We know from <xref ref="thm-consistent-system-f"/> that a linear system over <m>\ff</m> is consistent if and only if there is no pivot in the final column of the augmented matrix. If the RREF of <m>A</m> has a pivot in every row, then there cannot be a pivot in the final column of the RREF of <m>[A \mid \bfb]</m> since each row already contains one pivot.
+    </p>
+    <p>
+      We will prove the contrapositive of the other implication. Suppose that the RREF of <m>A</m> does not have a pivot in every row. We will create a vector in <m>\ff^m</m> which is not in the span of this set of vectors. Since the RREF of <m>A</m> does not have a pivot in every row, let the smallest row number with no pivot be <m>k</m>. Form the augmented matrix with the RREF of <m>A</m> and the vector <m>\bfe_k</m>. Now reverse the elementary row operations that were taken to reduce <m>A</m> to its RREF. The result will be an augmented matrix <m>[A \mid \bfb]</m> which is related to an inconsistent system. (There will be a pivot in the final column of the RREF of this matrix. We constructed it this way!) This proves that the set <m>\{\bfv_1, \ldots, \bfv_n \}</m> does not span <m>\ff^m</m>. 
+    </p>
+  </proof>
+</theorem>
+
+<example>
+  <statement>
+    <p>
+      Define the vectors <m>\bfu, \bfv, \bfw</m> in <m>\ff_5^3</m> as 
+      <me>
+        \bfu = \begin{bmatrix} 
+        3 \\ 2 \\ 3
+        \end{bmatrix}, \hspace{6pt}
+        \bfv = \begin{bmatrix}
+        0 \\ 4 \\ 4 
+        \end{bmatrix}, \hspace{6pt}
+        \bfw = \begin{bmatrix}
+        0 \\ 4 \\ 3 
+        \end{bmatrix}
+      </me>.
+      How large is <m>\spn\{\bfu,\bfv,\bfw\}</m>?
+    </p>
+    <p>
+      We form the matrix <m>[\bfu\ \bfv\ \bfw]</m> and find the RREF: 
+      <me>
+        \begin{bmatrix} 
+        3 \amp 0 \amp 0 \\ 
+        2 \amp 4 \amp 4 \\ 
+        3 \amp 4 \amp 3
+        \end{bmatrix} \sim 
+        \begin{bmatrix} 
+        1 \amp 0 \amp 0 \\ 
+        0 \amp 1 \amp 0 \\ 
+        0 \amp 0 \amp 1
+        \end{bmatrix}
+      </me>.
+      Since there is a pivot in each row, the set <m>\{\bfu, \bfv, \bfw\}</m> spans <m>\ff_5^3</m>.
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Consider the following vectors in <m>\rr^3</m>: 
+      <me>
+        \bfu = \begin{bmatrix} 
+        -2 \\ 3 \\ -1
+        \end{bmatrix}, \hspace{6pt}
+        \bfv = \begin{bmatrix}
+        1 \\ -2 \\ 2 
+        \end{bmatrix}, \hspace{6pt}
+        \bfw = \begin{bmatrix}
+        -5 \\ 6 \\ 2  
+        \end{bmatrix}
+      </me>.
+      When we row reduce the matrix <m>[\bfu\ \bfv\ \bfw]</m>, we get 
+      <me>
+        \begin{bmatrix} 
+        -2 \amp 1 \amp -5 \\ 
+        3 \amp -2 \amp 6 \\ 
+        -1 \amp 2 \amp 2
+        \end{bmatrix} \sim 
+        \begin{bmatrix} 
+        1 \amp 0 \amp 4 \\ 
+        0 \amp 1 \amp 3 \\ 
+        0 \amp 0 \amp 0
+        \end{bmatrix}
+      </me>.
+      Since there is not a pivot in every row, the set <m>\{\bfu, \bfv, \bfw\}</m> does not span <m>\rr^3</m>.
+    </p>
+  </statement>
+</example>
+
+
+</subsection>
+
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      Let <m>A</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix}
+        2 \amp 2 \\ 3 \amp -2 \\ 3 \amp -5
+        \end{bmatrix}
+      </me>.
+      Let <m>T:\rr^2 \to \rr^3</m> be the linear transformation which is multiplication by <m>A</m>. 
+      <ol>
+        <li>
+          <p>
+            Calculate <m>\nll(A)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Is <m>T</m> injective? Explain.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Consider the following three vectors in <m>\ff_3^2</m>:
+    <me>
+      \bfu = \begin{bmatrix}
+      2 \\ 1
+      \end{bmatrix}, \hspace{6pt}
+      \bfv = \begin{bmatrix} 
+      0 \\ 1
+      \end{bmatrix}, \hspace{6pt} 
+      \bfw = \begin{bmatrix} 
+      0 \\ 2
+      \end{bmatrix}
+    </me>.
+    Does the set <m>\{\bfu, \bfv, \bfw \}</m> span <m>\ff_3^2</m>? Explain.
+  </p>
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following matrix <m>A</m> in <m>M_{3,4}(\ff_7)</m>:
+        <me>
+          A = \begin{bmatrix}
+          6 \amp 3 \amp 3 \amp 6 \\ 0 \amp 3 \amp 0 \amp 2 \\ 3 \amp 5 \amp 2 \amp 2 
+          \end{bmatrix}
+        </me>. 
+        For each of the following vectors <m>\bfx \in \ff_7^4</m>, determine whether or not <m>\bfx \in \nll(A)</m>.
+        <ol>
+          <li>
+            <p>
+              <m>\bfx = \begin{bmatrix} 6 \\ 1 \\ 4 \\ 2 \end{bmatrix}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\bfx = \begin{bmatrix} 4 \\ 3 \\ 1 \\ 2 \end{bmatrix}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following matrices <m>A</m> over <m>\rr</m>, find <m>\nll(A)</m> by producing a set of vectors that spans <m>\nll(A)</m>.
+        <ol>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix}
+                2 \amp 3 \amp 4 \amp 2 \\
+                -5 \amp -1 \amp 5 \amp -3
+                \end{bmatrix}
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix} 
+                2 \amp -4 \amp -5 \amp -3 \amp 1 \\ 
+                1 \amp 4 \amp -5 \amp 4 \amp 5 \\ 
+                0 \amp -2 \amp 5 \amp 0 \amp 5 
+                \end{bmatrix} 
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find a matrix <m>A</m> so that the following set is <m>\col(A)</m>:
+        <me>
+          \left\{ \begin{bmatrix} 
+        2r + 4s \\ 3s-7t \\ -r-s+5t 
+      \end{bmatrix} \large\mid r,s,t \in \rr \right\}
+        </me>.         
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>\bfx</m> be the following, with entries from <m>\rr</m>:
+        <me>
+          A = \begin{bmatrix}
+          3 \amp -1 \\ -9 \amp 3 
+          \end{bmatrix}, \hspace{12pt} 
+          \bfx = \begin{bmatrix} 
+          2 \\ 6 
+          \end{bmatrix} 
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Show that <m>\bfx \in \nll(A)</m> and <m>\bfx \not \in \col(A)</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove that it is not possible, for this particular matrix <m>A</m>, to find a non-zero vector in <m>\nll(A) \cap \col(A)</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Is it possible to find a matrix <m>A \in M_2(\rr)</m> such that there exists a non-zero vector in <m>\nll(A) \cap \col(A)</m>? Justify your answer thoroughly.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>T:U\to V</m> is a linear transformation between vector spaces over <m>\ff</m>. If <m>U'</m> is a subspace of <m>U</m>, prove that <m>T(U')</m> is a subspace of <m>V</m>, where 
+        <me>
+          T(U') = \{ T(\bfu) \in V \mid \bfu \in U' \} 
+        </me>.        
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>T:U\to V</m> is a linear transformation between vector spaces over <m>\ff</m>. If <m>V'</m> is a subspace of <m>V</m>, define the set <m>U_1</m> by 
+        <me>
+          U_1 = \{ \bfu \in U \mid T(\bfu) \in V' \}
+        </me>.
+        Prove that <m>U_1</m> is a subspace of <m>U</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following linear transformation <m>T:\ff_7^4 \to \ff_7^3</m>: 
+        <me>
+          T \left( \begin{bmatrix}
+          x_1 \\ x_2 \\ x_3 \\ x_4 
+          \end{bmatrix} \right) = \begin{bmatrix} 
+          2x_1 + 4x_2 + 6x_3 + x_4 \\
+          4x_1 + 6x_2 + 5x_3 \\ 
+          4x_1 + 2x_2 + 3x_3 
+          \end{bmatrix} 
+        </me>. 
+        This <m>T</m> is not injective. Find distinct vectors <m>\bfx_1</m> and <m>\bfx_2</m> in <m>\ff_7^4</m> such that <m>T(\bfx_1) = T(\bfx_2)</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following linear transformation <m>T:\ff_7^3 \to \ff_7^4</m>: 
+        <me>
+          T \left( \begin{bmatrix}
+          x_1 \\ x_2 \\ x_3
+          \end{bmatrix} \right) = \begin{bmatrix} 
+          x_1 + 3x_2 + 3x_3 \\ 
+          2x_1 + 6x_2 + 3x_3 \\ 
+          x_2 + 3x_3 \\ 
+          3x_1 + 5x_2 + 6x_3  
+          \end{bmatrix} 
+        </me>. 
+        This <m>T</m> is not surjective. Find a vector <m>\mathbf{y} \in \ff_7^4</m> such that <m>\mathbf{y}</m> is not in the image of <m>T</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following linear transformation <m>T: \rr^3 \to P_2</m>: 
+        <me>
+          T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) = 
+          (a+b) + (b+ c)t + (a+b+c)t^2
+        </me>. 
+        <ol>
+          <li>
+            <p>
+              Either prove or disprove that <m>T</m> is injective.
+            </p>
+          </li>
+          <li>
+            <p>
+              Either prove or disprove that <m>T</m> is surjective.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following linear transformation <m>T: \rr^2 \to P_2</m>: 
+        <me>
+          T \left( \begin{bmatrix} a \\ b \end{bmatrix} \right) = 
+          a + bt + bt^2
+        </me>. 
+        <ol>
+          <li>
+            <p>
+              Either prove or disprove that <m>T</m> is injective.
+            </p>
+          </li>
+          <li>
+            <p>
+              Either prove or disprove that <m>T</m> is surjective.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following linear transformation <m>T: P_2 \to \rr^2</m>: 
+        <me>
+          T(a+bt+ct^2) = \begin{bmatrix} a-2b \\ 3b + c \end{bmatrix} 
+        </me>. 
+        <ol>
+          <li>
+            <p>
+              Either prove or disprove that <m>T</m> is injective.
+            </p>
+          </li>
+          <li>
+            <p>
+              Either prove or disprove that <m>T</m> is surjective.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following, consider a linear transformation <m>T: \rr^n \to \rr^m</m> which is multiplication by the given <m>m\times n</m> matrix <m>A</m>. In each case, determine whether or not <m>T</m> is injective and whether or not <m>T</m> is surjective. Explain your answers. 
+        <ol>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix} 
+                2 \amp -4 \amp -14 \\ 
+                -4 \amp -1 \amp 10 \\ 
+                -2 \amp 2 \amp 10 
+                \end{bmatrix}
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix} 
+                -3 \amp -5 \amp -2 \amp 3 \\ 
+                1 \amp 1 \amp -5 \amp -5 \\ 
+                1 \amp -3 \amp 1 \amp 2
+                \end{bmatrix} 
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix} 
+                2 \amp -2 \amp 2 \\ 
+                4 \amp -1 \amp 7 \\ 
+                -3 \amp -1 \amp -7 \\ 
+                0 \amp 5 \amp 5
+                \end{bmatrix} 
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \begin{bmatrix} 
+                -2 \amp -3 \amp -1 \\ 
+                5 \amp -5 \amp -2 \\ 
+                0 \amp 4 \amp -4 
+                \end{bmatrix} 
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A \in M_{m,n}(\ff)</m> and let <m>B \in M_{n,p}(\ff)</m>. Prove that <m>\col(AB) \subseteq \col(A)</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that if <m>n &lt; m</m>, then no set of <m>n</m> vectors can span <m>\ff^m</m>. 
+      </p>
+    </statement>
+  </exercise>
+</exercises> 
+
+
+</section>

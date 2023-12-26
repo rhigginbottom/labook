@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-invariants" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Invariants</title>
+  <introduction>
+    <p>
+      One of the fun aspects of linear algebra is that it touches so many different areas of mathematics. In this section we will connect row equivalence and similarity to the topic of mathematical invariants, which is used in many mathematical disciplines to distinguish between related objects.
+    </p>
+  </introduction>
+
+<subsection xml:id="subsec-intro-invariants">
+  <title>Introduction to Invariants</title>
+
+  <p>
+    Many areas of mathematics have a notion of the <em>relatedness</em> of the important objects of study. In linear algebra, we have already learned about vector spaces being isomorphic (<xref ref="thm-same-dim-isomorphic"/>), and this idea shows up widely. We often prove that mathematical objects are related by defining a function between them and showing that it has all the right properties.
+  </p>
+
+  <p>
+    However, showing that two mathematical objects are not related is harder when working strictly from the definitions. It is difficult to show that a function with certain properties <em>cannot exist</em><mdash></mdash>not being able to find or think of such a function is not a sufficient argument! This is where <em>invariants</em> enter the picture.
+  </p>
+
+  <p>
+    Two related objects have the same value of an invariant. Invariants are not a tool used to show relatedness as to show unrelatedness. If two objects have <em>different</em> values of the invariant, they cannot be related. (Merely knowing that two objects have the same value of the invariant doesn't give any immediate conclusion about the relatedness of those objects.)
+  </p>
+
+  <p>
+    Before this discussion gets too vague, let's look at an example that most readers of this book should recognize.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        We say that two geometric objects are <term>congruent</term> if they have the same shape and size. Most readers will likely have spent some time considering congruent triangles in a geometry class, where they encountered several congruence theorems for triangles: Side-Side-Side, Side-Angle-Side, etc. (Note that congruent triangles are not the same as similar triangles, though there are some, ahem, similarities.)
+      </p>
+      <p>
+        In this example, <em>congruence</em> is the definition of relatedness we are using. We can be even more precise. The congruence of triangles is an <em>equivalence relation</em>, and when using invariants there is usually an equivalence relation in view.
+      </p>
+      <p>
+        One invariant that can be used to distinguish between triangles that are not congruent is the area of the triangle. It is easy to show that if two triangles are congruent, they have the same area. Therefore, if two triangles have different areas, we can conclude that they are not congruent.
+      </p>
+      <p>
+        To be specific, suppose that triangle <m>A</m> is a 30-60-90 triangle with side lengths <m>(10, 10\sqrt{3}, 20)</m> and triangle <m>B</m> is a 45-45-90 triangle with side lengths <m>(10\sqrt[4]{3},10\sqrt[4]{3},10\sqrt{2}\sqrt[4]{3})</m>. Then since the area of a right triangle is easy to calculate using the <m>\frac{1}{2}bh</m> formula, we can see that both triangles <m>A</m> and <m>B</m> have an area of <m>50\sqrt{3}</m> square units. But these triangles are not congruent<mdash></mdash>they have different angles, after all.
+      </p>
+      <p>
+        In summary, the area of a triangle can be used to distinguish between triangles that are <em>not</em> congruent. However, area cannot be used to conclude that two triangles are congruent. In this way, area is a typical invariant.
+      </p>
+    </statement>
+  </example>
+
+<p>
+  In this text, we have discussed two equivalence relations on matrices for which there exist some interesting invariants. <em>Row equivalence</em> is an equivalence relation on the set <m>M_{m,n}(\ff)</m>. (See <xref ref="exer-row-equiv-equiv-rel"/>.) More recently, we have looked at <em>similarity</em>, which is an equivalence relation on the set <m>M_n(\ff)</m>. (See <xref ref="exerc-similarity-equiv-rel"/>.)
+</p>
+
+<p>
+  We have shown in <xref ref="thm-similar-matrices-char-poly"/> that the characteristic polynomial is an invariant for similar matrices. If two matrices are similar, they have the same characteristic polynomial, and therefore the same eigenvalues (with the same multiplicities). This means if we know of two matrices of the same size with different eigenvalues, they cannot be similar.
+</p>
+
+<p>
+  Additionally<mdash></mdash>and using much the same argument<mdash></mdash>the determinant is an invariant for similar matrices. (We asked the reader to prove this in <xref ref="exer-det-invariant-similar"/>.) So, two matrices of the same size with different determinants cannot be similar.
+</p>
+
+<p>
+  While the characteristic polynomial and the determinant are useful invariants for similarity, they are far from the only ones. In the second half of this section we will develop two more invariants which respect similarity, one of which is quite surprising.
+</p>
+  
+</subsection>
+
+<subsection xml:id="subsec-inv-rank-trace">
+  <title>Rank and Trace as Invariants</title>
+  
+<p>
+  We will first state and prove a few results needed to establish rank as an invariant.
+</p>
+
+<theorem xml:id="thm-rank-lt-matrix">
+  <statement>
+    <p>
+      Suppose that <m>V</m> and <m>W</m> are finite-dimensional vector spaces and that <m>T \in L(V,W)</m>. Then, for any bases <m>\mcb</m> of <m>V</m> and <m>\mcc</m> of <m>W</m>, we have 
+      <me>
+        \rank(T) = \rank([T]_{\mcb,\mcc}), \hspace{12pt} \text{and} \hspace{12pt}
+        \dim(\ker(T)) = \dim(\nll([T]_{\mcb,\mcc}))
+      </me>.      
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Suppose that <m>\mcb = \{ \bfv_1, \ldots, \bfv_n \}</m> and let <m>A = [T]_{\mcb,\mcc}</m>. Since <m>V = \spn(\mcb)</m>, we have <m>\range(T) = \spn\{T(\bfv_1), \ldots, T(\bfv_n) \}</m>. By <xref ref="thm-coord-map-isomorphism"/> we know that <m>\spn\{T(\bfv_1), \ldots, T(\bfv_n) \}</m> is isomorphic to 
+      <me>
+        \spn\{ [T(\bfv_1)]_{\mcc}, \ldots, [T(\bfv_n)]_{\mcc} \}
+      </me>.
+      The vectors <m>[T(\bfv_i)]_{\mcc}</m> are exactly the columns of <m>A</m>, so 
+      <me>
+        \rank(T) = \dim(\range(T)) = \dim(\col(A)) = \rank(A)
+      </me>.      
+    </p>
+    <p>
+      For the second equality, we refer to the Rank-Nullity Theorem. If <m>\dim(V)=n</m> and <m>\dim(W)=m</m>, then <m>A</m> is <m>m\times n</m>. We have proved that <m>\rank(T) = \rank(A)</m>, and comparing the two equations in <xref ref="thm-rank-nullity"/>, we are left with <m>\dim(\nll(A)) = \dim(\kerr(T))</m>, as desired. 
+    </p>
+  </proof>
+</theorem>
+
+<proposition xml:id="prop-similar-matrices-same-lt">
+  <statement>
+    <p>
+      Suppose that <m>V</m> is an <m>n</m>-dimensional vector space over <m>\ff</m>, that <m>\mcb</m> is a basis of <m>V</m>, and that <m>T \in L(V)</m>. Suppose further that <m>A</m> and <m>B</m> are similar matrices in <m>M_n(\ff)</m> and that <m>A = [T]_{\mcb}</m>. Then there exists a basis <m>\mcc</m> of <m>V</m> such that <m>B = [T]_{\mcc}</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>\mcb = \{\bfv_1, \ldots \bfv_n \}</m> and suppose that <m>B = SAS^{-1}</m>. We define <m>Q = S^{-1}</m> and, for each <m>j</m>, we define <m>\bfw_j</m> by 
+      <me>
+        \bfw_j = \sum_{i=1}^n q_{ij}\bfv_i
+      </me>,
+      so that <m>\mathbf{q}_j</m> is the coordinate vector <m>[\bfw_j]_{\mcb}</m>. Since <m>Q</m> is invertible, then <m>\{\mathbf{q}_1, \ldots, \mathbf{q}_n\}</m> is a basis of <m>\ff^n</m>, so <m>\mcc = \{\bfw_1, \ldots, \bfw_n \}</m> is a basis of <m>V</m>. (This is again due to the coordinate mapping being an isomorphism.) We also have
+      <me>
+        P_{\mcc,\mcb} \bfe_j = P_{\mcc,\mcb} [\bfw_j]_{\mcc} = [\bfw_j]_{\mcb} = \mathbf{q}_j
+      </me>
+      for each <m>j</m>, so <m>P_{\mcc,\mcb} = Q</m>. Therefore, by <xref ref="lem-inverse-change-matrix"/>, <m>S = P_{\mcb,\mcc}</m>, and so by <xref ref="cor-change-basis-lt"/>, <m>[T]_{\mcc} = SAS^{-1} = B</m>. 
+    </p>
+  </proof>
+</proposition>
+
+<note>
+  <p>
+    <xref ref="prop-similar-matrices-same-lt"/>, along with <xref ref="prop-sim-coord-matrices"/> show us that two matrices are similar if and only if they represent the same linear transformation with respect to different bases.
+  </p>
+</note>
+
+<p>
+  With these two results in hand, we can state the first invariant we have been pointing toward.
+</p>
+
+<corollary xml:id="cor-rank-invariant">
+  <statement>
+    <p>
+      If <m>A, B \in M_n(\ff)</m> are similar, then <m>\rank(A) = \rank(B)</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      This follows from <xref ref="thm-rank-lt-matrix"/> (in the case where <m>V = W</m> and <m>\mcb = \mcc</m>) as well as <xref ref="prop-similar-matrices-same-lt"/>.
+    </p>
+  </proof>
+</corollary>
+
+<p>
+  In the following example, we put this invariant to work. 
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A, B \in M_3(\rr)</m> be the following matrices: 
+      <me>
+        A = \begin{bmatrix} -3.5 \amp 5 \amp -4.5 \\ 
+        3.5 \amp -3 \amp -1.5 \\ 
+        -3 \amp 5 \amp -6
+        \end{bmatrix}, \hspace{6pt}
+        B = \begin{bmatrix} 2 \amp 3 \amp 4 \\ 
+        -2 \amp -4 \amp 0 \\ 
+        3.5 \amp -5 \amp -2 
+        \end{bmatrix}  
+      </me>.
+      Some quick row reduction shows that <m>\rank(A) = 2</m> while <m>\rank(B)=3</m>, so we know that <m>A</m> and <m>B</m> are not similar.
+    </p>
+  </statement>
+</example>
+
+<p>
+  We now move into the development and discussion of our final invariant, the <em>trace</em> of a matrix. Of all the invariants we discuss, the trace is <em>by far</em> the easiest to calculate!
+</p>
+
+<definition xml:id="def-trace">
+  <statement>
+    <p>
+      Let <m>A \in M_n(\ff)</m>. The <term>trace</term> of <m>A</m> is the sum of the numbers along the main diagonal of <m>A</m>. In other words, 
+      <me>
+        \tr(A) = \sum_{i=1}^n a_{ii}
+      </me>.
+    </p>
+  </statement>
+</definition>
+
+<example>
+  <statement>
+    <p>
+      Here are two matrices over <m>\rr</m>: 
+      <me>
+        A = \begin{bmatrix} -1 \amp 5 \\ -3 \amp 2 \end{bmatrix}, \hspace{6pt}
+        B = \begin{bmatrix} 2 \amp 1 \amp 0 \\ 3.5 \amp -2 \amp -3 \\ 4 \amp -2.5 \amp -2.5 \end{bmatrix}
+      </me>.
+      By summing the entries along the main diagonal, we see that <m>\tr(A) = 1</m> and <m>\tr(B) = -2.5</m>. 
+    </p>
+  </statement>
+</example>
+
+<p>
+  We need surprisingly few additional results in order to establish the trace as an invariant. 
+</p>
+
+<proposition xml:id="prop-trace-mult">
+  <statement>
+    <p>
+      If <m>A \in M_{m,n}(\ff)</m> and <m>B \in M_{n,m}(\ff)</m>, then 
+      <me>
+        \tr(AB) = \tr(BA)
+      </me>.      
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We begin by using the definitions of the trace and matrix multiplication: 
+      <me>
+        \tr(AB) = \sum_{i=1}^m [AB]_{ii} = \sum_{i=1}^m \sum_{j=1}^n a_{ij}b_{ji}
+      </me>.
+      Since multiplication and addition in a field are both commutative, we can switch the order of summation and multiplication. The calculation is finished using the definitions of matrix multiplication and the trace again:
+      <me>
+        \tr(AB) = \sum_{j=1}^n \sum_{i=1}^m b_{ji}a_{ij} = \sum_{j=1}^n [BA]_{jj} = \tr(BA)
+      </me>.    
+    </p>
+  </proof>
+</proposition>
+
+<p>
+  This next result finishes our argument.
+</p>
+
+<corollary xml:id="cor-trace-invariant">
+  <statement>
+    <p>
+      If <m>A</m> and <m>B</m> are similar matrices, then <m>\tr(A) = \tr(B)</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Suppose that <m>B = PAP^{-1}</m>. By the associativity of matrix multiplication and <xref ref="prop-trace-mult"/>, we have
+      <md>
+      <mrow>\tr(B) \amp = \tr(PAP^{-1}) = \tr((PA)P^{-1}) = \tr(P^{-1}(PA))</mrow>
+      <mrow> \amp = \tr((P^{-1}P)A) = \tr(IA) = \tr(A)</mrow>          
+      </md>.     
+    </p>
+  </proof>
+</corollary>
+
+<p>
+  We can now use the trace as an invariant.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A</m> and <m>B</m> be the following matrices over <m>\ff_5</m>:
+      <me>
+        A = \begin{bmatrix} 4 \amp 1 \\ 4 \amp 2 \end{bmatrix}, \hspace{6pt}
+        B = \begin{bmatrix} 2 \amp 2 \\ 3 \amp 0 \end{bmatrix}
+      </me>.
+      Since <m>\tr(A) = 1</m> and <m>\tr(B) = 2</m>, we know that <m>A</m> and <m>B</m> are not similar matrices.
+    </p>
+  </statement>
+</example>
+
+<p>
+  One consequence of this invariant is that it allows us to define the trace of a linear transformation.
+</p>
+
+<corollary xml:id="cor-trace-lt">
+  <statement>
+    <p>
+      Let <m>V</m> be a finite-dimensional vector space and let <m>T \in L(V)</m>. If <m>\mcb</m> and <m>\mcc</m> are two bases for <m>V</m>, then <m>\tr([T]_{\mcb}) = \tr([T]_{\mcc})</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      This is a direct and immediate consequence of <xref ref="prop-sim-coord-matrices"/> and <xref ref="cor-trace-invariant"/>.
+    </p>
+  </proof>
+</corollary>
+
+<definition xml:id="def-trace-lt">
+  <statement>
+    <p>
+      Let <m>V</m> be a finite-dimensional vector space and let <m>T \in L(V)</m>. Then the <term>trace</term> of <m>T</m> is <m>\tr(T) = \tr([T]_{\mcb})</m>, where <m>\mcb</m> is any basis of <m>V</m>. 
+    </p>
+  </statement>
+</definition>
+
+<example>
+  <statement>
+    <p>
+      We end this section with an example of a linear transformation <m>T:P_1 \to P_1</m> which was defined in <xref ref="examp-p1"/>. In that example, we saw that 
+      <me>
+        [T]_{\mcb} = \begin{bmatrix} 1 \amp -4 \\ 3 \amp -6 \end{bmatrix}
+      </me>,
+      so we can see that <m>\tr(T) = -5</m>. 
+    </p>
+  </statement>
+</example>
+
+</subsection>
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      Use only the rank invariant to answer the following questions. If that invariant does not give you enough information to answer the question, explain why that is.
+      <me>
+        A = \begin{bmatrix} 1.5 \amp 3 \amp -1.5 \\ -0.5 \amp 0 \amp 1.5 \\ 0.5 \amp -3 \amp -4.5 \end{bmatrix}, \hspace{6pt}
+        B = \begin{bmatrix} 3.5 \amp -4.5 \amp -4 \\ 3.5 \amp -0.5 \amp 4 \\ -3.5 \amp -1.5 \amp 3.5 \end{bmatrix}
+        </me>,
+        <me> 
+        C = \begin{bmatrix} 4 \amp -2 \amp -6 \\ 2.5 \amp 5 \amp 2.5 \\ -2.5 \amp -5 \amp -2.5 \end{bmatrix}
+      </me>.
+      <ol>
+        <li>
+          <p>
+            Are <m>A</m> and <m>B</m> similar? Explain.          
+          </p>
+          <!-- <p>
+            <m>\rank(A) = 2</m>, <m>\rank(B) = 3</m>, so <m>A</m> and <m>B</m> are not similar
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Are <m>B</m> and <m>C</m> similar? Explain.
+          </p>
+          <!-- <p>
+            <m>\rank(B) = 3</m>, <m>\rank(C) = 2</m>, so <m>B</m> and <m>C</m> are not similar
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Are <m>A</m> and <m>C</m> similar? Explain.
+          </p>
+          <!-- <p>
+            <m>\rank(A) = 2 = \rank(C)</m>, so we cannot say whether or not <m>A</m> and <m>C</m> are similar
+          </p> -->
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    Use only the trace invariant to answer the following questions. If that invariant does not give you enough information to answer the question, explain why that is. (The matrices for this question are the same as for the previous reading question.)
+    <ol>
+        <li>
+          <p>
+            Are <m>A</m> and <m>B</m> similar? Explain.          
+          </p>
+          <!-- <p>
+            <m>\tr(A) = -3</m>, <m>\tr(B) = 6.5</m>, so <m>A</m> and <m>B</m> are not similar
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Are <m>B</m> and <m>C</m> similar? Explain.
+          </p>
+          <!-- <p>
+            <m>\tr(B) = 6.5</m>, <m>\tr(C) = 6.5</m>, so we cannot say whether or not <m>B</m> and <m>C</m> are similar
+          </p> -->
+        </li>
+        <li>
+          <p>
+            Are <m>A</m> and <m>C</m> similar? Explain.
+          </p>
+          <!-- <p>
+            <m>\tr(A) = -3</m>, <m>\tr(C) = 6.5</m>, so <m>A</m> and <m>C</m> are not similar
+          </p> -->
+        </li>
+      </ol>
+  </p>
+</statement>
+</exercise>
+</reading-questions>
+
+<exercises>
+<exercise>
+  <statement>
+    <p>
+      Consider the following two matrices in <m>M_3(\rr)</m>: 
+      <me>
+        A = \begin{bmatrix}
+        -5 \amp 4.5 \amp 1.5 \\ 
+        -1.5 \amp 0 \amp 4.5 \\ 
+        1 \amp -1.5 \amp 1.5
+        \end{bmatrix}, \hspace{6pt}
+        B = \begin{bmatrix}
+        -3.5 \amp 3.5 \amp -3.5 \\ 
+        -4.5 \amp 3.5 \amp -2.5 \\ 
+        -4 \amp 0.5 \amp 3
+        \end{bmatrix}
+      </me>.
+      <ol>
+        <li>
+          <p>
+            Explain why both determinant and rank are <em>not</em> useful invariants to say that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Prove that the determinant is an invariant for similarity on the set of <m>n\times n</m> matrices over <m>\ff</m>. 
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>A \in M_2(\ff)</m> be this <m>2\times 2</m> matrix:
+      <me>
+        A = \begin{bmatrix}
+        a \amp b \\ c \amp d
+        \end{bmatrix}
+      </me>.
+      <ol>
+        <li>
+          <p>
+            Write out the characteristic polynomial of <m>A</m>, substituting <m>\det(A)</m> and <m>\tr(A)</m> where appropriate.
+          </p>
+        </li>
+        <li>
+          <p>
+            Argue that, for <m>2\times 2</m> matrices, the fact that the characteristic polynomial is an invariant (for similarity) implies that both the trace and determinant are invariants. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Is diagonalizability an invariant (for similarity) on the set <m>M_n(\ff)</m>? In other words, if <m>A</m> and <m>B</m> are similar, must it be true that either (a) they are both diagonalizable, or (b) they are both not diagonalizable?
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Suppose that <m>A \in M_n(\ff)</m>. 
+      <ol>
+        <li>
+          <p>
+            Prove that if <m>A</m> has <m>n</m> distinct eigenvalues, then <m>\tr(A)</m> is the sum of the eigenvalues of <m>A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Is the result from part (a) true if <m>A</m> does not have <m>n</m> distinct eigenvalues? For example, if <m>A \in M_3(\rr)</m> has only two distinct eigenvalues, must <m>\tr(A)</m> be the sum of the eigenvalues (with multiplicity)?
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      There are 16 elements of the set <m>M_2(\ff_2)</m>. How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Prove that if <m>A, B, C \in M_n(\ff)</m>, then 
+            <me>
+              \tr(ABC) = \tr(BCA) = \tr(CAB)
+            </me>.            
+          </p>
+        </li>
+        <li>
+          <p>
+            Give an example of three matrices <m>A, B, C \in M_n(\ff)</m> such that <m>\tr(ABC) \neq \tr(ACB)</m>. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      For a matrix <m>A \in M_n(\ff)</m>, define the function <m>S(A)</m> as the sum of all of the entries of <m>A</m>. Prove or disprove that <m>S</m> is an invariant for similar matrices.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Is rank an invariant for row equivalence? Justify your answer.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Is the trace an invariant for row equivalence? Justify your answer.
+    </p>
+  </statement>
+</exercise>
+  <exercise>
+    <statement>
+      <p>
+        Is the determinant an invariant for row equivalence? Justify your answer. 
+      </p>
+    </statement>
+  </exercise>
+</exercises> 
+
+
+</section>

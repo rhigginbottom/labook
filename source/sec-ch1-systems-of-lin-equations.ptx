@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-intro-systems" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Systems of Linear Equations</title>
+  <introduction>
+    <p>
+      We will introduce the first set of big ideas in this book with an example.
+      </p>
+  </introduction>
+
+<example xml:id="ex-coins">
+    <p>
+      Alex reaches into his pocket and pulls out a handful of coins. He tells us that he's holding 90 cents in his hand, consisting of only nickels (worth five cents each) and quarters (worth 25 cents each). How many coins of each type is Alex holding?
+    </p>
+
+    <p>
+      We can model this information with a linear equation. Let <m>x</m> be the number of nickels in Alex's hand, and let <m>y</m> be the number of quarters. The equation that captures the information Alex shared is
+        <men xml:id="eqn-coins">
+          5x + 25y = 90
+        </men>.
+    </p>
+
+    <p>
+      In this case, we don't have enough information to answer Alex's question. It could be that Alex is holding three nickels and three quarters (<m>15+75=90</m>) or that he is holding 13 nickels and one quarter (<m>65+25=90</m>). There are quite a few solutions to equation <xref ref="eqn-coins" />. (Note that in this example, since it would not make sense to have only part of a coin, we need our values of <m>x</m> and <m>y</m> to be non-negative integers.)
+    </p>
+
+    <p>
+      Now imagine that Alex gives us additional information by telling us that he is holding exactly ten coins. We can put this information into a second linear equation, and we now have what is called a <term>system of equations</term>. We need to know what values of <m>x</m> and <m>y</m> satisfy the following equations simultaneously:
+        <md>
+          <mrow>5x+25y \amp= 90 </mrow>
+          <mrow>x+y \amp= 10 </mrow>
+        </md>.
+    </p>
+
+    <p>
+      A small amount of work shows us that the values <m>x=8</m> and <m>y=2</m> satisfy these equations simultaneously. (Though you may have been able to produce those numbers yourself, don't worry right now about where those numbers came from. We'll get there soon.) This means that Alex is holding eight nickels and two quarters.
+    </p>
+</example>
+
+<p>
+    The first major task of Linear Algebra is to learn how to handle systems of linear equations like the one given in <xref ref="ex-coins"/>. We will learn a method to analyze such systems and determine their solutions (if they have solutions). We need a number of definitions as we get started.
+</p>
+
+<note>
+We will use the symbol <m>\mathbb{R}</m> to denote the set of all real numbers. At the beginning of our work, we will be using <m>\mathbb{R}</m> as our set of numbers for almost everything. However, when we get to <xref ref="sec-fields"/>, we will move away from <m>\mathbb{R}</m> to a more general description of a set of numbers that <q>works</q> for solving linear equations.
+</note>
+
+<definition xml:id="def-lin-eqn">
+  <statement>
+    <p>
+      A <term>linear equation</term> in the variables <m>x_1, \ldots, x_n</m> is one which can be written in the form
+      <me>
+      a_1x_1 + \cdots + a_nx_n = b,
+      </me>
+      where the <m>a_i</m> and <m>b</m> are constants. The numbers <m>a_1,\ldots,a_n,b</m> all come from <m>\mathbb{R}</m>. In the special situation where <m>b=0</m>, this is called a <term>homogeneous linear equation</term>. (Note that when there are only two variables in view we may use <m>x</m> and <m>y</m> instead of <m>x_1</m> and <m>x_2</m>; similarly, when there are only three variables present, we may use <m>x</m>, <m>y</m>, and <m>z</m>.)
+    </p>
+  </statement>
+</definition>
+
+<p>
+  The word <q>linear</q> in the phrase <q>linear equation</q> should make us think of a single power of a variable. In a linear equation, therefore, we will have no terms involving <m>x_1^4</m>, <m>\sin(x_2)</m>, <m>x_2x_3</m>, <m>\sqrt{x_4}</m>, or anything other than a single power of a variable.
+</p>
+
+<example>
+  <statement>
+    <p>
+      The following are linear equations: <!-- (use sidebyside here?) -->
+      <me>
+          4x + 2y = 98, \hspace{.3in} -2x_1 -6x_2 + 5x_3=0, \hspace{.3in} 14x_1 - 15x_3 = -7
+      </me>.
+      These are all linear equations because every appearance of a variable term in these equations contains only a single variable raised to the first power.
+    </p>
+
+    <p>
+      The following are not linear equations:
+      <me>
+          4x^2-y=9, \hspace{.3in} \ln(x_1) + 3x_2 = 2, \hspace{.3in} x_1x_2 - \tan(x_3) = 0
+      </me>.
+      These are not linear equations because each equation has at least one variable term with something other than a single variable to a single power.
+    </p>
+  </statement>
+</example>
+
+<definition xml:id="def-linear-system">
+  <statement>
+    <p>
+      A <term>system of linear equations</term> is a collection of one or more equations involving the same variables. (We sometimes shorten this and refer to a <term>linear system</term>.) When all of these linear equations are homogeneous linear equations, this may be called a <term>homogeneous linear system</term>.
+    </p>
+  </statement>
+</definition>
+
+<example>
+  <statement>
+    <p>
+      Here is a system of linear equations involving the variables <m>x_1</m>, <m>x_2</m>, <m>x_3</m>, and <m>x_4</m>:
+      <md>
+        <mrow>2x_1 - x_3+8x_4 \amp = 10</mrow>
+        <mrow>-x_1 + 3x_2 - 6x_4 \amp = -4</mrow>
+      </md>.
+      Note that not all variables need to be present in each equation. When a variable is missing, we consider that variable to have a zero coefficient in that equation. It may be convenient (and preferred) to align the terms with the same variables vertically, but when an equation lacks one of the variables this creates a blank horizontal space.
+    </p>
+  </statement>
+</example>
+
+<definition xml:id="def-solution-lin-system">
+  <statement>
+    <p>
+      A <term>solution</term> to a system of linear equations in <m>n</m> variables is a list of <m>n</m> numbers, <m>(c_1,\ldots,c_n)</m>, such that when the corresponding variables are assigned these numeric values (plug <m>c_1</m> in everywhere for <m>x_1</m>, plug <m>c_2</m> in everywhere for <m>x_2</m>, and so on), all the equations are true statements. The set of all possible solutions is called the <term>solution set</term> of the linear system. Two linear systems are said to be <term>equivalent</term> if their solution sets are equal.
+    </p>
+  </statement>
+</definition>
+
+<p>
+    The language of <em>solution sets</em> and <em>equivalent linear systems</em> may seem unnecessarily complex. However, the method (see <xref ref="alg-solving-system"/>) for solving a linear system is much easier to describe with these terms firmly in hand.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Consider the following linear system:
+      <md>
+        <mrow>2x+y \amp=-1 </mrow>
+        <mrow>x-3y \amp=17 </mrow>
+      </md>.
+      A solution to this system is <m>(2,-5)</m>. (We use this notation to mean <m>x=2</m> and <m>y=-5</m>.) We verify this claim by plugging these numbers in for the variables and checking that both equations turn out to be true. (In fact, this is the <em>only</em> solution to this system.)
+    </p>
+  </statement>
+</example>
+
+<p>
+    The fact that we can write down a system of linear equations does not mean that it has a solution. Many linear systems have no solution at all. Others have one or an infinite number of solutions. This can be illustrated by some examples of lines graphed in the familiar setting of <m>\mathbb{R}^2</m>.
+</p>
+
+<example xml:id="ex-lines">
+  <statement>
+    <p>
+      We first consider the linear system consisting of two simple equations where the solution to each equation is a line in <m>\mathbb{R}^2</m>:
+      <md>
+        <mrow>2x+y \amp=5 </mrow>
+        <mrow>-x+y \amp=-1 </mrow>
+      </md>.
+      Readers will likely realize that the solution to this system happens when the graphs of these lines intersect. We see from the graph below that the intersection occurs at the point <m>(2,1)</m>. Since this is the only intersection point, there is only one solution to this system.
+    </p>
+
+    <figure>
+      <image xml:id="intersecting-lines" width="40%">
+        <latex-image>
+          <description>Graph of two lines which intersect</description>
+        \begin{tikzpicture}
+        \begin{axis}[axis lines=center, x=1cm, y=.5cm, xmin=-2,ymin=-2,xmax=4,ymax=8,
+          axis line style = {line width=1pt, color=lightgray,Stealth-Stealth}, %xlabel={$x$}, ylabel={$y$},
+          label style={font=\scriptsize},tick label style={font=\footnotesize}, major tick length=4pt, xtick align=outside,
+          ytick align=outside,
+          xtick={-1,0,...,3}, ytick={-1,0,...,7}, minor x tick num=1]
+          \addplot[domain=-1:3.25, line width=1pt,Stealth-Stealth]{x-1};
+          \addplot[domain=-1:3.25, line width=1pt,Stealth-Stealth]{5-2*x};
+          \node[above right] at (.6,4) {\small $y=5-2x$};
+          \node[above] at (3,2.2) {\small $y=x-1$};
+        \end{axis}
+        \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      We now consider a second linear system:
+      <md>
+        <mrow>2x+y \amp=5 </mrow>
+        <mrow>2x+y \amp=3 </mrow>
+      </md>.
+      The graphs of these two lines appear below, but in this case the lines do not intersect at all because they are parallel. (The slope of both lines is <m>-2</m>.)
+    </p>
+
+    <figure>
+      <image xml:id="parallel-lines" width="40%">
+        <latex-image>
+          <description>Graph of two parallel lines</description>
+          \begin{tikzpicture}
+          \begin{axis}[axis lines=center, x=1cm, y=.5cm, xmin=-2.5,ymin=-2,xmax=4,ymax=8,
+          	axis line style = {line width=1pt, color=lightgray,Stealth-Stealth}, %xlabel={$x$}, ylabel={$y$},
+          	label style={font=\scriptsize},tick label style={font=\footnotesize}, major tick length=4pt, xtick align=outside,
+          	ytick align=outside,
+          	xtick={-1,0,...,3}, ytick={-1,0,...,7}, minor x tick num=1]
+          	\addplot[domain=-1:2.25, line width=1pt,Stealth-Stealth]{3-2*x};
+          	\addplot[domain=-1:3.25, line width=1pt,Stealth-Stealth]{5-2*x};
+	          \node[above right] at (.6,4) {\small $y=5-2x$};
+	          \node[below left] at (-.8,4.2) {\small $y=3-2x$};
+            %\draw[line width=2.5pt,yellow] (-2,-2) -- (-2,8);
+          \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      Here is a third linear system in two variables:
+      <md>
+        <mrow>2x+y \amp=5 </mrow>
+        <mrow>6x+3y \amp=15 </mrow>
+      </md>.
+      Each of these equations has a solution set whose graph is a line. In this particular case, we obtain <em>the same line</em> for both equations, which means that the linear system has an infinite number of solutions. Each one of the infinite solutions to the first equation is a solution to the second equation, and vice versa.
+    </p>
+
+    <figure>
+      <image xml:id="identical-lines" width="40%">
+        <latex-image>
+          <description>Graph of two identical lines</description>
+          \begin{tikzpicture}
+          \begin{axis}[axis lines=center, x=1cm, y=.5cm, xmin=-2,ymin=-2,xmax=4,ymax=8,
+          	axis line style = {line width=1pt, color=lightgray,Stealth-Stealth}, %xlabel={$x$}, ylabel={$y$},
+          	label style={font=\scriptsize},tick label style={font=\footnotesize}, major tick length=4pt, xtick align=outside,
+          	ytick align=outside,
+          	xtick={-1,0,...,3}, ytick={-1,0,...,7}, minor x tick num=1]
+          	\addplot[domain=-1:3.25, line width=2pt,Stealth-Stealth]{5-2*x};
+	          \node[above right] at (.6,4) {\small $y=5-2x$};
+	          %\node[below left] at (-.3,4) {\scriptsize $y=3-2x$};
+            %\draw[line width=2.5pt,yellow] (-2,-2) -- (-2,8);
+          \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </statement>
+</example>
+
+<p>
+    What we saw in <xref ref="ex-lines"/> is no accident. This simple collection of examples in <m>\mathbb{R}^2</m> exposes our need for the following definitions.
+</p>
+
+<definition xml:id="def-consistent">
+  <statement>
+    <p>
+      A system of linear equations is <term>consistent</term> if it has at least one solution. A system is <term>inconsistent</term> if it has no solutions. When a linear system has only one solution we say that the solution is <term>unique</term>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  This definition and the principle illustrated in <xref ref="ex-lines"/> mean that whenever we encounter a system of linear equations we have two questions to ask. <em>Is this system consistent?</em> <em>If the system is consistent, is the solution unique?</em>
+</p>
+
+<reading-questions xml:id="rqs-lin-systems">
+  <exercise>
+    <statement>
+      <p>       
+        This question is designed to help you understand linear equations.
+        <ol>
+          <li>
+            <p>
+              Write down an example of a linear equation involving the variables <m>x</m>, <m>y</m>, and <m>z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Write down an example of an equation involving the variables <m>x</m>, <m>y</m>, and <m>z</m> which is <em>not</em> linear.
+            </p>
+          </li>
+        </ol>   
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the solution set to the following linear system:
+        <md>
+          <mrow>3x + 7y \amp = 9 </mrow>
+          <mrow>-2x + 6y \amp = -2</mrow>
+          <!-- (17/8,3/8) -->
+        </md>.
+      </p>
+    </statement>
+  </exercise>
+</reading-questions>
+
+<exercises>
+<exercise xml:id="exer-coins">
+  <statement>
+    <p>
+      Carlos has ten coins totalling <m>\$1.10</m>. Each coin is either a nickel, a dime, or a quarter. He has twice as many nickels as he has quarters. How many of each coin does Carlos have?
+      <!-- (4,4,2) -->
+    </p>
+    <p>
+       Model this problem with a linear system. (You do not need to find the solution set of this linear system.)
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="exer-quadratic">
+  <statement>
+    <p>
+      Suppose that <m>f(x) = ax^2+bx+c</m> is a function whose graph passes through the points <m>(-1,6)</m>, <m>(1,0)</m>, and <m>(3,-2)</m>. What are the values of <m>a</m>, <m>b</m>, and <m>c</m>?
+    </p>
+    <p>
+       Model this problem with a linear system. (You do not need to find the solution set of this linear system.)
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      For each part, determine whether the equations form a linear system.
+      <ol>
+        <li>
+          <p>
+            <md>
+              <mrow>3y - 4z + x \amp = \sqrt{2}</mrow>
+              <mrow>-z + 2w + 7x \amp = 14</mrow>
+            </md>
+            <!-- yes -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>2x - 10y + \frac{3}{z} \amp = 16</mrow>
+              <mrow>7x + 12z \amp = -1</mrow>
+            </md>
+            <!-- no -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>x - e^4 z \amp = 9</mrow>
+              <mrow>\ln(8)x + 13y \amp = -3</mrow>
+            </md>
+            <!-- yes -->
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Determine whether or not each given list is a solution to this linear system.
+      <md>
+        <mrow>x_1 - 2x_2 + 8x_3 \amp = -5</mrow>
+        <mrow>-x_1 + 3x_2 - 10x_3 \amp = 6</mrow>
+        <mrow>2x_1 - 3x_2 + 14x_3 \amp = -9</mrow>
+      </md>.
+      <ol>
+        <li>
+          <p>
+            <m>(-7, 3, 1)</m>
+            <!-- yes -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(-5,0,0)</m>
+            <!-- no -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(-4,4,1)</m>
+            <!-- no -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(5,-3,-2)</m>
+            <!-- yes -->
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Determine whether or not each given list is a solution to this linear system.
+      <md>
+        <mrow>x - y + 3z \amp = -6</mrow>
+        <mrow>-3x + 4y - 10z \amp = 22</mrow>
+        <mrow>-2x + 4y -8z \amp = 21</mrow>
+      </md>.
+      <ol>
+        <li>
+          <p>
+            <m>(1, 1, -2)</m>
+            <!-- no -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(-2,3,4)</m>
+            <!-- no -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(0,3,-1)</m>
+            <!-- no -->
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      For the following linear systems, graph the solution set of each equation. Then graph the solution set of the linear system.
+      <ol>
+        <li>
+          <p>
+            <md>
+              <mrow>-2x+y \amp =-3</mrow>
+              <mrow>x-5y \amp  = 7</mrow>
+            </md>
+            <!-- (8/9,-11/9) -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>2x-2y \amp = 5</mrow>
+              <mrow>3x+y \amp = -2</mrow>
+              <mrow>-x-y \amp = 1</mrow>
+            </md>
+            <!-- no solution -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>2x-3y \amp = -2</mrow>
+              <mrow>-2x+3y \amp = -3</mrow>
+            </md>
+            <!-- no solution -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>2x - 4y \amp = -1</mrow>
+              <mrow>-x+2y \amp = \tfrac{1}{2}</mrow>
+            </md>
+            <!-- y = 1/2x + 1/4 -->
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>x+4y \amp = 5</mrow>
+              <mrow>3x-y \amp = 0</mrow>
+              <mrow>-2x-8y \amp = -10</mrow>
+            </md>
+            <!-- (5/13,15/13) -->
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<subexercises>
+<title>Writing Exercises</title>
+<exercise>
+  <statement>
+    <p>
+      For each of the following, write an example of a <m>2\times 2</m> linear system with the given property. (The system must be one you've not yet seen!) Explain why your example has the property.
+      <ol>
+        <li>
+          <p>
+            The system has no solutions.
+          </p>
+        </li>
+        <li>
+          <p>
+            The system has exactly one solution. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The system has infinitely many solutions.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Consider an <m>m\times n</m> linear system and suppose that <m>(c_1,\ldots,c_n)</m> and <m>(d_1,\ldots,d_n)</m> are both solutions to this system. Under what conditions is <m>(c_1+d_1, \ldots, c_n+d_n)</m> also a solution to the same system? Explain.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Consider an <m>m\times n</m> linear system and suppose that <m>(c_1,\ldots,c_n)</m> and <m>(d_1,\ldots,d_n)</m> are both solutions to this system. Let <m>t</m> be a real number. Prove that <m>(tc_1 + (1-t)d_1, \ldots, tc_n + (1-t)d_n)</m> is also a solution to this same linear system.
+    </p>
+  </statement>
+</exercise>
+</subexercises>
+</exercises>
+</section>

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-subspaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Subspaces</title>
+  <introduction>
+    <p>
+      Whenever we begin to deal with abstraction in mathematics, we also consider the relationship between these abstract concepts. We have already made it clear how the notions of fields and vector spaces are related<mdash />a vector space <em>requires</em> that we know what a field is! But mathematicians also consider how these abstract objects might fit inside or contain each other.
+    </p>
+  </introduction>
+
+  <p>
+    The most basic example of this is something with which all readers are likely familiar. When we learn about <em>sets</em>, we soon also learn about <em>subsets</em>. For two sets <m>A</m> and <m>B</m>, we say that <m>A</m> is a subset of <m>B</m> when all of the elements of <m>A</m> are contained in <m>B</m>. We denote this by <m>A \subseteq B</m>.
+  </p>
+
+  <p>
+    A vector space is a set with a lot more structure. So a <q>sub-vector space</q> must be a subset with the properties of a vector space. Here is the formal definition.
+  </p>
+
+  <definition xml:id="def-subspace">
+    <statement>
+      <p>
+        Suppose that <m>V</m> is a vector space over the field <m>\ff</m>. Then a subset <m>W \subseteq V</m> is a <term>subspace</term> of <m>V</m> if <m>W</m> is also a vector space over <m>\ff</m> with the same operations of vector addition and scalar multiplication that are used for <m>V</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    To put this less formally: A subspace is a subset which is a vector space over the same field with the operations <em>inherited</em> from the larger space.
+  </p>
+
+  <p>
+    Since the operations of a subspace are inherited, we need not check the full list of properties (from <xref ref="def-vector-space"/>) to prove that a subset is a subspace. In fact, when we consult that definition, we see that axioms 3, 4, and 7<ndash />10 will automatically be satisfied<mdash />these are properties of the operations, not of the set on which the operation is taking place. This leads to the following fact.
+  </p>
+
+  <fact xml:id="fact-proving-subspace">
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space over the field <m>\ff</m> and let <m>W</m> be a subset of <m>V</m>. Then <m>W</m> is a subspace of <m>V</m> if the following properties hold.
+        <ul>
+          <li>
+            For all <m>\bfu, \bfv \in W</m>, <m>\bfu + \bfv \in W</m>. (The subset <m>W</m> is closed under addition.)
+          </li>
+          <li>
+            For all <m>c \in \ff</m> and all <m>\bfv \in W</m>, <m>c\bfv \in W</m>. (The subset <m>W</m> is closed under scalar multiplication.)
+          </li>
+          <li>
+            The zero vector <m>\mathbf{0}</m> of <m>V</m> belongs to <m>W</m>.
+          </li>
+          <li>
+            For each <m>\bfu \in W</m> there exists a vector <m>\bfv \in W</m> such that <m>\bfu + \bfv = \mathbf{0}</m>. (The subset <m>W</m> contains all additive inverses.)
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </fact>
+
+<p>
+  From this fact, there appear to be four conditions to check in order to prove that a subset is a subspace. However, we will refer the reader back to <xref ref="thm-vspace-arithmetic"/>. By part 6 of that theorem, we know that if a subset of a vector space is closed under scalar multiplication it must also contain all additive inverses. This means that there are only three conditions to check to prove that a subset is a subspace. We summarize this as a theorem.
+</p>
+
+<theorem xml:id="thm-prove-subspace">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space over the field <m>\ff</m> and let <m>W</m> be a subset of <m>V</m>. Then <m>W</m> is a subspace of <m>V</m> if the following properties hold.
+      <ol>
+        <li>
+          For all <m>\bfu, \bfv \in W</m>, <m>\bfu + \bfv \in W</m>.
+        </li>
+        <li>
+          For all <m>c \in \ff</m> and all <m>\bfv \in W</m>, <m>c\bfv \in W</m>. 
+        </li>
+        <li>
+          The zero vector <m>\mathbf{0}</m> of <m>V</m> belongs to <m>W</m>.
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+
+  <p>
+    As always, some examples are in order!
+  </p>
+
+<example>
+  <statement>
+    <p>
+      Every vector space <m>V</m> has a subspace consisting of a single vector<mdash />the <term>zero subspace</term>: <m>\{\mathbf{0}\}</m>. In a trivial way, this set meets all of the conditions listed in <xref ref="thm-prove-subspace"/>.
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Let <m>V</m> be the vector space of all functions <m>\rr \to \rr</m> as defined in <xref ref="ex-real-functions"/>. Let <m>W</m> be the subset of all polynomials. (This means we include polynomials of any degree.) Then <m>W</m> is a subspace of <m>V</m>.
+    </p>
+
+    <p>
+      Since the sum of two polynomials is another polynomial and the scalar multiple of a polynomial is a polynomial, the first two conditions in <xref ref="thm-prove-subspace"/> hold. Additionally, the zero function in <m>V</m> is the same as the zero polynomial in <m>W</m>. This proves that <m>W</m> is a subspace of <m>V</m>.
+    </p>
+  </statement>
+</example>
+
+<example xml:id="r2-r3">
+  <statement>
+    <p>
+      The vector space <m>\rr^2</m> is <em>not</em> a subspace of the vector space <m>\rr^3</m>. This may seem surprising, as the operations for these spaces are clearly compatible, and we often think of <m>\rr^2</m> as <q>living inside</q> of <m>\rr^3</m>.
+    </p>
+    <p>
+      However, this common way of thinking is wrong because the space <m>\rr^2</m> is not even a subset of <m>\rr^3</m>; thus, it is impossible for <m>\rr^2</m> to be a subspace of <m>\rr^3</m>. (The set <m>\rr^2</m> consists of ordered pairs of real numbers, and <m>\rr^3</m> consists of ordered triples of real numbers.)
+    </p>
+    <p>
+      We can make a slight adjustment to match the way that many people think of <m>\rr^2</m> as <q>living inside</q> of <m>\rr^3</m>. We define the set <m>A</m> in the following way:
+      <me>
+        A = \{(x,y,0) \in \rr^3 \}
+      </me>.
+      Then <m>A</m> is what we usually call the <q><m>xy</m>-plane</q> in <m>\rr^3</m>. This subset <m>A</m> <em>is</em> a subspace of <m>\rr^3</m>.
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Here is a collection of examples that generalize <xref ref="r2-r3"/>. Every line through the origin in <m>\rr^2</m> is a subspace of <m>\rr^2</m>, and every line or plane through the origin in <m>\rr^3</m> is a subspace of <m>\rr^3</m>. On the other hand, lines in <m>\rr^2</m> which do <em>not</em> pass through the origin are <em>not</em> subspaces of <m>\rr^2</m>, and lines and planes which do <em>not</em> pass through the origin in <m>\rr^3</m> are <em>not</em> subspaces of <m>\rr^3</m>. The details are left for the exercises.
+    </p>
+  </statement>
+</example>
+
+<p>
+  The notion of the span of a set of vectors gives us another angle through which we can identify subspaces. We begin with a result.
+</p>
+
+<theorem xml:id="thm-span-subspace">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space over a field <m>\ff</m>. If <m>\bfv_1, \ldots, \bfv_n</m> are vectors in <m>V</m>, then <m>\spn\{\bfv_1,
+    \ldots,\bfv_n\}</m> is a subspace of <m>V</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We let <m>W = \spn\{\bfv_1,\ldots,\bfv_n\}</m>. By the definition of the span of a set of vectors, every element <m>\bfw</m> of <m>W</m> can be written in the following form:
+      <me>
+        \bfw = c_1\bfv_1 + \cdots + c_n\bfv_n
+      </me>,
+      where <m>c_1,\ldots,c_n \in \ff</m>. We first observe that <m>\mathbf{0} \in W</m> by taking <m>c_1= \cdots = c_n = 0</m>. Next, if <m>\bfu</m> and <m>\bfw</m> are elements of <m>W</m>, we can write these vectors as
+      <md>
+        <mrow>\bfu \amp = c_1\bfv_1 + \cdots + c_n\bfv_n</mrow>
+        <mrow>\bfw \amp = d_1\bfv_1 + \cdots + d_n\bfv_n</mrow>
+      </md>,
+      for some scalars <m>c_i</m> and <m>d_i</m>. The sum of these elements is
+      <md>
+        <mrow>\bfu + \bfw \amp = (c_1\bfv_1 + \cdots + c_n\bfv_n) + (d_1\bfv_1 + \cdots + d_n\bfv_n)</mrow>
+        <mrow> \amp = (c_1+d_1)\bfv_1 + \cdots + (c_n+d_n)\bfv_n</mrow>
+      </md>.
+      (We are using some of the properties of a vector space from <xref ref="def-vector-space"/> in order to carry out this algebraic manipulation.) Since <m>c_i+d_i \in \ff</m> for each <m>i</m>, this proves that <m>\bfu+\bfw \in W</m>.
+    </p>
+    <p>
+      Finally, we let <m>c \in \ff</m> and <m>\bfw \in W</m>. We want to show that <m>c\bfw \in W</m>. We can assume that <m>\bfw</m> has the form
+      <me>
+        \bfw = d_1\bfv_1 + \cdots + d_n\bfv_n
+      </me>,
+      where <m>d_1,\ldots,d_n \in \ff</m>. Then we have
+      <md>
+        <mrow>c\bfw \amp = c(d_1\bfv_1 + \cdots + d_n\bfv_n)</mrow>
+        <mrow> \amp = c(d_1\bfv_1) + \cdots + (cd_n\bfv_n)</mrow>
+        <mrow>  \amp = (cd_1)\bfv_1 + \cdots + (cd_n)\bfv_n</mrow>
+      </md>.
+      (Again, we are using properties of the vector space <m>V</m> here.) Since <m>cd_i \in \ff</m> for each <m>i</m>, this proves that <m>W</m> is closed under scalar multiplication.
+    </p>
+    <p>
+      Since <m>W</m> has all of the properties from <xref ref="thm-prove-subspace"/>, we have shown that <m>W</m> is a subspace of <m>V</m>.
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  In the final example of this section, we will use <xref ref="thm-span-subspace"/> to prove that a set is a subspace by realizing it as the span of a set of vectors.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Consider the following subset of <m>\rr^3</m>:
+      <me>
+        A = \left\{ \left[\begin{array}{@{}c@{}}
+          2a+b \\ 5b-\tfrac{1}{2}a \\ 6a
+        \end{array}\right] \;\middle\vert\; a,b \in \rr \right \}
+      </me>.
+      This notation means that every given pair of real numbers <m>a</m> and <m>b</m> specifies an element of <m>A</m>. For example, when <m>a=1</m> and <m>b=-1</m>, we have <m>(1, -\frac{11}{2}, 6) \in A</m>.
+    </p>
+    <p>
+      We will use <xref ref="thm-span-subspace"/> to prove that <m>A</m> is a subspace of <m>\rr^3</m>. Any element <m>\bfv \in A</m> can be written in the following way:
+      <me>
+        \bfv = \left[\begin{array}{@{}c@{}}
+          2a+b \\ 5b-\tfrac{1}{2}a \\ 6a
+        \end{array}\right] = a \left[\begin{array}{@{}c@{}}
+          2 \\ -\tfrac{1}{2} \\ 6
+        \end{array}\right] + b \left[\begin{array}{@{}c@{}}
+          1 \\ 5 \\ 0
+        \end{array}\right]
+      </me>.
+      This proves that if
+      <me>
+        \bfu_1 = \left[\begin{array}{@{}c@{}}
+          2 \\ -\tfrac{1}{2} \\ 6
+        \end{array}\right] \hspace{6pt} \text{and} \hspace{6pt} \bfu_2 = \left[\begin{array}{@{}c@{}}
+          1 \\ 5 \\ 0
+        \end{array}\right]
+      </me>,
+      then <m>A = \spn\{\bfu_1,\bfu_2\}</m>. We conclude that <m>A</m> is a subspace of <m>\rr^3</m> by <xref ref="thm-span-subspace"/>.
+    </p>
+  </statement>
+</example>
+
+<reading-questions>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>V</m> be the vector space <m>\rr^2</m> with the usual addition and scalar multiplication. Let <m>A</m> be the following set:
+        <me>
+          A = \{(x,y) \in \rr^2 \mid x \ge 0 \text{ and } y \ge 0 \}
+        </me>.
+        (We can identify <m>A</m> with the first quadrant in <m>\rr^2</m>.) Determine whether or not <m>A</m> is a subspace of <m>V</m>. Explain your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the vector space <m>P_4</m> and let <m>A</m> be the following set:
+        <me>
+          A = \{ \text{polynomials in } P_4 \text{ with even degree} \}
+        </me>.
+        Determine whether or not <m>A</m> is a subspace of <m>P_4</m>. Explain your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>V</m> be the vector space of all functions <m>\rr \to \rr</m>. Let <m>f</m> and <m>g</m> be the following functions:
+        <me>
+          f(t) = 2t^2 \hspace{.4in} g(t) = \cos(3t)
+        </me>.
+        Let <m>A = \spn\{f, g\}</m>. We know that <m>A</m> is a subspace of <m>V</m> by <xref ref="thm-span-subspace"/>. Write down four distinct vectors in <m>A</m>.
+      </p>
+    </statement>
+  </exercise>
+</reading-questions>
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following, determine whether or not the subset <m>W</m> of <m>\rr^3</m> is a subspace of <m>\rr^3</m>. Explain your answers. (We are writing vectors horizontally for convenience.)
+        <ol>
+          <li>
+            <p>
+              <m>W = \{(a,0,0) \mid a \in \rr\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{(a,b,c) \mid b = a+c\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{(a,1,c) \mid a,c \in \rr \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{(a,0,c) \mid a,c \in \rr \}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following, determine whether or not the subset <m>W</m> of <m>P_3</m> is a subspace of <m>P_3</m>. Explain your answers.
+        <ol>
+          <li>
+            <p>
+              <m>W = \{ at^3 + at \mid a \in \rr \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ at^2 + bt + c \mid a,b,c \in \rr \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ p \in P_3 \mid p \text{ has rational coefficients} \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ p \in P_3 \mid p(0)=0 \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ a_3t^3 + a_2t^2 + a_1t + a_0 \mid a_3+a_2+a_1+a_0 = 0 \}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>C[0,10]</m> be the vector space of continuous functions defined <m>[0,10] \to \rr</m>, and let <m>D[0,10]</m> be the set of differentiable functions defined <m>[0,10] \to \rr</m>.
+      </p>
+      <p>
+        For each of the following, determine whether or not the subset <m>W</m> of <m>C[0,10]</m> is a subspace of <m>C[0,10]</m>. Explain your answers.
+        <ol>
+          <li>
+            <p>
+              <m>W = \{ f \in C[0,10] \mid f(1)=0 \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ f \in C[0,10] \mid f(1)=1 \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ f \in D[0,10] \mid f'(1)=0 \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ f \in D[0,10] \mid f'(1)=1 \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ f \in D[0,10] \mid f'(t) \text{ is constant} \}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following, determine whether or not the subset <m>W</m> of <m>\rr^3</m> is a subspace of <m>\rr^3</m>. Explain your answers. (We are writing vectors horizontally for convenience.)
+        <ol>
+          <li>
+            <p>
+              <m>W = \{ (2a-b, a+5b, -a) \mid a,b \in \rr \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ (a-b+1, 2a+3b, 0) \mid a,b \in \rr \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ (a+b, b-c, a+2d) \mid a,b,c,d \in \rr \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W = \{ (2a-4b, 5, 3c+b) \mid a,b,c \in \rr \}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <subexercises>
+  <title>Writing Exercises</title>  
+  <exercise xml:id="exer-contin-functions">
+    <statement>
+      <p>
+        Let <m>V</m> denote the vector space of all functions <m>\rr \to \rr</m>. (See <xref ref="ex-real-functions"/> for the relevant definitions and operations.) Let <m>a</m> and <m>b</m> be real numbers with <m>a &lt; b</m>, and let <m>C[a,b]</m> denote the set of all continuous functions <m>[a,b] \to \rr</m>. Prove that <m>C[a,b]</m> is a subspace of <m>V</m>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>a</m> and <m>b</m> be real numbers with <m>a &lt; b</m>. Show that the set of all functions <m>f \in C[a,b]</m> such that 
+        <me>
+          \int_a^b f(x)\; dx = 0
+        </me>
+        is a subspace of <m>C[a,b]</m>. (See <xref ref="exer-contin-functions"/> for the definition of <m>C[a,b]</m>.)
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that a line in <m>\rr^2</m> is a subspace of <m>\rr^2</m> if and only if the line passes through the origin. (Note that all lines in <m>\rr^2</m> can be written in the form <m>ax+by+c=0</m>.)
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that a plane in <m>\rr^3</m> is a subspace of <m>\rr^3</m> if and only if the plane passes through the origin. (Note that all planes in <m>\rr^3</m> can be written in the form <m>ax+by+cz+d=0</m>.)
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space and let <m>W_1</m> and <m>W_2</m> be subspaces of <m>V</m>. Must <m>W_1 \cup W_2</m> be a subspace of <m>V</m>? Justify your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space and let <m>W_1</m> and <m>W_2</m> be subspaces of <m>V</m>. Must <m>W_1 \cap W_2</m> be a subspace of <m>V</m>? Justify your answer.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space and let <m>W_1</m> and <m>W_2</m> be subspaces of <m>V</m>. Define the <em>sum</em> of <m>W_1</m> and <m>W_2</m> like this:
+        <me>
+          W_1 + W_2 = \{ \bfv \mid \bfv = \bfw_1 + \bfw_2 \text{ for some } \bfw_1 \in W_1 \text{ and some } \bfw_2 \in W_2 \}
+        </me>.
+        Must <m>W_1 + W_2</m> be a subspace of <m>V</m>? Justify your answer.
+      </p>
+    </statement>
+  </exercise>
+  </subexercises>
+</exercises>
+<!-- exercises:
+- how is xy-plane a span?
+- concrete line through origin, line not through origin in r2, subspace and not subspace; repeat for lines and planes in r3
+- realize sets as spans and thus prove subspaces (include function spaces, polynomials)
+- is this subset of r3 a subspace or not
+- which value of (unknown) ... related to spanning set? -->
+</section>

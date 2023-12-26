@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title></title>
+  <introduction>
+    <p>
+      
+    </p>
+  </introduction>
+
+<subsection xml:id="">
+  <title></title>
+
+  <p>
+    
+  </p>
+
+  
+</subsection>
+
+  
+<reading-questions>
+  <exercise>
+  <statement>
+    <p>
+      rq1
+    </p>
+  </statement>
+</exercise>
+<exercise> 
+<statement>
+  <p>
+    rq2
+  </p>
+</statement>
+</exercise>
+</reading-questions>
+
+<!-- <exercises>
+  <exercise>
+    <statement>
+      <p>
+        ex1
+      </p>
+    </statement>
+  </exercise>
+</exercises> 
+-->
+
+</section>
