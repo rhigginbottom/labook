@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(B\)</span> be the result of multiplying a row in <span class="process-math">\(A\)</span> by a non-zero <span class="process-math">\(c \in \ff\text{.}\)</span> Then <span class="process-math">\(\det(B) = c\det(A)\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">We will not need induction here. Suppose that <span class="process-math">\(B\)</span> is formed by multiplying row <span class="process-math">\(i\)</span> in <span class="process-math">\(A\)</span> by <span class="process-math">\(c \in \ff\)</span> where <span class="process-math">\(c \neq 0\text{.}\)</span> We will calculate <span class="process-math">\(\det(B)\)</span> by expanding along row <span class="process-math">\(i\text{.}\)</span> Note that since row <span class="process-math">\(i\)</span> is the only row affected by this operation, <span class="process-math">\(B_{ij}=A_{ij}\)</span> for all <span class="process-math">\(1 \le j \le n\text{.}\)</span> Additionally, we note that <span class="process-math">\([B]_{ij} = c[A]_{ij}\)</span> for all <span class="process-math">\(1 \le j \le n\text{.}\)</span> Now we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\det(B) \amp = \sum_{j=1}^n (-1)^{i+j}[B]_{ij} \det(B_{ij})\\
+\amp = \sum_{j=1}^n (-1)^{i+j}c[A]_{ij} \det(A_{ij})\\
+\amp = c\sum_{j=1}^n (-1)^{i+j}[A]_{ij} \det(A_{ij})\\
+\amp = c\det(A)\text{.}
+\end{align*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-det-properties.html#thm-det-scale">in-context</a></span>
+</body>
+</html>

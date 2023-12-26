@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.16</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(T:P_1 \to P_1\)</span> be the following linear transformation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(a + bt) = (a-4b) + (3a-6b)t\text{.}
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(\mcb\)</span> is the standard basis for <span class="process-math">\(P_1\text{,}\)</span> then <span class="process-math">\([T]_{\mcb}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[T]_{\mcb} = \begin{bmatrix} 1 \amp -4 \\ 3 \amp -6 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">It is fairly easy to determine that <span class="process-math">\([T]_{\mcb}\)</span> is diagonalizable, since the characteristic polynomial is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lambda^2+5\lambda + 6 = (\lambda+2)(\lambda + 3)\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\([T]_{\mcb}\)</span> is diagonalizable, that means that <span class="process-math">\(T\)</span> is a diagonalizable linear transformation.</div>
+</div> <div class="para">Using coordinate vectors, we can also determine the basis <span class="process-math">\(\mcc\)</span> of <span class="process-math">\(P_1\)</span> with respect to which <span class="process-math">\(T\)</span> has a diagonal coordinate matrix. (It is a basis of eigenvectors of <span class="process-math">\(T\text{!}\)</span>)</div> <div class="para logical">
+<div class="para">Since the eigenvalues of <span class="process-math">\([T]_{\mcb}\)</span> are <span class="process-math">\(\lambda = -2, -3\text{,}\)</span> we can find bases for the related eigenspaces. For ease of notation, let <span class="process-math">\([T]_{\mcb} = A\text{.}\)</span> Now</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{eig}_{-2}(A) = \spn \left\{ \begin{bmatrix} 4 \\ 3 \end{bmatrix} \right\}, \hspace{6pt} 
+\mathrm{eig}_{-3}(A) = \spn \left\{ \begin{bmatrix} 1 \\ 1 \end{bmatrix} \right\}\text{.}
+\end{equation*}
+</div>
+<div class="para">These are the coordinate vectors for the eigenvectors of <span class="process-math">\(T\)</span> with respect to the standard basis. Therefore, an eigenvector basis of <span class="process-math">\(P_1\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mcc = \{ 4 + 3t, 1 + t \}\text{,}
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\([T]_{\mcc}\)</span> is a diagonal matrix with diagonal entries <span class="process-math">\(-2\)</span> and <span class="process-math">\(-3\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec-diagonalization.html#examp-p1">in-context</a></span>
+</body>
+</html>

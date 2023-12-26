@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.10</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A, E \in M_n(\ff)\text{,}\)</span> and let <span class="process-math">\(E\)</span> be an elementary matrix. Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(EA) = \det(E)\det(A)\text{.}
+\end{equation*}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">This argument uses <a href="" class="xref" data-knowl="./knowl/xref/prop-det-elem-matrices.html" title="Proposition 4.2.8">Proposition 4.2.8</a> and requires three cases. If <span class="process-math">\(E\)</span> performs a <em class="emphasis">switch</em> row operation, then we know from <a href="" class="xref" data-knowl="./knowl/xref/thm-det-switch.html" title="Theorem 4.2.3">Theorem 4.2.3</a> that <span class="process-math">\(\det(EA) = -\det(A)\text{.}\)</span> Since we now know that <span class="process-math">\(\det(E)=-1\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-elem-matrices.html ./knowl/xref/thm-det-switch.html">
+\begin{equation*}
+\det(EA) = -\det(A) = \det(E)\det(A)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">If <span class="process-math">\(E\)</span> performs a <em class="emphasis">scale</em> row operation, and if the scaling is by a non-zero <span class="process-math">\(c \in \ff\text{,}\)</span> then we know from <a href="" class="xref" data-knowl="./knowl/xref/thm-det-scale.html" title="Theorem 4.2.4">Theorem 4.2.4</a> that <span class="process-math">\(\det(EA) = c\det(A)\text{.}\)</span> Since <span class="process-math">\(\det(E)=c\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-scale.html">
+\begin{equation*}
+\det(EA) = c\det(A) = \det(E)\det(A)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Finally, if <span class="process-math">\(E\)</span> performs a <em class="emphasis">replace</em> row operation, then we know from <a href="" class="xref" data-knowl="./knowl/xref/thm-det-replace.html" title="Theorem 4.2.5">Theorem 4.2.5</a> that <span class="process-math">\(\det(EA) = \det(A)\text{.}\)</span> We know that <span class="process-math">\(\det(E)=1\text{,}\)</span> so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-replace.html">
+\begin{equation*}
+\det(EA) = \det(A) =  1\cdot \det(A) = \det(E)\det(A)\text{.}
+\end{equation*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-det-properties.html#thm-det-prod-elem">in-context</a></span>
+</body>
+</html>

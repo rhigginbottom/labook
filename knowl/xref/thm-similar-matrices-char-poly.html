@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.11</span><span class="period">.</span>
+</h4>
+<div class="para">If matrices <span class="process-math">\(A, B \in M_n(\ff)\)</span> are similar, then they have the same characteristic polynomials and therefore the same eigenvalues (with the same multiplicities).</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, then there exists an invertible matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(B = P^{-1}AP\text{.}\)</span> When forming <span class="process-math">\(B - \lambda I\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-matrix-product.html">
+\begin{equation*}
+B - \lambda I = P^{-1}AP - \lambda P^{-1}P = P^{-1}(AP - \lambda P) = P^{-1}(A - \lambda I) P\text{.}
+\end{equation*}
+</div>
+<div class="para">Since the determinant is multiplicative (<a href="" class="xref" data-knowl="./knowl/xref/thm-det-matrix-product.html" title="Theorem 4.2.13">Theorem 4.2.13</a>), we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-matrix-product.html">
+\begin{align*}
+\det(B - \lambda I) \amp = \det(P^{-1})\det(A - \lambda I) \det(P) \\
+\amp = \det(P^{-1})\det(P)\det(A - \lambda I)\\
+\amp = \det(P^{-1}P)\det(A - \lambda I)   \\
+\amp = \det(I)\det(A - \lambda I)\\
+\amp = \det(A - \lambda I)\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same characteristic polynomials.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-char-eqn.html#thm-similar-matrices-char-poly">in-context</a></span>
+</body>
+</html>

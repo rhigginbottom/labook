@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span>
+</h4>
+<div class="para">Suppose that <span class="process-math">\(V\)</span> is an <span class="process-math">\(n\)</span>-dimensional vector space over <span class="process-math">\(\ff\text{,}\)</span> that <span class="process-math">\(\mcb\)</span> is a basis of <span class="process-math">\(V\text{,}\)</span> and that <span class="process-math">\(T \in L(V)\text{.}\)</span> Suppose further that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar matrices in <span class="process-math">\(M_n(\ff)\)</span> and that <span class="process-math">\(A = [T]_{\mcb}\text{.}\)</span> Then there exists a basis <span class="process-math">\(\mcc\)</span> of <span class="process-math">\(V\)</span> such that <span class="process-math">\(B = [T]_{\mcc}\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">Let <span class="process-math">\(\mcb = \{\bfv_1, \ldots \bfv_n \}\)</span> and suppose that <span class="process-math">\(B = SAS^{-1}\text{.}\)</span> We define <span class="process-math">\(Q = S^{-1}\)</span> and, for each <span class="process-math">\(j\text{,}\)</span> we define <span class="process-math">\(\bfw_j\)</span> by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-inverse-change-matrix.html ./knowl/xref/cor-change-basis-lt.html">
+\begin{equation*}
+\bfw_j = \sum_{i=1}^n q_{ij}\bfv_i\text{,}
+\end{equation*}
+</div>
+<div class="para">so that <span class="process-math">\(\mathbf{q}_j\)</span> is the coordinate vector <span class="process-math">\([\bfw_j]_{\mcb}\text{.}\)</span> Since <span class="process-math">\(Q\)</span> is invertible, then <span class="process-math">\(\{\mathbf{q}_1, \ldots, \mathbf{q}_n\}\)</span> is a basis of <span class="process-math">\(\ff^n\text{,}\)</span> so <span class="process-math">\(\mcc = \{\bfw_1, \ldots, \bfw_n \}\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span> (This is again due to the coordinate mapping being an isomorphism.) We also have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-inverse-change-matrix.html ./knowl/xref/cor-change-basis-lt.html">
+\begin{equation*}
+P_{\mcc,\mcb} \bfe_j = P_{\mcc,\mcb} [\bfw_j]_{\mcc} = [\bfw_j]_{\mcb} = \mathbf{q}_j
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(j\text{,}\)</span> so <span class="process-math">\(P_{\mcc,\mcb} = Q\text{.}\)</span> Therefore, by <a href="" class="xref" data-knowl="./knowl/xref/lem-inverse-change-matrix.html" title="Lemma 5.6.6">Lemma 5.6.6</a>, <span class="process-math">\(S = P_{\mcb,\mcc}\text{,}\)</span> and so by <a href="" class="xref" data-knowl="./knowl/xref/cor-change-basis-lt.html" title="Corollary 5.6.9">Corollary 5.6.9</a>, <span class="process-math">\([T]_{\mcc} = SAS^{-1} = B\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-invariants.html#prop-similar-matrices-same-lt">in-context</a></span>
+</body>
+</html>

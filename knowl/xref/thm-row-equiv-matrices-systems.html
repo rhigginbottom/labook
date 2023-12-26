@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span>
+</h3>
+<div class="para">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are augmented matrices corresponding to systems of linear equations. Then if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent, the linear systems to which they correspond are also equivalent.</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para">We will prove this statement directly. Because elementary row operations only involve one or two rows of a matrix at a time, it is sufficient to prove this theorem for systems of two linear equations.</div> <div class="para logical">
+<div class="para">We suppose that we have the following <span class="process-math">\(2\times n\)</span> linear system:</div>
+<div class="displaymath process-math">
+\begin{align*}
+a_{11}x_1 + \cdots a_{1n}x_n \amp =b_1\\
+a_{21}x_1 + \cdots a_{2n}x_n \amp =b_2\text{,}
+\end{align*}
+</div>
+<div class="para">which produces the following augmented matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{@{}ccc|c@{}}
+a_{11} \amp \cdots \amp a_{1n} \amp b_1 \\
+a_{21} \amp \cdots \amp a_{2n} \amp b_2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">Further, we suppose that <span class="process-math">\((c_1,\ldots,c_n)\)</span> is a solution to the linear system. If we apply the <em class="emphasis">switch</em> row operation to <span class="process-math">\(A\text{,}\)</span> this corresponds to writing the second equation above the first in the linear system. It is immediate that <span class="process-math">\((c_1,\ldots,c_n)\)</span> is still a solution to this system.</div>
+</div> <div class="para logical">
+<div class="para">If we apply the <em class="emphasis">scale</em> row operation to <span class="process-math">\(A\text{,}\)</span> multiplying row 1 (without loss of generality) by a nonzero constant <span class="process-math">\(d\text{,}\)</span> then we have the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B = \left[\begin{array}{@{}ccc|c@{}}
+da_{11} \amp \cdots \amp da_{1n} \amp db_1 \\
+a_{21} \amp \cdots \amp a_{2n} \amp b_2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We must show that <span class="process-math">\((c_1,\ldots,c_n)\)</span> is a solution to the corresponding linear system.</div>
+</div> <div class="para logical">
+<div class="para">It is obvious that <span class="process-math">\((c_1,\ldots,c_n)\)</span> satisfies the second equation in this new linear system since that equation is unchanged. If <span class="process-math">\((c_1,\ldots,c_n)\)</span> satisfied the first equation of the original system, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{11}c_1 + \cdots + a_{1n}c_n = b_1\text{.}
+\end{equation*}
+</div>
+<div class="para">We can now show that <span class="process-math">\((c_1,\ldots,c_n)\)</span> satisfies the first equation of the second system by substitution:</div>
+<div class="displaymath process-math">
+\begin{align*}
+da_{11}c_1 + \cdots + da_{1n}c_n \amp = d(a_{11}c_1 + \cdots + a_{1n}c_n) \\
+\amp = d(b_1)\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">We must now show that the <em class="emphasis">replace</em> row operation preserves solutions. We let <span class="process-math">\(k\)</span> be a nonzero constant and we replace (without loss of generality) the second row of <span class="process-math">\(A\)</span> with the old second row plus <span class="process-math">\(k\)</span> times the first row. Here is the resulting matrix <span class="process-math">\(C\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C = \left[\begin{array}{@{}ccc|c@{}}
+a_{11} \amp \cdots \amp a_{1n} \amp b_1 \\
+(ka_{11}+a_{21}) \amp \cdots \amp (ka_{1n}+a_{2n}) \amp (kb_1+b_2)
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">In the linear system which corresponds to <span class="process-math">\(C\text{,}\)</span> the first equation is unchanged from the first equation in the linear system that corresponds to <span class="process-math">\(A\text{,}\)</span> so we only need to be concerned with the second equation. By virtue of the fact that <span class="process-math">\((c_1,\ldots,c_n)\)</span> satisfied both equations of the first system, we know that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{11}c_1 + \cdots + a_{1n}c_n = b_1
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{21}c_1 + \cdots + a_{2n}c_n = b_2\text{.}
+\end{equation*}
+</div>
+<div class="para">We can now use this in the following calculation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+(ka_{11}+a_{21})c_1 + \cdots \amp + (ka_{1n}+a_{2n})c_n \\  
+\amp = (ka_{11}c_1 + \cdots +ka_{1n}c_n) + (a_{21}c_1 + \cdots + a_{2n}c_n) \\
+\amp = k(a_{11}c_1 + \cdots +a_{1n}c_n) + (a_{21}c_1 + \cdots + a_{2n}c_n) \\
+\amp = kb_1 + b_2.
+\end{split}
+\end{equation*}
+</div>
+</div> <div class="para">There is technically one more collection of facts to verify before this proof is complete. We have shown that, for all three elementary row operations, if <span class="process-math">\((c_1,\ldots,c_n)\)</span> is a solution to the linear system corresponding to <span class="process-math">\(A\)</span> then it will also be a solution to the linear system corresponding to <span class="process-math">\(B\)</span> (where <span class="process-math">\(B\)</span> is the result of applying one elementary row operation to <span class="process-math">\(A\)</span>). But “equivalent” linear systems means that the solution sets are equal <em class="emphasis">as sets</em>. This means that we must assume we have a solution for the linear system corresponding to the matrix <span class="process-math">\(B\)</span> and show that it is a solution for the linear system corresponding to <span class="process-math">\(A\text{.}\)</span> We claim that this concern can be dispensed with by invoking another result in this section. Connecting the last dots of this proof is left to the reader in <a href="" class="xref" data-knowl="./knowl/xref/exer-finish-proof-1.html" title="Exercise 1.2.12">Exercise 1.2.12</a>.</div></article></details><span class="incontext"><a class="internal" href="sec-matrices.html#thm-row-equiv-matrices-systems">in-context</a></span>
+</body>
+</html>

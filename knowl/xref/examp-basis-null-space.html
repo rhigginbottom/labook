@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Consider the following matrix <span class="process-math">\(A \in M_{3,5}(\rr)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 
+3 \amp -2 \amp -4 \amp -4 \amp 3 \\ 
+1 \amp -2 \amp 1 \amp 1 \amp 2 \\ 
+0 \amp 0 \amp 4 \amp 0 \amp -4
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We will find a basis for <span class="process-math">\(\nll(A)\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Following the procedure we first encountered in <a href="" class="xref" data-knowl="./knowl/xref/examp-find-null-space.html" title="Example 3.4.5">Example 3.4.5</a>, we start by finding the RREF of <span class="process-math">\(A\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-find-null-space.html">
+\begin{equation*}
+A \sim \begin{bmatrix}
+1 \amp 0 \amp 0 \amp -5/2 \amp -2 \\ 
+0 \amp 1 \amp 0 \amp -7/4 \amp -5/2 \\ 
+0 \amp 0 \amp 1 \amp 0 \amp -1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We see that <span class="process-math">\(x_4\)</span> and <span class="process-math">\(x_5\)</span> are free variables, and that any vector <span class="process-math">\(\bfx\)</span> in <span class="process-math">\(\nll(A)\)</span> can be written as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-find-null-space.html">
+\begin{equation*}
+\bfx = \begin{bmatrix}
+x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 
+\end{bmatrix} = 
+\begin{bmatrix}
+(5/2)x_4 + 2x_5 \\ (7/4)x_4 + (5/2)x_5 \\ x_5 \\ x_4 \\ x_5 
+\end{bmatrix} = 
+x_4 \begin{bmatrix} 
+5/2 \\ 7/4 \\ 0 \\ 1 \\ 0 
+\end{bmatrix} + x_5 \begin{bmatrix} 
+2 \\ 5/2 \\ 1 \\ 0 \\ 1 
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">If we label the vectors</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-find-null-space.html">
+\begin{equation*}
+\bfv_1 = \begin{bmatrix} 
+5/2 \\ 7/4 \\ 0 \\ 1 \\ 0 
+\end{bmatrix}, \hspace{12pt} 
+\bfv_2 = \begin{bmatrix} 
+2 \\ 5/2 \\ 1 \\ 0 \\ 1 
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">then we can see that <span class="process-math">\(\nll = \spn\{\bfv_1, \bfv_2 \}\text{.}\)</span> Further, we see that <span class="process-math">\(\{\bfv_1, \bfv_2 \}\)</span> is linearly independent (neither vector is a scalar multiple of the other), so <span class="process-math">\(\{ \bfv_1, \bfv_2 \}\)</span> is a basis for <span class="process-math">\(\nll(A)\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec-basis.html#examp-basis-null-space">in-context</a></span>
+</body>
+</html>

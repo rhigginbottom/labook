@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.8</span><span class="period">.</span>
+</h4>
+<div class="para">A matrix <span class="process-math">\(A \in M_n(\ff)\)</span> is invertible if and only if <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_n\text{.}\)</span> When <span class="process-math">\(A\)</span> is invertible, any sequence of elementary row operations that reduces <span class="process-math">\(A\)</span> to <span class="process-math">\(I_n\)</span> also transforms <span class="process-math">\(I_n\)</span> into <span class="process-math">\(A^{-1}\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">If <span class="process-math">\(A\)</span> is invertible, then by <a href="" class="xref" data-knowl="./knowl/xref/lem-inv-matrix-unique-sol.html" title="Lemma 3.3.7">Lemma 3.3.7</a> the equation <span class="process-math">\(A\bfx = \bfb\)</span> has a unique solution for every <span class="process-math">\(\bfb \in \ff^n\text{.}\)</span> Now <a href="" class="xref" data-knowl="./knowl/xref/thm-unique-soln-system.html" title="Theorem 1.3.6">Theorem 1.3.6</a> means that the RREF of <span class="process-math">\(A\)</span> has a pivot in each of its <span class="process-math">\(n\)</span> columns. Since <span class="process-math">\(A\)</span> is square, this means the RREF has a pivot in each row as well, meaning that the RREF of <span class="process-math">\(A\)</span> must be <span class="process-math">\(I_n\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Conversely, suppose that <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_n\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/prop-el-matrices-rref.html" title="Proposition 3.3.6">Proposition 3.3.6</a>, there exist elementary matrices <span class="process-math">\(E_1,\ldots,E_k\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-el-matrices-rref.html">
+\begin{equation}
+A = E_1\cdots E_kI_n\text{.}\tag{3.7}
+\end{equation}
+</div>
+<div class="para">This means that <span class="process-math">\(A = E_1\cdots E_k\text{,}\)</span> and since the product of invertible matrices is invertible, this proves that <span class="process-math">\(A\)</span> is invertible.</div>
+</div> <div class="para logical">
+<div class="para">If we multiply both sides of <a href="" class="xref" data-knowl="./knowl/xref/eqn-reduce-A.html" title="Equation 3.7">(3.7)</a> by <span class="process-math">\((E_1\cdots E_k)^{-1}\text{,}\)</span> we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-reduce-A.html">
+\begin{equation*}
+E_k^{-1}\cdots E_1^{-1}A = I_n\text{,}
+\end{equation*}
+</div>
+<div class="para">which shows the sequence of elementary row operations (through multiplication by elementary matrices) used to transform <span class="process-math">\(A\)</span> into <span class="process-math">\(I_n\text{.}\)</span> On the other hand, if we take the equation <span class="process-math">\(A = E_1\cdots E_k\)</span> from the previous paragraph and invert both sides, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-reduce-A.html">
+\begin{equation*}
+A^{-1} = E_k^{-1}\cdots E_1^{-1}\text{,}
+\end{equation*}
+</div>
+<div class="para">which we can easily adjust to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-reduce-A.html">
+\begin{equation*}
+A^{-1} = E_k^{-1}\cdots E_1^{-1}I_n\text{.}
+\end{equation*}
+</div>
+<div class="para">This establishes the final claim in the theorem.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-inverting-matrix.html#thm-find-inverse-matrix">in-context</a></span>
+</body>
+</html>

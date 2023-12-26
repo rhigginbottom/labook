@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(B\)</span> be the result of replacing a row in <span class="process-math">\(A\)</span> with the sum of that row and <span class="process-math">\(c\)</span> times another row in <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(\det(B) = \det(A)\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">We proceed by induction on <span class="process-math">\(n\text{.}\)</span> This result only makes sense when <span class="process-math">\(n \ge 2\text{,}\)</span> and the base case of <span class="process-math">\(n=2\)</span> is covered in <a href="" class="xref" data-knowl="./knowl/xref/exer-det-replace-row.html" title="Exercise 4.1.4.12">Exercise 4.1.4.12</a>.</div> <div class="para">We let <span class="process-math">\(k\)</span> be an integer such that <span class="process-math">\(k \ge 2\)</span> and we assume the result is true for all <span class="process-math">\(k\times k\)</span> matrices. Let <span class="process-math">\(A\)</span> be a <span class="process-math">\((k+1)\times (k+1)\)</span> matrix and let <span class="process-math">\(B\)</span> be the result of replacing row <span class="process-math">\(q\)</span> in <span class="process-math">\(A\)</span> with the sum of row <span class="process-math">\(q\)</span> and <span class="process-math">\(c\)</span> times row <span class="process-math">\(p\)</span> in <span class="process-math">\(A\text{.}\)</span> We want to show that <span class="process-math">\(\det(B)=\det(A)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">We observe that <span class="process-math">\(k\)</span> is large enough that we can calculate <span class="process-math">\(\det(B)\)</span> by expanding along a row which is not row <span class="process-math">\(q\text{;}\)</span> we will call it row <span class="process-math">\(i\text{.}\)</span> Since <span class="process-math">\(i \neq q\text{,}\)</span> we have <span class="process-math">\([B]_{ij} = [A]_{ij}\)</span> for all <span class="process-math">\(1 \le j \le n\text{.}\)</span> Additionally, for each <span class="process-math">\(j\text{,}\)</span> <span class="process-math">\(B_{ij}\)</span> is a <span class="process-math">\(k\times k\)</span> matrix which has been obtained from <span class="process-math">\(A_{ij}\)</span> by a <em class="emphasis">replace</em> row operation. The inductive hypothesis means that <span class="process-math">\(\det(B_{ij}) = \det(A_{ij})\)</span> for all <span class="process-math">\(1 \le j \le n\text{.}\)</span> Therefore, we have the following:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\det(B) \amp = \sum_{j=1}^n (-1)^{i+j} [B]_{ij} \det(B_{ij})\\
+\amp = \sum_{j=1}^n (-1)^{i+j} [A]_{ij} \det(A_{ij})\\
+\amp = \det(A)\text{.}
+\end{align*}
+</div>
+<div class="para">This completes the inductive step.</div>
+</div> <div class="para">We have shown that the result holds for all <span class="process-math">\(n \ge 2\)</span> by the Principle of Mathematical Induction.</div></article></details><span class="incontext"><a class="internal" href="sec-det-properties.html#thm-det-replace">in-context</a></span>
+</body>
+</html>

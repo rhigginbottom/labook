@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.3.9</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(U\)</span> be a finite-dimensional subspace of an inner product space <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">For each <span class="process-math">\(\bfv \in V\text{,}\)</span> <span class="process-math">\(\vnorm{\proj_U(\bfv)} \le \vnorm{\bfv}\text{,}\)</span> with equality if and only if <span class="process-math">\(\bfv \in U\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">For each <span class="process-math">\(\bfv \in V\)</span> and each <span class="process-math">\(\bfu \in U\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vnorm{\bfv - \proj_U(\bfv)} \le \vnorm{\bfv - \bfu}\text{,}
+\end{equation*}
+</div>
+<div class="para">with equality if and only if <span class="process-math">\(\bfu = \proj_U(\bfv)\text{.}\)</span>
+</div>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">Since <span class="process-math">\(\bfv - \proj_U(\bfv) \in U^{\perp}\)</span> by part 3 of <a href="" class="xref" data-knowl="./knowl/xref/thm-alg-props-orthog-proj.html" title="Theorem 7.3.5">Theorem 7.3.5</a>, <span class="process-math">\(\bfv - \proj_U(\bfv)\)</span> is orthogonal to <span class="process-math">\(\proj_U(\bfv)\text{,}\)</span> so, using <a href="" class="xref" data-knowl="./knowl/xref/thm-pythag-inner-prods.html" title="Theorem 7.1.23">Theorem 7.1.23</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-alg-props-orthog-proj.html ./knowl/xref/thm-pythag-inner-prods.html">
+\begin{align*}
+\vnorm{\bfv}^2 \amp = \vnorm{\proj_U(\bfv) + (\bfv - \proj_U(\bfv))}^2\\
+\amp = \vnorm{\proj_U(\bfv)}^2 + \vnorm{\bfv - \proj_U(\bfv)}^2\\
+\amp \ge \vnorm{\proj_U(\bfv)}^2\text{.}
+\end{align*}
+</div>
+<div class="para">Equality holds here if and only if <span class="process-math">\(\vnorm{\bfv - \proj_U(\bfv)}^2 = 0\text{,}\)</span> which is true if and only if <span class="process-math">\(\bfv = \proj_U(\bfv)\text{.}\)</span> This only happens if <span class="process-math">\(\bfv \in U\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">We now prove the second part of the theorem. We know that <span class="process-math">\(\bfv - \proj_U(\bfv) \in U^{\perp}\)</span> and that <span class="process-math">\(\proj_U(\bfv) - \bfu \in U\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{align*}
+\vnorm{\bfv - \bfu}^2 \amp = \vnorm{(\bfv - \proj_U(\bfv)) + (\proj_U(\bfv) - \bfu)}^2\\
+\amp = \vnorm{(\bfv - \proj_U(\bfv))}^2 + \vnorm{(\proj_U(\bfv) - \bfu)}^2\\
+\amp \ge \vnorm{(\bfv - \proj_U(\bfv))}^2 \text{.}
+\end{align*}
+</div>
+<div class="para">We have equality here if and only if <span class="process-math">\(\vnorm{(\proj_U(\bfv) - \bfu)}^2 = 0\text{,}\)</span> which happens if and only if <span class="process-math">\(\proj_U(\bfv) = \bfu\text{;}\)</span> that is, if and only if <span class="process-math">\(\bfv \in U\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-orthogonal-projections.html#thm-geom-props-orthog-projs">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Matrices</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra">
+<meta property="book:author" content="Ryan Higginbottom">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">A work in progress</span></a></h1>
+<p class="byline">Ryan Higginbottom</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-intro-systems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-first.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-results.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+\newcommand{\zz}{\mathbb Z}
+\newcommand{\qq}{\mathbb Q}
+\newcommand{\rr}{\mathbb R}
+\newcommand{\cc}{\mathbb C}
+\newcommand{\ff}{\mathbb{F}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bfo}{\mathbf{0}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\mcb}{\mathcal{B}}
+\newcommand{\mcc}{\mathcal{C}}
+\newcommand{\mce}{\mathcal{E}}
+\newcommand{\spn}{\mathrm{Span}}
+\newcommand{\kerr}{\mathrm{ker}}
+\newcommand{\nll}{\mathrm{null}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\col}{\mathrm{col}}
+\newcommand{\row}{\mathrm{row}}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\lla}{\left\langle}
+\newcommand{\rra}{\right\rangle}
+\newcommand{\ip}[1]{\lla #1 \rra}
+\newcommand{\vnorm}[1]{\left|\hspace{-1.2pt}\left| #1 \right|\hspace{-1.2pt}\right|}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-first.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-systems.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-intro-systems.html#rqs-lin-systems" class="internal"><span class="codenumber">1.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-intro-systems.html#sec-intro-systems-20" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-29" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-results.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Results</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-results.html#sec-results-31" class="internal"><span class="codenumber">1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-results.html#sec-results-32" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vectors.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors.html#subsec-vector-basics" class="internal"><span class="codenumber">1.4.1</span> <span class="title">The Basics of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors.html#subsec-geometry-vectors" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Vectors and Geometry</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vectors.html#sec-vectors-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vectors.html#sec-vectors-6" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-second.html" class="internal"><span class="codenumber">2</span> <span class="title">Fields and Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-fields.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Fields</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-19" class="internal"><span class="codenumber">2.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-20" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-systems-fields.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Solving Linear Systems Over Fields</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-13" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-14" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vector-spaces.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vector-spaces.html#sec-vector-spaces-17" class="internal"><span class="codenumber">2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vector-spaces.html#exercises-2-3" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Subspaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-subspaces.html#sec-subspaces-20" class="internal"><span class="codenumber">2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-subspaces.html#sec-subspaces-21" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-third.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-trans.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-lin-trans" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Introduction to Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-lin-trans-matrices" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Linear Transformations and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-props-linear-trans" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Properties of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-matrix-vector-form-lin-system" class="internal"><span class="codenumber">3.1.4</span> <span class="title">The Matrix-Vector Form of a Linear System</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-8" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-linear-trans.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Matrix of a Linear Transformation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-construct-matrix-lin-trans" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Constructing the Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-matrix-mult" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Composition and Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-linear-trans-invertible" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Invertible Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-matrix-transpose" class="internal"><span class="codenumber">3.2.4</span> <span class="title">The Transpose of a Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#sec-matrix-linear-trans-7" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#sec-matrix-linear-trans-8" class="internal"><span class="codenumber">3.2.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inverting-matrix.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Inverting a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverting-matrix.html#subsec-elementary-matrices" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverting-matrix.html#subsec-finding-inverses" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Finding the Inverse of a Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-inverting-matrix.html#sec-inverting-matrix-5" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-inverting-matrix.html#sec-inverting-matrix-6" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces-lt.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Subspaces and Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces-lt.html#subsec-kernel" class="internal"><span class="codenumber">3.4.1</span> <span class="title">The Kernel of a Linear Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces-lt.html#subsec-range" class="internal"><span class="codenumber">3.4.2</span> <span class="title">The Range as a Subspace</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-subspaces-lt.html#sec-subspaces-lt-5" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-subspaces-lt.html#sec-subspaces-lt-6" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dets.html" class="internal"><span class="codenumber">4</span> <span class="title">Determinants</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-define-det.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Defining the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-define-det.html#initial-defn-det" class="internal"><span class="codenumber">4.1.1</span> <span class="title">The Definition of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-define-det.html#subsec-det-alternative" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Additional Ways to Calculate the Determinant</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-define-det.html#sec-define-det-5" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-define-det.html#sec-define-det-6" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-det-properties.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Properties of the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#det-elem-row-ops" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Determinant and Elementary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#subsec-det-main-results" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Invertibility and the Determinant</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dimension.html" class="internal"><span class="codenumber">5</span> <span class="title">The Dimension of a Vector Space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-lin-ind.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Linear Independence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-lin-ind.html#sec-lin-ind-35" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-lin-ind.html#sec-lin-ind-36" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Basis of a Vector Space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis.html#subsec-intro-basis" class="internal"><span class="codenumber">5.2.1</span> <span class="title">The Definition of a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis.html#subsec-basis-props" class="internal"><span class="codenumber">5.2.2</span> <span class="title">The Properties of a Basis</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-basis.html#sec-basis-5" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-basis.html#sec-basis-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-dimension.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dimension.html#subsec-dimension" class="internal"><span class="codenumber">5.3.1</span> <span class="title">The Dimension of a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dimension.html#subsec-dim-subspace" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Dimension and Subspaces</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-dimension.html#sec-dimension-5" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-dimension.html#sec-dimension-6" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-rank.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Rank and Nullity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-rank.html#subsec-define-rank-nullity" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Defining Rank and Nullity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-rank.html#subsec-rank-thm" class="internal"><span class="codenumber">5.4.2</span> <span class="title">The Rank-Nullity Theorem</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-rank.html#sec-rank-5" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-rank.html#sec-rank-6" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-coordinates.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Coordinates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coord-vectors" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Coordinates of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coordinates-matrices" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Coordinates and Linear Transformations</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-coordinates.html#sec-coordinates-5" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-coordinates.html#sec-coordinates-6" class="internal"><span class="codenumber">5.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-change-of-basis.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Change of Basis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-change-of-basis.html#subsec-change-basis-matrix" class="internal"><span class="codenumber">5.6.1</span> <span class="title">The Change-of-Basis Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-change-of-basis.html#sec-change-of-basis-4" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-change-of-basis.html#sec-change-of-basis-5" class="internal"><span class="codenumber">5.6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-sixth.html" class="internal"><span class="codenumber">6</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-eigenvalues.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-eigenvalues" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Defining Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-results-eigenvectors" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Results About Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-eigenvalues.html#sec-eigenvalues-5" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-eigenvalues.html#sec-eigenvalues-6" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-char-eqn.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Characteristic Equation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-char-eqn.html#subsec-char-eqn" class="internal"><span class="codenumber">6.2.1</span> <span class="title">How to Find Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-char-eqn.html#subsec-similarity" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Similarity</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-char-eqn.html#sec-char-eqn-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-char-eqn.html#sec-char-eqn-6" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diagonalization.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Diagonalization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-diag" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Diagonalizable Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-how-to-diagonalize" class="internal"><span class="codenumber">6.3.2</span> <span class="title">How to Diagonalize a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-diag-linear-transf" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Linear Transformations and Diagonalizability</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-diagonalization.html#sec-diagonalization-6" class="internal"><span class="codenumber">6.3.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-diagonalization.html#sec-diagonalization-7" class="internal"><span class="codenumber">6.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-invariants.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Invariants</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invariants.html#subsec-intro-invariants" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Introduction to Invariants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invariants.html#subsec-inv-rank-trace" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Rank and Trace as Invariants</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-invariants.html#sec-invariants-5" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-invariants.html#sec-invariants-6" class="internal"><span class="codenumber">6.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-7.html" class="internal"><span class="codenumber">7</span> <span class="title">Inner Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inner-products.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Inner Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-dot-product" class="internal"><span class="codenumber">7.1.1</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-general-inner-prod" class="internal"><span class="codenumber">7.1.2</span> <span class="title">The Inner Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-orthogonality" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Orthogonality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-results-inner-products" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Results for Inner Product Spaces</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-inner-products.html#sec-inner-products-7" class="internal"><span class="codenumber">7.1.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-inner-products.html#sec-inner-products-8" class="internal"><span class="codenumber">7.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orthonormal-bases.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Orthonormal Bases</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-orthonormality" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Orthonormality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-orthonormal-coordinates" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Coordinates in Orthonormal Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-gram-schmidt" class="internal"><span class="codenumber">7.2.3</span> <span class="title">The Gram-Schmidt Process</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#sec-orthonormal-bases-6" class="internal"><span class="codenumber">7.2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#sec-orthonormal-bases-7" class="internal"><span class="codenumber">7.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orthogonal-projections.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonal Projections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-orthog-complements" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-orthog-proj" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Orthogonal Projections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-least-squares" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Least Squares Approximation</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#sec-orthogonal-projections-6" class="internal"><span class="codenumber">7.3.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#sec-orthogonal-projections-7" class="internal"><span class="codenumber">7.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="apdx-mod-arith.html" class="internal"><span class="codenumber">A</span> <span class="title">The Integers Modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="apdx-isomorphisms.html" class="internal"><span class="codenumber">B</span> <span class="title">Isomorphisms</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-matrices"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Matrices</span>
+</h2>
+<section class="introduction" id="sec-matrices-2"><div class="para" id="sec-matrices-2-1">In this section we will introduce matrices, one of the main computational tools in linear algebra. We will learn how to translate the information about a linear system to a matrix and then manipulate that matrix to solve the original system.</div></section><div class="para" id="sec-matrices-3">Some of the matrix manipulations later in this section may seem to come from nowhere. We intend this first example to motivate these upcoming operations.</div>
+<details id="motivate-row-ops" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h3></summary><article class="example example-like"><div class="para logical" id="motivate-row-ops-1">
+<div class="para">Consider the following system of two linear equations in two variables:</div>
+<div class="displaymath process-math" id="motivate-row-ops-1-1">
+\begin{align*}
+3x+3y \amp =-3\\
+2x-y \amp =7 \text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="motivate-row-ops-2">
+<div class="para">We first multiply both sides of the top equation by <span class="process-math">\(\frac{1}{3}\)</span> in order to get “easier” coefficients on our variables. After taking this action, we have the following equivalent linear system:</div>
+<div class="displaymath process-math" id="motivate-row-ops-2-3">
+\begin{align*}
+x+y \amp =-1\\
+2x-y \amp =7\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="motivate-row-ops-3">
+<div class="para">We can now use the first equation to eliminate one of the variables in the second equation. If we add <span class="process-math">\(-2\)</span> times the first equation to the second equation, we’ll only have the <span class="process-math">\(y\)</span> variable left. The second equation is transformed, resulting in this equivalent linear system:</div>
+<div class="displaymath process-math" id="motivate-row-ops-3-3">
+\begin{align}
+x+y \amp =-1\tag{1.2}\\
+-3y \amp =9\text{.}\tag{1.3}
+\end{align}
+</div>
+</div> <div class="para" id="motivate-row-ops-4">We can now multiply both sides of Equation <a href="" class="xref" data-knowl="./knowl/xref/eq-2.html" title="Equation 1.3">(1.3)</a> by <span class="process-math">\(-\frac{1}{3}\)</span> to find that <span class="process-math">\(y=-3\text{.}\)</span> Plugging this value in for <span class="process-math">\(y\)</span> in Equation <a href="" class="xref" data-knowl="./knowl/xref/eq-1.html" title="Equation 1.2">(1.2)</a> quickly gives us <span class="process-math">\(x=2\text{.}\)</span> We have solved the linear system at this point, and we have determined that the only solution to the system is <span class="process-math">\((2,-3)\text{.}\)</span> (Readers should check that this is in fact a solution by plugging these values into the original linear equations.)</div></article></details><div class="para" id="sec-matrices-5">
+<a href="" class="xref" data-knowl="./knowl/xref/motivate-row-ops.html" title="Example 1.2.1">Example 1.2.1</a> is much longer than it needs to be, and at this point some readers may wonder what they’ve gotten themselves into—the mathematics so far (such as it is) is far from advanced. The real point of this example is to make explicit the operations used to solve a simple linear system. Once we have better notation and terminology, solving linear systems will be much faster (especially with the aid of technology). This is where matrices come in so handy.</div>
+<article class="definition definition-like" id="def-matrix"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-matrix-1-1">A <dfn class="terminology">matrix</dfn> is a rectangular array of numbers. If <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> are natural numbers, then an <span class="process-math">\(m\times n\)</span> matrix is one with <span class="process-math">\(m\)</span> rows and <span class="process-math">\(n\)</span> columns. The entries in a matrix are referred to by their row and column numbers, so entry <span class="process-math">\((i,j)\)</span> is the number in the <span class="process-math">\(i\)</span>th row and <span class="process-math">\(j\)</span>th column. (Row numbers increase from the top of the matrix down, and column numbers increase from the left of the matrix to the right.)</div> <div class="para" id="def-matrix-1-2">The <dfn class="terminology">main diagonal</dfn> of a matrix refers to those entries on the <span class="process-math">\((i,i)\)</span>-diagonal of the matrix—starting at the upper left and going down to the right. In other words, an entry is on the main diagonal if and only if its row and column numbers are the same.</div> <div class="para" id="def-matrix-1-3">A <dfn class="terminology">submatrix</dfn> of a matrix refers to the matrix that remains after removing one or more rows and/or columns from a matrix.</div></article><div class="para" id="sec-matrices-7">Every system of linear equations generates two important matrices—the <dfn class="terminology">coefficient matrix</dfn> and the <dfn class="terminology">augmented matrix</dfn>.</div>
+<article class="definition definition-like" id="def-aug-matrix"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-aug-matrix-1-1">
+<div class="para">Given a system of <span class="process-math">\(m\)</span> linear equations in <span class="process-math">\(n\)</span> variables (hereafter, we will call this an <span class="process-math">\(m\times n\)</span> linear system),</div>
+<div class="displaymath process-math" id="def-aug-matrix-1-1-4">
+\begin{align*}
+a_{11}x_1 + \cdots + a_{1n}x_n \amp =b_1\\
+\vdots \hspace{.2in} \amp\phantom{=} \hspace{8pt} \vdots\\
+a_{m1}x_1 + \cdots + a_{mn}x_n  \amp =b_m\text{,}
+\end{align*}
+</div>
+<div class="para">the <dfn class="terminology">coefficient matrix</dfn> of the system is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+a_{11} \amp \cdots \amp a_{1n} \\
+\vdots \amp  \amp \vdots \\
+a_{m1} \amp \cdots \amp a_{mn}
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">and the <dfn class="terminology">augmented matrix</dfn> of the system is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+a_{11} \amp \cdots \amp a_{1n} \amp b_1 \\
+\vdots \amp \amp \vdots \amp \vdots \\
+a_{m1} \amp \cdots \amp a_{mn} \amp b_m
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We form the augmented matrix by “augmenting” the coefficient matrix with the column of constants.</div>
+</div></article><div class="para" id="sec-matrices-9">Note that the number of equations in the linear system corresponds to the number of rows of both the coefficient and augmented matrices, and the number of variables in the linear system corresponds to the number of columns in the coefficient matrix. (The augmented matrix of a linear system has one more column than the number of variables.)</div>
+<details id="ex-aug-matrix" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+</h3></summary><article class="example example-like"><div class="para logical" id="ex-aug-matrix-1-1">
+<div class="para">For the linear system</div>
+<div class="displaymath process-math" id="ex-aug-matrix-1-1-1">
+\begin{align*}
+2x_1 - 7x_2 + x_3  \amp =-8\\
+-x_1 + 4x_3  \amp =-2\text{,}
+\end{align*}
+</div>
+<div class="para">the coefficient and augmented matrices are, respectively,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+2 \amp -7 \amp 1 \\ -1 \amp 0 \amp 4
+\end{bmatrix}
+\hspace{.3in} \text{and} \hspace{.3in}
+\left[\begin{array}{@{}ccc|c@{}}
+2 \amp -7 \amp 1 \amp -8 \\ -1 \amp 0 \amp 4 \amp -2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">Note the <span class="process-math">\(0\)</span> in position <span class="process-math">\((2,2)\)</span> as it corresponds to the absence of an <span class="process-math">\(x_2\)</span> term in the second equation of the linear system.</div>
+</div></article></details><div class="para" id="sec-matrices-11">We must get comfortable switching between linear systems and their associated matrices. In particular, we need to understand why specific forms of matrices are especially useful when solving linear systems.</div>
+<details id="best-matrix" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+</h3></summary><article class="example example-like"><div class="para logical" id="best-matrix-1-1">
+<div class="para">Consider the following matrix as the augmented matrix for a linear system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[ \begin{array}{@{}ccc|c@{}}
+1 \amp 0 \amp 0 \amp 7 \\
+0 \amp 1 \amp 0 \amp -2 \\
+0 \amp 0 \amp 1 \amp \frac{2}{3}
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">In one sense, this is the best possible augmented matrix we could have for a <span class="process-math">\(3\times 3\)</span> linear system, because the solutions to the system are obvious. Translating this matrix back to equation form gives us <span class="process-math">\(x=7\text{,}\)</span> <span class="process-math">\(y=-2\text{,}\)</span> and <span class="process-math">\(z=\frac{2}{3}\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="sec-matrices-13">Almost no linear systems will come to us with an augmented matrix as simple as the one in <a href="" class="xref" data-knowl="./knowl/xref/best-matrix.html" title="Example 1.2.5">Example 1.2.5</a>. (This is mostly because such a linear system is, well, boring. It takes no work to solve a system like this.) Our goal, however, is to take any given linear system and manipulate its augmented matrix to be <em class="emphasis">as close to</em> this sort of matrix as we can get.</div>
+<div class="para" id="sec-matrices-14">As we work with augmented matrices, we are restricted in the arithmetic we perform on them because, most of all, we want to preserve the solution sets of the corresponding linear systems. In our next definition, we describe the three “legal” ways we have to manipulate a matrix in this fashion.</div>
+<article class="definition definition-like" id="def-el-row-ops"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-el-row-ops-1-1">
+<div class="para">The following operations on a matrix are called <dfn class="terminology">elementary row operations</dfn>.</div>
+<ol class="decimal">
+<li id="def-el-row-ops-1-1-2-1"><div class="para" id="def-el-row-ops-1-1-2-1-1">Add a multiple of one row to another row, replacing that second row with the result. (We will call this the <dfn class="terminology">replace</dfn> row operation.)</div></li>
+<li id="def-el-row-ops-1-1-2-2"><div class="para" id="def-el-row-ops-1-1-2-2-1">Multiply every entry in a row by a nonzero constant. (We will call this the <dfn class="terminology">scale</dfn> row operation.)</div></li>
+<li id="def-el-row-ops-1-1-2-3"><div class="para" id="def-el-row-ops-1-1-2-3-1">Switch the location of any two rows in the matrix. (We will call this the <dfn class="terminology">switch</dfn> row operation.)</div></li>
+</ol>
+<div class="para">Two matrices are called <dfn class="terminology">row equivalent</dfn> if there is a sequence of elementary row operations that transforms one matrix into the other.</div>
+</div></article><div class="para" id="sec-matrices-16">When defining “row equivalent” in the previous definition, careful readers will note one implied fact that must be checked. The word “equivalent” brings to mind an <em class="emphasis">equivalence relation</em>, which includes the property of the relation being symmetric. Therefore, the definition implies that all of the elementary row operations are “reversible”—that is, for each elementary row operation, there is an elementary row operation that reverses the change that was just made. This is something to prove! (See <a href="" class="xref" data-knowl="./knowl/xref/exer-reversible.html" title="Exercise 1.2.9">Exercise 1.2.9</a>.)</div>
+<article class="theorem theorem-like" id="thm-row-equiv-matrices-systems"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-row-equiv-matrices-systems-1-1">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are augmented matrices corresponding to systems of linear equations. Then if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent, the linear systems to which they correspond are also equivalent.</div></article><details id="thm-row-equiv-matrices-systems-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-row-equiv-matrices-systems-2-1">We will prove this statement directly. Because elementary row operations only involve one or two rows of a matrix at a time, it is sufficient to prove this theorem for systems of two linear equations.</div> <div class="para logical" id="thm-row-equiv-matrices-systems-2-2">
+<div class="para">We suppose that we have the following <span class="process-math">\(2\times n\)</span> linear system:</div>
+<div class="displaymath process-math" id="thm-row-equiv-matrices-systems-2-2-2">
+\begin{align*}
+a_{11}x_1 + \cdots a_{1n}x_n \amp =b_1\\
+a_{21}x_1 + \cdots a_{2n}x_n \amp =b_2\text{,}
+\end{align*}
+</div>
+<div class="para">which produces the following augmented matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{@{}ccc|c@{}}
+a_{11} \amp \cdots \amp a_{1n} \amp b_1 \\
+a_{21} \amp \cdots \amp a_{2n} \amp b_2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">Further, we suppose that <span class="process-math">\((c_1,\ldots,c_n)\)</span> is a solution to the linear system. If we apply the <em class="emphasis">switch</em> row operation to <span class="process-math">\(A\text{,}\)</span> this corresponds to writing the second equation above the first in the linear system. It is immediate that <span class="process-math">\((c_1,\ldots,c_n)\)</span> is still a solution to this system.</div>
+</div> <div class="para logical" id="thm-row-equiv-matrices-systems-2-3">
+<div class="para">If we apply the <em class="emphasis">scale</em> row operation to <span class="process-math">\(A\text{,}\)</span> multiplying row 1 (without loss of generality) by a nonzero constant <span class="process-math">\(d\text{,}\)</span> then we have the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B = \left[\begin{array}{@{}ccc|c@{}}
+da_{11} \amp \cdots \amp da_{1n} \amp db_1 \\
+a_{21} \amp \cdots \amp a_{2n} \amp b_2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We must show that <span class="process-math">\((c_1,\ldots,c_n)\)</span> is a solution to the corresponding linear system.</div>
+</div> <div class="para logical" id="thm-row-equiv-matrices-systems-2-4">
+<div class="para">It is obvious that <span class="process-math">\((c_1,\ldots,c_n)\)</span> satisfies the second equation in this new linear system since that equation is unchanged. If <span class="process-math">\((c_1,\ldots,c_n)\)</span> satisfied the first equation of the original system, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{11}c_1 + \cdots + a_{1n}c_n = b_1\text{.}
+\end{equation*}
+</div>
+<div class="para">We can now show that <span class="process-math">\((c_1,\ldots,c_n)\)</span> satisfies the first equation of the second system by substitution:</div>
+<div class="displaymath process-math" id="thm-row-equiv-matrices-systems-2-4-5">
+\begin{align*}
+da_{11}c_1 + \cdots + da_{1n}c_n \amp = d(a_{11}c_1 + \cdots + a_{1n}c_n) \\
+\amp = d(b_1)\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="thm-row-equiv-matrices-systems-2-5">
+<div class="para">We must now show that the <em class="emphasis">replace</em> row operation preserves solutions. We let <span class="process-math">\(k\)</span> be a nonzero constant and we replace (without loss of generality) the second row of <span class="process-math">\(A\)</span> with the old second row plus <span class="process-math">\(k\)</span> times the first row. Here is the resulting matrix <span class="process-math">\(C\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C = \left[\begin{array}{@{}ccc|c@{}}
+a_{11} \amp \cdots \amp a_{1n} \amp b_1 \\
+(ka_{11}+a_{21}) \amp \cdots \amp (ka_{1n}+a_{2n}) \amp (kb_1+b_2)
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">In the linear system which corresponds to <span class="process-math">\(C\text{,}\)</span> the first equation is unchanged from the first equation in the linear system that corresponds to <span class="process-math">\(A\text{,}\)</span> so we only need to be concerned with the second equation. By virtue of the fact that <span class="process-math">\((c_1,\ldots,c_n)\)</span> satisfied both equations of the first system, we know that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{11}c_1 + \cdots + a_{1n}c_n = b_1
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{21}c_1 + \cdots + a_{2n}c_n = b_2\text{.}
+\end{equation*}
+</div>
+<div class="para">We can now use this in the following calculation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split}
+(ka_{11}+a_{21})c_1 + \cdots \amp + (ka_{1n}+a_{2n})c_n \\  
+\amp = (ka_{11}c_1 + \cdots +ka_{1n}c_n) + (a_{21}c_1 + \cdots + a_{2n}c_n) \\
+\amp = k(a_{11}c_1 + \cdots +a_{1n}c_n) + (a_{21}c_1 + \cdots + a_{2n}c_n) \\
+\amp = kb_1 + b_2.
+\end{split}
+\end{equation*}
+</div>
+</div> <div class="para" id="thm-row-equiv-matrices-systems-2-6">There is technically one more collection of facts to verify before this proof is complete. We have shown that, for all three elementary row operations, if <span class="process-math">\((c_1,\ldots,c_n)\)</span> is a solution to the linear system corresponding to <span class="process-math">\(A\)</span> then it will also be a solution to the linear system corresponding to <span class="process-math">\(B\)</span> (where <span class="process-math">\(B\)</span> is the result of applying one elementary row operation to <span class="process-math">\(A\)</span>). But “equivalent” linear systems means that the solution sets are equal <em class="emphasis">as sets</em>. This means that we must assume we have a solution for the linear system corresponding to the matrix <span class="process-math">\(B\)</span> and show that it is a solution for the linear system corresponding to <span class="process-math">\(A\text{.}\)</span> We claim that this concern can be dispensed with by invoking another result in this section. Connecting the last dots of this proof is left to the reader in <a href="" class="xref" data-knowl="./knowl/xref/exer-finish-proof-1.html" title="Exercise 1.2.12">Exercise 1.2.12</a>.</div></article></details><div class="para" id="sec-matrices-18">Roughly speaking, we want to use elementary row operations to transform the augmented matrix for a linear system into a matrix which has 1s along the main diagonal and 0s as the other entries in those columns. This is not always possible, and we will describe the situation more precisely below, but here is an example to illustrate the process.</div>
+<details id="ex-use-el-ops" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
+</h3></summary><article class="example example-like"><div class="para logical" id="ex-use-el-ops-1-1">
+<div class="para">We start by considering the following matrix as the augmented matrix of a linear system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+2 \amp 2 \amp -1 \amp 8 \\
+-3 \amp -2 \amp 2 \amp -12 \\
+5 \amp 0 \amp 4 \amp 11
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We first <em class="emphasis">scale</em> the first row by <span class="process-math">\(\frac{1}{2}\)</span> to produce a 1 in the <span class="process-math">\((1,1)\)</span> entry:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+-3 \amp -2 \amp 2 \amp -12 \\
+5 \amp 0 \amp 4 \amp 11
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We then <em class="emphasis">replace</em> the second row with the sum of the second row and three times the first row:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+0 \amp 1 \amp \frac{1}{2} \amp 0 \\[3pt]
+5 \amp 0 \amp 4 \amp 11
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We will again use the 1 in the <span class="process-math">\((1,1)\)</span> entry to “eliminate” the 5 in the <span class="process-math">\((3,1)\)</span> entry. We <em class="emphasis">replace</em> the third row with <span class="process-math">\(-5\)</span> times the first row plus the third:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+0 \amp 1 \amp \frac{1}{2} \amp 0 \\[3pt]
+0 \amp -5 \amp \frac{13}{2} \amp -9
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">Now that we have “cleared out” the entries under the <span class="process-math">\((1,1)\)</span> entry, we can do the same for the 1 in the <span class="process-math">\((2,2)\)</span> entry. (In future examples we may need to <em class="emphasis">scale</em> first to have a <span class="process-math">\(1\)</span> here.) We <em class="emphasis">replace</em> the third row with 5 times the second row plus the third:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+0 \amp 1 \amp \frac{1}{2} \amp 0 \\[3pt]
+0 \amp 0 \amp 9 \amp -9
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We can now <em class="emphasis">scale</em> the third row by <span class="process-math">\(\frac{1}{9}\)</span> to produce 1s along the main diagonal:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+0 \amp 1 \amp \frac{1}{2} \amp 0 \\[3pt]
+0 \amp 0 \amp 1 \amp -1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We are halfway done, as we have 0s below the main diagonal. We now need to use elementary row operations to produce 0s above the main diagonal. We first <em class="emphasis">replace</em> the second row with <span class="process-math">\(-\frac{1}{2}\)</span> times the third plus the second:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+0 \amp 1 \amp 0 \amp \frac{1}{2} \\[3pt]
+0 \amp 0 \amp 1 \amp -1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We can again use the 1 in the <span class="process-math">\((3,3)\)</span> position to produce a 0 in the <span class="process-math">\((1,3)\)</span> position. We <em class="emphasis">replace</em> the first row with <span class="process-math">\(\frac{1}{2}\)</span> times the third row plus the first:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp 0 \amp \frac{7}{2} \\[3pt]
+0 \amp 1 \amp 0 \amp \frac{1}{2} \\[3pt]
+0 \amp 0 \amp 1 \amp -1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">Finally, we use the 1 in the <span class="process-math">\((2,2)\)</span> entry to produce a 0 in the <span class="process-math">\((1,2)\)</span> entry. We <em class="emphasis">replace</em> the first row with <span class="process-math">\(-1\)</span> times the second row plus the first:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 0 \amp 0 \amp 3 \\
+0 \amp 1 \amp 0 \amp \frac{1}{2} \\[3pt]
+0 \amp 0 \amp 1 \amp -1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We now have the matrix in the form we wanted, because we can read off the solution: <span class="process-math">\(x=3\text{,}\)</span> <span class="process-math">\(y=\frac{1}{2}\text{,}\)</span> and <span class="process-math">\(z=-1\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="sec-matrices-20">We will now define and standardize this form of the augmented matrix that is so helpful in solving the related linear system. In what follows, by “nonzero row (column)” we mean a row (column) with at least one nonzero entry, and by the “leading entry” of a row we mean the row’s leftmost nonzero entry.</div>
+<article class="definition definition-like" id="def-REF"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-REF-1-1">
+<div class="para">A matrix <span class="process-math">\(A\)</span> is in <dfn class="terminology">row-echelon form</dfn> (REF) if all of the following hold:</div>
+<ul class="disc">
+<li id="def-REF-1-1-3-1"><div class="para" id="p-derived-def-REF-1-1-3-1">all rows of all zeros are collected at the bottom of the matrix;</div></li>
+<li id="def-REF-1-1-3-2"><div class="para" id="p-derived-def-REF-1-1-3-2">each leading entry of a row is in a column to the right of the column of the leading entry for the row above it; and</div></li>
+<li id="def-REF-1-1-3-3"><div class="para" id="p-derived-def-REF-1-1-3-3">all entries in a column below a leading entry are zeros.</div></li>
+</ul>
+<div class="para">If a matrix <span class="process-math">\(A\)</span> is in row-echelon form and also satisfies the following two conditions, it is in <dfn class="terminology">reduced row-echelon form</dfn> (RREF):</div>
+<ul class="disc">
+<li id="def-REF-1-1-6-1"><div class="para" id="p-derived-def-REF-1-1-6-1">each leading entry in a nonzero row is 1; and</div></li>
+<li id="def-REF-1-1-6-2"><div class="para" id="p-derived-def-REF-1-1-6-2">each leading 1 is the only nonzero entry in its column.</div></li>
+</ul>
+</div></article><div class="para" id="sec-matrices-22">Though that definition is a mouthful, it is useful. Here is an example showing some matrices that do and do not meet these criteria.</div>
+<details id="sec-matrices-23" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span>
+</h3></summary><article class="example example-like"><div class="para logical" id="sec-matrices-23-1-1">
+<div class="para">The following two matrices are in REF but not RREF:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 2 \amp -1 \amp 3 \amp 0 \\ 
+0 \amp 5 \amp -3 \amp 7 \\ 
+0 \amp 0 \amp 2 \amp -1 \\ 
+0 \amp 0 \amp 0 \amp 0 \end{bmatrix} \hspace{12pt}
+\begin{bmatrix} -4 \amp 9 \amp 6 \\ 
+0 \amp 12 \amp -10 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The following two matrices are in RREF:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 0 \amp 4 \amp 5 \\ 
+0 \amp 1 \amp 2 \amp -3 \\ 
+0 \amp 0 \amp 0 \amp 0 \end{bmatrix} \hspace{12pt}
+\begin{bmatrix} 1 \amp -7 \amp 0 \amp 2 \\ 
+0 \amp 0 \amp 1 \amp -5 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Neither of the following matrices are in REF or RREF:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 0 \amp 2 \amp 5 \amp -8 \\ 
+0 \amp -1 \amp 7 \amp 7 \\ 
+4 \amp 2 \amp 1 \amp 0 \end{bmatrix} \hspace{12pt} 
+\begin{bmatrix} 2 \amp 3 \amp -2 \amp 5 \\ 
+0 \amp -1 \amp 3 \amp 6 \\ 
+-4 \amp -3 \amp 0 \amp 12 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></article></details><article class="definition definition-like" id="def-pivots"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.11</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-pivots-1-1">When a matrix <span class="process-math">\(A\)</span> is in row-echelon form, then the leading entry in each row is called a <dfn class="terminology">pivot</dfn>. The location of this entry within the matrix is called a <dfn class="terminology">pivot position</dfn>. Finally, any column containing a pivot is called a <dfn class="terminology">pivot column</dfn>.</div></article><div class="para" id="sec-matrices-25">One of the reasons we have <a href="" class="xref" data-knowl="./knowl/xref/def-REF.html" title="Definition 1.2.9">Definition 1.2.9</a> is because (we will prove this below) <em class="emphasis">every</em> matrix can be put into RREF. What follows here is a description of the algorithm used to transform every matrix into RREF. This process is usually called “Gaussian elimination” or “Gauss-Jordan elimination.”</div>
+<article class="algorithm theorem-like" id="alg-row-reduction"><h3 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">1.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">The Row Reduction Algorithm.</span>
+</h3>
+<div class="para logical" id="alg-row-reduction-2-1">
+<div class="para">This row reduction algorithm consists of five steps. The first four (collectively) produce a matrix in row-echelon form; after the fifth step the matrix will be in reduced row-echelon form.</div>
+<ol class="decimal">
+<li id="alg-row-reduction-2-1-1-1"><div class="para" id="p-derived-alg-row-reduction-2-1-1-1">Start with the leftmost nonzero column. This will be a pivot column with the pivot position at the top.</div></li>
+<li id="alg-row-reduction-2-1-1-2"><div class="para" id="p-derived-alg-row-reduction-2-1-1-2">Select a nonzero entry in this column and use the <em class="emphasis">switch</em> operation to move it to the top of the column (if necessary).</div></li>
+<li id="alg-row-reduction-2-1-1-3"><div class="para" id="p-derived-alg-row-reduction-2-1-1-3">Use elementary row operations to create zeros below this pivot.</div></li>
+<li id="alg-row-reduction-2-1-1-4"><div class="para" id="p-derived-alg-row-reduction-2-1-1-4">Ignore the row with the pivot just considered. Apply steps 1–3 to the submatrix that remains. Repeat this process until all nonzero rows have been handled.</div></li>
+<li id="alg-row-reduction-2-1-1-5"><div class="para" id="p-derived-alg-row-reduction-2-1-1-5">Select the rightmost pivot and use the <em class="emphasis">scale</em> operation to make it a 1. Now use elementary row operations to create 0s above this pivot. Move upward and to the left, repeating this process for all remaining pivots.</div></li>
+</ol>
+</div></article><details id="ex-matrix-rref" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.13</span><span class="period">.</span>
+</h3></summary><article class="example example-like"><div class="para logical" id="ex-matrix-rref-1-1">
+<div class="para">We consider the following matrix <span class="process-math">\(A\)</span> and put it into reduced row-echelon form:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{@{}cccc|c@{}}
+-2 \amp -2 \amp 6 \amp 14 \amp 4 \\
+2 \amp 3 \amp -4 \amp -4 \amp -1 \\
+-3 \amp -5 \amp 4 \amp -2 \amp -2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="ex-matrix-rref-1-2">
+<div class="para">The first column is nonzero, and we will leave the current top row in its place. Though it is not <em class="emphasis">necessary</em> to create a <span class="process-math">\(1\)</span> in the pivot position at this point in the process, it is often useful to do so. (We are not violating <a href="" class="xref" data-knowl="./knowl/xref/alg-row-reduction.html" title="Algorithm 1.2.12: The Row Reduction Algorithm">Algorithm 1.2.12</a> by producing a leading 1 this early in the process, but this is a step of row reduction that many, including this author, prefer to perform now to make future steps less painful.) We multiply the first row by <span class="process-math">\(-\frac{1}{2}\)</span> to achieve this:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/alg-row-reduction.html">
+\begin{equation*}
+\left[\begin{array}{@{}cccc|c@{}}
+1 \amp 1 \amp -3 \amp -7 \amp -2 \\
+2 \amp 3 \amp -4 \amp -4 \amp -1 \\
+-3 \amp -5 \amp 4 \amp -2 \amp -2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="ex-matrix-rref-1-3">
+<div class="para">We now use the <span class="process-math">\(1\)</span> in the <span class="process-math">\((1,1)\)</span> position to create zeros in the column below it. We add <span class="process-math">\(-2\)</span> times row 1 to row 2 and we add <span class="process-math">\(3\)</span> times row 1 to row 3. Since there is no “interaction” between these operations, we will perform them at the same time, though the reader should certainly take one operation at a time if this combination raises one’s blood pressure:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}cccc|c@{}}
+1 \amp 1 \amp -3 \amp -7 \amp -2 \\
+0 \amp 1 \amp 2 \amp 10 \amp 3 \\
+0 \amp -2 \amp -5 \amp -23 \amp -8
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="ex-matrix-rref-1-4">
+<div class="para">According to the algorithm, we now ignore row 1 and repeat the process for the remaining matrix. There is already a <span class="process-math">\(1\)</span> at the “top” of (this portion of) the second column, so we use that entry to create zeros below it. We add twice the second row to the third row:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}cccc|c@{}}
+1 \amp 1 \amp -3 \amp -7 \amp -2 \\
+0 \amp 1 \amp 2 \amp 10 \amp 3 \\
+0 \amp 0 \amp -1 \amp -3 \amp -2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="ex-matrix-rref-1-5">
+<div class="para">The matrix is in row-echelon form now, so we proceed to step 5 of the algorithm. We multiply the third row by <span class="process-math">\(-1\)</span> to produce a <span class="process-math">\(1\)</span> in the <span class="process-math">\((3,3)\)</span> position:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}cccc|c@{}}
+1 \amp 1 \amp -3 \amp -7 \amp -2 \\
+0 \amp 1 \amp 2 \amp 10 \amp 3 \\
+0 \amp 0 \amp 1 \amp 3 \amp 2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="ex-matrix-rref-1-6">
+<div class="para">We now use the <span class="process-math">\(1\)</span> we just created in order to produce zeros in the column above it. We add <span class="process-math">\(-2\)</span> times the third row to the second, and we add <span class="process-math">\(3\)</span> times the third row to the first:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}cccc|c@{}}
+1 \amp 1 \amp 0 \amp 2 \amp 4 \\
+0 \amp 1 \amp 0 \amp 4 \amp -1 \\
+0 \amp 0 \amp 1 \amp 3 \amp 2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="ex-matrix-rref-1-7">
+<div class="para">The final step is to use the pivot in position <span class="process-math">\((2,2)\)</span> in order to create a <span class="process-math">\(0\)</span> above it. We add <span class="process-math">\(-1\)</span> times the second row to the first:</div>
+<div class="displaymath process-math" id="rref-examp">
+\begin{equation}
+\left[\begin{array}{@{}cccc|c@{}}
+1 \amp 0 \amp 0 \amp -2 \amp 5 \\
+0 \amp 1 \amp 0 \amp 4 \amp -1 \\
+0 \amp 0 \amp 1 \amp 3 \amp 2
+\end{array}\right]\text{.}\tag{1.4}
+\end{equation}
+</div>
+</div> <div class="para" id="ex-matrix-rref-1-8">The process is now complete, so the matrix in <a href="" class="xref" data-knowl="./knowl/xref/rref-examp.html" title="Equation 1.4">(1.4)</a> is the result of reducing <span class="process-math">\(A\)</span> to RREF.</div></article></details><div class="para" id="sec-matrices-28">We note that this example is different from <a href="" class="xref" data-knowl="./knowl/xref/ex-use-el-ops.html" title="Example 1.2.8">Example 1.2.8</a> in an important way. The matrix in <a href="" class="xref" data-knowl="./knowl/xref/ex-matrix-rref.html" title="Example 1.2.13">Example 1.2.13</a> corresponds to a system with three equations and four variables, while the matrix in <a href="" class="xref" data-knowl="./knowl/xref/ex-use-el-ops.html" title="Example 1.2.8">Example 1.2.8</a> corresponds to a system with three equations and three variables. We only mention this to point out that the size of the original matrix puts some restrictions on the possibilities for its RREF, and the reader should be aware of this when completing the reading questions and the exercises at the end of this section.</div>
+<section class="reading-questions" id="sec-matrices-29"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading Questions</span>
+</h3>
+<article class="exercise exercise-like" id="sec-matrices-29-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-matrices-29-1-1-1">
+<div class="para">Write down the coefficient matrix and the augmented matrix for the following linear system:</div>
+<div class="displaymath process-math" id="sec-matrices-29-1-1-1-1">
+\begin{align*}
+2x_1-3x_2+ \tfrac{1}{2}x_3 \amp =7\\
+-5x_2+x_3-x_1 \amp =-4 \\
+6x_2+9x_1 \amp =-1\text{.}
+\end{align*}
+</div>
+</div></article><article class="exercise exercise-like" id="sec-matrices-29-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-matrices-29-2-1-1">
+<div class="para">Although the reduced row-echelon form of a matrix is unique (we will prove this soon), the row-echelon form of a matrix is not unique. For the following matrix <span class="process-math">\(A\text{,}\)</span> write two distinct row-echelon forms:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{@{}cc|c@{}}
+2 \amp -3 \amp 4 \\
+-1 \amp 2 \amp 0
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="sec-matrices-29-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-matrices-29-3-1-1">
+<div class="para">Put the following matrix into reduced row-echelon form. Record each of your steps along the way (both the elementary row operations you used and the matrices you obtained as a result):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{@{}cc|c@{}}
+2 \amp -3 \amp 5 \\
+-1 \amp 2 \amp -4 \\
+5 \amp -9 \amp 8
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div></article></section><section class="exercises" id="sec-matrices-30"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="sec-matrices-30-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-matrices-30-1-1-1">
+<div class="para">Write the augmented matrix that corresponds to the following linear system:</div>
+<div class="displaymath process-math" id="sec-matrices-30-1-1-1-1">
+\begin{align*}
+2x_2 - 4x_1 + \sqrt{2}x_4 \amp = 8\\
+3x_3 - 19x_2 \amp = -1\\
+0.5x_4 - 3x_3 + x_1 \amp = 0\text{.}
+\end{align*}
+</div>
+</div></article><article class="exercise exercise-like" id="sec-matrices-30-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-matrices-30-2-1-1">
+<div class="para">Write the linear system that corresponds to the following matrix, assuming this is the augmented matrix of the system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}} 
+1 \amp 0 \amp -3 \amp 4 \\
+0 \amp -2 \amp 1 \amp -5 \\ 
+0 \amp 0 \amp 0 \amp 0
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="sec-matrices-30-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-matrices-30-3-1-1">
+<div class="para">For each of the following, describe the elementary row operation that was used to transform the matrix on the left into the matrix on the right. Be specific in your description of the operation. (You should not just answer “scale” or “switch”, etc.)</div>
+<ol class="lower-alpha">
+<li id="sec-matrices-30-3-1-1-3-1"><div class="para" id="sec-matrices-30-3-1-1-3-1-1"><span class="process-math">\(\displaystyle \begin{bmatrix}
+2 \amp 1 \amp -3 \\ -1 \amp 4 \amp 5 \\ -2 \amp 0 \amp 2
+\end{bmatrix} \longrightarrow 
+\begin{bmatrix}
+2 \amp 1 \amp -3 \\ 1 \amp 5 \amp 2 \\ -2 \amp 0 \amp 2
+\end{bmatrix}\)</span></div></li>
+<li id="sec-matrices-30-3-1-1-3-2"><div class="para" id="sec-matrices-30-3-1-1-3-2-1"><span class="process-math">\(\displaystyle \begin{bmatrix}
+2 \amp 1 \amp -3 \\ -1 \amp 4 \amp 5 \\ -2 \amp 0 \amp 2
+\end{bmatrix} \longrightarrow 
+\begin{bmatrix}
+-1 \amp 4 \amp 5 \\ 2 \amp 1 \amp -3 \\ -2 \amp 0 \amp 2
+\end{bmatrix}\)</span></div></li>
+<li id="sec-matrices-30-3-1-1-3-3"><div class="para" id="sec-matrices-30-3-1-1-3-3-1"><span class="process-math">\(\displaystyle \begin{bmatrix}
+2 \amp 1 \amp -3 \\ -1 \amp 4 \amp 5 \\ -2 \amp 0 \amp 2
+\end{bmatrix} \longrightarrow 
+\begin{bmatrix}
+2 \amp 1 \amp -3 \\ -1 \amp 4 \amp 5 \\ -1 \amp 0 \amp 1
+\end{bmatrix}\)</span></div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-matrices-30-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-matrices-30-4-1-1">
+<div class="para">For each of the following matrices, determine if the matrix is in row-echelon form, reduced row-echelon form, both, or neither.</div>
+<ol class="lower-alpha">
+<li id="sec-matrices-30-4-1-1-1-1"><div class="para" id="sec-matrices-30-4-1-1-1-1-1"><span class="process-math">\(\displaystyle \begin{bmatrix}
+2 \amp 0 \amp  1 \\ 0 \amp 1 \amp 0 \\ 0 \amp -1 \amp 1
+\end{bmatrix}\)</span></div></li>
+<li id="sec-matrices-30-4-1-1-1-2"><div class="para" id="sec-matrices-30-4-1-1-1-2-1"><span class="process-math">\(\displaystyle \begin{bmatrix}
+0 \amp 2 \amp 3 \\ 0 \amp 0 \amp 1 \\ 0 \amp 0 \amp 0
+\end{bmatrix}\)</span></div></li>
+<li id="sec-matrices-30-4-1-1-1-3"><div class="para" id="sec-matrices-30-4-1-1-1-3-1"><span class="process-math">\(\displaystyle \begin{bmatrix}
+-1 \amp 2 \\ 0 \amp 2 \\ 0 \amp 0
+\end{bmatrix}\)</span></div></li>
+<li id="sec-matrices-30-4-1-1-1-4"><div class="para" id="sec-matrices-30-4-1-1-1-4-1"><span class="process-math">\(\displaystyle \begin{bmatrix}
+1 \amp  0 \amp 7 \\ 0 \amp 1 \amp -4
+\end{bmatrix}\)</span></div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-matrices-30-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-matrices-30-5-1-1">
+<div class="para">Consider the following matrix <span class="process-math">\(A\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+-2 \amp 3 \\ -3 \amp 5
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Find two distinct matrices <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> which are row equivalent to <span class="process-math">\(A\)</span> and are in row echelon form. (There are many correct answers!)</div>
+</div></article><article class="exercise exercise-like" id="sec-matrices-30-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-matrices-30-6-1-1">
+<div class="para">Use <a href="" class="xref" data-knowl="./knowl/xref/alg-row-reduction.html" title="Algorithm 1.2.12: The Row Reduction Algorithm">Algorithm 1.2.12</a> to put each of these matrices into RREF.</div>
+<ol class="lower-alpha">
+<li id="sec-matrices-30-6-1-1-2-1"><div class="para" id="sec-matrices-30-6-1-1-2-1-1"><span class="process-math">\(\displaystyle \begin{bmatrix}
+-3 \amp 4 \\ 1 \amp 2
+\end{bmatrix}\)</span></div></li>
+<li id="sec-matrices-30-6-1-1-2-2"><div class="para" id="sec-matrices-30-6-1-1-2-2-1"><span class="process-math">\(\displaystyle \begin{bmatrix}
+2 \amp 4 \amp 5 \\ -1 \amp 3 \amp -4
+\end{bmatrix}\)</span></div></li>
+<li id="sec-matrices-30-6-1-1-2-3"><div class="para" id="sec-matrices-30-6-1-1-2-3-1">
+<span class="process-math">\(\displaystyle \begin{bmatrix}
+4 \amp 8 \amp 8 \\ 4 \amp -1 \amp -8 \\ 0 \amp  8 \amp -7
+\end{bmatrix}\)</span> </div></li>
+<li id="sec-matrices-30-6-1-1-2-4"><div class="para" id="sec-matrices-30-6-1-1-2-4-1">
+<span class="process-math">\(\displaystyle \begin{bmatrix}
+-3 \amp -8 \amp -1 \\ -4 \amp -3 \amp -3 \\ 2 \amp 13 \amp -1
+\end{bmatrix}\)</span> </div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-matrices-30-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-matrices-30-7-1-1">
+<div class="para">For each of the following matrix sizes, list all of the possible RREFs for matrices of that size. Use the symbols <span class="process-math">\(\blacksquare\)</span> for a pivot, <span class="process-math">\(\ast\)</span> for an unspecified number, and <span class="process-math">\(0\)</span> for a zero entry.</div>
+<ol class="lower-alpha">
+<li id="sec-matrices-30-7-1-1-4-1"><div class="para" id="sec-matrices-30-7-1-1-4-1-1"><span class="process-math">\(\displaystyle 2\times 2\)</span></div></li>
+<li id="sec-matrices-30-7-1-1-4-2"><div class="para" id="sec-matrices-30-7-1-1-4-2-1"><span class="process-math">\(\displaystyle 2\times 3\)</span></div></li>
+<li id="sec-matrices-30-7-1-1-4-3"><div class="para" id="sec-matrices-30-7-1-1-4-3-1"><span class="process-math">\(\displaystyle 3\times 2\)</span></div></li>
+</ol>
+</div></article><article class="subexercises" id="sec-matrices-30-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-matrices-30-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-matrices-30-8-2-1-1"><ol class="lower-alpha">
+<li id="sec-matrices-30-8-2-1-1-1-1"><div class="para" id="sec-matrices-30-8-2-1-1-1-1-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times 4\)</span> matrix. What is the maximum number of pivots in any RREF of <span class="process-math">\(A\text{?}\)</span> Explain.</div></li>
+<li id="sec-matrices-30-8-2-1-1-1-2"><div class="para" id="sec-matrices-30-8-2-1-1-1-2-1">Suppose <span class="process-math">\(B\)</span> is a <span class="process-math">\(6\times 4\)</span> matrix. What is the minimum number of rows of zeros in any RREF of <span class="process-math">\(B\text{?}\)</span> Explain.</div></li>
+</ol></div></article><article class="exercise exercise-like" id="exer-reversible"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="exer-reversible-1-1">Prove that each of the elementary row operations is reversible. In other words, if an elementary row operation was used to transform a matrix <span class="process-math">\(A\)</span> into a matrix <span class="process-math">\(B\text{,}\)</span> prove that there is another elementary row operation (of the same type) which will transform <span class="process-math">\(B\)</span> back into <span class="process-math">\(A\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exer-row-equiv-equiv-rel"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para" id="exer-row-equiv-equiv-rel-1-1">Recall that an equivalence relation is reflexive, symmetric, and transitive. Now, fix the integers <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> and consider row equivalence as a relation on all <span class="process-math">\(m\times n\)</span> matrices. Prove that this is an equivalence relation. (Hint: another exercise in this section may be helpful in your argument.)</div></article><article class="exercise exercise-like" id="sec-matrices-30-8-5"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-matrices-30-8-5-1-1">
+<div class="para">Prove or disprove: The following two matrices are row equivalent. (Hint: another exercise in this section may be helpful in your argument.)</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+9 \amp  -9 \amp -10 \\  -1 \amp  -1 \amp   9 \\  -5 \amp  -2 \amp  -1
+\end{bmatrix} \hspace{.3in}
+B = \begin{bmatrix}
+0 \amp  3 \amp -2 \\ 7 \amp -2  \amp 1 \\ 7 \amp  6 \amp -8
+\end{bmatrix}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="exer-finish-proof-1"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para" id="exer-finish-proof-1-1-1">Complete the proof of <a href="" class="xref" data-knowl="./knowl/xref/thm-row-equiv-matrices-systems.html" title="Theorem 1.2.7">Theorem 1.2.7</a>. This can be accomplished by proving the statement in the final paragraph of the given proof.</div></article></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-intro-systems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-results.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

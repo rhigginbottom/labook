@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span>
+</h4>
+<div class="para">We consider the matrix <span class="process-math">\(A\)</span> from <a href="" class="xref" data-knowl="./knowl/xref/examp-first-eigen.html" title="Example 6.1.2">Example 6.1.2</a>. Let’s show that <span class="process-math">\(-1\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> and find the corresponding eigenvectors.</div> <div class="para logical">
+<div class="para">We know that <span class="process-math">\(-1\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> if the equation <span class="process-math">\(A\bfx = -\bfx\)</span> has a nontrivial solution for some <span class="process-math">\(\bfx \in \rr^2\text{.}\)</span> This is equivalent to saying that the equation <span class="process-math">\(A\bfx + \bfx = \bfo\)</span> has a nontrivial solution. We can also view <span class="process-math">\(\bfx\)</span> as <span class="process-math">\(I\bfx\text{,}\)</span> so if <span class="process-math">\(-1\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> there is a nonzero vector <span class="process-math">\(\bfx\)</span> which satisfies</div>
+<div class="displaymath process-math">
+\begin{equation}
+(A + I)\bfx = \bfo\text{.}\tag{6.1}
+\end{equation}
+</div>
+<div class="para">Viewed from the correct angle, we have reduced this problem to finding the null space of a matrix.</div>
+</div> <div class="para logical">
+<div class="para">We will calculate <span class="process-math">\(A + I\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-eigen1.html">
+\begin{equation*}
+A + I = \begin{bmatrix} 3 \amp 0 \\ 7 \amp -1 \end{bmatrix} + \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} = 
+\begin{bmatrix} 4 \amp 0 \\ 7 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We can see that the columns of <span class="process-math">\((A+I)\)</span> are linearly dependent, so we know that <a href="" class="xref" data-knowl="./knowl/xref/eqn-eigen1.html" title="Equation 6.1">(6.1)</a> has nontrivial solutions. This proves that <span class="process-math">\(-1\)</span> is an eigenvalue of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">In order to find the eigenvectors of <span class="process-math">\(A\)</span> that correspond to <span class="process-math">\(\lambda = -1\text{,}\)</span> we describe the null space of the appropriate matrix. We row-reduce <span class="process-math">\((A + I)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 4 \amp 0 \\ 7 \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">This shows that every eigenvector of <span class="process-math">\(A\)</span> has the form <span class="process-math">\(x_2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}\text{,}\)</span> as long as <span class="process-math">\(x_2 \neq 0\text{.}\)</span> The interested/vigilant reader can check that, for example, <span class="process-math">\(A \begin{bmatrix} 0 \\ 3 \end{bmatrix} = \begin{bmatrix} 0 \\ -3 \end{bmatrix}\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec-eigenvalues.html#examp-find-evectors">in-context</a></span>
+</body>
+</html>

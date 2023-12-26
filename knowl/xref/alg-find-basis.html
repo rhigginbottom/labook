@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="algorithm theorem-like"><h4 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">5.2.13</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n\}\)</span> be a set of vectors in <span class="process-math">\(\ff^m\text{.}\)</span> To find a basis <span class="process-math">\(B\)</span> for <span class="process-math">\(\spn(V')\text{,}\)</span> do the following.</div>
+<ol class="decimal">
+<li><div class="para">Put the matrix <span class="process-math">\(A = [\bfv_1 \cdots \bfv_n ]\)</span> in RREF.</div></li>
+<li><div class="para">If column <span class="process-math">\(i\)</span> in the RREF contains a pivot, then include <span class="process-math">\(\bfv_i\)</span> in <span class="process-math">\(B\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">We form the matrix <span class="process-math">\(A = [\bfv_1 \cdots \bfv_n]\text{.}\)</span> If <span class="process-math">\(A\)</span> is already in RREF, then the non-pivot columns are linear combinations of the pivot columns that preceed them. So, those can be discarded and the pivot columns will be a basis, according to <a href="" class="xref" data-knowl="./knowl/xref/thm-spanning-set.html" title="Theorem 5.2.11: The Spanning Set Theorem">Theorem 5.2.11</a>.</div> <div class="para logical">
+<div class="para">We will complete the proof with a reminder about the effect of elementary row operations on the columns of a matrix. If a column <span class="process-math">\(\bfv_k\)</span> of <span class="process-math">\(A\)</span> is a linear combination of the columns that preceed it, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfv_k = \sum_{i=1}^{k-1} c_i\bfv_i 
+\end{equation*}
+</div>
+<div class="para">for some scalars <span class="process-math">\(c_i\text{.}\)</span> This means that the column vector <span class="process-math">\([c_i]\)</span> is a solution to the linear system represented by the augmented matrix <span class="process-math">\([\bfv_1 \cdots \bfv_{k-1} \mid \bfv_k ]\text{.}\)</span> One of the earliest facts we learned about elementary row operations is that they preserve the solution sets of linear systems, so the same vector <span class="process-math">\([c_i]\)</span> will be a solution to the linear system represented by the RREF of <span class="process-math">\([\bfv_1 \cdots \bfv_{k-1} \mid \bfv_k ]\text{.}\)</span> This proves that the relationships between the columns of a matrix are the same as the relationships between the columns of the RREF of that matrix.</div>
+</div> <div class="para">So, if <span class="process-math">\(A\)</span> is not in RREF, we can find the RREF of <span class="process-math">\(A\text{,}\)</span> call it <span class="process-math">\(C\text{.}\)</span> The non-pivot columns of <span class="process-math">\(C\)</span> indicate that the corresponding columns of <span class="process-math">\(A\)</span> should not be included in the basis. In other words the pivot columns of <span class="process-math">\(C\)</span> indicate that the corresponding columns of <span class="process-math">\(A\)</span> are the ones that should remain to form the basis.</div></article></details><span class="incontext"><a class="internal" href="sec-basis.html#alg-find-basis">in-context</a></span>
+</body>
+</html>

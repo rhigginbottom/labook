@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Inner Products</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra">
+<meta property="book:author" content="Ryan Higginbottom">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">A work in progress</span></a></h1>
+<p class="byline">Ryan Higginbottom</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-7.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-orthonormal-bases.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+\newcommand{\zz}{\mathbb Z}
+\newcommand{\qq}{\mathbb Q}
+\newcommand{\rr}{\mathbb R}
+\newcommand{\cc}{\mathbb C}
+\newcommand{\ff}{\mathbb{F}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bfo}{\mathbf{0}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\mcb}{\mathcal{B}}
+\newcommand{\mcc}{\mathcal{C}}
+\newcommand{\mce}{\mathcal{E}}
+\newcommand{\spn}{\mathrm{Span}}
+\newcommand{\kerr}{\mathrm{ker}}
+\newcommand{\nll}{\mathrm{null}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\col}{\mathrm{col}}
+\newcommand{\row}{\mathrm{row}}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\lla}{\left\langle}
+\newcommand{\rra}{\right\rangle}
+\newcommand{\ip}[1]{\lla #1 \rra}
+\newcommand{\vnorm}[1]{\left|\hspace{-1.2pt}\left| #1 \right|\hspace{-1.2pt}\right|}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-first.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-systems.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-intro-systems.html#rqs-lin-systems" class="internal"><span class="codenumber">1.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-intro-systems.html#sec-intro-systems-20" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-29" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-results.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Results</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-results.html#sec-results-31" class="internal"><span class="codenumber">1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-results.html#sec-results-32" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vectors.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors.html#subsec-vector-basics" class="internal"><span class="codenumber">1.4.1</span> <span class="title">The Basics of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors.html#subsec-geometry-vectors" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Vectors and Geometry</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vectors.html#sec-vectors-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vectors.html#sec-vectors-6" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-second.html" class="internal"><span class="codenumber">2</span> <span class="title">Fields and Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-fields.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Fields</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-19" class="internal"><span class="codenumber">2.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-20" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-systems-fields.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Solving Linear Systems Over Fields</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-13" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-14" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vector-spaces.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vector-spaces.html#sec-vector-spaces-17" class="internal"><span class="codenumber">2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vector-spaces.html#exercises-2-3" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Subspaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-subspaces.html#sec-subspaces-20" class="internal"><span class="codenumber">2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-subspaces.html#sec-subspaces-21" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-third.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-trans.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-lin-trans" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Introduction to Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-lin-trans-matrices" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Linear Transformations and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-props-linear-trans" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Properties of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-matrix-vector-form-lin-system" class="internal"><span class="codenumber">3.1.4</span> <span class="title">The Matrix-Vector Form of a Linear System</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-8" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-linear-trans.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Matrix of a Linear Transformation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-construct-matrix-lin-trans" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Constructing the Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-matrix-mult" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Composition and Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-linear-trans-invertible" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Invertible Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-matrix-transpose" class="internal"><span class="codenumber">3.2.4</span> <span class="title">The Transpose of a Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#sec-matrix-linear-trans-7" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#sec-matrix-linear-trans-8" class="internal"><span class="codenumber">3.2.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inverting-matrix.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Inverting a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverting-matrix.html#subsec-elementary-matrices" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverting-matrix.html#subsec-finding-inverses" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Finding the Inverse of a Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-inverting-matrix.html#sec-inverting-matrix-5" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-inverting-matrix.html#sec-inverting-matrix-6" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces-lt.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Subspaces and Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces-lt.html#subsec-kernel" class="internal"><span class="codenumber">3.4.1</span> <span class="title">The Kernel of a Linear Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces-lt.html#subsec-range" class="internal"><span class="codenumber">3.4.2</span> <span class="title">The Range as a Subspace</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-subspaces-lt.html#sec-subspaces-lt-5" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-subspaces-lt.html#sec-subspaces-lt-6" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dets.html" class="internal"><span class="codenumber">4</span> <span class="title">Determinants</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-define-det.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Defining the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-define-det.html#initial-defn-det" class="internal"><span class="codenumber">4.1.1</span> <span class="title">The Definition of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-define-det.html#subsec-det-alternative" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Additional Ways to Calculate the Determinant</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-define-det.html#sec-define-det-5" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-define-det.html#sec-define-det-6" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-det-properties.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Properties of the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#det-elem-row-ops" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Determinant and Elementary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#subsec-det-main-results" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Invertibility and the Determinant</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dimension.html" class="internal"><span class="codenumber">5</span> <span class="title">The Dimension of a Vector Space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-lin-ind.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Linear Independence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-lin-ind.html#sec-lin-ind-35" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-lin-ind.html#sec-lin-ind-36" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Basis of a Vector Space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis.html#subsec-intro-basis" class="internal"><span class="codenumber">5.2.1</span> <span class="title">The Definition of a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis.html#subsec-basis-props" class="internal"><span class="codenumber">5.2.2</span> <span class="title">The Properties of a Basis</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-basis.html#sec-basis-5" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-basis.html#sec-basis-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-dimension.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dimension.html#subsec-dimension" class="internal"><span class="codenumber">5.3.1</span> <span class="title">The Dimension of a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dimension.html#subsec-dim-subspace" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Dimension and Subspaces</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-dimension.html#sec-dimension-5" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-dimension.html#sec-dimension-6" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-rank.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Rank and Nullity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-rank.html#subsec-define-rank-nullity" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Defining Rank and Nullity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-rank.html#subsec-rank-thm" class="internal"><span class="codenumber">5.4.2</span> <span class="title">The Rank-Nullity Theorem</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-rank.html#sec-rank-5" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-rank.html#sec-rank-6" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-coordinates.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Coordinates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coord-vectors" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Coordinates of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coordinates-matrices" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Coordinates and Linear Transformations</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-coordinates.html#sec-coordinates-5" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-coordinates.html#sec-coordinates-6" class="internal"><span class="codenumber">5.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-change-of-basis.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Change of Basis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-change-of-basis.html#subsec-change-basis-matrix" class="internal"><span class="codenumber">5.6.1</span> <span class="title">The Change-of-Basis Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-change-of-basis.html#sec-change-of-basis-4" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-change-of-basis.html#sec-change-of-basis-5" class="internal"><span class="codenumber">5.6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-sixth.html" class="internal"><span class="codenumber">6</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-eigenvalues.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-eigenvalues" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Defining Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-results-eigenvectors" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Results About Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-eigenvalues.html#sec-eigenvalues-5" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-eigenvalues.html#sec-eigenvalues-6" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-char-eqn.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Characteristic Equation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-char-eqn.html#subsec-char-eqn" class="internal"><span class="codenumber">6.2.1</span> <span class="title">How to Find Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-char-eqn.html#subsec-similarity" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Similarity</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-char-eqn.html#sec-char-eqn-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-char-eqn.html#sec-char-eqn-6" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diagonalization.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Diagonalization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-diag" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Diagonalizable Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-how-to-diagonalize" class="internal"><span class="codenumber">6.3.2</span> <span class="title">How to Diagonalize a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-diag-linear-transf" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Linear Transformations and Diagonalizability</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-diagonalization.html#sec-diagonalization-6" class="internal"><span class="codenumber">6.3.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-diagonalization.html#sec-diagonalization-7" class="internal"><span class="codenumber">6.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-invariants.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Invariants</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invariants.html#subsec-intro-invariants" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Introduction to Invariants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invariants.html#subsec-inv-rank-trace" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Rank and Trace as Invariants</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-invariants.html#sec-invariants-5" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-invariants.html#sec-invariants-6" class="internal"><span class="codenumber">6.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-7.html" class="internal"><span class="codenumber">7</span> <span class="title">Inner Products</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-inner-products.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Inner Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-dot-product" class="internal"><span class="codenumber">7.1.1</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-general-inner-prod" class="internal"><span class="codenumber">7.1.2</span> <span class="title">The Inner Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-orthogonality" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Orthogonality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-results-inner-products" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Results for Inner Product Spaces</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-inner-products.html#sec-inner-products-7" class="internal"><span class="codenumber">7.1.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-inner-products.html#sec-inner-products-8" class="internal"><span class="codenumber">7.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orthonormal-bases.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Orthonormal Bases</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-orthonormality" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Orthonormality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-orthonormal-coordinates" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Coordinates in Orthonormal Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-gram-schmidt" class="internal"><span class="codenumber">7.2.3</span> <span class="title">The Gram-Schmidt Process</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#sec-orthonormal-bases-6" class="internal"><span class="codenumber">7.2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#sec-orthonormal-bases-7" class="internal"><span class="codenumber">7.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orthogonal-projections.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonal Projections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-orthog-complements" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-orthog-proj" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Orthogonal Projections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-least-squares" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Least Squares Approximation</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#sec-orthogonal-projections-6" class="internal"><span class="codenumber">7.3.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#sec-orthogonal-projections-7" class="internal"><span class="codenumber">7.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="apdx-mod-arith.html" class="internal"><span class="codenumber">A</span> <span class="title">The Integers Modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="apdx-isomorphisms.html" class="internal"><span class="codenumber">B</span> <span class="title">Isomorphisms</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-inner-products"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.1</span><span class="space"> </span><span class="title">Inner Products</span>
+</h2>
+<section class="introduction" id="sec-inner-products-2"><div class="para" id="sec-inner-products-2-1">A general vector space need not have any relevant geometry, and in most of our work up to this point, geometric notions did not play a central role. In this chapter, however, we will begin to take advantage of the geometry present in <em class="emphasis">some</em> vector spaces.</div></section><section class="subsection" id="subsec-dot-product"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="space"> </span><span class="title">The Dot Product</span>
+</h3>
+<div class="para" id="subsec-dot-product-2">In Euclidean geometry, we are introduced to the <em class="emphasis">dot product</em> quite early. The dot product in <span class="process-math">\(\rr^n\)</span> is essential to our understandings of length and distance.</div>
+<article class="definition definition-like" id="def-dot-prod"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-dot-prod-1-1">
+<div class="para">For two vectors <span class="process-math">\(\bfx, \bfy \in \rr^n\text{,}\)</span> we have the <dfn class="terminology">dot product</dfn> of <span class="process-math">\(\bfx\)</span> and <span class="process-math">\(\bfy\)</span> given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfx \cdot \bfy = \sum_{i=1}^n x_iy_i\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\bfx = [x_i]\)</span> and <span class="process-math">\(\bfy = [y_i]\text{.}\)</span>
+</div>
+</div></article><details id="dot-prod-ex1" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="dot-prod-ex1-1-1">
+<div class="para">Suppose that <span class="process-math">\(\bfx\)</span> and <span class="process-math">\(\bfy\)</span> are the following two vectors in <span class="process-math">\(\rr^3\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfx = \begin{bmatrix} -1 \\ 2 \\ -2 \end{bmatrix}, \hspace{12pt}
+\bfy = \begin{bmatrix} 0 \\ 1 \\ -3 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(\bfx \cdot \bfy = (-1)(0) + 2(1) + (-2)(-3) = 8\text{.}\)</span>
+</div>
+</div></article></details><article class="note remark-like" id="subsec-dot-product-5"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-dot-product-5-1">Having facility with matrix multiplication now, the observant reader will notice that <span class="process-math">\(\bfx \cdot \bfy = \bfy^T \bfx\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-length-dot"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-length-dot-1-1">
+<div class="para">The <dfn class="terminology">length</dfn> or <dfn class="terminology">norm</dfn> of a vector <span class="process-math">\(\bfx \in \rr^n\)</span> is the nonnegative scalar <span class="process-math">\(\vnorm{\bfx}\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vnorm{\bfx} = \sqrt{\bfx \cdot \bfx} = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}\text{.}
+\end{equation*}
+</div>
+</div></article><details id="subsec-dot-product-7" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-dot-product-7-1-1">
+<div class="para">If <span class="process-math">\(\bfx \in \rr^3\)</span> is the same as in <a href="" class="xref" data-knowl="./knowl/xref/dot-prod-ex1.html" title="Example 7.1.2">Example 7.1.2</a>, then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dot-prod-ex1.html">
+\begin{equation*}
+\vnorm{\bfx} = \sqrt{(-1)^2 + 2^2 + (-2)^2} = \sqrt{9} = 3\text{.}
+\end{equation*}
+</div>
+</div></article></details><div class="para" id="subsec-dot-product-8">Of special usefulness for us is the fact that the dot product gives us a notion of angles and perpendicularity.</div>
+<article class="definition definition-like" id="def-orthogonal"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-orthogonal-1-1">Two vectors <span class="process-math">\(\bfx\)</span> and <span class="process-math">\(\bfy\)</span> in <span class="process-math">\(\rr^n\)</span> are <dfn class="terminology">orthogonal</dfn> if <span class="process-math">\(\bfx \cdot \bfy = 0\text{.}\)</span>
+</div></article><article class="note remark-like" id="subsec-dot-product-10"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">7.1.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-dot-product-10-1">The word “orthogonal” is another way of saying “perpendicular”, but “orthogonal” is used much more frequently in linear algebra.</div></article><details id="subsec-dot-product-11" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.8</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-dot-product-11-1-1">
+<div class="para">Let <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\bfw\)</span> be the following vectors in <span class="process-math">\(\rr^2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfu = \begin{bmatrix} -2 \\ 3 \end{bmatrix}, \hspace{6pt}
+\bfv = \begin{bmatrix} 1 \\ 4 \end{bmatrix}, \hspace{6pt}
+\bfw = \begin{bmatrix} 6 \\ 4 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We can see that <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> are not orthogonal, since <span class="process-math">\(\bfu \cdot \bfv = 10\text{.}\)</span> However, <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfw\)</span> are orthogonal, as <span class="process-math">\(\bfu \cdot \bfw = 0\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="subsec-dot-product-12">As this chapter continues, the reader will see just how important orthogonality is. For now, we note that all of the vectors in the standard basis of <span class="process-math">\(\rr^n\text{,}\)</span> <span class="process-math">\(\bfe_1, \ldots, \bfe_n\text{,}\)</span> are orthogonal to each other. That is, <span class="process-math">\(\bfe_i \cdot \bfe_j = 0\)</span> whenever <span class="process-math">\(i \neq j\text{.}\)</span>
+</div>
+<div class="para" id="subsec-dot-product-13">A consequence of this last fact is stated in the following proposition.</div>
+<article class="proposition theorem-like" id="prop-coords-dot-prod"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.1.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-coords-dot-prod-1-1">If <span class="process-math">\(\bfv \in \rr^n\)</span> is given by <span class="process-math">\(\bfv = [v_i]\text{,}\)</span> then <span class="process-math">\(v_i = \bfv \cdot \bfe_i\)</span> for each <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(1 \le i \le n\text{.}\)</span>
+</div></article><details id="prop-coords-dot-prod-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="prop-coords-dot-prod-2-1">
+<div class="para">By definition of the dot product, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfv \cdot \bfe_i = \sum_{j=1}^n v_j (\bfe_i)_j = v_j\text{,}
+\end{equation*}
+</div>
+<div class="para">since the only nonzero entry of <span class="process-math">\(\bfe_i\)</span> is <span class="process-math">\((\bfe_i)_i = 1\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="subsec-dot-product-15">This has been a very brief review/introduction to the dot product. As we generalize this function in the remainder of this section, we will continue to remind the reader of important facts and properties as we need them.</div></section><section class="subsection" id="subsec-general-inner-prod"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="space"> </span><span class="title">The Inner Product</span>
+</h3>
+<div class="para" id="subsec-general-inner-prod-2">In the same way that vectors in <span class="process-math">\(\rr^n\)</span> gave us the intuition to consider a general vector space, the dot product in <span class="process-math">\(\rr^n\)</span> points us toward a more general function on vector spaces. Our generalization of the dot product is called the <em class="emphasis">inner product</em>.</div>
+<article class="note remark-like" id="subsec-general-inner-prod-3"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">7.1.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-general-inner-prod-3-1">Before this definition we need a quick reminder. For a complex number <span class="process-math">\(z = a + bi\text{,}\)</span> recall that the <dfn class="terminology">complex conjugate</dfn> of <span class="process-math">\(z\)</span> is defined by <span class="process-math">\(\overline{z} = a-bi\text{.}\)</span> This will be used in the following definition.</div></article><article class="definition definition-like" id="def-inner-product"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-inner-product-1-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space over a field <span class="process-math">\(\ff\text{,}\)</span> where <span class="process-math">\(\ff\)</span> is either <span class="process-math">\(\rr\)</span> or <span class="process-math">\(\cc\text{.}\)</span> An <dfn class="terminology">inner product</dfn> on <span class="process-math">\(V\)</span> is a function that associates to each pair of vectors <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> in <span class="process-math">\(V\)</span> an element of the field <span class="process-math">\(\lla \bfu, \bfv \rra\)</span> satisfying all of the following axioms. For all <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\bfw\)</span> in <span class="process-math">\(V\text{,}\)</span> and all <span class="process-math">\(c \in \ff\text{:}\)</span>
+</div>
+<ol class="decimal">
+<li id="def-inner-product-1-1-17-1"><div class="para" id="def-inner-product-1-1-17-1-1"><span class="process-math">\(\lla \bfu, \bfv \rra = \overline{\lla \bfv, \bfu \rra}\text{;}\)</span></div></li>
+<li id="def-inner-product-1-1-17-2"><div class="para" id="def-inner-product-1-1-17-2-1"><span class="process-math">\(\lla \bfu + \bfv, \bfw \rra = \lla \bfu, \bfw \rra + \lla \bfv, \bfw \rra\text{;}\)</span></div></li>
+<li id="def-inner-product-1-1-17-3"><div class="para" id="def-inner-product-1-1-17-3-1">
+<span class="process-math">\(\lla c\bfu, \bfv \rra = c\lla \bfu, \bfv \rra\text{;}\)</span> and</div></li>
+<li id="def-inner-product-1-1-17-4"><div class="para" id="def-inner-product-1-1-17-4-1">
+<span class="process-math">\(\lla \bfu, \bfu \rra \ge 0\)</span> and <span class="process-math">\(\lla \bfu, \bfu \rra = 0\)</span> if and only if <span class="process-math">\(\bfu = \bfo\text{.}\)</span>
+</div></li>
+</ol>
+</div> <div class="para" id="def-inner-product-1-2">A vector space together with an inner product is called an <dfn class="terminology">inner product space</dfn>.</div></article><article class="note remark-like" id="subsec-general-inner-prod-5"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">7.1.12</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-general-inner-prod-5-1">If the field we have in mind is <span class="process-math">\(\rr\)</span> instead of <span class="process-math">\(\cc\text{,}\)</span> then the first property listed in the definition is just <span class="process-math">\(\lla \bfu, \bfv \rra = \lla \bfv, \bfu \rra\text{.}\)</span> (If <span class="process-math">\(x \in \rr\text{,}\)</span> then <span class="process-math">\(\overline{x}=x\text{.}\)</span>) Also, if our field is <span class="process-math">\(\cc\text{,}\)</span> we still require <span class="process-math">\(\lla \bfu, \bfu \rra\)</span> to be a real number, as this is implicit in the fourth property where <span class="process-math">\(\lla \bfu, \bfu \rra \ge 0\text{.}\)</span>
+</div></article><div class="para" id="subsec-general-inner-prod-6">Before we introduce examples, we want to comment here on why the only fields we allow for inner product spaces are <span class="process-math">\(\rr\)</span> and <span class="process-math">\(\cc\text{.}\)</span> The inner product requires that a notion of <em class="emphasis">order</em> be present in any field over which a vector space is defined. This is inherent in the fourth property listed in the definition of an inner product, where we must have <span class="process-math">\(\lla \bfu, \bfu \rra \ge 0\)</span> for all <span class="process-math">\(\bfu \in V\text{.}\)</span> We do not have this sort of ordering in a finite field like <span class="process-math">\(\ff_5\text{.}\)</span> Since, for example, 6 and 1 and <span class="process-math">\(-4\)</span> all represent the same number in <span class="process-math">\(\ff_5\text{,}\)</span> we cannot in any coherent way say that this value of the field is “greater than or equal to 0.” Because of this lack of ordering, finite fields do not have the sort of geometric properties that we require for an inner product space.</div>
+<details id="subsec-general-inner-prod-7" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.13</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="subsec-general-inner-prod-7-1-1">All real vector spaces <span class="process-math">\(\rr^n\)</span> with the dot product are inner product spaces. (Once again, we would be particularly bad at generalizing if the motivating case were not an example of the general situation!)</div></article></details><details id="examp-std-ip-cn" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.14</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="examp-std-ip-cn-1-1">
+<div class="para">For vectors <span class="process-math">\(\bfu, \bfv \in \cc^n\text{,}\)</span> the standard inner product is defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lla \bfu, \bfv \rra = \sum_{i=1}^n u_i\overline{v_i}\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\bfu = [u_i]\)</span> and <span class="process-math">\(\bfv = [v_i]\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="examp-std-ip-cn-1-2">
+<div class="para">As an example calculation, we consider the following two vectors in <span class="process-math">\(\cc^2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfu = \begin{bmatrix} 1 + i \\ -2i \end{bmatrix}, \hspace{6pt} 
+\bfv = \begin{bmatrix} 2-i \\ 3+4i \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then we have</div>
+<div class="displaymath process-math" id="examp-std-ip-cn-1-2-3">
+\begin{align*}
+\lla \bfu, \bfv \rra \amp = (1+i)\overline{(2-i)} + (-2i)\overline{(3+4i)}\\
+\amp = (1+i)(2+i) + (-2i)(3-4i)\\
+\amp = -7-3i\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="examp-std-ip-cn-1-3">We will leave for the exercises the proof that the inner product axioms hold for this function.</div></article></details><details id="examp-ip-fn-space" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.15</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="examp-ip-fn-space-1-1">
+<div class="para">Let <span class="process-math">\(C([0,1])\)</span> denote the vector space of continuous real-valued functions on the interval <span class="process-math">\([0,1]\text{.}\)</span> (See <a href="" class="xref" data-knowl="./knowl/xref/ex-real-functions.html" title="Example 2.3.5">Example 2.3.5</a> for a discussion of vector spaces like this one.) We can study an inner product on this space defined by the following:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-real-functions.html">
+\begin{equation*}
+\lla f,g \rra = \int_0^1 f(x)g(x)\; dx\text{.}
+\end{equation*}
+</div>
+<div class="para">Again, we provide an example of a calculation. If <span class="process-math">\(f(x) = 2x\)</span> and <span class="process-math">\(g(x) = x^2-4\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-real-functions.html">
+\begin{equation*}
+\lla f,g \rra = \int_0^1 2x(x^2-4)\; dx = \int_0^1 (2x^3 - 8x)\; dx = -\frac{7}{2}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="examp-ip-fn-space-1-2">Proving that the inner product axioms hold requires recalling a few facts from calculus. We leave this to the exercises.</div></article></details><div class="para" id="subsec-general-inner-prod-10">The following properties flow fairly quickly from the definition of an inner product.</div>
+<article class="proposition theorem-like" id="prop-inner-product-properties"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.1.16</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="prop-inner-product-properties-1-1">
+<div class="para">Suppose that <span class="process-math">\(V\)</span> is an inner product space. Then the following statements are all true.</div>
+<ol class="decimal">
+<li id="prop-inner-product-properties-1-1-2-1"><div class="para" id="prop-inner-product-properties-1-1-2-1-1">For each <span class="process-math">\(\bfu, \bfv, \bfw \in V\text{,}\)</span> <span class="process-math">\(\lla \bfu, \bfv + \bfw \rra = \lla \bfu, \bfv \rra + \lla \bfu, \bfw \rra\text{.}\)</span>
+</div></li>
+<li id="prop-inner-product-properties-1-1-2-2"><div class="para" id="prop-inner-product-properties-1-1-2-2-1">For each <span class="process-math">\(\bfu, \bfv \in V\)</span> and each <span class="process-math">\(c \in \ff\text{,}\)</span> <span class="process-math">\(\lla \bfu, c\bfv \rra = \overline{c} \lla \bfu, \bfv \rra\text{.}\)</span>
+</div></li>
+<li id="prop-inner-product-properties-1-1-2-3"><div class="para" id="prop-inner-product-properties-1-1-2-3-1">For each <span class="process-math">\(\bfu \in V\text{,}\)</span> <span class="process-math">\(\lla \bfo, \bfu \rra = \lla \bfu, \bfo \rra = 0\text{.}\)</span>
+</div></li>
+<li id="prop-inner-product-properties-1-1-2-4"><div class="para" id="prop-inner-product-properties-1-1-2-4-1">If <span class="process-math">\(\bfu \in V\)</span> and <span class="process-math">\(\lla \bfu, \bfv \rra = 0\)</span> for every <span class="process-math">\(\bfv \in V\text{,}\)</span> then <span class="process-math">\(\bfu = \bfo\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="prop-inner-product-properties-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="prop-inner-product-properties-2-1">
+<div class="para">We will prove the second property and leave the others for the exercises. Using the first and third axioms from the definition of the inner product, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lla \bfu, c\bfv \rra = \overline{\lla c\bfv, \bfu \rra} = \overline{c\lla \bfv, \bfu \rra} = 
+\overline{c} \overline{\lla \bfv, \bfu \rra } = \overline{c} \lla \bfu, \bfv \rra\text{.}
+\end{equation*}
+</div>
+</div></article></details><div class="para" id="subsec-general-inner-prod-12">The presence of an inner product gives us a good way to define the length of a vector.</div>
+<article class="definition definition-like" id="def-norm"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.17</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-norm-1-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be an inner product space and let <span class="process-math">\(\bfv \in V\text{.}\)</span> Then the <dfn class="terminology">norm</dfn> of <span class="process-math">\(\bfv\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vnorm{\bfv} = \sqrt{\ip{\bfv, \bfv}}\text{.}
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(\vnorm{\bfv} = 1\text{,}\)</span> then <span class="process-math">\(\bfv\)</span> is called a <dfn class="terminology">unit vector</dfn>.</div>
+</div></article><div class="para" id="subsec-general-inner-prod-14">In the following examples we calculate the norm of a few vectors in different vector spaces.</div>
+<details id="subsec-general-inner-prod-15" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.18</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-general-inner-prod-15-1-1">
+<div class="para">We consider the following vector in <span class="process-math">\(\cc^3\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfv = \begin{bmatrix} 2 + 4i \\ -2 + 4i \\ 2i \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Using the standard inner product on <span class="process-math">\(\cc^3\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vnorm{\bfv} = \sqrt{(4+16) + (4+16) +4} = \sqrt{44}\text{.}
+\end{equation*}
+</div>
+</div></article></details><details id="subsec-general-inner-prod-16" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.19</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-general-inner-prod-16-1-1">
+<div class="para">Returning to the vector space <span class="process-math">\(C([0,1])\)</span> with the inner product defined in <a href="" class="xref" data-knowl="./knowl/xref/examp-ip-fn-space.html" title="Example 7.1.15">Example 7.1.15</a>, we can find the norm of <span class="process-math">\(f(x)=2+x\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-ip-fn-space.html">
+\begin{equation*}
+\int_0^1 (2+x)^2\; dx = \int_0^1 (4+4x+x^2)\; = \frac{19}{3}\text{.}
+\end{equation*}
+</div>
+<div class="para">This means that <span class="process-math">\(\vnorm{f} = \sqrt{\frac{19}{3}}\text{.}\)</span>
+</div>
+</div></article></details><div class="para logical" id="subsec-general-inner-prod-17">
+<div class="para">Using the definition of the norm, we can examine what happens to the “length” of a vector when it is multiplied by a scalar:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vnorm{c\bfv} = \sqrt{\ip{c\bfv, c\bfv}} = \sqrt{|c|^2\ip{\bfv, \bfv}} = |c| \vnorm{\bfv}\text{.}
+\end{equation*}
+</div>
+<div class="para">(Note that when <span class="process-math">\(\cc\)</span> is our field, <span class="process-math">\(|c|\)</span> for a scalar <span class="process-math">\(c = a + bi\)</span> is <span class="process-math">\(|c| = \sqrt{a^2+b^2}\text{.}\)</span>) From this calculation we can see that when a vector gets multiplied by a scalar, its length is multiplied by that same scalar, in a way. (We can make the most geometric sense of this when <span class="process-math">\(\rr\)</span> is our field and when <span class="process-math">\(c\)</span> is positive.)</div>
+</div>
+<details id="subsec-general-inner-prod-18" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.20</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="subsec-general-inner-prod-18-1-1">Often we will want a <em class="emphasis">unit vector</em> that points in the same direction as a given vector. We accomplish this by dividing a vector by its length in order to form a vector of length 1.</div> <div class="para logical" id="subsec-general-inner-prod-18-1-2">
+<div class="para">If we consider the vector <span class="process-math">\(\bfv = \begin{bmatrix} -1 \\ 4 \end{bmatrix}\)</span> in <span class="process-math">\(\rr^2\)</span> with the dot product, then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vnorm{\bfv} = \sqrt{1 + 16} = \sqrt{17}\text{.}
+\end{equation*}
+</div>
+<div class="para">Therefore, a unit vector in the direction of <span class="process-math">\(\bfv\)</span> would be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{\sqrt{17}} \bfv = \begin{bmatrix} -\frac{1}{\sqrt{17}} \\ \frac{4}{\sqrt{17}} \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></article></details></section><section class="subsection" id="subsec-orthogonality"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="space"> </span><span class="title">Orthogonality</span>
+</h3>
+<div class="para" id="subsec-orthogonality-2">In the same way that we used the dot product to define orthogonality in <span class="process-math">\(\rr^n\text{,}\)</span> we can now extend that definition to our more general setting.</div>
+<article class="definition definition-like" id="def-orthogonal-general"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.21</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-orthogonal-general-1-1">Two vectors <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> in an inner product space <span class="process-math">\(V\)</span> are <dfn class="terminology">orthogonal</dfn> if <span class="process-math">\(\ip{\bfu, \bfv} = 0\text{.}\)</span> A set of vectors <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n \}\)</span> is orthogonal if <span class="process-math">\(\ip{\bfv_i, \bfv_j} = 0\)</span> whenever <span class="process-math">\(i \neq j\text{.}\)</span>
+</div></article><div class="para" id="subsec-orthogonality-4">One of the ways that orthogonality is used is through the following result.</div>
+<article class="proposition theorem-like" id="prop-orthogonality-lin-ind"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.1.22</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-orthogonality-lin-ind-1-1">An orthogonal set of nonzero vectors in an inner product space <span class="process-math">\(V\)</span> is linearly independent.</div></article><details id="prop-orthogonality-lin-ind-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="prop-orthogonality-lin-ind-2-1">
+<div class="para">Let <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n\}\)</span> be an orthogonal set of vectors in <span class="process-math">\(V\text{.}\)</span> Suppose that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_1 \bfv_1 + \cdots + c_n\bfv_n = \bfo
+\end{equation*}
+</div>
+<div class="para">for some scalars <span class="process-math">\(c_1, \ldots, c_n \in \ff\text{.}\)</span> We want to show that all the scalars must be zero. Then, for each <span class="process-math">\(k\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 = \ip{\bfo, \bfv_k} = \ip{\sum_{i=1}^n c_i\bfv_i, \bfv_k} = \sum_{i=1}^n c_i \ip{\bfv_i, \bfv_k} = c_k \ip{\bfv_k, \bfv_k} = c_k \vnorm{\bfv_k}^2\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(c_k \vnorm{\bfv_k}^2 = 0\)</span> but <span class="process-math">\(\bfv_k \neq \bfo\text{,}\)</span> we know that <span class="process-math">\(\vnorm{\bfv_k}^2 \neq 0\text{,}\)</span> so <span class="process-math">\(c_k = 0\text{.}\)</span> This is true for each <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(1 \le k \le n\text{,}\)</span> so <span class="process-math">\(V'\)</span> is linearly independent.</div>
+</div></article></details><div class="para" id="subsec-orthogonality-6">The next result is sometimes referred to as the Pythagorean Theorem for general inner product spaces. When there are only two orthogonal vectors, the reader will recognize the reference to the Pythagorean Theorem.</div>
+<article class="theorem theorem-like" id="thm-pythag-inner-prods"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.23</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="thm-pythag-inner-prods-1-1">
+<div class="para">If <span class="process-math">\(\{ \bfv_1, \ldots, \bfv_n \}\)</span> is an orthogonal set of vectors in an inner product space <span class="process-math">\(V\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vnorm{\bfv_1 + \cdots + \bfv_n}^2 = \vnorm{\bfv_1}^2 + \cdots + \vnorm{\bfv_n}^2\text{.}
+\end{equation*}
+</div>
+</div></article></section><section class="subsection" id="subsec-results-inner-products"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="space"> </span><span class="title">Results for Inner Product Spaces</span>
+</h3>
+<div class="para" id="subsec-results-inner-products-2">The property of orthogonality is so powerful that we will occasionally want to call upon it even when it is not already on the scene.</div>
+<article class="lemma theorem-like" id="lem-pair-orthog"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.1.24</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="lem-pair-orthog-1-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be an inner product space and let <span class="process-math">\(\bfu, \bfv \in V\text{.}\)</span> Then <span class="process-math">\(\bfu\)</span> can be written as</div>
+<div class="displaymath process-math" id="eqn-pair-orthog">
+\begin{equation}
+\bfu = c\bfv + \bfw\text{,}\tag{7.1}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(c \in \ff\)</span> and <span class="process-math">\(\bfw\)</span> is orthogonal to <span class="process-math">\(\bfv\text{.}\)</span> Specifically, if <span class="process-math">\(\bfv \neq \bfo\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c = \frac{\ip{\bfu, \bfv}}{\vnorm{\bfv}^2}, \hspace{6pt} \text{and} \hspace{6pt} 
+\bfw = \bfu - \frac{\ip{\bfu, \bfv}}{\vnorm{\bfv}^2}\bfv\text{.}
+\end{equation*}
+</div>
+</div></article><details id="lem-pair-orthog-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-pair-orthog-2-1">If <span class="process-math">\(\bfv = \bfo\text{,}\)</span> then we can take <span class="process-math">\(\bfw = \bfu\)</span> and <span class="process-math">\(c = 1\text{,}\)</span> as every vector is orthogonal to <span class="process-math">\(\bfo\text{.}\)</span> So, we now suppose that <span class="process-math">\(\bfv \neq \bfo\text{.}\)</span>
+</div> <div class="para logical" id="lem-pair-orthog-2-2">
+<div class="para">If there exists <span class="process-math">\(c \in \ff\)</span> such that <span class="process-math">\(\bfu = c\bfv + \bfw\)</span> with <span class="process-math">\(\bfw\)</span> orthogonal to <span class="process-math">\(\bfv\text{,}\)</span> then we must have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{\bfu, \bfv} = \ip{c\bfv + \bfw, \bfv} = c\ip{\bfv,\bfv} + \ip{\bfw, \bfv} = c \vnorm{\bfv^2}\text{.}
+\end{equation*}
+</div>
+<div class="para">This shows that the only possibility for <span class="process-math">\(c\)</span> is <span class="process-math">\(c = \frac{\ip{\bfu, \bfv}}{\vnorm{\bfv}^2}\text{.}\)</span>
+</div>
+</div> <div class="para" id="lem-pair-orthog-2-3">Once <span class="process-math">\(c\)</span> has been determined, then the choice of <span class="process-math">\(\bfw\)</span> is determined by <a href="" class="xref" data-knowl="./knowl/xref/eqn-pair-orthog.html" title="Equation 7.1">(7.1)</a>—we must have <span class="process-math">\(\bfw = \bfu - c\bfv\text{.}\)</span> Now it is easy to check that, with these values, we indeed have <span class="process-math">\(\ip{\bfv,\bfw}=0\)</span> and that <a href="" class="xref" data-knowl="./knowl/xref/eqn-pair-orthog.html" title="Equation 7.1">(7.1)</a> holds.</div></article></details><details id="subsec-results-inner-products-4" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.25</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-results-inner-products-4-1-1">
+<div class="para">We consider two vectors in <span class="process-math">\(\rr^2\)</span> to understand the relationship in this lemma:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}, \hspace{12pt} 
+\bfv = \begin{bmatrix} -1 \\ 2 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The lemma specifies our calculations:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c = \frac{\ip{\bfu,\bfv}}{\vnorm{\bfv}^2} = \frac{4}{5}, \hspace{6pt} 
+\bfw = \bfu - c\bfv = \begin{bmatrix} \frac{14}{5} \\ \frac{7}{5} \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The reader can check that <span class="process-math">\(\ip{\bfv,\bfw}=0\)</span> and that <span class="process-math">\(\bfu = c\bfv + \bfw\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="subsec-results-inner-products-5">There are two famous results which involve the norm in an inner product space. We present them without proof.</div>
+<article class="theorem theorem-like" id="thm-cauchy-schwarz"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.26</span><span class="period">.</span><span class="space"> </span><span class="title">The Cauchy-Schwarz Inequality.</span>
+</h4>
+<div class="para logical" id="thm-cauchy-schwarz-2-1">
+<div class="para">For every pair of vectors <span class="process-math">\(\bfu, \bfv\)</span> in an inner product space <span class="process-math">\(V\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\ip{\bfu,\bfv}| \le \vnorm{\bfu}\vnorm{\bfv}\text{,}
+\end{equation*}
+</div>
+<div class="para">with equality holding if and only if one vector is a scalar multiple of the other.</div>
+</div></article><article class="theorem theorem-like" id="thm-triangle-ineq"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.27</span><span class="period">.</span><span class="space"> </span><span class="title">The Triangle Inequality.</span>
+</h4>
+<div class="para logical" id="thm-triangle-ineq-2-1">
+<div class="para">For every pair of vectors <span class="process-math">\(\bfu, \bfv\)</span> in an inner product space <span class="process-math">\(V\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vnorm{\bfu + \bfv} \le \vnorm{\bfu} + \vnorm{\bfv}\text{.}
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-results-inner-products-8">We end this section with one final example of an inner product space.</div>
+<details id="examp-alt-ip-r2" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.28</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="examp-alt-ip-r2-1-1">
+<div class="para">We consider the vector space <span class="process-math">\(\rr^2\)</span> with a modified inner product:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{\bfu,\bfv} = 2u_1v_1 + u_2v_2\text{.}
+\end{equation*}
+</div>
+<div class="para">The only change from the dot product in <span class="process-math">\(\rr^2\)</span> is the coefficient 2 on the first term. It is not difficult to verify that this is an inner product.</div>
+</div> <div class="para" id="examp-alt-ip-r2-1-2">Since an inner product provides a way to measure distance and length (as well as angles), it is instructive to consider how this inner product changes our experience of <span class="process-math">\(\rr^2\text{.}\)</span> Just to take one example, if we think of the “unit circle” as the collection of all unit vectors in <span class="process-math">\(\rr^2\text{,}\)</span> then using this inner product we no longer have a circle but an ellipse. The radii of this ellipse would be <span class="process-math">\(\frac{1}{\sqrt{2}}\)</span> horizontally and 1 vertically.</div></article></details></section><section class="reading-questions" id="sec-inner-products-7"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="space"> </span><span class="title">Reading Questions</span>
+</h3>
+<article class="exercise exercise-like" id="sec-inner-products-7-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-7-1-1-1">
+<div class="para">Consider <a href="" class="xref" data-knowl="./knowl/xref/examp-alt-ip-r2.html" title="Example 7.1.28">Example 7.1.28</a> and the inner product on <span class="process-math">\(\rr^2\)</span> defined there.</div>
+<ol class="lower-alpha">
+<li id="sec-inner-products-7-1-1-1-3-1"><div class="para" id="sec-inner-products-7-1-1-1-3-1-1">If <span class="process-math">\(\bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}\text{,}\)</span> calculate <span class="process-math">\(\vnorm{\bfu}\text{.}\)</span>
+</div></li>
+<li id="sec-inner-products-7-1-1-1-3-2"><div class="para" id="sec-inner-products-7-1-1-1-3-2-1">Describe all of the vectors in <span class="process-math">\(\rr^2\)</span> which are orthogonal to <span class="process-math">\(\bfu\)</span> using this inner product. All of these vectors fall on a line through the origin—what is that line?</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-inner-products-7-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-7-2-1-1">
+<div class="para">Consider the following function on <span class="process-math">\(P_1\text{.}\)</span> For polynomials <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{,}\)</span> define <span class="process-math">\(\ip{p,q}\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{p,q} = p(0)q(0) - p(1)q(1)\text{.}
+\end{equation*}
+</div>
+<div class="para">Explain why this function is not an inner product on <span class="process-math">\(P_1\text{.}\)</span> (You must show why one of the inner product axioms fails, and to do this you should use an example.)</div>
+</div> </article></section><section class="exercises" id="sec-inner-products-8"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="sec-inner-products-8-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-8-1-1-1">
+<div class="para">Consider the following inner product on <span class="process-math">\(P_2\text{.}\)</span> For <span class="process-math">\(p, q \in P_2\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{p,q} = p(-1)q(-1) + p(0)q(0) + p(1)q(1)\text{.}
+\end{equation*}
+</div>
+<div class="para">(You do not need to prove that this is an inner product.)</div>
+<ol class="lower-alpha">
+<li id="sec-inner-products-8-1-1-1-4-1"><div class="para" id="sec-inner-products-8-1-1-1-4-1-1">Calculate <span class="process-math">\(\ip{p,q}\)</span> where <span class="process-math">\(p = 3-t\)</span> and <span class="process-math">\(q = 2+2t^2\text{.}\)</span>
+</div></li>
+<li id="sec-inner-products-8-1-1-1-4-2"><div class="para" id="sec-inner-products-8-1-1-1-4-2-1">Find a nonzero vector <span class="process-math">\(r \in P_2\)</span> which is orthogonal to the vector <span class="process-math">\(p\)</span> from part (a).</div></li>
+<li id="sec-inner-products-8-1-1-1-4-3"><div class="para" id="sec-inner-products-8-1-1-1-4-3-1">Calculate <span class="process-math">\(\vnorm{p}\)</span> and <span class="process-math">\(\vnorm{q}\)</span> for <span class="process-math">\(p,q\)</span> from part (a).</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-inner-products-8-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-8-2-1-1">
+<div class="para">Use <a href="" class="xref" data-knowl="./knowl/xref/prop-orthogonality-lin-ind.html" title="Proposition 7.1.22">Proposition 7.1.22</a> to prove that the following set of vectors in <span class="process-math">\(\cc^3\)</span> is linearly independent: <span class="process-math">\(\{\bfv_1, \bfv_2, \bfv_3 \}\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-orthogonality-lin-ind.html">
+\begin{equation*}
+\bfv_1 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}, \hspace{6pt} 
+\bfv_2 = \begin{bmatrix} 1+2i \\ -3+i \\ 2-3i \end{bmatrix}, \hspace{6pt} 
+\bfv_3 = \begin{bmatrix} 21-16i \\ -21-i \\ 17i \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="sec-inner-products-8-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-8-3-1-1">
+<div class="para">Consider the following inner product on <span class="process-math">\(\rr^2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{\bfu,\bfv} = u_1v_1 + 3u_2v_2\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="sec-inner-products-8-3-1-1-3-1"><div class="para" id="sec-inner-products-8-3-1-1-3-1-1">Give an example of two vectors in <span class="process-math">\(\rr^2\)</span> which are orthogonal with respect to the dot product but which are not orthogonal with respect to this inner product.</div></li>
+<li id="sec-inner-products-8-3-1-1-3-2"><div class="para" id="sec-inner-products-8-3-1-1-3-2-1">Give an example of two vectors in <span class="process-math">\(\rr^2\)</span> which are orthogonal with respect to this inner product but which are not orthogonal with respect to the dot product.</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-inner-products-8-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-8-4-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be the following matrix over <span class="process-math">\(\rr\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 1 \amp 1 \\ 3 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Define a function on <span class="process-math">\(\rr^2\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{\bfu, \bfv} = (A\bfu) \cdot (A\bfv)\text{,}
+\end{equation*}
+</div>
+<div class="para">where the right side of the equals sign uses the standard dot product in <span class="process-math">\(\rr^2\text{.}\)</span> Prove that this function is an inner product.</div>
+</div></article><article class="exercise exercise-like" id="sec-inner-products-8-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-8-5-1-1">
+<div class="para">Define the following function on <span class="process-math">\(M_2(\rr)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{A,B} = \tr(A^TB)\text{.}
+\end{equation*}
+</div>
+<div class="para">Prove that this is an inner product.</div>
+</div></article><article class="exercise exercise-like" id="sec-inner-products-8-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-8-6-1-1">
+<div class="para">Consider the following function defined on <span class="process-math">\(P_2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{p,q} = p(-1)q(-1) + p(2)q(2)\text{.}
+\end{equation*}
+</div>
+<div class="para">Prove that this function is not an inner product.</div>
+</div></article><article class="exercise exercise-like" id="sec-inner-products-8-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-8-7-1-1">
+<div class="para">Consider the following function defined on <span class="process-math">\(\rr^2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{\bfu,\bfv} = u_1v_2 + u_2v_1\text{.}
+\end{equation*}
+</div>
+<div class="para">Prove or disprove: this function is an inner product.</div>
+</div></article><article class="exercise exercise-like" id="sec-inner-products-8-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-8-8-1-1">
+<div class="para">Consider the following function defined on <span class="process-math">\(M_2(\rr)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{A,B} = \det(A) \cdot \det(B)\text{.}
+\end{equation*}
+</div>
+<div class="para">Prove that this function is not an inner product.</div>
+</div></article><article class="exercise exercise-like" id="sec-inner-products-8-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="sec-inner-products-8-9-1-1">Prove that the standard inner product on <span class="process-math">\(\cc^n\text{,}\)</span> defined in <a href="" class="xref" data-knowl="./knowl/xref/examp-std-ip-cn.html" title="Example 7.1.14">Example 7.1.14</a>, is an inner product.</div></article><article class="exercise exercise-like" id="sec-inner-products-8-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="sec-inner-products-8-10-1-1">Prove that the inner product defined in <a href="" class="xref" data-knowl="./knowl/xref/examp-ip-fn-space.html" title="Example 7.1.15">Example 7.1.15</a> is an inner product.</div></article><article class="exercise exercise-like" id="sec-inner-products-8-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-inner-products-8-11-1-1">
+<div class="para">Suppose that <span class="process-math">\(V\)</span> is a vector space, <span class="process-math">\(W\)</span> is an inner product space, and that <span class="process-math">\(T \in L(V,W)\)</span> is injective. For <span class="process-math">\(\bfv_1, \bfv_2 \in V\text{,}\)</span> define <span class="process-math">\(\ip{\bfv_1,\bfv_2}_T\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{\bfv_1,\bfv_2}_T = \ip{T(\bfv_1),T(\bfv_2)}\text{,}
+\end{equation*}
+</div>
+<div class="para">where the right-hand side is the inner product on <span class="process-math">\(W\text{.}\)</span> Prove that this defines an inner product on <span class="process-math">\(V\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="sec-inner-products-8-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="sec-inner-products-8-12-1-1">Prove properties 1, 3, and 4 of <a href="" class="xref" data-knowl="./knowl/xref/prop-inner-product-properties.html" title="Proposition 7.1.16">Proposition 7.1.16</a>.</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-7.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-orthonormal-bases.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

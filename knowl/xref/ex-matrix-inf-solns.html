@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Consider the following matrix as the augmented matrix of a linear system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{@{}ccc|c@{}}
+1 \amp 0 \amp -3 \amp 5 \\
+0 \amp 1 \amp 2 \amp 7 \\
+0 \amp 0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">(Again, the reader should verify that this matrix is in reduced row-echelon form.)</div>
+</div> <div class="para">The final row of this matrix corresponds to the equation <span class="process-math">\(0=0\text{.}\)</span> Since this equation is true all the time, for all values of the involved variables, we won’t consider it any longer as it places no further restrictions on the solutions.</div> <div class="para logical">
+<div class="para">The first two rows of <span class="process-math">\(A\)</span> correspond to the following two linear equations:</div>
+<div class="displaymath process-math">
+\begin{align*}
+x_1 - 3x_3 \amp =5\\
+x_2 + 2x_3 \amp =7\text{.}
+\end{align*}
+</div>
+</div> <div class="para">From <a href="" class="xref" data-knowl="./knowl/xref/def-free-vars.html" title="Definition 1.3.1">Definition 1.3.1</a>, we see that in this system <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> are basic variables and <span class="process-math">\(x_3\)</span> is a free variable. What does that mean for the solutions of this system? We call <span class="process-math">\(x_3\)</span> “free” because any element of <span class="process-math">\(\rr\)</span> that we put into <span class="process-math">\(x_3\)</span> will produce a solution for this system. The variable <span class="process-math">\(x_3\)</span> is “free” to take on any value, and then the values of the basic variables <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> are determined by that value and the linear equations.</div> <div class="para">For example, in this system of equations, if <span class="process-math">\(x_3=2\text{,}\)</span> then <span class="process-math">\(x_1=11\)</span> and <span class="process-math">\(x_2=3\text{,}\)</span> giving <span class="process-math">\((11,3,2)\)</span> as a solution to the linear system. If <span class="process-math">\(x_3=-1\text{,}\)</span> then <span class="process-math">\(x_1=2\)</span> and <span class="process-math">\(x_2=9\text{,}\)</span> giving <span class="process-math">\((2,9,-1)\)</span> as a solution to the system. Since <span class="process-math">\(x_3\)</span> can take on any value in <span class="process-math">\(\rr\text{,}\)</span> and since we have a solution to the system for each value of <span class="process-math">\(x_3\text{,}\)</span> this means we have a solution to the system for each element of <span class="process-math">\(\rr\text{.}\)</span> We conclude that there are an infinite number of solutions to this system.</div> <div class="para logical">
+<div class="para">The solutions to this linear system can be written in a number of ways. We will prefer the following form:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{array}{l}
+x_1 = 5 + 3x_3 \\
+x_2 = 7-2x_3 \\
+x_3 \text{ is free.}
+\end{array} \right.
+\end{equation*}
+</div>
+<div class="para">This is called a <dfn class="terminology">parametric description</dfn> of the solution set. Sometimes solutions like this are written with the letter <span class="process-math">\(t\)</span> or <span class="process-math">\(s\)</span> in place of <span class="process-math">\(x_3\)</span> to better match the usage of the word “parameter” elsewhere. We will follow the convention of using the free variables as parameters in our solutions.</div>
+</div></article><span class="incontext"><a class="internal" href="sec-results.html#ex-matrix-inf-solns">in-context</a></span>
+</body>
+</html>

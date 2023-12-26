@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">The Linear Dependence Lemma.</span>
+</h3>
+<div class="para">Suppose <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n\}\)</span> is a linearly dependent set in a vector space <span class="process-math">\(V\)</span> and that <span class="process-math">\(\bfv_1 \neq \bfo\text{.}\)</span> Then there exists <span class="process-math">\(j \in \{2, \ldots, n\}\)</span> such that <span class="process-math">\(\bfv_j \in \spn\{\bfv_1, \ldots, \bfv_{j-1}\}\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">Let <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n\}\)</span> be a linearly dependent set of vectors in a vector space <span class="process-math">\(V\text{,}\)</span> and suppose that <span class="process-math">\(\bfv_1 \neq \bfo\text{.}\)</span> Then there exist scalars <span class="process-math">\(c_1, \ldots, c_n\text{,}\)</span> not all of which are zero, such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfo = c_1\bfv_1 + \cdots + c_n\bfv_n \text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(k\)</span> be the largest index such that <span class="process-math">\(c_k \neq 0\text{.}\)</span> It must be that <span class="process-math">\(k \ge 2\)</span> since we assumed <span class="process-math">\(\bfv_1 \neq \bfo\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_k\bfv_k = -c_1\bfv_1 - \cdots - c_{k-1}\bfv_{k-1}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(c_k \neq 0\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfv_k = \left(-\frac{c_1}{c_k}\right)\bfv_1 + \cdots + \left(-\frac{c_{k-1}}{c_k}\right)\bfv_{k-1}\text{.}
+\end{equation*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\bfv_k \in \spn\{\bfv_1, \ldots, \bfv_{k-1} \}\)</span> and completes the proof.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-lin-ind.html#thm-lin-dep-lemma">in-context</a></span>
+</body>
+</html>

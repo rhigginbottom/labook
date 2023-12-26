@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.9</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">We consider the following matrix <span class="process-math">\(A\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+4.5 \amp -2.5 \amp -2.5 \\ 
+2.5 \amp -0.5 \amp -2.5 \\ 
+5 \amp -5 \amp -3
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(T \in L(\rr^3)\)</span> be multiplication by <span class="process-math">\(A\text{.}\)</span> If we know that <span class="process-math">\(\lambda = 2\)</span> is an eigenvalue for <span class="process-math">\(A\text{,}\)</span> we can calculate a basis for <span class="process-math">\(\mathrm{eig}_2(T)\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">We need to form the matrix <span class="process-math">\(A - 2I\)</span> and then find the RREF:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A-2I = \begin{bmatrix}
+2.5 \amp -2.5 \amp -2.5 \\ 
+2.5 \amp -2.5 \amp -2.5 \\ 
+5 \amp -5 \amp -5
+\end{bmatrix} \sim \begin{bmatrix}
+1 \amp -1 \amp -1 \\ 
+0 \amp 0 \amp 0 \\ 
+0 \amp 0 \amp 0
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The presence of free variables here confirms that <span class="process-math">\(2\)</span> is an eigenvalue of <span class="process-math">\(A\text{.}\)</span> If <span class="process-math">\(\bfx \in \nll(A-2I)\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfx = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
+= \begin{bmatrix} x_2 + x_3 \\ x_2 \\ x_3 \end{bmatrix}
+= x_2 \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} + x_3 \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">From this calculation we can see that <span class="process-math">\(\mathrm{eig}_2(T)\)</span> is two-dimensional, with basis <span class="process-math">\(\mcb = \{\bfv_1, \bfv_2 \}\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfv_1 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \hspace{12pt}
+\bfv_2 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec-eigenvalues.html#examp-evalues1">in-context</a></span>
+</body>
+</html>

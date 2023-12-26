@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(A \in M_{m,n}(\ff)\text{,}\)</span> then there exists <span class="process-math">\(B \in M_{m,n}(\ff)\)</span> in RREF and elementary matrices <span class="process-math">\(E_1,\ldots,E_k \in M_m(\ff)\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = E_1\cdots E_kB\text{.}
+\end{equation*}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">Since each matrix can be reduced to a matrix in RREF, and since elementary row operations are accomplished by multiplying by elementary matrices, there exist elementary matrices <span class="process-math">\(D_1, \ldots, D_k \in M_m(\ff)\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-inverse-product.html">
+\begin{equation*}
+B = D_k\cdots D_1A\text{.}
+\end{equation*}
+</div>
+<div class="para">Since elementary matrices are invertible, by repeated application of <a href="" class="xref" data-knowl="./knowl/xref/prop-matrix-inverse-product.html" title="Proposition 3.2.14">Proposition 3.2.14</a> we see that <span class="process-math">\(D_k\cdots D_1\)</span> is invertible and <span class="process-math">\((D_k\cdots D_1)^{-1} = D_1^{-1}\cdots D_k^{-1}\text{.}\)</span> Then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-inverse-product.html">
+\begin{align*}
+B \amp = (D_k\cdots D_1)A\\
+(D_k\cdots D_1)^{-1}B \amp = (D_k\cdots D_1)^{-1}(D_k\cdots D_1)A \\
+D_1^{-1}\cdots D_k^{-1}B \amp = A \text{.}
+\end{align*}
+</div>
+<div class="para">We note that each <span class="process-math">\(D_i^{-1}\)</span> is an elementary matrix, and if we define <span class="process-math">\(E_i = D_i^{-1}\)</span> for each <span class="process-math">\(i=1,\ldots,k\text{,}\)</span> we have our result.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-inverting-matrix.html#prop-el-matrices-rref">in-context</a></span>
+</body>
+</html>

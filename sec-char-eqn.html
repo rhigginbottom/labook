@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Characteristic Equation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra">
+<meta property="book:author" content="Ryan Higginbottom">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">A work in progress</span></a></h1>
+<p class="byline">Ryan Higginbottom</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-eigenvalues.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-sixth.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-diagonalization.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+\newcommand{\zz}{\mathbb Z}
+\newcommand{\qq}{\mathbb Q}
+\newcommand{\rr}{\mathbb R}
+\newcommand{\cc}{\mathbb C}
+\newcommand{\ff}{\mathbb{F}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bfo}{\mathbf{0}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\mcb}{\mathcal{B}}
+\newcommand{\mcc}{\mathcal{C}}
+\newcommand{\mce}{\mathcal{E}}
+\newcommand{\spn}{\mathrm{Span}}
+\newcommand{\kerr}{\mathrm{ker}}
+\newcommand{\nll}{\mathrm{null}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\col}{\mathrm{col}}
+\newcommand{\row}{\mathrm{row}}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\lla}{\left\langle}
+\newcommand{\rra}{\right\rangle}
+\newcommand{\ip}[1]{\lla #1 \rra}
+\newcommand{\vnorm}[1]{\left|\hspace{-1.2pt}\left| #1 \right|\hspace{-1.2pt}\right|}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-first.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-systems.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-intro-systems.html#rqs-lin-systems" class="internal"><span class="codenumber">1.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-intro-systems.html#sec-intro-systems-20" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-29" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-results.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Results</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-results.html#sec-results-31" class="internal"><span class="codenumber">1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-results.html#sec-results-32" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vectors.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors.html#subsec-vector-basics" class="internal"><span class="codenumber">1.4.1</span> <span class="title">The Basics of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors.html#subsec-geometry-vectors" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Vectors and Geometry</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vectors.html#sec-vectors-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vectors.html#sec-vectors-6" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-second.html" class="internal"><span class="codenumber">2</span> <span class="title">Fields and Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-fields.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Fields</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-19" class="internal"><span class="codenumber">2.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-20" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-systems-fields.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Solving Linear Systems Over Fields</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-13" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-14" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vector-spaces.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vector-spaces.html#sec-vector-spaces-17" class="internal"><span class="codenumber">2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vector-spaces.html#exercises-2-3" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Subspaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-subspaces.html#sec-subspaces-20" class="internal"><span class="codenumber">2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-subspaces.html#sec-subspaces-21" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-third.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-trans.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-lin-trans" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Introduction to Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-lin-trans-matrices" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Linear Transformations and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-props-linear-trans" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Properties of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-matrix-vector-form-lin-system" class="internal"><span class="codenumber">3.1.4</span> <span class="title">The Matrix-Vector Form of a Linear System</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-8" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-linear-trans.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Matrix of a Linear Transformation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-construct-matrix-lin-trans" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Constructing the Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-matrix-mult" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Composition and Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-linear-trans-invertible" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Invertible Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-matrix-transpose" class="internal"><span class="codenumber">3.2.4</span> <span class="title">The Transpose of a Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#sec-matrix-linear-trans-7" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#sec-matrix-linear-trans-8" class="internal"><span class="codenumber">3.2.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inverting-matrix.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Inverting a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverting-matrix.html#subsec-elementary-matrices" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverting-matrix.html#subsec-finding-inverses" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Finding the Inverse of a Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-inverting-matrix.html#sec-inverting-matrix-5" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-inverting-matrix.html#sec-inverting-matrix-6" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces-lt.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Subspaces and Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces-lt.html#subsec-kernel" class="internal"><span class="codenumber">3.4.1</span> <span class="title">The Kernel of a Linear Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces-lt.html#subsec-range" class="internal"><span class="codenumber">3.4.2</span> <span class="title">The Range as a Subspace</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-subspaces-lt.html#sec-subspaces-lt-5" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-subspaces-lt.html#sec-subspaces-lt-6" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dets.html" class="internal"><span class="codenumber">4</span> <span class="title">Determinants</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-define-det.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Defining the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-define-det.html#initial-defn-det" class="internal"><span class="codenumber">4.1.1</span> <span class="title">The Definition of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-define-det.html#subsec-det-alternative" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Additional Ways to Calculate the Determinant</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-define-det.html#sec-define-det-5" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-define-det.html#sec-define-det-6" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-det-properties.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Properties of the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#det-elem-row-ops" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Determinant and Elementary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#subsec-det-main-results" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Invertibility and the Determinant</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dimension.html" class="internal"><span class="codenumber">5</span> <span class="title">The Dimension of a Vector Space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-lin-ind.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Linear Independence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-lin-ind.html#sec-lin-ind-35" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-lin-ind.html#sec-lin-ind-36" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Basis of a Vector Space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis.html#subsec-intro-basis" class="internal"><span class="codenumber">5.2.1</span> <span class="title">The Definition of a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis.html#subsec-basis-props" class="internal"><span class="codenumber">5.2.2</span> <span class="title">The Properties of a Basis</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-basis.html#sec-basis-5" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-basis.html#sec-basis-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-dimension.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dimension.html#subsec-dimension" class="internal"><span class="codenumber">5.3.1</span> <span class="title">The Dimension of a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dimension.html#subsec-dim-subspace" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Dimension and Subspaces</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-dimension.html#sec-dimension-5" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-dimension.html#sec-dimension-6" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-rank.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Rank and Nullity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-rank.html#subsec-define-rank-nullity" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Defining Rank and Nullity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-rank.html#subsec-rank-thm" class="internal"><span class="codenumber">5.4.2</span> <span class="title">The Rank-Nullity Theorem</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-rank.html#sec-rank-5" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-rank.html#sec-rank-6" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-coordinates.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Coordinates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coord-vectors" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Coordinates of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coordinates-matrices" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Coordinates and Linear Transformations</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-coordinates.html#sec-coordinates-5" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-coordinates.html#sec-coordinates-6" class="internal"><span class="codenumber">5.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-change-of-basis.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Change of Basis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-change-of-basis.html#subsec-change-basis-matrix" class="internal"><span class="codenumber">5.6.1</span> <span class="title">The Change-of-Basis Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-change-of-basis.html#sec-change-of-basis-4" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-change-of-basis.html#sec-change-of-basis-5" class="internal"><span class="codenumber">5.6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-sixth.html" class="internal"><span class="codenumber">6</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-eigenvalues.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-eigenvalues" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Defining Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-results-eigenvectors" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Results About Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-eigenvalues.html#sec-eigenvalues-5" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-eigenvalues.html#sec-eigenvalues-6" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-char-eqn.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Characteristic Equation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-char-eqn.html#subsec-char-eqn" class="internal"><span class="codenumber">6.2.1</span> <span class="title">How to Find Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-char-eqn.html#subsec-similarity" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Similarity</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-char-eqn.html#sec-char-eqn-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-char-eqn.html#sec-char-eqn-6" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diagonalization.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Diagonalization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-diag" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Diagonalizable Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-how-to-diagonalize" class="internal"><span class="codenumber">6.3.2</span> <span class="title">How to Diagonalize a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-diag-linear-transf" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Linear Transformations and Diagonalizability</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-diagonalization.html#sec-diagonalization-6" class="internal"><span class="codenumber">6.3.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-diagonalization.html#sec-diagonalization-7" class="internal"><span class="codenumber">6.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-invariants.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Invariants</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invariants.html#subsec-intro-invariants" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Introduction to Invariants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invariants.html#subsec-inv-rank-trace" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Rank and Trace as Invariants</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-invariants.html#sec-invariants-5" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-invariants.html#sec-invariants-6" class="internal"><span class="codenumber">6.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-7.html" class="internal"><span class="codenumber">7</span> <span class="title">Inner Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inner-products.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Inner Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-dot-product" class="internal"><span class="codenumber">7.1.1</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-general-inner-prod" class="internal"><span class="codenumber">7.1.2</span> <span class="title">The Inner Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-orthogonality" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Orthogonality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-results-inner-products" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Results for Inner Product Spaces</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-inner-products.html#sec-inner-products-7" class="internal"><span class="codenumber">7.1.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-inner-products.html#sec-inner-products-8" class="internal"><span class="codenumber">7.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orthonormal-bases.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Orthonormal Bases</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-orthonormality" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Orthonormality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-orthonormal-coordinates" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Coordinates in Orthonormal Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-gram-schmidt" class="internal"><span class="codenumber">7.2.3</span> <span class="title">The Gram-Schmidt Process</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#sec-orthonormal-bases-6" class="internal"><span class="codenumber">7.2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#sec-orthonormal-bases-7" class="internal"><span class="codenumber">7.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orthogonal-projections.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonal Projections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-orthog-complements" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-orthog-proj" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Orthogonal Projections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-least-squares" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Least Squares Approximation</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#sec-orthogonal-projections-6" class="internal"><span class="codenumber">7.3.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#sec-orthogonal-projections-7" class="internal"><span class="codenumber">7.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="apdx-mod-arith.html" class="internal"><span class="codenumber">A</span> <span class="title">The Integers Modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="apdx-isomorphisms.html" class="internal"><span class="codenumber">B</span> <span class="title">Isomorphisms</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-char-eqn"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">6.2</span><span class="space"> </span><span class="title">The Characteristic Equation</span>
+</h2>
+<section class="introduction" id="sec-char-eqn-2"><div class="para" id="sec-char-eqn-2-1">In the previous section we were able to check whether or not a given vector (scalar) was an eigenvector (eigenvalue) for a matrix <span class="process-math">\(A\text{.}\)</span> What was missing was a process for finding the eigenvalues and eigenvectors for a matrix from scratch. This section will outline such a process. (Once we find the eigenvalues, we can use the method of <a href="sec-eigenvalues.html" class="internal" title="Section 6.1: Eigenvalues and Eigenvectors">Section 6.1</a> to find bases for the eigenspaces.)</div></section><section class="subsection" id="subsec-char-eqn"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="space"> </span><span class="title">How to Find Eigenvalues</span>
+</h3>
+<div class="para" id="subsec-char-eqn-2">We recall from <a href="sec-eigenvalues.html" class="internal" title="Section 6.1: Eigenvalues and Eigenvectors">Section 6.1</a> that a scalar <span class="process-math">\(\lambda \in \ff\)</span> is an eigenvalue for a matrix <span class="process-math">\(A \in M_n(\ff)\)</span> if there is a nontrivial solution to the equation <span class="process-math">\((A- \lambda I)\bfx = \bfo\text{.}\)</span> Since this happens precisely when <span class="process-math">\(A - \lambda I\)</span> is <em class="emphasis">not</em> invertible, by <a href="" class="xref" data-knowl="./knowl/xref/thm-ivt.html" title="Theorem 5.4.13: The Invertible Matrix Theorem">Theorem 5.4.13</a> we can use the determinant to find the eigenvalues for <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="para" id="subsec-char-eqn-3">Specifically, <span class="process-math">\(\lambda\)</span> is an eigenvalue for <span class="process-math">\(A\)</span> if and only if <span class="process-math">\(\det(A - \lambda I) = 0\text{.}\)</span> If we introduce <span class="process-math">\(\lambda\)</span> as a variable, we can begin the process of finding the eigenvalues for square matrices. We will illustrate this method in the following example before making all of the steps explicit (with the appropriate notation and terminology).</div>
+<details id="subsec-char-eqn-4" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-char-eqn-4-1-1">
+<div class="para">Let <span class="process-math">\(A \in M_2(\rr)\)</span> be the following matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 2 \amp -2 \\ 2 \amp 7 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">A scalar <span class="process-math">\(\lambda\)</span> is an eigenvalue for <span class="process-math">\(A\)</span> if and only if <span class="process-math">\(\det(A - \lambda I) = 0\text{.}\)</span> Since <span class="process-math">\(A - \lambda I\)</span> is <span class="process-math">\(2\times 2\text{,}\)</span> we can find the determinant with ease:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det (A - \lambda I) = \begin{vmatrix} 2-\lambda \amp -2 \\ 2 \amp 7-\lambda \end{vmatrix} = (2-\lambda)(7-\lambda) + 4\text{.}
+\end{equation*}
+</div>
+<div class="para">With some algebra, we can see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(A - \lambda I) = \lambda^2 - 9\lambda + 18 = (\lambda - 6)(\lambda - 3)\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\lambda\)</span> is an eigenvalue when <span class="process-math">\(\det(A - \lambda I)=0\text{,}\)</span> we see that the eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda = 6\)</span> and <span class="process-math">\(\lambda = 3\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="subsec-char-eqn-4-1-2">
+<div class="para">Let’s verify this method by showing that <span class="process-math">\(\lambda=6\)</span> and <span class="process-math">\(\lambda=3\)</span> are eigenvalues for <span class="process-math">\(A\)</span> and finding bases for their eigenspaces. First, if <span class="process-math">\(\lambda = 6\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A - 6 I = \begin{bmatrix} -4 \amp -2 \\ 2 \amp 1 \end{bmatrix} \sim 
+\begin{bmatrix} 1 \amp \frac{1}{2} \\ 0 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">From this we see that <span class="process-math">\(\mathrm{eig}_6(A)\)</span> is one-dimensional with basis <span class="process-math">\(\left\{ \begin{bmatrix} -1 \\ 2 \end{bmatrix} \right\}\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="subsec-char-eqn-4-1-3">
+<div class="para">Now, when <span class="process-math">\(\lambda = 3\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A - 3 I = \begin{bmatrix} -1 \amp -2 \\ 2 \amp 4 \end{bmatrix} \sim 
+\begin{bmatrix} 1 \amp 2 \\ 0 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(\mathrm{eig}_3(A)\)</span> is also one-dimensional with basis <span class="process-math">\(\left\{ \begin{bmatrix} -2 \\ 1 \end{bmatrix} \right\}\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="subsec-char-eqn-5">We now give some names and notation to the elements of this method to find the eigenvalues of a matrix.</div>
+<article class="definition definition-like" id="def-char-eqn"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-char-eqn-1-1">If <span class="process-math">\(A \in M_n(\ff)\text{,}\)</span> then <span class="process-math">\(\det(A - \lambda I)=0\)</span> is called the <dfn class="terminology">characteristic equation</dfn> of <span class="process-math">\(A\text{.}\)</span>
+</div></article><div class="para" id="subsec-char-eqn-7">Based on our previous discussion, we can say that <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> if and only if <span class="process-math">\(\lambda\)</span> satisfies the characteristic equation of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="para" id="subsec-char-eqn-8">It is occasionally useful to have a term and notation for just one piece of the characteristic equation.</div>
+<article class="definition definition-like" id="def-char-poly"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-char-poly-1-1">For a matrix <span class="process-math">\(A \in M_n(\ff)\text{,}\)</span> <span class="process-math">\(\det(A - \lambda I)\)</span> is a degree <span class="process-math">\(n\)</span> polynomial referred to as the <dfn class="terminology">characteristic polynomial</dfn> of <span class="process-math">\(A\text{.}\)</span> Sometimes the notation <span class="process-math">\(p_A(\lambda)\)</span> is used for this polynomial.</div></article><div class="para" id="subsec-char-eqn-10">We will see that the characteristic equation can get quite difficult to solve as the size of the matrix increases. The next example provides a glimpse of this for a <span class="process-math">\(3\times 3\)</span> matrix.</div>
+<details id="subsec-char-eqn-11" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.4</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-char-eqn-11-1-1">
+<div class="para">Let <span class="process-math">\(A \in M_3(\rr)\)</span> be the following matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+1 \amp -3 \amp -1 \\ 
+2 \amp 6 \amp 1 \\ 
+-4 \amp -10 \amp -1
+\end{bmatrix} \text{.}
+\end{equation*}
+</div>
+<div class="para">To find the characteristic polynomial of <span class="process-math">\(A\text{,}\)</span> we will use cofactor expansion along the first row of <span class="process-math">\(A - \lambda I\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-char-eqn-11-1-1-5">
+\begin{align*}
+\det(A - \lambda I) \amp = (1-\lambda)\begin{vmatrix} 6-\lambda \amp 1 \\ -10 \amp -1-\lambda \end{vmatrix} 
++ 3 \begin{vmatrix} 2 \amp 1 \\ -4 \amp -1-\lambda \end{vmatrix} - 1
+\begin{vmatrix} 2 \amp 6-\lambda \\ -4 \amp -10 \end{vmatrix} \\
+\amp = (1-\lambda)(\lambda^2 - 5\lambda + 4) + 3(2-2\lambda) - (4-4\lambda)\\
+\amp = -\lambda^3 + 6\lambda^2 - 11\lambda + 6\text{.}
+\end{align*}
+</div>
+<div class="para">For the matrix <span class="process-math">\(A\)</span> given above, we have <span class="process-math">\(p_A(\lambda) = -\lambda^3 + 6\lambda^2 - 11\lambda + 6\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="subsec-char-eqn-12">Since we can solve a quadratic equation easily—either by factoring or using the quadratic formula—we mistakenly think that all polynomial equations are easy to solve. Not so. As we consider the characteristic polynomial for the matrix in the previous example, we find the task of finding the eigenvalues quite challenging.</div>
+<div class="para" id="subsec-char-eqn-13">While there is a formula for solving a cubic polynomial, it is not nearly as nice as the quadratic formula. It is, in fact, something that should rarely see the light of day. It is ugly.</div>
+<div class="para" id="subsec-char-eqn-14">In practice, the eigenvalues of an <span class="process-math">\(n\times n\)</span> matrix are usually found with a computer algebra system when <span class="process-math">\(n \ge 3\text{.}\)</span> However, there is one way that we could describe an eigenvalue problem and still have a reasonable expectation that the reader could find a solution.</div>
+<details id="subsec-char-eqn-15" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.5</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-char-eqn-15-1-1">
+<div class="para">Consider the following matrix <span class="process-math">\(A \in M_3(\rr)\)</span> (from the previous example):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+1 \amp -3 \amp -1 \\ 
+2 \amp 6 \amp 1 \\ 
+-4 \amp -10 \amp -1
+\end{bmatrix} \text{.}
+\end{equation*}
+</div>
+<div class="para">If we know that <span class="process-math">\(\lambda = 1\)</span> is an eigenvalue for <span class="process-math">\(A\text{,}\)</span> we can find all of the eigenvalues.</div>
+</div> <div class="para logical" id="subsec-char-eqn-15-1-2">
+<div class="para">Our previous work showed that <span class="process-math">\(p_A(\lambda) = -\lambda^3 + 6\lambda^2 - 11\lambda + 6\text{.}\)</span> If we know that <span class="process-math">\(\lambda=1\)</span> is an eigenvalue, that means that <span class="process-math">\((\lambda - 1)\)</span> must be a factor of this polynomial. Using long division of polynomials, we can complete the factorization:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p_A(\lambda) = (\lambda - 1)(-\lambda^2 + 5\lambda - 6) = -(\lambda - 1)(\lambda - 2)(\lambda - 3)\text{.}
+\end{equation*}
+</div>
+<div class="para">This shows that the eigenvalues for <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda = 1, 2, 3\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="subsec-char-eqn-16">When a characteristic polynomial is factored to reveal the eigenvalues, we might see some of those eigenvalues repeated. We now introduce a term to describe this repetition.</div>
+<article class="definition definition-like" id="def-multiplicity"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-multiplicity-1-1">The <dfn class="terminology">multiplicity</dfn> of an eigenvalue is the number of times it appears as a root of the characteristic polynomial for a matrix. Sometimes this is referred to as the <dfn class="terminology">algebraic multiplicity</dfn> of an eigenvalue.</div></article><details id="subsec-char-eqn-18" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.7</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-char-eqn-18-1-1">
+<div class="para">We consider the matrix from <a href="" class="xref" data-knowl="./knowl/xref/examp-evalues1.html" title="Example 6.1.9">Example 6.1.9</a> in the previous section:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-evalues1.html">
+\begin{equation*}
+A = \begin{bmatrix}
+4.5 \amp -2.5 \amp -2.5 \\ 
+2.5 \amp -0.5 \amp -2.5 \\ 
+5 \amp -5 \amp -3
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The characteristic polynomial for this matrix is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-evalues1.html">
+\begin{equation*}
+p_A(\lambda) = -\lambda^3 + \lambda^2 + 8\lambda - 12 = -(\lambda - 2)^2(\lambda + 3)\text{.}
+\end{equation*}
+</div>
+<div class="para">From this we see that <span class="process-math">\(A\)</span> has an eigenvalue of 2 with multiplicity 2 and an eigenvalue of <span class="process-math">\(-3\)</span> with multiplicity 1.</div>
+</div></article></details><div class="para" id="subsec-char-eqn-19">Before we move to the second half of this section, we point out that not every matrix over <span class="process-math">\(\ff\)</span> has eigenvalues in <span class="process-math">\(\ff\text{.}\)</span> The following example illustrates this, but we can understand this intuitively by recognizing that (for example) not every polynomial over <span class="process-math">\(\rr\)</span> can be completely factored into linear terms.</div>
+<details id="subsec-char-eqn-20" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.8</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-char-eqn-20-1-1">
+<div class="para">Let <span class="process-math">\(A \in M_2(\rr)\)</span> be the following matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} -5 \amp -4 \\ 5 \amp -6 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We can calculate the characteristic polynomial for <span class="process-math">\(A\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-char-eqn-20-1-1-4">
+\begin{align*}
+\det(A - \lambda I) \amp = \begin{vmatrix} -5-\lambda \amp -4 \\ 5 \amp -6-\lambda \end{vmatrix} \\
+\amp = (-5-\lambda)(-6-\lambda) + 20 \\
+\amp = \lambda^2+11\lambda+50\text{.}
+\end{align*}
+</div>
+<div class="para">This quadratic polynomial has no real roots, as the reader can check by verifying that the discriminant (the expression under the square root in the quadratic formula) is negative.</div>
+</div> <div class="para" id="subsec-char-eqn-20-1-2">If <span class="process-math">\(A\)</span> is considered as a matrix over <span class="process-math">\(\cc\text{,}\)</span> then it has two complex eigenvalues. But it has no real eigenvalues.</div></article></details><div class="para" id="subsec-char-eqn-21">One of the major differences between <span class="process-math">\(\rr\)</span> and <span class="process-math">\(\cc\)</span> is that <span class="process-math">\(\cc\)</span> is an <dfn class="terminology">algebraically closed field</dfn>, while <span class="process-math">\(\rr\)</span> is not. The fact that <span class="process-math">\(\cc\)</span> is algebraically closed is another way to restate the famous Fundamental Theorem of Algebra, which says that every polynomial with coefficients in <span class="process-math">\(\cc\)</span> can be completely reduced to linear factors. There are interesting, deep waters to explore here, but perhaps not in the present text.</div></section><section class="subsection" id="subsec-similarity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="space"> </span><span class="title">Similarity</span>
+</h3>
+<div class="para" id="subsec-similarity-2">Earlier in this book we have discussed one way that matrices can be related—row equivalence. We now introduce another way they can be related which has connections to the characteristic equation.</div>
+<article class="definition definition-like" id="def-similarity"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-similarity-1-1">Suppose that <span class="process-math">\(A, B \in M_n(\ff)\text{.}\)</span> Then <span class="process-math">\(A\)</span> <dfn class="terminology">is similar to</dfn> <span class="process-math">\(B\)</span> if there exists an invertible matrix <span class="process-math">\(P \in M_n(\ff)\)</span> such that <span class="process-math">\(P^{-1}AP = B\)</span> or <span class="process-math">\(A = PBP^{-1}\text{.}\)</span>
+</div></article><article class="note remark-like" id="subsec-similarity-4"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">6.2.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-similarity-4-1">Since we could write <span class="process-math">\(Q = P^{-1}\)</span> in the previous definition and have <span class="process-math">\(Q^{-1}BQ = A\)</span> when <span class="process-math">\(P^{-1}AP = B\text{,}\)</span> we see that <span class="process-math">\(B\)</span> is similar to <span class="process-math">\(A\)</span> when <span class="process-math">\(A\)</span> is similar to <span class="process-math">\(B\text{.}\)</span> For this reason, we can say that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <dfn class="terminology">similar</dfn>.</div></article><div class="para" id="subsec-similarity-5">The next theorem presents one of the most compelling reasons for studying similarity in matrices.</div>
+<article class="theorem theorem-like" id="thm-similar-matrices-char-poly"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-similar-matrices-char-poly-1-1">If matrices <span class="process-math">\(A, B \in M_n(\ff)\)</span> are similar, then they have the same characteristic polynomials and therefore the same eigenvalues (with the same multiplicities).</div></article><details id="thm-similar-matrices-char-poly-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-similar-matrices-char-poly-2-1">
+<div class="para">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, then there exists an invertible matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(B = P^{-1}AP\text{.}\)</span> When forming <span class="process-math">\(B - \lambda I\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-matrix-product.html">
+\begin{equation*}
+B - \lambda I = P^{-1}AP - \lambda P^{-1}P = P^{-1}(AP - \lambda P) = P^{-1}(A - \lambda I) P\text{.}
+\end{equation*}
+</div>
+<div class="para">Since the determinant is multiplicative (<a href="" class="xref" data-knowl="./knowl/xref/thm-det-matrix-product.html" title="Theorem 4.2.13">Theorem 4.2.13</a>), we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-matrix-product.html" id="thm-similar-matrices-char-poly-2-1-8">
+\begin{align*}
+\det(B - \lambda I) \amp = \det(P^{-1})\det(A - \lambda I) \det(P) \\
+\amp = \det(P^{-1})\det(P)\det(A - \lambda I)\\
+\amp = \det(P^{-1}P)\det(A - \lambda I)   \\
+\amp = \det(I)\det(A - \lambda I)\\
+\amp = \det(A - \lambda I)\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same characteristic polynomials.</div>
+</div></article></details><div class="para" id="subsec-similarity-7">The next example showcases two similar matrices.</div>
+<details id="subsec-similarity-8" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.12</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-similarity-8-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be the following matrices over <span class="process-math">\(\rr\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} -10 \amp -5 \\ 24 \amp 13 \end{bmatrix}, \hspace{12pt}
+B = \begin{bmatrix} 1 \amp -4 \\ -3 \amp 2 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We will show that these are similar matrices by considering the matrix <span class="process-math">\(P\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P = \begin{bmatrix} -4 \amp -1 \\ -5 \amp -2 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The reader can check that <span class="process-math">\(P\)</span> is invertible and that <span class="process-math">\(A = P^{-1}BP\text{.}\)</span> This shows that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar.</div>
+</div> <div class="para" id="subsec-similarity-8-1-2">Further calculation shows that <span class="process-math">\(p_B(\lambda) = \lambda^2-3\lambda-10\)</span> and that this is the same as <span class="process-math">\(p_A(\lambda)\text{.}\)</span>
+</div></article></details><div class="para" id="subsec-similarity-9">It is important to note the direction of logical implication that <a href="" class="xref" data-knowl="./knowl/xref/thm-similar-matrices-char-poly.html" title="Theorem 6.2.11">Theorem 6.2.11</a> provides. <em class="emphasis">If</em> two matrices are similar, <em class="emphasis">then</em> they have the same eigenvalues. However, we may have two matrices with the same eigenvalues which are not similar.</div>
+<details id="subsec-similarity-10" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.13</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-similarity-10-1-1">
+<div class="para">Let <span class="process-math">\(A, B \in M_2(\rr)\)</span> be the following matrices:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 5 \amp 0 \\ 0 \amp 5 \end{bmatrix}, \hspace{12pt}
+B = \begin{bmatrix} 5 \amp -2 \\ 0 \amp 5 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are triangular matrices, we can see that they have the same eigenvalues (with the same multiplicity). However, these matrices are <em class="emphasis">not</em> similar. In fact, we will show in the exercises that a matrix <span class="process-math">\(kI\text{,}\)</span> for <span class="process-math">\(k \in \ff\text{,}\)</span> is only similar to itself. In this example, <span class="process-math">\(A = 5I\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="subsec-similarity-11">We end this section with a small note of caution. Similarity and row equivalence are not the same thing, and the distinction between these two relations is important to keep in mind. In particular, elementary row operations usually alter the eigenvalues of a matrix, while we have seen that a similarity transformation does not.</div></section><section class="reading-questions" id="sec-char-eqn-5"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="space"> </span><span class="title">Reading Questions</span>
+</h3>
+<article class="exercise exercise-like" id="sec-char-eqn-5-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-char-eqn-5-1-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be the following matrix over <span class="process-math">\(\rr\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 
+2 \amp -1 \\ -6 \amp -3
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="sec-char-eqn-5-1-1-1-4-1"><div class="para" id="sec-char-eqn-5-1-1-1-4-1-1">Write down the characteristic equation for <span class="process-math">\(A\text{.}\)</span> (Feel free to use <span class="process-math">\(t\)</span> instead of <span class="process-math">\(\lambda\)</span> if typing <span class="process-math">\(\lambda\)</span> is difficult.)</div></li>
+<li id="sec-char-eqn-5-1-1-1-4-2"><div class="para" id="sec-char-eqn-5-1-1-1-4-2-1">Determine the two eigenvalues for <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-char-eqn-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="sec-char-eqn-5-2-1-1">Consider the matrix <span class="process-math">\(A\)</span> from the previous reading question. Write down two separate matrices which are similar to <span class="process-math">\(A\text{.}\)</span> Explain how you obtained these matrices.</div> </article></section><section class="exercises" id="sec-char-eqn-6"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">6.2.4</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="sec-char-eqn-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-char-eqn-6-1-1-1">
+<div class="para">Let <span class="process-math">\(A \in M_2(\rr)\)</span> be the following matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+-7 \amp 8 \\ -6 \amp 7
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para"> Find the characteristic polynomial and the eigenvalues of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="sec-char-eqn-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-char-eqn-6-2-1-1">
+<div class="para">Let <span class="process-math">\(A \in M_2(\rr)\)</span> be the following matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+7 \amp -3 \\ 6 \amp -2
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para"> Find the characteristic polynomial and the eigenvalues of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="sec-char-eqn-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-char-eqn-6-3-1-1">
+<div class="para">Let <span class="process-math">\(A \in M_2(\ff_5)\)</span> be the following matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+0 \amp 2 \\ 1 \amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para"> Find the characteristic polynomial and the eigenvalues of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="sec-char-eqn-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-char-eqn-6-4-1-1">
+<div class="para">Let <span class="process-math">\(A \in M_2(\ff_5)\)</span> be the following matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+2 \amp 4 \\ 4 \amp 2
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para"> Find the characteristic polynomial and the eigenvalues of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="sec-char-eqn-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-char-eqn-6-5-1-1">
+<div class="para">Let <span class="process-math">\(A \in M_3(\rr)\)</span> be the following matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+3 \amp 0 \amp 0 \\ 
+5 \amp -1 \amp 1 \\ 
+3 \amp -1 \amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para"> Find the characteristic polynomial and the eigenvalues of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="sec-char-eqn-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-char-eqn-6-6-1-1">
+<div class="para">Let <span class="process-math">\(A \in M_3(\rr)\)</span> be the following matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+5 \amp 8 \amp -8 \\ 
+-4 \amp -11 \amp 16 \\ 
+0 \amp -4 \amp 9
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para"> Find the characteristic polynomial of <span class="process-math">\(A\text{.}\)</span> If <span class="process-math">\(\lambda = 1\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> find the other eigenvalues of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="sec-char-eqn-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-char-eqn-6-7-1-1">
+<div class="para">Let <span class="process-math">\(A \in M_n(\rr)\)</span> have <span class="process-math">\(n\)</span> real eigenvalues, <span class="process-math">\(\lambda_1, \ldots, \lambda_n\text{,}\)</span> repeated according to their multiplicities, so that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(A - \lambda I) = (\lambda_1 - \lambda) \cdots (\lambda_n - \lambda)\text{.}
+\end{equation*}
+</div>
+<div class="para">Prove that <span class="process-math">\(\det(A)\)</span> is the product of the <span class="process-math">\(n\)</span> eigenvalues of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="exerc-similarity-equiv-rel"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="exerc-similarity-equiv-rel-1-1">Prove that similarity is an equivalence relation on the set <span class="process-math">\(M_n(\ff)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="sec-char-eqn-6-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="sec-char-eqn-6-9-1-1">Let <span class="process-math">\(I_n \in M_n(\ff)\)</span> be the identity matrix and let <span class="process-math">\(k \in \ff\)</span> be a scalar. If <span class="process-math">\(A = kI_n\text{,}\)</span> prove that the only matrix <span class="process-math">\(A\)</span> is similar to is itself.</div></article><article class="exercise exercise-like" id="exer-det-invariant-similar"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="exer-det-invariant-similar-1-1">Prove that if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, then <span class="process-math">\(\det(A) = \det(B)\text{.}\)</span>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-eigenvalues.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-diagonalization.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

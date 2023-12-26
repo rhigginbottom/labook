@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">We start by considering the following matrix as the augmented matrix of a linear system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+2 \amp 2 \amp -1 \amp 8 \\
+-3 \amp -2 \amp 2 \amp -12 \\
+5 \amp 0 \amp 4 \amp 11
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We first <em class="emphasis">scale</em> the first row by <span class="process-math">\(\frac{1}{2}\)</span> to produce a 1 in the <span class="process-math">\((1,1)\)</span> entry:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+-3 \amp -2 \amp 2 \amp -12 \\
+5 \amp 0 \amp 4 \amp 11
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We then <em class="emphasis">replace</em> the second row with the sum of the second row and three times the first row:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+0 \amp 1 \amp \frac{1}{2} \amp 0 \\[3pt]
+5 \amp 0 \amp 4 \amp 11
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We will again use the 1 in the <span class="process-math">\((1,1)\)</span> entry to “eliminate” the 5 in the <span class="process-math">\((3,1)\)</span> entry. We <em class="emphasis">replace</em> the third row with <span class="process-math">\(-5\)</span> times the first row plus the third:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+0 \amp 1 \amp \frac{1}{2} \amp 0 \\[3pt]
+0 \amp -5 \amp \frac{13}{2} \amp -9
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">Now that we have “cleared out” the entries under the <span class="process-math">\((1,1)\)</span> entry, we can do the same for the 1 in the <span class="process-math">\((2,2)\)</span> entry. (In future examples we may need to <em class="emphasis">scale</em> first to have a <span class="process-math">\(1\)</span> here.) We <em class="emphasis">replace</em> the third row with 5 times the second row plus the third:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+0 \amp 1 \amp \frac{1}{2} \amp 0 \\[3pt]
+0 \amp 0 \amp 9 \amp -9
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We can now <em class="emphasis">scale</em> the third row by <span class="process-math">\(\frac{1}{9}\)</span> to produce 1s along the main diagonal:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+0 \amp 1 \amp \frac{1}{2} \amp 0 \\[3pt]
+0 \amp 0 \amp 1 \amp -1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We are halfway done, as we have 0s below the main diagonal. We now need to use elementary row operations to produce 0s above the main diagonal. We first <em class="emphasis">replace</em> the second row with <span class="process-math">\(-\frac{1}{2}\)</span> times the third plus the second:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
+0 \amp 1 \amp 0 \amp \frac{1}{2} \\[3pt]
+0 \amp 0 \amp 1 \amp -1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We can again use the 1 in the <span class="process-math">\((3,3)\)</span> position to produce a 0 in the <span class="process-math">\((1,3)\)</span> position. We <em class="emphasis">replace</em> the first row with <span class="process-math">\(\frac{1}{2}\)</span> times the third row plus the first:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 1 \amp 0 \amp \frac{7}{2} \\[3pt]
+0 \amp 1 \amp 0 \amp \frac{1}{2} \\[3pt]
+0 \amp 0 \amp 1 \amp -1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">Finally, we use the 1 in the <span class="process-math">\((2,2)\)</span> entry to produce a 0 in the <span class="process-math">\((1,2)\)</span> entry. We <em class="emphasis">replace</em> the first row with <span class="process-math">\(-1\)</span> times the second row plus the first:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}ccc|c@{}}
+1 \amp 0 \amp 0 \amp 3 \\
+0 \amp 1 \amp 0 \amp \frac{1}{2} \\[3pt]
+0 \amp 0 \amp 1 \amp -1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">We now have the matrix in the form we wanted, because we can read off the solution: <span class="process-math">\(x=3\text{,}\)</span> <span class="process-math">\(y=\frac{1}{2}\text{,}\)</span> and <span class="process-math">\(z=-1\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec-matrices.html#ex-use-el-ops">in-context</a></span>
+</body>
+</html>

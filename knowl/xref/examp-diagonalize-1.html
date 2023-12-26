@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.5</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">We consider the matrix <span class="process-math">\(A \in M_3(\rr)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 
+-2 \amp 2 \amp -2 \\ 
+-4 \amp 4 \amp -2 \\ 
+-6 \amp 3 \amp -1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Though the reader can determine this independently, we will provide the characteristic polynomial to save time and space:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p_A(\lambda) = -(\lambda+3)(\lambda-2)^2\text{.}
+\end{equation*}
+</div>
+<div class="para">From this we see that the eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda = -3\)</span> and <span class="process-math">\(\lambda = 2\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">We now find bases for the associated eigenspaces. Again, we will suppress all of the calculations since the previous sections have gone through these in some detail. We find that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-diagonalization.html">
+\begin{equation*}
+\mathrm{eig}_{-3}(A) = \spn \left\{ \begin{bmatrix} 2 \\ 2 \\ 3 \end{bmatrix} \right\}\text{,}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-diagonalization.html">
+\begin{equation*}
+\mathrm{eig}_{2}(A) = \spn \left\{ \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 2 \end{bmatrix}
+\right\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since we have three linearly independent eigenvectors, we know from <a href="" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a> that <span class="process-math">\(A\)</span> is diagonalizable.</div>
+</div> <div class="para logical">
+<div class="para">We now form the matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span> according to the algorithm:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P = \begin{bmatrix}
+2 \amp 1 \amp -1 \\ 
+2 \amp 2 \amp 0 \\ 
+3 \amp 0 \amp 2
+\end{bmatrix}, \hspace{6pt}
+D = \begin{bmatrix}
+-3 \amp 0 \amp 0 \\ 
+0 \amp 2 \amp 0 \\ 
+0 \amp 0 \amp 2
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We can check that our diagonalization was successful by calculating <span class="process-math">\(AP\)</span> and <span class="process-math">\(PD\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+AP \amp = \begin{bmatrix} 
+-2 \amp 2 \amp -2 \\ 
+-4 \amp 4 \amp -2 \\ 
+-6 \amp 3 \amp -1
+\end{bmatrix} \begin{bmatrix}
+2 \amp 1 \amp -1 \\ 
+2 \amp 2 \amp 0 \\ 
+3 \amp 0 \amp 2
+\end{bmatrix} = \begin{bmatrix} 
+-6 \amp 2 \amp -2 \\ 
+-6 \amp 4 \amp 0 \\ 
+-9 \amp 0 \amp 4
+\end{bmatrix}\\
+PD \amp = \begin{bmatrix}
+2 \amp 1 \amp -1 \\ 
+2 \amp 2 \amp 0 \\ 
+3 \amp 0 \amp 2
+\end{bmatrix} \begin{bmatrix}
+-3 \amp 0 \amp 0 \\ 
+0 \amp 2 \amp 0 \\ 
+0 \amp 0 \amp 2
+\end{bmatrix} = \begin{bmatrix} 
+-6 \amp 2 \amp -2 \\ 
+-6 \amp 4 \amp 0 \\ 
+-9 \amp 0 \amp 4
+\end{bmatrix}\text{.}
+\end{align*}
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec-diagonalization.html#examp-diagonalize-1">in-context</a></span>
+</body>
+</html>

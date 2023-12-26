@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">The Spanning Set Theorem.</span>
+</h4>
+<div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(V\)</span> is a nonzero vector space and that <span class="process-math">\(V = \spn(B)\)</span> for some set of vectors <span class="process-math">\(B\subseteq V\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">If <span class="process-math">\(B\)</span> is linearly dependent and a vector <span class="process-math">\(\bfw \in B\)</span> can be written as a linear combination of the rest of the vectors in <span class="process-math">\(B\text{,}\)</span> then <span class="process-math">\(\spn(B) = \spn(B - \{\bfw \})\text{.}\)</span>
+</div></li>
+<li><div class="para">A subset of <span class="process-math">\(B\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">We suppose that <span class="process-math">\(B = \{\bfv_1, \ldots, \bfv_n \}\text{.}\)</span> If <span class="process-math">\(B\)</span> is linearly dependent, then by the Linear Dependence Lemma, there exists a vector <span class="process-math">\(\bfv_k \in B\)</span> such that <span class="process-math">\(\bfv_k\)</span> can be written as a linear combination of the vectors <span class="process-math">\(\bfv_1, \ldots, \bfv_{k-1}\text{.}\)</span> We suppose this combination is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-rep-vk.html ./knowl/xref/eqn-rep-v.html">
+\begin{equation}
+\bfv_k = a_1\bfv_1 + \cdots + a_{k-1}\bfv_{k-1}\text{.}\tag{5.1}
+\end{equation}
+</div>
+<div class="para">Now suppose <span class="process-math">\(\bfv\)</span> is a vector in <span class="process-math">\(V\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-rep-vk.html ./knowl/xref/eqn-rep-v.html">
+\begin{equation}
+\bfv = c_1 \bfv_1 + \cdots + c_{k-1}\bfv_{k-1} + c_k\bfv_k + c_{k+1}\bfv_{k+1} + \cdots + c_n \bfv_n\text{.}\tag{5.2}
+\end{equation}
+</div>
+<div class="para">Using <a href="" class="xref" data-knowl="./knowl/xref/eqn-rep-vk.html" title="Equation 5.1">(5.1)</a>, we can substitute this expression in for <span class="process-math">\(\bfv_k\)</span> in <a href="" class="xref" data-knowl="./knowl/xref/eqn-rep-v.html" title="Equation 5.2">(5.2)</a> and, once the algebraic dust settles, we will have <span class="process-math">\(\bfv\)</span> written as a combination of the vectors in <span class="process-math">\(B - \{\bfv_k\}\text{.}\)</span> This shows that <span class="process-math">\(\spn(B) = \spn(B - \{\bfv_k\})\text{.}\)</span>
+</div>
+</div> <div class="para">If <span class="process-math">\(B\)</span> is  linearly independent, then it is already a basis for <span class="process-math">\(V\text{.}\)</span> If it is linearly dependent, then we can remove a vector according to the above procedure to obtain a set <span class="process-math">\(B_1 = B - \{\bfw\}\)</span> which still spans <span class="process-math">\(V\text{.}\)</span> As long as there are two or more vectors in the spanning set, we can repeat this process until we are left with a linearly independent set and thus a basis. If the spanning set is eventually reduced to a single vector, that vector will be nonzero since <span class="process-math">\(V\)</span> is nonzero, and therefore that set will be linearly independent.</div></article></details><span class="incontext"><a class="internal" href="sec-basis.html#thm-spanning-set">in-context</a></span>
+</body>
+</html>

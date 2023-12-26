@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h4>
+<div class="para">We take our notation from <a href="" class="xref" data-knowl="./knowl/xref/examp-rotate-reflect.html" title="Example 3.1.4">Example 3.1.4</a>. Let <span class="process-math">\(T:\rr^2 \to \rr^2\)</span> be the linear transformation which reflects a vector in the Cartesian plane across the <span class="process-math">\(x\)</span>-axis, and let <span class="process-math">\(S:\rr^2\to\rr^2\)</span> be the linear transformation which rotates a vector counter-clockwise around the origin by <span class="process-math">\(\frac{\pi}{2}\)</span> radians. In this example we will find the <span class="process-math">\(2\times 2\)</span> matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> such that <span class="process-math">\(T(\bfv)=A\bfv\)</span> and <span class="process-math">\(S(\bfv)=B\bfv\text{.}\)</span>
+</div> <div class="para">In the proof of <a href="" class="xref" data-knowl="./knowl/xref/thm-matrix-of-lin-trans.html" title="Theorem 3.2.2">Theorem 3.2.2</a>, we saw that the way to form the matrix of a linear transformation is to calculate the image of the vectors <span class="process-math">\(\mathbf{e}_1, \ldots, \mathbf{e}_n\text{.}\)</span> In this context, we need to calculate the image of <span class="process-math">\(\mathbf{e}_1\)</span> and <span class="process-math">\(\mathbf{e}_2\)</span> under <span class="process-math">\(T\)</span> and <span class="process-math">\(S\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">The calculations we seek are below:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(\mathbf{e}_1) = \begin{bmatrix}
+1 \\ 0
+\end{bmatrix}, \hspace{6pt}
+T(\mathbf{e}_2) = \begin{bmatrix}
+0 \\ -1
+\end{bmatrix}, \hspace{6pt}
+S(\mathbf{e}_1) = \begin{bmatrix}
+0 \\ 1
+\end{bmatrix}, \hspace{6pt}
+S(\mathbf{e}_2) = \begin{bmatrix}
+-1 \\ 0
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">This tells us that the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+1 \amp 0 \\ 0 \amp -1
+\end{bmatrix}, \hspace{12pt}
+B = \begin{bmatrix}
+0 \amp -1 \\ 1 \amp 0
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Any curious reader can check that these matrices are correct by choosing a vector in <span class="process-math">\(\rr^2\)</span> and multiplying by <span class="process-math">\(A\)</span> and by <span class="process-math">\(B\)</span> separately. The results should align with the actions of <span class="process-math">\(T\)</span> and <span class="process-math">\(S\text{,}\)</span> respectively.</div>
+</div></article><span class="incontext"><a class="internal" href="sec-matrix-linear-trans.html#examp-rotate-reflect-2">in-context</a></span>
+</body>
+</html>

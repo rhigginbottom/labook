@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Properties of the Determinant</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra">
+<meta property="book:author" content="Ryan Higginbottom">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">A work in progress</span></a></h1>
+<p class="byline">Ryan Higginbottom</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-define-det.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-dets.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-dimension.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+\newcommand{\zz}{\mathbb Z}
+\newcommand{\qq}{\mathbb Q}
+\newcommand{\rr}{\mathbb R}
+\newcommand{\cc}{\mathbb C}
+\newcommand{\ff}{\mathbb{F}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bfo}{\mathbf{0}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\mcb}{\mathcal{B}}
+\newcommand{\mcc}{\mathcal{C}}
+\newcommand{\mce}{\mathcal{E}}
+\newcommand{\spn}{\mathrm{Span}}
+\newcommand{\kerr}{\mathrm{ker}}
+\newcommand{\nll}{\mathrm{null}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\col}{\mathrm{col}}
+\newcommand{\row}{\mathrm{row}}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\lla}{\left\langle}
+\newcommand{\rra}{\right\rangle}
+\newcommand{\ip}[1]{\lla #1 \rra}
+\newcommand{\vnorm}[1]{\left|\hspace{-1.2pt}\left| #1 \right|\hspace{-1.2pt}\right|}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-first.html" class="internal"><span class="codenumber">1</span> <span class="title">Solving Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-systems.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-intro-systems.html#rqs-lin-systems" class="internal"><span class="codenumber">1.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-intro-systems.html#sec-intro-systems-20" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-29" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-results.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Results</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-results.html#sec-results-31" class="internal"><span class="codenumber">1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-results.html#sec-results-32" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vectors.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors.html#subsec-vector-basics" class="internal"><span class="codenumber">1.4.1</span> <span class="title">The Basics of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors.html#subsec-geometry-vectors" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Vectors and Geometry</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vectors.html#sec-vectors-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vectors.html#sec-vectors-6" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-second.html" class="internal"><span class="codenumber">2</span> <span class="title">Fields and Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-fields.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Fields</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-19" class="internal"><span class="codenumber">2.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-20" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-systems-fields.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Solving Linear Systems Over Fields</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-13" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-14" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vector-spaces.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vector-spaces.html#sec-vector-spaces-17" class="internal"><span class="codenumber">2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vector-spaces.html#exercises-2-3" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Subspaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-subspaces.html#sec-subspaces-20" class="internal"><span class="codenumber">2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-subspaces.html#sec-subspaces-21" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-third.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-trans.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-lin-trans" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Introduction to Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-lin-trans-matrices" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Linear Transformations and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-props-linear-trans" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Properties of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-matrix-vector-form-lin-system" class="internal"><span class="codenumber">3.1.4</span> <span class="title">The Matrix-Vector Form of a Linear System</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-8" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-linear-trans.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Matrix of a Linear Transformation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-construct-matrix-lin-trans" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Constructing the Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-matrix-mult" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Composition and Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-linear-trans-invertible" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Invertible Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#subsec-matrix-transpose" class="internal"><span class="codenumber">3.2.4</span> <span class="title">The Transpose of a Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#sec-matrix-linear-trans-7" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrix-linear-trans.html#sec-matrix-linear-trans-8" class="internal"><span class="codenumber">3.2.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inverting-matrix.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Inverting a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverting-matrix.html#subsec-elementary-matrices" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverting-matrix.html#subsec-finding-inverses" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Finding the Inverse of a Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-inverting-matrix.html#sec-inverting-matrix-5" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-inverting-matrix.html#sec-inverting-matrix-6" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces-lt.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Subspaces and Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces-lt.html#subsec-kernel" class="internal"><span class="codenumber">3.4.1</span> <span class="title">The Kernel of a Linear Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces-lt.html#subsec-range" class="internal"><span class="codenumber">3.4.2</span> <span class="title">The Range as a Subspace</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-subspaces-lt.html#sec-subspaces-lt-5" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-subspaces-lt.html#sec-subspaces-lt-6" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-dets.html" class="internal"><span class="codenumber">4</span> <span class="title">Determinants</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-define-det.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Defining the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-define-det.html#initial-defn-det" class="internal"><span class="codenumber">4.1.1</span> <span class="title">The Definition of the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-define-det.html#subsec-det-alternative" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Additional Ways to Calculate the Determinant</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-define-det.html#sec-define-det-5" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-define-det.html#sec-define-det-6" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-det-properties.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Properties of the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#det-elem-row-ops" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Determinant and Elementary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#subsec-det-main-results" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Invertibility and the Determinant</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dimension.html" class="internal"><span class="codenumber">5</span> <span class="title">The Dimension of a Vector Space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-lin-ind.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Linear Independence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-lin-ind.html#sec-lin-ind-35" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-lin-ind.html#sec-lin-ind-36" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basis.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Basis of a Vector Space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis.html#subsec-intro-basis" class="internal"><span class="codenumber">5.2.1</span> <span class="title">The Definition of a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis.html#subsec-basis-props" class="internal"><span class="codenumber">5.2.2</span> <span class="title">The Properties of a Basis</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-basis.html#sec-basis-5" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-basis.html#sec-basis-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-dimension.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dimension.html#subsec-dimension" class="internal"><span class="codenumber">5.3.1</span> <span class="title">The Dimension of a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dimension.html#subsec-dim-subspace" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Dimension and Subspaces</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-dimension.html#sec-dimension-5" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-dimension.html#sec-dimension-6" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-rank.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Rank and Nullity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-rank.html#subsec-define-rank-nullity" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Defining Rank and Nullity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-rank.html#subsec-rank-thm" class="internal"><span class="codenumber">5.4.2</span> <span class="title">The Rank-Nullity Theorem</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-rank.html#sec-rank-5" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-rank.html#sec-rank-6" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-coordinates.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Coordinates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coord-vectors" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Coordinates of Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coordinates-matrices" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Coordinates and Linear Transformations</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-coordinates.html#sec-coordinates-5" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-coordinates.html#sec-coordinates-6" class="internal"><span class="codenumber">5.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-change-of-basis.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Change of Basis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-change-of-basis.html#subsec-change-basis-matrix" class="internal"><span class="codenumber">5.6.1</span> <span class="title">The Change-of-Basis Matrix</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-change-of-basis.html#sec-change-of-basis-4" class="internal"><span class="codenumber">5.6.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-change-of-basis.html#sec-change-of-basis-5" class="internal"><span class="codenumber">5.6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-sixth.html" class="internal"><span class="codenumber">6</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-eigenvalues.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-eigenvalues" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Defining Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-results-eigenvectors" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Results About Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-eigenvalues.html#sec-eigenvalues-5" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-eigenvalues.html#sec-eigenvalues-6" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-char-eqn.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Characteristic Equation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-char-eqn.html#subsec-char-eqn" class="internal"><span class="codenumber">6.2.1</span> <span class="title">How to Find Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-char-eqn.html#subsec-similarity" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Similarity</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-char-eqn.html#sec-char-eqn-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-char-eqn.html#sec-char-eqn-6" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diagonalization.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Diagonalization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-diag" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Diagonalizable Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-how-to-diagonalize" class="internal"><span class="codenumber">6.3.2</span> <span class="title">How to Diagonalize a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-diag-linear-transf" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Linear Transformations and Diagonalizability</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-diagonalization.html#sec-diagonalization-6" class="internal"><span class="codenumber">6.3.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-diagonalization.html#sec-diagonalization-7" class="internal"><span class="codenumber">6.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-invariants.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Invariants</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invariants.html#subsec-intro-invariants" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Introduction to Invariants</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invariants.html#subsec-inv-rank-trace" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Rank and Trace as Invariants</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-invariants.html#sec-invariants-5" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-invariants.html#sec-invariants-6" class="internal"><span class="codenumber">6.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-7.html" class="internal"><span class="codenumber">7</span> <span class="title">Inner Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inner-products.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Inner Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-dot-product" class="internal"><span class="codenumber">7.1.1</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-general-inner-prod" class="internal"><span class="codenumber">7.1.2</span> <span class="title">The Inner Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-orthogonality" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Orthogonality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inner-products.html#subsec-results-inner-products" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Results for Inner Product Spaces</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-inner-products.html#sec-inner-products-7" class="internal"><span class="codenumber">7.1.5</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-inner-products.html#sec-inner-products-8" class="internal"><span class="codenumber">7.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orthonormal-bases.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Orthonormal Bases</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-orthonormality" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Orthonormality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-orthonormal-coordinates" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Coordinates in Orthonormal Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#subsec-gram-schmidt" class="internal"><span class="codenumber">7.2.3</span> <span class="title">The Gram-Schmidt Process</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#sec-orthonormal-bases-6" class="internal"><span class="codenumber">7.2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-orthonormal-bases.html#sec-orthonormal-bases-7" class="internal"><span class="codenumber">7.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orthogonal-projections.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonal Projections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-orthog-complements" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-orthog-proj" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Orthogonal Projections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#subsec-least-squares" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Least Squares Approximation</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#sec-orthogonal-projections-6" class="internal"><span class="codenumber">7.3.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-orthogonal-projections.html#sec-orthogonal-projections-7" class="internal"><span class="codenumber">7.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="apdx-mod-arith.html" class="internal"><span class="codenumber">A</span> <span class="title">The Integers Modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="apdx-isomorphisms.html" class="internal"><span class="codenumber">B</span> <span class="title">Isomorphisms</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-det-properties"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title">Properties of the Determinant</span>
+</h2>
+<section class="introduction" id="sec-det-properties-2"><div class="para" id="sec-det-properties-2-1">We have introduced the determinant, but we have not yet backed up our assertion that the determinant is <em class="emphasis">useful</em> or <em class="emphasis">powerful</em>. Our goal in this section is to establish just that. In particular, by the end of this section we will be able to conclude that the determinant gives a characterization of the invertibility of a square matrix.</div></section><section class="subsection" id="det-elem-row-ops"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="space"> </span><span class="title">The Determinant and Elementary Row Operations</span>
+</h3>
+<div class="para" id="det-elem-row-ops-2">In this subsection we will discover how elementary row operations affect the determinant of a matrix. These will be essential facts for proving the big theorems of this chapter. We begin with a result that is obvious in light of <a href="" class="xref" data-knowl="./knowl/xref/thm-det-any-row.html" title="Theorem 4.1.7">Theorem 4.1.7</a>.</div>
+<article class="proposition theorem-like" id="prop-det-row-zeros"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-det-row-zeros-1-1">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> If <span class="process-math">\(A\)</span> has a row of zeros, then <span class="process-math">\(\det(A)=0\text{.}\)</span>
+</div></article><details id="prop-det-row-zeros-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="prop-det-row-zeros-2-1">To calculate <span class="process-math">\(\det(A)\text{,}\)</span> we use cofactor expansion along the row of zeros. This immediately shows that <span class="process-math">\(\det(A)=0\text{.}\)</span>
+</div></article></details><article class="note remark-like" id="det-elem-row-ops-4"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="det-elem-row-ops-4-1">We observe that <a href="" class="xref" data-knowl="./knowl/xref/prop-det-row-zeros.html" title="Proposition 4.2.1">Proposition 4.2.1</a> is also true if the word “row” is replaced by “column” since a matrix and its transpose have equal determinants. The reader should consider each result in this section and reflect on whether the statement would still hold after making the same word exchange.</div></article><div class="para" id="det-elem-row-ops-5">Now, we examine the effect of the <em class="emphasis">switch</em> elementary row operation.</div>
+<article class="theorem theorem-like" id="thm-det-switch"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-det-switch-1-1">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(B\)</span> be the result of switching two rows in <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(\det(B) = -\det(A)\text{.}\)</span>
+</div></article><details id="thm-det-switch-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-det-switch-2-1">We will proceed by induction on <span class="process-math">\(n\text{.}\)</span> This result only makes sense for <span class="process-math">\(n \ge 2\text{,}\)</span> and the base case of <span class="process-math">\(n=2\)</span> was covered in <a href="" class="xref" data-knowl="./knowl/xref/exer-det-switch-rows.html" title="Exercise 4.1.4.11">Exercise 4.1.4.11</a>.</div> <div class="para" id="thm-det-switch-2-2">We let <span class="process-math">\(k\)</span> be an integer such that <span class="process-math">\(k \ge 2\)</span> and we assume the result is true for all <span class="process-math">\(k\times k\)</span> matrices. Let <span class="process-math">\(A\)</span> be a <span class="process-math">\((k+1)\times (k+1)\)</span> matrix and let <span class="process-math">\(B\)</span> be the result of switching two rows in <span class="process-math">\(A\text{.}\)</span> We want to show that <span class="process-math">\(\det(B)=-\det(A)\text{.}\)</span>
+</div> <div class="para logical" id="thm-det-switch-2-3">
+<div class="para">Since <span class="process-math">\(k \ge 2\text{,}\)</span> we have <span class="process-math">\(k+1 \ge 3\text{,}\)</span> which means that we can calculate <span class="process-math">\(\det(B)\)</span> by expansion along a row that is not involved in the row exchange. Suppose that <span class="process-math">\(B\)</span> was produced by switching rows <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{.}\)</span> We will calculate <span class="process-math">\(\det(B)\)</span> by expanding along row <span class="process-math">\(i\text{,}\)</span> which is distinct from both <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(B) = \sum_{j=1}^n (-1)^{i+j}[B]_{ij} \det(B_{ij})\text{.}
+\end{equation*}
+</div>
+<div class="para">We note that since <span class="process-math">\(i\)</span> will never be <span class="process-math">\(p\)</span> or <span class="process-math">\(q\text{,}\)</span> <span class="process-math">\([B]_{ij} = [A]_{ij}\)</span> and <span class="process-math">\(B_{ij}\)</span> can be obtained by performing a switch row operation on <span class="process-math">\(A_{ij}\text{.}\)</span> This means that, by the inductive hypothesis, we have <span class="process-math">\(\det(B_{ij}) = -\det(A_{ij})\)</span> for all <span class="process-math">\(j\)</span> since these matrices are <span class="process-math">\(k\times k\text{.}\)</span> So, we have</div>
+<div class="displaymath process-math" id="thm-det-switch-2-3-21">
+\begin{align*}
+\det(B) \amp = \sum_{j=1}^n (-1)^{i+j}[A]_{ij}(-1) \det(A_{ij}) \\
+\amp = - \sum_{j=1}^n (-1)^{i+j}[A]_{ij} \det(A_{ij})\\
+\amp = -\det(A)\text{.}
+\end{align*}
+</div>
+<div class="para">This completes the inductive step.</div>
+</div> <div class="para" id="thm-det-switch-2-4">We have shown that the result holds for all <span class="process-math">\(n \ge 2\)</span> by the Principle of Mathematical Induction.</div></article></details><div class="para" id="det-elem-row-ops-7">The second elementary row operation we will consider is the <em class="emphasis">scale</em> operation. How is the determinant of a matrix affected if one row is multiplied by a non-zero element of the field?</div>
+<article class="theorem theorem-like" id="thm-det-scale"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-det-scale-1-1">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(B\)</span> be the result of multiplying a row in <span class="process-math">\(A\)</span> by a non-zero <span class="process-math">\(c \in \ff\text{.}\)</span> Then <span class="process-math">\(\det(B) = c\det(A)\text{.}\)</span>
+</div></article><details id="thm-det-scale-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-det-scale-2-1">
+<div class="para">We will not need induction here. Suppose that <span class="process-math">\(B\)</span> is formed by multiplying row <span class="process-math">\(i\)</span> in <span class="process-math">\(A\)</span> by <span class="process-math">\(c \in \ff\)</span> where <span class="process-math">\(c \neq 0\text{.}\)</span> We will calculate <span class="process-math">\(\det(B)\)</span> by expanding along row <span class="process-math">\(i\text{.}\)</span> Note that since row <span class="process-math">\(i\)</span> is the only row affected by this operation, <span class="process-math">\(B_{ij}=A_{ij}\)</span> for all <span class="process-math">\(1 \le j \le n\text{.}\)</span> Additionally, we note that <span class="process-math">\([B]_{ij} = c[A]_{ij}\)</span> for all <span class="process-math">\(1 \le j \le n\text{.}\)</span> Now we have</div>
+<div class="displaymath process-math" id="thm-det-scale-2-1-13">
+\begin{align*}
+\det(B) \amp = \sum_{j=1}^n (-1)^{i+j}[B]_{ij} \det(B_{ij})\\
+\amp = \sum_{j=1}^n (-1)^{i+j}c[A]_{ij} \det(A_{ij})\\
+\amp = c\sum_{j=1}^n (-1)^{i+j}[A]_{ij} \det(A_{ij})\\
+\amp = c\det(A)\text{.}
+\end{align*}
+</div>
+</div></article></details><div class="para" id="det-elem-row-ops-9">We now present the result related to the final elementary row operation, the <em class="emphasis">replace</em> operation.</div>
+<article class="theorem theorem-like" id="thm-det-replace"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-det-replace-1-1">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(B\)</span> be the result of replacing a row in <span class="process-math">\(A\)</span> with the sum of that row and <span class="process-math">\(c\)</span> times another row in <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(\det(B) = \det(A)\text{.}\)</span>
+</div></article><details id="thm-det-replace-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-det-replace-2-1">We proceed by induction on <span class="process-math">\(n\text{.}\)</span> This result only makes sense when <span class="process-math">\(n \ge 2\text{,}\)</span> and the base case of <span class="process-math">\(n=2\)</span> is covered in <a href="" class="xref" data-knowl="./knowl/xref/exer-det-replace-row.html" title="Exercise 4.1.4.12">Exercise 4.1.4.12</a>.</div> <div class="para" id="thm-det-replace-2-2">We let <span class="process-math">\(k\)</span> be an integer such that <span class="process-math">\(k \ge 2\)</span> and we assume the result is true for all <span class="process-math">\(k\times k\)</span> matrices. Let <span class="process-math">\(A\)</span> be a <span class="process-math">\((k+1)\times (k+1)\)</span> matrix and let <span class="process-math">\(B\)</span> be the result of replacing row <span class="process-math">\(q\)</span> in <span class="process-math">\(A\)</span> with the sum of row <span class="process-math">\(q\)</span> and <span class="process-math">\(c\)</span> times row <span class="process-math">\(p\)</span> in <span class="process-math">\(A\text{.}\)</span> We want to show that <span class="process-math">\(\det(B)=\det(A)\text{.}\)</span>
+</div> <div class="para logical" id="thm-det-replace-2-3">
+<div class="para">We observe that <span class="process-math">\(k\)</span> is large enough that we can calculate <span class="process-math">\(\det(B)\)</span> by expanding along a row which is not row <span class="process-math">\(q\text{;}\)</span> we will call it row <span class="process-math">\(i\text{.}\)</span> Since <span class="process-math">\(i \neq q\text{,}\)</span> we have <span class="process-math">\([B]_{ij} = [A]_{ij}\)</span> for all <span class="process-math">\(1 \le j \le n\text{.}\)</span> Additionally, for each <span class="process-math">\(j\text{,}\)</span> <span class="process-math">\(B_{ij}\)</span> is a <span class="process-math">\(k\times k\)</span> matrix which has been obtained from <span class="process-math">\(A_{ij}\)</span> by a <em class="emphasis">replace</em> row operation. The inductive hypothesis means that <span class="process-math">\(\det(B_{ij}) = \det(A_{ij})\)</span> for all <span class="process-math">\(1 \le j \le n\text{.}\)</span> Therefore, we have the following:</div>
+<div class="displaymath process-math" id="thm-det-replace-2-3-15">
+\begin{align*}
+\det(B) \amp = \sum_{j=1}^n (-1)^{i+j} [B]_{ij} \det(B_{ij})\\
+\amp = \sum_{j=1}^n (-1)^{i+j} [A]_{ij} \det(A_{ij})\\
+\amp = \det(A)\text{.}
+\end{align*}
+</div>
+<div class="para">This completes the inductive step.</div>
+</div> <div class="para" id="thm-det-replace-2-4">We have shown that the result holds for all <span class="process-math">\(n \ge 2\)</span> by the Principle of Mathematical Induction.</div></article></details><div class="para" id="det-elem-row-ops-11">The following example shows how these three theorems can be used to calculate the determinant of a matrix using row reduction.</div>
+<details id="det-elem-row-ops-12" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="det-elem-row-ops-12-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be the following matrix:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-triangular.html">
+\begin{equation*}
+A = \begin{bmatrix} 
+2 \amp 0 \amp -3 \\ 1 \amp -1 \amp 2 \\ -2 \amp 3 \amp 0
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We will find <span class="process-math">\(\det(A)\)</span> using row reduction. We first switch rows 1 and 2, which introduces a negative sign:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-triangular.html">
+\begin{equation*}
+\det(A) = - \begin{vmatrix} 
+1 \amp -1 \amp 2 \\ 2 \amp 0 \amp -3 \\ -2 \amp 3 \amp 0
+\end{vmatrix} \text{.}
+\end{equation*}
+</div>
+<div class="para">Once we reduce the matrix to a triangular form, we can use <a href="" class="xref" data-knowl="./knowl/xref/prop-det-triangular.html" title="Proposition 4.1.12">Proposition 4.1.12</a>, so we do not need to reduce the matrix to RREF, only to REF. This means that the rest of the row reduction can be performed using only the <em class="emphasis">replace</em> operation, which does not change the determinant:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-triangular.html" id="det-elem-row-ops-12-1-1-7">
+\begin{align*}
+\det(A) \amp = - \begin{vmatrix} 
+1 \amp -1 \amp 2 \\ 2 \amp 0 \amp -3 \\ 0 \amp 3 \amp -3
+\end{vmatrix}  = - \begin{vmatrix} 
+1 \amp -1 \amp 2 \\ 0 \amp 2 \amp -7 \\ 0 \amp 3 \amp -3
+\end{vmatrix} = - \begin{vmatrix} 
+1 \amp -1 \amp 2 \\ 0 \amp 2 \amp -7 \\ 0 \amp 0 \amp \tfrac{15}{2}
+\end{vmatrix}\text{.}
+\end{align*}
+</div>
+<div class="para">We have reduced the matrix far enough so that we can calculate its determinant using the product of the entries along the main diagonal:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-triangular.html">
+\begin{equation*}
+\det(A) = (-1)(1)(2)(\tfrac{15}{2}) = -15\text{.}
+\end{equation*}
+</div>
+</div></article></details></section><section class="subsection" id="subsec-det-main-results"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="space"> </span><span class="title">Invertibility and the Determinant</span>
+</h3>
+<div class="para" id="subsec-det-main-results-2">We will use the results that have accumulated thus far in this section to prove two major results. First, we need to record an easy fact.</div>
+<article class="lemma theorem-like" id="lem-det-identity"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.2.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="lem-det-identity-1-1">For any <span class="process-math">\(n \ge 1\text{,}\)</span> we have <span class="process-math">\(\det(I_n)=1\text{.}\)</span>
+</div></article><details id="lem-det-identity-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-det-identity-2-1">Since the identity matrix is, among other things, a triangular matrix, <a href="" class="xref" data-knowl="./knowl/xref/prop-det-triangular.html" title="Proposition 4.1.12">Proposition 4.1.12</a> applies. The entries along the main diagonal are all <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(\det(I_n)=1\text{.}\)</span>
+</div></article></details><div class="para" id="subsec-det-main-results-4">We will now apply this lemma to record the determinant of any elementary matrix.</div>
+<article class="proposition theorem-like" id="prop-det-elem-matrices"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.2.8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="prop-det-elem-matrices-1-1">
+<div class="para">Let <span class="process-math">\(E \in M_n(\ff)\)</span> be an elementary matrix.</div>
+<ol class="decimal">
+<li id="prop-det-elem-matrices-1-1-2-1"><div class="para" id="prop-det-elem-matrices-1-1-2-1-1">If <span class="process-math">\(E\)</span> performs the <em class="emphasis">switch</em> elementary row operation, then <span class="process-math">\(\det(E)=-1\text{.}\)</span>
+</div></li>
+<li id="prop-det-elem-matrices-1-1-2-2"><div class="para" id="prop-det-elem-matrices-1-1-2-2-1">If <span class="process-math">\(E\)</span> performs the <em class="emphasis">scale</em> elementary row operation, and if the scaling is by <span class="process-math">\(c \in \ff\text{,}\)</span> then <span class="process-math">\(\det(E) = c\text{.}\)</span>
+</div></li>
+<li id="prop-det-elem-matrices-1-1-2-3"><div class="para" id="prop-det-elem-matrices-1-1-2-3-1">If <span class="process-math">\(E\)</span> performs the <em class="emphasis">replace</em> elementary row operation, then <span class="process-math">\(\det(E) = 1\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="prop-det-elem-matrices-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="prop-det-elem-matrices-2-1">Every elementary matrix in <span class="process-math">\(M_n(\ff)\)</span> is the result of performing a single elementary row operation on <span class="process-math">\(I_n\text{.}\)</span> We have theorems in this section which tell us how these elementary row operations affect the determinant of a matrix, and since from <a href="" class="xref" data-knowl="./knowl/xref/lem-det-identity.html" title="Lemma 4.2.7">Lemma 4.2.7</a> we know that <span class="process-math">\(\det(I_n)=1\text{,}\)</span> we will be able to arrive at our result.</div> <div class="para" id="prop-det-elem-matrices-2-2">If <span class="process-math">\(E\)</span> performs a <em class="emphasis">switch</em> row operation, then by <a href="" class="xref" data-knowl="./knowl/xref/thm-det-switch.html" title="Theorem 4.2.3">Theorem 4.2.3</a> we have <span class="process-math">\(\det(E) = \det(EI_n) = -\det(I_n)=-1\text{.}\)</span>
+</div> <div class="para" id="prop-det-elem-matrices-2-3">If <span class="process-math">\(E\)</span> scales one row of a matrix by a non-zero <span class="process-math">\(c \in \ff\text{,}\)</span> then by <a href="" class="xref" data-knowl="./knowl/xref/thm-det-scale.html" title="Theorem 4.2.4">Theorem 4.2.4</a> we have <span class="process-math">\(\det(E) = \det(EI_n) = c\det(I_n) = c\text{.}\)</span>
+</div> <div class="para" id="prop-det-elem-matrices-2-4">Finally, if <span class="process-math">\(E\)</span> performs a <em class="emphasis">replace</em> row operation, then by <a href="" class="xref" data-knowl="./knowl/xref/thm-det-replace.html" title="Theorem 4.2.5">Theorem 4.2.5</a> we have <span class="process-math">\(\det(E) = \det(EI_n) = \det(I_n) = 1\text{,}\)</span> which completes the proof.</div></article></details><details id="subsec-det-main-results-6" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.9</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-det-main-results-6-1-1">
+<div class="para">Sometimes, the easiest way to find a determinant by hand is to use a combination of cofactor expansion and row reduction techniques. Let <span class="process-math">\(A \in M_4(\rr)\)</span> be the following matrix:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-triangular.html">
+\begin{equation*}
+A = \begin{bmatrix} 
+0 \amp 1 \amp -1 \amp 2 \\ 
+1 \amp 3 \amp 0 \amp -2 \\ 
+2 \amp 4 \amp 1 \amp -1 \\ 
+-2 \amp 0 \amp -1 \amp -3
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">To find <span class="process-math">\(\det(A)\text{,}\)</span> we first use the <em class="emphasis">replace</em> row operation, using the <span class="process-math">\(1\)</span> in the <span class="process-math">\((2,1)\)</span> position to put zeros in the column below it:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-triangular.html">
+\begin{equation*}
+A \sim \begin{bmatrix} 
+0 \amp 1 \amp -1 \amp 2 \\ 
+1 \amp 3 \amp 0 \amp -2 \\ 
+0 \amp -2 \amp 1 \amp 3 \\ 
+0 \amp 6 \amp -1 \amp -7
+\end{bmatrix} = B\text{.}
+\end{equation*}
+</div>
+<div class="para">Since the <em class="emphasis">replace</em> row operation doesn’t change the determinant, we have <span class="process-math">\(\det(A) = \det(B)\text{.}\)</span> We now use cofactor expansion along the first column to calculate <span class="process-math">\(\det(B)\text{.}\)</span> Since there is only one non-zero entry in that column, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-triangular.html">
+\begin{equation*}
+\det(B) = - \begin{vmatrix} 
+1 \amp -1 \amp 2 \\ 
+-2 \amp 1 \amp 3 \\ 
+6 \amp -1 \amp -7
+\end{vmatrix} \text{.}
+\end{equation*}
+</div>
+<div class="para">We can now use the <em class="emphasis">replace</em> row operation three more times, to produce zeros in the <span class="process-math">\((2,1)\text{,}\)</span> <span class="process-math">\((3,1)\text{,}\)</span> and <span class="process-math">\((3,2)\)</span> positions of this <span class="process-math">\(3\times 3\)</span> matrix:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-triangular.html">
+\begin{equation*}
+\det(B) = - \begin{vmatrix} 
+1 \amp -1 \amp 2 \\ 
+0 \amp -1 \amp 7 \\ 
+0 \amp 5 \amp -19
+\end{vmatrix} = - \begin{vmatrix} 
+1 \amp -1 \amp 2 \\ 
+0 \amp -1 \amp 7 \\ 
+0 \amp 0 \amp 16
+\end{vmatrix} \text{.}
+\end{equation*}
+</div>
+<div class="para">We now invoke <a href="" class="xref" data-knowl="./knowl/xref/prop-det-triangular.html" title="Proposition 4.1.12">Proposition 4.1.12</a> to see that <span class="process-math">\(\det(B) = -(-1)(16) = 16\text{.}\)</span> Since <span class="process-math">\(\det(B)=\det(A)\text{,}\)</span> we have <span class="process-math">\(\det(A)=16\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="subsec-det-main-results-7">In this next result, we use <a href="" class="xref" data-knowl="./knowl/xref/prop-det-elem-matrices.html" title="Proposition 4.2.8">Proposition 4.2.8</a> to show that the determinant respects matrix multiplication, at least when one of the factors is an elementary matrix.</div>
+<article class="theorem theorem-like" id="thm-det-prod-elem"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.10</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="thm-det-prod-elem-1-1">
+<div class="para">Let <span class="process-math">\(A, E \in M_n(\ff)\text{,}\)</span> and let <span class="process-math">\(E\)</span> be an elementary matrix. Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(EA) = \det(E)\det(A)\text{.}
+\end{equation*}
+</div>
+</div></article><details id="thm-det-prod-elem-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-det-prod-elem-2-1">
+<div class="para">This argument uses <a href="" class="xref" data-knowl="./knowl/xref/prop-det-elem-matrices.html" title="Proposition 4.2.8">Proposition 4.2.8</a> and requires three cases. If <span class="process-math">\(E\)</span> performs a <em class="emphasis">switch</em> row operation, then we know from <a href="" class="xref" data-knowl="./knowl/xref/thm-det-switch.html" title="Theorem 4.2.3">Theorem 4.2.3</a> that <span class="process-math">\(\det(EA) = -\det(A)\text{.}\)</span> Since we now know that <span class="process-math">\(\det(E)=-1\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-elem-matrices.html ./knowl/xref/thm-det-switch.html">
+\begin{equation*}
+\det(EA) = -\det(A) = \det(E)\det(A)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="thm-det-prod-elem-2-2">
+<div class="para">If <span class="process-math">\(E\)</span> performs a <em class="emphasis">scale</em> row operation, and if the scaling is by a non-zero <span class="process-math">\(c \in \ff\text{,}\)</span> then we know from <a href="" class="xref" data-knowl="./knowl/xref/thm-det-scale.html" title="Theorem 4.2.4">Theorem 4.2.4</a> that <span class="process-math">\(\det(EA) = c\det(A)\text{.}\)</span> Since <span class="process-math">\(\det(E)=c\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-scale.html">
+\begin{equation*}
+\det(EA) = c\det(A) = \det(E)\det(A)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="thm-det-prod-elem-2-3">
+<div class="para">Finally, if <span class="process-math">\(E\)</span> performs a <em class="emphasis">replace</em> row operation, then we know from <a href="" class="xref" data-knowl="./knowl/xref/thm-det-replace.html" title="Theorem 4.2.5">Theorem 4.2.5</a> that <span class="process-math">\(\det(EA) = \det(A)\text{.}\)</span> We know that <span class="process-math">\(\det(E)=1\text{,}\)</span> so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-replace.html">
+\begin{equation*}
+\det(EA) = \det(A) =  1\cdot \det(A) = \det(E)\det(A)\text{.}
+\end{equation*}
+</div>
+</div></article></details><div class="para" id="subsec-det-main-results-9">Armed with this result, we can now prove one of the most useful facts about determinants.</div>
+<article class="theorem theorem-like" id="thm-det-invertible"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-det-invertible-1-1">For any <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> over <span class="process-math">\(\ff\text{,}\)</span> <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(\det(A) \neq 0\text{.}\)</span>
+</div></article><details id="thm-det-invertible-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-det-invertible-2-1">
+<div class="para">For <span class="process-math">\(A \in M_n(\ff)\text{,}\)</span> let <span class="process-math">\(B\in M_n(\ff)\)</span> be the unique RREF of <span class="process-math">\(A\text{.}\)</span> From <a href="" class="xref" data-knowl="./knowl/xref/prop-el-matrices-rref.html" title="Proposition 3.3.6">Proposition 3.3.6</a>, we know there exist elementary matrices <span class="process-math">\(E_1, \ldots, E_k\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-el-matrices-rref.html ./knowl/xref/thm-det-prod-elem.html ./knowl/xref/prop-det-elem-matrices.html">
+\begin{equation*}
+A = E_1 \cdots E_k B\text{.}
+\end{equation*}
+</div>
+<div class="para">We can apply <a href="" class="xref" data-knowl="./knowl/xref/thm-det-prod-elem.html" title="Theorem 4.2.10">Theorem 4.2.10</a> repeatedly to see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-el-matrices-rref.html ./knowl/xref/thm-det-prod-elem.html ./knowl/xref/prop-det-elem-matrices.html">
+\begin{equation*}
+\det(A) = \det(E_1 \cdots E_k B) = \det(E_1)\cdots \det(E_k)\det(B)\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\det(E_i) \neq 0\)</span> for each <span class="process-math">\(i\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/prop-det-elem-matrices.html" title="Proposition 4.2.8">Proposition 4.2.8</a>, we conclude that <span class="process-math">\(\det(A) \neq 0\)</span> if and only if <span class="process-math">\(\det(B) \neq 0\text{.}\)</span>
+</div>
+</div> <div class="para" id="thm-det-invertible-2-2">We now assume that <span class="process-math">\(A\)</span> is invertible. <a href="" class="xref" data-knowl="./knowl/xref/thm-find-inverse-matrix.html" title="Theorem 3.3.8">Theorem 3.3.8</a> tells us that <span class="process-math">\(B = I_n\text{,}\)</span> so <span class="process-math">\(\det(B) \neq 0\text{.}\)</span> This proves one direction of the theorem.</div> <div class="para" id="thm-det-invertible-2-3">We will prove the contrapositive of the other direction of the theorem. We now assume that <span class="process-math">\(A\)</span> is not invertible, which means that <span class="process-math">\(B \neq I_n\text{.}\)</span> Specifically, <span class="process-math">\(B\)</span> must have fewer than <span class="process-math">\(n\)</span> pivots, which means that <span class="process-math">\(B\)</span> must have at least one row of zeros. By <a href="" class="xref" data-knowl="./knowl/xref/prop-det-row-zeros.html" title="Proposition 4.2.1">Proposition 4.2.1</a> we have <span class="process-math">\(\det(B)=0\text{.}\)</span> Therefore, we must also have <span class="process-math">\(\det(A)=0\text{.}\)</span>
+</div></article></details><div class="para" id="subsec-det-main-results-11">If a casual math student spends some time away from linear algebra, this previous theorem might be the one and only fact they remember about the determinant. It is powerful and used <em class="emphasis">frequently</em>.</div>
+<details id="subsec-det-main-results-12" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.12</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="subsec-det-main-results-12-1-1">
+<div class="para">Using this theorem, if <span class="process-math">\(A \in M_3(\rr)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 
+2 \amp -4 \amp 2 \\ 
+1 \amp 0 \amp 3 \\ 
+3.5 \amp 2 \amp 12.5
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">then we can say that <span class="process-math">\(A\)</span> is not invertible since <span class="process-math">\(\det(A)=0\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="subsec-det-main-results-12-1-2">
+<div class="para">We can also analyze the invertibility of matrices over other fields. Consider the matrix <span class="process-math">\(B \in M_3(\ff_5)\)</span> given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B = \begin{bmatrix}
+3 \amp 4 \amp 1 \\
+1 \amp 4 \amp 0 \\ 
+1 \amp 2 \amp 4
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We find that <span class="process-math">\(\det(B)=0\text{,}\)</span> so <span class="process-math">\(B\)</span> is not invertible. (If <span class="process-math">\(B\)</span> were a matrix over <span class="process-math">\(\rr\text{,}\)</span> we would have <span class="process-math">\(\det(B)=30\text{.}\)</span> But this means that, in <span class="process-math">\(\ff_5\text{,}\)</span> <span class="process-math">\(\det(B)=0\text{.}\)</span>)</div>
+</div> <div class="para logical" id="subsec-det-main-results-12-1-3">
+<div class="para">Finally, we consider another matrix <span class="process-math">\(C \in M_3(\ff_5)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C = \begin{bmatrix} 
+0 \amp 2 \amp 3 \\ 
+1 \amp 2 \amp 1 \\ 
+2 \amp 2 \amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\det(C)=1\)</span> in <span class="process-math">\(\ff_5\text{,}\)</span> <span class="process-math">\(C\)</span> is invertible.</div>
+</div></article></details><div class="para" id="subsec-det-main-results-13">We present one final, important result about determinants in the last theorem of this chapter.</div>
+<article class="theorem theorem-like" id="thm-det-matrix-product"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-det-matrix-product-1-1">Let <span class="process-math">\(A, B \in M_n(\ff)\text{.}\)</span> Then <span class="process-math">\(\det(AB) = \det(A)\det(B)\text{.}\)</span>
+</div></article><details id="thm-det-matrix-product-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-det-matrix-product-2-1">If <span class="process-math">\(A\)</span> is not invertible, then neither is <span class="process-math">\(AB\text{,}\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/exer-invertible-product.html" title="Exercise 3.3.4.10">Exercise 3.3.4.10</a>. This means that <span class="process-math">\(\det(AB)=\det(A)\det(B)\)</span> since, by <a href="" class="xref" data-knowl="./knowl/xref/thm-det-invertible.html" title="Theorem 4.2.11">Theorem 4.2.11</a>, both sides of the equation are zero.</div> <div class="para logical" id="thm-det-matrix-product-2-2">
+<div class="para">If <span class="process-math">\(A\)</span> is invertible, then <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_n\text{,}\)</span> and there exist elementary matrices <span class="process-math">\(E_1, \ldots, E_k\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-prod-elem.html ./knowl/xref/thm-det-prod-elem.html">
+\begin{equation*}
+A = E_1 \cdots E_kI_n = E_1 \cdots E_k \text{.}
+\end{equation*}
+</div>
+<div class="para">In the calculation that follows, we use this factorization as well as repeated application of <a href="" class="xref" data-knowl="./knowl/xref/thm-det-prod-elem.html" title="Theorem 4.2.10">Theorem 4.2.10</a>. We first use <a href="" class="xref" data-knowl="./knowl/xref/thm-det-prod-elem.html" title="Theorem 4.2.10">Theorem 4.2.10</a> to peel the determinant of elementary matrices away from <span class="process-math">\(\det(B)\text{;}\)</span> we then use the same result to put those determinants back together to form <span class="process-math">\(\det(A)\text{.}\)</span> Here is the argument:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-prod-elem.html ./knowl/xref/thm-det-prod-elem.html" id="thm-det-matrix-product-2-2-10">
+\begin{align*}
+\det(AB) \amp = \det(E_1\cdots E_kB)\\
+\amp = \det(E_1) \det(E_2 \cdots E_kB)\\
+\amp = \det(E_1) \det(E_2) \det(E_3 \cdots E_kB) = \cdots \\
+\amp = \det(E_1) \cdots \det(E_k)\det(B)\\
+\amp = \det(E_1E_2) \cdots \det(E_k)\det(B) = \cdots \\
+\amp = \det(E_1 \cdots E_k) \det(B) = \det(A)\det(B)\text{.}
+\end{align*}
+</div>
+<div class="para">This completes the proof.</div>
+</div></article></details><div class="para" id="subsec-det-main-results-15">We take a step back for a moment to marvel at this theorem. We defined matrix multiplication in the context of the composition of linear transformations (see <a href="sec-matrix-linear-trans.html#subsec-matrix-mult" class="internal" title="Subsection 3.2.2: Composition and Matrix Multiplication">Subsection 3.2.2</a>), and the calculations were quite involved. The definition of the determinant was also complicated, so the fact that these two notions fit together so nicely is worthy of our admiration.</div>
+<details id="examp-verify-det-product" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.14</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="examp-verify-det-product-1-1">
+<div class="para">In this example, we will verify <a href="" class="xref" data-knowl="./knowl/xref/thm-det-matrix-product.html" title="Theorem 4.2.13">Theorem 4.2.13</a> for a specific example. Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be the following matrices:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-matrix-product.html">
+\begin{equation*}
+A = \begin{bmatrix}
+-1 \amp -2 \\ -3 \amp -4
+\end{bmatrix}, \hspace{12pt} 
+B = \begin{bmatrix} 
+-2 \amp 4 \\ 4 \amp 2
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We calculate <span class="process-math">\(AB\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-matrix-product.html">
+\begin{equation*}
+AB = \begin{bmatrix} 
+-6 \amp -8 \\ -10 \amp -20
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We see that <span class="process-math">\(\det(A)=-2\text{,}\)</span> <span class="process-math">\(\det(B)=-20\text{,}\)</span> and <span class="process-math">\(\det(AB)=40\text{,}\)</span> so the relationship <span class="process-math">\(\det(AB)=\det(A)\det(B)\)</span> holds.</div>
+</div></article></details></section><section class="reading-questions" id="sec-det-properties-5"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="space"> </span><span class="title">Reading Questions</span>
+</h3>
+<article class="exercise exercise-like" id="sec-det-properties-5-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-5-1-1-1">
+<div class="para">Consider the following three matrices:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-switch.html ./knowl/xref/thm-det-replace.html">
+\begin{equation*}
+A = \begin{bmatrix} 
+3 \amp -1 \amp -2 \\ 
+1 \amp 2 \amp 0 \\ 
+1 \amp 1 \amp 2
+\end{bmatrix}, \hspace{6pt} A_1 = \begin{bmatrix} 
+1 \amp 1 \amp 2 \\ 
+1 \amp 2 \amp 0 \\ 
+3 \amp -1 \amp -2  
+\end{bmatrix}, \hspace{6pt} A_2 = \begin{bmatrix} 
+3 \amp -1 \amp -2 \\ 
+1 \amp 2 \amp 0 \\ 
+0 \amp -1 \amp 2
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="sec-det-properties-5-1-1-1-2-1"><div class="para" id="sec-det-properties-5-1-1-1-2-1-1">Calculate <span class="process-math">\(\det(A)\)</span> using cofactor expansion along some row or column.</div></li>
+<li id="sec-det-properties-5-1-1-1-2-2"><div class="para" id="sec-det-properties-5-1-1-1-2-2-1">The matrix <span class="process-math">\(A_1\)</span> was obtained from <span class="process-math">\(A\)</span> by a single elementary row operation. Which one?</div></li>
+<li id="sec-det-properties-5-1-1-1-2-3"><div class="para" id="sec-det-properties-5-1-1-1-2-3-1">Knowing <span class="process-math">\(\det(A)\)</span> and given your answer to (b), what do you predict <span class="process-math">\(\det(A_1)\)</span> to be? (Consult <a href="" class="xref" data-knowl="./knowl/xref/thm-det-switch.html" title="Theorem 4.2.3">Theorem 4.2.3</a>.)</div></li>
+<li id="sec-det-properties-5-1-1-1-2-4"><div class="para" id="sec-det-properties-5-1-1-1-2-4-1">Calculate <span class="process-math">\(\det(A_1)\)</span> using cofactor expansion along some row or column.</div></li>
+<li id="sec-det-properties-5-1-1-1-2-5"><div class="para" id="sec-det-properties-5-1-1-1-2-5-1">The matrix <span class="process-math">\(A_2\)</span> was obtained from <span class="process-math">\(A\)</span> by a single elementary row operation. Which one?</div></li>
+<li id="sec-det-properties-5-1-1-1-2-6"><div class="para" id="sec-det-properties-5-1-1-1-2-6-1">Knowing <span class="process-math">\(\det(A)\)</span> and given your answer to (e), what do you predict <span class="process-math">\(\det(A_2)\)</span> to be? (Consult <a href="" class="xref" data-knowl="./knowl/xref/thm-det-replace.html" title="Theorem 4.2.5">Theorem 4.2.5</a>.)</div></li>
+<li id="sec-det-properties-5-1-1-1-2-7"><div class="para" id="sec-det-properties-5-1-1-1-2-7-1">Calculate <span class="process-math">\(\det(A_2)\)</span> using cofactor expansion along some row or column.</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-5-2-1-1">
+<div class="para">Verify <a href="" class="xref" data-knowl="./knowl/xref/thm-det-matrix-product.html" title="Theorem 4.2.13">Theorem 4.2.13</a> for the following two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-matrix-product.html ./knowl/xref/examp-verify-det-product.html">
+\begin{equation*}
+A = \begin{bmatrix} 
+4 \amp 1 \\ 5 \amp 2
+\end{bmatrix}, \hspace{12pt} 
+B = \begin{bmatrix} 
+-1 \amp 2 \\ 1 \amp -3
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">(You should follow <a href="" class="xref" data-knowl="./knowl/xref/examp-verify-det-product.html" title="Example 4.2.14">Example 4.2.14</a>)</div>
+</div> </article></section><section class="exercises" id="sec-det-properties-6"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="sec-det-properties-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-1-1-1">
+<div class="para">Find the determinant of the matrix using row reduction.</div>
+<ol class="lower-alpha">
+<li id="sec-det-properties-6-1-1-1-1-1"><div class="para" id="sec-det-properties-6-1-1-1-1-1-1">
+<span class="process-math">\(\displaystyle A = \begin{bmatrix}
+1 \amp 2 \amp -1 \\ 
+2 \amp -4 \amp -2 \\ 
+-4 \amp -3 \amp 2
+\end{bmatrix}\)</span> </div></li>
+<li id="sec-det-properties-6-1-1-1-1-2"><div class="para" id="sec-det-properties-6-1-1-1-1-2-1">
+<span class="process-math">\(\displaystyle A = \begin{bmatrix}
+-1 \amp -2 \amp 0 \amp 3 \\ 
+-2 \amp -2 \amp 0 \amp -2 \\ 
+0 \amp 2 \amp 1 \amp 0 \\ 
+3 \amp 8 \amp 3 \amp 7
+\end{bmatrix}\)</span> </div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-2-1-1">
+<div class="para">Find the determinant of the matrix using row reduction.</div>
+<ol class="lower-alpha">
+<li id="sec-det-properties-6-2-1-1-1-1"><div class="para" id="sec-det-properties-6-2-1-1-1-1-1">
+<span class="process-math">\(\displaystyle A = \begin{bmatrix}
+-2 \amp -1 \amp 2 \\ 
+-1 \amp 0 \amp 2 \\ 
+3 \amp -3 \amp 0
+\end{bmatrix}\)</span> </div></li>
+<li id="sec-det-properties-6-2-1-1-1-2"><div class="para" id="sec-det-properties-6-2-1-1-1-2-1">
+<span class="process-math">\(\displaystyle A = \begin{bmatrix}
+1 \amp 0 \amp 2 \amp -1 \\ 
+2 \amp 0 \amp -2 \amp 1 \\ 
+3 \amp 1 \amp 1 \amp -2 \\ 
+-1 \amp -2 \amp -1 \amp 3
+\end{bmatrix}\)</span> </div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-3-1-1">
+<div class="para">Find the determinant using a combination of row reduction and cofactor expansion:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+2 \amp 1 \amp -3 \amp 1 \\ 
+4 \amp 3 \amp -1 \amp 0 \\ 
+0 \amp -1 \amp 3 \amp -1 \\ 
+-2 \amp 1 \amp 2 \amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-4-1-1">
+<div class="para">Find the determinant using a combination of row reduction and cofactor expansion:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 
+-1 \amp 2 \amp 1 \amp 4 \\ 
+3 \amp -4 \amp 1 \amp -3 \\ 
+4 \amp -10 \amp -1 \amp 0 \\ 
+-1 \amp 4 \amp 2 \amp 3
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-5-1-1">
+<div class="para">Use the determinant to determine whether or not the matrix is invertible. (Note that not all fields are <span class="process-math">\(\rr\text{!}\)</span>)</div>
+<ol class="lower-alpha">
+<li id="sec-det-properties-6-5-1-1-2-1"><div class="para" id="sec-det-properties-6-5-1-1-2-1-1">
+<span class="process-math">\(A \in M_3(\ff_3)\text{,}\)</span> <span class="process-math">\(A = \begin{bmatrix}
+2 \amp 0 \amp 1 \\ 
+0 \amp 0 \amp 2 \\ 
+2 \amp 2 \amp 0
+\end{bmatrix}\)</span> </div></li>
+<li id="sec-det-properties-6-5-1-1-2-2"><div class="para" id="sec-det-properties-6-5-1-1-2-2-1">
+<span class="process-math">\(A \in M_3(\rr)\text{,}\)</span> <span class="process-math">\(A = \begin{bmatrix}
+-3 \amp -1 \amp -1 \\ 
+0 \amp -3 \amp -3 \\ 
+2 \amp -3 \amp 3    
+\end{bmatrix}\)</span> </div></li>
+<li id="sec-det-properties-6-5-1-1-2-3"><div class="para" id="sec-det-properties-6-5-1-1-2-3-1">
+<span class="process-math">\(A \in M_3(\ff_5)\text{,}\)</span> <span class="process-math">\(A = \begin{bmatrix}
+3 \amp 1 \amp 0 \\ 
+0 \amp 3 \amp 1 \\ 
+4 \amp 1 \amp 3
+\end{bmatrix}\)</span> </div></li>
+<li id="sec-det-properties-6-5-1-1-2-4"><div class="para" id="sec-det-properties-6-5-1-1-2-4-1">
+<span class="process-math">\(A \in M_2(\cc)\text{,}\)</span> <span class="process-math">\(A = \begin{bmatrix}
+2+i \amp 2-3i \\ 
+4-i \amp -2+4i 
+\end{bmatrix}\)</span> </div></li>
+<li id="sec-det-properties-6-5-1-1-2-5"><div class="para" id="sec-det-properties-6-5-1-1-2-5-1">
+<span class="process-math">\(A \in M_3(\cc)\text{,}\)</span> <span class="process-math">\(A = \begin{bmatrix}
+0 \amp 3-2i \amp -2-4i \\ 
+-2 \amp 2+4i \amp 0 \\ 
+3+i \amp -1+i \amp 0
+\end{bmatrix}\)</span> </div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-6-1-1">
+<div class="para">Calculate <span class="process-math">\(\det(A^3)\)</span> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+2 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \\ 
+1 \amp 1 \amp 2
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="sec-det-properties-6-7-1-1">Suppose that <span class="process-math">\(A\)</span> is a square matrix with two identical columns. Prove that <span class="process-math">\(\det(A)=0\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="sec-det-properties-6-8-1-1">Suppose that <span class="process-math">\(A \in M_n(\ff)\)</span> is invertible. Prove that <span class="process-math">\(\det(A^{-1})= \dfrac{1}{\det(A)}\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-6-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-9-1-1"><ol class="lower-alpha">
+<li id="sec-det-properties-6-9-1-1-1-1"><div class="para" id="sec-det-properties-6-9-1-1-1-1-1">Suppose that <span class="process-math">\(A \in M_n(\rr)\)</span> and that <span class="process-math">\(\det(A^4)=0\text{.}\)</span> Prove that <span class="process-math">\(A\)</span> is not invertible.</div></li>
+<li id="sec-det-properties-6-9-1-1-1-2"><div class="para" id="sec-det-properties-6-9-1-1-1-2-1">Does the result or your argument in part (a) change if <span class="process-math">\(\rr\)</span> is replaced with <span class="process-math">\(\ff_7\text{?}\)</span> Explain.</div></li>
+</ol></div></article><article class="exercise exercise-like" id="sec-det-properties-6-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="sec-det-properties-6-10-1-1">Suppose that <span class="process-math">\(A, B \in M_n(\ff)\text{.}\)</span> Show that <span class="process-math">\(\det(AB)=\det(BA)\)</span> regardless of whether or not <span class="process-math">\(AB=BA\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-6-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="sec-det-properties-6-11-1-1">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(k \in \ff\text{.}\)</span> Find a formula for <span class="process-math">\(\det(kA)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="sec-det-properties-6-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-12-1-1"><ol class="lower-alpha">
+<li id="sec-det-properties-6-12-1-1-1-1"><div class="para logical" id="sec-det-properties-6-12-1-1-1-1-1">
+<div class="para">Verify that <span class="process-math">\(\det(A) = \det(B) + \det(C)\)</span> where <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\)</span> are</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+a+e \amp b+f \\ c \amp d
+\end{bmatrix}, \hspace{6pt}
+B = \begin{bmatrix}
+a \amp b \\ c \amp d
+\end{bmatrix}, \hspace{6pt} 
+C = \begin{bmatrix}
+e \amp f \\ c \amp d
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="sec-det-properties-6-12-1-1-1-2"><div class="para logical" id="sec-det-properties-6-12-1-1-1-2-1">
+<div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 
+1 \amp 0 \\ 0 \amp 1 
+\end{bmatrix}, \hspace{12pt} 
+B = \begin{bmatrix} 
+a \amp b \\ c \amp d 
+\end{bmatrix} \text{.}
+\end{equation*}
+</div>
+<div class="para">Show that <span class="process-math">\(\det(A+B) = \det(A) + \det(B)\)</span> if and only if <span class="process-math">\(a+d=0\text{.}\)</span>
+</div>
+</div></li>
+<li id="sec-det-properties-6-12-1-1-1-3"><div class="para" id="sec-det-properties-6-12-1-1-1-3-1">Provide an example where <span class="process-math">\(A, B \in M_3(\rr)\)</span> to prove that <span class="process-math">\(\det(A+B) = \det(A) + \det(B)\)</span> is not always true.</div></li>
+</ol></div></article><article class="exercise exercise-like" id="sec-det-properties-6-13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="sec-det-properties-6-13-1-1">Construct an invertible matrix <span class="process-math">\(A \in M_3(\rr)\text{.}\)</span> For each entry of <span class="process-math">\(A\text{,}\)</span> compute the corresponding cofactor. Create a new <span class="process-math">\(3\times 3\)</span> matrix with these cofactors in the same position as the entry of <span class="process-math">\(A\)</span> on which they were based; call this matrix <span class="process-math">\(C\text{.}\)</span> Calculate <span class="process-math">\(AC^T\text{.}\)</span> What do you observe?</div></article><article class="exercise exercise-like" id="sec-det-properties-6-14"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-14-1-1">
+<div class="para">Consider the following matrix (called a <em class="emphasis">Vandermond</em> matrix):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V = \begin{bmatrix}
+1 \amp a \amp a^2 \\ 
+1 \amp b \amp b^2 \\ 
+1 \amp c \amp c^2
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="sec-det-properties-6-14-1-1-3-1"><div class="para" id="sec-det-properties-6-14-1-1-3-1-1">Use row operations to explain why <span class="process-math">\(\det(V) = (b-a)(c-a)(c-b)\text{.}\)</span>
+</div></li>
+<li id="sec-det-properties-6-14-1-1-3-2"><div class="para" id="sec-det-properties-6-14-1-1-3-2-1">Explain why <span class="process-math">\(V\)</span> is invertible if and only if <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> are all distinct real numbers.</div></li>
+</ol>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-define-det.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-dimension.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
