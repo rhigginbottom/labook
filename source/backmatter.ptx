@@ -61,7 +61,7 @@
       tells us that dividing <m>-10</m> by <m>7</m> gives a remainder of <m>4</m>. It is crucial for uniqueness in the Division Algorithm that we insist the remainder <m>r</m> is in the specified range. (In other words, it is <em>not</em> appropriate to write <m>-10=-1(7)+(-3)</m> as an application of the Division Algorithm to <m>a=-10</m> and <m>b=7</m>.)
     </p>
     <p>
-      The Division Algorithm provides a necessary link between the following definition and what follows.
+      The Division Algorithm provides a necessary link between the definition of congruence and what follows.
     </p>
 
     <definition xml:id="def-congruence">
@@ -144,7 +144,7 @@
     </example>
 
     <p>
-      At this point the reader may see that <m>\zz_n</m> is its own set, just like <m>\zz</m> or <m>\rr</m>, with its own calculations and quirks. In particular, it is illuminating to think about what properties of addition and multiplication <m>\zz_n</m> shares with <m>\rr</m>. (Also: In which cases does the value of <m>n</m> affect whether or not these properties hold?)
+      At this point the reader may see that, for each <m>n</m>, <m>\zz_n</m> is its own mathematical universe, just like <m>\zz</m> or <m>\rr</m>, with its own calculations and quirks. In particular, it is illuminating to think about what properties of addition and multiplication <m>\zz_n</m> shares with <m>\rr</m>. (Also: In which cases does the value of <m>n</m> affect whether or not these properties hold?)
     </p>
 
     <p>
@@ -152,7 +152,7 @@
     </p>
 
     <p>
-      In <xref ref="exam-mod-n-calcs"/> we carried out calculations in <m>\zz_8</m>, so let's examine that set again. By multiplying every element in <m>\zz_8</m> by <m>[2]</m>, we can see that <m>[1]</m> is never the result. This shows that <m>[2]</m> has no multiplicative inverse in <m>\zz_8</m>. Further, it is illuminating to note that the elements <m>[1]</m>, <m>[3]</m>, <m>[5]</m>, and <m>[7]</m> have multiplicative inverses in <m>\zz_8</m> while the elements <m>[2]</m>, <m>[4]</m>, and <m>[6]</m> do not. However, the issue is deeper than the parity of the elements of the equivalence class; the key ingredient is relative primeness with <m>n</m>.
+      In <xref ref="exam-mod-n-calcs"/> we carried out calculations in <m>\zz_8</m>, so let's examine that set again. Importantly, the element <m>[1]</m> is the <em>multiplicative identity</em> in <m>\zz_8</m>, meaning that multiplying each <m>[m] \in \zz_8</m> by <m>[1]</m> leaves <m>[m]</m> unchanged. By multiplying every element in <m>\zz_8</m> by <m>[2]</m>, we can see that <m>[1]</m> is never the result. This shows that <m>[2]</m> has no multiplicative inverse in <m>\zz_8</m>. Further, it is illuminating to note that the elements <m>[1]</m>, <m>[3]</m>, <m>[5]</m>, and <m>[7]</m> have multiplicative inverses in <m>\zz_8</m> while the elements <m>[2]</m>, <m>[4]</m>, and <m>[6]</m> do not. However, the issue is deeper than the parity of the elements of the equivalence class; the key ingredient is relative primeness with <m>n</m>.
     </p>
 
     <p>
