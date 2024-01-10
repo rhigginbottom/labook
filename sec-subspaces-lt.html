@@ -430,8 +430,7 @@ window.MathJax = {
 <section class="introduction" id="sec-subspaces-lt-2"><div class="para" id="sec-subspaces-lt-2-1">Every linear transformation between vector spaces brings with it some descriptions of related subspaces of the domain and codomain. We will explore some of these subspaces in this section.</div></section><section class="subsection" id="subsec-kernel"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="space"> </span><span class="title">The Kernel of a Linear Transformation</span>
 </h3>
-<div class="para" id="subsec-kernel-2">The <em class="emphasis">kernel</em> of a linear transformation <span class="process-math">\(T\)</span> is the set of all vectors that <span class="process-math">\(T\)</span> sends to <span class="process-math">\(\bfo\text{.}\)</span>
-</div>
+<div class="para" id="subsec-kernel-2">The <em class="emphasis">kernel</em> of a linear transformation <span class="process-math">\(T\)</span> is the set of all vectors that <span class="process-math">\(T\)</span> sends to the zero vector.</div>
 <article class="definition definition-like" id="def-kernel"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span>
 </h4>
@@ -448,7 +447,7 @@ window.MathJax = {
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-kernel-subspace-1-1">Let <span class="process-math">\(T:V\to W\)</span> be a linear transformation. Then <span class="process-math">\(\kerr(T)\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
-</div></article><details id="thm-kernel-subspace-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-kernel-subspace-2-1">Since <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> we have <span class="process-math">\(\bfo_V \in \kerr(T)\text{.}\)</span> (The fact that <span class="process-math">\(T(\bfo_V)=\bfo_W\)</span> is found in <a href="" class="xref" data-knowl="./knowl/xref/lin-trans-zero.html" title="Exercise 3.1.6.10">Exercise 3.1.6.10</a>.)</div> <div class="para logical" id="thm-kernel-subspace-2-2">
+</div></article><details id="thm-kernel-subspace-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-kernel-subspace-2-1">We will prove this theorem using the criteria for a subspace spelled out in <a href="" class="xref" data-knowl="./knowl/xref/thm-prove-subspace.html" title="Theorem 2.4.3">Theorem 2.4.3</a>. Since <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> we have <span class="process-math">\(\bfo_V \in \kerr(T)\text{.}\)</span> (The fact that <span class="process-math">\(T(\bfo_V)=\bfo_W\)</span> is found in <a href="" class="xref" data-knowl="./knowl/xref/lin-trans-zero.html" title="Exercise 3.1.6.14">Exercise 3.1.6.14</a>.)</div> <div class="para logical" id="thm-kernel-subspace-2-2">
 <div class="para">Let <span class="process-math">\(\bfv_1,\bfv_2 \in \kerr(T)\text{.}\)</span> Using the additive property of <span class="process-math">\(T\)</span> and the fact that these vectors are in the kernel, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -520,7 +519,7 @@ A = \begin{bmatrix}
 \nll(A) = \spn\{\bfv\}
 \end{equation*}
 </div>
-<div class="para">if</div>
+<div class="para">where</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \bfv = \begin{bmatrix}
@@ -531,12 +530,12 @@ A = \begin{bmatrix}
 </div></article></details><article class="note remark-like" id="subsec-kernel-12"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">3.4.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-kernel-12-1-1">There is an important fact buried in this last example. When we have a homogeneous system, we can always pay attention to just the coefficient matrix instead of the augmented matrix. None of the elementary row operations can produce a non-zero entry in a column of zeros.</div></article><div class="para" id="subsec-kernel-13">The following theorem is one of the reasons that the kernel is so useful.</div>
+<div class="para" id="subsec-kernel-12-1-1">There is an important fact contained in this last example. When we have a homogeneous system, we can always pay attention to just the coefficient matrix instead of the augmented matrix. No elementary row operation can produce a non-zero entry in a column of zeros.</div></article><div class="para" id="subsec-kernel-13">The following theorem is one of the reasons that the kernel is so useful.</div>
 <article class="theorem theorem-like" id="thm-injective-kernel"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.7</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-injective-kernel-1-1">Let <span class="process-math">\(T:V\to W\)</span> be a linear transformation. Then <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\kerr(T) = \{\bfo\}\text{.}\)</span>
-</div></article><details id="thm-injective-kernel-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-injective-kernel-2-1">We first suppose that <span class="process-math">\(T\)</span> is injective. Since <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> the injectivity of <span class="process-math">\(T\)</span> implies that <span class="process-math">\(\bfv = \bfo_V\)</span> if <span class="process-math">\(T(\bfv)=\bfo_W\)</span> for any <span class="process-math">\(\bfv \in V\text{.}\)</span> Therefore, <span class="process-math">\(\kerr(T) = \{\bfo\}\text{.}\)</span>
+</div></article><details id="thm-injective-kernel-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-injective-kernel-2-1">We first suppose that <span class="process-math">\(T\)</span> is injective. (We recall the definition of injectivity from <a href="" class="xref" data-knowl="./knowl/xref/def-injective-surjective-bijective.html" title="Definition 3.1.9">Definition 3.1.9</a>.) Since <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> the injectivity of <span class="process-math">\(T\)</span> implies that <span class="process-math">\(\bfv = \bfo_V\)</span> if <span class="process-math">\(T(\bfv)=\bfo_W\)</span> for any <span class="process-math">\(\bfv \in V\text{.}\)</span> Therefore, <span class="process-math">\(\kerr(T) = \{\bfo\}\text{.}\)</span>
 </div> <div class="para logical" id="thm-injective-kernel-2-2">
 <div class="para">Next, we suppose that <span class="process-math">\(\kerr(T) = \{\bfo\}\text{.}\)</span> We want to prove that <span class="process-math">\(T\)</span> is injective, so we let <span class="process-math">\(\bfv_1, \bfv_2 \in V\)</span> with <span class="process-math">\(T(\bfv_1)=T(\bfv_2)\text{.}\)</span> We want to show that <span class="process-math">\(\bfv_1=\bfv_2\text{.}\)</span> By the linearity of <span class="process-math">\(T\)</span> we have</div>
 <div class="displaymath process-math" id="thm-injective-kernel-2-2-7">
@@ -558,22 +557,22 @@ p(0) \\ p'(0)
 \end{equation*}
 </div>
 <div class="para">To examine <span class="process-math">\(\kerr(T)\text{,}\)</span> we need to look at polynomials <span class="process-math">\(p \in P_1\)</span> such that <span class="process-math">\(p(0)=0\)</span> and <span class="process-math">\(p'(0)=0\text{.}\)</span> If <span class="process-math">\(p(t) = a + bt\text{,}\)</span> then <span class="process-math">\(a = p(0)\)</span> and <span class="process-math">\(b = p'(0)\text{,}\)</span> so if <span class="process-math">\(T(p)= \bfo\text{,}\)</span> we must have <span class="process-math">\(a=0\)</span> and <span class="process-math">\(b=0\text{.}\)</span> This means that the only polynomial in <span class="process-math">\(\kerr(T)\)</span> is the zero polynomial. Therefore, <span class="process-math">\(T\)</span> is injective.</div>
-</div></article></details><div class="para" id="subsec-kernel-16">We have one final fact related to the kernel before we move on.</div>
+</div></article></details><div class="para" id="subsec-kernel-16">We now present one final fact related to the kernel.</div>
 <article class="corollary theorem-like" id="cor-unique-soln"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.4.9</span><span class="period">.</span>
 </h4>
 <div class="para" id="cor-unique-soln-1-1">Suppose that the linear system represented by the equation <span class="process-math">\(A\bfx = \bfb\)</span> is consistent. Then this system has a unique solution if and only if <span class="process-math">\(\nll(A) = \{\bfo\} \text{.}\)</span>
-</div></article><details id="cor-unique-soln-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="cor-unique-soln-2-1">We first assume that the system has a unique solution. Since the linear system is consistent, then there exists a vector <span class="process-math">\(\bfv\)</span> such that <span class="process-math">\(A\bfv = \bfb\text{.}\)</span> If <span class="process-math">\(\bfw \in \nll(A)\text{,}\)</span> then <span class="process-math">\(A(\bfv + \bfw) A\bfv + A\bfw = \bfb + \bfo = \bfb\text{,}\)</span> so <span class="process-math">\(\bfv + \bfw\)</span> is also a solution. But since there is a unique solution, we must have <span class="process-math">\(\bfv = \bfv+\bfw\text{,}\)</span> so <span class="process-math">\(\bfw = \bfo\text{.}\)</span> This shows that <span class="process-math">\(\nll(A) = \{\bfo\}\text{.}\)</span>
+</div></article><details id="cor-unique-soln-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="cor-unique-soln-2-1">We first assume that the system has a unique solution. Since the linear system is consistent, then there exists a vector <span class="process-math">\(\bfv\)</span> such that <span class="process-math">\(A\bfv = \bfb\text{.}\)</span> If <span class="process-math">\(\bfw \in \nll(A)\text{,}\)</span> then <span class="process-math">\(A(\bfv + \bfw) = A\bfv + A\bfw = \bfb + \bfo = \bfb\text{,}\)</span> so <span class="process-math">\(\bfv + \bfw\)</span> is also a solution. But since there is a unique solution, we must have <span class="process-math">\(\bfv = \bfv+\bfw\text{,}\)</span> so <span class="process-math">\(\bfw = \bfo\text{.}\)</span> This shows that <span class="process-math">\(\nll(A) = \{\bfo\}\text{.}\)</span>
 </div> <div class="para" id="cor-unique-soln-2-2">We now assume that <span class="process-math">\(\nll(A) = \{\bfo\}\text{.}\)</span> From <a href="" class="xref" data-knowl="./knowl/xref/thm-injective-kernel.html" title="Theorem 3.4.7">Theorem 3.4.7</a> we know that the associated linear transformation is injective. Since the system is consistent, there must be only one vector that the transformation sends to <span class="process-math">\(\bfb\)</span> so the system has a unique solution.</div></article></details></section><section class="subsection" id="subsec-range"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="space"> </span><span class="title">The Range as a Subspace</span>
 </h3>
-<div class="para" id="subsec-range-2">We now turn to a subspace of the codomain that a linear transformation defines. The reader will already be familiar with the range (or image) of a linear transformation. We can now prove that this is a subspace.</div>
+<div class="para" id="subsec-range-2">We have examined the kernel as a subspace of the domain of a linear transformation. We now turn our attention to a well-known subset of the codomain. The reader will be familiar with the range (or image) of a linear transformation. We can now prove that this is a subspace.</div>
 <article class="theorem theorem-like" id="thm-range-subspace"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.10</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-range-subspace-1-1">Let <span class="process-math">\(T:V\to W\)</span> be a linear transformation between vector spaces over <span class="process-math">\(\ff\text{.}\)</span> Then <span class="process-math">\(\range(T)\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span>
-</div></article><details id="thm-range-subspace-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-range-subspace-2-1">Since we know that <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> we know that <span class="process-math">\(\bfo_W \in \range(T)\text{.}\)</span> We now need to show the other properties demanded by <a href="" class="xref" data-knowl="./knowl/xref/thm-prove-subspace.html" title="Theorem 2.4.3">Theorem 2.4.3</a>.</div> <div class="para logical" id="thm-range-subspace-2-2">
-<div class="para">If <span class="process-math">\(\bfw_1, \bfw_2 \in \range(T)\text{,}\)</span> then there exist vectors <span class="process-math">\(\bfv_1, \bfv_2 \in V\)</span> such that <span class="process-math">\(T(\bfv_1)=\bfw_1\)</span> and <span class="process-math">\(T(\bfv_2)=\bfw_2\text{.}\)</span> Then, using the linearity of <span class="process-math">\(T\text{,}\)</span> we have</div>
+</div></article><details id="thm-range-subspace-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-range-subspace-2-1">Since we know that <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> it follows that <span class="process-math">\(\bfo_W \in \range(T)\text{.}\)</span> We now need to show the other properties demanded by <a href="" class="xref" data-knowl="./knowl/xref/thm-prove-subspace.html" title="Theorem 2.4.3">Theorem 2.4.3</a>.</div> <div class="para logical" id="thm-range-subspace-2-2">
+<div class="para">If <span class="process-math">\(\bfw_1, \bfw_2 \in \range(T)\text{,}\)</span> then there exist vectors <span class="process-math">\(\bfv_1, \bfv_2 \in V\)</span> with <span class="process-math">\(T(\bfv_1)=\bfw_1\)</span> and <span class="process-math">\(T(\bfv_2)=\bfw_2\text{.}\)</span> Then, using the linearity of <span class="process-math">\(T\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \bfw_1 + \bfw_2 = T(\bfv_1) + T(\bfv_2) = T(\bfv_1+\bfv_2)\text{.}
@@ -803,30 +802,12 @@ A = \begin{bmatrix}
 <ol class="lower-alpha">
 <li id="sec-subspaces-lt-6-4-1-1-5-1"><div class="para" id="sec-subspaces-lt-6-4-1-1-5-1-1">Show that <span class="process-math">\(\bfx \in \nll(A)\)</span> and <span class="process-math">\(\bfx \not \in \col(A)\text{.}\)</span>
 </div></li>
-<li id="sec-subspaces-lt-6-4-1-1-5-2"><div class="para" id="sec-subspaces-lt-6-4-1-1-5-2-1">Prove that it is not possible, for this particular matrix <span class="process-math">\(A\text{,}\)</span> to find a non-zero vector in <span class="process-math">\(\nll(A) \cap \col(A)\text{.}\)</span>
+<li id="sec-subspaces-lt-6-4-1-1-5-2"><div class="para" id="sec-subspaces-lt-6-4-1-1-5-2-1">Explain why it is not possible, for this particular matrix <span class="process-math">\(A\text{,}\)</span> to find a non-zero vector in <span class="process-math">\(\nll(A) \cap \col(A)\text{.}\)</span>
 </div></li>
 <li id="sec-subspaces-lt-6-4-1-1-5-3"><div class="para" id="sec-subspaces-lt-6-4-1-1-5-3-1">Is it possible to find a matrix <span class="process-math">\(A \in M_2(\rr)\)</span> such that there exists a non-zero vector in <span class="process-math">\(\nll(A) \cap \col(A)\text{?}\)</span> Justify your answer thoroughly.</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-subspaces-lt-6-5-1-1">
-<div class="para">Suppose that <span class="process-math">\(T:U\to V\)</span> is a linear transformation between vector spaces over <span class="process-math">\(\ff\text{.}\)</span> If <span class="process-math">\(U'\)</span> is a subspace of <span class="process-math">\(U\text{,}\)</span> prove that <span class="process-math">\(T(U')\)</span> is a subspace of <span class="process-math">\(V\text{,}\)</span> where</div>
-<div class="displaymath process-math">
-\begin{equation*}
-T(U') = \{ T(\bfu) \in V \mid \bfu \in U' \} \text{.}
-\end{equation*}
-</div>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-subspaces-lt-6-6-1-1">
-<div class="para">Suppose that <span class="process-math">\(T:U\to V\)</span> is a linear transformation between vector spaces over <span class="process-math">\(\ff\text{.}\)</span> If <span class="process-math">\(V'\)</span> is a subspace of <span class="process-math">\(V\text{,}\)</span> define the set <span class="process-math">\(U_1\)</span> by</div>
-<div class="displaymath process-math">
-\begin{equation*}
-U_1 = \{ \bfu \in U \mid T(\bfu) \in V' \}\text{.}
-\end{equation*}
-</div>
-<div class="para">Prove that <span class="process-math">\(U_1\)</span> is a subspace of <span class="process-math">\(U\text{.}\)</span>
-</div>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-subspaces-lt-6-7-1-1">
 <div class="para">Consider the following linear transformation <span class="process-math">\(T:\ff_7^4 \to \ff_7^3\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -842,8 +823,8 @@ x_1 \\ x_2 \\ x_3 \\ x_4
 </div>
 <div class="para">This <span class="process-math">\(T\)</span> is not injective. Find distinct vectors <span class="process-math">\(\bfx_1\)</span> and <span class="process-math">\(\bfx_2\)</span> in <span class="process-math">\(\ff_7^4\)</span> such that <span class="process-math">\(T(\bfx_1) = T(\bfx_2)\text{.}\)</span>
 </div>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-subspaces-lt-6-8-1-1">
+</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-subspaces-lt-6-6-1-1">
 <div class="para">Consider the following linear transformation <span class="process-math">\(T:\ff_7^3 \to \ff_7^4\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -860,8 +841,8 @@ x_2 + 3x_3 \\
 </div>
 <div class="para">This <span class="process-math">\(T\)</span> is not surjective. Find a vector <span class="process-math">\(\mathbf{y} \in \ff_7^4\)</span> such that <span class="process-math">\(\mathbf{y}\)</span> is not in the image of <span class="process-math">\(T\text{.}\)</span>
 </div>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-subspaces-lt-6-9-1-1">
+</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-subspaces-lt-6-7-1-1">
 <div class="para">Consider the following linear transformation <span class="process-math">\(T: \rr^3 \to P_2\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -871,11 +852,11 @@ T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) =
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="sec-subspaces-lt-6-9-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-9-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
-<li id="sec-subspaces-lt-6-9-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-9-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
+<li id="sec-subspaces-lt-6-7-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-7-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
+<li id="sec-subspaces-lt-6-7-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-7-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-subspaces-lt-6-10-1-1">
+</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-subspaces-lt-6-8-1-1">
 <div class="para">Consider the following linear transformation <span class="process-math">\(T: \rr^2 \to P_2\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -885,11 +866,11 @@ a + bt + bt^2\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="sec-subspaces-lt-6-10-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-10-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
-<li id="sec-subspaces-lt-6-10-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-10-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
+<li id="sec-subspaces-lt-6-8-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-8-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
+<li id="sec-subspaces-lt-6-8-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-8-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-subspaces-lt-6-11-1-1">
+</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-subspaces-lt-6-9-1-1">
 <div class="para">Consider the following linear transformation <span class="process-math">\(T: P_2 \to \rr^2\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -898,40 +879,59 @@ T(a+bt+ct^2) = \begin{bmatrix} a-2b \\ 3b + c \end{bmatrix} \text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="sec-subspaces-lt-6-11-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-11-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
-<li id="sec-subspaces-lt-6-11-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-11-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
+<li id="sec-subspaces-lt-6-9-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-9-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
+<li id="sec-subspaces-lt-6-9-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-9-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-subspaces-lt-6-12-1-1">
+</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-subspaces-lt-6-10-1-1">
 <div class="para">For each of the following, consider a linear transformation <span class="process-math">\(T: \rr^n \to \rr^m\)</span> which is multiplication by the given <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{.}\)</span> In each case, determine whether or not <span class="process-math">\(T\)</span> is injective and whether or not <span class="process-math">\(T\)</span> is surjective. Explain your answers.</div>
 <ol class="lower-alpha">
-<li id="sec-subspaces-lt-6-12-1-1-6-1"><div class="para" id="sec-subspaces-lt-6-12-1-1-6-1-1"><span class="process-math">\(\displaystyle A = \begin{bmatrix} 
+<li id="sec-subspaces-lt-6-10-1-1-6-1"><div class="para" id="sec-subspaces-lt-6-10-1-1-6-1-1"><span class="process-math">\(\displaystyle A = \begin{bmatrix} 
 2 \amp -4 \amp -14 \\ 
 -4 \amp -1 \amp 10 \\ 
 -2 \amp 2 \amp 10 
 \end{bmatrix}\)</span></div></li>
-<li id="sec-subspaces-lt-6-12-1-1-6-2"><div class="para" id="sec-subspaces-lt-6-12-1-1-6-2-1"><span class="process-math">\(\displaystyle A = \begin{bmatrix} 
+<li id="sec-subspaces-lt-6-10-1-1-6-2"><div class="para" id="sec-subspaces-lt-6-10-1-1-6-2-1"><span class="process-math">\(\displaystyle A = \begin{bmatrix} 
 -3 \amp -5 \amp -2 \amp 3 \\ 
 1 \amp 1 \amp -5 \amp -5 \\ 
 1 \amp -3 \amp 1 \amp 2
 \end{bmatrix} \)</span></div></li>
-<li id="sec-subspaces-lt-6-12-1-1-6-3"><div class="para" id="sec-subspaces-lt-6-12-1-1-6-3-1"><span class="process-math">\(\displaystyle A = \begin{bmatrix} 
+<li id="sec-subspaces-lt-6-10-1-1-6-3"><div class="para" id="sec-subspaces-lt-6-10-1-1-6-3-1"><span class="process-math">\(\displaystyle A = \begin{bmatrix} 
 2 \amp -2 \amp 2 \\ 
 4 \amp -1 \amp 7 \\ 
 -3 \amp -1 \amp -7 \\ 
 0 \amp 5 \amp 5
 \end{bmatrix} \)</span></div></li>
-<li id="sec-subspaces-lt-6-12-1-1-6-4"><div class="para" id="sec-subspaces-lt-6-12-1-1-6-4-1"><span class="process-math">\(\displaystyle A = \begin{bmatrix} 
+<li id="sec-subspaces-lt-6-10-1-1-6-4"><div class="para" id="sec-subspaces-lt-6-10-1-1-6-4-1"><span class="process-math">\(\displaystyle A = \begin{bmatrix} 
 -2 \amp -3 \amp -1 \\ 
 5 \amp -5 \amp -2 \\ 
 0 \amp 4 \amp -4 
 \end{bmatrix} \)</span></div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
-<div class="para" id="sec-subspaces-lt-6-13-1-1">Let <span class="process-math">\(A \in M_{m,n}(\ff)\)</span> and let <span class="process-math">\(B \in M_{n,p}(\ff)\text{.}\)</span> Prove that <span class="process-math">\(\col(AB) \subseteq \col(A)\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-14"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
-<div class="para" id="sec-subspaces-lt-6-14-1-1">Prove that if <span class="process-math">\(n &lt; m\text{,}\)</span> then no set of <span class="process-math">\(n\)</span> vectors can span <span class="process-math">\(\ff^m\text{.}\)</span>
-</div></article></section></section></div>
+</div></article><article class="subexercises" id="sec-subspaces-lt-6-11"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-subspaces-lt-6-11-2"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-subspaces-lt-6-11-2-1-1">
+<div class="para">Suppose that <span class="process-math">\(T:U\to V\)</span> is a linear transformation between vector spaces over <span class="process-math">\(\ff\text{.}\)</span> If <span class="process-math">\(U'\)</span> is a subspace of <span class="process-math">\(U\text{,}\)</span> prove that <span class="process-math">\(T(U')\)</span> is a subspace of <span class="process-math">\(V\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(U') = \{ T(\bfu) \in V \mid \bfu \in U' \} \text{.}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-11-3"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-subspaces-lt-6-11-3-1-1">
+<div class="para">Suppose that <span class="process-math">\(T:U\to V\)</span> is a linear transformation between vector spaces over <span class="process-math">\(\ff\text{.}\)</span> If <span class="process-math">\(V'\)</span> is a subspace of <span class="process-math">\(V\text{,}\)</span> define the set <span class="process-math">\(U_1\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_1 = \{ \bfu \in U \mid T(\bfu) \in V' \}\text{.}
+\end{equation*}
+</div>
+<div class="para">Prove that <span class="process-math">\(U_1\)</span> is a subspace of <span class="process-math">\(U\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-11-4"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="para" id="sec-subspaces-lt-6-11-4-1-1">Let <span class="process-math">\(A \in M_{m,n}(\ff)\)</span> and let <span class="process-math">\(B \in M_{n,p}(\ff)\text{.}\)</span> Prove that <span class="process-math">\(\col(AB) \subseteq \col(A)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-11-5"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
+<div class="para" id="sec-subspaces-lt-6-11-5-1-1">Prove that if <span class="process-math">\(n &lt; m\text{,}\)</span> then no set of <span class="process-math">\(n\)</span> vectors can span <span class="process-math">\(\ff^m\text{.}\)</span>
+</div></article></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-inverting-matrix.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-dets.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

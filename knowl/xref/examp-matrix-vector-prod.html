@@ -14,8 +14,7 @@
 <article class="example example-like"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
 </h4>
-<div class="para">Let <span class="process-math">\(\ff\)</span> be a field and let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix with entries from <span class="process-math">\(\ff\text{.}\)</span> (We will refer to this in what follows as “a matrix over <span class="process-math">\(\ff\text{.}\)</span>”) Then multiplication by <span class="process-math">\(A\)</span> is a linear transformation from <span class="process-math">\(\ff^n\)</span> to <span class="process-math">\(\ff^m\text{.}\)</span> We will denote this by <span class="process-math">\(T_A:\ff^n \to \ff^m\text{.}\)</span>
-</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(\ff\)</span> be a field and let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix with entries from <span class="process-math">\(\ff\text{.}\)</span> (We will refer to this in what follows as “a matrix over <span class="process-math">\(\ff\text{.}\)</span>”) Then multiplication by <span class="process-math">\(A\)</span> is a linear transformation from <span class="process-math">\(\ff^n\)</span> to <span class="process-math">\(\ff^m\text{.}\)</span> (We will denote the function which is multiplication by <span class="process-math">\(A\)</span> by <span class="process-math">\(T_A:\ff^n \to \ff^m\text{.}\)</span>)</div> <div class="para logical">
 <div class="para">To justify this claim we must first explain what we mean by “multiplication by <span class="process-math">\(A\text{.}\)</span>” We will let <span class="process-math">\(\bfv \in \ff^n\)</span> and denote entry <span class="process-math">\((i,j)\)</span> in <span class="process-math">\(A\)</span> by <span class="process-math">\(a_{ij}\text{.}\)</span> We will further denote the entries of <span class="process-math">\(\bfv\)</span> by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -49,7 +48,7 @@ A\bfv = v_1\mathbf{a}_1 + \cdots + v_n\mathbf{a}_n = \sum_{i=1}^n v_i\mathbf{a}_
 \begin{equation*}
 \bfu = \left[\begin{array}{@{}c@{}}
 u_1 \\ \vdots \\ u_n
-\end{array}\right] \hspace{.3in} \bfv = \left[\begin{array}{@{}c@{}}
+\end{array}\right] \hspace{.3in} \text{and} \hspace{.3in} \bfv = \left[\begin{array}{@{}c@{}}
 v_1 \\ \vdots \\ v_n
 \end{array}\right]\text{.}
 \end{equation*}
@@ -63,7 +62,7 @@ T_A(\bfu) + T_A(\bfv) \amp = A\bfu + A\bfv = \sum_{i=1}^n u_i\mathbf{a}_i + \sum
 </div>
 <div class="para">These two expressions are equal due to the fact that <span class="process-math">\(\ff^m\)</span> is a vector space.</div>
 </div> <div class="para logical">
-<div class="para">We’ll finish up the final calculation now. Let <span class="process-math">\(\bfv\)</span> be a vector in <span class="process-math">\(\ff^n\)</span> and let <span class="process-math">\(c\)</span> be in <span class="process-math">\(\ff\text{.}\)</span> Then we have</div>
+<div class="para">We have one final calculation to prove that <span class="process-math">\(T_A\)</span> is a linear transformation. Let <span class="process-math">\(\bfv\)</span> be a vector in <span class="process-math">\(\ff^n\)</span> and let <span class="process-math">\(c\)</span> be in <span class="process-math">\(\ff\text{.}\)</span> Then we have</div>
 <div class="displaymath process-math">
 \begin{align*}
 T_A(c\bfv) \amp = A(c\bfv) = \sum_{i=1}^n (cv_i)\mathbf{a}_i\\
