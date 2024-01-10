@@ -30,7 +30,7 @@
   <example>
     <statement>
       <p>
-        Our first elementary matrix results from switching the second and third in <m>I_3</m>:
+        Our first elementary matrix results from switching the second and third rows in <m>I_3</m>:
         <me>
           \begin{bmatrix}
           1 \amp 0 \amp 0 \\ 
@@ -38,7 +38,7 @@
           0 \amp 1 \amp 0
           \end{bmatrix}
         </me>.
-        Next we will look at a matrix which comes by adding 4 times the first row of <m>I_2</m> to the second row:
+        Next we will look at a matrix which comes about by adding 4 times the first row of <m>I_2</m> to the second row:
         <men xml:id="el-matrix-2">
           \begin{bmatrix}
           1 \amp 0 \\ 
@@ -532,6 +532,8 @@
       </p>
     </statement>
   </exercise>
+  <subexercises>
+  <title>Writing Exercises</title>  
   <exercise>
     <statement>
       <p>
@@ -544,7 +546,7 @@
           </li>
           <li>
             <p>
-              Provide an example where <m>A</m> is not invertible and <m>B \neq C</m>.
+              Provide an example where <m>AB=AC</m> but <m>A</m> is not invertible and <m>B \neq C</m>.
             </p>
           </li>
         </ol>
@@ -554,7 +556,7 @@
   <exercise>
     <statement>
       <p>
-        Suppose that <m>(B-C)D=0</m>, where <m>B</m> and <m>C</m> are <m>m\times n</m> matrices. 
+        Suppose that <m>(B-C)D=0</m>, where <m>B</m> and <m>C</m> are <m>m\times n</m> matrices and <m>0</m> is the zero matrix. 
         <ol>
           <li>
             <p>
@@ -563,7 +565,7 @@
           </li>
           <li>
             <p>
-              Provide an example where <m>D</m> is not invertible and <m>B \neq C</m>. 
+              Provide an example where <m>(B-C)D=0</m> but <m>D</m> is not invertible and <m>B \neq C</m>. 
             </p>
           </li>
         </ol>
@@ -612,6 +614,7 @@
       </p>
     </statement>
   </exercise> -->
+</subexercises>
 </exercises> 
 
 

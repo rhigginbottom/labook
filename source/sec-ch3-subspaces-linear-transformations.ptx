@@ -12,7 +12,7 @@
   <title>The Kernel of a Linear Transformation</title>
 
   <p>
-    The <em>kernel</em> of a linear transformation <m>T</m> is the set of all vectors that <m>T</m> sends to <m>\bfo</m>. 
+    The <em>kernel</em> of a linear transformation <m>T</m> is the set of all vectors that <m>T</m> sends to the zero vector. 
   </p>
 
   <definition xml:id="def-kernel">
@@ -38,7 +38,7 @@
     </statement>
     <proof>
       <p>
-        Since <m>T(\bfo_V) = \bfo_W</m>, we have <m>\bfo_V \in \kerr(T)</m>. (The fact that <m>T(\bfo_V)=\bfo_W</m> is found in <xref ref="lin-trans-zero"/>.)
+        We will prove this theorem using the criteria for a subspace spelled out in <xref ref="thm-prove-subspace"/>. Since <m>T(\bfo_V) = \bfo_W</m>, we have <m>\bfo_V \in \kerr(T)</m>. (The fact that <m>T(\bfo_V)=\bfo_W</m> is found in <xref ref="lin-trans-zero"/>.)
       </p>
       <p>
         Let <m>\bfv_1,\bfv_2 \in \kerr(T)</m>. Using the additive property of <m>T</m> and the fact that these vectors are in the kernel, we have 
@@ -121,7 +121,7 @@
       <me>
         \nll(A) = \spn\{\bfv\}
       </me>
-      if 
+      where 
       <me>
         \bfv = \begin{bmatrix}
         2 \\ -3 \\ 1
@@ -134,7 +134,7 @@
 <note>
   <statement>
     <p>
-      There is an important fact buried in this last example. When we have a homogeneous system, we can always pay attention to just the coefficient matrix instead of the augmented matrix. None of the elementary row operations can produce a non-zero entry in a column of zeros.
+      There is an important fact contained in this last example. When we have a homogeneous system, we can always pay attention to just the coefficient matrix instead of the augmented matrix. No elementary row operation can produce a non-zero entry in a column of zeros.
     </p>
   </statement>
 </note>
@@ -151,7 +151,7 @@
   </statement>
   <proof>
     <p>
-      We first suppose that <m>T</m> is injective. Since <m>T(\bfo_V) = \bfo_W</m>, the injectivity of <m>T</m> implies that <m>\bfv = \bfo_V</m> if <m>T(\bfv)=\bfo_W</m> for any <m>\bfv \in V</m>. Therefore, <m>\kerr(T) = \{\bfo\}</m>. 
+      We first suppose that <m>T</m> is injective. (We recall the definition of injectivity from <xref ref="def-injective-surjective-bijective"/>.) Since <m>T(\bfo_V) = \bfo_W</m>, the injectivity of <m>T</m> implies that <m>\bfv = \bfo_V</m> if <m>T(\bfv)=\bfo_W</m> for any <m>\bfv \in V</m>. Therefore, <m>\kerr(T) = \{\bfo\}</m>. 
     </p>
     <p>
       Next, we suppose that <m>\kerr(T) = \{\bfo\}</m>. We want to prove that <m>T</m> is injective, so we let <m>\bfv_1, \bfv_2 \in V</m> with <m>T(\bfv_1)=T(\bfv_2)</m>. We want to show that <m>\bfv_1=\bfv_2</m>. By the linearity of <m>T</m> we have 
@@ -179,7 +179,7 @@
 </example>
 
 <p>
-  We have one final fact related to the kernel before we move on. 
+  We now present one final fact related to the kernel. 
 </p>
 
 <corollary xml:id="cor-unique-soln">
@@ -190,7 +190,7 @@
   </statement>
   <proof>
     <p>
-      We first assume that the system has a unique solution. Since the linear system is consistent, then there exists a vector <m>\bfv</m> such that <m>A\bfv = \bfb</m>. If <m>\bfw \in \nll(A)</m>, then <m>A(\bfv + \bfw) A\bfv + A\bfw = \bfb + \bfo = \bfb</m>, so <m>\bfv + \bfw</m> is also a solution. But since there is a unique solution, we must have <m>\bfv = \bfv+\bfw</m>, so <m>\bfw = \bfo</m>. This shows that <m>\nll(A) = \{\bfo\}</m>.
+      We first assume that the system has a unique solution. Since the linear system is consistent, then there exists a vector <m>\bfv</m> such that <m>A\bfv = \bfb</m>. If <m>\bfw \in \nll(A)</m>, then <m>A(\bfv + \bfw) = A\bfv + A\bfw = \bfb + \bfo = \bfb</m>, so <m>\bfv + \bfw</m> is also a solution. But since there is a unique solution, we must have <m>\bfv = \bfv+\bfw</m>, so <m>\bfw = \bfo</m>. This shows that <m>\nll(A) = \{\bfo\}</m>.
     </p>
     <p>
       We now assume that <m>\nll(A) = \{\bfo\}</m>. From <xref ref="thm-injective-kernel"/> we know that the associated linear transformation is injective. Since the system is consistent, there must be only one vector that the transformation sends to <m>\bfb</m> so the system has a unique solution.
@@ -202,7 +202,7 @@
 <subsection xml:id="subsec-range">
   <title>The Range as a Subspace</title>
   <p>
-    We now turn to a subspace of the codomain that a linear transformation defines. The reader will already be familiar with the range (or image) of a linear transformation. We can now prove that this is a subspace.
+    We have examined the kernel as a subspace of the domain of a linear transformation. We now turn our attention to a well-known subset of the codomain. The reader will be familiar with the range (or image) of a linear transformation. We can now prove that this is a subspace.
   </p>
 
 <theorem xml:id="thm-range-subspace">
@@ -213,10 +213,10 @@
   </statement>
   <proof>
     <p>
-      Since we know that <m>T(\bfo_V) = \bfo_W</m>, we know that <m>\bfo_W \in \range(T)</m>. We now need to show the other properties demanded by <xref ref="thm-prove-subspace"/>. 
+      Since we know that <m>T(\bfo_V) = \bfo_W</m>, it follows that <m>\bfo_W \in \range(T)</m>. We now need to show the other properties demanded by <xref ref="thm-prove-subspace"/>. 
     </p>
     <p>
-      If <m>\bfw_1, \bfw_2 \in \range(T)</m>, then there exist vectors <m>\bfv_1, \bfv_2 \in V</m> such that <m>T(\bfv_1)=\bfw_1</m> and <m>T(\bfv_2)=\bfw_2</m>. Then, using the linearity of <m>T</m>, we have 
+      If <m>\bfw_1, \bfw_2 \in \range(T)</m>, then there exist vectors <m>\bfv_1, \bfv_2 \in V</m> with <m>T(\bfv_1)=\bfw_1</m> and <m>T(\bfv_2)=\bfw_2</m>. Then, using the linearity of <m>T</m>, we have 
       <me>
         \bfw_1 + \bfw_2 = T(\bfv_1) + T(\bfv_2) = T(\bfv_1+\bfv_2)
       </me>. 
@@ -507,7 +507,7 @@
           </li>
           <li>
             <p>
-              Prove that it is not possible, for this particular matrix <m>A</m>, to find a non-zero vector in <m>\nll(A) \cap \col(A)</m>. 
+              Explain why it is not possible, for this particular matrix <m>A</m>, to find a non-zero vector in <m>\nll(A) \cap \col(A)</m>. 
             </p>
           </li>
           <li>
@@ -516,27 +516,6 @@
             </p>
           </li>
         </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Suppose that <m>T:U\to V</m> is a linear transformation between vector spaces over <m>\ff</m>. If <m>U'</m> is a subspace of <m>U</m>, prove that <m>T(U')</m> is a subspace of <m>V</m>, where 
-        <me>
-          T(U') = \{ T(\bfu) \in V \mid \bfu \in U' \} 
-        </me>.        
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Suppose that <m>T:U\to V</m> is a linear transformation between vector spaces over <m>\ff</m>. If <m>V'</m> is a subspace of <m>V</m>, define the set <m>U_1</m> by 
-        <me>
-          U_1 = \{ \bfu \in U \mid T(\bfu) \in V' \}
-        </me>.
-        Prove that <m>U_1</m> is a subspace of <m>U</m>. 
       </p>
     </statement>
   </exercise>
@@ -693,6 +672,29 @@
       </p>
     </statement>
   </exercise>
+  <subexercises>
+  <title>Writing Exercises</title>  
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>T:U\to V</m> is a linear transformation between vector spaces over <m>\ff</m>. If <m>U'</m> is a subspace of <m>U</m>, prove that <m>T(U')</m> is a subspace of <m>V</m>, where 
+        <me>
+          T(U') = \{ T(\bfu) \in V \mid \bfu \in U' \} 
+        </me>.        
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>T:U\to V</m> is a linear transformation between vector spaces over <m>\ff</m>. If <m>V'</m> is a subspace of <m>V</m>, define the set <m>U_1</m> by 
+        <me>
+          U_1 = \{ \bfu \in U \mid T(\bfu) \in V' \}
+        </me>.
+        Prove that <m>U_1</m> is a subspace of <m>U</m>. 
+      </p>
+    </statement>
+  </exercise>
   <exercise>
     <statement>
       <p>
@@ -707,6 +709,7 @@
       </p>
     </statement>
   </exercise>
+</subexercises>
 </exercises> 
 
 

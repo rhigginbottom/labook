@@ -4,7 +4,7 @@
   <title>The Matrix of a Linear Transformation</title>
   <introduction>
     <p>
-      In the previous section, we saw that linear transformations can be defined using matrices and they can also be defined with no matrices in sight. In this section we will see that, for a certain class of linear transformations, there is <em>always a matrix in sight</em>.
+      As we saw in the previous section, linear transformations can be defined using matrices and they can also be defined with no matrices in sight. In this section we will see that, for a certain class of linear transformations, there is <em>always a matrix in sight</em>.
     </p>
   </introduction>
 
@@ -30,7 +30,7 @@
   </note>
 
   <p>
-    We now suppose that <m>\ff</m> is a field and that <m>T:\ff^n \to \ff^m</m> is a linear transformation. We claim that there is a unique <m>m\times n</m> matrix <m>A</m> such that for every <m>\bfv \in \ff^n</m>, <m>T(\bfv) = A\bfv</m>. In other words, we claim that the work of the linear transformation <m>T</m> can be carried out by multiplication by <m>A</m>. 
+    We now suppose that <m>\ff</m> is a field and that <m>T:\ff^n \to \ff^m</m> is a linear transformation. We claim that there is a unique <m>m\times n</m> matrix <m>A</m> such that for every <m>\bfv \in \ff^n</m>, <m>T(\bfv) = A\bfv</m>. In other words, we claim that the work of the linear transformation <m>T</m> can be carried out through multiplication by <m>A</m>. 
   </p>
 
   <p>
@@ -62,7 +62,7 @@
   </theorem>
 
   <p>
-    A reader may protest our use of the word <q>unique</q> in the statement of this theorem. Here is the argument concerning uniqueness. If the theorem is true, then (for this theorem) there is only one way it could possibly work. If a matrix <m>A</m> exists, it must have the property that <m>A\mathbf{e}_j = T(\mathbf{e}_j)</m> for all <m>j</m>. Since we have shown that such a construction does work, the matrix <m>A</m> we obtain must be unique.
+    A scrupulous reader may protest our use of the word <q>unique</q> in the statement of this theorem. Here is the argument concerning uniqueness. If the theorem is true, then (for this theorem) there is only one way it could possibly work. If a matrix <m>A</m> exists, it must have the property that <m>A\mathbf{e}_j = T(\mathbf{e}_j)</m> for all <m>j</m>. Since we have shown that such a construction does work, the matrix <m>A</m> we obtain must be unique.
   </p>
   
   <p>
@@ -72,7 +72,7 @@
   <example xml:id="examp-rotate-reflect-2">
     <statement>
       <p>
-        We take our notation from <xref ref="examp-rotate-reflect"/>. Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which reflects a vector in the Cartesian plane across the <m>x</m>-axis, and let <m>S:\rr^2\to\rr^2</m> be the linear transformation which rotates a vector counter-clockwise around the origin by <m>\frac{\pi}{2}</m> radians. In this example we will find the <m>2\times 2</m> matrices <m>A</m> and <m>B</m> such that <m>T(\bfv)=A\bfv</m> and <m>S(\bfv)=B\bfv</m>. 
+        We take our notation from <xref ref="examp-rotate-reflect"/>. Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which reflects a vector in the Cartesian plane across the <m>x</m>-axis, and let <m>S:\rr^2\to\rr^2</m> be the linear transformation which rotates a vector counter-clockwise around the origin by <m>\frac{\pi}{2}</m> radians. In this example we will find the <m>2\times 2</m> matrices <m>A</m> and <m>B</m> such that <m>T(\bfv)=A\bfv</m> and <m>S(\bfv)=B\bfv</m> for all <m>\bfv \in \rr^2</m>. 
       </p>
       <p>
         In the proof of <xref ref="thm-matrix-of-lin-trans"/>, we saw that the way to form the matrix of a linear transformation is to calculate the image of the vectors <m>\mathbf{e}_1, \ldots, \mathbf{e}_n</m>. In this context, we need to calculate the image of <m>\mathbf{e}_1</m> and <m>\mathbf{e}_2</m> under <m>T</m> and <m>S</m>.
@@ -149,7 +149,7 @@
 </p>
 
 <p>
-  We will use the definition of matrix multiplication and the formula we have (see <xref ref="form-matrix-vect-prod"/>) for the product of a matrix and a vector. Since <m>(AB)\bfu</m> is a vector, we will capture a formula for entry <m>i</m> in this vector. In what follows, we assume <m>A=[a_{ij}]</m> and the entries of <m>B=[b_{ij}]</m>; we also assume <m>\bfu = [u_i]</m>:
+  We will use the definition of matrix multiplication and the formula we have for the product of a matrix and a vector (see <xref ref="form-matrix-vect-prod"/>). Since <m>(AB)\bfu</m> is a vector, we will record a formula for entry <m>i</m> in this vector. In what follows, we assume <m>A=[a_{ij}]</m> and the entries of <m>B=[b_{ij}]</m>; we also assume <m>\bfu = [u_i]</m>:
   <md>
     <mrow>[(AB)\bfu]_i \amp = [A(B\bfu)]_i = \sum_{k=1}^m a_{ik} [B\bfu]_k</mrow> 
     <mrow> \amp = \sum_{k=1}^m a_{ik} \sum_{j=1}^n b_{kj}u_j = \sum_{j=1}^n \left(\sum_{k=1}^m a_{ik}  b_{kj} \right) u_j </mrow>
@@ -367,11 +367,11 @@
   <p>
     If we know an inverse <m>B</m> of a matrix <m>A</m>, then we can solve matrix-vector equations with ease:
     <md>
-      <mrow>A\bfx \amp = \mathbf{b}</mrow>
-      <mrow>B(A\bfx) \amp = B\mathbf{b}</mrow>
-      <mrow>(BA)\bfx \amp = B\mathbf{b}</mrow>
-      <mrow>I \bfx \amp = B\mathbf{b}</mrow>
-      <mrow>\bfx \amp = B\mathbf{b}</mrow>
+      <mrow>A\bfx \amp = \bfy</mrow>
+      <mrow>B(A\bfx) \amp = B\bfy</mrow>
+      <mrow>(BA)\bfx \amp = B\bfy</mrow>
+      <mrow>I \bfx \amp = B\bfy</mrow>
+      <mrow>\bfx \amp = B\bfy</mrow>
     </md>.
   </p>
 
@@ -420,7 +420,7 @@
   </proposition>
 
   <p>
-    This final proposition states what may feel like an obvious fact, but which should still be justified. That justification is left to the exercises.
+    This final proposition states what may seem like an obvious fact, but which should still be justified. That justification is left to the exercises.
   </p>
 
   <proposition xml:id="prop-matrix-inverse-involution">
@@ -432,7 +432,7 @@
   </proposition>
 
   <p>
-    While we are not yet at a stage to calculate the inverse of a matrix, we can provide examples of invertible matrices and their inverses.
+    While we are not yet ready to calculate the inverse of a matrix (stay tuned!), we can provide examples of invertible matrices and their inverses.
   </p>
 
   <example xml:id="examp-inverse-matrices">
@@ -514,7 +514,7 @@
   </example>
 
   <p>
-    Some matrices are unaffected by taking the transpose. These deserve a special term!
+    Some matrices are unaffected by taking the transpose. These deserve a special designation!
   </p>
 
   <definition xml:id="def-symmetric-matrix">
@@ -583,7 +583,7 @@
   <exercise>
   <statement>
     <p>
-      Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which is rotation <em>clockwise</em> around the origin by <m>\frac{\pi}{2}</m> radians. Find the matrix for <m>T</m>. (Refer to <xref ref="examp-rotate-reflect-2"/>.)
+      Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which is rotation <em>clockwise</em> around the origin by <m>\frac{\pi}{2}</m> radians. Find the matrix for <m>T</m>. (Refer to <xref ref="examp-rotate-reflect-2"/>.) Explain your process.
     </p>
   </statement>
 </exercise>
@@ -699,6 +699,8 @@
       </p>
     </statement>
   </exercise>
+  <subexercises>
+  <title>Writing Exercises</title>  
   <exercise>
     <statement>
       <p>
@@ -788,6 +790,7 @@
       </p>
     </statement>
   </exercise>
+</subexercises>
 </exercises> 
 
 

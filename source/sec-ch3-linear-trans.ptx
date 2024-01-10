@@ -4,7 +4,7 @@
   <title>Linear Transformations</title>
   <introduction>
     <p>
-      Speaking broadly, mathematicians are often concerned about (mathematical) objects and the functions between those objects. The structure of specific objects can be illuminated by a look at the functions to and from those objects. In linear algebra, the objects in view are vector spaces (see <xref ref="def-vector-space"/>), and the functions between these objects are called <em>linear transformations</em>.
+      Speaking broadly, mathematicians are often concerned about (mathematical) objects and the right sort of functions between those objects. The structure of specific objects can be illuminated by a look at the functions to and from those objects. In linear algebra, the objects in view are vector spaces (see <xref ref="def-vector-space"/>), and the functions between these objects are called <em>linear transformations</em>.
     </p>
   </introduction>
 
@@ -37,12 +37,12 @@
 
   <note>
     <p>
-      Many readers will be more familiar with the idea of the <em>range</em> of a function than the <em>codomain</em> of a function. The <term>range</term> of a linear transformation <m>T:V \to W</m> is the set <m>\{T(\bfv) \in W \mid \bfv \in V\}</m>. In words, the range is the subset of the codomain consisting of the <q>outputs</q> of the function for all elements of the domain. Importantly, we will often use the term <term>image</term> when discussing the range of a linear transformation.
+      Many readers will be more familiar with the idea of the <em>range</em> of a function than the <em>codomain</em> of a function. The <term>range</term> of a linear transformation <m>T:V \to W</m> is the set <m>\{T(\bfv) \in W \mid \bfv \in V\}</m>. In words, the range is the subset of the codomain consisting of the <q>outputs</q> of the function for all elements of the domain. We will often use the term <term>image</term> when discussing the range of a linear transformation.
     </p>
   </note>
 
   <p>
-    Linear transformations are the <q>right</q> function to study between vector spaces because they preserve the primary vector space operations. The first property of linear transformations means that such a function respects vector addition, and the second property means that such a function respects scalar multiplication.
+    Linear transformations are the <q>right</q> types of functions to study between vector spaces because they preserve the primary vector space operations. The first property of linear transformations means that such a function respects vector addition, and the second property means that such a function respects scalar multiplication.
   </p>
 
   <example xml:id="examp-deriv-lin-trans">
@@ -105,7 +105,7 @@
 <example xml:id="examp-matrix-vector-prod">
   <statement>
     <p>
-      Let <m>\ff</m> be a field and let <m>A</m> be an <m>m\times n</m> matrix with entries from <m>\ff</m>. (We will refer to this in what follows as <q>a matrix over <m>\ff</m>.</q>) Then multiplication by <m>A</m> is a linear transformation from <m>\ff^n</m> to <m>\ff^m</m>. We will denote this by <m>T_A:\ff^n \to \ff^m</m>.
+      Let <m>\ff</m> be a field and let <m>A</m> be an <m>m\times n</m> matrix with entries from <m>\ff</m>. (We will refer to this in what follows as <q>a matrix over <m>\ff</m>.</q>) Then multiplication by <m>A</m> is a linear transformation from <m>\ff^n</m> to <m>\ff^m</m>. (We will denote the function which is multiplication by <m>A</m> by <m>T_A:\ff^n \to \ff^m</m>.)
     </p>
     <p>
       To justify this claim we must first explain what we mean by <q>multiplication by <m>A</m>.</q> We will let <m>\bfv \in \ff^n</m> and denote entry <m>(i,j)</m> in <m>A</m> by <m>a_{ij}</m>. We will further denote the entries of <m>\bfv</m> by
@@ -139,7 +139,7 @@
       <me>
         \bfu = \left[\begin{array}{@{}c@{}}
           u_1 \\ \vdots \\ u_n
-        \end{array}\right] \hspace{.3in} \bfv = \left[\begin{array}{@{}c@{}}
+        \end{array}\right] \hspace{.3in} \text{and} \hspace{.3in} \bfv = \left[\begin{array}{@{}c@{}}
           v_1 \\ \vdots \\ v_n
         \end{array}\right]
       </me>. Then we have the following:
@@ -150,7 +150,7 @@
       These two expressions are equal due to the fact that <m>\ff^m</m> is a vector space.
     </p>
     <p>
-      We'll finish up the final calculation now. Let <m>\bfv</m> be a vector in <m>\ff^n</m> and let <m>c</m> be in <m>\ff</m>. Then we have 
+      We have one final calculation to prove that <m>T_A</m> is a linear transformation. Let <m>\bfv</m> be a vector in <m>\ff^n</m> and let <m>c</m> be in <m>\ff</m>. Then we have 
       <md>
         <mrow>T_A(c\bfv) \amp = A(c\bfv) = \sum_{i=1}^n (cv_i)\mathbf{a}_i</mrow>
         <mrow>cT_A(\bfv) \amp = c A(\bfv) = c \sum_{i=1}^n v_i\mathbf{a}_i.</mrow>
@@ -176,7 +176,7 @@
 <definition xml:id="def-diag-identity-matrices">
   <statement>
     <p>
-      Let <m>A</m> be an <m>n\times n</m> matrix. (So <m>A</m> is <em>square</em>.) We say that <m>A</m> is a <term>diagonal matrix</term> if <m>a_{ij} = 0</m> for all <m>i \neq j</m>. If <m>A</m> is diagonal and <m>a_{ii}=1</m> for all <m>i = 1,\ldots,n</m>, then <m>A</m> is called an <term>identity matrix</term>.
+      Let <m>A</m> be an <m>n\times n</m> matrix. (So <m>A</m> is <em>square</em>.) We say that <m>A</m> is a <term>diagonal matrix</term> if <m>a_{ij} = 0</m> for all <m>(i,j)</m> such that <m>i \neq j</m>. If <m>A</m> is diagonal and <m>a_{ii}=1</m> for all <m>i = 1,\ldots,n</m>, then <m>A</m> is called an <term>identity matrix</term>.
     </p>
   </statement>
 </definition>
@@ -200,7 +200,7 @@
         Let <m>T:V \to W</m> be a linear transformation between vector spaces. We say that <m>T</m> is <term>injective</term> if <m>T(\bfv_1)=T(\bfv_2)</m> implies <m>\bfv_1=\bfv_2</m> for all <m>\bfv_1, \bfv_2 \in V</m>. Injective linear transformations are also referred to as <em>one-to-one</em> since no two distinct elements of the domain may correspond to the same element of the range.
       </p>
       <p>
-        The linear transformation <m>T</m> is called <term>surjective</term> if for every <m>\bfw \in W</m> there exists a vector <m>\bfv \in V</m> such that <m>T(\bfv) = \bfw</m>. For surjective functions, the image/range is the same as the codomain. (The range is always a subset of the codomain, but these sets are not always equal.) Sometimes surjective functions are referred to as <em>onto</em> functions.
+        A linear transformation <m>T</m> is called <term>surjective</term> if for every <m>\bfw \in W</m> there exists a vector <m>\bfv \in V</m> such that <m>T(\bfv) = \bfw</m>. For surjective functions, the image/range is the same as the codomain. (The range is a subset of the codomain for every function, but these sets are equal if and only if the function is surjective.) Sometimes surjective functions are referred to as <em>onto</em> functions.
       </p>
       <p>
         If a linear transformation is both injective and surjective, we say that it is <term>bijective</term>.
@@ -317,7 +317,7 @@
         <me>
           \bfx_1 = \begin{bmatrix}
           2 \\ 1 \\ 0
-          \end{bmatrix}, \hspace{12pt}
+          \end{bmatrix}, \hspace{12pt} \text{and} \hspace{12pt}
           \bfx_2 = \begin{bmatrix}
           -2 \\ 3 \\ 1
           \end{bmatrix}
@@ -459,17 +459,6 @@
   <exercise>
     <statement>
       <p>
-        Define the function <m>T:C[0,\infty) \to C[0,\infty)</m> to be the following:
-        <me>
-          (T(f))(x) = \int_0^x f(y)\;dy
-        </me>.
-        Prove that <m>T</m> is a linear transformation.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         Consider the following matrix over <m>\ff_3</m>:
         <me>
           A = \begin{bmatrix}
@@ -493,51 +482,6 @@
           <li>
             <p>
               <m>\bfv = (0,2,1)</m>
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise xml:id="exer-lin-trans-comp">
-    <statement>
-      <p>
-        Let <m>T:U \to V</m> and <m>S:V \to W</m> be linear transformations between vector spaces over a field <m>\ff</m>. Prove that <m>S \circ T</m> is also a linear transformation.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Let <m>T:U \to V</m> and <m>S:V \to W</m> be linear transformations between vector spaces over a field <m>\ff</m>. 
-        <ol>
-          <li>
-            <p>
-              Prove that if <m>S\circ T</m> is injective, then <m>T</m> must be injective.
-            </p>
-          </li>
-          <li>
-            <p>
-              Prove that if <m>S\circ T</m> is surjective, then <m>S</m> must be surjective.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise xml:id="lin-trans-zero">
-    <statement>
-      <p>
-        Let <m>T:V \to W</m> be a function between vector spaces over <m>\ff</m>. 
-        <ol>
-          <li>
-            <p>
-              If <m>T</m> is a linear transformation, must it be true that <m>T(\mathbf{0}_V) = \mathbf{0}_W</m>? Either prove this is true or produce a counterexample.
-            </p>
-          </li>
-          <li>
-            <p>
-              If <m>T(\mathbf{0}_V) = \mathbf{0}_W</m>, must <m>T</m> be a linear transformation? Either prove this is true or produce a counterexample.
             </p>
           </li>
         </ol>
@@ -652,6 +596,64 @@
       </p>
     </statement>
   </exercise>
+  <subexercises>
+  <title>Writing Exercises</title>  
+  <exercise>
+    <statement>
+      <p>
+        Define the function <m>T:C[0,\infty) \to C[0,\infty)</m> to be the following:
+        <me>
+          (T(f))(x) = \int_0^x f(y)\;dy
+        </me>.
+        Prove that <m>T</m> is a linear transformation.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exer-lin-trans-comp">
+    <statement>
+      <p>
+        Let <m>T:U \to V</m> and <m>S:V \to W</m> be linear transformations between vector spaces over a field <m>\ff</m>. Prove that <m>S \circ T</m> is also a linear transformation.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T:U \to V</m> and <m>S:V \to W</m> be linear transformations between vector spaces over a field <m>\ff</m>. 
+        <ol>
+          <li>
+            <p>
+              Prove that if <m>S\circ T</m> is injective, then <m>T</m> must be injective.
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove that if <m>S\circ T</m> is surjective, then <m>S</m> must be surjective.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="lin-trans-zero">
+    <statement>
+      <p>
+        Let <m>T:V \to W</m> be a function between vector spaces over <m>\ff</m>. 
+        <ol>
+          <li>
+            <p>
+              If <m>T</m> is a linear transformation, must it be true that <m>T(\mathbf{0}_V) = \mathbf{0}_W</m>? Either prove this is true or produce a counterexample.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>T(\mathbf{0}_V) = \mathbf{0}_W</m>, must <m>T</m> be a linear transformation? Either prove this is true or produce a counterexample.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
   <exercise>
     <statement>
       <p>
@@ -666,5 +668,6 @@
       </p>
     </statement>
   </exercise>
+  </subexercises>
 </exercises>
 </section>
