@@ -23,7 +23,7 @@
   </p>
 
   <p>
-    This quantity <m>ad-bc</m> for <m>A</m> is special<mdash></mdash>it is the <em>determinant</em> of <m>A</m>, and this relationship to invertibility will also hold for larger matrices. The goal of this section is to define a number for any <m>n\times n</m> matrix which functions the same way that <m>ad-bc</m> does for a <m>2\times 2</m> matrix.
+    This quantity <m>ad-bc</m> for <m>A</m> is special<mdash></mdash>it is called the <em>determinant</em> of <m>A</m>, and this relationship between the determinant and invertibility also holds for larger matrices. The goal of this section is to define a number for any <m>n\times n</m> matrix which functions the same way that <m>ad-bc</m> does for a <m>2\times 2</m> matrix.
   </p>
 
 <definition xml:id="def-submatrix">
@@ -123,7 +123,7 @@
   <statement>
     <p>
       For the purposes of what follows, we will introduce another bit of notation. If <m>A = [a_{ij}]</m>, then the <term><m>(i,j)</m>-cofactor
-      </term> of <m>A</m>, denoted by <m>C_{ij}</m>, is 
+      </term> of <m>A</m>, by <m>C_{ij}</m>, is 
       <me>
         C_{ij} = (-1)^{i+j}\det(A_{ij})
       </me>.
@@ -168,10 +168,11 @@
         \end{bmatrix} 
       </me>.
       Since we can expand along any row to calculate the determinant, and since the second row contains two zeros, we will expand along the second row. The zeros make it unnecessary to calculate the cofactors <m>C_{21}</m> and <m>C_{23}</m>:
-      <me>
-        \det(A) = 0\cdot C_{21} + 4\cdot C_{22} + 0\cdot C_{23} = (-1)^{2+2}(4) \begin{vmatrix} 2 \amp -3 \\ -1 \amp -2 \end{vmatrix} = 
-        4 (-4-3) = -28
-      </me>.      
+      <md>
+        <mrow>\det(A) \amp = 0\cdot C_{21} + 4\cdot C_{22} + 0\cdot C_{23}</mrow>
+        <mrow> \amp = (-1)^{2+2}(4) \begin{vmatrix} 2 \amp -3 \\ -1 \amp -2 \end{vmatrix}</mrow>
+        <mrow> \amp = 4 (-4-3) = -28</mrow>
+      </md>.
     </p>
   </statement>
 </example>
@@ -198,7 +199,7 @@
       </md>. 
       By the definition of the transpose, we have <m>[A^T]_{ij} = a_{ji}</m> and <m>A^T_{ij} = (A_{ji})^T</m>. So 
       <me>
-        \det(A^T) = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det((A_{ji}^T))
+        \det(A^T) = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det((A_{ji})^T)
       </me>. 
       We now invoke the induction hypothesis. Since <m>A_{ji}</m> is a square matrix of size <m>n-1</m>, we have <m>\det((A_{ji})^T) = \det(A_{ji})</m>. This, along with <xref ref="thm-det-any-row"/>, allows us to finish the argument: 
       <md>
@@ -322,7 +323,7 @@
       </li>
       <li>
         <p>
-          There is a better row or column to use for this calculation. Which one is it? Choose that row or column and compute the determinant of <m>B</m> by cofactor expansion along that row or column. Why is this easier?
+          There is a better row or column to use for this calculation. Which one is it? Choose that row or column and compute the determinant of <m>B</m> by cofactor expansion along that row or column. Write out all of your calculations. Why is this easier?
         </p>
         <!-- <p>
           row 3
@@ -451,7 +452,7 @@
   <exercise>
     <statement>
       <p>
-        Let <m>A = \begin{bmatrix} 1 \amp -2 \\ 2.5 \amp c \end{bmatrix}</m> be a matrix over <m>\rr</m>. Find a value of <m>c</m> so that <m>\det(A) = 0</m> or explain why it is not possible.   
+        Let <m>A = \begin{bmatrix} 1 \amp -2 \\ 2.5 \amp c \end{bmatrix}</m> be a matrix over <m>\rr</m>. Find a value of <m>c</m> so that <m>\det(A) = 0</m> or explain why this is not possible.   
       </p>
     </statement>
   </exercise>
@@ -462,7 +463,7 @@
         <me>
         A = \begin{bmatrix} 2 \amp -2 \amp 1 \\ 3 \amp -2 \amp 0 \\ 2 \amp 3 \amp c \end{bmatrix}  
         </me>.        
-        Find a value of <m>c</m> so that <m>\det(A) = 0</m> or explain why it is not possible.
+        Find a value of <m>c</m> so that <m>\det(A) = 0</m> or explain why this is not possible.
       </p>
     </statement>
   </exercise>
@@ -479,6 +480,8 @@
       </p>
     </statement>
   </exercise>
+  <subexercises>
+  <title>Writing Exercises</title>  
   <exercise xml:id="exer-det-triangular">
     <statement>
       <p>
@@ -500,6 +503,7 @@
       </p>
     </statement>
   </exercise>
+</subexercises>
 </exercises> 
 
 

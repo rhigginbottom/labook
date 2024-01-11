@@ -52,14 +52,14 @@
       We let <m>k</m> be an integer such that <m>k \ge 2</m> and we assume the result is true for all <m>k\times k</m> matrices. Let <m>A</m> be a <m>(k+1)\times (k+1)</m> matrix and let <m>B</m> be the result of switching two rows in <m>A</m>. We want to show that <m>\det(B)=-\det(A)</m>. 
     </p>
     <p>
-      Since <m>k \ge 2</m>, we have <m>k+1 \ge 3</m>, which means that we can calculate <m>\det(B)</m> by expansion along a row that is not involved in the row exchange. Suppose that <m>B</m> was produced by switching rows <m>p</m> and <m>q</m>. We will calculate <m>\det(B)</m> by expanding along row <m>i</m>, which is distinct from both <m>p</m> and <m>q</m>. We have 
+      Since <m>k \ge 2</m>, we have <m>k+1 \ge 3</m>, which means that we can calculate <m>\det(B)</m> by expansion along a row that is not involved in the row exchange. Suppose that <m>B</m> was produced by switching rows <m>p</m> and <m>q</m>. We will calculate <m>\det(B)</m> by expanding along row <m>i</m>, where <m>i</m> is distinct from both <m>p</m> and <m>q</m>. We have 
       <me>
-        \det(B) = \sum_{j=1}^n (-1)^{i+j}[B]_{ij} \det(B_{ij})
+        \det(B) = \sum_{j=1}^{k+1} (-1)^{i+j}[B]_{ij} \det(B_{ij})
       </me>.
-      We note that since <m>i</m> will never be <m>p</m> or <m>q</m>, <m>[B]_{ij} = [A]_{ij}</m> and <m>B_{ij}</m> can be obtained by performing a switch row operation on <m>A_{ij}</m>. This means that, by the inductive hypothesis, we have <m>\det(B_{ij}) = -\det(A_{ij})</m> for all <m>j</m> since these matrices are <m>k\times k</m>. So, we have
+      We note that since <m>i</m> will never be <m>p</m> or <m>q</m>, <m>[B]_{ij} = [A]_{ij}</m> for all <m>j</m>. Additionally, for all <m>j</m>, <m>B_{ij}</m> can be obtained by performing a switch row operation on <m>A_{ij}</m>. This means that, by the inductive hypothesis, we have <m>\det(B_{ij}) = -\det(A_{ij})</m> for all <m>j</m> since these matrices are <m>k\times k</m>. So, we have
       <md>
-        <mrow>\det(B) \amp = \sum_{j=1}^n (-1)^{i+j}[A]_{ij}(-1) \det(A_{ij}) </mrow>
-        <mrow> \amp = - \sum_{j=1}^n (-1)^{i+j}[A]_{ij} \det(A_{ij})</mrow> 
+        <mrow>\det(B) \amp = \sum_{j=1}^{k+1} (-1)^{i+j}[A]_{ij}(-1) \det(A_{ij}) </mrow>
+        <mrow> \amp = - \sum_{j=1}^{k+1} (-1)^{i+j}[A]_{ij} \det(A_{ij})</mrow> 
         <mrow> \amp = -\det(A)</mrow>
       </md>. 
       This completes the inductive step.
@@ -82,7 +82,7 @@
   </statement>
   <proof>
     <p>
-      We will not need induction here. Suppose that <m>B</m> is formed by multiplying row <m>i</m> in <m>A</m> by <m>c \in \ff</m> where <m>c \neq 0</m>. We will calculate <m>\det(B)</m> by expanding along row <m>i</m>. Note that since row <m>i</m> is the only row affected by this operation, <m>B_{ij}=A_{ij}</m> for all <m>1 \le j \le n</m>. Additionally, we note that <m>[B]_{ij} = c[A]_{ij}</m> for all <m>1 \le j \le n</m>. Now we have 
+      We will not need induction for this argument. Suppose that <m>B</m> is formed by multiplying row <m>i</m> in <m>A</m> by <m>c \in \ff</m> where <m>c \neq 0</m>. We will calculate <m>\det(B)</m> by expanding along row <m>i</m>. Note that since row <m>i</m> is the only row affected by this operation, <m>B_{ij}=A_{ij}</m> for all <m>1 \le j \le n</m>. Additionally, we note that <m>[B]_{ij} = c[A]_{ij}</m> for all <m>1 \le j \le n</m>. Now we have 
       <md>
         <mrow>\det(B) \amp = \sum_{j=1}^n (-1)^{i+j}[B]_{ij} \det(B_{ij})</mrow>
         <mrow> \amp = \sum_{j=1}^n (-1)^{i+j}c[A]_{ij} \det(A_{ij})</mrow>
@@ -94,7 +94,7 @@
 </theorem>
 
 <p>
-  We now present the result related to the final elementary row operation, the <em>replace</em> operation.
+  We now present the result related to the remaining elementary row operation, the <em>replace</em> operation.
 </p>
 
 <theorem xml:id="thm-det-replace">
@@ -111,7 +111,7 @@
       We let <m>k</m> be an integer such that <m>k \ge 2</m> and we assume the result is true for all <m>k\times k</m> matrices. Let <m>A</m> be a <m>(k+1)\times (k+1)</m> matrix and let <m>B</m> be the result of replacing row <m>q</m> in <m>A</m> with the sum of row <m>q</m> and <m>c</m> times row <m>p</m> in <m>A</m>. We want to show that <m>\det(B)=\det(A)</m>. 
     </p>
     <p>
-      We observe that <m>k</m> is large enough that we can calculate <m>\det(B)</m> by expanding along a row which is not row <m>q</m>; we will call it row <m>i</m>. Since <m>i \neq q</m>, we have <m>[B]_{ij} = [A]_{ij}</m> for all <m>1 \le j \le n</m>. Additionally, for each <m>j</m>, <m>B_{ij}</m> is a <m>k\times k</m> matrix which has been obtained from <m>A_{ij}</m> by a <em>replace</em> row operation. The inductive hypothesis means that <m>\det(B_{ij}) = \det(A_{ij})</m> for all <m>1 \le j \le n</m>. Therefore, we have the following: 
+      We observe that <m>k</m> is large enough that we can calculate <m>\det(B)</m> by expanding along a row which is not row <m>q</m>; we will call that row <m>i</m>. Since <m>i \neq q</m>, we have <m>[B]_{ij} = [A]_{ij}</m> for all <m>1 \le j \le n</m>. Additionally, for each <m>j</m>, <m>B_{ij}</m> is a <m>k\times k</m> matrix which has been obtained from <m>A_{ij}</m> by a <em>replace</em> row operation. The inductive hypothesis means that <m>\det(B_{ij}) = \det(A_{ij})</m> for all <m>1 \le j \le n</m>. Therefore, we have the following: 
       <md>
         <mrow>\det(B) \amp = \sum_{j=1}^n (-1)^{i+j} [B]_{ij} \det(B_{ij})</mrow>
         <mrow> \amp = \sum_{j=1}^n (-1)^{i+j} [A]_{ij} \det(A_{ij})</mrow>
@@ -334,7 +334,7 @@
       We now assume that <m>A</m> is invertible. <xref ref="thm-find-inverse-matrix"/> tells us that <m>B = I_n</m>, so <m>\det(B) \neq 0</m>. This proves one direction of the theorem.
     </p>
     <p>
-      We will prove the contrapositive of the other direction of the theorem. We now assume that <m>A</m> is not invertible, which means that <m>B \neq I_n</m>. Specifically, <m>B</m> must have fewer than <m>n</m> pivots, which means that <m>B</m> must have at least one row of zeros. By <xref ref="prop-det-row-zeros"/> we have <m>\det(B)=0</m>. Therefore, we must also have <m>\det(A)=0</m>. 
+      We will prove the contrapositive of the other direction of the theorem. We now assume that <m>A</m> is not invertible, which (again by <xref ref="thm-find-inverse-matrix"/>) means that <m>B \neq I_n</m>. Specifically, <m>B</m> must have fewer than <m>n</m> pivots, which means that <m>B</m> must have at least one row of zeros. By <xref ref="prop-det-row-zeros"/> we have <m>\det(B)=0</m>. Therefore, we must also have <m>\det(A)=0</m>. 
     </p>
   </proof>
 </theorem>
@@ -393,7 +393,7 @@
   </statement>
   <proof>
     <p>
-      If <m>A</m> is not invertible, then neither is <m>AB</m>, by <xref ref="exer-invertible-product"/>. This means that <m>\det(AB)=\det(A)\det(B)</m> since, by <xref ref="thm-det-invertible"/>, both sides of the equation are zero. 
+      We will prove this in two cases. First, if <m>A</m> is not invertible, then neither is <m>AB</m>, by <xref ref="exer-invertible-product"/>. This means that <m>\det(AB)=\det(A)\det(B)</m> since, by <xref ref="thm-det-invertible"/>, both sides of the equation are zero. 
     </p>
     <p>
       If <m>A</m> is invertible, then <m>A</m> is row equivalent to <m>I_n</m>, and there exist elementary matrices <m>E_1, \ldots, E_k</m> such that 
@@ -415,7 +415,7 @@
 </theorem>
 
 <p>
-  We take a step back for a moment to marvel at this theorem. We defined matrix multiplication in the context of the composition of linear transformations (see <xref ref="subsec-matrix-mult"/>), and the calculations were quite involved. The definition of the determinant was also complicated, so the fact that these two notions fit together so nicely is worthy of our admiration.
+  We take a step back for a moment to marvel at this theorem. We defined matrix multiplication in the context of the composition of linear transformations (see <xref ref="subsec-matrix-mult"/>), and the calculations were quite involved. The definition of the determinant was also complicated, but in a different way, so the fact that these two notions fit together so nicely is worthy of our admiration.
 </p>
 
 <example xml:id="examp-verify-det-product">
@@ -425,7 +425,7 @@
       <me>
       A = \begin{bmatrix}
       -1 \amp -2 \\ -3 \amp -4
-      \end{bmatrix}, \hspace{12pt} 
+      \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
       B = \begin{bmatrix} 
       -2 \amp 4 \\ 4 \amp 2
       \end{bmatrix}
@@ -466,7 +466,7 @@
       <ol>
         <li>
           <p>
-            Calculate <m>\det(A)</m> using cofactor expansion along some row or column.
+            Calculate <m>\det(A)</m> using cofactor expansion along some row or column. Show your work.
           </p>
           <!-- <p>
             16, use row 2
@@ -490,7 +490,7 @@
         </li>
         <li>
           <p>
-            Calculate <m>\det(A_1)</m> using cofactor expansion along some row or column.
+            Calculate <m>\det(A_1)</m> using cofactor expansion along some row or column. Show your work.
           </p>
           <!-- <p>
             16, use col 3
@@ -514,7 +514,7 @@
         </li>
         <li>
           <p>
-            Calculate <m>\det(A_2)</m> using cofactor expansion along some row or column.
+            Calculate <m>\det(A_2)</m> using cofactor expansion along some row or column. Show your work.
           </p>
           <!-- <p>
             16, use row 3
@@ -531,7 +531,7 @@
     <me>
       A = \begin{bmatrix} 
       4 \amp 1 \\ 5 \amp 2
-      \end{bmatrix}, \hspace{12pt} 
+      \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
       B = \begin{bmatrix} 
       -1 \amp 2 \\ 1 \amp -3
       \end{bmatrix}
@@ -711,6 +711,15 @@
   <exercise>
     <statement>
       <p>
+        Construct an invertible matrix <m>A \in M_3(\rr)</m>. For each entry of <m>A</m>, compute the corresponding cofactor. Create a new <m>3\times 3</m> matrix with these cofactors in the same position as the entry of <m>A</m> on which they were based; call this matrix <m>C</m>. Calculate <m>AC^T</m>. What do you observe? 
+      </p>
+    </statement>
+  </exercise>
+  <subexercises>
+  <title>Writing Exercises</title>  
+  <exercise>
+    <statement>
+      <p>
         Suppose that <m>A</m> is a square matrix with two identical columns. Prove that <m>\det(A)=0</m>. 
       </p>
     </statement>
@@ -750,7 +759,7 @@
   <exercise>
     <statement>
       <p>
-        Let <m>A \in M_n(\ff)</m> and let <m>k \in \ff</m>. Find a formula for <m>\det(kA)</m>. 
+        Let <m>A \in M_n(\ff)</m> and let <m>k \in \ff</m>. Find a formula for <m>\det(kA)</m> and prove that your formula is correct.
       </p>
     </statement>
   </exercise>
@@ -800,13 +809,6 @@
   <exercise>
     <statement>
       <p>
-        Construct an invertible matrix <m>A \in M_3(\rr)</m>. For each entry of <m>A</m>, compute the corresponding cofactor. Create a new <m>3\times 3</m> matrix with these cofactors in the same position as the entry of <m>A</m> on which they were based; call this matrix <m>C</m>. Calculate <m>AC^T</m>. What do you observe? 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         Consider the following matrix (called a <em>Vandermond</em> matrix): 
         <me>
           V = \begin{bmatrix}
@@ -830,6 +832,7 @@
       </p>
     </statement>
   </exercise>
+</subexercises>
 </exercises> 
 
 
