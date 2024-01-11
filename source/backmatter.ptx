@@ -229,7 +229,7 @@
   </statement>
   <proof>
     <p>
-      We will check the two properties of a linear transformation. Suppose that <m>\bfw_1, \bfw_2 \in W</m>. Since <m>T \circ T^{-1} = I_W</m>, we have 
+      We will check the two properties of a linear transformation. (See <xref ref="def-lin-trans"/>.) Suppose that <m>\bfw_1, \bfw_2 \in W</m>. Since <m>T \circ T^{-1} = I_W</m>, we have 
       <me>
         \bfw_1 + \bfw_2 = T(T^{-1}(\bfw_1)) + T(T^{-1}(\bfw_2)) = T(T^{-1}(\bfw_1) + T^{-1}(\bfw_2))
       </me>.
@@ -273,12 +273,13 @@
       <me>
         T(\bfv) = \sum_{i=1}^n c_i \bfw_i
       </me>. 
-      This gives <m>T(\bfv_i)=\bfw_i</m> for each <m>i</m>, so we only need to show that <m>T</m> is a linear transformation. 
+      In words, we send a vector <m>\bfv</m> to the linear combination of the <m>\bfw_i</m> vectors using the same weights as those needed to form <m>\bfv</m> from the basis <m>V'</m>. This gives <m>T(\bfv_i)=\bfw_i</m> for each <m>i</m>, so we only need to show that <m>T</m> is a linear transformation. 
     </p>
     <p>
       Suppose that <m>\bfu, \bfv \in V</m> with 
       <me>
-        \bfv = \sum_{i=1}^n c_i \bfv_i, \hspace{12pt} \bfu = \sum_{i=1}^n d_i \bfv_i
+        \bfv = \sum_{i=1}^n c_i \bfv_i \hspace{6pt} \text{and} \hspace{6pt}
+        \bfu = \sum_{i=1}^n d_i \bfv_i
       </me>.
       Then we have 
       <md>
@@ -300,7 +301,7 @@
       </md>.      
     </p>
     <p>
-      We finally need to justify the claim that <m>T</m> is unique. Suppose that <m>T' \in L(V,W)</m> with <m>T'(\bfv_i)=\bfw_i</m> for each <m>i</m>. Then, if <m>\bfv \in V</m> with 
+      We will complete the proof by justifying the claim that <m>T</m> is unique. Suppose that <m>T' \in L(V,W)</m> with <m>T'(\bfv_i)=\bfw_i</m> for each <m>i</m>. Then, if <m>\bfv \in V</m> with 
       <me>
         \bfv = \sum_{i=1}^n c_i \bfv_i
       </me>,
