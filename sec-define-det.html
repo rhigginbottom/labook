@@ -432,7 +432,7 @@ window.MathJax = {
 </h3>
 <div class="para" id="initial-defn-det-2">In <a href="" class="xref" data-knowl="./knowl/xref/exer-2b2-det.html" title="Exercise 1.3.12">Exercise 1.3.12</a>, we saw that when a matrix <span class="process-math">\(A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}\)</span> has the property that <span class="process-math">\(ad-bc \neq 0\text{,}\)</span> <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_2\text{.}\)</span> (In that context we were working over <span class="process-math">\(\rr\text{,}\)</span> but this is true over any field.) The converse is also true, though we haven’t yet established it.</div>
 <div class="para" id="initial-defn-det-3">If we connect this fact with <a href="" class="xref" data-knowl="./knowl/xref/thm-find-inverse-matrix.html" title="Theorem 3.3.8">Theorem 3.3.8</a>, we see that when <span class="process-math">\(ad-bc \neq 0\text{,}\)</span> the <span class="process-math">\(2\times 2\)</span> matrix <span class="process-math">\(A\)</span> is invertible. (We will see that the converse of this statement is also true.)</div>
-<div class="para" id="initial-defn-det-4">This quantity <span class="process-math">\(ad-bc\)</span> for <span class="process-math">\(A\)</span> is special—it is the <em class="emphasis">determinant</em> of <span class="process-math">\(A\text{,}\)</span> and this relationship to invertibility will also hold for larger matrices. The goal of this section is to define a number for any <span class="process-math">\(n\times n\)</span> matrix which functions the same way that <span class="process-math">\(ad-bc\)</span> does for a <span class="process-math">\(2\times 2\)</span> matrix.</div>
+<div class="para" id="initial-defn-det-4">This quantity <span class="process-math">\(ad-bc\)</span> for <span class="process-math">\(A\)</span> is special—it is called the <em class="emphasis">determinant</em> of <span class="process-math">\(A\text{,}\)</span> and this relationship between the determinant and invertibility also holds for larger matrices. The goal of this section is to define a number for any <span class="process-math">\(n\times n\)</span> matrix which functions the same way that <span class="process-math">\(ad-bc\)</span> does for a <span class="process-math">\(2\times 2\)</span> matrix.</div>
 <article class="definition definition-like" id="def-submatrix"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
 </h4>
@@ -517,7 +517,7 @@ A = \begin{bmatrix}
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="initial-defn-det-13-1-1">
-<div class="para">For the purposes of what follows, we will introduce another bit of notation. If <span class="process-math">\(A = [a_{ij}]\text{,}\)</span> then the <dfn class="terminology"><span class="process-math">\((i,j)\)</span>-cofactor</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted by <span class="process-math">\(C_{ij}\text{,}\)</span> is</div>
+<div class="para">For the purposes of what follows, we will introduce another bit of notation. If <span class="process-math">\(A = [a_{ij}]\text{,}\)</span> then the <dfn class="terminology"><span class="process-math">\((i,j)\)</span>-cofactor</dfn> of <span class="process-math">\(A\text{,}\)</span> by <span class="process-math">\(C_{ij}\text{,}\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 C_{ij} = (-1)^{i+j}\det(A_{ij})\text{.}
@@ -558,11 +558,12 @@ A = \begin{bmatrix}
 </div>
 <div class="para">Since we can expand along any row to calculate the determinant, and since the second row contains two zeros, we will expand along the second row. The zeros make it unnecessary to calculate the cofactors <span class="process-math">\(C_{21}\)</span> and <span class="process-math">\(C_{23}\text{:}\)</span>
 </div>
-<div class="displaymath process-math">
-\begin{equation*}
-\det(A) = 0\cdot C_{21} + 4\cdot C_{22} + 0\cdot C_{23} = (-1)^{2+2}(4) \begin{vmatrix} 2 \amp -3 \\ -1 \amp -2 \end{vmatrix} = 
-4 (-4-3) = -28\text{.}
-\end{equation*}
+<div class="displaymath process-math" id="subsec-det-alternative-5-1-1-5">
+\begin{align*}
+\det(A) \amp = 0\cdot C_{21} + 4\cdot C_{22} + 0\cdot C_{23}\\
+\amp = (-1)^{2+2}(4) \begin{vmatrix} 2 \amp -3 \\ -1 \amp -2 \end{vmatrix}\\
+\amp = 4 (-4-3) = -28\text{.}
+\end{align*}
 </div>
 </div></article></details><div class="para" id="subsec-det-alternative-6">In addition to expanding along any row of a matrix to calculate the determinant, we can also use any column. Instead of proving this directly using the definition of the determinant, we will follow <a class="external" href="http://linear.ups.edu/fcla/section-DM.html#theorem-DT" target="_blank">Beezer</a><a class="xref" id="subsec-det-alternative-6-2" href="" data-knowl="./knowl/fn/subsec-det-alternative-6-2.html" title="Footnote 3"><sup> 3 </sup></a> and prove that a matrix and its transpose have the same determinant. The result about using columns to calculate the determinant will follow.</div>
 <article class="theorem theorem-like" id="thm-det-transpose"><h4 class="heading">
@@ -580,7 +581,7 @@ A = \begin{bmatrix}
 <div class="para">By the definition of the transpose, we have <span class="process-math">\([A^T]_{ij} = a_{ji}\)</span> and <span class="process-math">\(A^T_{ij} = (A_{ji})^T\text{.}\)</span> So</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-any-row.html">
 \begin{equation*}
-\det(A^T) = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det((A_{ji}^T))\text{.}
+\det(A^T) = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det((A_{ji})^T)\text{.}
 \end{equation*}
 </div>
 <div class="para">We now invoke the induction hypothesis. Since <span class="process-math">\(A_{ji}\)</span> is a square matrix of size <span class="process-math">\(n-1\text{,}\)</span> we have <span class="process-math">\(\det((A_{ji})^T) = \det(A_{ji})\text{.}\)</span> This, along with <a href="" class="xref" data-knowl="./knowl/xref/thm-det-any-row.html" title="Theorem 4.1.7">Theorem 4.1.7</a>, allows us to finish the argument:</div>
@@ -683,7 +684,7 @@ B = \begin{bmatrix}
 </div>
 <ol class="lower-alpha">
 <li id="sec-define-det-5-2-1-1-3-1"><div class="para" id="sec-define-det-5-2-1-1-3-1-1">Compute the determinant of <span class="process-math">\(B\)</span> by cofactor expansion down the third column. Write out all of your calculations.</div></li>
-<li id="sec-define-det-5-2-1-1-3-2"><div class="para" id="sec-define-det-5-2-1-1-3-2-1">There is a better row or column to use for this calculation. Which one is it? Choose that row or column and compute the determinant of <span class="process-math">\(B\)</span> by cofactor expansion along that row or column. Why is this easier?</div></li>
+<li id="sec-define-det-5-2-1-1-3-2"><div class="para" id="sec-define-det-5-2-1-1-3-2-1">There is a better row or column to use for this calculation. Which one is it? Choose that row or column and compute the determinant of <span class="process-math">\(B\)</span> by cofactor expansion along that row or column. Write out all of your calculations. Why is this easier?</div></li>
 </ol>
 </div></article></section><section class="exercises" id="sec-define-det-6"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="space"> </span><span class="title">Exercises</span>
@@ -747,7 +748,7 @@ A = \begin{bmatrix}
 <div class="para" id="sec-define-det-6-5-1-1">Let <span class="process-math">\(A = \begin{bmatrix} 3 \amp 1 \\ 2 \amp -2 \end{bmatrix}\text{.}\)</span> Write down the matrix <span class="process-math">\(5A\text{.}\)</span> How are <span class="process-math">\(\det(A)\)</span> and <span class="process-math">\(\det(5A)\)</span> related?</div></article><article class="exercise exercise-like" id="sec-define-det-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para" id="sec-define-det-6-6-1-1">Let <span class="process-math">\(A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}\)</span> be a matrix over <span class="process-math">\(\rr\)</span> and let <span class="process-math">\(k \in \rr\text{.}\)</span> Find a formula that relates <span class="process-math">\(\det(kA)\)</span> to <span class="process-math">\(k\)</span> and <span class="process-math">\(\det(A)\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="sec-define-det-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="sec-define-det-6-7-1-1">Let <span class="process-math">\(A = \begin{bmatrix} 1 \amp -2 \\ 2.5 \amp c \end{bmatrix}\)</span> be a matrix over <span class="process-math">\(\rr\text{.}\)</span> Find a value of <span class="process-math">\(c\)</span> so that <span class="process-math">\(\det(A) = 0\)</span> or explain why it is not possible.</div></article><article class="exercise exercise-like" id="sec-define-det-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="sec-define-det-6-7-1-1">Let <span class="process-math">\(A = \begin{bmatrix} 1 \amp -2 \\ 2.5 \amp c \end{bmatrix}\)</span> be a matrix over <span class="process-math">\(\rr\text{.}\)</span> Find a value of <span class="process-math">\(c\)</span> so that <span class="process-math">\(\det(A) = 0\)</span> or explain why this is not possible.</div></article><article class="exercise exercise-like" id="sec-define-det-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-define-det-6-8-1-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be the following matrix over <span class="process-math">\(\rr\text{:}\)</span>
 </div>
@@ -756,7 +757,7 @@ A = \begin{bmatrix}
 A = \begin{bmatrix} 2 \amp -2 \amp 1 \\ 3 \amp -2 \amp 0 \\ 2 \amp 3 \amp c \end{bmatrix}  \text{.}
 \end{equation*}
 </div>
-<div class="para">Find a value of <span class="process-math">\(c\)</span> so that <span class="process-math">\(\det(A) = 0\)</span> or explain why it is not possible.</div>
+<div class="para">Find a value of <span class="process-math">\(c\)</span> so that <span class="process-math">\(\det(A) = 0\)</span> or explain why this is not possible.</div>
 </div></article><article class="exercise exercise-like" id="sec-define-det-6-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-define-det-6-9-1-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be the following matrix over <span class="process-math">\(\rr\text{:}\)</span>
@@ -770,12 +771,13 @@ x-5 \amp 1 \\ 4 \amp x-2
 </div>
 <div class="para">Find all values of <span class="process-math">\(x\)</span> such that <span class="process-math">\(\det(A) = 0\text{.}\)</span>
 </div>
-</div></article><article class="exercise exercise-like" id="exer-det-triangular"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="exer-det-triangular-1-1">Prove that the determinant of a triangular matrix is the product of the entries along the main diagonal.</div></article><article class="exercise exercise-like" id="exer-det-switch-rows"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+</div></article><article class="subexercises" id="sec-define-det-6-10"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="exer-det-triangular"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para" id="exer-det-triangular-1-1">Prove that the determinant of a triangular matrix is the product of the entries along the main diagonal.</div></article><article class="exercise exercise-like" id="exer-det-switch-rows"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
 <div class="para" id="exer-det-switch-rows-1-1">Prove that if <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times 2\)</span> matrix and if <span class="process-math">\(B\)</span> is the result of switching the rows in <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\det(B) = -\det(A)\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="exer-det-replace-row"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+</div></article><article class="exercise exercise-like" id="exer-det-replace-row"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
 <div class="para" id="exer-det-replace-row-1-1">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times 2\)</span> matrix and that <span class="process-math">\(B\)</span> is the result of applying the <em class="emphasis">replace</em> row operation to <span class="process-math">\(A\text{.}\)</span> Prove that <span class="process-math">\(\det(B) = \det(A)\text{.}\)</span>
-</div></article></section></section></div>
+</div></article></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-dets.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-det-properties.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
