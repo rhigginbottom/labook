@@ -37,7 +37,7 @@
 </example>
 
 <p>
-  The definition of <em>linear dependence</em> we have given is the intuitive one, but it is not the one most widely used. The equivalent definition of linear dependence comes through the following result.
+  The definition of <em>linear dependence</em> we have given is the intuitive one, but it is not the one most widely used. The following result provides an equivalent definition of linear dependence which is much easier to deploy.
 </p>
 
 <proposition xml:id="prop-defn-lin-dep">
@@ -51,7 +51,7 @@
   </statement>
   <proof>
     <p>
-      We will first dispatch with the case <m>n=1</m>. If <m>n=1</m> and <m>V'</m> is linearly dependent, then <m>\bfv_1=\bfo</m>. Then the equation <m>1\bfv_1 = \bfo</m> is satisfied. Conversely, if <m>c_1\bfv_1 = \bfo</m> for some <m>c_1 \neq 0</m>, then by <xref ref="thm-vspace-arithmetic"/>, <xref ref="no-zero-divs"/>, we must have <m>\bfv_1=\bfo</m>, meaning <m>V'</m> is linearly dependent.
+      We will first dispatch with the case where <m>n=1</m>. If <m>n=1</m> and <m>V'</m> is linearly dependent, then <m>\bfv_1=\bfo</m>. Then the equation <m>1\bfv_1 = \bfo</m> is satisfied. Conversely, if <m>c_1\bfv_1 = \bfo</m> for some <m>c_1 \neq 0</m>, then by <xref ref="thm-vspace-arithmetic"/>, <xref ref="no-zero-divs"/>, we must have <m>\bfv_1=\bfo</m>, meaning <m>V'</m> is linearly dependent.
     </p>
     <p>
       We now consider the case where <m>n \ge 2</m>. If <m>V'</m> is linearly dependent, then some vector in <m>V'</m>, call it <m>\bfv_j</m>, is a linear combination of the other vectors in <m>V'</m>. This means we have 
@@ -72,7 +72,8 @@
       where not all of the coefficients are zero. If <m>c_j \neq 0</m>, then we can write 
       <md>
         <mrow>-c_j\bfv_j \amp = c_1\bfv_1 + \cdots + c_{j-1}\bfv_{j-1} + c_{j+1}\bfv_{j+1} + \cdots + c_n\bfv_n</mrow>
-        <mrow>\bfv_j \amp = \left(-\frac{c_1}{c_j}\right)\bfv_1 + \cdots + \left(-\frac{c_{j-1}}{c_j}\right)\bfv_{j-1}  + \left(-\frac{c_{j+1}}{c_j}\right)\bfv_{j+1} + \cdots + \left(-\frac{c_n}{c_j}\right)\bfv_n</mrow>
+        <mrow>\bfv_j \amp = \left(-\frac{c_1}{c_j}\right)\bfv_1 + \cdots + \left(-\frac{c_{j-1}}{c_j}\right)\bfv_{j-1}  </mrow> 
+        <mrow> \amp \hspace{12pt} + \left(-\frac{c_{j+1}}{c_j}\right)\bfv_{j+1} + \cdots + \left(-\frac{c_n}{c_j}\right)\bfv_n</mrow>
       </md>. 
       Thus we have written <m>\bfv_j</m> as a linear combination of the other vectors in <m>V'</m>, so <m>V'</m> is linearly dependent.
     </p>
@@ -94,7 +95,7 @@
 <note>
   <statement>
     <p>
-      In practice, we will think about linear independence this way. A set <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> is linearly independent if the vector equation 
+      In practice, we will think about linear independence in the following way. A set <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> is linearly independent if the vector equation 
       <me>
         x_1\bfv_1 + \cdots + x_n \bfv_n = \bfo 
       </me>
@@ -119,7 +120,7 @@
     <p>
       Consider the set <m>V' = \{p_1, p_2\}</m> in <m>P_2</m>, where 
       <me>
-        p_1 = 1 + t, \hspace{12pt} p_2 = 3t^2
+        p_1 = 1 + t, \hspace{6pt} \text{and} \hspace{6pt} p_2 = 3t^2
       </me>.
       We can see that the set <m>V'</m> is linearly independent, because the only way to produce the zero polynomial from the combination <m>c_1p_1 + c_2p_2</m> is if <m>c_1 = c_2 = 0</m>. This is relatively easy to see in this example, since the degrees of <m>t</m> are not at all shared between <m>p_1</m> and <m>p_2</m>. If the coefficient of <m>t^2</m> must be zero in the sum <m>c_1p_1+c_2p_2</m>, then we must have <m>c_2=0</m>. And if the coefficient of <m>t</m> must be zero in the sum <m>c_1p_1 + c_2p_2</m>, then we must have <m>c_1=0</m>. 
     </p>

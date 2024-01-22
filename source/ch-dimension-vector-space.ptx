@@ -10,10 +10,10 @@
   <!-- before those sections. Note the <p> tags around content.  -->
   <introduction>
     <p>
-      Thus far in this text, the only way we have related vector spaces to each other is through linear transformations between those spaces. But we have not had any <em>intrinsic</em> quality of a vector space that enables any comparison between spaces.
+      Thus far in this text, the only way we have related vector spaces to each other is through linear transformations between those spaces. But we have not had any <em>intrinsic</em> quality of a vector space that enables comparison between spaces.
     </p>
     <p>
-      The notion of the <em>dimension</em> of a vector space allows just such a comparison. In this chapter we will develop the necessary machinery for defining the dimension of a space, and we will also use this concept for other useful notions about matrices, linear transformations, and more.
+      The notion of the <em>dimension</em> of a vector space allows just such a comparison. In this chapter we will develop the necessary machinery for defining dimension, and we will relate this concept to matrices, linear transformations, and more.
     </p>
   </introduction>
 
