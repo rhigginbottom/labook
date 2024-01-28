@@ -66,5 +66,6 @@
   </html>
   <common>
 	<tableofcontents level="2"/>
+	<exercise-divisional hint="no" answer="no" solution="no"/>
   </common>
 </publication>

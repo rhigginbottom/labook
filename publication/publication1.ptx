@@ -40,7 +40,7 @@
     <!-- for printing; set @sides="two" if the printing woudl be two- -->
     <!-- sided.  The asymptote/@links set to "yes" would produce      -->
     <!-- links the html version of asymptote graphics.                -->
-  <latex print="yes" sides="one" pageref="yes">
+  <latex print="no" sides="one" pageref="no">
     <asymptote links="no"/>
   </latex>
   
@@ -66,5 +66,6 @@
   </html>
   <common>
 	<tableofcontents level="2"/>
+	<exercise-divisional hint="no" answer="no" solution="no"/>
   </common>
 </publication>

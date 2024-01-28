@@ -105,7 +105,7 @@ We will use the symbol <m>\mathbb{R}</m> to denote the set of all real numbers. 
 <definition xml:id="def-solution-lin-system">
   <statement>
     <p>
-      A <term>solution</term> to a system of linear equations in <m>n</m> variables is a list of <m>n</m> numbers, <m>(c_1,\ldots,c_n)</m>, such that when the corresponding variables are assigned these numeric values (plug <m>c_1</m> in everywhere for <m>x_1</m>, plug <m>c_2</m> in everywhere for <m>x_2</m>, and so on), all the equations are true statements. The set of all possible solutions is called the <term>solution set</term> of the linear system. Two linear systems are said to be <term>equivalent</term> if their solution sets are equal.
+      A <term>solution</term> to a system of linear equations in <m>n</m> variables is a list of <m>n</m> numbers, <m>(c_1,\ldots,c_n)</m>, such that when the corresponding variables are assigned these numeric values (plug <m>c_1</m> in everywhere for <m>x_1</m>, plug <m>c_2</m> in everywhere for <m>x_2</m>, and so on), all the equations are true statements. The set of all solutions is called the <term>solution set</term> of the linear system. Two linear systems are said to be <term>equivalent</term> if their solution sets are equal.
     </p>
   </statement>
 </definition>
@@ -294,6 +294,16 @@ We will use the symbol <m>\mathbb{R}</m> to denote the set of all real numbers. 
        Model this problem with a linear system. (You do not need to find the solution set of this linear system.)
     </p>
   </statement>
+  <answer>
+    <p>
+      The linear system to solve is 
+      <md>
+        <mrow>a - b + c \amp =6</mrow>
+        <mrow>a+b+c \amp =0</mrow>
+        <mrow>9a+3b+c \amp =-2</mrow>
+      </md>.
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -400,6 +410,27 @@ We will use the symbol <m>\mathbb{R}</m> to denote the set of all real numbers. 
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            No.
+          </p>
+        </li>
+        <li>
+          <p>
+            No.
+          </p>
+        </li>
+        <li>
+          <p>
+            No.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -456,6 +487,37 @@ We will use the symbol <m>\mathbb{R}</m> to denote the set of all real numbers. 
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            The solution set is <m>\{(8/9,-11/9)\}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The solution set is empty.
+          </p>
+        </li>
+        <li>
+          <p>
+            The solution set is empty.
+          </p>
+        </li>
+        <li>
+          <p>
+            The solution set is <m>\{(x,y) \mid y = \frac{1}{2}x + \frac{1}{4}\}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The solution set is <m>\{(5/13,15/13)\}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <subexercises>
 <title>Writing Exercises</title>
@@ -482,6 +544,39 @@ We will use the symbol <m>\mathbb{R}</m> to denote the set of all real numbers. 
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            This system has no solution because the lines are parallel:
+            <md>
+              <mrow>-2x + y \amp =0</mrow>
+              <mrow>-2x + y \amp =1</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            This system has one solution because the lines only intersect at the origin:
+            <md>
+              <mrow>-2x + y \amp =0</mrow>
+              <mrow>2x+y \amp =0</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            This system has infinitely many solutions because the equations describe the same line:
+            <md>
+              <mrow>-2x+y \amp =0</mrow>
+              <mrow>2x-y \amp =0</mrow>
+            </md>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -489,6 +584,11 @@ We will use the symbol <m>\mathbb{R}</m> to denote the set of all real numbers. 
       Consider an <m>m\times n</m> linear system and suppose that <m>(c_1,\ldots,c_n)</m> and <m>(d_1,\ldots,d_n)</m> are both solutions to this system. Under what conditions is <m>(c_1+d_1, \ldots, c_n+d_n)</m> also a solution to the same system? Explain.
     </p>
   </statement>
+  <answer>
+    <p>
+      This is true if and only if the system is a <em>homogeneous</em> linear system.
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
