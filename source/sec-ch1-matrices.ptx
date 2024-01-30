@@ -696,6 +696,32 @@ Some of the matrix manipulations later in this section may seem to come from now
       </ol> 
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Neither
+          </p>
+        </li>
+        <li>
+          <p>
+            REF
+          </p>
+        </li>
+        <li>
+          <p>
+            REF
+          </p>
+        </li>
+        <li>
+          <p>
+            Both
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -709,6 +735,15 @@ Some of the matrix manipulations later in this section may seem to come from now
       Find two distinct matrices <m>B</m> and <m>C</m> which are row equivalent to <m>A</m> and are in row echelon form. (There are many correct answers!)
     </p>
   </statement>
+  <answer>
+    <p>
+      Two possibilities (there are many!):
+      <me>
+        B = \begin{bmatrix} -2 \amp 3 \\ 0 \amp 1/2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt} 
+        C = \begin{bmatrix} 1 \amp -3/2 \\ 0 \amp 1/2 \end{bmatrix}
+      </me>.      
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -756,6 +791,32 @@ Some of the matrix manipulations later in this section may seem to come from now
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix} 1 \amp 0 \amp 31/10 \\ 0 \amp 1 \amp -3/10 \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix} 1 \amp 0 \amp 21/23 \\ 0 \amp 1 \amp -5/23 \\ 0 \amp 0 \amp 0 \end{bmatrix}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -780,6 +841,27 @@ Some of the matrix manipulations later in this section may seem to come from now
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            There are 4 possible RREFs.
+          </p>
+        </li>
+        <li>
+          <p>
+            There are 7 possible RREFs.
+          </p>
+        </li>
+        <li>
+          <p>
+            There are 4 possible RREFs.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <subexercises>
 <title>Writing Exercises</title>
