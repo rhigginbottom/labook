@@ -437,6 +437,44 @@
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            The only solution is <m>(-4,5,0)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The solutions can be written parametrically as
+            <me>
+              \begin{cases} x_1 = 2x_2 + 2 \\ x_2 \text{ is free} \\ x_3 = -3. \end{cases}
+            </me>            
+          </p>
+        </li>
+        <li>
+          <p>
+            There are no solutions.
+          </p>
+        </li>
+        <li>
+          <p>
+            The solutions can be written parametrically as 
+            <me>
+              \begin{cases} 
+              x_1 = -2x_3 + 4x_4 + 7 \\ 
+              x_2 = -9x_3 + x_4 - 4 \\ 
+              x_3 \text{ is free} \\ 
+              x_4 \text{ is free} \\
+              x_5 = 4.
+              \end{cases}
+            </me>            
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -552,6 +590,11 @@
       Answer the question posed in <xref ref="exer-quadratic"/> by solving the linear system that was created in that exercise.
     </p>
   </statement>
+  <answer>
+    <p>
+      The function is <m>f(x) = \tfrac{1}{2}x^2 - 3x + \tfrac{5}{2}</m>.
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -568,6 +611,11 @@
       Prove that every homogeneous linear system is consistent.
     </p>
   </statement>
+  <hint>
+    <p>
+      It is easy to find at least one solution to every homogeneous system. Why?
+    </p>
+  </hint>
 </exercise>
 <exercise>
   <statement>
