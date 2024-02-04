@@ -563,6 +563,11 @@
       </md>
     </p>
   </statement>
+  <answer>
+    <p>
+      This system is consistent if and only if <m>3b_1 + 2b_2 + b_3 = 0</m>.
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -602,6 +607,11 @@
       Suppose that the graph of the function <m>f(x) = ax^3+bx^2+cx+d</m> passes through the points <m>(-1,2)</m>, <m>(-2,-9)</m>, <m>(1,4)</m>, and <m>(2,15)</m>. Determine the values of <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m>.
     </p>
   </statement>
+  <answer>
+    <p>
+      The values are <m>a= \frac{5}{3}</m>, <m>b=0</m>, <m>c=-\frac{2}{3}</m>, and <m>d=3</m>.
+    </p>
+  </answer>
 </exercise>
 <subexercises>
 <title>Writing Exercises</title>
@@ -620,7 +630,8 @@
 <exercise>
   <statement>
     <p>
-      If <m>A</m> is a <m>3\times 5</m> matrix whose final column is all zeros, what is the maximum possible number of parameters in the solution of the linear system which has augmented matrix <m>A</m>? Explain your answer.
+      I do believe we need to replace or eliminate this exercise!
+      <!-- If <m>A</m> is a <m>3\times 5</m> matrix whose final column is all zeros, what is the maximum possible number of parameters in the solution of the linear system which has augmented matrix <m>A</m>? Explain your answer. -->
     </p>
   </statement>
 </exercise>
@@ -660,6 +671,11 @@
       Suppose that a <m>3\times 4</m> coefficient matrix for a linear system has three pivot columns. Is the system consistent? Explain. 
     </p>
   </statement>
+  <answer>
+    <p>
+      Yes, this system is consistent. (Why?)
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
