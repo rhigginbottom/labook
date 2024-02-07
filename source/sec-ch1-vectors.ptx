@@ -588,6 +588,16 @@
         </me>        
       </p>
     </statement>
+    <answer>
+      <p>
+        Here is the linear system:
+        <md>
+          <mrow>2x \amp =7</mrow>
+          <mrow>x-3y \amp =-1</mrow>
+          <mrow>-2x+y \amp =-1</mrow>
+        </md>.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -600,6 +610,14 @@
         </md>.
       </p>
     </statement>
+    <answer>
+      <p>
+        Here is the vector equation:
+        <me>
+          x \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\ 3 \\ -1 \end{bmatrix} + z \begin{bmatrix} -5 \\ 1 \\ -7 \end{bmatrix} = \begin{bmatrix} 9 \\ -1 \\ 0 \end{bmatrix}
+        </me>.        
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -616,6 +634,15 @@
         List five vectors in <m>\mathrm{Span}\{\bfu, \bfv\}</m>. For each vector, write down the specific linear combination of <m>\bfu</m> and <m>\bfv</m> used to generate the vector.
       </p>
     </statement>
+    <answer>
+      <p>
+        There are an infinite number of correct answers! Three vectors that are in the span are <m>\bfu = 1\bfu + 0\bfv</m>, <m>\bfv = 0\bfu + 1\bfv</m>, and <m>\bfo = 0\bfu + 0\bfv</m>. Here are two additional vectors in the span:
+        <me>
+          \begin{bmatrix} 2 \\ 3 \\ 2 \end{bmatrix} = \bfu + \bfv, \hspace{6pt} \text{and} \hspace{6pt}
+          \begin{bmatrix} -4 \\ 1 \\ 6 \end{bmatrix} = \bfu - \bfv
+        </me>.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -623,6 +650,15 @@
         Describe all possible ways of writing <m>\begin{bmatrix} -1 \\ 1 \end{bmatrix}</m> as a linear combination of <m>\begin{bmatrix} 2 \\ 3 \end{bmatrix}</m>, <m>\begin{bmatrix} -1 \\ 0 \end{bmatrix}</m>, and <m>\begin{bmatrix} 4 \\ 1 \end{bmatrix}</m>.
       </p>
     </statement>
+    <answer>
+      <p>
+        If <m>\bfx = \begin{bmatrix} -1 \\ 1 \end{bmatrix}</m>, <m>\bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}</m>, <m>\bfv = \begin{bmatrix} -1 \\ 0 \end{bmatrix}</m>, and <m>\bfw = \begin{bmatrix} 4 \\ 1 \end{bmatrix}</m>, then <m>\bfx</m> can be written as 
+        <me>
+          \bfx = a \bfu + b \bfv + c \bfw
+        </me>,
+        where <m>a = \frac{1}{3} - \frac{1}{3}c</m>, <m>b = \frac{5}{3} + \frac{10}{3}c</m>, and <m>c</m> can be any real number.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -706,6 +742,14 @@
         Under what conditions is <m>\mathbf{b}</m> in <m>\mathrm{Span}\{\bfu, \bfv\}</m>? This will be an equation (or equations) satisfied by the <m>b_i</m>. Explain your answer. 
         </p>
     </statement>
+    <answer>
+      <p>
+        The vector <m>\mathbf{b}</m> is in <m>\mathrm{Span}\{\bfu, \bfv\}</m> as long as the following equation is satisfied:
+        <me>
+          b_1 + \tfrac{3}{5}b_2 - \tfrac{7}{5}b_3 = 0
+        </me>.        
+      </p>
+    </answer>
   </exercise>
   <subexercises>
   <title>Writing Exercises</title>
@@ -722,6 +766,11 @@
         Two vectors <m>\bfu</m> and <m>\bfv</m> in <m>\rr^n</m> are called <em>collinear</em> if <m>\bfu = k\bfv</m> or <m>\bfv= k \bfu</m> for some <m>k \in \rr</m>. Show that the span of any two nonzero vectors in <m>\rr^2</m> which are not collinear is all of <m>\rr^2</m>.
       </p>
     </statement>
+    <hint>
+      <p>
+        One might try to prove that <m>\bfu = \begin{bmatrix} a \\ c \end{bmatrix}</m> and <m>\bfv = \begin{bmatrix} b \\ d \end{bmatrix}</m> are collinear if and only if <m>ad-bc = 0</m>. Then an exercise from section 1.3 can be invoked.
+      </p>
+    </hint>
   </exercise>
   <exercise>
     <statement>
@@ -743,6 +792,31 @@
       Prove property 5 from <xref ref="fact-alg-props-vectors-rn"/>. Note which properties of the real numbers you use in this proof.
     </p>
   </statement>
+  <solution>
+    <p>
+      We must prove that for all real numbers <m>c</m> and all <m>\bfu</m> and <m>\bfv</m> in <m>\rr^n</m> we have 
+      <me>
+        c(\bfu + \bfv) = c\bfu + c\bfv
+      </me>.
+      Let <m>\bfu</m> and <m>\bfv</m> be denoted in the following way:
+      <me>
+        \bfu = \begin{bmatrix} u_1 \\ \vdots \\ u_n \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
+        \bfv = \begin{bmatrix} v_1 \\ \vdots \\ v_n \end{bmatrix}
+      </me>.
+      Then we have 
+      <me>
+        c(\bfu + \bfv) = c \begin{bmatrix} u_1 + v_1 \\ \vdots \\ u_n + v_n \end{bmatrix} = 
+        \begin{bmatrix} c(u_1 + v_1) \\ \vdots \\ c(u_n + v_n) \end{bmatrix}
+      </me>.
+      Now, since the distributive law holds for real numbers, we have <m>c(u_i + v_i) = cu_i + cv_i</m> for all <m>i = 1, \ldots, n</m>. This means that 
+      <md>
+        <mrow>c(\bfu + \bfv) \amp = \begin{bmatrix} cu_1 + cv_1 \\ \vdots \\ cu_n + cv_n \end{bmatrix} = 
+        \begin{bmatrix} cu_1 \\ \vdots \\ cu_n \end{bmatrix} + \begin{bmatrix} cv_1 \\ \vdots \\ cv_n \end{bmatrix}</mrow> 
+        <mrow> \amp = c\begin{bmatrix} u_1 \\ \vdots \\ u_n \end{bmatrix} + c \begin{bmatrix} v_1 \\ \vdots \\ v_n \end{bmatrix} = c\bfu + c\bfv </mrow>
+      </md>.    
+      This completes the proof.                    
+    </p>
+  </solution>
 </exercise>  
 </subexercises>
 </exercises>
