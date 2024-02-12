@@ -114,6 +114,21 @@ No student wants to write out all of these steps, and no instructor wants to gra
   </statement>
 </definition>
 
+<note>
+  <p>
+    Axioms 5 and 6 could perhaps be stated with a bit more precision. Some texts state axiom 5 like this: the set <m>\ff</m> must have an additive identity, that is, an element <m>e</m> such that <m>x + e = e + x = x</m> for all <m>x \in \ff</m>. Those same texts may also state axiom 6 without reference to the symbol <m>0</m>: for each <m>a \in \ff</m>, there exists an element <m>b \in \ff</m> such that <m>a + b = b + a = e</m>, where <m>e</m> is the additive identity of the field.
+  </p>
+  <p>
+    For some students, the use of the symbol <m>0</m> might be helpful, reminding them of the essential property of the additive identity through familiarity. But this may be confusing when handling a set which contains the symbol <m>0</m> when that symbol does <em>not</em> function as the relevant additive identity. 
+  </p>
+  <p>
+    Our point here is that the use of <m>0</m> in the axioms for a field (and some of the subsequent theorems) is intended to stand in for a generic symbol for the additive identity. Similarly, the symbol <m>1</m> stands in as the generic symbol for the multiplicative identity. (A reader could imagine a restatement of axioms 9 and 10 above using a letter as the multiplicative identity in the way we have demonstrated axioms 5 and 6 can be restated.)
+  </p>
+  <p>
+    The reader should also note that in a generic field the term <q>nonzero</q> means <q>not the additive identity.</q>
+  </p>
+</note>
+
 <paragraphs xml:id="pars-axioms">
   <title>A note about axioms</title>
   <p>
@@ -350,7 +365,7 @@ No student wants to write out all of these steps, and no instructor wants to gra
 <exercise>
   <statement>
     <p>
-      <xref ref="thm-field-n-prime"/> says that <m>\zz_9</m> is not a field because 9 is not prime. Identify an element of <m>\zz_9</m> that does not have a multiplicative inverse and explain why it does not have an inverse.
+      <xref ref="thm-field-n-prime"/> says that <m>\zz_9</m> is not a field because 9 is not prime. Identify a nonzero element of <m>\zz_9</m> that does not have a multiplicative inverse and explain why it does not have an inverse.
     </p>
   </statement>
 </exercise>

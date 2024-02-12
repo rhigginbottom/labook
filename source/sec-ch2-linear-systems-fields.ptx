@@ -387,10 +387,87 @@
 </exercise>
 <subexercises>
 <title>Writing Exercises</title>
-<exercise>
+<!-- <exercise>
   <statement>
     <p>
       Suppose that we have a consistent linear system over <m>\ff_p</m> which has <m>j</m> free variables. Exactly how many solutions does this linear system have? Explain your answer.
+    </p>
+  </statement>
+</exercise> -->
+<exercise>
+  <statement>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Suppose that the following is a linear system over <m>\ff_3</m>:
+            <md>
+              <mrow>ax + by \amp =e</mrow>
+              <mrow>cx + dy \amp =f</mrow>
+            </md>.
+            Show that if <m>ad + 2bc \neq 0</m>, then this linear system has a unique solution. (For reference, see <xref ref="exer-2b2-det"/>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose that the system stated in part a. of this problem is a system over <m>\ff_p</m>. What is the correct inequality the coefficients <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m> must satisfy in order for the system to have a unique solution? State your answer and prove it is correct.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Consider a linear system
+      <md>
+        <mrow>a_{11}x_1 + \cdots + a_{1n}x_n \amp =b_1</mrow>
+        <mrow>\vdots \amp </mrow>
+        <mrow>a_{m1}x_1 + \cdots + a_{mn}x_n \amp =b_m</mrow>
+      </md>,
+      with all coefficients and constants in the integers.
+      <ol>
+        <li>
+          <p>
+            Show that if the system has a solution <m>\bfx \in \rr^n</m> then it must have a solution <m>\bfy \in \qq^n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Show that if the system has a <em>unique</em> solution <m>\bfx \in \qq^n</m> then <m>\bfx</m> is also the <em>unique</em> solution in <m>\rr^n</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Give descriptions of linear systems with each of the following properties, or state why such a system is impossible. Specific numbers and equations are not necessary, but your description should include what field is involved, the number of equations and variables, the number of free variables, etc. Explain your answers.
+      <ol>
+        <li>
+          <p>
+            A consistent system with exactly 8 solutions
+          </p>
+        </li>
+        <li>
+          <p>
+            A consistent system with exactly 10 solutions
+          </p>
+        </li>
+        <li>
+          <p>
+            A consistent system with exactly 9 solutions
+          </p>
+        </li>
+        <li>
+          <p>
+            A consistent system with exactly 17 solutions
+          </p>
+        </li>
+      </ol>
     </p>
   </statement>
 </exercise>
