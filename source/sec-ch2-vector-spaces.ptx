@@ -191,6 +191,17 @@
   </statement>
 </example>
 
+<example xml:id="matrices-vspace">
+  <statement>
+    <p>
+      If we fix positive integers <m>m</m> and <m>n</m> and a field <m>\ff</m>, then <m>M_{m,n}(\ff)</m> is the set of all <m>m\times n</m> matrices with entries in <m>\ff</m>. When <m>m=n</m>, we use the notation <m>M_n(\ff)</m>.
+    </p>
+    <p>
+      With the standard addition and scalar multiplication of matrices (see <xref ref="note-intro-matrix-ops"/> for a description), the set <m>M_{m,n}(\ff)</m> is a vector space over <m>\ff</m> for a fixed <m>m</m> and <m>n</m>. The quick explanation here is that because of the way scalar multiplication and addition of matrices are defined, once a reader believes that <m>\ff^n</m> is a vector space (see <xref ref="ex-fn"/>), believing that <m>M_{m,n}(\ff)</m> is a vector space just amounts to considering several columns at the same time. But since these columns have no interaction with each other as far as these operations are concerned, none of the vector space axioms will be violated. The zero vector for this vector space is the zero matrix.
+    </p>
+  </statement>
+</example>
+
 <p>
   As evidence of the fact that <m>\rr^n</m> is the model for our general definition of a vector space, we now repeat the definitions of <em>linear combination</em> and <em>span</em>. These definitions in the general setting will be necessaary for the following section. (See the original definitions in <xref ref="def-lin-comb-span"/>.)
 </p>

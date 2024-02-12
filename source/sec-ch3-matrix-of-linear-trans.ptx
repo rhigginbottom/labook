@@ -265,14 +265,14 @@
 </example>
 
 <p>
-  As we start to deal more regularly with matrices in the context of linear transformations, we need to introduce some notation.
+  As we start to deal more regularly with matrices in the context of linear transformations, we need to recall the notation <m>M_{m,n}(\ff)</m> and <m>M_n(\ff)</m> from <xref ref="matrices-vspace"/>.
 </p>
-
+<!-- 
 <note>
   <p>
     For a field <m>\ff</m>, the notation <m>M_{m,n}(\ff)</m> denotes the set of all <m>m\times n</m> matrices over <m>\ff</m>. When <m>m=n</m>, we will use the notation <m>M_n(\ff)</m> instead of <m>M_{n,n}(\ff)</m>.
   </p>
-</note>
+</note> -->
 
 <p>
   The next theorem records some facts about matrix multiplication which will be useful later in the text. We will walk the reader through the proof of this theorem in the exercises at the end of this section.
@@ -526,7 +526,8 @@
   </definition>
 
   <p>
-    The following theorem collects some properties related to the transpose of a matrix. (Note that this theorem references the sum and scalar multiple of a matrix; the reader should understand these operations in the same way that addition and scalar multiplication of vectors in <m>\ff^n</m> are understood.)
+    The following theorem collects some properties related to the transpose of a matrix. 
+    <!-- (Note that this theorem references the sum and scalar multiple of a matrix; the reader should understand these operations in the same way that addition and scalar multiplication of vectors in <m>\ff^n</m> are understood.) -->
   </p>
 
   <theorem xml:id="thm-properties-transpose">
