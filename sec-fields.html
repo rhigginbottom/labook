@@ -186,8 +186,8 @@ window.MathJax = {
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-fields.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Fields</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-19" class="internal"><span class="codenumber">2.1</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-20" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-20" class="internal"><span class="codenumber">2.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-fields.html#sec-fields-21" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -476,11 +476,14 @@ x \amp = \frac{5}{2}\text{.}\tag{2.9}
 <li id="def-field-1-1-6-10"><div class="para" id="def-field-1-1-6-10-1">For each <span class="process-math">\(a \in \ff\)</span> with <span class="process-math">\(a \neq 0\text{,}\)</span> there exists an element <span class="process-math">\(c \in \ff\)</span> such that <span class="process-math">\(a\cdot c = c \cdot a = 1\text{.}\)</span> (We say that every nonzero element <span class="process-math">\(a\)</span> in <span class="process-math">\(\ff\)</span> has a <dfn class="terminology">multiplicative inverse</dfn>.)</div></li>
 <li id="def-field-1-1-6-11"><div class="para" id="def-field-1-1-6-11-1">For each <span class="process-math">\(a, b, c \in \ff\text{,}\)</span> <span class="process-math">\(a \cdot (b+c) = (a\cdot b) + (a\cdot c)\text{.}\)</span> (We say that addition and multiplication in <span class="process-math">\(\ff\)</span> satisfy the <dfn class="terminology">distributive law</dfn>.)</div></li>
 </ol>
-</div></article><section class="paragraphs" id="pars-axioms"><h3 class="heading"><span class="title">A note about axioms.</span></h3> <div class="para" id="pars-axioms-2">What are presented in <a href="" class="xref" data-knowl="./knowl/xref/def-field.html" title="Definition 2.1.1">Definition 2.1.1</a> are known as the <dfn class="terminology">axioms</dfn> of a field. This may be the reader’s first exposure to axioms in mathematics, and this is worthy of a comment or two.</div> <div class="para" id="pars-axioms-3">Much of theoretical mathematics is built upon axiomatic reasoning. The thinking goes like this: If we assume a limited number of properties are true, and we assume nothing beyond those properties, what else follows <em class="emphasis">necessarily?</em> So, we can ask what is true of a field, not just what is true of the real numbers. While the real numbers may have specific properties that a general field does not, anything that is true of a general field must be true of the real numbers.</div></section><div class="para" id="sec-fields-9">Working through some examples (and non-examples) will help us make sense of this definition.</div>
-<details id="sec-fields-10" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sec-fields-10-1-1">The set of real numbers <span class="process-math">\(\rr\)</span> is a field. (If the real numbers were not a field, then we wouldn’t have done a very good job of abstracting the properties of the real numbers for this definition!)</div></article></details><details id="ex-complex-field" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+</div></article><article class="note remark-like" id="sec-fields-8"><h3 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-fields-8-1">Axioms 5 and 6 could perhaps be stated with a bit more precision. Some texts state axiom 5 like this: the set <span class="process-math">\(\ff\)</span> must have an additive identity, that is, an element <span class="process-math">\(e\)</span> such that <span class="process-math">\(x + e = e + x = x\)</span> for all <span class="process-math">\(x \in \ff\text{.}\)</span> Those same texts may also state axiom 6 without reference to the symbol <span class="process-math">\(0\text{:}\)</span> for each <span class="process-math">\(a \in \ff\text{,}\)</span> there exists an element <span class="process-math">\(b \in \ff\)</span> such that <span class="process-math">\(a + b = b + a = e\text{,}\)</span> where <span class="process-math">\(e\)</span> is the additive identity of the field.</div> <div class="para" id="sec-fields-8-2">For some students, the use of the symbol <span class="process-math">\(0\)</span> might be helpful, reminding them of the essential property of the additive identity through familiarity. But this may be confusing when handling a set which contains the symbol <span class="process-math">\(0\)</span> when that symbol does <em class="emphasis">not</em> function as the relevant additive identity.</div> <div class="para" id="sec-fields-8-3">Our point here is that the use of <span class="process-math">\(0\)</span> in the axioms for a field (and some of the subsequent theorems) is intended to stand in for a generic symbol for the additive identity. Similarly, the symbol <span class="process-math">\(1\)</span> stands in as the generic symbol for the multiplicative identity. (A reader could imagine a restatement of axioms 9 and 10 above using a letter as the multiplicative identity in the way we have demonstrated axioms 5 and 6 can be restated.)</div> <div class="para" id="sec-fields-8-4">The reader should also note that in a generic field the term “nonzero” means “not the additive identity.”</div></article><section class="paragraphs" id="pars-axioms"><h3 class="heading"><span class="title">A note about axioms.</span></h3> <div class="para" id="pars-axioms-2">What are presented in <a href="" class="xref" data-knowl="./knowl/xref/def-field.html" title="Definition 2.1.1">Definition 2.1.1</a> are known as the <dfn class="terminology">axioms</dfn> of a field. This may be the reader’s first exposure to axioms in mathematics, and this is worthy of a comment or two.</div> <div class="para" id="pars-axioms-3">Much of theoretical mathematics is built upon axiomatic reasoning. The thinking goes like this: If we assume a limited number of properties are true, and we assume nothing beyond those properties, what else follows <em class="emphasis">necessarily?</em> So, we can ask what is true of a field, not just what is true of the real numbers. While the real numbers may have specific properties that a general field does not, anything that is true of a general field must be true of the real numbers.</div></section><div class="para" id="sec-fields-10">Working through some examples (and non-examples) will help us make sense of this definition.</div>
+<details id="sec-fields-11" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h3></summary><article class="example example-like"><div class="para" id="sec-fields-11-1-1">The set of real numbers <span class="process-math">\(\rr\)</span> is a field. (If the real numbers were not a field, then we wouldn’t have done a very good job of abstracting the properties of the real numbers for this definition!)</div></article></details><details id="ex-complex-field" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
 </h3></summary><article class="example example-like"><div class="para logical" id="ex-complex-field-1-1">
 <div class="para">The complex numbers are defined in this way:</div>
 <div class="displaymath process-math">
@@ -523,10 +526,10 @@ x \amp = \frac{5}{2}\text{.}\tag{2.9}
 \end{equation*}
 </div>
 <div class="para">(This uses the fact that <span class="process-math">\(0 \in \rr\)</span> is an additive identity.) We note that although the definition of a field requires us to examine addition by <span class="process-math">\(0\)</span> “on both sides,” since we just proved that addition is commutative, what we have already shown is sufficient.</div>
-</div></article></details><details id="sec-fields-12" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sec-fields-12-1-1">The set of non-negative real numbers <span class="process-math">\(\rr^{\ge 0}\)</span> is not a field. (When thinking about a subset of the real numbers, we will assume that the usual addition and multiplication are in view unless otherwise stated.) While this set is closed under addition and multiplication, it does not contain <em class="emphasis">additive inverses</em> for positive real numbers. For example, the number <span class="process-math">\(9\)</span> has no additive inverse in this set.</div></article></details><details id="ex-rational-field" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+</div></article></details><details id="sec-fields-13" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h3></summary><article class="example example-like"><div class="para" id="sec-fields-13-1-1">The set of non-negative real numbers <span class="process-math">\(\rr^{\ge 0}\)</span> is not a field. (When thinking about a subset of the real numbers, we will assume that the usual addition and multiplication are in view unless otherwise stated.) While this set is closed under addition and multiplication, it does not contain <em class="emphasis">additive inverses</em> for positive real numbers. For example, the number <span class="process-math">\(9\)</span> has no additive inverse in this set.</div></article></details><details id="ex-rational-field" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
 </h3></summary><article class="example example-like"><div class="para logical" id="ex-rational-field-1-1">
 <div class="para">The set of <dfn class="terminology">rational numbers</dfn> <span class="process-math">\(\qq\)</span> is a field. The rational numbers are defined as the set of all quotients (hence the symbol <span class="process-math">\(\qq\)</span>) of integers; more formally,</div>
 <div class="displaymath process-math">
@@ -535,12 +538,12 @@ x \amp = \frac{5}{2}\text{.}\tag{2.9}
 \end{equation*}
 </div>
 <div class="para">We do not need to show that all of the field axioms hold in order to prove that <span class="process-math">\(\qq\)</span> is a field. Since <span class="process-math">\(\qq\)</span> is a subset of <span class="process-math">\(\rr\text{,}\)</span> and since it therefore inherits its operations from <span class="process-math">\(\rr\text{,}\)</span> some of the field axioms hold automatically. (These would include the associativity and commutativity of addition. What else holds “by inheritance?”) Checking some of these details is left to the exercises.</div>
-</div></article></details><div class="para" id="sec-fields-14">We refer the reader to <a href="apdx-mod-arith.html" class="internal" title="Appendix A: The Integers Modulo n">Appendix A</a> for the definitions of <span class="process-math">\(\zz_n\)</span> and <span class="process-math">\(\ff_p\text{,}\)</span> related notational conventions, and a refresher on modular arithmetic. All of this is necessary for the following example.</div>
-<details id="sec-fields-15" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
-</h3></summary><article class="example example-like"><div class="para" id="sec-fields-15-1-1">When <span class="process-math">\(p\)</span> is a prime integer, then <span class="process-math">\(\ff_p\)</span> is a field.</div> <div class="para" id="sec-fields-15-1-2">Working within <span class="process-math">\(\ff_p\)</span> can be a bit destabilizing at first, as the calculations take some practice. However, this effort pays off because the smallest finite fields offer some of the most tangible sandboxes in which to play. We will be using <span class="process-math">\(\ff_p\)</span> for small <span class="process-math">\(p\)</span> throughout this chapter to develop some interesting examples.</div> <div class="para" id="sec-fields-15-1-3">Part of the definition of a field is that one can divide by any nonzero element. But because we work within <span class="process-math">\(\rr\)</span> so often, division within <span class="process-math">\(\ff_p\)</span> is strange. In <span class="process-math">\(\ff_3\text{,}\)</span> for instance, the multiplicative inverse of <span class="process-math">\(2\)</span> is <span class="process-math">\(2\text{.}\)</span> (Another way to say this is that, within <span class="process-math">\(\ff_3\text{,}\)</span> the element that acts the most like <span class="process-math">\(\frac{1}{2}\)</span> is <span class="process-math">\(2\text{.}\)</span>)</div> <div class="para" id="sec-fields-15-1-4">The field <span class="process-math">\(\ff_2\)</span> contains only the elements <span class="process-math">\(0\)</span> and <span class="process-math">\(1\text{,}\)</span> and it therefore is a model for anything that is <em class="emphasis">binary</em>. For this reason, working in <span class="process-math">\(\ff_2\)</span> is often very useful in computer science.</div></article></details><div class="para" id="sec-fields-16">Having defined fields, we now turn to the consequences of this definition. In other words, if a set with two operations meets the definition of a field, what else must also be true? The following theorem presents some basic results that flow from the axioms of a field. Some of these will look familiar because they are true in <span class="process-math">\(\rr\)</span> and that’s where most people are comfortable working.</div>
+</div></article></details><div class="para" id="sec-fields-15">We refer the reader to <a href="apdx-mod-arith.html" class="internal" title="Appendix A: The Integers Modulo n">Appendix A</a> for the definitions of <span class="process-math">\(\zz_n\)</span> and <span class="process-math">\(\ff_p\text{,}\)</span> related notational conventions, and a refresher on modular arithmetic. All of this is necessary for the following example.</div>
+<details id="sec-fields-16" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h3></summary><article class="example example-like"><div class="para" id="sec-fields-16-1-1">When <span class="process-math">\(p\)</span> is a prime integer, then <span class="process-math">\(\ff_p\)</span> is a field.</div> <div class="para" id="sec-fields-16-1-2">Working within <span class="process-math">\(\ff_p\)</span> can be a bit destabilizing at first, as the calculations take some practice. However, this effort pays off because the smallest finite fields offer some of the most tangible sandboxes in which to play. We will be using <span class="process-math">\(\ff_p\)</span> for small <span class="process-math">\(p\)</span> throughout this chapter to develop some interesting examples.</div> <div class="para" id="sec-fields-16-1-3">Part of the definition of a field is that one can divide by any nonzero element. But because we work within <span class="process-math">\(\rr\)</span> so often, division within <span class="process-math">\(\ff_p\)</span> is strange. In <span class="process-math">\(\ff_3\text{,}\)</span> for instance, the multiplicative inverse of <span class="process-math">\(2\)</span> is <span class="process-math">\(2\text{.}\)</span> (Another way to say this is that, within <span class="process-math">\(\ff_3\text{,}\)</span> the element that acts the most like <span class="process-math">\(\frac{1}{2}\)</span> is <span class="process-math">\(2\text{.}\)</span>)</div> <div class="para" id="sec-fields-16-1-4">The field <span class="process-math">\(\ff_2\)</span> contains only the elements <span class="process-math">\(0\)</span> and <span class="process-math">\(1\text{,}\)</span> and it therefore is a model for anything that is <em class="emphasis">binary</em>. For this reason, working in <span class="process-math">\(\ff_2\)</span> is often very useful in computer science.</div></article></details><div class="para" id="sec-fields-17">Having defined fields, we now turn to the consequences of this definition. In other words, if a set with two operations meets the definition of a field, what else must also be true? The following theorem presents some basic results that flow from the axioms of a field. Some of these will look familiar because they are true in <span class="process-math">\(\rr\)</span> and that’s where most people are comfortable working.</div>
 <article class="theorem theorem-like" id="thm-field-arithmetic"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="thm-field-arithmetic-1-1">
 <div class="para">For any field <span class="process-math">\(\ff\text{,}\)</span> the following are true.</div>
@@ -588,44 +591,44 @@ y \amp =z \text{.}
 \end{align*}
 </div>
 <div class="para">This proves that additive inverses are unique.</div>
-</div></article></details><div class="para" id="sec-fields-18">We offer one final note on notation. We will often use juxtaposition to denote multiplication within a field. That is, we may write <span class="process-math">\(xy\)</span> instead of <span class="process-math">\(x \cdot y\)</span> to indicate the product of two elements in a field. We trust the reader will adjust quickly to this seismic shift.</div>
-<section class="reading-questions" id="sec-fields-19"><h3 class="heading hide-type">
+</div></article></details><div class="para" id="sec-fields-19">We offer one final note on notation. We will often use juxtaposition to denote multiplication within a field. That is, we may write <span class="process-math">\(xy\)</span> instead of <span class="process-math">\(x \cdot y\)</span> to indicate the product of two elements in a field. We trust the reader will adjust quickly to this seismic shift.</div>
+<section class="reading-questions" id="sec-fields-20"><h3 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading Questions</span>
-</h3>
-<article class="exercise exercise-like" id="sec-fields-19-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-fields-19-1-1-1">
-<div class="para">Carry out the following calculations within <span class="process-math">\(\ff_7\text{.}\)</span>
-</div>
-<ol class="lower-alpha">
-<li id="sec-fields-19-1-1-1-2-1"><div class="para" id="sec-fields-19-1-1-1-2-1-1"><span class="process-math">\(\displaystyle 4 + 3\)</span></div></li>
-<li id="sec-fields-19-1-1-1-2-2"><div class="para" id="sec-fields-19-1-1-1-2-2-1"><span class="process-math">\(\displaystyle 5 \cdot 6\)</span></div></li>
-<li id="sec-fields-19-1-1-1-2-3"><div class="para" id="sec-fields-19-1-1-1-2-3-1">
-<span class="process-math">\(2\cdot (3+6)\)</span> (Complete this calculation in the two different ways present in the distributive law and verify that they are equal.)</div></li>
-</ol>
-</div></article><article class="exercise exercise-like" id="sec-fields-19-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="sec-fields-19-2-1-1">What is the additive inverse of <span class="process-math">\(3\)</span> in <span class="process-math">\(\ff_5\text{?}\)</span> What is the multiplicative inverse of <span class="process-math">\(3\)</span> in <span class="process-math">\(\ff_7\text{?}\)</span> Explain your answers.</div></article><article class="exercise exercise-like" id="sec-fields-19-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="sec-fields-19-3-1-1">
-<a href="" class="xref" data-knowl="./knowl/xref/thm-field-n-prime.html" title="Theorem A.0.6">Theorem A.0.6</a> says that <span class="process-math">\(\zz_9\)</span> is not a field because 9 is not prime. Identify an element of <span class="process-math">\(\zz_9\)</span> that does not have a multiplicative inverse and explain why it does not have an inverse.</div></article></section><section class="exercises" id="sec-fields-20"><h3 class="heading hide-type">
-<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="sec-fields-20-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-fields-20-1-1-1">
-<div class="para">Carry out the following calculations in <span class="process-math">\(\zz_8\text{.}\)</span> (Remember that your answer for calculations in <span class="process-math">\(\zz_n\)</span> should be a number between <span class="process-math">\(0\)</span> and <span class="process-math">\(n-1\text{.}\)</span>)</div>
+<div class="para">Carry out the following calculations within <span class="process-math">\(\ff_7\text{.}\)</span>
+</div>
 <ol class="lower-alpha">
-<li id="sec-fields-20-1-1-1-5-1"><div class="para" id="sec-fields-20-1-1-1-5-1-1"><span class="process-math">\(\displaystyle 6 + 7\)</span></div></li>
-<li id="sec-fields-20-1-1-1-5-2"><div class="para" id="sec-fields-20-1-1-1-5-2-1"><span class="process-math">\(\displaystyle 3 + 7 + 5\)</span></div></li>
-<li id="sec-fields-20-1-1-1-5-3"><div class="para" id="sec-fields-20-1-1-1-5-3-1"><span class="process-math">\(\displaystyle 7 \cdot 3\)</span></div></li>
-<li id="sec-fields-20-1-1-1-5-4"><div class="para" id="sec-fields-20-1-1-1-5-4-1"><span class="process-math">\(\displaystyle 6 \cdot 4 \cdot 3\)</span></div></li>
-<li id="sec-fields-20-1-1-1-5-5"><div class="para" id="sec-fields-20-1-1-1-5-5-1"><span class="process-math">\(\displaystyle (-3)\cdot (5 + 3 + (-4))\)</span></div></li>
+<li id="sec-fields-20-1-1-1-2-1"><div class="para" id="sec-fields-20-1-1-1-2-1-1"><span class="process-math">\(\displaystyle 4 + 3\)</span></div></li>
+<li id="sec-fields-20-1-1-1-2-2"><div class="para" id="sec-fields-20-1-1-1-2-2-1"><span class="process-math">\(\displaystyle 5 \cdot 6\)</span></div></li>
+<li id="sec-fields-20-1-1-1-2-3"><div class="para" id="sec-fields-20-1-1-1-2-3-1">
+<span class="process-math">\(2\cdot (3+6)\)</span> (Complete this calculation in the two different ways present in the distributive law and verify that they are equal.)</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-fields-20-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="sec-fields-20-2-1-1">We know that since <span class="process-math">\(12\)</span> is not a prime, <span class="process-math">\(\zz_{12}\)</span> is not a field. In particular, the axiom about multiplicative inverses does not hold. For each nonzero element of <span class="process-math">\(\zz_{12}\text{,}\)</span> determine whether or not it has a multiplicative inverse. If the element has a multiplicative inverse, state that inverse.</div> </article><article class="exercise exercise-like" id="sec-fields-20-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="sec-fields-20-3-1-1">For each nonzero element of <span class="process-math">\(\ff_{11}\text{,}\)</span> find the multiplicative inverse.</div> </article><article class="subexercises" id="sec-fields-20-4"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
-<article class="exercise exercise-like" id="sec-fields-20-4-2"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
-<div class="para" id="sec-fields-20-4-2-1-1">Finish <a href="" class="xref" data-knowl="./knowl/xref/ex-complex-field.html" title="Example 2.1.3">Example 2.1.3</a>. In other words, complete the proof begun in <a href="" class="xref" data-knowl="./knowl/xref/ex-complex-field.html" title="Example 2.1.3">Example 2.1.3</a> that <span class="process-math">\(\cc\)</span> is a field.</div></article><article class="exercise exercise-like" id="sec-fields-20-4-3"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<div class="para" id="sec-fields-20-4-3-1-1">Consider <a href="" class="xref" data-knowl="./knowl/xref/ex-rational-field.html" title="Example 2.1.5">Example 2.1.5</a>. Which of the field axioms for <span class="process-math">\(\qq\)</span> hold “by inheritance” and for which of the axioms is there something that needs to be proved? Put each of the field axioms into one of these two categories. For each axiom that doesn’t hold merely “by inheritance,” prove that it holds for <span class="process-math">\(\qq\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-fields-20-4-4"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-fields-20-4-4-1-1">
+<div class="para" id="sec-fields-20-2-1-1">What is the additive inverse of <span class="process-math">\(3\)</span> in <span class="process-math">\(\ff_5\text{?}\)</span> What is the multiplicative inverse of <span class="process-math">\(3\)</span> in <span class="process-math">\(\ff_7\text{?}\)</span> Explain your answers.</div></article><article class="exercise exercise-like" id="sec-fields-20-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="sec-fields-20-3-1-1">
+<a href="" class="xref" data-knowl="./knowl/xref/thm-field-n-prime.html" title="Theorem A.0.6">Theorem A.0.6</a> says that <span class="process-math">\(\zz_9\)</span> is not a field because 9 is not prime. Identify a nonzero element of <span class="process-math">\(\zz_9\)</span> that does not have a multiplicative inverse and explain why it does not have an inverse.</div></article></section><section class="exercises" id="sec-fields-21"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="sec-fields-21-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-fields-21-1-1-1">
+<div class="para">Carry out the following calculations in <span class="process-math">\(\zz_8\text{.}\)</span> (Remember that your answer for calculations in <span class="process-math">\(\zz_n\)</span> should be a number between <span class="process-math">\(0\)</span> and <span class="process-math">\(n-1\text{.}\)</span>)</div>
+<ol class="lower-alpha">
+<li id="sec-fields-21-1-1-1-5-1"><div class="para" id="sec-fields-21-1-1-1-5-1-1"><span class="process-math">\(\displaystyle 6 + 7\)</span></div></li>
+<li id="sec-fields-21-1-1-1-5-2"><div class="para" id="sec-fields-21-1-1-1-5-2-1"><span class="process-math">\(\displaystyle 3 + 7 + 5\)</span></div></li>
+<li id="sec-fields-21-1-1-1-5-3"><div class="para" id="sec-fields-21-1-1-1-5-3-1"><span class="process-math">\(\displaystyle 7 \cdot 3\)</span></div></li>
+<li id="sec-fields-21-1-1-1-5-4"><div class="para" id="sec-fields-21-1-1-1-5-4-1"><span class="process-math">\(\displaystyle 6 \cdot 4 \cdot 3\)</span></div></li>
+<li id="sec-fields-21-1-1-1-5-5"><div class="para" id="sec-fields-21-1-1-1-5-5-1"><span class="process-math">\(\displaystyle (-3)\cdot (5 + 3 + (-4))\)</span></div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-fields-21-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="sec-fields-21-2-1-1">We know that since <span class="process-math">\(12\)</span> is not a prime, <span class="process-math">\(\zz_{12}\)</span> is not a field. In particular, the axiom about multiplicative inverses does not hold. For each nonzero element of <span class="process-math">\(\zz_{12}\text{,}\)</span> determine whether or not it has a multiplicative inverse. If the element has a multiplicative inverse, state that inverse.</div> </article><article class="exercise exercise-like" id="sec-fields-21-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="sec-fields-21-3-1-1">For each nonzero element of <span class="process-math">\(\ff_{11}\text{,}\)</span> find the multiplicative inverse.</div> </article><article class="subexercises" id="sec-fields-21-4"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-fields-21-4-2"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="sec-fields-21-4-2-1-1">Finish <a href="" class="xref" data-knowl="./knowl/xref/ex-complex-field.html" title="Example 2.1.4">Example 2.1.4</a>. In other words, complete the proof begun in <a href="" class="xref" data-knowl="./knowl/xref/ex-complex-field.html" title="Example 2.1.4">Example 2.1.4</a> that <span class="process-math">\(\cc\)</span> is a field.</div></article><article class="exercise exercise-like" id="sec-fields-21-4-3"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="sec-fields-21-4-3-1-1">Consider <a href="" class="xref" data-knowl="./knowl/xref/ex-rational-field.html" title="Example 2.1.6">Example 2.1.6</a>. Which of the field axioms for <span class="process-math">\(\qq\)</span> hold “by inheritance” and for which of the axioms is there something that needs to be proved? Put each of the field axioms into one of these two categories. For each axiom that doesn’t hold merely “by inheritance,” prove that it holds for <span class="process-math">\(\qq\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="sec-fields-21-4-4"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-fields-21-4-4-1-1">
 <div class="para">For a set <span class="process-math">\(A\text{,}\)</span> define the set of polynomials over <span class="process-math">\(A\)</span> in the usual way:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -633,8 +636,8 @@ A[x] = \{a_0 + a_1x + a_2x^2 + \cdots \mid a_i \in A\}.
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="sec-fields-20-4-4-1-1-4-1"><div class="para" id="sec-fields-20-4-4-1-1-4-1-1">Is <span class="process-math">\(\zz[x]\)</span> a field? Justify your answer.</div></li>
-<li id="sec-fields-20-4-4-1-1-4-2"><div class="para" id="sec-fields-20-4-4-1-1-4-2-1">Is <span class="process-math">\(\rr[x]\)</span> a field? Justify your answer.</div></li>
+<li id="sec-fields-21-4-4-1-1-4-1"><div class="para" id="sec-fields-21-4-4-1-1-4-1-1">Is <span class="process-math">\(\zz[x]\)</span> a field? Justify your answer.</div></li>
+<li id="sec-fields-21-4-4-1-1-4-2"><div class="para" id="sec-fields-21-4-4-1-1-4-2-1">Is <span class="process-math">\(\rr[x]\)</span> a field? Justify your answer.</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="exer-f3-alpha"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
 <div class="para logical" id="exer-f3-alpha-1-1">
@@ -645,12 +648,12 @@ A[x] = \{a_0 + a_1x + a_2x^2 + \cdots \mid a_i \in A\}.
 \end{equation*}
 </div>
 <div class="para">is <span class="process-math">\(\ff_3[\alpha]\)</span> a field? Justify your answer.</div>
-</div></article><article class="exercise exercise-like" id="sec-fields-20-4-6"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-fields-20-4-6-1-1">
+</div></article><article class="exercise exercise-like" id="sec-fields-21-4-6"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-fields-21-4-6-1-1">
 <div class="para">In this problem we consider “adding” an element to <span class="process-math">\(\ff_5\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="sec-fields-20-4-6-1-1-3-1"><div class="para logical" id="sec-fields-20-4-6-1-1-3-1-1">
+<li id="sec-fields-21-4-6-1-1-3-1"><div class="para logical" id="sec-fields-21-4-6-1-1-3-1-1">
 <div class="para">If <span class="process-math">\(\ff_5[\alpha]\)</span> is defined by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -659,7 +662,7 @@ A[x] = \{a_0 + a_1x + a_2x^2 + \cdots \mid a_i \in A\}.
 </div>
 <div class="para">is <span class="process-math">\(\ff_5[\alpha]\)</span> a field? Justify your answer.</div>
 </div></li>
-<li id="sec-fields-20-4-6-1-1-3-2"><div class="para logical" id="sec-fields-20-4-6-1-1-3-2-1">
+<li id="sec-fields-21-4-6-1-1-3-2"><div class="para logical" id="sec-fields-21-4-6-1-1-3-2-1">
 <div class="para">If <span class="process-math">\(\ff_5[\alpha]\)</span> is defined by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -678,22 +681,22 @@ A[x] = \{a_0 + a_1x + a_2x^2 + \cdots \mid a_i \in A\}.
 \end{equation*}
 </div>
 <div class="para">Is <span class="process-math">\(\qq[\sqrt{2}]\)</span> a field? Justify your answer.</div>
-</div></article><article class="exercise exercise-like" id="sec-fields-20-4-8"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-fields-20-4-8-1-1">
+</div></article><article class="exercise exercise-like" id="sec-fields-21-4-8"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-fields-21-4-8-1-1">
 <div class="para">Consider the set <span class="process-math">\(\rr^2\)</span> with operations defined as follows:</div>
-<div class="displaymath process-math" id="sec-fields-20-4-8-1-1-2">
+<div class="displaymath process-math" id="sec-fields-21-4-8-1-1-2">
 \begin{align*}
 (a,b) \oplus (c,d) \amp = (a+c,b+d)\\
 (a,b) \otimes (c,d) \amp = (ac - 2bd, ad+bc)\text{.}
 \end{align*}
 </div>
 <div class="para">Is <span class="process-math">\(\rr^2\)</span> with these operations a field? Justify your answer.</div>
-</div></article><article class="exercise exercise-like" id="sec-fields-20-4-9"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
-<div class="para" id="sec-fields-20-4-9-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-pt2.html" title="Item 2">Item 2</a> of <a href="" class="xref" data-knowl="./knowl/xref/thm-field-arithmetic.html" title="Theorem 2.1.7">Theorem 2.1.7</a>.</div></article><article class="exercise exercise-like" id="sec-fields-20-4-10"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
-<div class="para" id="sec-fields-20-4-10-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-pt4.html" title="Item 4">Item 4</a> of <a href="" class="xref" data-knowl="./knowl/xref/thm-field-arithmetic.html" title="Theorem 2.1.7">Theorem 2.1.7</a>.</div></article><article class="exercise exercise-like" id="sec-fields-20-4-11"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
-<div class="para" id="sec-fields-20-4-11-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-pt7.html" title="Item 7">Item 7</a> of <a href="" class="xref" data-knowl="./knowl/xref/thm-field-arithmetic.html" title="Theorem 2.1.7">Theorem 2.1.7</a>.</div></article><article class="exercise exercise-like" id="sec-fields-20-4-12"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
-<div class="para" id="sec-fields-20-4-12-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-pt8.html" title="Item 8">Item 8</a> of <a href="" class="xref" data-knowl="./knowl/xref/thm-field-arithmetic.html" title="Theorem 2.1.7">Theorem 2.1.7</a>.</div></article><article class="exercise exercise-like" id="sec-fields-20-4-13"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
-<div class="para" id="sec-fields-20-4-13-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-pt9.html" title="Item 9">Item 9</a> of <a href="" class="xref" data-knowl="./knowl/xref/thm-field-arithmetic.html" title="Theorem 2.1.7">Theorem 2.1.7</a>.</div></article></article></section></section></div>
+</div></article><article class="exercise exercise-like" id="sec-fields-21-4-9"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para" id="sec-fields-21-4-9-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-pt2.html" title="Item 2">Item 2</a> of <a href="" class="xref" data-knowl="./knowl/xref/thm-field-arithmetic.html" title="Theorem 2.1.8">Theorem 2.1.8</a>.</div></article><article class="exercise exercise-like" id="sec-fields-21-4-10"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para" id="sec-fields-21-4-10-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-pt4.html" title="Item 4">Item 4</a> of <a href="" class="xref" data-knowl="./knowl/xref/thm-field-arithmetic.html" title="Theorem 2.1.8">Theorem 2.1.8</a>.</div></article><article class="exercise exercise-like" id="sec-fields-21-4-11"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="para" id="sec-fields-21-4-11-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-pt7.html" title="Item 7">Item 7</a> of <a href="" class="xref" data-knowl="./knowl/xref/thm-field-arithmetic.html" title="Theorem 2.1.8">Theorem 2.1.8</a>.</div></article><article class="exercise exercise-like" id="sec-fields-21-4-12"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
+<div class="para" id="sec-fields-21-4-12-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-pt8.html" title="Item 8">Item 8</a> of <a href="" class="xref" data-knowl="./knowl/xref/thm-field-arithmetic.html" title="Theorem 2.1.8">Theorem 2.1.8</a>.</div></article><article class="exercise exercise-like" id="sec-fields-21-4-13"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
+<div class="para" id="sec-fields-21-4-13-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-pt9.html" title="Item 9">Item 9</a> of <a href="" class="xref" data-knowl="./knowl/xref/thm-field-arithmetic.html" title="Theorem 2.1.8">Theorem 2.1.8</a>.</div></article></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-second.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-linear-systems-fields.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
