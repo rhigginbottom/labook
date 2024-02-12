@@ -200,7 +200,7 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-vector-spaces.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Vector Spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vector-spaces.html#sec-vector-spaces-17" class="internal"><span class="codenumber">2.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vector-spaces.html#sec-vector-spaces-18" class="internal"><span class="codenumber">2.3</span> <span class="title">Reading Questions</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vector-spaces.html#exercises-2-3" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -648,14 +648,10 @@ AB = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">From this we can see that <span class="process-math">\(S\circ T\)</span> and <span class="process-math">\(T\circ S\)</span> are two distinct linear transformations.</div>
-</div></article></details><div class="para" id="subsec-matrix-mult-17">As we start to deal more regularly with matrices in the context of linear transformations, we need to introduce some notation.</div>
-<article class="note remark-like" id="subsec-matrix-mult-18"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.2.9</span><span class="period">.</span>
-</h4>
-<div class="para" id="subsec-matrix-mult-18-1">For a field <span class="process-math">\(\ff\text{,}\)</span> the notation <span class="process-math">\(M_{m,n}(\ff)\)</span> denotes the set of all <span class="process-math">\(m\times n\)</span> matrices over <span class="process-math">\(\ff\text{.}\)</span> When <span class="process-math">\(m=n\text{,}\)</span> we will use the notation <span class="process-math">\(M_n(\ff)\)</span> instead of <span class="process-math">\(M_{n,n}(\ff)\text{.}\)</span>
-</div></article><div class="para" id="subsec-matrix-mult-19">The next theorem records some facts about matrix multiplication which will be useful later in the text. We will walk the reader through the proof of this theorem in the exercises at the end of this section.</div>
+</div></article></details><div class="para" id="subsec-matrix-mult-17">As we start to deal more regularly with matrices in the context of linear transformations, we need to recall the notation <span class="process-math">\(M_{m,n}(\ff)\)</span> and <span class="process-math">\(M_n(\ff)\)</span> from <a href="" class="xref" data-knowl="./knowl/xref/matrices-vspace.html" title="Example 2.3.10">Example 2.3.10</a>.</div>
+<div class="para" id="subsec-matrix-mult-18">The next theorem records some facts about matrix multiplication which will be useful later in the text. We will walk the reader through the proof of this theorem in the exercises at the end of this section.</div>
 <article class="theorem theorem-like" id="thm-matrix-mult-facts"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.10</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.9</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="thm-matrix-mult-facts-1-1">
 <div class="para">Let <span class="process-math">\(A, A_1, A_2 \in M_{m,n}(\ff)\text{,}\)</span> <span class="process-math">\(B, B_1, B_2 \in M_{n,p}(\ff)\text{,}\)</span> and <span class="process-math">\(C \in M_{p,q}(\ff)\text{.}\)</span> Then</div>
@@ -665,10 +661,10 @@ AB = \begin{bmatrix}
 <span class="process-math">\(A(B_1 + B_2) = AB_1 + AB_2\text{,}\)</span> and</div></li>
 <li id="thm-matrix-mult-facts-1-1-4-3"><div class="para" id="thm-matrix-mult-facts-1-1-4-3-1"><span class="process-math">\((A_1+A_2)B = A_1B + A_2B\text{.}\)</span></div></li>
 </ol>
-</div></article><div class="para" id="subsec-matrix-mult-21">This theorem says that, if all of the matrix products make sense, matrix multiplication is associative and obeys both of the distributive laws.</div>
-<div class="para" id="subsec-matrix-mult-22">There is one other useful way to think about matrix multiplication—in terms of the columns of the matrix.</div>
+</div></article><div class="para" id="subsec-matrix-mult-20">This theorem says that, if all of the matrix products make sense, matrix multiplication is associative and obeys both of the distributive laws.</div>
+<div class="para" id="subsec-matrix-mult-21">There is one other useful way to think about matrix multiplication—in terms of the columns of the matrix.</div>
 <article class="proposition theorem-like" id="prop-matrix-mult"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.11</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.10</span><span class="period">.</span>
 </h4>
 <div class="para" id="prop-matrix-mult-1-1">Let <span class="process-math">\(A \in M_{m,n}(\ff)\text{,}\)</span> <span class="process-math">\(B \in M_{n,p}(\ff)\text{,}\)</span> and let the columns of <span class="process-math">\(B\)</span> be <span class="process-math">\(\mathbf{b}_1,\ldots,\mathbf{b}_p\text{.}\)</span> Then the columns of <span class="process-math">\(AB\)</span> are <span class="process-math">\(A\mathbf{b}_1,\ldots,A\mathbf{b}_p\text{.}\)</span>
 </div></article><details id="prop-matrix-mult-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="prop-matrix-mult-2-1">
@@ -685,13 +681,13 @@ AB = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Since <span class="process-math">\((AB)\mathbf{e}_j\)</span> is the <span class="process-math">\(j\)</span>th column of <span class="process-math">\(AB\text{,}\)</span> this proves the proposition.</div>
-</div></article></details><div class="para" id="subsec-matrix-mult-24">From the understanding we developed in <a href="" class="xref" data-knowl="./knowl/xref/examp-matrix-vector-prod.html" title="Example 3.1.5">Example 3.1.5</a>, this proposition means that every column of the matrix product <span class="process-math">\(AB\)</span> is a linear combination of the columns of <span class="process-math">\(A\text{,}\)</span> when the product <span class="process-math">\(AB\)</span> is defined.</div></section><section class="subsection" id="subsec-linear-trans-invertible"><h3 class="heading hide-type">
+</div></article></details><div class="para" id="subsec-matrix-mult-23">From the understanding we developed in <a href="" class="xref" data-knowl="./knowl/xref/examp-matrix-vector-prod.html" title="Example 3.1.5">Example 3.1.5</a>, this proposition means that every column of the matrix product <span class="process-math">\(AB\)</span> is a linear combination of the columns of <span class="process-math">\(A\text{,}\)</span> when the product <span class="process-math">\(AB\)</span> is defined.</div></section><section class="subsection" id="subsec-linear-trans-invertible"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="space"> </span><span class="title">Invertible Matrices</span>
 </h3>
 <div class="para" id="subsec-linear-trans-invertible-2">With matrix multiplication defined in terms of the composition of linear transformations, we turn to a specific composition in this subsection. Specifically, we will think about matrices for linear transformations <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> when <span class="process-math">\(S\circ T\)</span> is the identity transformation.</div>
 <div class="para" id="subsec-linear-trans-invertible-3">In <a href="" class="xref" data-knowl="./knowl/xref/def-lin-trans-invertible.html" title="Definition 3.1.11">Definition 3.1.11</a>, we called such linear transformations <em class="emphasis">invertible</em>. When such a linear transformation can be accomplished by matrix multiplication, we will refer to the connected matrix using this same term.</div>
 <article class="definition definition-like" id="def-invertible-matrix"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.12</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.11</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="def-invertible-matrix-1-1">
 <div class="para">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> The matrix <span class="process-math">\(B\)</span> is an <dfn class="terminology">inverse</dfn> matrix for <span class="process-math">\(A\)</span> if</div>
@@ -715,7 +711,7 @@ I \bfx \amp = B\bfy\\
 </div>
 <div class="para" id="subsec-linear-trans-invertible-7">The next three propositions present some properties of matrix inverses.</div>
 <article class="proposition theorem-like" id="prop-matrix-inverse-unique"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.13</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.12</span><span class="period">.</span>
 </h4>
 <div class="para" id="prop-matrix-inverse-unique-1-1">If a matrix <span class="process-math">\(A \in M_n(\ff)\)</span> has an inverse, that inverse is unique.</div></article><details id="prop-matrix-inverse-unique-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="prop-matrix-inverse-unique-2-1">
 <div class="para">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and suppose that both <span class="process-math">\(B,C \in M_n(\ff)\)</span> are inverses for <span class="process-math">\(A\text{.}\)</span> Then we have</div>
@@ -726,7 +722,7 @@ B = BI_n = B(AC) = (BA)C = I_nC = C\text{.}
 </div>
 </div></article></details><div class="para" id="subsec-linear-trans-invertible-9">This proposition allows us to refer to <em class="emphasis">the inverse</em> of a matrix <span class="process-math">\(A\)</span> and to use the notation <span class="process-math">\(A^{-1}\)</span> for that matrix.</div>
 <article class="proposition theorem-like" id="prop-matrix-inverse-product"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.14</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.13</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="prop-matrix-inverse-product-1-1">
 <div class="para">Suppose that <span class="process-math">\(A,B \in M_n(\ff)\)</span> are both invertible. Then <span class="process-math">\(AB\)</span> is invertible as well and</div>
@@ -745,12 +741,12 @@ B = BI_n = B(AC) = (BA)C = I_nC = C\text{.}
 </div>
 </div></article></details><div class="para" id="subsec-linear-trans-invertible-11">This final proposition states what may seem like an obvious fact, but which should still be justified. That justification is left to the exercises.</div>
 <article class="proposition theorem-like" id="prop-matrix-inverse-involution"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.15</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.14</span><span class="period">.</span>
 </h4>
 <div class="para" id="prop-matrix-inverse-involution-1-1">Let <span class="process-math">\(A \in M_n(\ff)\)</span> be invertible. Then <span class="process-math">\(A^{-1}\)</span> is also invertible and <span class="process-math">\((A^{-1})^{-1} = A\text{.}\)</span>
 </div></article><div class="para" id="subsec-linear-trans-invertible-13">While we are not yet ready to calculate the inverse of a matrix (stay tuned!), we can provide examples of invertible matrices and their inverses.</div>
 <details id="examp-inverse-matrices" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.16</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.15</span><span class="period">.</span>
 </h4></summary><article class="example example-like"><div class="para logical" id="examp-inverse-matrices-1-1">
 <div class="para">Consider the following matrix <span class="process-math">\(A \in M_2(\rr)\text{:}\)</span>
 </div>
@@ -793,7 +789,7 @@ B^{-1} = \begin{bmatrix}
 </h3>
 <div class="para" id="subsec-matrix-transpose-2">The <em class="emphasis">transpose</em> of a matrix is useful notation for some formulas that will appear later.</div>
 <article class="definition definition-like" id="def-transpose"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.17</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.16</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="def-transpose-1-1">
 <div class="para">If <span class="process-math">\(A \in M_{m,n}(\ff)\text{,}\)</span> then the <dfn class="terminology">transpose</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(A^T\text{,}\)</span> is the element of <span class="process-math">\(M_{n,m}(\ff)\)</span> whose rows are the columns of <span class="process-math">\(A\text{.}\)</span> In other words,</div>
@@ -805,10 +801,10 @@ B^{-1} = \begin{bmatrix}
 <div class="para">for all <span class="process-math">\(1 \le i \le n\)</span> and all <span class="process-math">\(1 \le j \le m\text{.}\)</span>
 </div>
 </div></article><article class="note remark-like" id="subsec-matrix-transpose-4"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.2.18</span><span class="period">.</span>
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.2.17</span><span class="period">.</span>
 </h4>
 <div class="para" id="subsec-matrix-transpose-4-1">The transpose is an easy way to turn a column vector into a row vector and vice versa.</div></article><details id="subsec-matrix-transpose-5" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.19</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.18</span><span class="period">.</span>
 </h4></summary><article class="example example-like"><div class="para logical" id="subsec-matrix-transpose-5-1-1">
 <div class="para">If <span class="process-math">\(A\)</span> is the <span class="process-math">\(2\times 3\)</span> matrix</div>
 <div class="displaymath process-math">
@@ -828,11 +824,11 @@ A^T = \begin{bmatrix}
 </div>
 </div></article></details><div class="para" id="subsec-matrix-transpose-6">Some matrices are unaffected by taking the transpose. These deserve a special designation!</div>
 <article class="definition definition-like" id="def-symmetric-matrix"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.20</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.19</span><span class="period">.</span>
 </h4>
-<div class="para" id="def-symmetric-matrix-1-1">A matrix which is equal to its own transpose is called a <dfn class="terminology">symmetric matrix</dfn>. (All symmetric matrices must be square by necessity.)</div></article><div class="para" id="subsec-matrix-transpose-8">The following theorem collects some properties related to the transpose of a matrix. (Note that this theorem references the sum and scalar multiple of a matrix; the reader should understand these operations in the same way that addition and scalar multiplication of vectors in <span class="process-math">\(\ff^n\)</span> are understood.)</div>
+<div class="para" id="def-symmetric-matrix-1-1">A matrix which is equal to its own transpose is called a <dfn class="terminology">symmetric matrix</dfn>. (All symmetric matrices must be square by necessity.)</div></article><div class="para" id="subsec-matrix-transpose-8">The following theorem collects some properties related to the transpose of a matrix. </div>
 <article class="theorem theorem-like" id="thm-properties-transpose"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.21</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.20</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="thm-properties-transpose-1-1">
 <div class="para">Let <span class="process-math">\(A, C \in M_{m,n}(\ff)\text{,}\)</span> let <span class="process-math">\(B \in M_{n,p}(\ff)\text{,}\)</span> and let <span class="process-math">\(k \in \ff\text{.}\)</span> Then the following properties hold:</div>
@@ -858,9 +854,9 @@ A^T = \begin{bmatrix}
 </div>
 <div class="para">Since multiplication is commutative in fields, these two expressions are equal.</div>
 </div></article></details><article class="note remark-like" id="subsec-matrix-transpose-10"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.2.22</span><span class="period">.</span>
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.2.21</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-matrix-transpose-10-1">While it might be more aesthetically pleasing if we did not have to switch the order of the multiplication when taking the transpose of a product, this type of formula makes sense when considering the dimensions of the matrices involved. If <span class="process-math">\(A\)</span> is <span class="process-math">\(m\times n\)</span> and <span class="process-math">\(B\)</span> is <span class="process-math">\(n\times p\text{,}\)</span> then the expression <span class="process-math">\(A^TB^T\)</span> wouldn’t even make sense unless <span class="process-math">\(m=p\text{.}\)</span> Further, reversing the order in a formula involving matrix multiplication is typical, as we have already seen in <a href="" class="xref" data-knowl="./knowl/xref/prop-matrix-inverse-product.html" title="Proposition 3.2.14">Proposition 3.2.14</a>.</div></article></section><section class="reading-questions" id="sec-matrix-linear-trans-7"><h3 class="heading hide-type">
+<div class="para" id="subsec-matrix-transpose-10-1">While it might be more aesthetically pleasing if we did not have to switch the order of the multiplication when taking the transpose of a product, this type of formula makes sense when considering the dimensions of the matrices involved. If <span class="process-math">\(A\)</span> is <span class="process-math">\(m\times n\)</span> and <span class="process-math">\(B\)</span> is <span class="process-math">\(n\times p\text{,}\)</span> then the expression <span class="process-math">\(A^TB^T\)</span> wouldn’t even make sense unless <span class="process-math">\(m=p\text{.}\)</span> Further, reversing the order in a formula involving matrix multiplication is typical, as we have already seen in <a href="" class="xref" data-knowl="./knowl/xref/prop-matrix-inverse-product.html" title="Proposition 3.2.13">Proposition 3.2.13</a>.</div></article></section><section class="reading-questions" id="sec-matrix-linear-trans-7"><h3 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
 <article class="exercise exercise-like" id="sec-matrix-linear-trans-7-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -881,7 +877,7 @@ B = \begin{bmatrix}
 <div class="para">Calculate both <span class="process-math">\(AB\)</span> and <span class="process-math">\(BA\text{.}\)</span>
 </div>
 </div></article><article class="exercise exercise-like" id="sec-matrix-linear-trans-7-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="sec-matrix-linear-trans-7-3-1-1">Write down a <span class="process-math">\(3\times 3\)</span> matrix over <span class="process-math">\(\ff_5\)</span> which is symmetric. (See <a href="" class="xref" data-knowl="./knowl/xref/def-symmetric-matrix.html" title="Definition 3.2.20">Definition 3.2.20</a>.)</div></article></section><section class="exercises" id="sec-matrix-linear-trans-8"><h3 class="heading hide-type">
+<div class="para" id="sec-matrix-linear-trans-7-3-1-1">Write down a <span class="process-math">\(3\times 3\)</span> matrix over <span class="process-math">\(\ff_5\)</span> which is symmetric. (See <a href="" class="xref" data-knowl="./knowl/xref/def-symmetric-matrix.html" title="Definition 3.2.19">Definition 3.2.19</a>.)</div></article></section><section class="exercises" id="sec-matrix-linear-trans-8"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="sec-matrix-linear-trans-8-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -932,7 +928,7 @@ C = \begin{bmatrix}
 <li id="sec-matrix-linear-trans-8-6-3-1-1-2-3"><div class="para" id="sec-matrix-linear-trans-8-6-3-1-1-2-3-1">Prove that any <span class="process-math">\(A\)</span> which is invertible must be a square matrix.</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-matrix-linear-trans-8-6-4"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para" id="sec-matrix-linear-trans-8-6-4-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/prop-matrix-inverse-involution.html" title="Proposition 3.2.15">Proposition 3.2.15</a>.</div></article><article class="exercise exercise-like" id="sec-matrix-linear-trans-8-6-5"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="sec-matrix-linear-trans-8-6-4-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/prop-matrix-inverse-involution.html" title="Proposition 3.2.14">Proposition 3.2.14</a>.</div></article><article class="exercise exercise-like" id="sec-matrix-linear-trans-8-6-5"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
 <div class="para" id="sec-matrix-linear-trans-8-6-5-1-1">In fields, we have the <em class="emphasis">cancellation law</em> for multiplication. If <span class="process-math">\(ab=ac\)</span> then <span class="process-math">\(b=c\text{.}\)</span> Does matrix multiplication have this property?</div> <div class="para" id="sec-matrix-linear-trans-8-6-5-1-2">Let <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\)</span> be matrices over <span class="process-math">\(\ff\)</span> such that <span class="process-math">\(AB\)</span> and <span class="process-math">\(AC\)</span> make sense and are the same size. If <span class="process-math">\(AB=AC\text{,}\)</span> must it be true that <span class="process-math">\(B=C\text{?}\)</span> Either prove this is true or provide a counter-example.</div></article><article class="exercise exercise-like" id="sec-matrix-linear-trans-8-6-6"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
 <div class="para" id="sec-matrix-linear-trans-8-6-6-1-1">In fields, multiplication has the <em class="emphasis">no zero divisors</em> property. If <span class="process-math">\(xy=0\text{,}\)</span> then either <span class="process-math">\(x=0\)</span> or <span class="process-math">\(y=0\text{.}\)</span> Does matrix multiplication have this property?</div> <div class="para" id="sec-matrix-linear-trans-8-6-6-1-2">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be matrices over <span class="process-math">\(\ff\)</span> such that <span class="process-math">\(AB\)</span> makes sense. Let <span class="process-math">\(Z\)</span> be the matrix of the same size as <span class="process-math">\(AB\)</span> consisting of all zeros. If <span class="process-math">\(AB = Z\text{,}\)</span> must it be true that either <span class="process-math">\(A\)</span> or <span class="process-math">\(B\)</span> is a matrix of all zeros? Either prove this is true or provide a counter-example.</div></article><article class="exercise exercise-like" id="sec-matrix-linear-trans-8-6-7"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-matrix-linear-trans-8-6-7-1-1">
