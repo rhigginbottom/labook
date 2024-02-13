@@ -638,7 +638,78 @@ c(\bfu + \bfv) \amp = \begin{bmatrix} cu_1 + cv_1 \\ \vdots \\ cu_n + cv_n \end{
 \end{align*}
 </div>
 <div class="para">This completes the proof.</div>
-</div></div></details></div></article></article></section></div>
+</div></div></details></div></article></article><h3 class="heading hide-type" title="Section 2.1: Fields">
+<span class="codenumber">2</span><span class="space"> </span><span class="title">Fields and Vector Spaces</span><br><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Fields</span>
+</h3>
+<h4 class="heading hide-type" title="Exercises 2.1"><span class="title">Exercises</span></h4>
+<article class="subexercises"><h5 class="heading"><span class="title">Writing Exercises</span></h5>
+<article class="exercise-like"><h6 class="heading"><span class="codenumber">2.1.6<span class="period">.</span></span></h6>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para">No, <span class="process-math">\(\zz[x]\)</span> is not a field. All of the integers are contained in <span class="process-math">\(\zz[x]\text{,}\)</span> and since (for example) <span class="process-math">\(2 \in \zz\)</span> has no multiplicative inverse in <span class="process-math">\(\zz\text{,}\)</span> it will not have a multiplicative inverse in <span class="process-math">\(\zz[x]\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">No, <span class="process-math">\(\rr[x]\)</span> is not a field. The element <span class="process-math">\(x \in \rr[x]\)</span> has no multiplicative inverse. We can argue this by contradiction. If <span class="process-math">\(b = a_0 + a_1x + a_2x^2 + \cdots\)</span> was the multiplicative inverse of <span class="process-math">\(x\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 = xb = a_0x + a_1x^2 + a_2x^3 + \cdots\text{.}
+\end{equation*}
+</div>
+<div class="para">But since the constant term on the right side of this equation is <span class="process-math">\(0\)</span> and the constant term on the left side is <span class="process-math">\(1\text{,}\)</span> and since those are not equal, we have a contradiction.</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise-like"><h6 class="heading"><span class="codenumber">2.1.8<span class="period">.</span></span></h6>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para"></div></li>
+<li><div class="para logical">
+<div class="para">Yes, this is a field. The most difficult axiom to check is the one about multiplicative inverses. It turns out that the multiplicative inverse of <span class="process-math">\(a + b\alpha\)</span> is <span class="process-math">\(c + d\alpha\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c = \frac{1}{a^2-2b^2}, \hspace{6pt} \text{and} \hspace{6pt} d = -\frac{b}{a^2-2b^2}\text{.}
+\end{equation*}
+</div>
+<div class="para">One needs to check that for all non-zero elements <span class="process-math">\(a + b\alpha\)</span> of <span class="process-math">\(\ff_5[\alpha]\)</span> we have <span class="process-math">\(a^2-2b^2 \neq 0\text{.}\)</span> But this is relatively easy to verify.</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise-like"><h6 class="heading"><span class="codenumber">2.1.10<span class="period">.</span></span></h6>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">Yes, this is a field. Some of the axioms are quite tedious to check. It is perhaps worth noting that the multiplicative inverse of <span class="process-math">\((a,b)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(\frac{a}{a^2+2b^2}, -\frac{b}{a^2+2b^2}\right)\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise-like"><h6 class="heading"><span class="codenumber">2.1.12<span class="period">.</span></span></h6>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical">
+<div class="para">Let <span class="process-math">\(b \in \ff\)</span> be a non-zero element with multiplicative inverse <span class="process-math">\(b'\text{.}\)</span> Suppose that the element <span class="process-math">\(a \in \ff\)</span> also has the properties of a multiplicative inverse of <span class="process-math">\(b\text{.}\)</span> This means that <span class="process-math">\(ab=1\text{.}\)</span> If we multiply both sides of this equation by <span class="process-math">\(b'\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+(ab)b' \amp =b'\\
+a(bb') \amp =b'\\
+a(1) \amp =b'\\
+a \amp =b'\text{.}
+\end{align*}
+</div>
+<div class="para">This proves that <span class="process-math">\(a=b'\text{,}\)</span> so multiplicative inverses are unique.</div>
+</div></div></details></div></article></article><h3 class="heading hide-type" title="Section 2.2: Solving Linear Systems Over Fields">
+<span class="codenumber">2.2</span><span class="space"> </span><span class="title">Solving Linear Systems Over Fields</span>
+</h3>
+<h4 class="heading hide-type" title="Exercises 2.2"><span class="title">Exercises</span></h4>
+<article class="exercise-like"><h5 class="heading"><span class="codenumber">2.2.1<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">This system has the solution <span class="process-math">\(x=1\text{,}\)</span> <span class="process-math">\(y=0\text{,}\)</span> <span class="process-math">\(z=0\text{.}\)</span>
+</div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">2.2.2<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">This linear system is inconsistent.</div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">2.2.5<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">This system is inconsistent.</div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">2.2.6<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">The unique solution is <span class="process-math">\(x = 2\text{,}\)</span> <span class="process-math">\(y = 4\text{,}\)</span> and <span class="process-math">\(z = 1\text{.}\)</span>
+</div></div></details></div></article><article class="subexercises"><h5 class="heading"><span class="title">Writing Exercises</span></h5>
+<article class="exercise-like"><h6 class="heading"><span class="codenumber">2.2.9<span class="period">.</span></span></h6>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para">The same argument as in <a href="" class="xref" data-knowl="./knowl/xref/exer-2b2-det.html" title="Exercise 1.3.12">Exercise 1.3.12</a> works here, recognizing that <span class="process-math">\(2=-1\)</span> in <span class="process-math">\(\ff_3\text{.}\)</span>
+</div></li>
+<li><div class="para">The correct inequality is <span class="process-math">\(ad+(p-1)bc \neq 0\text{.}\)</span>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise-like"><h6 class="heading"><span class="codenumber">2.2.10<span class="period">.</span></span></h6>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para">If all of the coefficients and constants begin as integers, all of the elementary row operations will produce coefficients and constants within <span class="process-math">\(\qq\text{.}\)</span> None of the elementary row operations can produce an irrational number when beginning with integers.</div></li>
+<li><div class="para">If there is a unique solution, there are no free variables, so whether one considers the solution in <span class="process-math">\(\qq^n\)</span> or <span class="process-math">\(\rr^n\text{,}\)</span> there cannot be another solution. Thus, the numbers in the solution set must be rational numbers.</div></li>
+</ol></div></div></details></div></article></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="apdx-isomorphisms.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
