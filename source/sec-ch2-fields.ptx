@@ -463,6 +463,26 @@ No student wants to write out all of these steps, and no instructor wants to gra
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            No, <m>\zz[x]</m> is not a field. All of the integers are contained in <m>\zz[x]</m>, and since (for example) <m>2 \in \zz</m> has no multiplicative inverse in <m>\zz</m>, it will not have a multiplicative inverse in <m>\zz[x]</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            No, <m>\rr[x]</m> is not a field. The element <m>x \in \rr[x]</m> has no multiplicative inverse. We can argue this by contradiction. If <m>b = a_0 + a_1x + a_2x^2 + \cdots</m> was the multiplicative inverse of <m>x</m>, then 
+            <me>
+              1 = xb = a_0x + a_1x^2 + a_2x^3 + \cdots
+            </me>.
+            But since the constant term on the right side of this equation is <m>0</m> and the constant term on the left side is <m>1</m>, and since those are not equal, we have a contradiction.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise xml:id="exer-f3-alpha">
   <statement>
@@ -501,6 +521,26 @@ No student wants to write out all of these steps, and no instructor wants to gra
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            Yes, this is a field. The most difficult axiom to check is the one about multiplicative inverses. It turns out that the multiplicative inverse of <m>a + b\alpha</m> is <m>c + d\alpha</m> where
+            <me>
+              c = \frac{1}{a^2-2b^2}, \hspace{6pt} \text{and} \hspace{6pt} d = -\frac{b}{a^2-2b^2}
+            </me>.
+            One needs to check that for all non-zero elements <m>a + b\alpha</m> of <m>\ff_5[\alpha]</m> we have <m>a^2-2b^2 \neq 0</m>. But this is relatively easy to verify.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise xml:id="exer-q-root-2">
   <statement>
@@ -524,6 +564,14 @@ No student wants to write out all of these steps, and no instructor wants to gra
       Is <m>\rr^2</m> with these operations a field? Justify your answer.
     </p>
   </statement>
+  <answer>
+    <p>
+      Yes, this is a field. Some of the axioms are quite tedious to check. It is perhaps worth noting that the multiplicative inverse of <m>(a,b)</m> is 
+      <me>
+        \left(\frac{a}{a^2+2b^2}, -\frac{b}{a^2+2b^2}\right)
+      </me>.      
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -538,6 +586,18 @@ No student wants to write out all of these steps, and no instructor wants to gra
       Prove <xref ref="thm-pt4"/> of <xref ref="thm-field-arithmetic"/>.
     </p>
   </statement>
+  <solution>
+    <p>
+      Let <m>b \in \ff</m> be a non-zero element with multiplicative inverse <m>b'</m>. Suppose that the element <m>a \in \ff</m> also has the properties of a multiplicative inverse of <m>b</m>. This means that <m>ab=1</m>. If we multiply both sides of this equation by <m>b'</m>, we have 
+      <md>
+        <mrow>(ab)b' \amp =b'</mrow>
+        <mrow>a(bb') \amp =b'</mrow>
+        <mrow>a(1) \amp =b'</mrow>
+        <mrow>a \amp =b'</mrow>
+      </md>.
+      This proves that <m>a=b'</m>, so multiplicative inverses are unique.
+    </p>
+  </solution>
 </exercise>
 <exercise>
   <statement>

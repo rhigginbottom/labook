@@ -248,11 +248,13 @@
         <mrow>y+z \amp = 0</mrow>
         <mrow>x+y+z \amp = 1</mrow>
       </md>.
-      <!-- 1 & 0 & 0 & 1 \\ 
-      0 & 1 & 0 & 0 \\ 
-      0 & 0 & 1 & 0  -->
     </p>
   </statement>
+  <answer>
+    <p>
+      This system has the solution <m>x=1</m>, <m>y=0</m>, <m>z=0</m>. 
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -264,13 +266,13 @@
         <mrow>y + z \amp = 1</mrow>
         <mrow>2x + 2y  \amp = 1</mrow>
       </md>.
-      <!-- 1 & 2 & 2 & 0 \\ 
-      0 & 1 & 0 & 2 \\ 
-      0 & 0 & 1 & 2 \\ 
-      0 & 0 & 0 & 1 
-      inconsistent -->
     </p>
   </statement>
+  <answer>
+    <p>
+      This linear system is inconsistent.
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -281,9 +283,6 @@
         <mrow>3x_1 + x_3 + 5x_4 \amp = 6</mrow>
         <mrow>4x_1 + x_2 + 2x_3 \amp = 5</mrow>
       </md>.
-      <!-- 1 & 0 & 0 & 3 & 4 \\ 
-      0 & 1 & 0 & 3 & 1 \\ 
-      0 & 0 & 1 & 3 & 1 -->
     </p>
   </statement>
 </exercise>
@@ -298,8 +297,6 @@
         \end{bmatrix}
       </me>.
       Put this matrix into RREF.
-      <!-- 1 & 0 & 2+i \\ 
-      0 & 1 & 1-3i  -->
     </p>
   </statement>
 </exercise>
@@ -312,11 +309,13 @@
         <mrow>(3+2i)x + y + (-1+9i)z \amp = 6-3i</mrow>
         <mrow>(1+i)x + (2-i)y - (2i)z \amp = 10-5i</mrow>
       </md>.
-      <!-- 1 & 0 & 1+3i & 0 \\ 
-      0 & 1 & 2-2i & 0 \\ 
-      0 & 0 & 0 & 1   -->
     </p>
   </statement>
+  <answer>
+    <p>
+      This system is inconsistent.
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -327,16 +326,13 @@
         <mrow>3x + 2y + 2z \amp = 1</mrow>
         <mrow>x + 3y + z \amp = 0</mrow>
       </md>.
-      <!-- 1 & 0 & 0 & 2 \\ 
-      0 & 1 & 0 & 4 \\ 
-      0 & 0 & 1 & 1 -->
     </p>
   </statement>
-  <!-- <answer>
+  <answer>
     <p>
       The unique solution is <m>x = 2</m>, <m>y = 4</m>, and <m>z = 1</m>.
     </p>
-  </answer> -->
+  </answer>
   <!-- <solution>
     <p>
       When we form the augmented matrix for this system, we get 
@@ -416,6 +412,22 @@
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            The same argument as in <xref ref="exer-2b2-det"/> works here, recognizing that <m>2=-1</m> in <m>\ff_3</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The correct inequality is <m>ad+(p-1)bc \neq 0</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -441,6 +453,22 @@
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            If all of the coefficients and constants begin as integers, all of the elementary row operations will produce coefficients and constants within <m>\qq</m>. None of the elementary row operations can produce an irrational number when beginning with integers.
+          </p>
+        </li>
+        <li>
+          <p>
+            If there is a unique solution, there are no free variables, so whether one considers the solution in <m>\qq^n</m> or <m>\rr^n</m>, there cannot be another solution. Thus, the numbers in the solution set must be rational numbers.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
