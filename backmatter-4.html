@@ -709,7 +709,52 @@ a \amp =b'\text{.}
 <div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
 <li><div class="para">If all of the coefficients and constants begin as integers, all of the elementary row operations will produce coefficients and constants within <span class="process-math">\(\qq\text{.}\)</span> None of the elementary row operations can produce an irrational number when beginning with integers.</div></li>
 <li><div class="para">If there is a unique solution, there are no free variables, so whether one considers the solution in <span class="process-math">\(\qq^n\)</span> or <span class="process-math">\(\rr^n\text{,}\)</span> there cannot be another solution. Thus, the numbers in the solution set must be rational numbers.</div></li>
-</ol></div></div></details></div></article></article></section></div>
+</ol></div></div></details></div></article></article><h3 class="heading hide-type" title="Section 2.3: Vector Spaces">
+<span class="codenumber">2.3</span><span class="space"> </span><span class="title">Vector Spaces</span>
+</h3>
+<h4 class="heading hide-type" title="Exercises 2.3"><span class="title">Exercises</span></h4>
+<article class="exercise-like"><h5 class="heading"><span class="codenumber">2.3.1<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para">No, this is not a vector space. For example, it is not closed under scalar multiplication. We can see that <span class="process-math">\(-2(1,1) = (-2,-2) \not \in V\text{.}\)</span>
+</div></li>
+<li><div class="para">No, this is not a vector space. For example, it is not closed under addition. We can see that <span class="process-math">\((1,4) + (-2,-1)= (-1,3) \not \in V\text{.}\)</span>
+</div></li>
+<li><div class="para">Yes, this is a vector space. All of the vector space axioms hold.</div></li>
+</ol></div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">2.3.3<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">The only axiom that fails is axiom 7. We can see, for example, that <span class="process-math">\(1 \cdot (1,1) = (0,1) \neq (1,1)\text{,}\)</span> so this axiom does not hold.</div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">2.3.5<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">We calculate that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2p_1 -3p_2 -2p_3 = -5t^3 + 6t^2 -18t +10\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">2.3.7<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para">This vector space contains <span class="process-math">\(2^3 = 8\)</span> distinct vectors.</div></li>
+<li><div class="para">The set <span class="process-math">\(\spn\{\bfu, \bfv\}\)</span> contains four distinct vectors: <span class="process-math">\(\bfo\text{,}\)</span> <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\bfu + \bfv\text{.}\)</span> These are all distinct.</div></li>
+</ol></div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">2.3.10<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">No, <span class="process-math">\(\bfw\)</span> is not in <span class="process-math">\(\spn\{\bfu,\bfv\}\text{.}\)</span> When we form the matrix with <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\bfw\)</span> as its columns, it reduces to the following:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since there is a pivot in the final column, the corresponding vector equation <span class="process-math">\(x_1\bfu + x_2\bfv = \bfw\)</span> has no solutions.</div>
+</div></div></details></div></article><article class="subexercises"><h5 class="heading"><span class="title">Writing Exercises</span></h5>
+<article class="exercise-like"><h6 class="heading"><span class="codenumber">2.3.12<span class="period">.</span></span></h6>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">No, <span class="process-math">\(\qq\)</span> is not a vector space over <span class="process-math">\(\rr\text{.}\)</span> It is not closed under scalar multiplication. For example, we see that <span class="process-math">\(\pi (1,1) = (\pi,\pi) \not \in \qq^2\text{.}\)</span>
+</div></div></details></div></article><article class="exercise-like"><h6 class="heading"><span class="codenumber">2.3.15<span class="period">.</span></span></h6>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(\bfo\)</span> is a zero vector in <span class="process-math">\(V\)</span> and that <span class="process-math">\(\mathbf{z}\)</span> also has the properties of a zero vector. Since <span class="process-math">\(\bfo\)</span> is a zero vector, we have <span class="process-math">\(\bfo + \mathbf{z} = \mathbf{z}\text{.}\)</span> Since <span class="process-math">\(\mathbf{z}\)</span> has the properties of a zero vector, we have <span class="process-math">\(\bfo + \mathbf{z} = \bfo\text{.}\)</span> Therefore, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{z} = \bfo + \mathbf{z} = \bfo\text{,}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\mathbf{z} = \bfo\text{.}\)</span> This proves that the zero vector is unique.</div>
+</div></div></details></div></article></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="apdx-isomorphisms.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
