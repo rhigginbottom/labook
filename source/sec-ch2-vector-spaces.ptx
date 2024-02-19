@@ -351,6 +351,27 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              No, this is not a vector space. For example, it is not closed under scalar multiplication. We can see that <m>-2(1,1) = (-2,-2) \not \in V</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              No, this is not a vector space. For example, it is not closed under addition. We can see that <m>(1,4) + (-2,-1)= (-1,3) \not \in V</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Yes, this is a vector space. All of the vector space axioms hold.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -373,6 +394,11 @@
         This is not a vector space over <m>\qq</m>. Determine which of the vector space axioms fail, and give an explanation for each such axiom.
       </p>
     </statement>
+    <answer>
+      <p>
+        The only axiom that fails is axiom 7. We can see, for example, that <m>1 \cdot (1,1) = (0,1) \neq (1,1)</m>, so this axiom does not hold.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -397,6 +423,14 @@
         Calculate the linear combination of <m>p_1</m>, <m>p_2</m>, and <m>p_3</m> with weights <m>2</m>, <m>-3</m>, and <m>-2</m>, respectively.
       </p>
     </statement>
+    <answer>
+      <p>
+        We calculate that
+        <me>
+          2p_1 -3p_2 -2p_3 = -5t^3 + 6t^2 -18t +10
+        </me>.        
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -444,6 +478,22 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              This vector space contains <m>2^3 = 8</m> distinct vectors.
+            </p>
+          </li>
+          <li>
+            <p>
+              The set <m>\spn\{\bfu, \bfv\}</m> contains four distinct vectors: <m>\bfo</m>, <m>\bfu</m>, <m>\bfv</m>, and <m>\bfu + \bfv</m>. These are all distinct.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -493,6 +543,15 @@
         Is <m>\bfw \in \mathrm{Span}\{\bfu, \bfv\}</m>? Explain your answer.
       </p>
     </statement>
+    <answer>
+      <p>
+        No, <m>\bfw</m> is not in <m>\spn\{\bfu,\bfv\}</m>. When we form the matrix with <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m> as its columns, it reduces to the following:
+        <me>
+          \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+        </me>.
+        Since there is a pivot in the final column, the corresponding vector equation <m>x_1\bfu + x_2\bfv = \bfw</m> has no solutions.
+      </p>
+    </answer>
   </exercise>
   <subexercises>
   <title>Writing Exercises</title>  
@@ -509,6 +568,11 @@
         Is <m>\qq</m> a vector space over <m>\rr</m>? (Addition and scalar multiplication should be understood as the obvious operations in <m>\qq</m>.) Explain your answer.
       </p>
     </statement>
+    <answer>
+      <p>
+        No, <m>\qq</m> is not a vector space over <m>\rr</m>. It is not closed under scalar multiplication. For example, we see that <m>\pi (1,1) = (\pi,\pi) \not \in \qq^2</m>.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -530,6 +594,15 @@
         Prove <xref ref="zero-vect-unique"/> in <xref ref="thm-vspace-arithmetic"/>.
       </p>
     </statement>
+    <solution>
+      <p>
+        Suppose that <m>\bfo</m> is a zero vector in <m>V</m> and that <m>\mathbf{z}</m> also has the properties of a zero vector. Since <m>\bfo</m> is a zero vector, we have <m>\bfo + \mathbf{z} = \mathbf{z}</m>. Since <m>\mathbf{z}</m> has the properties of a zero vector, we have <m>\bfo + \mathbf{z} = \bfo</m>. Therefore, we have
+        <me>
+          \mathbf{z} = \bfo + \mathbf{z} = \bfo
+        </me>,
+        so <m>\mathbf{z} = \bfo</m>. This proves that the zero vector is unique.
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
