@@ -182,7 +182,7 @@
   We have arrived at a point in the book where I am noticing material that should have been included earlier. In a future edition of the book, this will appear in earlier chapters/sections, but for this edition I need to stick it in this appendix. Apologies!
 </p>
 
-<p>
+<!-- <p>
   Bijective functions are important in almost all settings, and the linear algebra setting is no exception. We have a specific name for bijective linear transformations. 
 </p>
 
@@ -250,7 +250,7 @@
       This proves that <m>T^{-1} \in L(W,V)</m>. 
     </p>
   </proof>
-</proposition>
+</proposition> -->
 
 
 <p>

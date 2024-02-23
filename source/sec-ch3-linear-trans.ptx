@@ -246,6 +246,112 @@
   </definition>
 </subsection>
 
+<subsection xml:id="subsec-isomorphisms">
+  <title>Isomorphisms</title>
+  <p>
+    Bijective functions are important in almost all settings, and the linear algebra setting is no exception. We have a specific name for bijective linear transformations. 
+  </p>
+  
+  <definition xml:id="def-isomorphism">
+    <statement>
+      <p>
+        A bijective linear transformation <m>T</m> between vector spaces <m>V</m> and <m>W</m> is called an <term>isomorphism</term>. If there exists an isomorphism between vector spaces <m>V</m> and <m>W</m>, then these spaces are said to be <term>isomorphic</term>. 
+      </p>
+    </statement>
+  </definition>
+  
+  <p>
+    The reader should think of isomorphic vector spaces as <em>essentially the same</em>. Such spaces will not be exactly the same, of course, in the same way that two finite sets of the same size are not necessarily identical. But the presence of an isomorphism means that the vector space operations are compatible in such a way that such spaces share many of the same properties. 
+  </p>
+  
+  <note xml:id="notation-set-lts">
+    <p>
+      If <m>V</m> and <m>W</m> are vector spaces, then the set of all linear transformations from <m>V\to W</m> is denoted <m>L(V,W)</m>. When <m>W=V</m>, we will write <m>L(V)</m> instead of <m>L(V,V)</m>. 
+    </p>
+  </note>
+  
+  <p>
+    We can now prove that two concepts we have defined in this section are one and the same for linear transformations.
+  </p>
+  
+  <proposition xml:id="prop-isomorphism-invertible">
+    <statement>
+      <p>
+        Let <m>V</m> and <m>W</m> be vector spaces over <m>\ff</m>, and let <m>T \in L(V,W)</m>. Then <m>T</m> is an isomorphism if and only if <m>T</m> is invertible. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        This fact is true for functions without any of the linear transformation properties being involved. (A function is bijective if and only if it has an inverse.)
+      </p>
+    </proof>
+  </proposition>
+  
+  <proposition xml:id="prop-inverse-lt">
+    <statement>
+      <p>
+        If <m>T \in L(V,W)</m> is invertible, then <m>T^{-1}:W \to V</m> is also a linear transformation. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We will check the two properties of a linear transformation. (See <xref ref="def-lin-trans"/>.) Suppose that <m>\bfw_1, \bfw_2 \in W</m>. Since <m>T \circ T^{-1} = I_W</m>, we have 
+        <me>
+          \bfw_1 + \bfw_2 = T(T^{-1}(\bfw_1)) + T(T^{-1}(\bfw_2)) = T(T^{-1}(\bfw_1) + T^{-1}(\bfw_2))
+        </me>.
+        When we apply <m>T^{-1}</m> to the beginning and end of this equality, using <m>T^{-1}\circ T = I_V</m>, we get 
+        <me>
+          T^{-1}(\bfw_1 + \bfw_2) = T^{-1}(\bfw_1) + T^{-1}(\bfw_2)
+        </me>.     
+      </p>
+      <p>
+        We will now check the scalar multiple property in a similar fashion. Let <m>\bfw \in W</m> and let <m>c \in \ff</m>. Then we have 
+        <me>
+          c\bfw = cT(T^{-1}(\bfw)) = T(cT^{-1}(\bfw))
+        </me>.
+        Applying <m>T^{-1}</m> to both sides again we get 
+        <me>
+          T^{-1}(c\bfw) = cT^{-1}(\bfw)
+        </me>.
+        This proves that <m>T^{-1} \in L(W,V)</m>. 
+      </p>
+    </proof>
+  </proposition>
+
+  <p>
+    Before we leave this subsection, it is worth pointing out that when <m>V</m> and <m>W</m> are vector spaces, the set <m>L(V,W)</m> itself has some important structure.
+  </p>
+
+  <p>
+    When <m>V</m> and <m>W</m> are vector spaces over <m>\ff</m>, we can define the sum and scalar multiple of linear transformations since both of these operations happen on the level of elements. If <m>S, T \in L(V,W)</m> and <m>c \in \ff</m>, then we define <m>S+T</m> and <m>cT</m> in the following way. For all <m>\bfv \in V</m>, 
+    <ul>
+      <li>
+        <p>
+          <m>(S+T)(\bfv) = S(\bfv) + T(\bfv)</m>, and 
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(cT)(\bfv) = cT(\bfv)</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    These operations as defined make <m>L(V,W)</m> into its own vector space. We will leave the proof of this theorem for the exercises.
+  </p>
+
+  <theorem xml:id="thm-linear-maps-vspace">
+    <statement>
+      <p>
+        Let <m>V</m> and <m>W</m> be vector spaces over a field <m>\ff</m>, and let <m>S, T \in L(V,W)</m> and <m>c \in \ff</m>. Then <m>S+T</m> and <m>cT</m> are both linear transformations from <m>V</m> to <m>W</m>, and <m>L(V,W)</m> is a vector space with these operations.
+      </p>
+    </statement>
+  </theorem>
+  
+</subsection>
+
 <subsection xml:id="subsec-matrix-vector-form-lin-system">
   <title>The Matrix-Vector Form of a Linear System</title>
   <p>
@@ -452,7 +558,7 @@
   <exercise>
     <statement>
       <p>
-        Let <m>T:\rr^2 \to \rr^3</m> be the function defined by <m>T(x,y) = (2x, z-3y, 0)</m>. Is <m>T</m> a linear transformation? Justify your answer.
+        Let <m>T:\rr^2 \to \rr^3</m> be the function defined by <m>T(x,y) = (2x, x-3y, 0)</m>. Is <m>T</m> a linear transformation? Justify your answer.
       </p>
     </statement>
   </exercise>
@@ -665,6 +771,13 @@
     <statement>
       <p>
         Let <m>A</m> be an <m>m\times n</m> matrix over a field <m>\ff</m>, and let <m>\bfv</m> be a vector in <m>\ff^n</m>. Prove that the formulations of the matrix-vector product given in <xref ref="form-matrix-vect-prod"/> and <xref ref="matrix-vector-def2"/> are equivalent.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="thm-linear-maps-vspace"/>.
       </p>
     </statement>
   </exercise>
