@@ -1987,7 +1987,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Linear Transformations",
-  "body": " Linear Transformations   Speaking broadly, mathematicians are often concerned about (mathematical) objects and the right sort of functions between those objects. The structure of specific objects can be illuminated by a look at the functions to and from those objects. In linear algebra, the objects in view are vector spaces (see ), and the functions between these objects are called linear transformations .    Introduction to Linear Transformations    If and are vector spaces over a field , then a function is called a linear transformation if both of the following properties hold.   For all , we have .    For all and all , we have .   These functions are sometimes referred to as linear maps or linear operators .  If is a linear transformation, then is the domain of and is the codomain of .     Many readers will be more familiar with the idea of the range of a function than the codomain of a function. The range of a linear transformation is the set . In words, the range is the subset of the codomain consisting of the outputs of the function for all elements of the domain. We will often use the term image when discussing the range of a linear transformation.   Linear transformations are the right types of functions to study between vector spaces because they preserve the primary vector space operations. The first property of linear transformations means that such a function respects vector addition, and the second property means that such a function respects scalar multiplication.    We consider the real vector spaces and , along with the function which takes the derivative. That is, for all . So if , then . We note that and .  The fact that our function is a linear transformation between these vector spaces is a consequence of calculus. For all differentiable functions and , and all real numbers , it is true that . (If the reader doubts or has forgotten these facts, the closest textbook on single-variable calculus should be consulted posthaste .)  These calculus facts confirm that and for all and all . This proves that is a linear transformation.      Let be the function which reflects a vector in the Cartesian plane across the -axis. So . Additionally, let be the function which rotates a vector counter-clockwise around the origin by radians. So . Then both and are linear transformations.  We will supply two calculations here to give the sense of these functions. The reader should note that takes the vector in the second quadrant and reflects it across the -axis to the vector in the third quadrant. Also, rotates the vector counter-clockwise around the origin by radians to the vector . (It is fairly obvious that the length of the vectors and are the same. To check the claim about the angles, one would calculate the angles between the positive -axis and both the vectors and . The first angle is roughly radians and the second is , giving a difference of radians, or roughly .)  We first check the additivity condition. Let . Then we have . From the distributive property of the real numbers (in the second coordinate of these calculations), we can see that the additive property holds for . (The calculation for is similar.)  We now check the scalar multiplication property. (Again, the calculations for and are similar, so we will only show one of them.) Let and let . Then we have . Note that we used the commutativity of multiplication in in this calculation.  These brief calculations show that both and are linear transformations.      Linear Transformations and Matrices  While linear algebra is not only about matrices, matrices are valuable tools and provide a rich source of examples in this subject. In fact, matrices are so central to the notion of linear transformations that we will devote this subsection to their discussion.    Let be a field and let be an matrix with entries from . (We will refer to this in what follows as a matrix over . ) Then multiplication by is a linear transformation from to . (We will denote the function which is multiplication by by .)  To justify this claim we must first explain what we mean by multiplication by . We will let and denote entry in by . We will further denote the entries of by . Then the matrix-vector product  is defined to be the following vector in : . One way to state this is that entry in is the sum of the entry-wise product of row in with . Since is an element of , the domain and codomain of are correct.  What we have defined is the product of a matrix and a vector. However, an alternate description of this product will be more useful in proving that is a linear transformation.  If the columns of are thought of as vectors , then the product is also . In words, is a linear combination of the columns of with weights coming from the entries of . (We have reserved proving the equivalence of these two formulations to .)  With this equivalent definition, proving that is a linear transformation is a snap. Let and be vectors in and let . We will further denote the entries of and by . Then we have the following: . These two expressions are equal due to the fact that is a vector space.  We have one final calculation to prove that is a linear transformation. Let be a vector in and let be in . Then we have Once again, thsse expressions are equal because is a vector space.  These calculations prove that is a linear transformation.     To summarize, when is a field, multiplication by an matrix is a linear transformation .   General matrices are rectangular, not necessarily square. When a matrix is square, however, we have additional properties to discuss.    Let be an matrix. (So is square .) We say that is a diagonal matrix if for all such that . If is diagonal and for all , then is called an identity matrix .     We often use the notation to refer to the columns of the identity matrix. In other words, is the vector with a in entry and zeros elsewhere.     Properties of Linear Transformations  Recall that while linear transformations must have special properties, they are first of all functions . And, as functions, properties like injectivity and surjectivity can apply to linear transformations.    Let be a linear transformation between vector spaces. We say that is injective if implies for all . Injective linear transformations are also referred to as one-to-one since no two distinct elements of the domain may correspond to the same element of the range.  A linear transformation is called surjective if for every there exists a vector such that . For surjective functions, the image\/range is the same as the codomain. (The range is a subset of the codomain for every function, but these sets are equal if and only if the function is surjective.) Sometimes surjective functions are referred to as onto functions.  If a linear transformation is both injective and surjective, we say that it is bijective .      Let's reconsider the linear transformation which appeared in . We observe that is surjective but not injective.  The transformation is surjective because we know about the antiderivative. Let have the form . This is a generic element of , so we only need to supply an element such that , and this will prove that is surjective. Consider the element defined as . It is but the work of a Calculus I student to verify that , thus showing that is surjective. (We note that we could have chosen to have any constant term at all; we used the constant term of .)  Finally, we will show that is not injective by looking at an example of two elements of which have the same image under in . Let and . Then we see that even though , we have , and this proves that is not injective.    We will define one more property of linear transformations here that will resurface in .    Let be a linear transformation between vector spaces. The identity transformation on is the linear transformation which is for each . (If the vector space we have in mind is clear, we will drop the subscript and use the notation .)  We say that the linear transformation is invertible if there exists a linear transformation such that .      The Matrix-Vector Form of a Linear System  Having defined the product of a matrix and a vector in , we can reformulate one of the foundational (and introductory) matters of this book. We will now put the notion of a linear system in particular, the solutions to linear systems in a different context.  Let's consider the following system of linear equations over a field , as we saw in : . If we let be the matrix , be the vector of variables , and be the vector of constants , then this linear system can be written efficiently as .  With this reformulation, the questions of the existence and uniqueness of solutions to a system of equations (see the end of ) can now be stated in the language of the injectivity and surjectivity of linear transformations.    Consider the linear transformation which is multiplication by this matrix: . We will show that is neither injective nor surjective.  Let and be the following vectors in : . By forming and row-reducing the augmented matrices and , we can determine how many solutions there are to the equations and , respectively. Here are the calculations: , .  From , since there is a pivot in the final column of the RREF of , we see that is not in the image of . This means that the matrix equation has no solution, so is not surjective; equivalently, the linear system which corresponds to the augmented matrix is inconsistent.  From , we see that is in the image of . Since there is no pivot in the final column of the RREF of , and since there is a free variable in that same RREF, this means that the matrix equation has multiple solutions, so is not injective. Specifically, if , then we have both and . (The vector results from setting the free variable equal to , and we obtain by setting the free variable equal to .) Finally, we note that the linear system which corresponds to the augmented matrix is consistent with many solutions that is, a solution is not unique.       For each of the following, determine the number of rows and columns that a matrix would have if multiplication by that matrix is a linear transformation with the given domain and codomain.   domain: , codomain:      domain: , codomain:         Let , , , and be defined as follows: . Define a linear transformation to be multiplication by .   Find .     Find an in such that .     Is there more than one whose image under is ? How do you know?     Determine whether or not is in the range of .           Consider the function defined by . (So, for example, .) Is a linear transformation? Justify your answer.    Consider the function defined by . Is a linear transformation? Justify your answer.    Consider the function defined by . Is a linear transformation? Justify your answer.    Let be the function defined by . Is a linear transformation? Justify your answer.    Let be the function defined by . Is a linear transformation? Justify your answer.    Consider the following matrix over : . For each of the following vectors , calculate the matrix-vector product .                     Consider the following matrix over : .   If is the linear transformation which is multiplication by , what are the domain and codomain of ?    Calculate the image of the vector under the linear transformation .    Is the vector in the image of ? Explain your answer.       Let be the following matrix over : . Let be the linear transformation which is multiplication by .   Is the vector in the image of ? Explain your answer.    Is surjective? Explain your answer.       Let be the following matrix over : . Let be the linear transformation which is multiplication by .   Is the vector in the image of ? Explain your answer.    The vector is in the image of . Find one such that .    Is there more than one such that ? How do you know?    Is injective? Is surjective? Explain your answers.       Let be the linear transformation which is multiplication by the following matrix: . Give a description of all vectors such that .    Writing Exercises   Define the function to be the following: . Prove that is a linear transformation.    Let and be linear transformations between vector spaces over a field . Prove that is also a linear transformation.    Let and be linear transformations between vector spaces over a field .   Prove that if is injective, then must be injective.    Prove that if is surjective, then must be surjective.       Let be a function between vector spaces over .   If is a linear transformation, must it be true that ? Either prove this is true or produce a counterexample.    If , must be a linear transformation? Either prove this is true or produce a counterexample.       Let be vectors which span a vector space . If is a linear transformation for which for all , prove that is the zero transformation. (In other words, prove that for all .)    Let be an matrix over a field , and let be a vector in . Prove that the formulations of the matrix-vector product given in and are equivalent.     "
+  "body": " Linear Transformations   Speaking broadly, mathematicians are often concerned about (mathematical) objects and the right sort of functions between those objects. The structure of specific objects can be illuminated by a look at the functions to and from those objects. In linear algebra, the objects in view are vector spaces (see ), and the functions between these objects are called linear transformations .    Introduction to Linear Transformations    If and are vector spaces over a field , then a function is called a linear transformation if both of the following properties hold.   For all , we have .    For all and all , we have .   These functions are sometimes referred to as linear maps or linear operators .  If is a linear transformation, then is the domain of and is the codomain of .     Many readers will be more familiar with the idea of the range of a function than the codomain of a function. The range of a linear transformation is the set . In words, the range is the subset of the codomain consisting of the outputs of the function for all elements of the domain. We will often use the term image when discussing the range of a linear transformation.   Linear transformations are the right types of functions to study between vector spaces because they preserve the primary vector space operations. The first property of linear transformations means that such a function respects vector addition, and the second property means that such a function respects scalar multiplication.    We consider the real vector spaces and , along with the function which takes the derivative. That is, for all . So if , then . We note that and .  The fact that our function is a linear transformation between these vector spaces is a consequence of calculus. For all differentiable functions and , and all real numbers , it is true that . (If the reader doubts or has forgotten these facts, the closest textbook on single-variable calculus should be consulted posthaste .)  These calculus facts confirm that and for all and all . This proves that is a linear transformation.      Let be the function which reflects a vector in the Cartesian plane across the -axis. So . Additionally, let be the function which rotates a vector counter-clockwise around the origin by radians. So . Then both and are linear transformations.  We will supply two calculations here to give the sense of these functions. The reader should note that takes the vector in the second quadrant and reflects it across the -axis to the vector in the third quadrant. Also, rotates the vector counter-clockwise around the origin by radians to the vector . (It is fairly obvious that the length of the vectors and are the same. To check the claim about the angles, one would calculate the angles between the positive -axis and both the vectors and . The first angle is roughly radians and the second is , giving a difference of radians, or roughly .)  We first check the additivity condition. Let . Then we have . From the distributive property of the real numbers (in the second coordinate of these calculations), we can see that the additive property holds for . (The calculation for is similar.)  We now check the scalar multiplication property. (Again, the calculations for and are similar, so we will only show one of them.) Let and let . Then we have . Note that we used the commutativity of multiplication in in this calculation.  These brief calculations show that both and are linear transformations.      Linear Transformations and Matrices  While linear algebra is not only about matrices, matrices are valuable tools and provide a rich source of examples in this subject. In fact, matrices are so central to the notion of linear transformations that we will devote this subsection to their discussion.    Let be a field and let be an matrix with entries from . (We will refer to this in what follows as a matrix over . ) Then multiplication by is a linear transformation from to . (We will denote the function which is multiplication by by .)  To justify this claim we must first explain what we mean by multiplication by . We will let and denote entry in by . We will further denote the entries of by . Then the matrix-vector product  is defined to be the following vector in : . One way to state this is that entry in is the sum of the entry-wise product of row in with . Since is an element of , the domain and codomain of are correct.  What we have defined is the product of a matrix and a vector. However, an alternate description of this product will be more useful in proving that is a linear transformation.  If the columns of are thought of as vectors , then the product is also . In words, is a linear combination of the columns of with weights coming from the entries of . (We have reserved proving the equivalence of these two formulations to .)  With this equivalent definition, proving that is a linear transformation is a snap. Let and be vectors in and let . We will further denote the entries of and by . Then we have the following: . These two expressions are equal due to the fact that is a vector space.  We have one final calculation to prove that is a linear transformation. Let be a vector in and let be in . Then we have Once again, thsse expressions are equal because is a vector space.  These calculations prove that is a linear transformation.     To summarize, when is a field, multiplication by an matrix is a linear transformation .   General matrices are rectangular, not necessarily square. When a matrix is square, however, we have additional properties to discuss.    Let be an matrix. (So is square .) We say that is a diagonal matrix if for all such that . If is diagonal and for all , then is called an identity matrix .     We often use the notation to refer to the columns of the identity matrix. In other words, is the vector with a in entry and zeros elsewhere.     Properties of Linear Transformations  Recall that while linear transformations must have special properties, they are first of all functions . And, as functions, properties like injectivity and surjectivity can apply to linear transformations.    Let be a linear transformation between vector spaces. We say that is injective if implies for all . Injective linear transformations are also referred to as one-to-one since no two distinct elements of the domain may correspond to the same element of the range.  A linear transformation is called surjective if for every there exists a vector such that . For surjective functions, the image\/range is the same as the codomain. (The range is a subset of the codomain for every function, but these sets are equal if and only if the function is surjective.) Sometimes surjective functions are referred to as onto functions.  If a linear transformation is both injective and surjective, we say that it is bijective .      Let's reconsider the linear transformation which appeared in . We observe that is surjective but not injective.  The transformation is surjective because we know about the antiderivative. Let have the form . This is a generic element of , so we only need to supply an element such that , and this will prove that is surjective. Consider the element defined as . It is but the work of a Calculus I student to verify that , thus showing that is surjective. (We note that we could have chosen to have any constant term at all; we used the constant term of .)  Finally, we will show that is not injective by looking at an example of two elements of which have the same image under in . Let and . Then we see that even though , we have , and this proves that is not injective.    We will define one more property of linear transformations here that will resurface in .    Let be a linear transformation between vector spaces. The identity transformation on is the linear transformation which is for each . (If the vector space we have in mind is clear, we will drop the subscript and use the notation .)  We say that the linear transformation is invertible if there exists a linear transformation such that .      Isomorphisms  Bijective functions are important in almost all settings, and the linear algebra setting is no exception. We have a specific name for bijective linear transformations.    A bijective linear transformation between vector spaces and is called an isomorphism . If there exists an isomorphism between vector spaces and , then these spaces are said to be isomorphic .    The reader should think of isomorphic vector spaces as essentially the same . Such spaces will not be exactly the same, of course, in the same way that two finite sets of the same size are not necessarily identical. But the presence of an isomorphism means that the vector space operations are compatible in such a way that such spaces share many of the same properties.   If and are vector spaces, then the set of all linear transformations from is denoted . When , we will write instead of .   We can now prove that two concepts we have defined in this section are one and the same for linear transformations.    Let and be vector spaces over , and let . Then is an isomorphism if and only if is invertible.    This fact is true for functions without any of the linear transformation properties being involved. (A function is bijective if and only if it has an inverse.)      If is invertible, then is also a linear transformation.    We will check the two properties of a linear transformation. (See .) Suppose that . Since , we have . When we apply to the beginning and end of this equality, using , we get .  We will now check the scalar multiple property in a similar fashion. Let and let . Then we have . Applying to both sides again we get . This proves that .    Before we leave this subsection, it is worth pointing out that when and are vector spaces, the set itself has some important structure.  When and are vector spaces over , we can define the sum and scalar multiple of linear transformations since both of these operations happen on the level of elements. If and , then we define and in the following way. For all ,    , and     .     These operations as defined make into its own vector space. We will leave the proof of this theorem for the exercises.    Let and be vector spaces over a field , and let and . Then and are both linear transformations from to , and is a vector space with these operations.      The Matrix-Vector Form of a Linear System  Having defined the product of a matrix and a vector in , we can reformulate one of the foundational (and introductory) matters of this book. We will now put the notion of a linear system in particular, the solutions to linear systems in a different context.  Let's consider the following system of linear equations over a field , as we saw in : . If we let be the matrix , be the vector of variables , and be the vector of constants , then this linear system can be written efficiently as .  With this reformulation, the questions of the existence and uniqueness of solutions to a system of equations (see the end of ) can now be stated in the language of the injectivity and surjectivity of linear transformations.    Consider the linear transformation which is multiplication by this matrix: . We will show that is neither injective nor surjective.  Let and be the following vectors in : . By forming and row-reducing the augmented matrices and , we can determine how many solutions there are to the equations and , respectively. Here are the calculations: , .  From , since there is a pivot in the final column of the RREF of , we see that is not in the image of . This means that the matrix equation has no solution, so is not surjective; equivalently, the linear system which corresponds to the augmented matrix is inconsistent.  From , we see that is in the image of . Since there is no pivot in the final column of the RREF of , and since there is a free variable in that same RREF, this means that the matrix equation has multiple solutions, so is not injective. Specifically, if , then we have both and . (The vector results from setting the free variable equal to , and we obtain by setting the free variable equal to .) Finally, we note that the linear system which corresponds to the augmented matrix is consistent with many solutions that is, a solution is not unique.       For each of the following, determine the number of rows and columns that a matrix would have if multiplication by that matrix is a linear transformation with the given domain and codomain.   domain: , codomain:      domain: , codomain:         Let , , , and be defined as follows: . Define a linear transformation to be multiplication by .   Find .     Find an in such that .     Is there more than one whose image under is ? How do you know?     Determine whether or not is in the range of .           Consider the function defined by . (So, for example, .) Is a linear transformation? Justify your answer.    Consider the function defined by . Is a linear transformation? Justify your answer.    Consider the function defined by . Is a linear transformation? Justify your answer.    Let be the function defined by . Is a linear transformation? Justify your answer.    Let be the function defined by . Is a linear transformation? Justify your answer.    Consider the following matrix over : . For each of the following vectors , calculate the matrix-vector product .                     Consider the following matrix over : .   If is the linear transformation which is multiplication by , what are the domain and codomain of ?    Calculate the image of the vector under the linear transformation .    Is the vector in the image of ? Explain your answer.       Let be the following matrix over : . Let be the linear transformation which is multiplication by .   Is the vector in the image of ? Explain your answer.    Is surjective? Explain your answer.       Let be the following matrix over : . Let be the linear transformation which is multiplication by .   Is the vector in the image of ? Explain your answer.    The vector is in the image of . Find one such that .    Is there more than one such that ? How do you know?    Is injective? Is surjective? Explain your answers.       Let be the linear transformation which is multiplication by the following matrix: . Give a description of all vectors such that .    Writing Exercises   Define the function to be the following: . Prove that is a linear transformation.    Let and be linear transformations between vector spaces over a field . Prove that is also a linear transformation.    Let and be linear transformations between vector spaces over a field .   Prove that if is injective, then must be injective.    Prove that if is surjective, then must be surjective.       Let be a function between vector spaces over .   If is a linear transformation, must it be true that ? Either prove this is true or produce a counterexample.    If , must be a linear transformation? Either prove this is true or produce a counterexample.       Let be vectors which span a vector space . If is a linear transformation for which for all , prove that is the zero transformation. (In other words, prove that for all .)    Let be an matrix over a field , and let be a vector in . Prove that the formulations of the matrix-vector product given in and are equivalent.    Prove .     "
 },
 {
   "id": "def-lin-trans",
@@ -2089,128 +2089,173 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation between vector spaces. The identity transformation on is the linear transformation which is for each . (If the vector space we have in mind is clear, we will drop the subscript and use the notation .)  We say that the linear transformation is invertible if there exists a linear transformation such that .   "
 },
 {
+  "id": "def-isomorphism",
+  "level": "2",
+  "url": "sec-linear-trans.html#def-isomorphism",
+  "type": "Definition",
+  "number": "3.1.12",
+  "title": "",
+  "body": "  A bijective linear transformation between vector spaces and is called an isomorphism . If there exists an isomorphism between vector spaces and , then these spaces are said to be isomorphic .   "
+},
+{
+  "id": "notation-set-lts",
+  "level": "2",
+  "url": "sec-linear-trans.html#notation-set-lts",
+  "type": "Note",
+  "number": "3.1.13",
+  "title": "",
+  "body": " If and are vector spaces, then the set of all linear transformations from is denoted . When , we will write instead of .  "
+},
+{
+  "id": "prop-isomorphism-invertible",
+  "level": "2",
+  "url": "sec-linear-trans.html#prop-isomorphism-invertible",
+  "type": "Proposition",
+  "number": "3.1.14",
+  "title": "",
+  "body": "  Let and be vector spaces over , and let . Then is an isomorphism if and only if is invertible.    This fact is true for functions without any of the linear transformation properties being involved. (A function is bijective if and only if it has an inverse.)   "
+},
+{
+  "id": "prop-inverse-lt",
+  "level": "2",
+  "url": "sec-linear-trans.html#prop-inverse-lt",
+  "type": "Proposition",
+  "number": "3.1.15",
+  "title": "",
+  "body": "  If is invertible, then is also a linear transformation.    We will check the two properties of a linear transformation. (See .) Suppose that . Since , we have . When we apply to the beginning and end of this equality, using , we get .  We will now check the scalar multiple property in a similar fashion. Let and let . Then we have . Applying to both sides again we get . This proves that .   "
+},
+{
+  "id": "thm-linear-maps-vspace",
+  "level": "2",
+  "url": "sec-linear-trans.html#thm-linear-maps-vspace",
+  "type": "Theorem",
+  "number": "3.1.16",
+  "title": "",
+  "body": "  Let and be vector spaces over a field , and let and . Then and are both linear transformations from to , and is a vector space with these operations.   "
+},
+{
   "id": "subsec-matrix-vector-form-lin-system-5",
   "level": "2",
   "url": "sec-linear-trans.html#subsec-matrix-vector-form-lin-system-5",
   "type": "Example",
-  "number": "3.1.12",
+  "number": "3.1.17",
   "title": "",
   "body": "  Consider the linear transformation which is multiplication by this matrix: . We will show that is neither injective nor surjective.  Let and be the following vectors in : . By forming and row-reducing the augmented matrices and , we can determine how many solutions there are to the equations and , respectively. Here are the calculations: , .  From , since there is a pivot in the final column of the RREF of , we see that is not in the image of . This means that the matrix equation has no solution, so is not surjective; equivalently, the linear system which corresponds to the augmented matrix is inconsistent.  From , we see that is in the image of . Since there is no pivot in the final column of the RREF of , and since there is a free variable in that same RREF, this means that the matrix equation has multiple solutions, so is not injective. Specifically, if , then we have both and . (The vector results from setting the free variable equal to , and we obtain by setting the free variable equal to .) Finally, we note that the linear system which corresponds to the augmented matrix is consistent with many solutions that is, a solution is not unique.   "
-},
-{
-  "id": "sec-linear-trans-7-1",
-  "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-7-1",
-  "type": "Reading Question",
-  "number": "3.1.5.1",
-  "title": "",
-  "body": " For each of the following, determine the number of rows and columns that a matrix would have if multiplication by that matrix is a linear transformation with the given domain and codomain.   domain: , codomain:      domain: , codomain:       "
-},
-{
-  "id": "sec-linear-trans-7-2",
-  "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-7-2",
-  "type": "Reading Question",
-  "number": "3.1.5.2",
-  "title": "",
-  "body": " Let , , , and be defined as follows: . Define a linear transformation to be multiplication by .   Find .     Find an in such that .     Is there more than one whose image under is ? How do you know?     Determine whether or not is in the range of .      "
 },
 {
   "id": "sec-linear-trans-8-1",
   "level": "2",
   "url": "sec-linear-trans.html#sec-linear-trans-8-1",
-  "type": "Exercise",
+  "type": "Reading Question",
   "number": "3.1.6.1",
   "title": "",
-  "body": " Consider the function defined by . (So, for example, .) Is a linear transformation? Justify your answer.  "
+  "body": " For each of the following, determine the number of rows and columns that a matrix would have if multiplication by that matrix is a linear transformation with the given domain and codomain.   domain: , codomain:      domain: , codomain:       "
 },
 {
   "id": "sec-linear-trans-8-2",
   "level": "2",
   "url": "sec-linear-trans.html#sec-linear-trans-8-2",
-  "type": "Exercise",
+  "type": "Reading Question",
   "number": "3.1.6.2",
   "title": "",
-  "body": " Consider the function defined by . Is a linear transformation? Justify your answer.  "
+  "body": " Let , , , and be defined as follows: . Define a linear transformation to be multiplication by .   Find .     Find an in such that .     Is there more than one whose image under is ? How do you know?     Determine whether or not is in the range of .      "
 },
 {
-  "id": "sec-linear-trans-8-3",
+  "id": "sec-linear-trans-9-1",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-3",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-1",
   "type": "Exercise",
-  "number": "3.1.6.3",
+  "number": "3.1.7.1",
+  "title": "",
+  "body": " Consider the function defined by . (So, for example, .) Is a linear transformation? Justify your answer.  "
+},
+{
+  "id": "sec-linear-trans-9-2",
+  "level": "2",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-2",
+  "type": "Exercise",
+  "number": "3.1.7.2",
   "title": "",
   "body": " Consider the function defined by . Is a linear transformation? Justify your answer.  "
 },
 {
-  "id": "sec-linear-trans-8-4",
+  "id": "sec-linear-trans-9-3",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-4",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-3",
   "type": "Exercise",
-  "number": "3.1.6.4",
+  "number": "3.1.7.3",
+  "title": "",
+  "body": " Consider the function defined by . Is a linear transformation? Justify your answer.  "
+},
+{
+  "id": "sec-linear-trans-9-4",
+  "level": "2",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-4",
+  "type": "Exercise",
+  "number": "3.1.7.4",
   "title": "",
   "body": " Let be the function defined by . Is a linear transformation? Justify your answer.  "
 },
 {
-  "id": "sec-linear-trans-8-5",
+  "id": "sec-linear-trans-9-5",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-5",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-5",
   "type": "Exercise",
-  "number": "3.1.6.5",
+  "number": "3.1.7.5",
   "title": "",
   "body": " Let be the function defined by . Is a linear transformation? Justify your answer.  "
 },
 {
-  "id": "sec-linear-trans-8-6",
+  "id": "sec-linear-trans-9-6",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-6",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-6",
   "type": "Exercise",
-  "number": "3.1.6.6",
+  "number": "3.1.7.6",
   "title": "",
   "body": " Consider the following matrix over : . For each of the following vectors , calculate the matrix-vector product .                   "
 },
 {
-  "id": "sec-linear-trans-8-7",
+  "id": "sec-linear-trans-9-7",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-7",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-7",
   "type": "Exercise",
-  "number": "3.1.6.7",
+  "number": "3.1.7.7",
   "title": "",
   "body": " Consider the following matrix over : .   If is the linear transformation which is multiplication by , what are the domain and codomain of ?    Calculate the image of the vector under the linear transformation .    Is the vector in the image of ? Explain your answer.     "
 },
 {
-  "id": "sec-linear-trans-8-8",
+  "id": "sec-linear-trans-9-8",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-8",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-8",
   "type": "Exercise",
-  "number": "3.1.6.8",
+  "number": "3.1.7.8",
   "title": "",
   "body": " Let be the following matrix over : . Let be the linear transformation which is multiplication by .   Is the vector in the image of ? Explain your answer.    Is surjective? Explain your answer.     "
 },
 {
-  "id": "sec-linear-trans-8-9",
+  "id": "sec-linear-trans-9-9",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-9",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-9",
   "type": "Exercise",
-  "number": "3.1.6.9",
+  "number": "3.1.7.9",
   "title": "",
   "body": " Let be the following matrix over : . Let be the linear transformation which is multiplication by .   Is the vector in the image of ? Explain your answer.    The vector is in the image of . Find one such that .    Is there more than one such that ? How do you know?    Is injective? Is surjective? Explain your answers.     "
 },
 {
-  "id": "sec-linear-trans-8-10",
+  "id": "sec-linear-trans-9-10",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-10",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-10",
   "type": "Exercise",
-  "number": "3.1.6.10",
+  "number": "3.1.7.10",
   "title": "",
   "body": " Let be the linear transformation which is multiplication by the following matrix: . Give a description of all vectors such that .  "
 },
 {
-  "id": "sec-linear-trans-8-11-2",
+  "id": "sec-linear-trans-9-11-2",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-11-2",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-11-2",
   "type": "Exercise",
-  "number": "3.1.6.11",
+  "number": "3.1.7.11",
   "title": "",
   "body": " Define the function to be the following: . Prove that is a linear transformation.  "
 },
@@ -2219,16 +2264,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-linear-trans.html#exer-lin-trans-comp",
   "type": "Exercise",
-  "number": "3.1.6.12",
+  "number": "3.1.7.12",
   "title": "",
   "body": " Let and be linear transformations between vector spaces over a field . Prove that is also a linear transformation.  "
 },
 {
-  "id": "sec-linear-trans-8-11-4",
+  "id": "sec-linear-trans-9-11-4",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-11-4",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-11-4",
   "type": "Exercise",
-  "number": "3.1.6.13",
+  "number": "3.1.7.13",
   "title": "",
   "body": " Let and be linear transformations between vector spaces over a field .   Prove that if is injective, then must be injective.    Prove that if is surjective, then must be surjective.     "
 },
@@ -2237,16 +2282,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-linear-trans.html#lin-trans-zero",
   "type": "Exercise",
-  "number": "3.1.6.14",
+  "number": "3.1.7.14",
   "title": "",
   "body": " Let be a function between vector spaces over .   If is a linear transformation, must it be true that ? Either prove this is true or produce a counterexample.    If , must be a linear transformation? Either prove this is true or produce a counterexample.     "
 },
 {
-  "id": "sec-linear-trans-8-11-6",
+  "id": "sec-linear-trans-9-11-6",
   "level": "2",
-  "url": "sec-linear-trans.html#sec-linear-trans-8-11-6",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-11-6",
   "type": "Exercise",
-  "number": "3.1.6.15",
+  "number": "3.1.7.15",
   "title": "",
   "body": " Let be vectors which span a vector space . If is a linear transformation for which for all , prove that is the zero transformation. (In other words, prove that for all .)  "
 },
@@ -2255,9 +2300,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-linear-trans.html#exer-matrix-vector-mult",
   "type": "Exercise",
-  "number": "3.1.6.16",
+  "number": "3.1.7.16",
   "title": "",
   "body": " Let be an matrix over a field , and let be a vector in . Prove that the formulations of the matrix-vector product given in and are equivalent.  "
+},
+{
+  "id": "sec-linear-trans-9-11-8",
+  "level": "2",
+  "url": "sec-linear-trans.html#sec-linear-trans-9-11-8",
+  "type": "Exercise",
+  "number": "3.1.7.17",
+  "title": "",
+  "body": " Prove .  "
 },
 {
   "id": "sec-matrix-linear-trans",
@@ -7171,50 +7225,14 @@ var ptx_lunr_docs = [
   "type": "Appendix",
   "number": "B",
   "title": "Isomorphisms",
-  "body": " Isomorphisms  We have arrived at a point in the book where I am noticing material that should have been included earlier. In a future edition of the book, this will appear in earlier chapters\/sections, but for this edition I need to stick it in this appendix. Apologies!  Bijective functions are important in almost all settings, and the linear algebra setting is no exception. We have a specific name for bijective linear transformations.    A bijective linear transformation between vector spaces and is called an isomorphism . If there exists an isomorphism between vector spaces and , then these spaces are said to be isomorphic .    The reader should think of isomorphic vector spaces as essentially the same . Such spaces will not be exactly the same, of course, in the same way that two finite sets of the same size are not necessarily identical. But the presence of an isomorphism means that the vector space operations are compatible in such a way that such spaces share many of the same properties.   If and are vector spaces, then the set of all linear transformations from is denoted . When , we will write instead of .   In this next proposition, note that we will be referring to .    Let and be vector spaces over , and let . Then is an isomorphism if and only if is invertible.    This fact is true for functions without any of the linear transformation properties being involved. (A function is bijective if and only if it has an inverse.)      If is invertible, then is also a linear transformation.    We will check the two properties of a linear transformation. (See .) Suppose that . Since , we have . When we apply to the beginning and end of this equality, using , we get .  We will now check the scalar multiple property in a similar fashion. Let and let . Then we have . Applying to both sides again we get . This proves that .    The following results require background from .    Suppose that is a basis for a vector space . Let be a subset of a vector space . Then there is a unique linear transformation such that for each , .    Given , there exists a unique linear combination by . We define the function by . In words, we send a vector to the linear combination of the vectors using the same weights as those needed to form from the basis . This gives for each , so we only need to show that is a linear transformation.  Suppose that with . Then we have . Now we let and . Then, if , we have .  We will complete the proof by justifying the claim that is unique. Suppose that with for each . Then, if with , we have . This shows that for every , so and is unique.      Let and let be a basis for . Then is an isomorphism if and only if is a basis for .    We first suppose that is an isomorphism. We want to show that is a basis for , so we begin with linear independence. Suppose that such that . Then we have . Since is injective, by we must have . But since is a linearly independent set, we have for all . This proves that is linearly independent.  We now prove that spans . Let . Since is surjective, there exists such that . Since is a basis for , we have . Then . This proves that , so is a basis for .  We now need to prove the other implication, and we assume that is a basis for . We need to show that is an isomorphism. To show that is injective, suppose that such that . We have , so . But since is a linearly independent set by assumption, this implies that for all . This means that , so is injective.  To prove that is surjective, we assume that . Since spans , we have for some . We claim that if , then . Here is the justification: . This proves that is surjective and is thus an isomorphism.    "
-},
-{
-  "id": "def-isomorphism",
-  "level": "2",
-  "url": "apdx-isomorphisms.html#def-isomorphism",
-  "type": "Definition",
-  "number": "B.0.1",
-  "title": "",
-  "body": "  A bijective linear transformation between vector spaces and is called an isomorphism . If there exists an isomorphism between vector spaces and , then these spaces are said to be isomorphic .   "
-},
-{
-  "id": "notation-set-lts",
-  "level": "2",
-  "url": "apdx-isomorphisms.html#notation-set-lts",
-  "type": "Note",
-  "number": "B.0.2",
-  "title": "",
-  "body": " If and are vector spaces, then the set of all linear transformations from is denoted . When , we will write instead of .  "
-},
-{
-  "id": "prop-isomorphism-invertible",
-  "level": "2",
-  "url": "apdx-isomorphisms.html#prop-isomorphism-invertible",
-  "type": "Proposition",
-  "number": "B.0.3",
-  "title": "",
-  "body": "  Let and be vector spaces over , and let . Then is an isomorphism if and only if is invertible.    This fact is true for functions without any of the linear transformation properties being involved. (A function is bijective if and only if it has an inverse.)   "
-},
-{
-  "id": "prop-inverse-lt",
-  "level": "2",
-  "url": "apdx-isomorphisms.html#prop-inverse-lt",
-  "type": "Proposition",
-  "number": "B.0.4",
-  "title": "",
-  "body": "  If is invertible, then is also a linear transformation.    We will check the two properties of a linear transformation. (See .) Suppose that . Since , we have . When we apply to the beginning and end of this equality, using , we get .  We will now check the scalar multiple property in a similar fashion. Let and let . Then we have . Applying to both sides again we get . This proves that .   "
+  "body": " Isomorphisms  We have arrived at a point in the book where I am noticing material that should have been included earlier. In a future edition of the book, this will appear in earlier chapters\/sections, but for this edition I need to stick it in this appendix. Apologies!   The following results require background from .    Suppose that is a basis for a vector space . Let be a subset of a vector space . Then there is a unique linear transformation such that for each , .    Given , there exists a unique linear combination by . We define the function by . In words, we send a vector to the linear combination of the vectors using the same weights as those needed to form from the basis . This gives for each , so we only need to show that is a linear transformation.  Suppose that with . Then we have . Now we let and . Then, if , we have .  We will complete the proof by justifying the claim that is unique. Suppose that with for each . Then, if with , we have . This shows that for every , so and is unique.      Let and let be a basis for . Then is an isomorphism if and only if is a basis for .    We first suppose that is an isomorphism. We want to show that is a basis for , so we begin with linear independence. Suppose that such that . Then we have . Since is injective, by we must have . But since is a linearly independent set, we have for all . This proves that is linearly independent.  We now prove that spans . Let . Since is surjective, there exists such that . Since is a basis for , we have . Then . This proves that , so is a basis for .  We now need to prove the other implication, and we assume that is a basis for . We need to show that is an isomorphism. To show that is injective, suppose that such that . We have , so . But since is a linearly independent set by assumption, this implies that for all . This means that , so is injective.  To prove that is surjective, we assume that . Since spans , we have for some . We claim that if , then . Here is the justification: . This proves that is surjective and is thus an isomorphism.    "
 },
 {
   "id": "thm-lt-basis",
   "level": "2",
   "url": "apdx-isomorphisms.html#thm-lt-basis",
   "type": "Theorem",
-  "number": "B.0.5",
+  "number": "B.0.1",
   "title": "",
   "body": "  Suppose that is a basis for a vector space . Let be a subset of a vector space . Then there is a unique linear transformation such that for each , .    Given , there exists a unique linear combination by . We define the function by . In words, we send a vector to the linear combination of the vectors using the same weights as those needed to form from the basis . This gives for each , so we only need to show that is a linear transformation.  Suppose that with . Then we have . Now we let and . Then, if , we have .  We will complete the proof by justifying the claim that is unique. Suppose that with for each . Then, if with , we have . This shows that for every , so and is unique.   "
 },
@@ -7223,7 +7241,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "apdx-isomorphisms.html#thm-isomorphism-basis",
   "type": "Theorem",
-  "number": "B.0.6",
+  "number": "B.0.2",
   "title": "",
   "body": "  Let and let be a basis for . Then is an isomorphism if and only if is a basis for .    We first suppose that is an isomorphism. We want to show that is a basis for , so we begin with linear independence. Suppose that such that . Then we have . Since is injective, by we must have . But since is a linearly independent set, we have for all . This proves that is linearly independent.  We now prove that spans . Let . Since is surjective, there exists such that . Since is a basis for , we have . Then . This proves that , so is a basis for .  We now need to prove the other implication, and we assume that is a basis for . We need to show that is an isomorphism. To show that is injective, suppose that such that . We have , so . But since is a linearly independent set by assumption, this implies that for all . This means that , so is injective.  To prove that is surjective, we assume that . Since spans , we have for some . We claim that if , then . Here is the justification: . This proves that is surjective and is thus an isomorphism.   "
 },

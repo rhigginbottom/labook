@@ -222,9 +222,10 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-lin-trans" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Introduction to Linear Transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-lin-trans-matrices" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Linear Transformations and Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-props-linear-trans" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Properties of Linear Transformations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-matrix-vector-form-lin-system" class="internal"><span class="codenumber">3.1.4</span> <span class="title">The Matrix-Vector Form of a Linear System</span></a></div></li>
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-8" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-isomorphisms" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Isomorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-trans.html#subsec-matrix-vector-form-lin-system" class="internal"><span class="codenumber">3.1.5</span> <span class="title">The Matrix-Vector Form of a Linear System</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-8" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-trans.html#sec-linear-trans-9" class="internal"><span class="codenumber">3.1.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -513,7 +514,7 @@ a_{m1}v_1 + \cdots + a_{mn}v_n
 A\bfv = v_1\mathbf{a}_1 + \cdots + v_n\mathbf{a}_n = \sum_{i=1}^n v_i\mathbf{a}_i\text{.}\tag{3.2}
 \end{equation}
 </div>
-<div class="para">In words, <span class="process-math">\(A\bfv\)</span> is a linear combination of the columns of <span class="process-math">\(A\)</span> with weights coming from the entries of <span class="process-math">\(\bfv\text{.}\)</span> (We have reserved proving the equivalence of these two formulations to <a href="" class="xref" data-knowl="./knowl/xref/exer-matrix-vector-mult.html" title="Exercise 3.1.6.16">Exercise 3.1.6.16</a>.)</div>
+<div class="para">In words, <span class="process-math">\(A\bfv\)</span> is a linear combination of the columns of <span class="process-math">\(A\)</span> with weights coming from the entries of <span class="process-math">\(\bfv\text{.}\)</span> (We have reserved proving the equivalence of these two formulations to <a href="" class="xref" data-knowl="./knowl/xref/exer-matrix-vector-mult.html" title="Exercise 3.1.7.16">Exercise 3.1.7.16</a>.)</div>
 </div> <div class="para logical" id="examp-matrix-vector-prod-1-5">
 <div class="para">With this equivalent definition, proving that <span class="process-math">\(T_A\)</span> is a linear transformation is a snap. Let <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> be vectors in <span class="process-math">\(\ff^n\)</span> and let <span class="process-math">\(c \in \ff\text{.}\)</span> We will further denote the entries of <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> by</div>
 <div class="displaymath process-math">
@@ -581,8 +582,69 @@ p(t) = \tfrac{1}{5}a_4t^5 + \tfrac{1}{4}a_3t^4 + \tfrac{1}{3}a_2t^3 + \tfrac{1}{
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-lin-trans-invertible-1-1">Let <span class="process-math">\(T:V \to W\)</span> be a linear transformation between vector spaces. The <dfn class="terminology">identity transformation</dfn> on <span class="process-math">\(V\)</span> is the linear transformation <span class="process-math">\(I_V:V \to V\)</span> which is <span class="process-math">\(I_V(\bfv)=\bfv\)</span> for each <span class="process-math">\(\bfv \in V\text{.}\)</span> (If the vector space we have in mind is clear, we will drop the subscript and use the notation <span class="process-math">\(I\text{.}\)</span>)</div> <div class="para" id="def-lin-trans-invertible-1-2">We say that the linear transformation <span class="process-math">\(T\)</span> is <dfn class="terminology">invertible</dfn> if there exists a linear transformation <span class="process-math">\(S:W \to V\)</span> such that <span class="process-math">\(S \circ T = I_V\text{.}\)</span>
-</div></article></section><section class="subsection" id="subsec-matrix-vector-form-lin-system"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="space"> </span><span class="title">The Matrix-Vector Form of a Linear System</span>
+</div></article></section><section class="subsection" id="subsec-isomorphisms"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="space"> </span><span class="title">Isomorphisms</span>
+</h3>
+<div class="para" id="subsec-isomorphisms-2">Bijective functions are important in almost all settings, and the linear algebra setting is no exception. We have a specific name for bijective linear transformations.</div>
+<article class="definition definition-like" id="def-isomorphism"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-isomorphism-1-1">A bijective linear transformation <span class="process-math">\(T\)</span> between vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> is called an <dfn class="terminology">isomorphism</dfn>. If there exists an isomorphism between vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{,}\)</span> then these spaces are said to be <dfn class="terminology">isomorphic</dfn>.</div></article><div class="para" id="subsec-isomorphisms-4">The reader should think of isomorphic vector spaces as <em class="emphasis">essentially the same</em>. Such spaces will not be exactly the same, of course, in the same way that two finite sets of the same size are not necessarily identical. But the presence of an isomorphism means that the vector space operations are compatible in such a way that such spaces share many of the same properties.</div>
+<article class="note remark-like" id="notation-set-lts"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="notation-set-lts-1">If <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces, then the set of all linear transformations from <span class="process-math">\(V\to W\)</span> is denoted <span class="process-math">\(L(V,W)\text{.}\)</span> When <span class="process-math">\(W=V\text{,}\)</span> we will write <span class="process-math">\(L(V)\)</span> instead of <span class="process-math">\(L(V,V)\text{.}\)</span>
+</div></article><div class="para" id="subsec-isomorphisms-6">We can now prove that two concepts we have defined in this section are one and the same for linear transformations.</div>
+<article class="proposition theorem-like" id="prop-isomorphism-invertible"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.14</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-isomorphism-invertible-1-1">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces over <span class="process-math">\(\ff\text{,}\)</span> and let <span class="process-math">\(T \in L(V,W)\text{.}\)</span> Then <span class="process-math">\(T\)</span> is an isomorphism if and only if <span class="process-math">\(T\)</span> is invertible.</div></article><details id="prop-isomorphism-invertible-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="prop-isomorphism-invertible-2-1">This fact is true for functions without any of the linear transformation properties being involved. (A function is bijective if and only if it has an inverse.)</div></article></details><article class="proposition theorem-like" id="prop-inverse-lt"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-inverse-lt-1-1">If <span class="process-math">\(T \in L(V,W)\)</span> is invertible, then <span class="process-math">\(T^{-1}:W \to V\)</span> is also a linear transformation.</div></article><details id="prop-inverse-lt-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="prop-inverse-lt-2-1">
+<div class="para">We will check the two properties of a linear transformation. (See <a href="" class="xref" data-knowl="./knowl/xref/def-lin-trans.html" title="Definition 3.1.1">Definition 3.1.1</a>.) Suppose that <span class="process-math">\(\bfw_1, \bfw_2 \in W\text{.}\)</span> Since <span class="process-math">\(T \circ T^{-1} = I_W\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-lin-trans.html">
+\begin{equation*}
+\bfw_1 + \bfw_2 = T(T^{-1}(\bfw_1)) + T(T^{-1}(\bfw_2)) = T(T^{-1}(\bfw_1) + T^{-1}(\bfw_2))\text{.}
+\end{equation*}
+</div>
+<div class="para">When we apply <span class="process-math">\(T^{-1}\)</span> to the beginning and end of this equality, using <span class="process-math">\(T^{-1}\circ T = I_V\text{,}\)</span> we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-lin-trans.html">
+\begin{equation*}
+T^{-1}(\bfw_1 + \bfw_2) = T^{-1}(\bfw_1) + T^{-1}(\bfw_2)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="prop-inverse-lt-2-2">
+<div class="para">We will now check the scalar multiple property in a similar fashion. Let <span class="process-math">\(\bfw \in W\)</span> and let <span class="process-math">\(c \in \ff\text{.}\)</span> Then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c\bfw = cT(T^{-1}(\bfw)) = T(cT^{-1}(\bfw))\text{.}
+\end{equation*}
+</div>
+<div class="para">Applying <span class="process-math">\(T^{-1}\)</span> to both sides again we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T^{-1}(c\bfw) = cT^{-1}(\bfw)\text{.}
+\end{equation*}
+</div>
+<div class="para">This proves that <span class="process-math">\(T^{-1} \in L(W,V)\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="subsec-isomorphisms-9">Before we leave this subsection, it is worth pointing out that when <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces, the set <span class="process-math">\(L(V,W)\)</span> itself has some important structure.</div>
+<div class="para logical" id="subsec-isomorphisms-10">
+<div class="para">When <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces over <span class="process-math">\(\ff\text{,}\)</span> we can define the sum and scalar multiple of linear transformations since both of these operations happen on the level of elements. If <span class="process-math">\(S, T \in L(V,W)\)</span> and <span class="process-math">\(c \in \ff\text{,}\)</span> then we define <span class="process-math">\(S+T\)</span> and <span class="process-math">\(cT\)</span> in the following way. For all <span class="process-math">\(\bfv \in V\text{,}\)</span>
+</div>
+<ul class="disc">
+<li id="subsec-isomorphisms-10-9-1"><div class="para" id="subsec-isomorphisms-10-9-1-1">
+<span class="process-math">\((S+T)(\bfv) = S(\bfv) + T(\bfv)\text{,}\)</span> and</div></li>
+<li id="subsec-isomorphisms-10-9-2"><div class="para" id="subsec-isomorphisms-10-9-2-1"><span class="process-math">\((cT)(\bfv) = cT(\bfv)\text{.}\)</span></div></li>
+</ul>
+</div>
+<div class="para" id="subsec-isomorphisms-11">These operations as defined make <span class="process-math">\(L(V,W)\)</span> into its own vector space. We will leave the proof of this theorem for the exercises.</div>
+<article class="theorem theorem-like" id="thm-linear-maps-vspace"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.16</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-linear-maps-vspace-1-1">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces over a field <span class="process-math">\(\ff\text{,}\)</span> and let <span class="process-math">\(S, T \in L(V,W)\)</span> and <span class="process-math">\(c \in \ff\text{.}\)</span> Then <span class="process-math">\(S+T\)</span> and <span class="process-math">\(cT\)</span> are both linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\text{,}\)</span> and <span class="process-math">\(L(V,W)\)</span> is a vector space with these operations.</div></article></section><section class="subsection" id="subsec-matrix-vector-form-lin-system"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="space"> </span><span class="title">The Matrix-Vector Form of a Linear System</span>
 </h3>
 <div class="para" id="subsec-matrix-vector-form-lin-system-2">Having defined the product of a matrix and a vector in <a href="" class="xref" data-knowl="./knowl/xref/examp-matrix-vector-prod.html" title="Example 3.1.5">Example 3.1.5</a>, we can reformulate one of the foundational (and introductory) matters of this book. We will now put the notion of a linear system—in particular, the solutions to linear systems—in a different context.</div>
 <div class="para logical" id="subsec-matrix-vector-form-lin-system-3">
@@ -600,7 +662,7 @@ a_{m1}x_1 + \cdots + a_{mn}x_n \amp = b_m\text{.}\notag
 </div>
 <div class="para" id="subsec-matrix-vector-form-lin-system-4">With this reformulation, the questions of the existence and uniqueness of solutions to a system of equations (see the end of <a href="sec-intro-systems.html" class="internal" title="Section 1.1: Systems of Linear Equations">Section 1.1</a>) can now be stated in the language of the injectivity and surjectivity of linear transformations.</div>
 <details id="subsec-matrix-vector-form-lin-system-5" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.17</span><span class="period">.</span>
 </h4></summary><article class="example example-like"><div class="para logical" id="subsec-matrix-vector-form-lin-system-5-1-1">
 <div class="para">Consider the linear transformation <span class="process-math">\(T_A:\rr^3 \to \rr^3\)</span> which is multiplication by this matrix:</div>
 <div class="displaymath process-math">
@@ -664,20 +726,20 @@ A \amp \bfv
 \end{equation*}
 </div>
 <div class="para">then we have both <span class="process-math">\(T_A(\bfx_1)=\bfv\)</span> and <span class="process-math">\(T_A(\bfx_2)=\bfv\text{.}\)</span> (The vector <span class="process-math">\(\bfx_1\)</span> results from setting the free variable equal to <span class="process-math">\(0\text{,}\)</span> and we obtain <span class="process-math">\(\bfx_2\)</span> by setting the free variable equal to <span class="process-math">\(1\text{.}\)</span>) Finally, we note that the linear system which corresponds to the augmented matrix <span class="process-math">\([A \mid \bfv]\)</span> is consistent with many solutions—that is, a solution is not unique.</div>
-</div></article></details></section><section class="reading-questions" id="sec-linear-trans-7"><h3 class="heading hide-type">
-<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="space"> </span><span class="title">Reading Questions</span>
+</div></article></details></section><section class="reading-questions" id="sec-linear-trans-8"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
-<article class="exercise exercise-like" id="sec-linear-trans-7-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-trans-7-1-1-1">
+<article class="exercise exercise-like" id="sec-linear-trans-8-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-trans-8-1-1-1">
 <div class="para">For each of the following, determine the number of rows and columns that a matrix would have if multiplication by that matrix is a linear transformation with the given domain and codomain.</div>
 <ol class="lower-alpha">
-<li id="sec-linear-trans-7-1-1-1-1-1"><div class="para" id="sec-linear-trans-7-1-1-1-1-1-1">domain: <span class="process-math">\(\rr^2\text{,}\)</span> codomain: <span class="process-math">\(\rr^3\)</span>
+<li id="sec-linear-trans-8-1-1-1-1-1"><div class="para" id="sec-linear-trans-8-1-1-1-1-1-1">domain: <span class="process-math">\(\rr^2\text{,}\)</span> codomain: <span class="process-math">\(\rr^3\)</span>
 </div></li>
-<li id="sec-linear-trans-7-1-1-1-1-2"><div class="para" id="sec-linear-trans-7-1-1-1-1-2-1">domain: <span class="process-math">\(\qq^4\text{,}\)</span> codomain: <span class="process-math">\(\qq^2\)</span>
+<li id="sec-linear-trans-8-1-1-1-1-2"><div class="para" id="sec-linear-trans-8-1-1-1-1-2-1">domain: <span class="process-math">\(\qq^4\text{,}\)</span> codomain: <span class="process-math">\(\qq^2\)</span>
 </div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-linear-trans-7-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-trans-7-2-1-1">
+</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-trans-8-2-1-1">
 <div class="para">Let <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\mathbf{b}\text{,}\)</span> and <span class="process-math">\(\mathbf{c}\)</span> be defined as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -697,24 +759,24 @@ A = \begin{bmatrix}
 <div class="para">Define a linear transformation <span class="process-math">\(T_A:\rr^3 \to \rr^3\)</span> to be multiplication by <span class="process-math">\(A\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="sec-linear-trans-7-2-1-1-8-1"><div class="para" id="sec-linear-trans-7-2-1-1-8-1-1">Find <span class="process-math">\(T_A(\bfu)\text{.}\)</span>
+<li id="sec-linear-trans-8-2-1-1-8-1"><div class="para" id="sec-linear-trans-8-2-1-1-8-1-1">Find <span class="process-math">\(T_A(\bfu)\text{.}\)</span>
 </div></li>
-<li id="sec-linear-trans-7-2-1-1-8-2"><div class="para" id="sec-linear-trans-7-2-1-1-8-2-1">Find an <span class="process-math">\(\bfx\)</span> in <span class="process-math">\(\rr^3\)</span> such that <span class="process-math">\(T_A(\bfx)=\mathbf{b}\text{.}\)</span>
+<li id="sec-linear-trans-8-2-1-1-8-2"><div class="para" id="sec-linear-trans-8-2-1-1-8-2-1">Find an <span class="process-math">\(\bfx\)</span> in <span class="process-math">\(\rr^3\)</span> such that <span class="process-math">\(T_A(\bfx)=\mathbf{b}\text{.}\)</span>
 </div></li>
-<li id="sec-linear-trans-7-2-1-1-8-3"><div class="para" id="sec-linear-trans-7-2-1-1-8-3-1">Is there more than one <span class="process-math">\(\bfx\)</span> whose image under <span class="process-math">\(T_A\)</span> is <span class="process-math">\(\mathbf{b}\text{?}\)</span> How do you know?</div></li>
-<li id="sec-linear-trans-7-2-1-1-8-4"><div class="para" id="sec-linear-trans-7-2-1-1-8-4-1">Determine whether or not <span class="process-math">\(\mathbf{c}\)</span> is in the range of <span class="process-math">\(T_A\text{.}\)</span>
+<li id="sec-linear-trans-8-2-1-1-8-3"><div class="para" id="sec-linear-trans-8-2-1-1-8-3-1">Is there more than one <span class="process-math">\(\bfx\)</span> whose image under <span class="process-math">\(T_A\)</span> is <span class="process-math">\(\mathbf{b}\text{?}\)</span> How do you know?</div></li>
+<li id="sec-linear-trans-8-2-1-1-8-4"><div class="para" id="sec-linear-trans-8-2-1-1-8-4-1">Determine whether or not <span class="process-math">\(\mathbf{c}\)</span> is in the range of <span class="process-math">\(T_A\text{.}\)</span>
 </div></li>
 </ol>
-</div></article></section><section class="exercises" id="sec-linear-trans-8"><h3 class="heading hide-type">
-<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="space"> </span><span class="title">Exercises</span>
+</div></article></section><section class="exercises" id="sec-linear-trans-9"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="sec-linear-trans-8-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="sec-linear-trans-8-1-1-1">Consider the function <span class="process-math">\(T:P_2 \to P_3\)</span> defined by <span class="process-math">\(T(p) = tp\text{.}\)</span> (So, for example, <span class="process-math">\(T(2+t)=2t+t^2\text{.}\)</span>) Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="sec-linear-trans-8-2-1-1">Consider the function <span class="process-math">\(T:P_2 \to P_2\)</span> defined by <span class="process-math">\(T(p) = p(0)+p(1)t+p(2)t^2\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="sec-linear-trans-8-3-1-1">Consider the function <span class="process-math">\(T:P_2 \to P_1\)</span> defined by <span class="process-math">\(T(p) = p(0) + p'(0)t\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="sec-linear-trans-8-4-1-1">Let <span class="process-math">\(T:\ff_5^3 \to \ff_5^2\)</span> be the function defined by <span class="process-math">\(T(x,y,z)=(3x+y-2z, -xy)\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="sec-linear-trans-8-5-1-1">Let <span class="process-math">\(T:\rr^2 \to \rr^3\)</span> be the function defined by <span class="process-math">\(T(x,y) = (2x, z-3y, 0)\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-trans-8-6-1-1">
+<article class="exercise exercise-like" id="sec-linear-trans-9-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="sec-linear-trans-9-1-1-1">Consider the function <span class="process-math">\(T:P_2 \to P_3\)</span> defined by <span class="process-math">\(T(p) = tp\text{.}\)</span> (So, for example, <span class="process-math">\(T(2+t)=2t+t^2\text{.}\)</span>) Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="sec-linear-trans-9-2-1-1">Consider the function <span class="process-math">\(T:P_2 \to P_2\)</span> defined by <span class="process-math">\(T(p) = p(0)+p(1)t+p(2)t^2\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="sec-linear-trans-9-3-1-1">Consider the function <span class="process-math">\(T:P_2 \to P_1\)</span> defined by <span class="process-math">\(T(p) = p(0) + p'(0)t\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="sec-linear-trans-9-4-1-1">Let <span class="process-math">\(T:\ff_5^3 \to \ff_5^2\)</span> be the function defined by <span class="process-math">\(T(x,y,z)=(3x+y-2z, -xy)\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="sec-linear-trans-9-5-1-1">Let <span class="process-math">\(T:\rr^2 \to \rr^3\)</span> be the function defined by <span class="process-math">\(T(x,y) = (2x, x-3y, 0)\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-trans-9-6-1-1">
 <div class="para">Consider the following matrix over <span class="process-math">\(\ff_3\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -729,12 +791,12 @@ A = \begin{bmatrix}
 <div class="para">For each of the following vectors <span class="process-math">\(\bfv\text{,}\)</span> calculate the matrix-vector product <span class="process-math">\(A\bfv\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="sec-linear-trans-8-6-1-1-5-1"><div class="para" id="sec-linear-trans-8-6-1-1-5-1-1"><span class="process-math">\(\displaystyle \bfv = (1,1,0)\)</span></div></li>
-<li id="sec-linear-trans-8-6-1-1-5-2"><div class="para" id="sec-linear-trans-8-6-1-1-5-2-1"><span class="process-math">\(\displaystyle \bfv = (2,1,2)\)</span></div></li>
-<li id="sec-linear-trans-8-6-1-1-5-3"><div class="para" id="sec-linear-trans-8-6-1-1-5-3-1"><span class="process-math">\(\displaystyle \bfv = (0,2,1)\)</span></div></li>
+<li id="sec-linear-trans-9-6-1-1-5-1"><div class="para" id="sec-linear-trans-9-6-1-1-5-1-1"><span class="process-math">\(\displaystyle \bfv = (1,1,0)\)</span></div></li>
+<li id="sec-linear-trans-9-6-1-1-5-2"><div class="para" id="sec-linear-trans-9-6-1-1-5-2-1"><span class="process-math">\(\displaystyle \bfv = (2,1,2)\)</span></div></li>
+<li id="sec-linear-trans-9-6-1-1-5-3"><div class="para" id="sec-linear-trans-9-6-1-1-5-3-1"><span class="process-math">\(\displaystyle \bfv = (0,2,1)\)</span></div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-trans-8-7-1-1">
+</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-trans-9-7-1-1">
 <div class="para">Consider the following matrix over <span class="process-math">\(\rr\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -746,14 +808,14 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="sec-linear-trans-8-7-1-1-3-1"><div class="para" id="sec-linear-trans-8-7-1-1-3-1-1">If <span class="process-math">\(T\)</span> is the linear transformation which is multiplication by <span class="process-math">\(A\text{,}\)</span> what are the domain and codomain of <span class="process-math">\(T\text{?}\)</span>
+<li id="sec-linear-trans-9-7-1-1-3-1"><div class="para" id="sec-linear-trans-9-7-1-1-3-1-1">If <span class="process-math">\(T\)</span> is the linear transformation which is multiplication by <span class="process-math">\(A\text{,}\)</span> what are the domain and codomain of <span class="process-math">\(T\text{?}\)</span>
 </div></li>
-<li id="sec-linear-trans-8-7-1-1-3-2"><div class="para" id="sec-linear-trans-8-7-1-1-3-2-1">Calculate the image of the vector <span class="process-math">\(\bfv = (-3, 1, 4)\)</span> under the linear transformation <span class="process-math">\(T\text{.}\)</span>
+<li id="sec-linear-trans-9-7-1-1-3-2"><div class="para" id="sec-linear-trans-9-7-1-1-3-2-1">Calculate the image of the vector <span class="process-math">\(\bfv = (-3, 1, 4)\)</span> under the linear transformation <span class="process-math">\(T\text{.}\)</span>
 </div></li>
-<li id="sec-linear-trans-8-7-1-1-3-3"><div class="para" id="sec-linear-trans-8-7-1-1-3-3-1">Is the vector <span class="process-math">\(\bfw = (-2,-1)\)</span> in the image of <span class="process-math">\(T\text{?}\)</span> Explain your answer.</div></li>
+<li id="sec-linear-trans-9-7-1-1-3-3"><div class="para" id="sec-linear-trans-9-7-1-1-3-3-1">Is the vector <span class="process-math">\(\bfw = (-2,-1)\)</span> in the image of <span class="process-math">\(T\text{?}\)</span> Explain your answer.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-trans-8-8-1-1">
+</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-trans-9-8-1-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be the following matrix over <span class="process-math">\(\rr\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -768,11 +830,11 @@ A = \begin{bmatrix}
 <div class="para">Let <span class="process-math">\(T\)</span> be the linear transformation which is multiplication by <span class="process-math">\(A\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="sec-linear-trans-8-8-1-1-6-1"><div class="para" id="sec-linear-trans-8-8-1-1-6-1-1">Is the vector <span class="process-math">\((1,1,1)\)</span> in the image of <span class="process-math">\(T\text{?}\)</span> Explain your answer.</div></li>
-<li id="sec-linear-trans-8-8-1-1-6-2"><div class="para" id="sec-linear-trans-8-8-1-1-6-2-1">Is <span class="process-math">\(T\)</span> surjective? Explain your answer.</div></li>
+<li id="sec-linear-trans-9-8-1-1-6-1"><div class="para" id="sec-linear-trans-9-8-1-1-6-1-1">Is the vector <span class="process-math">\((1,1,1)\)</span> in the image of <span class="process-math">\(T\text{?}\)</span> Explain your answer.</div></li>
+<li id="sec-linear-trans-9-8-1-1-6-2"><div class="para" id="sec-linear-trans-9-8-1-1-6-2-1">Is <span class="process-math">\(T\)</span> surjective? Explain your answer.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-trans-8-9-1-1">
+</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-trans-9-9-1-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be the following matrix over <span class="process-math">\(\ff_7\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -787,14 +849,14 @@ A = \begin{bmatrix}
 <div class="para">Let <span class="process-math">\(T\)</span> be the linear transformation which is multiplication by <span class="process-math">\(A\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="sec-linear-trans-8-9-1-1-6-1"><div class="para" id="sec-linear-trans-8-9-1-1-6-1-1">Is the vector <span class="process-math">\((3,1,1)\)</span> in the image of <span class="process-math">\(T\text{?}\)</span> Explain your answer.</div></li>
-<li id="sec-linear-trans-8-9-1-1-6-2"><div class="para" id="sec-linear-trans-8-9-1-1-6-2-1">The vector <span class="process-math">\(\bfw=(5,4,0)\)</span> is in the image of <span class="process-math">\(T\text{.}\)</span> Find one <span class="process-math">\(\bfx \in \ff_7^3\)</span> such that <span class="process-math">\(T(\bfx) = \bfw\text{.}\)</span>
+<li id="sec-linear-trans-9-9-1-1-6-1"><div class="para" id="sec-linear-trans-9-9-1-1-6-1-1">Is the vector <span class="process-math">\((3,1,1)\)</span> in the image of <span class="process-math">\(T\text{?}\)</span> Explain your answer.</div></li>
+<li id="sec-linear-trans-9-9-1-1-6-2"><div class="para" id="sec-linear-trans-9-9-1-1-6-2-1">The vector <span class="process-math">\(\bfw=(5,4,0)\)</span> is in the image of <span class="process-math">\(T\text{.}\)</span> Find one <span class="process-math">\(\bfx \in \ff_7^3\)</span> such that <span class="process-math">\(T(\bfx) = \bfw\text{.}\)</span>
 </div></li>
-<li id="sec-linear-trans-8-9-1-1-6-3"><div class="para" id="sec-linear-trans-8-9-1-1-6-3-1">Is there more than one <span class="process-math">\(\bfx \in \ff_7^3\)</span> such that <span class="process-math">\(T(\bfx) = \bfw\text{?}\)</span> How do you know?</div></li>
-<li id="sec-linear-trans-8-9-1-1-6-4"><div class="para" id="sec-linear-trans-8-9-1-1-6-4-1">Is <span class="process-math">\(T\)</span> injective? Is <span class="process-math">\(T\)</span> surjective? Explain your answers.</div></li>
+<li id="sec-linear-trans-9-9-1-1-6-3"><div class="para" id="sec-linear-trans-9-9-1-1-6-3-1">Is there more than one <span class="process-math">\(\bfx \in \ff_7^3\)</span> such that <span class="process-math">\(T(\bfx) = \bfw\text{?}\)</span> How do you know?</div></li>
+<li id="sec-linear-trans-9-9-1-1-6-4"><div class="para" id="sec-linear-trans-9-9-1-1-6-4-1">Is <span class="process-math">\(T\)</span> injective? Is <span class="process-math">\(T\)</span> surjective? Explain your answers.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-trans-8-10-1-1">
+</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-trans-9-10-1-1">
 <div class="para">Let <span class="process-math">\(T:\rr^3 \to \rr^2\)</span> be the linear transformation which is multiplication by the following matrix:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -806,9 +868,9 @@ A = \begin{bmatrix}
 </div>
 <div class="para">Give a description of all vectors <span class="process-math">\(\bfx \in \rr^3\)</span> such that <span class="process-math">\(T(\bfx) = \mathbf{0}\text{.}\)</span>
 </div>
-</div></article><article class="subexercises" id="sec-linear-trans-8-11"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
-<article class="exercise exercise-like" id="sec-linear-trans-8-11-2"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-linear-trans-8-11-2-1-1">
+</div></article><article class="subexercises" id="sec-linear-trans-9-11"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-linear-trans-9-11-2"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-linear-trans-9-11-2-1-1">
 <div class="para">Define the function <span class="process-math">\(T:C[0,\infty) \to C[0,\infty)\)</span> to be the following:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -817,13 +879,13 @@ A = \begin{bmatrix}
 </div>
 <div class="para">Prove that <span class="process-math">\(T\)</span> is a linear transformation.</div>
 </div></article><article class="exercise exercise-like" id="exer-lin-trans-comp"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
-<div class="para" id="exer-lin-trans-comp-1-1">Let <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> be linear transformations between vector spaces over a field <span class="process-math">\(\ff\text{.}\)</span> Prove that <span class="process-math">\(S \circ T\)</span> is also a linear transformation.</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-11-4"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-linear-trans-8-11-4-1-1">
+<div class="para" id="exer-lin-trans-comp-1-1">Let <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> be linear transformations between vector spaces over a field <span class="process-math">\(\ff\text{.}\)</span> Prove that <span class="process-math">\(S \circ T\)</span> is also a linear transformation.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-11-4"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-linear-trans-9-11-4-1-1">
 <div class="para">Let <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> be linear transformations between vector spaces over a field <span class="process-math">\(\ff\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="sec-linear-trans-8-11-4-1-1-4-1"><div class="para" id="sec-linear-trans-8-11-4-1-1-4-1-1">Prove that if <span class="process-math">\(S\circ T\)</span> is injective, then <span class="process-math">\(T\)</span> must be injective.</div></li>
-<li id="sec-linear-trans-8-11-4-1-1-4-2"><div class="para" id="sec-linear-trans-8-11-4-1-1-4-2-1">Prove that if <span class="process-math">\(S\circ T\)</span> is surjective, then <span class="process-math">\(S\)</span> must be surjective.</div></li>
+<li id="sec-linear-trans-9-11-4-1-1-4-1"><div class="para" id="sec-linear-trans-9-11-4-1-1-4-1-1">Prove that if <span class="process-math">\(S\circ T\)</span> is injective, then <span class="process-math">\(T\)</span> must be injective.</div></li>
+<li id="sec-linear-trans-9-11-4-1-1-4-2"><div class="para" id="sec-linear-trans-9-11-4-1-1-4-2-1">Prove that if <span class="process-math">\(S\circ T\)</span> is surjective, then <span class="process-math">\(S\)</span> must be surjective.</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="lin-trans-zero"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
 <div class="para logical" id="lin-trans-zero-1-1">
@@ -833,9 +895,10 @@ A = \begin{bmatrix}
 <li id="lin-trans-zero-1-1-3-1"><div class="para" id="lin-trans-zero-1-1-3-1-1">If <span class="process-math">\(T\)</span> is a linear transformation, must it be true that <span class="process-math">\(T(\mathbf{0}_V) = \mathbf{0}_W\text{?}\)</span> Either prove this is true or produce a counterexample.</div></li>
 <li id="lin-trans-zero-1-1-3-2"><div class="para" id="lin-trans-zero-1-1-3-2-1">If <span class="process-math">\(T(\mathbf{0}_V) = \mathbf{0}_W\text{,}\)</span> must <span class="process-math">\(T\)</span> be a linear transformation? Either prove this is true or produce a counterexample.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-linear-trans-8-11-6"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
-<div class="para" id="sec-linear-trans-8-11-6-1-1">Let <span class="process-math">\(\bfv_1, \ldots, \bfv_m\)</span> be vectors which span a vector space <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(T:V \to V\)</span> is a linear transformation for which <span class="process-math">\(T(\bfv_i)=\mathbf{0}\)</span> for all <span class="process-math">\(i=1,\ldots,m\text{,}\)</span> prove that <span class="process-math">\(T\)</span> is the zero transformation. (In other words, prove that <span class="process-math">\(T(\bfx)=\mathbf{0}\)</span> for all <span class="process-math">\(\bfx \in V\text{.}\)</span>)</div></article><article class="exercise exercise-like" id="exer-matrix-vector-mult"><h5 class="heading"><span class="codenumber">16<span class="period">.</span></span></h5>
-<div class="para" id="exer-matrix-vector-mult-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix over a field <span class="process-math">\(\ff\text{,}\)</span> and let <span class="process-math">\(\bfv\)</span> be a vector in <span class="process-math">\(\ff^n\text{.}\)</span> Prove that the formulations of the matrix-vector product given in <a href="" class="xref" data-knowl="./knowl/xref/form-matrix-vect-prod.html" title="Equation 3.1">(3.1)</a> and <a href="" class="xref" data-knowl="./knowl/xref/matrix-vector-def2.html" title="Equation 3.2">(3.2)</a> are equivalent.</div></article></article></section></section></div>
+</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-11-6"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
+<div class="para" id="sec-linear-trans-9-11-6-1-1">Let <span class="process-math">\(\bfv_1, \ldots, \bfv_m\)</span> be vectors which span a vector space <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(T:V \to V\)</span> is a linear transformation for which <span class="process-math">\(T(\bfv_i)=\mathbf{0}\)</span> for all <span class="process-math">\(i=1,\ldots,m\text{,}\)</span> prove that <span class="process-math">\(T\)</span> is the zero transformation. (In other words, prove that <span class="process-math">\(T(\bfx)=\mathbf{0}\)</span> for all <span class="process-math">\(\bfx \in V\text{.}\)</span>)</div></article><article class="exercise exercise-like" id="exer-matrix-vector-mult"><h5 class="heading"><span class="codenumber">16<span class="period">.</span></span></h5>
+<div class="para" id="exer-matrix-vector-mult-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix over a field <span class="process-math">\(\ff\text{,}\)</span> and let <span class="process-math">\(\bfv\)</span> be a vector in <span class="process-math">\(\ff^n\text{.}\)</span> Prove that the formulations of the matrix-vector product given in <a href="" class="xref" data-knowl="./knowl/xref/form-matrix-vect-prod.html" title="Equation 3.1">(3.1)</a> and <a href="" class="xref" data-knowl="./knowl/xref/matrix-vector-def2.html" title="Equation 3.2">(3.2)</a> are equivalent.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-11-8"><h5 class="heading"><span class="codenumber">17<span class="period">.</span></span></h5>
+<div class="para" id="sec-linear-trans-9-11-8-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-linear-maps-vspace.html" title="Theorem 3.1.16">Theorem 3.1.16</a>.</div></article></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-third.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-matrix-linear-trans.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
