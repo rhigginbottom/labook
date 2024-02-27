@@ -312,6 +312,37 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Yes, <m>W</m> is a subspace.
+            </p>
+          </li>
+          <li>
+            <p>
+              Yes, <m>W</m> is a subspace.
+            </p>
+          </li>
+          <li>
+            <p>
+              No, <m>W</m> is not a subspace. It is not closed under scalar multiplication.
+            </p>
+          </li>
+          <li>
+            <p>
+              Yes, <m>W</m> is a subspace.
+            </p>
+          </li>
+          <li>
+            <p>
+              Yes, <m>W</m> is a subspace.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -378,6 +409,32 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Yes, <m>W</m> is a subspace as it can be written as the span of two vectors.
+            </p>
+          </li>
+          <li>
+            <p>
+              Yes, <m>W</m> is a subspace. (However, <m>W</m> cannot easily be written as a span!)
+            </p>
+          </li>
+          <li>
+            <p>
+              Yes, <m>W</m> is a subspace as it can be written as the span of four vectors.
+            </p>
+          </li>
+          <li>
+            <p>
+              No, <m>W</m> is not a subspace as it does not contain the zero vector.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <subexercises>
   <title>Writing Exercises</title>  
@@ -398,6 +455,20 @@
         is a subspace of <m>C[a,b]</m>. (See <xref ref="exer-contin-functions"/> for the definition of <m>C[a,b]</m>.)
       </p>
     </statement>
+    <answer>
+      <p>
+        Let <m>V</m> denote the set of functions described in the statement of the problem. We first observe that the zero function is in <m>V</m> since it integrates to zero over any interval <m>[a,b]</m>. If <m>f, g \in V</m>, then 
+        <md>
+          <mrow>\int_a^b (f+g)(x)\;dx  \amp = \int_a^b (f(x) + g(x))\;dx</mrow>
+          <mrow> \amp = \int_a^b f(x)\;dx + \int_a^b g(x)\;dx = 0 + 0 = 0</mrow>           
+        </md>,
+        which proves that <m>f + g \in V</m>. Finally, if <m>c \in \rr</m> and <m>f \in V</m>, we have 
+        <me>
+          \int_a^b (cf)(x)\;dx = \int_a^b cf(x)\;dx = c\int_a^b f(x)\;dx = c \cdot 0 = 0
+        </me>,
+        which shows that <m>cf \in V</m>. (These last two calculations rely on the <em>linear</em> properties of the definite integral.) This completes the proof that <m>V</m> is a subspace.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -419,6 +490,15 @@
         Let <m>V</m> be a vector space and let <m>W_1</m> and <m>W_2</m> be subspaces of <m>V</m>. Must <m>W_1 \cup W_2</m> be a subspace of <m>V</m>? Justify your answer.
       </p>
     </statement>
+    <answer>
+      <p>
+        No. Let <m>W_1</m> and <m>W_2</m> be the following two subspaces of <m>\rr^2</m>:
+        <me>
+          W_1 = \{(x,2x) \mid x \in \rr\}, \hspace{12pt} W_2 = \{(x,3x) \mid x \in \rr\}
+        </me>.
+        Then <m>(1,2) \in W_1</m> and <m>(1,3) \in W_2</m>, so both of these elements are in <m>W_1 \cup W_2</m>. However, <m>(1,2) + (1,3) = (2,5)</m>, and <m>(2,5) \not \in W_1 \cup W_2</m>. This shows that <m>W_1 \cup W_2</m> is not closed under addition, so it is not a subspace.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>

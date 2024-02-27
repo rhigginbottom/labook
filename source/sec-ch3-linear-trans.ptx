@@ -540,6 +540,11 @@
         Consider the function <m>T:P_2 \to P_2</m> defined by <m>T(p) = p(0)+p(1)t+p(2)t^2</m>. Is <m>T</m> a linear transformation? Justify your answer.
       </p>
     </statement>
+    <answer>
+      <p>
+        Yes, <m>T</m> is a linear transformation.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -554,6 +559,16 @@
         Let <m>T:\ff_5^3 \to \ff_5^2</m> be the function defined by <m>T(x,y,z)=(3x+y-2z, -xy)</m>. Is <m>T</m> a linear transformation? Justify your answer.
       </p>
     </statement>
+    <answer>
+      <p>
+        No, <m>T</m> is not a linear transformation. Consider the following example:
+        <md>
+          <mrow>T(2(1,1,0)) \amp = T(2,2,0) = (6+2-0,-4) \equiv (3,1)</mrow>
+          <mrow>2T(1,1,0) \amp = 2(3+1-0,-1) \equiv 2(4,4) \equiv (3,3)</mrow>
+        </md>.
+        This shows that the scalar multiplication property does not hold, as <m>2T(1,1,0) \neq T(2(1,1,0))</m>.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -714,6 +729,21 @@
         Prove that <m>T</m> is a linear transformation.
       </p>
     </statement>
+    <answer>
+      <p>
+        Let <m>V = C[0,\infty)</m> and let <m>f, g \in V</m>. Then we have 
+        <md>
+          <mrow>T(f+g)(x) \amp = \int_0^x (f+g)(y)\;dy = \int_0^x (f(y) + g(y))\;dy</mrow>
+          <mrow> \amp = \int_0^x f(y)\;dy + \int_0^x g(y)\;dy = T(f)(x) + T(g)(x)</mrow>
+        </md>.
+        We now let <m>c \in \rr</m> and <m>f \in V</m>. Then
+        <md>
+          <mrow>T(cf)(x) \amp = \int_0^x (cf)(y)\;dy = \int_0^x cf(y)\;dy</mrow>
+          <mrow> \amp = c\int_0^x f(y)\;dy = cT(f)(x)</mrow>
+        </md>.
+        Both of these calculations rely on the <em>linear</em> properties of the definite integral.
+      </p>
+    </answer>
   </exercise>
   <exercise xml:id="exer-lin-trans-comp">
     <statement>
