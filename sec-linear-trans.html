@@ -772,9 +772,21 @@ A = \begin{bmatrix}
 </h3>
 <article class="exercise exercise-like" id="sec-linear-trans-9-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para" id="sec-linear-trans-9-1-1-1">Consider the function <span class="process-math">\(T:P_2 \to P_3\)</span> defined by <span class="process-math">\(T(p) = tp\text{.}\)</span> (So, for example, <span class="process-math">\(T(2+t)=2t+t^2\text{.}\)</span>) Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="sec-linear-trans-9-2-1-1">Consider the function <span class="process-math">\(T:P_2 \to P_2\)</span> defined by <span class="process-math">\(T(p) = p(0)+p(1)t+p(2)t^2\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="sec-linear-trans-9-2-1-1">Consider the function <span class="process-math">\(T:P_2 \to P_2\)</span> defined by <span class="process-math">\(T(p) = p(0)+p(1)t+p(2)t^2\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div>
+<div class="solutions"><details id="sec-linear-trans-9-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="sec-linear-trans-9-2-2-1">Yes, <span class="process-math">\(T\)</span> is a linear transformation.</div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-trans-9-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para" id="sec-linear-trans-9-3-1-1">Consider the function <span class="process-math">\(T:P_2 \to P_1\)</span> defined by <span class="process-math">\(T(p) = p(0) + p'(0)t\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="sec-linear-trans-9-4-1-1">Let <span class="process-math">\(T:\ff_5^3 \to \ff_5^2\)</span> be the function defined by <span class="process-math">\(T(x,y,z)=(3x+y-2z, -xy)\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="sec-linear-trans-9-4-1-1">Let <span class="process-math">\(T:\ff_5^3 \to \ff_5^2\)</span> be the function defined by <span class="process-math">\(T(x,y,z)=(3x+y-2z, -xy)\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div>
+<div class="solutions"><details id="sec-linear-trans-9-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-linear-trans-9-4-2-1">
+<div class="para">No, <span class="process-math">\(T\)</span> is not a linear transformation. Consider the following example:</div>
+<div class="displaymath process-math" id="sec-linear-trans-9-4-2-1-2">
+\begin{align*}
+T(2(1,1,0)) \amp = T(2,2,0) = (6+2-0,-4) \equiv (3,1)\\
+2T(1,1,0) \amp = 2(3+1-0,-1) \equiv 2(4,4) \equiv (3,3)\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that the scalar multiplication property does not hold, as <span class="process-math">\(2T(1,1,0) \neq T(2(1,1,0))\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-trans-9-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para" id="sec-linear-trans-9-5-1-1">Let <span class="process-math">\(T:\rr^2 \to \rr^3\)</span> be the function defined by <span class="process-math">\(T(x,y) = (2x, x-3y, 0)\text{.}\)</span> Is <span class="process-math">\(T\)</span> a linear transformation? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-linear-trans-9-6-1-1">
 <div class="para">Consider the following matrix over <span class="process-math">\(\ff_3\text{:}\)</span>
@@ -878,7 +890,24 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Prove that <span class="process-math">\(T\)</span> is a linear transformation.</div>
-</div></article><article class="exercise exercise-like" id="exer-lin-trans-comp"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+</div>
+<div class="solutions"><details id="sec-linear-trans-9-11-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-linear-trans-9-11-2-2-1">
+<div class="para">Let <span class="process-math">\(V = C[0,\infty)\)</span> and let <span class="process-math">\(f, g \in V\text{.}\)</span> Then we have</div>
+<div class="displaymath process-math" id="sec-linear-trans-9-11-2-2-1-3">
+\begin{align*}
+T(f+g)(x) \amp = \int_0^x (f+g)(y)\;dy = \int_0^x (f(y) + g(y))\;dy\\
+\amp = \int_0^x f(y)\;dy + \int_0^x g(y)\;dy = T(f)(x) + T(g)(x)\text{.}
+\end{align*}
+</div>
+<div class="para">We now let <span class="process-math">\(c \in \rr\)</span> and <span class="process-math">\(f \in V\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="sec-linear-trans-9-11-2-2-1-6">
+\begin{align*}
+T(cf)(x) \amp = \int_0^x (cf)(y)\;dy = \int_0^x cf(y)\;dy\\
+\amp = c\int_0^x f(y)\;dy = cT(f)(x)\text{.}
+\end{align*}
+</div>
+<div class="para">Both of these calculations rely on the <em class="emphasis">linear</em> properties of the definite integral.</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="exer-lin-trans-comp"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
 <div class="para" id="exer-lin-trans-comp-1-1">Let <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> be linear transformations between vector spaces over a field <span class="process-math">\(\ff\text{.}\)</span> Prove that <span class="process-math">\(S \circ T\)</span> is also a linear transformation.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-11-4"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-linear-trans-9-11-4-1-1">
 <div class="para">Let <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> be linear transformations between vector spaces over a field <span class="process-math">\(\ff\text{.}\)</span>
