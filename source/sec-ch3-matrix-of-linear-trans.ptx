@@ -750,10 +750,10 @@
   <exercise>
     <statement>
       <p>
-        In fields, we have the <em>cancellation law</em> for multiplication. If <m>ab=ac</m> then <m>b=c</m>. Does matrix multiplication have this property?
+        In fields, we have the <em>cancellation law</em> for multiplication. If <m>ab=ac</m>  and <m>a \neq 0</m>, then <m>b=c</m>. Does matrix multiplication have this property?
       </p>
       <p>
-        Let <m>A</m>, <m>B</m>, and <m>C</m> be matrices over <m>\ff</m> such that <m>AB</m> and <m>AC</m> make sense and are the same size. If <m>AB=AC</m>, must it be true that <m>B=C</m>? Either prove this is true or provide a counter-example.
+        Let <m>A</m>, <m>B</m>, and <m>C</m> be matrices over <m>\ff</m> such that <m>AB</m> and <m>AC</m> make sense and are the same size and <m>A</m> is not the zero matrix. If <m>AB=AC</m>, must it be true that <m>B=C</m>? Either prove this is true or provide a counter-example.
       </p>
     </statement>
   </exercise>
