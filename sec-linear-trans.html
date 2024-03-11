@@ -807,7 +807,12 @@ A = \begin{bmatrix}
 <li id="sec-linear-trans-9-6-1-1-5-2"><div class="para" id="sec-linear-trans-9-6-1-1-5-2-1"><span class="process-math">\(\displaystyle \bfv = (2,1,2)\)</span></div></li>
 <li id="sec-linear-trans-9-6-1-1-5-3"><div class="para" id="sec-linear-trans-9-6-1-1-5-3-1"><span class="process-math">\(\displaystyle \bfv = (0,2,1)\)</span></div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-linear-trans-9-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-linear-trans-9-6-2-1"><ol class="lower-alpha">
+<li id="sec-linear-trans-9-6-2-1-1-1"><div class="para" id="sec-linear-trans-9-6-2-1-1-1-1"><span class="process-math">\(\displaystyle A\bfv = (0,1,0)\)</span></div></li>
+<li id="sec-linear-trans-9-6-2-1-1-2"><div class="para" id="sec-linear-trans-9-6-2-1-1-2-1"><span class="process-math">\(\displaystyle A\bfv = (1,2,2)\)</span></div></li>
+<li id="sec-linear-trans-9-6-2-1-1-3"><div class="para" id="sec-linear-trans-9-6-2-1-1-3-1"><span class="process-math">\(\displaystyle A\bfv = (0,1,0)\)</span></div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-trans-9-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-linear-trans-9-7-1-1">
 <div class="para">Consider the following matrix over <span class="process-math">\(\rr\text{:}\)</span>
 </div>
@@ -845,7 +850,25 @@ A = \begin{bmatrix}
 <li id="sec-linear-trans-9-8-1-1-6-1"><div class="para" id="sec-linear-trans-9-8-1-1-6-1-1">Is the vector <span class="process-math">\((1,1,1)\)</span> in the image of <span class="process-math">\(T\text{?}\)</span> Explain your answer.</div></li>
 <li id="sec-linear-trans-9-8-1-1-6-2"><div class="para" id="sec-linear-trans-9-8-1-1-6-2-1">Is <span class="process-math">\(T\)</span> surjective? Explain your answer.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-linear-trans-9-8-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-linear-trans-9-8-2-1"><ol class="lower-alpha">
+<li id="sec-linear-trans-9-8-2-1-1-1"><div class="para logical" id="sec-linear-trans-9-8-2-1-1-1-1">
+<div class="para">No, since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{@{}cc|c@{}} 3 \amp -2 \amp 1 \\
+1 \amp 4 \amp 1 \\
+-1 \amp 0 \amp 1 \end{array}\right] \sim 
+\begin{bmatrix} 1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The pivot in the final column shows that there is no solution to the matrix-vector equation <span class="process-math">\(A\bfx = \bfv\text{,}\)</span> where <span class="process-math">\(\bfv = (1,1,1)\text{.}\)</span>
+</div>
+</div></li>
+<li id="sec-linear-trans-9-8-2-1-1-2"><div class="para" id="sec-linear-trans-9-8-2-1-1-2-1">No. Since in part a we identified a vector which is not in the image of <span class="process-math">\(T\text{,}\)</span> this means that <span class="process-math">\(T\)</span> cannot be surjective.</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-trans-9-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-linear-trans-9-9-1-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be the following matrix over <span class="process-math">\(\ff_7\text{:}\)</span>
 </div>
@@ -908,7 +931,28 @@ T(cf)(x) \amp = \int_0^x (cf)(y)\;dy = \int_0^x cf(y)\;dy\\
 </div>
 <div class="para">Both of these calculations rely on the <em class="emphasis">linear</em> properties of the definite integral.</div>
 </div></div></details></div></article><article class="exercise exercise-like" id="exer-lin-trans-comp"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
-<div class="para" id="exer-lin-trans-comp-1-1">Let <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> be linear transformations between vector spaces over a field <span class="process-math">\(\ff\text{.}\)</span> Prove that <span class="process-math">\(S \circ T\)</span> is also a linear transformation.</div></article><article class="exercise exercise-like" id="sec-linear-trans-9-11-4"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="para" id="exer-lin-trans-comp-1-1">Let <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> be linear transformations between vector spaces over a field <span class="process-math">\(\ff\text{.}\)</span> Prove that <span class="process-math">\(S \circ T\)</span> is also a linear transformation.</div>
+<div class="solutions"><details id="exer-lin-trans-comp-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="exer-lin-trans-comp-2-1">
+<div class="para">Let <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> be vectors in <span class="process-math">\(U\text{.}\)</span> Then, since <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> are both linear transformations, we have</div>
+<div class="displaymath process-math" id="exer-lin-trans-comp-2-1-6">
+\begin{align*}
+(S\circ T)(\bfu + \bfv) \amp = S(T(\bfu + \bfv)) = S(T(\bfu) + T(\bfv))\\
+\amp = S(T(\bfu)) + S(T(\bfv)) = (S\circ T)(\bfu) + (S\circ T)(\bfv)\text{.}
+\end{align*}
+</div>
+<div class="para">This proves that <span class="process-math">\(S\circ T\)</span> has the first property of a linear transformation.</div>
+</div> <div class="para logical" id="exer-lin-trans-comp-2-2">
+<div class="para">We now let <span class="process-math">\(c \in \ff\)</span> and <span class="process-math">\(\bfu \in U\text{.}\)</span> Then, since <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> are both linear transformations, we have</div>
+<div class="displaymath process-math" id="exer-lin-trans-comp-2-2-5">
+\begin{align*}
+(S\circ T)(c\bfu) \amp = S(T(c\bfu)) = S(cT(\bfu))\\
+\amp = cS(T(\bfu)) = c(S\circ T)(\bfu)\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(S\circ T\)</span> is a linear transformation.</div>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="sec-linear-trans-9-11-4"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-linear-trans-9-11-4-1-1">
 <div class="para">Let <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> be linear transformations between vector spaces over a field <span class="process-math">\(\ff\text{.}\)</span>
 </div>
@@ -916,7 +960,21 @@ T(cf)(x) \amp = \int_0^x (cf)(y)\;dy = \int_0^x cf(y)\;dy\\
 <li id="sec-linear-trans-9-11-4-1-1-4-1"><div class="para" id="sec-linear-trans-9-11-4-1-1-4-1-1">Prove that if <span class="process-math">\(S\circ T\)</span> is injective, then <span class="process-math">\(T\)</span> must be injective.</div></li>
 <li id="sec-linear-trans-9-11-4-1-1-4-2"><div class="para" id="sec-linear-trans-9-11-4-1-1-4-2-1">Prove that if <span class="process-math">\(S\circ T\)</span> is surjective, then <span class="process-math">\(S\)</span> must be surjective.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="lin-trans-zero"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
+</div>
+<div class="solutions"><details id="sec-linear-trans-9-11-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sec-linear-trans-9-11-4-2-1"><ol class="lower-alpha">
+<li id="sec-linear-trans-9-11-4-2-1-1-1"><div class="para logical" id="sec-linear-trans-9-11-4-2-1-1-1-1">
+<div class="para">We assume that <span class="process-math">\(S\circ T\)</span> is injective, and we let <span class="process-math">\(\bfu_1\)</span> and <span class="process-math">\(\bfu_2\)</span> be vectors in <span class="process-math">\(U\)</span> with <span class="process-math">\(T(\bfu_1) = T(\bfu_2)\text{.}\)</span> Then, since <span class="process-math">\(S \circ T\)</span> is injective, we have</div>
+<div class="displaymath process-math" id="sec-linear-trans-9-11-4-2-1-1-1-1-7">
+\begin{align*}
+S(T(\bfu_1)) \amp = S(T(\bfu_2))\\
+\bfu_1 \amp = \bfu_2\text{.}
+\end{align*}
+</div>
+<div class="para">This proves that <span class="process-math">\(T\)</span> is injective.</div>
+</div></li>
+<li id="sec-linear-trans-9-11-4-2-1-1-2"><div class="para" id="sec-linear-trans-9-11-4-2-1-1-2-1">We assume that <span class="process-math">\(S\circ T\)</span> is surjective, and we let <span class="process-math">\(\bfw \in W\text{.}\)</span> Since <span class="process-math">\(S\circ T\)</span> is surjective, there is a vector <span class="process-math">\(\bfu \in U\)</span> such that <span class="process-math">\((S\circ T)(\bfu) = \bfw\text{.}\)</span> But this means that <span class="process-math">\(S(T(\bfu)) = \bfw\text{;}\)</span> in other words, <span class="process-math">\(S\)</span> sends <span class="process-math">\(T(\bfu)\)</span> to <span class="process-math">\(\bfw\text{.}\)</span> This proves that <span class="process-math">\(S\)</span> is surjective, since we have found a vector <span class="process-math">\(\bfv=T(\bfu) \in V\)</span> such that <span class="process-math">\(S(\bfv) = \bfw\text{.}\)</span>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="lin-trans-zero"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
 <div class="para logical" id="lin-trans-zero-1-1">
 <div class="para">Let <span class="process-math">\(T:V \to W\)</span> be a function between vector spaces over <span class="process-math">\(\ff\text{.}\)</span>
 </div>

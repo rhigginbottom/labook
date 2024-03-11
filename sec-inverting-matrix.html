@@ -810,7 +810,13 @@ A = \begin{bmatrix}
 </div>
 </div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-inverting-matrix-6-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-inverting-matrix-6-2-2-1"><ol class="lower-alpha">
+<li id="sec-inverting-matrix-6-2-2-1-1-1"><div class="para" id="sec-inverting-matrix-6-2-2-1-1-1-1">The RREF of <span class="process-math">\(A\)</span> is <span class="process-math">\(I_3\)</span> and it takes nine elementary row operations to reduce <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+<li id="sec-inverting-matrix-6-2-2-1-1-2"><div class="para" id="sec-inverting-matrix-6-2-2-1-1-2-1">The RREF of <span class="process-math">\(A\)</span> is <span class="process-math">\(I_3\)</span> and it takes six elementary row operations to reduce <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-inverting-matrix-6-3-1-1">
 <div class="para">For each of the following matrices <span class="process-math">\(A\)</span> in <span class="process-math">\(M_3(\rr)\text{,}\)</span> determine whether or not <span class="process-math">\(A\)</span> is invertible using the algorithm from this section. In the cases where <span class="process-math">\(A\)</span> is invertible, find the inverse.</div>
 <ol class="lower-alpha">
@@ -832,7 +838,25 @@ A = \begin{bmatrix}
 0 \amp 3 \amp 4 \\ 4 \amp 0 \amp 4 \\ 4 \amp 3 \amp 3 
 \end{bmatrix} \)</span></div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-inverting-matrix-6-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-inverting-matrix-6-4-2-1"><ol class="lower-alpha">
+<li id="sec-inverting-matrix-6-4-2-1-1-1"><div class="para logical" id="sec-inverting-matrix-6-4-2-1-1-1-1">
+<div class="para">The matrix <span class="process-math">\(A\)</span> is invertible and the inverse of <span class="process-math">\(A\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 0 \amp 2 \amp 1 \\ 2 \amp 4 \amp 2 \\ 4 \amp 0 \amp 2 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="sec-inverting-matrix-6-4-2-1-1-2"><div class="para logical" id="sec-inverting-matrix-6-4-2-1-1-2-1">
+<div class="para">The matrix <span class="process-math">\(A\)</span> is not invertible since its RREF is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 3 \\ 0 \amp 0 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-inverting-matrix-6-5-1-1">
 <div class="para">Use an inverse matrix to solve the following linear system over <span class="process-math">\(\ff_3\text{:}\)</span>
 </div>
@@ -866,20 +890,20 @@ x + 3y \amp = 4\text{.}
 </div></article><article class="subexercises" id="sec-inverting-matrix-6-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise exercise-like" id="sec-inverting-matrix-6-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-inverting-matrix-6-8-2-1-1">
-<div class="para">Suppose <span class="process-math">\(AB=AC\text{,}\)</span> where <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> are <span class="process-math">\(n\times p\)</span> matrices.</div>
+<div class="para">Suppose <span class="process-math">\(AB=AC\text{,}\)</span> where <span class="process-math">\(A\)</span> is an <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> are <span class="process-math">\(n\times p\)</span> matrices.</div>
 <ol class="lower-alpha">
-<li id="sec-inverting-matrix-6-8-2-1-1-5-1"><div class="para" id="sec-inverting-matrix-6-8-2-1-1-5-1-1">Show that if <span class="process-math">\(A\)</span> is invertible, then <span class="process-math">\(B=C\text{.}\)</span>
+<li id="sec-inverting-matrix-6-8-2-1-1-7-1"><div class="para" id="sec-inverting-matrix-6-8-2-1-1-7-1-1">Show that if <span class="process-math">\(A\)</span> is invertible, then <span class="process-math">\(B=C\text{.}\)</span>
 </div></li>
-<li id="sec-inverting-matrix-6-8-2-1-1-5-2"><div class="para" id="sec-inverting-matrix-6-8-2-1-1-5-2-1">Provide an example where <span class="process-math">\(AB=AC\)</span> but <span class="process-math">\(A\)</span> is not invertible and <span class="process-math">\(B \neq C\text{.}\)</span>
+<li id="sec-inverting-matrix-6-8-2-1-1-7-2"><div class="para" id="sec-inverting-matrix-6-8-2-1-1-7-2-1">Provide an example where <span class="process-math">\(AB=AC\)</span> but <span class="process-math">\(A\)</span> is not invertible and <span class="process-math">\(B \neq C\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-8-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-inverting-matrix-6-8-3-1-1">
-<div class="para">Suppose that <span class="process-math">\((B-C)D=0\text{,}\)</span> where <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> are <span class="process-math">\(m\times n\)</span> matrices and <span class="process-math">\(0\)</span> is the zero matrix.</div>
+<div class="para">Suppose that <span class="process-math">\((B-C)D=0\text{,}\)</span> where <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> are <span class="process-math">\(m\times n\)</span> matrices, <span class="process-math">\(D\)</span> is an <span class="process-math">\(n\times n\)</span> matrix,  and <span class="process-math">\(0\)</span> is the <span class="process-math">\(m\times n\)</span> zero matrix.</div>
 <ol class="lower-alpha">
-<li id="sec-inverting-matrix-6-8-3-1-1-6-1"><div class="para" id="sec-inverting-matrix-6-8-3-1-1-6-1-1">Show that if <span class="process-math">\(D\)</span> is invertible, then <span class="process-math">\(B=C\text{.}\)</span>
+<li id="sec-inverting-matrix-6-8-3-1-1-9-1"><div class="para" id="sec-inverting-matrix-6-8-3-1-1-9-1-1">Show that if <span class="process-math">\(D\)</span> is invertible, then <span class="process-math">\(B=C\text{.}\)</span>
 </div></li>
-<li id="sec-inverting-matrix-6-8-3-1-1-6-2"><div class="para" id="sec-inverting-matrix-6-8-3-1-1-6-2-1">Provide an example where <span class="process-math">\((B-C)D=0\)</span> but <span class="process-math">\(D\)</span> is not invertible and <span class="process-math">\(B \neq C\text{.}\)</span>
+<li id="sec-inverting-matrix-6-8-3-1-1-9-2"><div class="para" id="sec-inverting-matrix-6-8-3-1-1-9-2-1">Provide an example where <span class="process-math">\((B-C)D=0\)</span> but <span class="process-math">\(D\)</span> is not invertible and <span class="process-math">\(B \neq C\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="exer-invertible-product"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>

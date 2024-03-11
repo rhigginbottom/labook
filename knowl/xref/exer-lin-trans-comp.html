@@ -14,6 +14,27 @@
 <article class="exercise exercise-like"><h5 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">12<span class="period">.</span></span>
 </h5>
-<div class="para">Let <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> be linear transformations between vector spaces over a field <span class="process-math">\(\ff\text{.}\)</span> Prove that <span class="process-math">\(S \circ T\)</span> is also a linear transformation.</div></article><span class="incontext"><a class="internal" href="sec-linear-trans.html#exer-lin-trans-comp">in-context</a></span>
+<div class="para">Let <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> be linear transformations between vector spaces over a field <span class="process-math">\(\ff\text{.}\)</span> Prove that <span class="process-math">\(S \circ T\)</span> is also a linear transformation.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> be vectors in <span class="process-math">\(U\text{.}\)</span> Then, since <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> are both linear transformations, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+(S\circ T)(\bfu + \bfv) \amp = S(T(\bfu + \bfv)) = S(T(\bfu) + T(\bfv))\\
+\amp = S(T(\bfu)) + S(T(\bfv)) = (S\circ T)(\bfu) + (S\circ T)(\bfv)\text{.}
+\end{align*}
+</div>
+<div class="para">This proves that <span class="process-math">\(S\circ T\)</span> has the first property of a linear transformation.</div>
+</div> <div class="para logical">
+<div class="para">We now let <span class="process-math">\(c \in \ff\)</span> and <span class="process-math">\(\bfu \in U\text{.}\)</span> Then, since <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> are both linear transformations, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+(S\circ T)(c\bfu) \amp = S(T(c\bfu)) = S(cT(\bfu))\\
+\amp = cS(T(\bfu)) = c(S\circ T)(\bfu)\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(S\circ T\)</span> is a linear transformation.</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="sec-linear-trans.html#exer-lin-trans-comp">in-context</a></span>
 </body>
 </html>
