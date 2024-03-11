@@ -608,6 +608,27 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>A\bfv = (0,1,0)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A\bfv = (1,2,2)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A\bfv = (0,1,0)</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -665,6 +686,31 @@
       </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              No, since 
+              <me>
+                \left[\begin{array}{@{}cc|c@{}} 3 \amp -2 \amp 1 \\
+                1 \amp 4 \amp 1 \\
+                -1 \amp 0 \amp 1 \end{array}\right] \sim 
+                \begin{bmatrix} 1 \amp 0 \amp 0 \\
+                0 \amp 1 \amp 0 \\
+                0 \amp 0 \amp 1 \end{bmatrix}
+              </me>.
+              The pivot in the final column shows that there is no solution to the matrix-vector equation <m>A\bfx = \bfv</m>, where <m>\bfv = (1,1,1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              No. Since in part a we identified a vector which is not in the image of <m>T</m>, this means that <m>T</m> cannot be surjective.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -751,6 +797,24 @@
         Let <m>T:U \to V</m> and <m>S:V \to W</m> be linear transformations between vector spaces over a field <m>\ff</m>. Prove that <m>S \circ T</m> is also a linear transformation.
       </p>
     </statement>
+    <solution>
+      <p>
+        Let <m>\bfu</m> and <m>\bfv</m> be vectors in <m>U</m>. Then, since <m>S</m> and <m>T</m> are both linear transformations, we have
+        <md>
+          <mrow>(S\circ T)(\bfu + \bfv) \amp = S(T(\bfu + \bfv)) = S(T(\bfu) + T(\bfv))</mrow>
+          <mrow> \amp = S(T(\bfu)) + S(T(\bfv)) = (S\circ T)(\bfu) + (S\circ T)(\bfv)</mrow>
+        </md>.
+        This proves that <m>S\circ T</m> has the first property of a linear transformation.
+      </p>
+      <p>
+        We now let <m>c \in \ff</m> and <m>\bfu \in U</m>. Then, since <m>S</m> and <m>T</m> are both linear transformations, we have
+        <md>
+          <mrow>(S\circ T)(c\bfu) \amp = S(T(c\bfu)) = S(cT(\bfu))</mrow>
+          <mrow> \amp = cS(T(\bfu)) = c(S\circ T)(\bfu)</mrow>
+        </md>.
+        This shows that <m>S\circ T</m> is a linear transformation.
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
@@ -770,6 +834,27 @@
         </ol>
       </p>
     </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We assume that <m>S\circ T</m> is injective, and we let <m>\bfu_1</m> and <m>\bfu_2</m> be vectors in <m>U</m> with <m>T(\bfu_1) = T(\bfu_2)</m>. Then, since <m>S \circ T</m> is injective, we have
+              <md>
+                <mrow>S(T(\bfu_1)) \amp = S(T(\bfu_2))</mrow>
+                <mrow>\bfu_1 \amp = \bfu_2</mrow>
+              </md>.
+              This proves that <m>T</m> is injective.
+            </p>
+          </li>
+          <li>
+            <p>
+              We assume that <m>S\circ T</m> is surjective, and we let <m>\bfw \in W</m>. Since <m>S\circ T</m> is surjective, there is a vector <m>\bfu \in U</m> such that <m>(S\circ T)(\bfu) = \bfw</m>. But this means that <m>S(T(\bfu)) = \bfw</m>; in other words, <m>S</m> sends <m>T(\bfu)</m> to <m>\bfw</m>. This proves that <m>S</m> is surjective, since we have found a vector <m>\bfv=T(\bfu) \in V</m> such that <m>S(\bfv) = \bfw</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
   </exercise>
   <exercise xml:id="lin-trans-zero">
     <statement>

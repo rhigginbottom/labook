@@ -447,6 +447,22 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              The RREF of <m>A</m> is <m>I_3</m> and it takes nine elementary row operations to reduce <m>A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The RREF of <m>A</m> is <m>I_3</m> and it takes six elementary row operations to reduce <m>A</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -497,6 +513,28 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              The matrix <m>A</m> is invertible and the inverse of <m>A</m> is 
+              <me>
+                \begin{bmatrix} 0 \amp 2 \amp 1 \\ 2 \amp 4 \amp 2 \\ 4 \amp 0 \amp 2 \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+          <li>
+            <p>
+              The matrix <m>A</m> is not invertible since its RREF is
+              <me>
+                \begin{bmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 3 \\ 0 \amp 0 \amp 0 \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -537,7 +575,7 @@
   <exercise>
     <statement>
       <p>
-        Suppose <m>AB=AC</m>, where <m>B</m> and <m>C</m> are <m>n\times p</m> matrices. 
+        Suppose <m>AB=AC</m>, where <m>A</m> is an <m>n \times n</m> matrix <m>B</m> and <m>C</m> are <m>n\times p</m> matrices. 
         <ol>
           <li>
             <p>
@@ -556,7 +594,7 @@
   <exercise>
     <statement>
       <p>
-        Suppose that <m>(B-C)D=0</m>, where <m>B</m> and <m>C</m> are <m>m\times n</m> matrices and <m>0</m> is the zero matrix. 
+        Suppose that <m>(B-C)D=0</m>, where <m>B</m> and <m>C</m> are <m>m\times n</m> matrices, <m>D</m> is an <m>n\times n</m> matrix,  and <m>0</m> is the <m>m\times n</m> zero matrix. 
         <ol>
           <li>
             <p>

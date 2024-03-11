@@ -678,6 +678,11 @@
         Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which projects a vector onto the line <m>y=x</m>. Find the matrix for <m>T</m>.
       </p>
     </statement>
+    <answer>
+      <p>
+        The matrix for <m>T</m> is <m>\begin{bmatrix} 1/2 \amp 1/2 \\ 1/2 \amp 1/2 \end{bmatrix}</m>.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -699,6 +704,11 @@
         Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which rotates a vector counter-clockwise around the origin by an angle of <m>\theta</m> radians. Find the matrix for <m>T</m>. (Each entry in the matrix should be an expression involving <m>\theta</m>.)
       </p>
     </statement>
+    <answer>
+      <p>
+        The matrix for <m>T</m> is <m>\begin{bmatrix} \cos\theta \amp -\sin\theta \\ \sin\theta \amp \cos\theta \end{bmatrix}</m>.
+      </p>
+    </answer>
   </exercise>
   <subexercises>
   <title>Writing Exercises</title>  
@@ -746,6 +756,11 @@
         Prove <xref ref="prop-matrix-inverse-involution"/>. 
       </p>
     </statement>
+    <solution>
+      <p>
+        Let <m>A \in M_n(\ff)</m> be invertible. This means that <m>A^{-1}</m> exists and that <m>AA^{-1} = A^{-1}A = I_n</m>. These equalities involving <m>A</m> and <m>A^{-1}</m> show that <m>A^{-1}</m> is invertible and that <m>A</m> is a matrix which has the properties of the inverse of <m>A^{-1}</m>. Since the inverse of a matrix is unique, it must be that <m>(A^{-1})^{-1} = A</m>.
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
