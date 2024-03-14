@@ -927,7 +927,68 @@ S(T(\bfu_1)) \amp = S(T(\bfu_2))\\
 \end{equation*}
 </div>
 </div></li>
-</ol></div></div></details></div></article></section></div>
+</ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">3.3.4.6<span class="period">.</span></span></h4>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">If <span class="process-math">\(A = \begin{bmatrix} 2 \amp 4 \\ 1 \amp 3 \end{bmatrix}\text{,}\)</span> then the inverse over <span class="process-math">\(\ff_5\)</span> is <span class="process-math">\(A^{-1} = \begin{bmatrix} 4 \amp 3 \\ 2 \amp 1 \end{bmatrix}\text{.}\)</span> Then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 4 \amp 3 \\ 2 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \\ 4 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="subexercises"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise-like"><h5 class="heading"><span class="codenumber">3.3.4.9<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para logical">
+<div class="para">We suppose that <span class="process-math">\((B-C)D = 0\)</span> where <span class="process-math">\(D\)</span> is invertible. Then we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+(B-C)D \amp = 0 \\
+(B-C)D D^{-1} \amp = 0 D^{-1}\\
+B-C \amp = 0\\
+B  \amp = C\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(B = \begin{bmatrix} 1 \amp 3 \\ 1 \amp 2 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(C = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 0 \end{bmatrix}\text{,}\)</span> and <span class="process-math">\(D = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}\text{.}\)</span> Then, it is true that <span class="process-math">\(D\)</span> is not invertible. We obviously have <span class="process-math">\(B \neq C\text{.}\)</span> But we do have <span class="process-math">\(B - C = \begin{bmatrix} 0 \amp 2 \\ 0 \amp 2 \end{bmatrix}\)</span> and then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(B-C)D = \begin{bmatrix} 0 \amp 2 \\ 0 \amp 2 \end{bmatrix} \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">3.3.4.11<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Suppose that <span class="process-math">\(A\)</span> is invertible and upper triangular. Then we can use elementary row operations to reduce <span class="process-math">\(\left[\begin{array}{@{}c|c@{}} A \amp I \end{array}\right]\)</span> to <span class="process-math">\(\left[\begin{array}{@{}c|c@{}} I \amp A^{-1} \end{array}\right]\text{.}\)</span> But the elementary row operations that are needed for this reduction will be only the scaling operation and the replacement operation, where we add a multiple of one row to another higher up in the matrix. (Specifically, we will only need to add a multiple of a row <span class="process-math">\(i\)</span> to a row <span class="process-math">\(j\)</span> where <span class="process-math">\(i &gt; j\text{.}\)</span>) The elementary matrices that correspond to these specific elementary row operations are all upper triangular. And since the product of upper triangular matrices is upper triangular (this should probably be proved), this shows that <span class="process-math">\(A^{-1}\)</span> will be upper triangular.</div></div></details></div></article></article><h3 class="heading hide-type" title="Exercises 3.4.4">
+<span class="codenumber">3.4</span><span class="space"> </span><span class="title">Subspaces and Linear Transformations</span><br><span class="codenumber">3.4.4</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise-like"><h4 class="heading"><span class="codenumber">3.4.4.1<span class="period">.</span></span></h4>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para">Yes, we calculate <span class="process-math">\(A\bfx = \bfo\text{.}\)</span>
+</div></li>
+<li><div class="para">No, we calculate <span class="process-math">\(A\bfx = (6,6,5)\text{,}\)</span> where we have written the vector horizontally out of convenience.</div></li>
+</ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">3.4.4.7<span class="period">.</span></span></h4>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical"><ol class="lower-alpha"><li>
+<div class="para logical">
+<div class="para">This linear transformation is injective. Observe that if <span class="process-math">\(T\)</span> sends the vector <span class="process-math">\((a,b,c)\)</span> to the zero polynomial, then we have the following linear system in which each equation must hold:</div>
+<div class="displaymath process-math">
+\begin{align*}
+a + b  \amp =0\\
+b + c  \amp = 0\\
+a + b + c  \amp =0\text{.}
+\end{align*}
+</div>
+<div class="para">We can solve this using methods from earlier in this book. We find that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 1 \amp 0 \\ 0 \amp 1 \amp 1 \\ 1 \amp 1 \amp 1 \end{bmatrix} \sim 
+\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">This shows that the only solution to this linear system is the trivial one—that is, where <span class="process-math">\(a = b = c = 0\text{.}\)</span> But this means that the only vector that <span class="process-math">\(T\)</span> sends to the zero polynomial is the zero vector.</div>
+</div>
+<div class="para">This proves that the kernel of <span class="process-math">\(T\)</span> contains only the zero vector, so <span class="process-math">\(T\)</span> is injective.</div>
+</li></ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">3.4.4.9<span class="period">.</span></span></h4>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical"><ol class="lower-alpha"><li><div class="para">This linear transformation is not injective. We can calculate that <span class="process-math">\(T(-\frac{2}{3} - \frac{1}{3}t + t^2) = \bfo\text{.}\)</span> Since this shows that <span class="process-math">\(T\)</span> has a nonzero vector in the kernel, <span class="process-math">\(T\)</span> is not injective.</div></li></ol></div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="apdx-isomorphisms.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

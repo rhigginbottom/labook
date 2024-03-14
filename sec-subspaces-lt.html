@@ -761,7 +761,12 @@ A = \begin{bmatrix}
 <li id="sec-subspaces-lt-6-1-1-1-6-1"><div class="para" id="sec-subspaces-lt-6-1-1-1-6-1-1"><span class="process-math">\(\displaystyle \bfx = \begin{bmatrix} 6 \\ 1 \\ 4 \\ 2 \end{bmatrix}\)</span></div></li>
 <li id="sec-subspaces-lt-6-1-1-1-6-2"><div class="para" id="sec-subspaces-lt-6-1-1-1-6-2-1"><span class="process-math">\(\displaystyle \bfx = \begin{bmatrix} 4 \\ 3 \\ 1 \\ 2 \end{bmatrix}\)</span></div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-subspaces-lt-6-1-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-subspaces-lt-6-1-2-1"><ol class="lower-alpha">
+<li id="sec-subspaces-lt-6-1-2-1-1-1"><div class="para" id="sec-subspaces-lt-6-1-2-1-1-1-1">Yes, we calculate <span class="process-math">\(A\bfx = \bfo\text{.}\)</span>
+</div></li>
+<li id="sec-subspaces-lt-6-1-2-1-1-2"><div class="para" id="sec-subspaces-lt-6-1-2-1-1-2-1">No, we calculate <span class="process-math">\(A\bfx = (6,6,5)\text{,}\)</span> where we have written the vector horizontally out of convenience.</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-subspaces-lt-6-2-1-1">
 <div class="para">For each of the following matrices <span class="process-math">\(A\)</span> over <span class="process-math">\(\rr\text{,}\)</span> find <span class="process-math">\(\nll(A)\)</span> by producing a set of vectors that spans <span class="process-math">\(\nll(A)\text{.}\)</span>
 </div>
@@ -857,7 +862,28 @@ T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) =
 <li id="sec-subspaces-lt-6-7-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-7-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
 <li id="sec-subspaces-lt-6-7-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-7-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-subspaces-lt-6-7-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sec-subspaces-lt-6-7-2-1"><ol class="lower-alpha"><li id="sec-subspaces-lt-6-7-2-1-1-1">
+<div class="para logical" id="sec-subspaces-lt-6-7-2-1-1-1-1">
+<div class="para">This linear transformation is injective. Observe that if <span class="process-math">\(T\)</span> sends the vector <span class="process-math">\((a,b,c)\)</span> to the zero polynomial, then we have the following linear system in which each equation must hold:</div>
+<div class="displaymath process-math" id="sec-subspaces-lt-6-7-2-1-1-1-1-3">
+\begin{align*}
+a + b  \amp =0\\
+b + c  \amp = 0\\
+a + b + c  \amp =0\text{.}
+\end{align*}
+</div>
+<div class="para">We can solve this using methods from earlier in this book. We find that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 1 \amp 0 \\ 0 \amp 1 \amp 1 \\ 1 \amp 1 \amp 1 \end{bmatrix} \sim 
+\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">This shows that the only solution to this linear system is the trivial one—that is, where <span class="process-math">\(a = b = c = 0\text{.}\)</span> But this means that the only vector that <span class="process-math">\(T\)</span> sends to the zero polynomial is the zero vector.</div>
+</div>
+<div class="para" id="sec-subspaces-lt-6-7-2-1-1-1-2">This proves that the kernel of <span class="process-math">\(T\)</span> contains only the zero vector, so <span class="process-math">\(T\)</span> is injective.</div>
+</li></ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-subspaces-lt-6-8-1-1">
 <div class="para">Consider the following linear transformation <span class="process-math">\(T: \rr^2 \to P_2\text{:}\)</span>
 </div>
@@ -884,7 +910,8 @@ T(a+bt+ct^2) = \begin{bmatrix} a-2b \\ 3b + c \end{bmatrix} \text{.}
 <li id="sec-subspaces-lt-6-9-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-9-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
 <li id="sec-subspaces-lt-6-9-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-9-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-subspaces-lt-6-9-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sec-subspaces-lt-6-9-2-1"><ol class="lower-alpha"><li id="sec-subspaces-lt-6-9-2-1-1-1"><div class="para" id="sec-subspaces-lt-6-9-2-1-1-1-1">This linear transformation is not injective. We can calculate that <span class="process-math">\(T(-\frac{2}{3} - \frac{1}{3}t + t^2) = \bfo\text{.}\)</span> Since this shows that <span class="process-math">\(T\)</span> has a nonzero vector in the kernel, <span class="process-math">\(T\)</span> is not injective.</div></li></ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-subspaces-lt-6-10-1-1">
 <div class="para">For each of the following, consider a linear transformation <span class="process-math">\(T: \rr^n \to \rr^m\)</span> which is multiplication by the given <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{.}\)</span> In each case, determine whether or not <span class="process-math">\(T\)</span> is injective and whether or not <span class="process-math">\(T\)</span> is surjective. Explain your answers.</div>
 <ol class="lower-alpha">

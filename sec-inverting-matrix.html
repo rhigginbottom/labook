@@ -876,7 +876,15 @@ x+y \amp = 2\text{.}
 x + 3y \amp = 4\text{.}
 \end{align*}
 </div>
-</div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-inverting-matrix-6-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-inverting-matrix-6-6-2-1">
+<div class="para">If <span class="process-math">\(A = \begin{bmatrix} 2 \amp 4 \\ 1 \amp 3 \end{bmatrix}\text{,}\)</span> then the inverse over <span class="process-math">\(\ff_5\)</span> is <span class="process-math">\(A^{-1} = \begin{bmatrix} 4 \amp 3 \\ 2 \amp 1 \end{bmatrix}\text{.}\)</span> Then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 4 \amp 3 \\ 2 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \\ 4 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-inverting-matrix-6-7-1-1">
 <div class="para">Use an inverse matrix to solve the following linear system over <span class="process-math">\(\rr\text{:}\)</span>
 </div>
@@ -890,7 +898,7 @@ x + 3y \amp = 4\text{.}
 </div></article><article class="subexercises" id="sec-inverting-matrix-6-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise exercise-like" id="sec-inverting-matrix-6-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-inverting-matrix-6-8-2-1-1">
-<div class="para">Suppose <span class="process-math">\(AB=AC\text{,}\)</span> where <span class="process-math">\(A\)</span> is an <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> are <span class="process-math">\(n\times p\)</span> matrices.</div>
+<div class="para">Suppose <span class="process-math">\(AB=AC\text{,}\)</span> where <span class="process-math">\(A\)</span> is an <span class="process-math">\(n \times n\)</span> matrix and <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> are <span class="process-math">\(n\times p\)</span> matrices.</div>
 <ol class="lower-alpha">
 <li id="sec-inverting-matrix-6-8-2-1-1-7-1"><div class="para" id="sec-inverting-matrix-6-8-2-1-1-7-1-1">Show that if <span class="process-math">\(A\)</span> is invertible, then <span class="process-math">\(B=C\text{.}\)</span>
 </div></li>
@@ -906,9 +914,31 @@ x + 3y \amp = 4\text{.}
 <li id="sec-inverting-matrix-6-8-3-1-1-9-2"><div class="para" id="sec-inverting-matrix-6-8-3-1-1-9-2-1">Provide an example where <span class="process-math">\((B-C)D=0\)</span> but <span class="process-math">\(D\)</span> is not invertible and <span class="process-math">\(B \neq C\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="exer-invertible-product"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+</div>
+<div class="solutions"><details id="sec-inverting-matrix-6-8-3-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-inverting-matrix-6-8-3-2-1"><ol class="lower-alpha">
+<li id="sec-inverting-matrix-6-8-3-2-1-1-1"><div class="para logical" id="sec-inverting-matrix-6-8-3-2-1-1-1-1">
+<div class="para">We suppose that <span class="process-math">\((B-C)D = 0\)</span> where <span class="process-math">\(D\)</span> is invertible. Then we have</div>
+<div class="displaymath process-math" id="sec-inverting-matrix-6-8-3-2-1-1-1-1-3">
+\begin{align*}
+(B-C)D \amp = 0 \\
+(B-C)D D^{-1} \amp = 0 D^{-1}\\
+B-C \amp = 0\\
+B  \amp = C\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="sec-inverting-matrix-6-8-3-2-1-1-2"><div class="para logical" id="sec-inverting-matrix-6-8-3-2-1-1-2-1">
+<div class="para">Suppose that <span class="process-math">\(B = \begin{bmatrix} 1 \amp 3 \\ 1 \amp 2 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(C = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 0 \end{bmatrix}\text{,}\)</span> and <span class="process-math">\(D = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}\text{.}\)</span> Then, it is true that <span class="process-math">\(D\)</span> is not invertible. We obviously have <span class="process-math">\(B \neq C\text{.}\)</span> But we do have <span class="process-math">\(B - C = \begin{bmatrix} 0 \amp 2 \\ 0 \amp 2 \end{bmatrix}\)</span> and then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(B-C)D = \begin{bmatrix} 0 \amp 2 \\ 0 \amp 2 \end{bmatrix} \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exer-invertible-product"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
 <div class="para" id="exer-invertible-product-1-1">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <span class="process-math">\(n\times n\)</span> matrices and that <span class="process-math">\(AB\)</span> is invertible. Prove that <span class="process-math">\(A\)</span> is invertible.</div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-8-5"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
-<div class="para" id="sec-inverting-matrix-6-8-5-1-1">Suppose that <span class="process-math">\(A \in M_n(\ff)\)</span> is upper triangular and invertible. (A matrix is <dfn class="terminology">upper triangular</dfn> when all entries below the main diagonal are <span class="process-math">\(0\text{.}\)</span>) Prove that <span class="process-math">\(A^{-1}\)</span> is also upper triangular.</div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-8-6"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para" id="sec-inverting-matrix-6-8-5-1-1">Suppose that <span class="process-math">\(A \in M_n(\ff)\)</span> is upper triangular and invertible. (A matrix is <dfn class="terminology">upper triangular</dfn> when all entries below the main diagonal are <span class="process-math">\(0\text{.}\)</span>) Prove that <span class="process-math">\(A^{-1}\)</span> is also upper triangular.</div>
+<div class="solutions"><details id="sec-inverting-matrix-6-8-5-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="sec-inverting-matrix-6-8-5-2-1">Suppose that <span class="process-math">\(A\)</span> is invertible and upper triangular. Then we can use elementary row operations to reduce <span class="process-math">\(\left[\begin{array}{@{}c|c@{}} A \amp I \end{array}\right]\)</span> to <span class="process-math">\(\left[\begin{array}{@{}c|c@{}} I \amp A^{-1} \end{array}\right]\text{.}\)</span> But the elementary row operations that are needed for this reduction will be only the scaling operation and the replacement operation, where we add a multiple of one row to another higher up in the matrix. (Specifically, we will only need to add a multiple of a row <span class="process-math">\(i\)</span> to a row <span class="process-math">\(j\)</span> where <span class="process-math">\(i &gt; j\text{.}\)</span>) The elementary matrices that correspond to these specific elementary row operations are all upper triangular. And since the product of upper triangular matrices is upper triangular (this should probably be proved), this shows that <span class="process-math">\(A^{-1}\)</span> will be upper triangular.</div></div></details></div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-8-6"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
 <div class="para" id="sec-inverting-matrix-6-8-6-1-1">How many matrices in <span class="process-math">\(M_2(\ff_2)\)</span> are invertible? What proportion of the matrices in <span class="process-math">\(M_2(\ff_2)\)</span> are invertible?</div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-8-7"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
 <div class="para" id="sec-inverting-matrix-6-8-7-1-1">How many matrices in <span class="process-math">\(M_2(\ff_3)\)</span> are invertible? What proportion of the matrices in <span class="process-math">\(M_2(\ff_3)\)</span> are invertible?</div></article><article class="exercise exercise-like" id="sec-inverting-matrix-6-8-8"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
 <div class="para" id="sec-inverting-matrix-6-8-8-1-1">Prove <a href="" class="xref" data-knowl="./knowl/xref/thm-el-matrices-action.html" title="Theorem 3.3.4">Theorem 3.3.4</a>. (You will need three cases.)</div></article></article></section></section></div>
