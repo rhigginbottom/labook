@@ -446,6 +446,22 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Yes, we calculate <m>A\bfx = \bfo</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              No, we calculate <m>A\bfx = (6,6,5)</m>, where we have written the vector horizontally out of convenience.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -576,6 +592,31 @@
         </ol>
       </p>
     </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              This linear transformation is injective. Observe that if <m>T</m> sends the vector <m>(a,b,c)</m> to the zero polynomial, then we have the following linear system in which each equation must hold:
+              <md>
+                <mrow>a + b  \amp =0</mrow>
+                <mrow>b + c  \amp = 0</mrow>
+                <mrow>a + b + c  \amp =0</mrow>
+              </md>.
+              We can solve this using methods from earlier in this book. We find that
+              <me>
+                \begin{bmatrix} 1 \amp 1 \amp 0 \\ 0 \amp 1 \amp 1 \\ 1 \amp 1 \amp 1 \end{bmatrix} \sim 
+                \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+              </me>.
+              This shows that the only solution to this linear system is the trivial one<mdash/>that is, where <m>a = b = c = 0</m>. But this means that the only vector that <m>T</m> sends to the zero polynomial is the zero vector.
+            </p>
+            <p>
+              This proves that the kernel of <m>T</m> contains only the zero vector, so <m>T</m> is injective.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
@@ -621,6 +662,17 @@
         </ol>
       </p>
     </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              This linear transformation is not injective. We can calculate that <m>T(-\frac{2}{3} - \frac{1}{3}t + t^2) = \bfo</m>. Since this shows that <m>T</m> has a nonzero vector in the kernel, <m>T</m> is not injective.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>

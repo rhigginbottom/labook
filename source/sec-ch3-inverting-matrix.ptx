@@ -557,6 +557,14 @@
         </md>.
       </p>
     </statement>
+    <answer>
+      <p>
+        If <m>A = \begin{bmatrix} 2 \amp 4 \\ 1 \amp 3 \end{bmatrix}</m>, then the inverse over <m>\ff_5</m> is <m>A^{-1} = \begin{bmatrix} 4 \amp 3 \\ 2 \amp 1 \end{bmatrix}</m>. Then we have
+        <me>
+          \begin{bmatrix} 4 \amp 3 \\ 2 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \\ 4 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+        </me>.        
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -575,7 +583,7 @@
   <exercise>
     <statement>
       <p>
-        Suppose <m>AB=AC</m>, where <m>A</m> is an <m>n \times n</m> matrix <m>B</m> and <m>C</m> are <m>n\times p</m> matrices. 
+        Suppose <m>AB=AC</m>, where <m>A</m> is an <m>n \times n</m> matrix and <m>B</m> and <m>C</m> are <m>n\times p</m> matrices. 
         <ol>
           <li>
             <p>
@@ -609,6 +617,31 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We suppose that <m>(B-C)D = 0</m> where <m>D</m> is invertible. Then we have
+        <md>
+          <mrow>(B-C)D \amp = 0 </mrow>
+          <mrow>(B-C)D D^{-1} \amp = 0 D^{-1}</mrow>
+          <mrow>B-C \amp = 0</mrow>
+          <mrow>B  \amp = C</mrow>
+        </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose that <m>B = \begin{bmatrix} 1 \amp 3 \\ 1 \amp 2 \end{bmatrix}</m>, <m>C = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m>, and <m>D = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}</m>. Then, it is true that <m>D</m> is not invertible. We obviously have <m>B \neq C</m>. But we do have <m>B - C = \begin{bmatrix} 0 \amp 2 \\ 0 \amp 2 \end{bmatrix}</m> and then 
+              <me>
+                (B-C)D = \begin{bmatrix} 0 \amp 2 \\ 0 \amp 2 \end{bmatrix} \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+        </ol>        
+      </p>
+    </answer>
   </exercise>
   <exercise xml:id="exer-invertible-product">
     <statement>
@@ -623,6 +656,11 @@
         Suppose that <m>A \in M_n(\ff)</m> is upper triangular and invertible. (A matrix is <term>upper triangular</term> when all entries below the main diagonal are <m>0</m>.) Prove that <m>A^{-1}</m> is also upper triangular. 
       </p>
     </statement>
+    <answer>
+      <p>
+        Suppose that <m>A</m> is invertible and upper triangular. Then we can use elementary row operations to reduce <m>\left[\begin{array}{@{}c|c@{}} A \amp I \end{array}\right]</m> to <m>\left[\begin{array}{@{}c|c@{}} I \amp A^{-1} \end{array}\right]</m>. But the elementary row operations that are needed for this reduction will be only the scaling operation and the replacement operation, where we add a multiple of one row to another higher up in the matrix. (Specifically, we will only need to add a multiple of a row <m>i</m> to a row <m>j</m> where <m>i > j</m>.) The elementary matrices that correspond to these specific elementary row operations are all upper triangular. And since the product of upper triangular matrices is upper triangular (this should probably be proved), this shows that <m>A^{-1}</m> will be upper triangular.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
