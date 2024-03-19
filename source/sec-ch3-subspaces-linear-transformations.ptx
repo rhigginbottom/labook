@@ -534,6 +534,36 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              It is easy to calculate <m>A\bfx</m> and see that <m>A\bfx = \bfo</m>. To show that <m>\bfx</m> is not in <m>\col(A)</m>, we form the matrix <m>\left[\begin{array}{@{}c|c@{}} A \amp \bfx \end{array}\right]</m> and row reduce:
+              <me>
+                \left[\begin{array}{@{}cc|c@{}} 3 \amp -1 \amp 2 \\ -9 \amp 3 \amp 6 \end{array}\right] \sim 
+                \left[\begin{array}{@{}cc|c@{}} 1 \amp -1/3 \amp 0 \\ 0 \amp 0 \amp 1 \end{array}\right]
+              </me>.
+              The pivot in the last column shows that <m>\bfx \not \in \col(A)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since 
+              <me>
+                A \sim \begin{bmatrix} 1 \amp -1/3 \\ 0 \amp 0 \end{bmatrix}
+              </me>,
+              we can see that any vector <m>\bfv</m> in the null space of <m>A</m> must be a multiple of <m>\bfx</m>. And since <m>\bfx</m> is not in <m>\col(A)</m>, no non-zero multiple of <m>\bfx</m> can be in <m>\col(A)</m>. This shows that the only vector in <m>\nll(A) \cap \col(A)</m> is the zero vector.
+            </p>
+          </li>
+          <li>
+            <p>
+              Yes, this is possible. Consider the matrix <m>A = \begin{bmatrix} 1 \amp -1 \\ 1 \amp -1 \end{bmatrix}</m>. The vector <m>\bfv = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> is in the null space of <m>A</m>. (This can easily be checked.) Also, since <m>\bfv</m> is a column of <m>A</m>, it is in <m>\col(A)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -614,6 +644,22 @@
               This proves that the kernel of <m>T</m> contains only the zero vector, so <m>T</m> is injective.
             </p>
           </li>
+          <li>
+            <p>
+              We claim that <m>T</m> is surjective. Let <m>p = d + et + ft^2</m> be an arbitrary element of <m>P_2</m>. In order to demonstrate that there is an element <m>\bfx \in \rr^3</m> such that <m>T(\bfx) = p</m>, we need to solve the following linear system:
+              <md>
+                <mrow>a + b  \amp =d</mrow>
+                <mrow>b + c  \amp = e</mrow>
+                <mrow>a + b + c  \amp =f</mrow>
+              </md>.
+              However, the RREF of the coefficient matrix for this system looks like this:
+              <me>
+                \begin{bmatrix} 1 \amp 1 \amp 0 \\ 0 \amp 1 \amp 1 \\ 1 \amp 1 \amp 1 \end{bmatrix} \sim 
+                \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+              </me>.
+              The fact that there is a pivot in each row of this RREF means that a combination of <m>a</m>, <m>b</m>, and <m>c</m> can be found such that <m>T(\bfx) = p</m>. This proves that <m>T</m> is surjective.
+            </p>
+          </li>
         </ol>
       </p>
     </solution>
@@ -668,6 +714,21 @@
           <li>
             <p>
               This linear transformation is not injective. We can calculate that <m>T(-\frac{2}{3} - \frac{1}{3}t + t^2) = \bfo</m>. Since this shows that <m>T</m> has a nonzero vector in the kernel, <m>T</m> is not injective.
+            </p>
+          </li>
+          <li>
+            <p>
+              This linear transformation is surjective. Let <m>\bfx = \begin{bmatrix} d \\ e \end{bmatrix}</m> be an element of <m>\rr^2</m>. We claim that we can find an element <m>p \in P_2</m> such that <m>T(p) = \bfx</m>. If <m>p = a + bt + ct^2</m>, we will need to solve the following system of equations to find the coefficients of <m>p</m>:
+              <md>
+                <mrow>a - 2b \amp = d</mrow>
+                <mrow>3b + c \amp = e</mrow>
+              </md>.
+              But the coefficient matrix of this system has the following RREF:
+              <me>
+                \begin{bmatrix} 1 \amp -2 \amp 0 \\ 0 \amp 3 \amp 1 \end{bmatrix} \sim 
+                \begin{bmatrix} 1 \amp 0 \amp 2/3 \\ 0 \amp 1 \amp 1/3 \end{bmatrix}
+              </me>.
+              The important thing to notice here is that there is a pivot in each row of this RREF. This means that the linear system always has a solution, so we can always find values of <m>a</m>, <m>b</m>, and <m>c</m> such that <m>T(p) = \bfx</m>. This proves that <m>T</m> is surjective.              
             </p>
           </li>
         </ol>
@@ -735,6 +796,25 @@
         </me>.        
       </p>
     </statement>
+    <solution>
+      <p>
+        Since <m>U'</m> is a subspace of <m>U</m>, we must have <m>\bfo \in U'</m>. Further, we know that <m>T(\bfo) = \bfo</m> for all linear transformations. This proves that <m>\bfo \in T(U')</m>.
+      </p>
+      <p>
+        We now let <m>\bfv_1, \bfv_2 \in T(U')</m>. This means that there exist <m>\bfu_1, \bfu_2 \in U'</m> with <m>T(\bfu_1) = \bfv_1</m> and <m>T(\bfu_2) = \bfv_2</m>. Since <m>U'</m> is a subspace of <m>U</m>, we know that <m>\bfu_1 + \bfu_2 \in U'</m>, so <m>T(\bfu_1 + \bfu_2) \in T(U')</m>. However, because of the properties of a linear transformation, we have 
+        <me>
+          T(\bfu_1 + \bfu_2) = T(\bfu_1) + T(\bfu_2) = \bfv_1 + \bfv_2
+        </me>.
+        This proves that <m>\bfv_1 + \bfv_2 \in T(U')</m>, which shows that <m>T(U')</m> is closed under addition.
+      </p>
+      <p>
+        Finally, we let <m>\bfv \in T(U')</m> and <m>c \in \ff</m>. This means that there exists <m>\bfu \in U'</m> such that <m>T(\bfu) = \bfv</m>. Since <m>U'</m> is a subspace of <m>U</m>, we know that <m>c\bfu \in U'</m>, so <m>T(c\bfu) \in T(U')</m>. Using the properties of a linear transformation, we see that 
+        <me>
+          T(c\bfu) = cT(\bfu) = c\bfv
+        </me>.
+        This proves that <m>c\bfv \in T(U')</m>, showing that <m>T(U')</m> is closed under scalar multiplication. This completes the proof that <m>T(U')</m> is a subspace of <m>V</m>.
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
