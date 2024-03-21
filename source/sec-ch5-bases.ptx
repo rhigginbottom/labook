@@ -30,7 +30,7 @@
 <definition xml:id="def-basis">
   <statement>
     <p>
-      Let <m>V</m> be a finite-dimensional vector space. Then a set <m>B = \{\bfv_1, \ldots, \bfv_n \}</m> is a <term>basis</term> for <m>V</m> if <m>B</m> is linearly independent and if <m>V = \spn\{\bfv_1,\ldots, \bfv_n\}</m>. 
+      Let <m>V</m> be a finite-dimensional vector space. Then a set <m>B = \{\bfv_1, \ldots, \bfv_n \}</m> is a <term>basis</term> for <m>V</m> if <m>B</m> is a linearly independent set and if <m>V = \spn\{\bfv_1,\ldots, \bfv_n\}</m>. 
     </p>
   </statement>
 </definition>
@@ -44,7 +44,7 @@
 <example>
   <statement>
     <p>
-      We recall that <m>\bfe_i</m> is the vector in <m>\ff^m</m> with a <m>1</m> in the <m>i</m>th coordinate and zeros elsewhere. Then the set <m>E = \{\bfe_1, \ldots, \bfe_n\}</m> is a basis for <m>\ff^n</m>. If we form the <m>n\times n</m> matrix with these vectors as columns, we see that it is the <m>n\times n</m> identity matrix. Since there is a pivot in every column, <m>E</m> is linearly independent according to <xref ref="alg-linear-independence"/>. Then <xref ref="cor-n-vect-in-f-n"/> tells us that <m>E</m> also spans <m>\ff^n</m>. This proves that <m>E</m> is a basis for <m>\ff^n</m>. 
+      We recall that <m>\bfe_i</m> is the vector in <m>\ff^n</m> with a <m>1</m> in the <m>i</m>th coordinate and zeros elsewhere. Then the set <m>E = \{\bfe_1, \ldots, \bfe_n\}</m> is a basis for <m>\ff^n</m>. If we form the <m>n\times n</m> matrix with these vectors as columns, we see that it is the <m>n\times n</m> identity matrix. Since there is a pivot in every column, <m>E</m> is linearly independent according to <xref ref="alg-linear-independence"/>. Then <xref ref="cor-n-vect-in-f-n"/> tells us that <m>E</m> also spans <m>\ff^n</m>. This proves that <m>E</m> is a basis for <m>\ff^n</m>. 
     </p>
     <p>
       We call this basis the <term>standard basis</term> for <m>\ff^n</m>. 
@@ -103,12 +103,12 @@
       <me>
         \bfv_1 = \begin{bmatrix} 
         5/2 \\ 7/4 \\ 0 \\ 1 \\ 0 
-        \end{bmatrix}, \hspace{12pt} 
+        \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
         \bfv_2 = \begin{bmatrix} 
         2 \\ 5/2 \\ 1 \\ 0 \\ 1 
         \end{bmatrix}
       </me>, 
-      then we can see that <m>\nll = \spn\{\bfv_1, \bfv_2 \}</m>. Further, we see that <m>\{\bfv_1, \bfv_2 \}</m> is linearly independent (neither vector is a scalar multiple of the other), so <m>\{ \bfv_1, \bfv_2 \}</m> is a basis for <m>\nll(A)</m>. 
+      then we can see that <m>\nll(A) = \spn\{\bfv_1, \bfv_2 \}</m>. Further, we see that <m>\{\bfv_1, \bfv_2 \}</m> is linearly independent (neither vector is a scalar multiple of the other), so <m>\{ \bfv_1, \bfv_2 \}</m> is a basis for <m>\nll(A)</m>. 
     </p>
   </statement>
 </example>
@@ -120,7 +120,7 @@
 </note>
 
 <p>
-  Putting some facts together, there is a fairly straightforward condition for when a list of vectors in <m>\ff^m</m> is a basis for that space.
+  Putting some facts together, there is a fairly straightforward condition for when a list of vectors in <m>\ff^n</m> is a basis for that space.
 </p>
   
 <proposition xml:id="prop-basis-of-fn">
@@ -136,23 +136,27 @@
   </proof>
 </proposition>
 
+<p>
+  We put this proposition into action in the following example.
+</p>
+
 <example>
   <statement>
     <p>
       It turns out that it is fairly easy to tell whether a set of two vectors in <m>\rr^2</m> forms a basis for <m>\rr^2</m>. Since linear independence is easy to check with two vectors<mdash></mdash>is either vector a scalar multiple of the other?<mdash></mdash>by <xref ref="prop-basis-of-fn"/> we can focus on this characteristic. This means that the set <m>\{\bfv_1, \bfv_2 \}</m>, where 
       <me>
-        \bfv_1 = \begin{bmatrix} 1 \\ -3 \end{bmatrix}, \hspace{12pt} 
+        \bfv_1 = \begin{bmatrix} 1 \\ -3 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
         \bfv_2 = \begin{bmatrix} -2 \\ 5 \end{bmatrix}
       </me>
       is a basis for <m>\rr^2</m>. Neither vector is a scalar multiple of the other, so the set is linearly independent. And then <xref ref="cor-n-vect-in-f-n"/> tells us that this set must also span <m>\rr^2</m>. (We could also easily see this by row reducing the matrix <m>[\bfv_1\; \bfv_2]</m>.)      
     </p>
     <p>
-      On the other hand, the set <m>\{ \bfw_1, \bfw_2 \}</m>, where 
+      On the other hand, the set <m>W' = \{ \bfw_1, \bfw_2 \}</m>, where 
       <me>
-        \bfw_1 = \begin{bmatrix} 2 \\ -1 \end{bmatrix}, \hspace{12pt} 
+        \bfw_1 = \begin{bmatrix} 2 \\ -1 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
         \bfw_2 = \begin{bmatrix} -4 \\ 2 \end{bmatrix}
       </me>
-      is not a basis for <m>\rr^2</m>. Since <m>\bfw_2 = -2\bfw_1</m>, this set is not linearly independent, so it cannot be a basis.
+      is not a basis for <m>\rr^2</m>. Since <m>\bfw_2 = -2\bfw_1</m>, <m>W'</m> is not linearly independent, so it cannot be a basis.
     </p>
   </statement>
 </example>
@@ -175,9 +179,9 @@
     </statement>
     <proof>
       <p>
-        Suppose that <m>V' = \{\bfv_1, \ldots, \bfv_n \}</m> is a basis of <m>V</m>. Since <m>V = \spn(V')</m>, every vector in <m>V</m> can be written as a linear combination of the vectors in <m>V'</m>. Let <m>\bfv</m> be a vector in <m>V</m>, and suppose that <m>\bfv</m> can be written as a linear combination of the vectors in <m>V'</m> in two ways: 
+        We will prove the forward direction of this biconditional statement directly. Suppose that <m>V' = \{\bfv_1, \ldots, \bfv_n \}</m> is a basis of <m>V</m>. Since <m>V = \spn(V')</m>, every vector in <m>V</m> can be written as a linear combination of the vectors in <m>V'</m>. Let <m>\bfv</m> be a vector in <m>V</m>, and suppose that <m>\bfv</m> can be written as a linear combination of the vectors in <m>V'</m> in two ways: 
         <me>
-          \bfv  = \sum_{i=1}^n a_i\bfv_i, \hspace{12pt} \bfv = \sum_{i=1}^n b_i\bfv_i 
+          \bfv  = \sum_{i=1}^n a_i\bfv_i \hspace{6pt} \text{and} \hspace{6pt} \bfv = \sum_{i=1}^n b_i\bfv_i 
         </me>.
         We want to show that <m>a_i = b_i</m> for each <m>i</m>, <m>1 \le i \le n</m>. Since both of these representations are equal to <m>\bfv</m>, they are equal to each other, so we have 
         <me>
@@ -203,7 +207,7 @@
         <ol>
           <li>
             <p>
-              If <m>B</m> is linearly dependent and a vector <m>\bfw \in B</m> can be written as a linear combination of the rest of the vectors in <m>B</m>, then <m>\spn(B) = \spn(B - \{\bfw \})</m>. 
+              If <m>B</m> is a linearly dependent set and a vector <m>\bfw \in B</m> can be written as a linear combination of the rest of the vectors in <m>B</m>, then <m>\spn(B) = \spn(B - \{\bfw \})</m>. 
             </p>
           </li>
           <li>
@@ -216,7 +220,7 @@
     </statement>
     <proof>
       <p>
-        We suppose that <m>B = \{\bfv_1, \ldots, \bfv_n \}</m>. If <m>B</m> is linearly dependent, then by the Linear Dependence Lemma, there exists a vector <m>\bfv_k \in B</m> such that <m>\bfv_k</m> can be written as a linear combination of the vectors <m>\bfv_1, \ldots, \bfv_{k-1}</m>. We suppose this combination is 
+        We suppose that <m>B = \{\bfv_1, \ldots, \bfv_n \}</m>. If <m>B</m> is linearly dependent, then by the Linear Dependence Lemma (<xref ref="thm-lin-dep-lemma"/>), there exists a vector <m>\bfv_k \in B</m> such that <m>\bfv_k</m> can be written as a linear combination of the vectors <m>\bfv_1, \ldots, \bfv_{k-1}</m>. We suppose this combination is 
         <men xml:id="eqn-rep-vk">
           \bfv_k = a_1\bfv_1 + \cdots + a_{k-1}\bfv_{k-1}
         </men>. 
@@ -224,10 +228,10 @@
         <men xml:id="eqn-rep-v">
           \bfv = c_1 \bfv_1 + \cdots + c_{k-1}\bfv_{k-1} + c_k\bfv_k + c_{k+1}\bfv_{k+1} + \cdots + c_n \bfv_n
         </men>. 
-        Using <xref ref="eqn-rep-vk"/>, we can substitute this expression in for <m>\bfv_k</m> in <xref ref="eqn-rep-v"/> and, once the algebraic dust settles, we will have <m>\bfv</m> written as a combination of the vectors in <m>B - \{\bfv_k\}</m>. This shows that <m>\spn(B) = \spn(B - \{\bfv_k\})</m>. 
+        Using <xref ref="eqn-rep-vk"/>, we can substitute this expression in for <m>\bfv_k</m> in <xref ref="eqn-rep-v"/> and, once the algebraic dust settles, we will have <m>\bfv</m> written as a combination of the vectors in <m>B - \{\bfv_k\}</m>. This shows that <m>\spn(B) = \spn(B - \{\bfv_k\})</m>. (Since <m>B - \{\bfv_k\} \subseteq B</m>, it is true that <m>\spn(B - \{\bfv_k\}) \subseteq \spn(B)</m>. The argument thus far in this proof has established the other subset containment.)
       </p>
       <p>
-        If <m>B</m> is  linearly independent, then it is already a basis for <m>V</m>. If it is linearly dependent, then we can remove a vector according to the above procedure to obtain a set <m>B_1 = B - \{\bfw\}</m> which still spans <m>V</m>. As long as there are two or more vectors in the spanning set, we can repeat this process until we are left with a linearly independent set and thus a basis. If the spanning set is eventually reduced to a single vector, that vector will be nonzero since <m>V</m> is nonzero, and therefore that set will be linearly independent. 
+        If <m>B</m> is  linearly independent, then it is already a basis for <m>V</m>. If it is linearly dependent, then we can remove a vector according to the above procedure to obtain a set <m>B_1 = B - \{\bfw\}</m> which still spans <m>V</m>. As long as there are two or more vectors in the spanning set, we can repeat this process until we are left with a linearly independent set and thus a basis. If the spanning set is eventually reduced to a single vector, that vector will be nonzero since <m>V</m> is nonzero, and therefore that set will be linearly independent and therefore a basis.
       </p>
     </proof>
   </theorem>
@@ -246,13 +250,14 @@
   </corollary>
 
   <p>
-    While the proof of <xref ref="thm-spanning-set"/> provides a way to trim a spanning set down to a basis, it does not offer a practical method for this process. The following algorithm provides that practical method for certain vector spaces.
+    While the proof of <xref ref="thm-spanning-set"/> provides a way to trim a spanning set down to a basis, it does not offer a practical method for this process. The following algorithm provides such a method for certain vector spaces.
   </p>
 
   <algorithm xml:id="alg-find-basis">
     <statement>
       <p>
-        Let <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> be a set of vectors in <m>\ff^m</m>. To find a basis <m>B</m> for <m>\spn(V')</m>, do the following. <ol>
+        Let <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> be a set of vectors in <m>\ff^m</m>. The following steps result in a basis <m>B</m> for <m>\spn(V')</m>. 
+        <ol>
           <li>
             <p>
               Put the matrix <m>A = [\bfv_1 \cdots \bfv_n ]</m> in RREF.           
@@ -346,7 +351,7 @@
         2 \\ -2 \\ 7
         \end{bmatrix}
       </me>. 
-      Find a basis for <m>\spn(V')</m>. Follow <xref ref="examp-colA-basis"/>. 
+      Find a basis for <m>\spn(V')</m>. Follow <xref ref="examp-colA-basis"/> and explain your answer.
     </p>
     <!-- <p>
       A basis is <m>\{\bfv_1, \bfv_2, \bfv_3\}</m>, since <m>\begin{bmatrix} \bfv_1 \amp \bfv_2 \amp \bfv_3 \amp \bfv_4 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp 0 \amp \frac{6}{5} \\ 
@@ -580,25 +585,6 @@
   <exercise>
     <statement>
       <p>
-        Let <m>T: V\to W</m> be a linear transformation between vector spaces, and let <m>B</m> be a basis for <m>V</m>. 
-        <ol>
-          <li>
-            <p>
-              Produce an example to show that <m>T(B)</m> does not need to be a basis of <m>W</m>. 
-            </p>
-          </li>
-          <li>
-            <p>
-              Suppose that <m>T</m> is injective. Must <m>T(B)</m> be a basis for <m>W</m>? If so, prove it. If not, produce a counter-example. 
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         Find a matrix <m>A \in M_2(\rr)</m> such that 
         <me>
           A \begin{bmatrix} 1 \\ 3 \end{bmatrix} = \begin{bmatrix} 2 \\ 0 \end{bmatrix}, \hspace{6pt} 
@@ -627,17 +613,6 @@
   <exercise>
     <statement>
       <p>
-        Suppose that <m>\{\bfv_1, \ldots, \bfv_n \}</m> is a basis for a vector space <m>V</m>. Prove that 
-        <me>
-          \{ \bfv_1 + \bfv_2, \bfv_2 + \bfv_3, \ldots, \bfv_{n-1} + \bfv_n, \bfv_n \}
-        </me>
-        is also a basis for <m>V</m>. 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         Find a subset of the following set which is a basis for <m>P_2</m>:
         <me>
           \{t-1, t^2-2t, t^2-2, t^2+1 \}
@@ -645,6 +620,39 @@
       </p>
     </statement>
   </exercise>
+  <subexercises>
+    <title>Writing Exercises</title>   
+    <exercise>
+      <statement>
+        <p>
+          Let <m>T: V\to W</m> be a linear transformation between vector spaces, and let <m>B</m> be a basis for <m>V</m>. 
+          <ol>
+            <li>
+              <p>
+                Produce an example to show that <m>T(B)</m> does not need to be a basis of <m>W</m>. 
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose that <m>T</m> is injective. Must <m>T(B)</m> be a basis for <m>W</m>? If so, prove it. If not, produce a counter-example. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>   
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>\{\bfv_1, \ldots, \bfv_n \}</m> is a basis for a vector space <m>V</m>. Prove that 
+          <me>
+            \{ \bfv_1 + \bfv_2, \bfv_2 + \bfv_3, \ldots, \bfv_{n-1} + \bfv_n, \bfv_n \}
+          </me>
+          is also a basis for <m>V</m>. 
+        </p>
+      </statement>
+    </exercise>
+  </subexercises>
 </exercises> 
 
 

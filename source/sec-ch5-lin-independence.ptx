@@ -120,7 +120,7 @@
     <p>
       Consider the set <m>V' = \{p_1, p_2\}</m> in <m>P_2</m>, where 
       <me>
-        p_1 = 1 + t, \hspace{6pt} \text{and} \hspace{6pt} p_2 = 3t^2
+        p_1 = 1 + t \hspace{6pt} \text{and} \hspace{6pt} p_2 = 3t^2
       </me>.
       We can see that the set <m>V'</m> is linearly independent, because the only way to produce the zero polynomial from the combination <m>c_1p_1 + c_2p_2</m> is if <m>c_1 = c_2 = 0</m>. This is relatively easy to see in this example, since the degrees of <m>t</m> are not at all shared between <m>p_1</m> and <m>p_2</m>. If the coefficient of <m>t^2</m> must be zero in the sum <m>c_1p_1+c_2p_2</m>, then we must have <m>c_2=0</m>. And if the coefficient of <m>t</m> must be zero in the sum <m>c_1p_1 + c_2p_2</m>, then we must have <m>c_1=0</m>. 
     </p>
@@ -153,7 +153,7 @@
         0 \amp 1 \amp -2.5 
         \end{bmatrix}
       </me>. 
-      This shows us that <m>\bfv_3 = -2.5 \bfv_1 - 2.5 \bfv_2</m>. This proves that the set <m>\{\bfv_1, \bfv_2, \bfv_3\}</m> is linearly dependent. Further, we can conclude that the following is a linear dependence relation for the vectors in the set <m>\{\bfv_1, \bfv_2, \bfv_3\}</m>: 
+      This shows us that <m>\bfv_3 = -2.5 \bfv_1 - 2.5 \bfv_2</m>, which proves that the set <m>\{\bfv_1, \bfv_2, \bfv_3\}</m> is linearly dependent. Further, we can conclude that the following is a linear dependence relation for the vectors in the set <m>\{\bfv_1, \bfv_2, \bfv_3\}</m>: 
       <me>
         \bfo = 2.5 \bfv_1 +2.5 \bfv_2 + \bfv_3 
       </me>.      
@@ -166,13 +166,13 @@
 </p>
 
 <p>
-  Consider a set <m>V' = \{\bfv, \bfw\}</m> in a vector space <m>V</m>. If <m>V'</m> is linearly dependent, then we can write <m>\bfv = c\bfw</m> or <m>\bfw = d\bfv</m> for <m>c,d \in \ff</m>. Conversely, if <m>V'</m> is linearly independent, then we cannot have either <m>\bfv = c\bfw</m> or <m>\bfw = d\bfv</m>. This means that we have a nice characterization of linear dependence for sets of two vectors.
+  Consider a set <m>V' = \{\bfv, \bfw\}</m> in a vector space <m>V</m>. If <m>V'</m> is linearly dependent, then we can write <m>\bfv = c\bfw</m> or <m>\bfw = d\bfv</m> for some <m>c,d \in \ff</m>. Conversely, if <m>V'</m> is linearly independent, then we cannot have either <m>\bfv = c\bfw</m> or <m>\bfw = d\bfv</m>. This means that we have a handy characterization of linear dependence for sets of two vectors.
 </p>
 
 <fact xml:id="fact-lin-ind-two-vectors">
   <statement>
     <p>
-      A set of two vectors <m>\{\bfv, \bfw\}</m> is linearly dependent if and only if at least one of the vectors is a multiple of the other. The set is linearly indepedent if and only if neither vector is a multiple of the other. 
+      A set of two vectors <m>\{\bfv, \bfw\}</m> is linearly dependent if and only if at least one of the vectors is a multiple of the other. The set is linearly independent if and only if neither vector is a multiple of the other. 
     </p>
   </statement>
 </fact>
@@ -184,7 +184,7 @@
       <me>
         \bfv = \begin{bmatrix} 
         4 \\ 3 \\ -3
-        \end{bmatrix}, \hspace{12pt}
+        \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
         \bfw = \begin{bmatrix} 
         2 \\ 3 \\ -1
         \end{bmatrix}
@@ -201,7 +201,7 @@
 <fact xml:id="fact-lin-dep-zero">
   <statement>
     <p>
-      Any set of vectors that contains the zero vector is linearly dependent. This is true because a linear dependence relation is easy to construct. If <m>\{\bfv_1, \ldots, \bfv_n\}</m> is a set of vectors in a vector space <m>V'</m>, and if <m>\bfv_i = \bfo</m>, then 
+      Any set of vectors that contains the zero vector is linearly dependent. This is true because a linear dependence relation is easy to construct. If <m>\{\bfv_1, \ldots, \bfv_n\}</m> is a set of vectors in a vector space <m>V</m>, and if <m>\bfv_i = \bfo</m>, then 
       <me>
         \bfo = 0\bfv_1 + \cdots + 0\bfv_{i-1} + 1 \bfv_i + 0 \bfv_{i+1} + \cdots + 0 \bfv_n
       </me>
@@ -226,7 +226,7 @@
       <me>
         x_1\bfv_1 + \cdots + x_n\bfv_n = \bfo
       </me>. 
-      If the columns of <m>A</m> are linearly independent, then the only solution to this equation is <m>\bfx = \bfo</m>, which means that <m>\nll(A) = \{\bfo\}</m>. Alternatively, if the columns of <m>A</m> are linearly dependent, then <m>\nll(A)</m> contains a non-zero vector<mdash></mdash>namely, the scalars which provide a linear dependence relation for these vectors.
+      If the columns of <m>A</m> are linearly independent, then the only solution to this equation is <m>\bfx = \bfo</m>, which means that <m>\nll(A) = \{\bfo\}</m>. Alternatively, if the columns of <m>A</m> are linearly dependent, then <m>\nll(A)</m> contains a non-zero vector<mdash></mdash>namely, the vector of scalars which provides a linear dependence relation for these vectors.
     </p>
   </proof>
 </proposition>
@@ -240,7 +240,7 @@
 </note>
 
 <p>
-  This proposition provides another test of the linear dependence of a set of vectors.
+  The following proposition provides another test of the linear dependence of a set of vectors.
 </p>
 
 <corollary xml:id="cor-n-vectors-f-m">
@@ -251,19 +251,19 @@
   </statement>
   <proof>
     <p>
-      Let <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> be a set of vectors in <m>\ff^m</m> and let <m>A</m> be the matrix with the <m>\bfv_i</m> as its columns. By <xref ref="cor-underdetermined-system"/> (or, technically, by the version of this result generalized to any field <m>\ff</m>), we know that the <m>m\times n</m> linear system represented by <m>A\bfx = \bfo</m> cannot have a unique solution. Since <m>\bfx = \bfo</m> is a known solution, this means that the columns of <m>A</m> must be linearly dependent by <xref ref="prop-lin-ind-columns"/>. 
+      Let <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> be a set of vectors in <m>\ff^m</m> and let <m>A</m> be the matrix with the elements of <m>V'</m> as its columns. By <xref ref="cor-underdetermined-system"/> (or, technically, by the version of this result generalized to any field <m>\ff</m>), we know that the <m>m\times n</m> linear system represented by <m>A\bfx = \bfo</m> cannot have a unique solution. Since <m>\bfx = \bfo</m> is a known solution, the presence of another solution means that the columns of <m>A</m> must be linearly dependent by <xref ref="prop-lin-ind-columns"/>. 
     </p>
   </proof>
 </corollary>
 
 <p>
-  <xref ref="prop-lin-ind-columns"/> provides us with a nice algorithm to determine whether or not a set of vectors in <m>\ff^m</m> is linearly independent.
+  <xref ref="prop-lin-ind-columns"/> provides us with a convenient algorithm to determine whether or not a set of vectors in <m>\ff^m</m> is linearly independent.
 </p>
 
 <algorithm xml:id="alg-linear-independence">
   <statement>
     <p>
-      Suppose <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> is a set of vectors in a vector space <m>V</m>. In order to determine whether <m>V'</m> is linearly independent, we follow these steps. 
+      Suppose <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> is a set of vectors in a vector space <m>\ff^m</m>. In order to determine whether or not <m>V'</m> is linearly independent, we follow these steps. 
       <ol>
         <li>
           <p>
@@ -332,7 +332,7 @@
 </example>
 
 <p>
-  <xref ref="alg-linear-independence"/> only covers the situations when our vectors come from some <m>\ff^m</m>. In the case of other vector spaces, we will need to do some more work.
+  <xref ref="alg-linear-independence"/> only covers the situations when our vectors come from some <m>\ff^m</m>. In the case of other vector spaces, we will need to do more work.
 </p>
 
 <example>
@@ -345,8 +345,8 @@
       To determine whether or not the set <m>\{p_1, p_2, p_3\}</m> is linearly dependent, we need to return to the definition. Suppose that we have 
       <me>
         c_1p_1 + c_2p_2 + c_3p_3 = 0
-      </me>.
-      In other words, this linear combination is the zero polynomial, so we have 
+      </me>
+      for some <m>c_1, c_2, c_3 \in \rr</m>. In other words, this linear combination is the zero polynomial, so we have 
       <me>
         c_1p_1 + c_2p_2 + c_3p_3 = 0 + 0t + 0t^2
       </me>.
@@ -361,7 +361,7 @@
         <mrow>c_1+c_2+2c_3 \amp = 0</mrow>
         <mrow>-c_2+c_3 \amp = 0</mrow>
       </md>.
-      Our variables in this system are <m>c_1</m>, <m>c_2</m>, and <m>c_3</m>, and we solve this using the techniques from (insert reference here). We find that 
+      Our variables in this system are <m>c_1</m>, <m>c_2</m>, and <m>c_3</m>, and we solve the system using the techniques from <xref ref="sec-results"/>. We find that 
       <me>
         \begin{bmatrix} 
         1 \amp 0 \amp 2 \\ 
@@ -380,7 +380,7 @@
 </example>
 
 <p>
-  We end this section with two more results.
+  We end this section with two additional results.
 </p>
 
 <corollary xml:id="cor-n-vect-in-f-n">
@@ -391,7 +391,7 @@
   </statement>
   <proof>
     <p>
-      Let <m>A = [\bfv_1\; \cdots \bfv_n ] \in M_n(\ff)</m>. By <xref ref="thm-vectors-span-fm"/>, the set <m>V'=\{ \bfv_1, \ldots, \bfv_n \}</m> spans <m>\ff^n</m> if and only if the RREF of <m>A</m> has a pivot in every row. On the other hand, <xref ref="alg-linear-independence"/> says that <m>V'</m> is linearly independent if and only if the RREF of <m>A</m> has a pivot in every column. Since <m>A</m> is a square matrix, each of these happen exactly when the RREF of <m>A</m> is <m>I_n</m>. 
+      Let <m>A = [\bfv_1 \cdots \bfv_n ] \in M_n(\ff)</m>. By <xref ref="thm-vectors-span-fm"/>, we know that the set <m>V'=\{ \bfv_1, \ldots, \bfv_n \}</m> spans <m>\ff^n</m> if and only if the RREF of <m>A</m> has a pivot in every row. On the other hand, <xref ref="alg-linear-independence"/> says that <m>V'</m> is linearly independent if and only if the RREF of <m>A</m> has a pivot in every column. Since <m>A</m> is a square matrix, each of these happen exactly when the RREF of <m>A</m> is <m>I_n</m>. 
     </p>
   </proof>
 </corollary>
@@ -710,25 +710,6 @@
   <exercise>
     <statement>
       <p>
-        Let <m>T:V \to W</m> be a linear transformation between vector spaces. 
-        <ol>
-          <li>
-            <p>
-              Prove that if <m>\{\bfv_1, \ldots, \bfv_n\}</m> is a linearly dependent set in <m>V</m>, then <m>\{T(\bfv_1), \ldots, T(\bfv_n)\}</m> is a linearly dependent set in <m>W</m>. 
-            </p>
-          </li>
-          <li>
-            <p>
-              Prove that if <m>T</m> is injective and if <m>\{T(\bfv_1), \ldots, T(\bfv_n)\}</m> is a linearly dependent set in <m>W</m>, then <m>\{\bfv_1, \ldots, \bfv_n\}</m> is a linearly dependent set in <m>V</m>. 
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         Determine whether or not the following set of vectors is linearly independent in the given vector space.
         <ol>
           <li>
@@ -786,6 +767,46 @@
   <exercise>
     <statement>
       <p>
+        For each of the following subsets <m>\{p_1,p_2,p_3\}</m> of <m>P_2</m>, determine whether the set is linearly dependent or linearly independent. Explain your answers. 
+        <ol>
+          <li>
+            <p>
+              <m>p_1 = 3 + 5t^2</m>, <m>p_2 = -5-3t+2t^2</m>, <m>p_3 = -4-5t-2t^2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>p_1 = 2-t+t^2</m>, <m>p_2 = -3+5t-12t^2</m>, <m>p_3 = -2-2t+8t^2</m>
+            </p>
+          </li>
+        </ol>  
+      </p>
+    </statement>
+  </exercise>
+  <subexercises>
+    <title>Writing Exercises</title>      
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T:V \to W</m> be a linear transformation between vector spaces. 
+        <ol>
+          <li>
+            <p>
+              Prove that if <m>\{\bfv_1, \ldots, \bfv_n\}</m> is a linearly dependent set in <m>V</m>, then <m>\{T(\bfv_1), \ldots, T(\bfv_n)\}</m> is a linearly dependent set in <m>W</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove that if <m>T</m> is injective and if <m>\{T(\bfv_1), \ldots, T(\bfv_n)\}</m> is a linearly dependent set in <m>W</m>, then <m>\{\bfv_1, \ldots, \bfv_n\}</m> is a linearly dependent set in <m>V</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
         Suppose that <m>V_1</m> and <m>V_2</m> are subsets of a vector space <m>V</m>. Prove that if <m>V_1 \subseteq V_2</m> and <m>V_1</m> is linearly dependent, then <m>V_2</m> is linearly dependent. 
       </p>
     </statement>
@@ -818,25 +839,6 @@
       </p>
     </statement>
   </exercise>
-  <exercise>
-    <statement>
-      <p>
-        For each of the following subsets <m>\{p_1,p_2,p_3\}</m> of <m>P_2</m>, determine whether the set is linearly dependent or linearly independent. Explain your answers. 
-        <ol>
-          <li>
-            <p>
-              <m>p_1 = 3 + 5t^2</m>, <m>p_2 = -5-3t+2t^2</m>, <m>p_3 = -4-5t-2t^2</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>p_1 = 2-t+t^2</m>, <m>p_2 = -3+5t-12t^2</m>, <m>p_3 = -2-2t+8t^2</m>
-            </p>
-          </li>
-        </ol>  
-      </p>
-    </statement>
-  </exercise>
   <exercise xml:id="exer-null-lin-ind">
     <statement>
       <p>
@@ -844,6 +846,7 @@
       </p>
     </statement>
   </exercise>
+</subexercises>  
 </exercises> 
 
 
