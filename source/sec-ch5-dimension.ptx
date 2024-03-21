@@ -12,7 +12,7 @@
   <title>The Dimension of a Vector Space</title>
 
 <p>
-  We begin with a lemma that relates span and linear independence and the number of vectors in sets with these properties. We will omit the proof.
+  We are on the threshold of the definition of dimension. We will first present a result that connects (for a finite-dimensional space) the number of vectors needed for a spanning set to the concept of linear independence. We will omit the proof.
 </p>
 
   <lemma xml:id="lem-dim-lin-ind">
@@ -56,7 +56,7 @@
       <me>
         \{ 1, t, \ldots, t^n \}
       </me>.
-      Therefore, <m>P</m> is infinite-dimensional.
+      Therefore, by <xref ref="thm-inf-dimensional"/>, <m>P</m> is infinite-dimensional.
     </p>
   </statement>
 </example>
@@ -114,7 +114,7 @@
 </example>
 
 <p>
-  The proof of the next two results are a consequence of <xref ref="lem-dim-lin-ind"/> and will appear in the exercises. 
+  The proofs of the next two results are a consequence of <xref ref="lem-dim-lin-ind"/> and will appear in the exercises. 
 </p>
 
 <proposition xml:id="prop-dim-less-spanning">
@@ -134,7 +134,134 @@
 </proposition>
 
 <p>
-  When we view dimension as an intrinsic quality of a vector space that allows comparison between spaces, we find something surprising about vector spaces with the same dimension. They are essentially the same! (Note: the reader should read <xref ref="apdx-isomorphisms"/> before going further as some of the ideas, notation, and results used in this proof are found there.)
+  We will now begin to discuss dimension as a tool to compare vector spaces. Linear transformations are the main way we relate vector spaces to each other, so these next results will rely on that machinery.
+</p>
+
+<theorem xml:id="thm-lt-basis">
+  <statement>
+    <p>
+      Suppose that <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> is a basis for a vector space <m>V</m>. Let <m>\{\bfw_1, \ldots, \bfw_n \}</m> be a subset of a vector space <m>W</m>. Then there is a unique linear transformation <m>T:V \to W</m> such that <m>T(\bfv_i)=\bfw_i</m> for each <m>i</m>, <m>1 \le i \le n</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Given <m>\bfv \in V</m>, there exists a unique linear combination 
+      <me>
+        \bfv = \sum_{i=1}^n c_i \bfv_i
+      </me>
+      by <xref ref="thm-unique-rep"/>. We define the function <m>T</m> by 
+      <me>
+        T(\bfv) = \sum_{i=1}^n c_i \bfw_i
+      </me>. 
+      In words, we send a vector <m>\bfv</m> to the linear combination of the <m>\bfw_i</m> vectors using the same weights as those needed to form <m>\bfv</m> from the basis <m>V'</m>. This gives <m>T(\bfv_i)=\bfw_i</m> for each <m>i</m>, so we only need to show that <m>T</m> is a linear transformation. 
+    </p>
+    <p>
+      Suppose that <m>\bfu, \bfv \in V</m> with 
+      <me>
+        \bfv = \sum_{i=1}^n c_i \bfv_i \hspace{6pt} \text{and} \hspace{6pt}
+        \bfu = \sum_{i=1}^n d_i \bfv_i
+      </me>.
+      Then we have 
+      <md>
+        <mrow>T(\bfu + \bfv)  \amp = T \left( \sum_{i=1}^n (c_i+d_i)\bfv_i \right)</mrow>
+        <mrow> \amp = \sum_{i=1}^n (c_i+d_i)\bfw_i</mrow>
+        <mrow> \amp = \sum_{i=1}^n c_i\bfw_i + \sum_{i=1}^n d_i\bfw_i</mrow>
+        <mrow> \amp = T(\bfu) + T(\bfv)</mrow>
+      </md>.
+      Now we let <m>\bfv \in V</m> and <m>c \in \ff</m>. Then, if 
+      <me>
+        \bfv = \sum_{i=1}^n c_i \bfv_i
+      </me>,
+      we have 
+      <md>
+        <mrow> T(c\bfv) \amp = T\left( \sum_{i=1}^n (cc_i) \bfv_i \right)</mrow>
+        <mrow> \amp = \sum_{i=1}^n (cc_i) \bfw_i</mrow>
+        <mrow> \amp = c\sum_{i=1}^n c_i \bfw_i</mrow>
+        <mrow> \amp = cT(\bfv)</mrow>
+      </md>.      
+    </p>
+    <p>
+      We will complete the proof by justifying the claim that <m>T</m> is unique. Suppose that <m>T' \in L(V,W)</m> with <m>T'(\bfv_i)=\bfw_i</m> for each <m>i</m>. Then, if <m>\bfv \in V</m> with 
+      <me>
+        \bfv = \sum_{i=1}^n c_i \bfv_i
+      </me>,
+      we have 
+      <me>
+        T'(\bfv) = T'\left( \sum_{i=1}^n c_i \bfv_i \right) = \sum_{i=1}^n c_i T'(\bfv_i) = \sum_{i=1}^n c_i \bfw_i
+      </me>.
+      This shows that <m>T'(\bfv)=T(\bfv)</m> for every <m>\bfv \in V</m>, so <m>T'=T</m> and <m>T</m> is unique. 
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  The notion of <em>alikeness</em> that we use in linear algebra is when two vector spaces are isomorphic. The reader may wish to consult <xref ref="def-isomorphism"/> for a refresher.
+</p>
+
+<theorem xml:id="thm-isomorphism-basis">
+  <statement>
+    <p>
+      Let <m>T \in L(V,W)</m> and let <m>B = \{\bfv_1, \ldots, \bfv_n \}</m> be a basis for <m>V</m>. Then <m>T</m> is an isomorphism if and only if <m>T(B) = \{T(\bfv_1), \ldots, T(\bfv_n) \}</m> is a basis for <m>W</m>. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We first suppose that <m>T</m> is an isomorphism. We want to show that <m>T(B)</m> is a basis for <m>W</m>, so we begin with linear independence. Suppose that <m>c_1, \ldots, c_n \in \ff</m> such that 
+      <me>
+        \bfo = \sum_{i=1}^n c_i T(\bfv_i)
+      </me>. 
+      Then we have 
+      <me>
+        \bfo = \sum_{i=1}^n T(c_i\bfv_i) = T\left( \sum_{i=1}^n c_i\bfv_i \right)
+      </me>. 
+      Since <m>T</m> is injective, by <xref ref="thm-injective-kernel"/> we must have 
+      <me>
+        \bfo = \sum_{i=1}^n c_i\bfv_i
+      </me>. 
+      But since <m>B</m> is a linearly independent set, we have <m>c_i=0</m> for all <m>i</m>. This proves that <m>T(B)</m> is linearly independent. 
+    </p>
+    <p>
+      We now prove that <m>T(B)</m> spans <m>W</m>. Let <m>\bfw \in W</m>. Since <m>T</m> is surjective, there exists <m>\bfv \in V</m> such that <m>T(\bfv)=\bfw</m>. Since <m>B</m> is a basis for <m>V</m>, we have 
+      <me>
+        \bfv = \sum_{i=1}^n c_i\bfv_i
+      </me>.
+      Then 
+      <me>
+        \bfw = T(\bfv) = T\left( \sum_{i=1}^n c_i\bfv_i \right) = \sum_{i=1}^n c_iT(\bfv_i)
+      </me>. 
+      This proves that <m>W = \spn(T(B))</m>, so <m>T(B)</m> is a basis for <m>W</m>.  
+    </p>
+    <p>
+      We now need to prove the other implication, and we assume that <m>T(B)</m> is a basis for <m>W</m>. We need to show that <m>T</m> is an isomorphism. To show that <m>T</m> is injective, suppose that <m>\bfv \in V</m> such that <m>T(\bfv)=\bfo</m>. We have 
+      <me>
+        \bfv = \sum_{i=1}^n c_i\bfv_i
+      </me>,
+      so 
+      <me>
+        \bfo = T(\bfv) = T\left( \sum_{i=1}^n c_i\bfv_i \right) = \sum_{i=1}^n c_iT(\bfv_i)
+      </me>.
+      But since <m>T(B)</m> is a linearly independent set by assumption, this implies that <m>c_i=0</m> for all <m>i</m>. This means that <m>\bfv = \bfo</m>, so <m>T</m> is injective. 
+    </p>
+    <p>
+      To prove that <m>T</m> is surjective, we assume that <m>\bfw \in W</m>. Since <m>T(B)</m> spans <m>W</m>, we have 
+      <me>
+        \bfw = \sum_{i=1}^n d_iT(\bfv_i)
+      </me>
+      for some <m>d_i \in \ff</m>. We claim that if 
+      <me>
+        \bfv = \sum_{i=1}^n d_i \bfv_i
+      </me>,
+      then <m>T(\bfv) = \bfw</m>. Here is the justification:
+      <me>
+        T(\bfv) = T\left( \sum_{i=1}^n d_i \bfv_i \right) = \sum_{i=1}^n d_i T(\bfv_i) = \bfw
+      </me>.
+      This proves that <m>T</m> is surjective and is thus an isomorphism.
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  When we view dimension as an intrinsic quality of a vector space that allows comparison between spaces, we find something surprising about vector spaces with the same dimension. They are essentially the same! 
 </p>
 
 <theorem xml:id="thm-same-dim-isomorphic">
@@ -160,7 +287,7 @@
 <corollary xml:id="cor-iso-fn">
   <statement>
     <p>
-      If <m>V</m> is a finite-dimensional vector space over <m>\ff</m> and <m>\dim(V) = n</m>, then <m>V</m> is isomorphic to <m>\ff^n</m>. 
+      Every finite-dimensional vector space over <m>\ff</m> of dimension <m>n</m> is isomorphic to <m>\ff^n</m>. 
     </p>
   </statement>
 </corollary>
@@ -245,7 +372,7 @@
 </theorem>
 
 <p>
-  We now have the machinery necessary to prove the following theorem. The proof will appear in the exercises. 
+  We now have the machinery necessary to state the following theorem. The proof will appear in the exercises. 
 </p>
 
 <theorem xml:id="thm-lin-ind-is-basis">
@@ -335,10 +462,10 @@
     <p>
       Consider the following vectors in <m>\rr^2</m>:
       <me>
-        \bfv_1 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}, \hspace{12pt} 
+        \bfv_1 = \begin{bmatrix} 3 \\ 2 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
         \bfv_2 = \begin{bmatrix} -2 \\ 1 \end{bmatrix}
       </me>. 
-      By inspection, why is the set <m>\{\bfv_1, \bfv_2 \}</m> a basis for <m>\rr^2</m>? 
+      By inspection, why is the set <m>\{\bfv_1, \bfv_2 \}</m> a basis for <m>\rr^2</m>? Explain your answer.
     </p>
     <!-- <p>
       linearly independent set by inspection, correct dimension for basis 
@@ -460,25 +587,6 @@
       </p>
     </statement>
   </exercise>
-  <exercise xml:id="exer-num-pivots-matrix">
-    <statement>
-      <p>
-        Let <m>A</m> be a matrix. 
-        <ol>
-          <li>
-            <p>
-              Prove that <m>\dim(\nll(A))</m> is the number of non-pivot columns in <m>A</m>. 
-            </p>
-          </li>
-          <li>
-            <p>
-              Prove that <m>\dim(\col(A))</m> is the number of pivot columns of <m>A</m>. 
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
   <exercise>
     <statement>
       <p>
@@ -541,48 +649,70 @@
       </p>
     </statement>
   </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Let <m>V</m> be the set of all functions <m>\rr\to\rr</m>. Prove that <m>V</m> is infinite-dimensional.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Suppose that <m>T:V\to W</m> is a linear transformation between vector spaces and that <m>V</m> is finite-dimensional. Prove that <m>\dim(\range(T)) \le \dim(V)</m>. 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Prove that <m>\cc^2</m> is two-dimensional as a vector space over <m>\cc</m> but four-dimensional as a vector space over <m>\rr</m>. 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Prove <xref ref="prop-dim-less-spanning"/>. 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Prove <xref ref="prop-dim-greater-lin-ind"/>. 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Prove <xref ref="thm-lin-ind-is-basis"/>. 
-      </p>
-    </statement>
-  </exercise>
+  <subexercises>
+    <title>Writing Exercises</title>  
+    <exercise xml:id="exer-num-pivots-matrix">
+      <statement>
+        <p>
+          Let <m>A</m> be a matrix. 
+          <ol>
+            <li>
+              <p>
+                Prove that <m>\dim(\nll(A))</m> is the number of non-pivot columns in <m>A</m>. 
+              </p>
+            </li>
+            <li>
+              <p>
+                Prove that <m>\dim(\col(A))</m> is the number of pivot columns of <m>A</m>. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>    
+    <exercise>
+      <statement>
+        <p>
+          Let <m>V</m> be the set of all functions <m>\rr\to\rr</m>. Prove that <m>V</m> is infinite-dimensional.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>T:V\to W</m> is a linear transformation between vector spaces and that <m>V</m> is finite-dimensional. Prove that <m>\dim(\range(T)) \le \dim(V)</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that <m>\cc^2</m> is two-dimensional as a vector space over <m>\cc</m> but four-dimensional as a vector space over <m>\rr</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove <xref ref="prop-dim-less-spanning"/>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove <xref ref="prop-dim-greater-lin-ind"/>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove <xref ref="thm-lin-ind-is-basis"/>. 
+        </p>
+      </statement>
+    </exercise>
+  </subexercises>
 </exercises> 
 
 
