@@ -3724,7 +3724,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Linear Independence",
-  "body": " Linear Independence   Linear independence or, rather, its opposite is related to the idea of redundancy . If there is a linear dependence among a set of vectors, then we don't need all of those vectors to produce the same span.     Consider a set of vectors in a vector space . When , we say that is linearly dependent if, for some , , is a linear combination of the other vectors in the set. When , the set is linearly dependent if and only if .      Consider the following three vectors in : . The set is linearly dependent since .    The definition of linear dependence we have given is the intuitive one, but it is not the one most widely used. The following result provides an equivalent definition of linear dependence which is much easier to deploy.    A set of vectors in a vector space is linearly dependent if and only if there exist , not all of which are , such that .    We will first dispatch with the case where . If and is linearly dependent, then . Then the equation is satisfied. Conversely, if for some , then by , , we must have , meaning is linearly dependent.  We now consider the case where . If is linearly dependent, then some vector in , call it , is a linear combination of the other vectors in . This means we have . If we subtract from both sides, we have . Since we now have written as a non-trivial linear combination of the vectors in that is, the coefficients in the linear combination are not all zero we have completed half of the proof.  We now suppose that there is a linear combination of the vectors in , , where not all of the coefficients are zero. If , then we can write . Thus we have written as a linear combination of the other vectors in , so is linearly dependent.    We will often use this statement in as our definition of linear dependence.    A set of vectors in a vector space is linearly independent if it is not linearly dependent.      In practice, we will think about linear independence in the following way. A set is linearly independent if the vector equation has only the trivial solution.  Further, when a set is linearly dependent, then we will call a non-trivial linear combination a linear dependence relation for the vectors in .    We will try to make the notions of linear dependence and linear independence more concrete with some examples.    Consider the set in , where . We can see that the set is linearly independent, because the only way to produce the zero polynomial from the combination is if . This is relatively easy to see in this example, since the degrees of are not at all shared between and . If the coefficient of must be zero in the sum , then we must have . And if the coefficient of must be zero in the sum , then we must have .      Consider the following vectors in : . We can show that by a familiar matrix reduction: . This shows us that . This proves that the set is linearly dependent. Further, we can conclude that the following is a linear dependence relation for the vectors in the set : .    We will see now that sets of two vectors are particularly nice when it comes to determining linear independence. (This means that there was an easier way to complete .)  Consider a set in a vector space . If is linearly dependent, then we can write or for . Conversely, if is linearly independent, then we cannot have either or . This means that we have a nice characterization of linear dependence for sets of two vectors.    A set of two vectors is linearly dependent if and only if at least one of the vectors is a multiple of the other. The set is linearly indepedent if and only if neither vector is a multiple of the other.      If and are the following vectors in , , then the set is linearly independent since neither nor is a multiple of the other.    There is one other notable fact that will allow us to determine whether particular sets of vectors are linearly dependent.    Any set of vectors that contains the zero vector is linearly dependent. This is true because a linear dependence relation is easy to construct. If is a set of vectors in a vector space , and if , then is a non-trivial linear combination of the vectors in the set which produces the zero vector.    A reader may guess that we will occasionally need to figure out whether or not a given set of vectors is linearly independent. As with questions about span, this turns out to be easier when the vector space is for some field . For other sorts of vector spaces, we will need different methods.    Let . The columns of are linearly independent if and only if is the only solution to the linear system represented by the equation . That is, the columns of are linearly independent if and only if .    Let be the columns of . Then the vector form of the equation is . If the columns of are linearly independent, then the only solution to this equation is , which means that . Alternatively, if the columns of are linearly dependent, then contains a non-zero vector namely, the scalars which provide a linear dependence relation for these vectors.      The reader may note the slight abuse of terminology in the previous proof. We referred to the columns of a matrix being linearly dependent or independent instead of the set containing the columns of the matrix. We trust that the reader will forgive and overlook this misstep since the meaning is clear and the verbal gymnastics needed to be precise at all times can prove tiresome.    This proposition provides another test of the linear dependence of a set of vectors.    If , then every set of vectors in is linearly dependent.    Let be a set of vectors in and let be the matrix with the as its columns. By (or, technically, by the version of this result generalized to any field ), we know that the linear system represented by cannot have a unique solution. Since is a known solution, this means that the columns of must be linearly dependent by .     provides us with a nice algorithm to determine whether or not a set of vectors in is linearly independent.    Suppose is a set of vectors in a vector space . In order to determine whether is linearly independent, we follow these steps.   Form the matrix and row reduce it to REF. Call this matrix .    The set is linearly independent if and only if has a pivot in every column.         Consider the following vectors in : . The set is linearly independent because the matrix has as its RREF.      We consider the following vectors in : . The set is linearly dependent, because the matrix which has the as its columns has the following RREF: .     only covers the situations when our vectors come from some . In the case of other vector spaces, we will need to do some more work.    Consider the following three elements of : . To determine whether or not the set is linearly dependent, we need to return to the definition. Suppose that we have . In other words, this linear combination is the zero polynomial, so we have . For these specific polynomials, this means we have . Since the coefficients of the corresponding powers of must be equal on both sides of this equation, we have a linear system to solve: . Our variables in this system are , , and , and we solve this using the techniques from (insert reference here). We find that . This shows that the only solution to this linear system is the trivial one: . That means that the set is linearly independent.    We end this section with two more results.    A set of vectors in is linearly independent if and only if that set spans .    Let . By , the set spans if and only if the RREF of has a pivot in every row. On the other hand, says that is linearly independent if and only if the RREF of has a pivot in every column. Since is a square matrix, each of these happen exactly when the RREF of is .    The following result appears to be little more than a slight restatement of the definition of linear dependence. However, the precise wording used in this theorem turns out to be quite useful in proving some results later in the text.   The Linear Dependence Lemma   Suppose is a linearly dependent set in a vector space and that . Then there exists such that .    Let be a linearly dependent set of vectors in a vector space , and suppose that . Then there exist scalars , not all of which are zero, such that . Let be the largest index such that . It must be that since we assumed . Then . Since , we have . This shows that and completes the proof.     It is important to record that doesn't say that in linearly dependent sets every vector is a combination of the vectors that preceed it. We merely have the existence of a vector with that property.     For each of the following, determine whether the given set of vectors in is linearly dependent or linearly independent. (You should NOT need to do any matrix row reduction to figure this out.) Refer to a fact or theorem from the section when you are giving your answer.    where       where       where       where         Determine whether the following sets in are linearly independent. Explain your answers. You should not need to do any calculations.                          For each of the following, determine by inspection (without doing any calculation) whether the given set is linearly dependent or linearly independent. Explain your answers.    in where      in where      in where      in where      in where        Determine the value(s) of , if any, that will make the set linearly independent in .                Determine the value(s) of , if any, that will make the set linearly dependent in , if .     How many pivot columns must a matrix have if its columns are linearly independent? Explain.    Determine whether the following statements are true or false. Justify your answer either way.   If is a subset of a vector space and is not a scalar multiple of , then is linearly independent.    If is a subset of a vector space and is not a linear combination of , , and , then is linearly independent.    If is a subset of a vector space and both and are linearly independent, then is linearly independent.    If is a subset of a vector space and is linearly independent, then is also linearly independent.       Let be a linear transformation between vector spaces.   Prove that if is a linearly dependent set in , then is a linearly dependent set in .    Prove that if is injective and if is a linearly dependent set in , then is a linearly dependent set in .       Determine whether or not the following set of vectors is linearly independent in the given vector space.    in if      in if      in if        Suppose that and are subsets of a vector space . Prove that if and is linearly dependent, then is linearly dependent.    Let and let be a linear transformation.   Prove that if if and only if .    Prove that is injective if and only if it is surjective.       Let be a vector space over and let be a subset of . Prove that is linearly dependent if and only if there exist integers  , not all of which are zero, such that .    For each of the following subsets of , determine whether the set is linearly dependent or linearly independent. Explain your answers.    , ,      , ,        Let and suppose that . Prove that the set of vectors that spans is linearly independent.    "
+  "body": " Linear Independence   Linear independence or, rather, its opposite is related to the idea of redundancy . If there is a linear dependence among a set of vectors, then we don't need all of those vectors to produce the same span.     Consider a set of vectors in a vector space . When , we say that is linearly dependent if, for some , , is a linear combination of the other vectors in the set. When , the set is linearly dependent if and only if .      Consider the following three vectors in : . The set is linearly dependent since .    The definition of linear dependence we have given is the intuitive one, but it is not the one most widely used. The following result provides an equivalent definition of linear dependence which is much easier to deploy.    A set of vectors in a vector space is linearly dependent if and only if there exist , not all of which are , such that .    We will first dispatch with the case where . If and is linearly dependent, then . Then the equation is satisfied. Conversely, if for some , then by , , we must have , meaning is linearly dependent.  We now consider the case where . If is linearly dependent, then some vector in , call it , is a linear combination of the other vectors in . This means we have . If we subtract from both sides, we have . Since we now have written as a non-trivial linear combination of the vectors in that is, the coefficients in the linear combination are not all zero we have completed half of the proof.  We now suppose that there is a linear combination of the vectors in , , where not all of the coefficients are zero. If , then we can write . Thus we have written as a linear combination of the other vectors in , so is linearly dependent.    We will often use this statement in as our definition of linear dependence.    A set of vectors in a vector space is linearly independent if it is not linearly dependent.      In practice, we will think about linear independence in the following way. A set is linearly independent if the vector equation has only the trivial solution.  Further, when a set is linearly dependent, then we will call a non-trivial linear combination a linear dependence relation for the vectors in .    We will try to make the notions of linear dependence and linear independence more concrete with some examples.    Consider the set in , where . We can see that the set is linearly independent, because the only way to produce the zero polynomial from the combination is if . This is relatively easy to see in this example, since the degrees of are not at all shared between and . If the coefficient of must be zero in the sum , then we must have . And if the coefficient of must be zero in the sum , then we must have .      Consider the following vectors in : . We can show that by a familiar matrix reduction: . This shows us that , which proves that the set is linearly dependent. Further, we can conclude that the following is a linear dependence relation for the vectors in the set : .    We will see now that sets of two vectors are particularly nice when it comes to determining linear independence. (This means that there was an easier way to complete .)  Consider a set in a vector space . If is linearly dependent, then we can write or for some . Conversely, if is linearly independent, then we cannot have either or . This means that we have a handy characterization of linear dependence for sets of two vectors.    A set of two vectors is linearly dependent if and only if at least one of the vectors is a multiple of the other. The set is linearly independent if and only if neither vector is a multiple of the other.      If and are the following vectors in , , then the set is linearly independent since neither nor is a multiple of the other.    There is one other notable fact that will allow us to determine whether particular sets of vectors are linearly dependent.    Any set of vectors that contains the zero vector is linearly dependent. This is true because a linear dependence relation is easy to construct. If is a set of vectors in a vector space , and if , then is a non-trivial linear combination of the vectors in the set which produces the zero vector.    A reader may guess that we will occasionally need to figure out whether or not a given set of vectors is linearly independent. As with questions about span, this turns out to be easier when the vector space is for some field . For other sorts of vector spaces, we will need different methods.    Let . The columns of are linearly independent if and only if is the only solution to the linear system represented by the equation . That is, the columns of are linearly independent if and only if .    Let be the columns of . Then the vector form of the equation is . If the columns of are linearly independent, then the only solution to this equation is , which means that . Alternatively, if the columns of are linearly dependent, then contains a non-zero vector namely, the vector of scalars which provides a linear dependence relation for these vectors.      The reader may note the slight abuse of terminology in the previous proof. We referred to the columns of a matrix being linearly dependent or independent instead of the set containing the columns of the matrix. We trust that the reader will forgive and overlook this misstep since the meaning is clear and the verbal gymnastics needed to be precise at all times can prove tiresome.    The following proposition provides another test of the linear dependence of a set of vectors.    If , then every set of vectors in is linearly dependent.    Let be a set of vectors in and let be the matrix with the elements of as its columns. By (or, technically, by the version of this result generalized to any field ), we know that the linear system represented by cannot have a unique solution. Since is a known solution, the presence of another solution means that the columns of must be linearly dependent by .     provides us with a convenient algorithm to determine whether or not a set of vectors in is linearly independent.    Suppose is a set of vectors in a vector space . In order to determine whether or not is linearly independent, we follow these steps.   Form the matrix and row reduce it to REF. Call this matrix .    The set is linearly independent if and only if has a pivot in every column.         Consider the following vectors in : . The set is linearly independent because the matrix has as its RREF.      We consider the following vectors in : . The set is linearly dependent, because the matrix which has the as its columns has the following RREF: .     only covers the situations when our vectors come from some . In the case of other vector spaces, we will need to do more work.    Consider the following three elements of : . To determine whether or not the set is linearly dependent, we need to return to the definition. Suppose that we have for some . In other words, this linear combination is the zero polynomial, so we have . For these specific polynomials, this means we have . Since the coefficients of the corresponding powers of must be equal on both sides of this equation, we have a linear system to solve: . Our variables in this system are , , and , and we solve the system using the techniques from . We find that . This shows that the only solution to this linear system is the trivial one: . That means that the set is linearly independent.    We end this section with two additional results.    A set of vectors in is linearly independent if and only if that set spans .    Let . By , we know that the set spans if and only if the RREF of has a pivot in every row. On the other hand, says that is linearly independent if and only if the RREF of has a pivot in every column. Since is a square matrix, each of these happen exactly when the RREF of is .    The following result appears to be little more than a slight restatement of the definition of linear dependence. However, the precise wording used in this theorem turns out to be quite useful in proving some results later in the text.   The Linear Dependence Lemma   Suppose is a linearly dependent set in a vector space and that . Then there exists such that .    Let be a linearly dependent set of vectors in a vector space , and suppose that . Then there exist scalars , not all of which are zero, such that . Let be the largest index such that . It must be that since we assumed . Then . Since , we have . This shows that and completes the proof.     It is important to record that doesn't say that in linearly dependent sets every vector is a combination of the vectors that preceed it. We merely have the existence of a vector with that property.     For each of the following, determine whether the given set of vectors in is linearly dependent or linearly independent. (You should NOT need to do any matrix row reduction to figure this out.) Refer to a fact or theorem from the section when you are giving your answer.    where       where       where       where         Determine whether the following sets in are linearly independent. Explain your answers. You should not need to do any calculations.                          For each of the following, determine by inspection (without doing any calculation) whether the given set is linearly dependent or linearly independent. Explain your answers.    in where      in where      in where      in where      in where        Determine the value(s) of , if any, that will make the set linearly independent in .                Determine the value(s) of , if any, that will make the set linearly dependent in , if .     How many pivot columns must a matrix have if its columns are linearly independent? Explain.    Determine whether the following statements are true or false. Justify your answer either way.   If is a subset of a vector space and is not a scalar multiple of , then is linearly independent.    If is a subset of a vector space and is not a linear combination of , , and , then is linearly independent.    If is a subset of a vector space and both and are linearly independent, then is linearly independent.    If is a subset of a vector space and is linearly independent, then is also linearly independent.       Determine whether or not the following set of vectors is linearly independent in the given vector space.    in if      in if      in if        For each of the following subsets of , determine whether the set is linearly dependent or linearly independent. Explain your answers.    , ,      , ,        Writing Exercises   Let be a linear transformation between vector spaces.   Prove that if is a linearly dependent set in , then is a linearly dependent set in .    Prove that if is injective and if is a linearly dependent set in , then is a linearly dependent set in .       Suppose that and are subsets of a vector space . Prove that if and is linearly dependent, then is linearly dependent.    Let and let be a linear transformation.   Prove that if if and only if .    Prove that is injective if and only if it is surjective.       Let be a vector space over and let be a subset of . Prove that is linearly dependent if and only if there exist integers  , not all of which are zero, such that .    Let and suppose that . Prove that the set of vectors that spans is linearly independent.     "
 },
 {
   "id": "def-lin-dep",
@@ -3787,7 +3787,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.1.7",
   "title": "",
-  "body": "  Consider the following vectors in : . We can show that by a familiar matrix reduction: . This shows us that . This proves that the set is linearly dependent. Further, we can conclude that the following is a linear dependence relation for the vectors in the set : .   "
+  "body": "  Consider the following vectors in : . We can show that by a familiar matrix reduction: . This shows us that , which proves that the set is linearly dependent. Further, we can conclude that the following is a linear dependence relation for the vectors in the set : .   "
 },
 {
   "id": "fact-lin-ind-two-vectors",
@@ -3796,7 +3796,7 @@ var ptx_lunr_docs = [
   "type": "Fact",
   "number": "5.1.8",
   "title": "",
-  "body": "  A set of two vectors is linearly dependent if and only if at least one of the vectors is a multiple of the other. The set is linearly indepedent if and only if neither vector is a multiple of the other.   "
+  "body": "  A set of two vectors is linearly dependent if and only if at least one of the vectors is a multiple of the other. The set is linearly independent if and only if neither vector is a multiple of the other.   "
 },
 {
   "id": "sec-lin-ind-16",
@@ -3823,7 +3823,7 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "5.1.11",
   "title": "",
-  "body": "  Let . The columns of are linearly independent if and only if is the only solution to the linear system represented by the equation . That is, the columns of are linearly independent if and only if .    Let be the columns of . Then the vector form of the equation is . If the columns of are linearly independent, then the only solution to this equation is , which means that . Alternatively, if the columns of are linearly dependent, then contains a non-zero vector namely, the scalars which provide a linear dependence relation for these vectors.   "
+  "body": "  Let . The columns of are linearly independent if and only if is the only solution to the linear system represented by the equation . That is, the columns of are linearly independent if and only if .    Let be the columns of . Then the vector form of the equation is . If the columns of are linearly independent, then the only solution to this equation is , which means that . Alternatively, if the columns of are linearly dependent, then contains a non-zero vector namely, the vector of scalars which provides a linear dependence relation for these vectors.   "
 },
 {
   "id": "sec-lin-ind-21",
@@ -3841,7 +3841,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "5.1.13",
   "title": "",
-  "body": "  If , then every set of vectors in is linearly dependent.    Let be a set of vectors in and let be the matrix with the as its columns. By (or, technically, by the version of this result generalized to any field ), we know that the linear system represented by cannot have a unique solution. Since is a known solution, this means that the columns of must be linearly dependent by .   "
+  "body": "  If , then every set of vectors in is linearly dependent.    Let be a set of vectors in and let be the matrix with the elements of as its columns. By (or, technically, by the version of this result generalized to any field ), we know that the linear system represented by cannot have a unique solution. Since is a known solution, the presence of another solution means that the columns of must be linearly dependent by .   "
 },
 {
   "id": "alg-linear-independence",
@@ -3850,7 +3850,7 @@ var ptx_lunr_docs = [
   "type": "Algorithm",
   "number": "5.1.14",
   "title": "",
-  "body": "  Suppose is a set of vectors in a vector space . In order to determine whether is linearly independent, we follow these steps.   Form the matrix and row reduce it to REF. Call this matrix .    The set is linearly independent if and only if has a pivot in every column.      "
+  "body": "  Suppose is a set of vectors in a vector space . In order to determine whether or not is linearly independent, we follow these steps.   Form the matrix and row reduce it to REF. Call this matrix .    The set is linearly independent if and only if has a pivot in every column.      "
 },
 {
   "id": "sec-lin-ind-26",
@@ -3877,7 +3877,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.1.17",
   "title": "",
-  "body": "  Consider the following three elements of : . To determine whether or not the set is linearly dependent, we need to return to the definition. Suppose that we have . In other words, this linear combination is the zero polynomial, so we have . For these specific polynomials, this means we have . Since the coefficients of the corresponding powers of must be equal on both sides of this equation, we have a linear system to solve: . Our variables in this system are , , and , and we solve this using the techniques from (insert reference here). We find that . This shows that the only solution to this linear system is the trivial one: . That means that the set is linearly independent.   "
+  "body": "  Consider the following three elements of : . To determine whether or not the set is linearly dependent, we need to return to the definition. Suppose that we have for some . In other words, this linear combination is the zero polynomial, so we have . For these specific polynomials, this means we have . Since the coefficients of the corresponding powers of must be equal on both sides of this equation, we have a linear system to solve: . Our variables in this system are , , and , and we solve the system using the techniques from . We find that . This shows that the only solution to this linear system is the trivial one: . That means that the set is linearly independent.   "
 },
 {
   "id": "cor-n-vect-in-f-n",
@@ -3886,7 +3886,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "5.1.18",
   "title": "",
-  "body": "  A set of vectors in is linearly independent if and only if that set spans .    Let . By , the set spans if and only if the RREF of has a pivot in every row. On the other hand, says that is linearly independent if and only if the RREF of has a pivot in every column. Since is a square matrix, each of these happen exactly when the RREF of is .   "
+  "body": "  A set of vectors in is linearly independent if and only if that set spans .    Let . By , we know that the set spans if and only if the RREF of has a pivot in every row. On the other hand, says that is linearly independent if and only if the RREF of has a pivot in every column. Since is a square matrix, each of these happen exactly when the RREF of is .   "
 },
 {
   "id": "thm-lin-dep-lemma",
@@ -3976,7 +3976,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.1.6",
   "title": "",
-  "body": " Let be a linear transformation between vector spaces.   Prove that if is a linearly dependent set in , then is a linearly dependent set in .    Prove that if is injective and if is a linearly dependent set in , then is a linearly dependent set in .     "
+  "body": " Determine whether or not the following set of vectors is linearly independent in the given vector space.    in if      in if      in if      "
 },
 {
   "id": "sec-lin-ind-36-7",
@@ -3985,43 +3985,43 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.1.7",
   "title": "",
-  "body": " Determine whether or not the following set of vectors is linearly independent in the given vector space.    in if      in if      in if      "
+  "body": " For each of the following subsets of , determine whether the set is linearly dependent or linearly independent. Explain your answers.    , ,      , ,      "
 },
 {
-  "id": "sec-lin-ind-36-8",
+  "id": "sec-lin-ind-36-8-2",
   "level": "2",
-  "url": "sec-lin-ind.html#sec-lin-ind-36-8",
+  "url": "sec-lin-ind.html#sec-lin-ind-36-8-2",
   "type": "Exercise",
   "number": "5.1.8",
+  "title": "",
+  "body": " Let be a linear transformation between vector spaces.   Prove that if is a linearly dependent set in , then is a linearly dependent set in .    Prove that if is injective and if is a linearly dependent set in , then is a linearly dependent set in .     "
+},
+{
+  "id": "sec-lin-ind-36-8-3",
+  "level": "2",
+  "url": "sec-lin-ind.html#sec-lin-ind-36-8-3",
+  "type": "Exercise",
+  "number": "5.1.9",
   "title": "",
   "body": " Suppose that and are subsets of a vector space . Prove that if and is linearly dependent, then is linearly dependent.  "
 },
 {
-  "id": "sec-lin-ind-36-9",
+  "id": "sec-lin-ind-36-8-4",
   "level": "2",
-  "url": "sec-lin-ind.html#sec-lin-ind-36-9",
+  "url": "sec-lin-ind.html#sec-lin-ind-36-8-4",
   "type": "Exercise",
-  "number": "5.1.9",
+  "number": "5.1.10",
   "title": "",
   "body": " Let and let be a linear transformation.   Prove that if if and only if .    Prove that is injective if and only if it is surjective.     "
 },
 {
-  "id": "sec-lin-ind-36-10",
+  "id": "sec-lin-ind-36-8-5",
   "level": "2",
-  "url": "sec-lin-ind.html#sec-lin-ind-36-10",
-  "type": "Exercise",
-  "number": "5.1.10",
-  "title": "",
-  "body": " Let be a vector space over and let be a subset of . Prove that is linearly dependent if and only if there exist integers  , not all of which are zero, such that .  "
-},
-{
-  "id": "sec-lin-ind-36-11",
-  "level": "2",
-  "url": "sec-lin-ind.html#sec-lin-ind-36-11",
+  "url": "sec-lin-ind.html#sec-lin-ind-36-8-5",
   "type": "Exercise",
   "number": "5.1.11",
   "title": "",
-  "body": " For each of the following subsets of , determine whether the set is linearly dependent or linearly independent. Explain your answers.    , ,      , ,      "
+  "body": " Let be a vector space over and let be a subset of . Prove that is linearly dependent if and only if there exist integers  , not all of which are zero, such that .  "
 },
 {
   "id": "exer-null-lin-ind",
@@ -4039,7 +4039,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.2",
   "title": "Basis of a Vector Space",
-  "body": " Basis of a Vector Space   We have previously examined when a set of vectors spans a vector space. In this section, we will learn how to work with the most efficient spanning set possible.    The Definition of a Basis  We begin with the notion of finite- and infinite-dimensional vector spaces.    A vector space is finite-dimensional if there is a finite set of vectors which spans . A vector space is infinite-dimensional if it is not finite-dimensional.    We recall that linear independence in was introduced as a way to eliminate redundancy. We pick up on this idea in the next definition.    Let be a finite-dimensional vector space. Then a set is a basis for if is linearly independent and if .     The notion of a basis exists for infinite-dimensional vector spaces, but since the overwhelming majority of our work will be with finite-dimensional spaces, we have only given the definition in that setting.     We recall that is the vector in with a in the th coordinate and zeros elsewhere. Then the set is a basis for . If we form the matrix with these vectors as columns, we see that it is the identity matrix. Since there is a pivot in every column, is linearly independent according to . Then tells us that also spans . This proves that is a basis for .  We call this basis the standard basis for .      We now consider the set within the vector space . Since any vector in can be written as , it is clear that spans . It is also true that is linearly independent: the set is linearly independent since neither vector is a scalar multiple of the other. And then since is not a linear combination of and , we conclude that is linearly independent by (the contrapositive of) the Linear Dependence Lemma ( ). This proves that is a basis for .  The analogous basis for , , is often called the standard basis for .      Consider the following matrix : . We will find a basis for .  Following the procedure we first encountered in , we start by finding the RREF of : . We see that and are free variables, and that any vector in can be written as . If we label the vectors , then we can see that . Further, we see that is linearly independent (neither vector is a scalar multiple of the other), so is a basis for .     What we observed in is true more generally. Since the method we use to find a spanning set for always produces a linearly independent set (see ), this method will always produce a basis for .   Putting some facts together, there is a fairly straightforward condition for when a list of vectors in is a basis for that space.    The set is a basis for if and only if the RREF of the matrix is .    From we know that the set spans if and only if the RREF of has a pivot in every row. Additionally, tells us that is linearly independent if and only if the RREF of has a pivot in each column. The only way a matrix in RREF can have a pivot in every row and every column is if that RREF is the identity matrix.      It turns out that it is fairly easy to tell whether a set of two vectors in forms a basis for . Since linear independence is easy to check with two vectors is either vector a scalar multiple of the other? by we can focus on this characteristic. This means that the set , where is a basis for . Neither vector is a scalar multiple of the other, so the set is linearly independent. And then tells us that this set must also span . (We could also easily see this by row reducing the matrix .)  On the other hand, the set , where is not a basis for . Since , this set is not linearly independent, so it cannot be a basis.      The Properties of a Basis  Having a basis is a powerful tool. In particular, it guarantees a uniqueness that is quite useful.   The Unique Representation Theorem   A set of vectors in a vector space is a basis for if and only if each element of can be uniquely represented as a linear combination of the vectors in .    Suppose that is a basis of . Since , every vector in can be written as a linear combination of the vectors in . Let be a vector in , and suppose that can be written as a linear combination of the vectors in in two ways: . We want to show that for each , . Since both of these representations are equal to , they are equal to each other, so we have . Since is a linearly independent set (since we are assuming it is a basis), it must be that for each . Therefore, and the representation of is unique.  For the other direction, we suppose that every element of can be uniquely represented as a linear combination of the vectors in . Since every element of can be represented as a linear combination of the vectors in , we see that spans . Since every element in can be represented uniquely as a linear combination of the vectors in , and since can be represented as the trivial linear combination of the vectors in , this means that is linearly independent. (The trivial linear combination of vectors in is the only way to obtain as a linear combination of the vectors in .) Since is linearly independent and spans , this proves that is a basis for .    This next result shows us how to trim a spanning set down until we reach a basis.   The Spanning Set Theorem   Suppose that is a nonzero vector space and that for some set of vectors .   If is linearly dependent and a vector can be written as a linear combination of the rest of the vectors in , then .    A subset of is a basis for .       We suppose that . If is linearly dependent, then by the Linear Dependence Lemma, there exists a vector such that can be written as a linear combination of the vectors . We suppose this combination is . Now suppose is a vector in . We have . Using , we can substitute this expression in for in and, once the algebraic dust settles, we will have written as a combination of the vectors in . This shows that .  If is linearly independent, then it is already a basis for . If it is linearly dependent, then we can remove a vector according to the above procedure to obtain a set which still spans . As long as there are two or more vectors in the spanning set, we can repeat this process until we are left with a linearly independent set and thus a basis. If the spanning set is eventually reduced to a single vector, that vector will be nonzero since is nonzero, and therefore that set will be linearly independent.      Every finite-dimensional vector space has a basis.    Since a finite-dimensional vector space by definition has a finite spanning set , tells us that a subset of will be a basis for the vector space.    While the proof of provides a way to trim a spanning set down to a basis, it does not offer a practical method for this process. The following algorithm provides that practical method for certain vector spaces.    Let be a set of vectors in . To find a basis for , do the following.   Put the matrix in RREF.    If column in the RREF contains a pivot, then include in .       We form the matrix . If is already in RREF, then the non-pivot columns are linear combinations of the pivot columns that preceed them. So, those can be discarded and the pivot columns will be a basis, according to .  We will complete the proof with a reminder about the effect of elementary row operations on the columns of a matrix. If a column of is a linear combination of the columns that preceed it, then for some scalars . This means that the column vector is a solution to the linear system represented by the augmented matrix . One of the earliest facts we learned about elementary row operations is that they preserve the solution sets of linear systems, so the same vector will be a solution to the linear system represented by the RREF of . This proves that the relationships between the columns of a matrix are the same as the relationships between the columns of the RREF of that matrix.  So, if is not in RREF, we can find the RREF of , call it . The non-pivot columns of indicate that the corresponding columns of should not be included in the basis. In other words the pivot columns of indicate that the corresponding columns of are the ones that should remain to form the basis.     We emphasize here that the pivot columns in the reduced matrix do not provide the vectors for the basis! The pivot columns merely provide the instructions for which of the original vectors should be kept to form the basis.     Consider the following matrix : . We will find a basis for using . When we put into RREF, we find . The pivots are in columns 1, 3, and 5, so a basis for is , where .    We arrive at the end of this section with two helpful perspectives on a basis. A basis can be formed by trimming a spanning set down until it is linearly independent. Thus, a basis is a spanning set that is as small as possible. On the other hand, a linearly independent set can always be enlarged until it spans. Therefore, a basis is also a linearly independent set that is as large as possible.     Consider the set in where . Find a basis for . Follow .     Determine whether or not the set forms a basis for , where . Explain your answer.       For each of the following, determine whether the given set of vectors forms a basis for the indicated vector space.    in if      in if      in if        For each of the following, determine whether the given set of vectors forms a basis for the indicated vector space.    in if      in if      in if        For each matrix , find a basis for and .    ,      ,        Produce a matrix which has two vectors in a basis for and two vectors in a basis for .    Find a basis for , if .    Find a basis for , if .    Let be the vector space of all functions . Find a basis for the subspace , if .    Let be a linear transformation between vector spaces, and let be a basis for .   Produce an example to show that does not need to be a basis of .    Suppose that is injective. Must be a basis for ? If so, prove it. If not, produce a counter-example.       Find a matrix such that . Is unique? Explain.     Suppose that is a linear transformation which satisfies the following: . Calculate .    Suppose that is a basis for a vector space . Prove that is also a basis for .    Find a subset of the following set which is a basis for : .    "
+  "body": " Basis of a Vector Space   We have previously examined when a set of vectors spans a vector space. In this section, we will learn how to work with the most efficient spanning set possible.    The Definition of a Basis  We begin with the notion of finite- and infinite-dimensional vector spaces.    A vector space is finite-dimensional if there is a finite set of vectors which spans . A vector space is infinite-dimensional if it is not finite-dimensional.    We recall that linear independence in was introduced as a way to eliminate redundancy. We pick up on this idea in the next definition.    Let be a finite-dimensional vector space. Then a set is a basis for if is a linearly independent set and if .     The notion of a basis exists for infinite-dimensional vector spaces, but since the overwhelming majority of our work will be with finite-dimensional spaces, we have only given the definition in that setting.     We recall that is the vector in with a in the th coordinate and zeros elsewhere. Then the set is a basis for . If we form the matrix with these vectors as columns, we see that it is the identity matrix. Since there is a pivot in every column, is linearly independent according to . Then tells us that also spans . This proves that is a basis for .  We call this basis the standard basis for .      We now consider the set within the vector space . Since any vector in can be written as , it is clear that spans . It is also true that is linearly independent: the set is linearly independent since neither vector is a scalar multiple of the other. And then since is not a linear combination of and , we conclude that is linearly independent by (the contrapositive of) the Linear Dependence Lemma ( ). This proves that is a basis for .  The analogous basis for , , is often called the standard basis for .      Consider the following matrix : . We will find a basis for .  Following the procedure we first encountered in , we start by finding the RREF of : . We see that and are free variables, and that any vector in can be written as . If we label the vectors , then we can see that . Further, we see that is linearly independent (neither vector is a scalar multiple of the other), so is a basis for .     What we observed in is true more generally. Since the method we use to find a spanning set for always produces a linearly independent set (see ), this method will always produce a basis for .   Putting some facts together, there is a fairly straightforward condition for when a list of vectors in is a basis for that space.    The set is a basis for if and only if the RREF of the matrix is .    From we know that the set spans if and only if the RREF of has a pivot in every row. Additionally, tells us that is linearly independent if and only if the RREF of has a pivot in each column. The only way a matrix in RREF can have a pivot in every row and every column is if that RREF is the identity matrix.    We put this proposition into action in the following example.    It turns out that it is fairly easy to tell whether a set of two vectors in forms a basis for . Since linear independence is easy to check with two vectors is either vector a scalar multiple of the other? by we can focus on this characteristic. This means that the set , where is a basis for . Neither vector is a scalar multiple of the other, so the set is linearly independent. And then tells us that this set must also span . (We could also easily see this by row reducing the matrix .)  On the other hand, the set , where is not a basis for . Since , is not linearly independent, so it cannot be a basis.      The Properties of a Basis  Having a basis is a powerful tool. In particular, it guarantees a uniqueness that is quite useful.   The Unique Representation Theorem   A set of vectors in a vector space is a basis for if and only if each element of can be uniquely represented as a linear combination of the vectors in .    We will prove the forward direction of this biconditional statement directly. Suppose that is a basis of . Since , every vector in can be written as a linear combination of the vectors in . Let be a vector in , and suppose that can be written as a linear combination of the vectors in in two ways: . We want to show that for each , . Since both of these representations are equal to , they are equal to each other, so we have . Since is a linearly independent set (since we are assuming it is a basis), it must be that for each . Therefore, and the representation of is unique.  For the other direction, we suppose that every element of can be uniquely represented as a linear combination of the vectors in . Since every element of can be represented as a linear combination of the vectors in , we see that spans . Since every element in can be represented uniquely as a linear combination of the vectors in , and since can be represented as the trivial linear combination of the vectors in , this means that is linearly independent. (The trivial linear combination of vectors in is the only way to obtain as a linear combination of the vectors in .) Since is linearly independent and spans , this proves that is a basis for .    This next result shows us how to trim a spanning set down until we reach a basis.   The Spanning Set Theorem   Suppose that is a nonzero vector space and that for some set of vectors .   If is a linearly dependent set and a vector can be written as a linear combination of the rest of the vectors in , then .    A subset of is a basis for .       We suppose that . If is linearly dependent, then by the Linear Dependence Lemma ( ), there exists a vector such that can be written as a linear combination of the vectors . We suppose this combination is . Now suppose is a vector in . We have . Using , we can substitute this expression in for in and, once the algebraic dust settles, we will have written as a combination of the vectors in . This shows that . (Since , it is true that . The argument thus far in this proof has established the other subset containment.)  If is linearly independent, then it is already a basis for . If it is linearly dependent, then we can remove a vector according to the above procedure to obtain a set which still spans . As long as there are two or more vectors in the spanning set, we can repeat this process until we are left with a linearly independent set and thus a basis. If the spanning set is eventually reduced to a single vector, that vector will be nonzero since is nonzero, and therefore that set will be linearly independent and therefore a basis.      Every finite-dimensional vector space has a basis.    Since a finite-dimensional vector space by definition has a finite spanning set , tells us that a subset of will be a basis for the vector space.    While the proof of provides a way to trim a spanning set down to a basis, it does not offer a practical method for this process. The following algorithm provides such a method for certain vector spaces.    Let be a set of vectors in . The following steps result in a basis for .   Put the matrix in RREF.    If column in the RREF contains a pivot, then include in .       We form the matrix . If is already in RREF, then the non-pivot columns are linear combinations of the pivot columns that preceed them. So, those can be discarded and the pivot columns will be a basis, according to .  We will complete the proof with a reminder about the effect of elementary row operations on the columns of a matrix. If a column of is a linear combination of the columns that preceed it, then for some scalars . This means that the column vector is a solution to the linear system represented by the augmented matrix . One of the earliest facts we learned about elementary row operations is that they preserve the solution sets of linear systems, so the same vector will be a solution to the linear system represented by the RREF of . This proves that the relationships between the columns of a matrix are the same as the relationships between the columns of the RREF of that matrix.  So, if is not in RREF, we can find the RREF of , call it . The non-pivot columns of indicate that the corresponding columns of should not be included in the basis. In other words the pivot columns of indicate that the corresponding columns of are the ones that should remain to form the basis.     We emphasize here that the pivot columns in the reduced matrix do not provide the vectors for the basis! The pivot columns merely provide the instructions for which of the original vectors should be kept to form the basis.     Consider the following matrix : . We will find a basis for using . When we put into RREF, we find . The pivots are in columns 1, 3, and 5, so a basis for is , where .    We arrive at the end of this section with two helpful perspectives on a basis. A basis can be formed by trimming a spanning set down until it is linearly independent. Thus, a basis is a spanning set that is as small as possible. On the other hand, a linearly independent set can always be enlarged until it spans. Therefore, a basis is also a linearly independent set that is as large as possible.     Consider the set in where . Find a basis for . Follow and explain your answer.     Determine whether or not the set forms a basis for , where . Explain your answer.       For each of the following, determine whether the given set of vectors forms a basis for the indicated vector space.    in if      in if      in if        For each of the following, determine whether the given set of vectors forms a basis for the indicated vector space.    in if      in if      in if        For each matrix , find a basis for and .    ,      ,        Produce a matrix which has two vectors in a basis for and two vectors in a basis for .    Find a basis for , if .    Find a basis for , if .    Let be the vector space of all functions . Find a basis for the subspace , if .    Find a matrix such that . Is unique? Explain.     Suppose that is a linear transformation which satisfies the following: . Calculate .    Find a subset of the following set which is a basis for : .    Writing Exercises   Let be a linear transformation between vector spaces, and let be a basis for .   Produce an example to show that does not need to be a basis of .    Suppose that is injective. Must be a basis for ? If so, prove it. If not, produce a counter-example.       Suppose that is a basis for a vector space . Prove that is also a basis for .     "
 },
 {
   "id": "def-finite-dimensional",
@@ -4057,7 +4057,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "5.2.2",
   "title": "",
-  "body": "  Let be a finite-dimensional vector space. Then a set is a basis for if is linearly independent and if .   "
+  "body": "  Let be a finite-dimensional vector space. Then a set is a basis for if is a linearly independent set and if .   "
 },
 {
   "id": "subsec-intro-basis-6",
@@ -4114,13 +4114,13 @@ var ptx_lunr_docs = [
   "body": "  The set is a basis for if and only if the RREF of the matrix is .    From we know that the set spans if and only if the RREF of has a pivot in every row. Additionally, tells us that is linearly independent if and only if the RREF of has a pivot in each column. The only way a matrix in RREF can have a pivot in every row and every column is if that RREF is the identity matrix.   "
 },
 {
-  "id": "subsec-intro-basis-13",
+  "id": "subsec-intro-basis-14",
   "level": "2",
-  "url": "sec-basis.html#subsec-intro-basis-13",
+  "url": "sec-basis.html#subsec-intro-basis-14",
   "type": "Example",
   "number": "5.2.9",
   "title": "",
-  "body": "  It turns out that it is fairly easy to tell whether a set of two vectors in forms a basis for . Since linear independence is easy to check with two vectors is either vector a scalar multiple of the other? by we can focus on this characteristic. This means that the set , where is a basis for . Neither vector is a scalar multiple of the other, so the set is linearly independent. And then tells us that this set must also span . (We could also easily see this by row reducing the matrix .)  On the other hand, the set , where is not a basis for . Since , this set is not linearly independent, so it cannot be a basis.   "
+  "body": "  It turns out that it is fairly easy to tell whether a set of two vectors in forms a basis for . Since linear independence is easy to check with two vectors is either vector a scalar multiple of the other? by we can focus on this characteristic. This means that the set , where is a basis for . Neither vector is a scalar multiple of the other, so the set is linearly independent. And then tells us that this set must also span . (We could also easily see this by row reducing the matrix .)  On the other hand, the set , where is not a basis for . Since , is not linearly independent, so it cannot be a basis.   "
 },
 {
   "id": "thm-unique-rep",
@@ -4129,7 +4129,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "5.2.10",
   "title": "The Unique Representation Theorem.",
-  "body": " The Unique Representation Theorem   A set of vectors in a vector space is a basis for if and only if each element of can be uniquely represented as a linear combination of the vectors in .    Suppose that is a basis of . Since , every vector in can be written as a linear combination of the vectors in . Let be a vector in , and suppose that can be written as a linear combination of the vectors in in two ways: . We want to show that for each , . Since both of these representations are equal to , they are equal to each other, so we have . Since is a linearly independent set (since we are assuming it is a basis), it must be that for each . Therefore, and the representation of is unique.  For the other direction, we suppose that every element of can be uniquely represented as a linear combination of the vectors in . Since every element of can be represented as a linear combination of the vectors in , we see that spans . Since every element in can be represented uniquely as a linear combination of the vectors in , and since can be represented as the trivial linear combination of the vectors in , this means that is linearly independent. (The trivial linear combination of vectors in is the only way to obtain as a linear combination of the vectors in .) Since is linearly independent and spans , this proves that is a basis for .   "
+  "body": " The Unique Representation Theorem   A set of vectors in a vector space is a basis for if and only if each element of can be uniquely represented as a linear combination of the vectors in .    We will prove the forward direction of this biconditional statement directly. Suppose that is a basis of . Since , every vector in can be written as a linear combination of the vectors in . Let be a vector in , and suppose that can be written as a linear combination of the vectors in in two ways: . We want to show that for each , . Since both of these representations are equal to , they are equal to each other, so we have . Since is a linearly independent set (since we are assuming it is a basis), it must be that for each . Therefore, and the representation of is unique.  For the other direction, we suppose that every element of can be uniquely represented as a linear combination of the vectors in . Since every element of can be represented as a linear combination of the vectors in , we see that spans . Since every element in can be represented uniquely as a linear combination of the vectors in , and since can be represented as the trivial linear combination of the vectors in , this means that is linearly independent. (The trivial linear combination of vectors in is the only way to obtain as a linear combination of the vectors in .) Since is linearly independent and spans , this proves that is a basis for .   "
 },
 {
   "id": "thm-spanning-set",
@@ -4138,7 +4138,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "5.2.11",
   "title": "The Spanning Set Theorem.",
-  "body": " The Spanning Set Theorem   Suppose that is a nonzero vector space and that for some set of vectors .   If is linearly dependent and a vector can be written as a linear combination of the rest of the vectors in , then .    A subset of is a basis for .       We suppose that . If is linearly dependent, then by the Linear Dependence Lemma, there exists a vector such that can be written as a linear combination of the vectors . We suppose this combination is . Now suppose is a vector in . We have . Using , we can substitute this expression in for in and, once the algebraic dust settles, we will have written as a combination of the vectors in . This shows that .  If is linearly independent, then it is already a basis for . If it is linearly dependent, then we can remove a vector according to the above procedure to obtain a set which still spans . As long as there are two or more vectors in the spanning set, we can repeat this process until we are left with a linearly independent set and thus a basis. If the spanning set is eventually reduced to a single vector, that vector will be nonzero since is nonzero, and therefore that set will be linearly independent.   "
+  "body": " The Spanning Set Theorem   Suppose that is a nonzero vector space and that for some set of vectors .   If is a linearly dependent set and a vector can be written as a linear combination of the rest of the vectors in , then .    A subset of is a basis for .       We suppose that . If is linearly dependent, then by the Linear Dependence Lemma ( ), there exists a vector such that can be written as a linear combination of the vectors . We suppose this combination is . Now suppose is a vector in . We have . Using , we can substitute this expression in for in and, once the algebraic dust settles, we will have written as a combination of the vectors in . This shows that . (Since , it is true that . The argument thus far in this proof has established the other subset containment.)  If is linearly independent, then it is already a basis for . If it is linearly dependent, then we can remove a vector according to the above procedure to obtain a set which still spans . As long as there are two or more vectors in the spanning set, we can repeat this process until we are left with a linearly independent set and thus a basis. If the spanning set is eventually reduced to a single vector, that vector will be nonzero since is nonzero, and therefore that set will be linearly independent and therefore a basis.   "
 },
 {
   "id": "cor-basis-fin-dim",
@@ -4156,7 +4156,7 @@ var ptx_lunr_docs = [
   "type": "Algorithm",
   "number": "5.2.13",
   "title": "",
-  "body": "  Let be a set of vectors in . To find a basis for , do the following.   Put the matrix in RREF.    If column in the RREF contains a pivot, then include in .       We form the matrix . If is already in RREF, then the non-pivot columns are linear combinations of the pivot columns that preceed them. So, those can be discarded and the pivot columns will be a basis, according to .  We will complete the proof with a reminder about the effect of elementary row operations on the columns of a matrix. If a column of is a linear combination of the columns that preceed it, then for some scalars . This means that the column vector is a solution to the linear system represented by the augmented matrix . One of the earliest facts we learned about elementary row operations is that they preserve the solution sets of linear systems, so the same vector will be a solution to the linear system represented by the RREF of . This proves that the relationships between the columns of a matrix are the same as the relationships between the columns of the RREF of that matrix.  So, if is not in RREF, we can find the RREF of , call it . The non-pivot columns of indicate that the corresponding columns of should not be included in the basis. In other words the pivot columns of indicate that the corresponding columns of are the ones that should remain to form the basis.   "
+  "body": "  Let be a set of vectors in . The following steps result in a basis for .   Put the matrix in RREF.    If column in the RREF contains a pivot, then include in .       We form the matrix . If is already in RREF, then the non-pivot columns are linear combinations of the pivot columns that preceed them. So, those can be discarded and the pivot columns will be a basis, according to .  We will complete the proof with a reminder about the effect of elementary row operations on the columns of a matrix. If a column of is a linear combination of the columns that preceed it, then for some scalars . This means that the column vector is a solution to the linear system represented by the augmented matrix . One of the earliest facts we learned about elementary row operations is that they preserve the solution sets of linear systems, so the same vector will be a solution to the linear system represented by the RREF of . This proves that the relationships between the columns of a matrix are the same as the relationships between the columns of the RREF of that matrix.  So, if is not in RREF, we can find the RREF of , call it . The non-pivot columns of indicate that the corresponding columns of should not be included in the basis. In other words the pivot columns of indicate that the corresponding columns of are the ones that should remain to form the basis.   "
 },
 {
   "id": "subsec-basis-props-9",
@@ -4183,7 +4183,7 @@ var ptx_lunr_docs = [
   "type": "Reading Question",
   "number": "5.2.3.1",
   "title": "",
-  "body": " Consider the set in where . Find a basis for . Follow .   "
+  "body": " Consider the set in where . Find a basis for . Follow and explain your answer.   "
 },
 {
   "id": "sec-basis-5-2",
@@ -4264,7 +4264,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.2.4.8",
   "title": "",
-  "body": " Let be a linear transformation between vector spaces, and let be a basis for .   Produce an example to show that does not need to be a basis of .    Suppose that is injective. Must be a basis for ? If so, prove it. If not, produce a counter-example.     "
+  "body": " Find a matrix such that . Is unique? Explain.   "
 },
 {
   "id": "sec-basis-6-9",
@@ -4273,7 +4273,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.2.4.9",
   "title": "",
-  "body": " Find a matrix such that . Is unique? Explain.   "
+  "body": " Suppose that is a linear transformation which satisfies the following: . Calculate .  "
 },
 {
   "id": "sec-basis-6-10",
@@ -4282,25 +4282,25 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.2.4.10",
   "title": "",
-  "body": " Suppose that is a linear transformation which satisfies the following: . Calculate .  "
+  "body": " Find a subset of the following set which is a basis for : .  "
 },
 {
-  "id": "sec-basis-6-11",
+  "id": "sec-basis-6-11-2",
   "level": "2",
-  "url": "sec-basis.html#sec-basis-6-11",
+  "url": "sec-basis.html#sec-basis-6-11-2",
   "type": "Exercise",
   "number": "5.2.4.11",
   "title": "",
-  "body": " Suppose that is a basis for a vector space . Prove that is also a basis for .  "
+  "body": " Let be a linear transformation between vector spaces, and let be a basis for .   Produce an example to show that does not need to be a basis of .    Suppose that is injective. Must be a basis for ? If so, prove it. If not, produce a counter-example.     "
 },
 {
-  "id": "sec-basis-6-12",
+  "id": "sec-basis-6-11-3",
   "level": "2",
-  "url": "sec-basis.html#sec-basis-6-12",
+  "url": "sec-basis.html#sec-basis-6-11-3",
   "type": "Exercise",
   "number": "5.2.4.12",
   "title": "",
-  "body": " Find a subset of the following set which is a basis for : .  "
+  "body": " Suppose that is a basis for a vector space . Prove that is also a basis for .  "
 },
 {
   "id": "sec-dimension",
@@ -4309,7 +4309,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.3",
   "title": "Dimension",
-  "body": " Dimension   In this section we will define the dimension of a vector space, finally delivering on the promise made in the introduction to this chapter to describe an intrinsic quality of vector spaces that allows a comparison between spaces.    The Dimension of a Vector Space  We begin with a lemma that relates span and linear independence and the number of vectors in sets with these properties. We will omit the proof.    Suppose that is a vector space and that . If is a linearly independent subset of , then .     We will now use this lemma to prove a result related to dimension.    Suppose that, for every , a vector space contains a linearly independent subset of size . Then is infinite-dimensional.    We will prove the contrapositive. If is finite-dimensional, then there exists a set such that . By , for any , cannot contain a linearly independent set of vectors. This completes the proof of the contrapositive.    This theorem gives us an introduction to our first infinite-dimensional example.    Let be the vector space of all polynomials with real coefficients. (We do not restrict the degree of polynomials in .) For any , contains the linearly independent set . Therefore, is infinite-dimensional.    We now come to the bedrock result of this section, the result that makes the definition of dimension possible.    Suppose that and are both bases for a vector space . Then .    Since and is a linearly independent set, implies that . However, since and is a linearly independent set, also implies that . Therefore, .    Even though a vector space may have a huge number of bases, all of those bases have the same size. This is a number intrinsic to the vector space, not to any specific basis of that vector space. This is what we mean by the dimension of a vector space.    Let be a finite-dimensional vector space. If , then the dimension of , written , is the size of any basis of . If , we say that is -dimensional .  If , then we define the dimension of to be 0.    Two of the families of vector spaces we frequently discuss have easy-to-determine dimensions, as the next two examples illustrate.    Since is a basis for , then .      Since is a basis for , then .    The proof of the next two results are a consequence of and will appear in the exercises.    The dimension of any vector space is less than or equal to the size of any spanning set.      If a vector space is finite-dimensional and is a linearly independent set in , then .    When we view dimension as an intrinsic quality of a vector space that allows comparison between spaces, we find something surprising about vector spaces with the same dimension. They are essentially the same! (Note: the reader should read before going further as some of the ideas, notation, and results used in this proof are found there.)    Let and be finite-dimensional vector spaces over . Then if and only if and are isomorphic.    Suppose that . Let be a basis for and let be a basis for . By , we can find such that for each , . Then by , is an isomorphism.  To prove the claim in the other direction, suppose that is an isomorphism. If is a basis for , then is a basis for by . Thus .    Here is an immediate consequence of this result.    If is a finite-dimensional vector space over and , then is isomorphic to .      Since is a three-dimensional vector space over , and are isomorphic.       Dimension and Subspaces  If we know the dimension of a vector space, then we sometimes have a quicker path to finding a basis for that space. This next result says that if we have a spanning set of the same size as a basis, then it must be a basis.    Suppose that is a vector space with . If is such that , then is a basis for .    By The Spanning Set Theorem ( ), we know that a subset of will be a basis for . But since , the size of must be . Therefore, and is a basis for .     What is true in for a spanning set is also true for a linearly independent set. To prove that, however, we first need the analog to The Spanning Set Theorem for linearly independent sets.    Suppose that is a finite-dimensional vector space and that is a linearly independent set of vectors in . Then there is a basis of which contains .    Let be a linearly independent set of vectors in . If , then is a basis and we are done. If , then there exists some vector . By the Linear Dependence Lemma ( ), the set is linearly independent.  We can repeat this process. If , we are done; otherwise, we create in the same fashion that we created . We can continue doing this, adding one vector at a time to this set and maintaining linear independence. Eventually we must reach the point where , since otherwise would imply that is infinite-dimensional.    We now have the machinery necessary to prove the following theorem. The proof will appear in the exercises.    Suppose that is a vector space with and that is a linearly independent subset of of size . Then is a basis for .    The final result of this section collects some facts about dimension and subspaces which we will use in some of the sections that follow.    Suppose that is a finite-dimensional vector space and that is a subspace of . Then the following hold.   The subspace is finite-dimensional.    We have .    We have if and only if .       We will prove these facts in order. If the subspace is , then we have nothing to prove. If not, then there is some non-zero vector . If , we are done; if not, then there exists . By , the set is linearly independent. We can continue to repeat this process. At each stage we have a linearly independent set , and this cannot continue indefinitely since is a subspace of , which is finite-dimensional. Thus this process must eventually stop when for some , and that proves that is finite dimensional.  The space is finite dimensional, so it has a basis . This is a linearly independent set of vectors in , so says that can be extended to a basis of . This means that will have at least as many vectors in it as , so .  If it is obvious that , so we only need to prove the claim in the other direction. We will prove the contrapositive, so we assume . Let be a basis for . Since , there exists a vector . By the set is linearly independent in , implying that . Therefore .      We can apply this latest result to the vector space . The familiar subspaces of are all of the subspaces of .   The only subspace of dimension 0 in is the zero subspace .    One-dimensional subspaces of are lines through the origin. These can all be written as the span of a single (non-zero) vector.    Two-dimensional subspaces of are planes through the origin. These are all spanned by sets of two linearly independent vectors.    The only three-dimensional subspace of is itself.          Consider the following vectors in : . By inspection, why is the set a basis for ?     Let , , , and be vectors in .   The set is not a basis for , and there's a very short argument why. What is that argument?     Must there be a subset of which is a basis of ? Why or why not?          Find the dimension of the subspace of consisting of all vectors whose first and third coordinates are equal.    For each of the following sets of vectors in the given vector space, find the dimension of the subspace spanned by that set of vectors.    in if      in if        For each of the following matrices , determine the dimensions of and .    ,      ,        Let be a matrix.   Prove that is the number of non-pivot columns in .    Prove that is the number of pivot columns of .       Determine whether the following statements are true or false. Justify your answer either way.   If a set spans a finite-dimensional space , and if is a set of more than vectors in , then is linearly dependent.    The vector space is a subspace of .    A vector space is infinite-dimensional if it is spanned by an infinite set.       Determine whether the following statements are true or false. Justify your answer either way.   If , then there exists a spanning set of vectors in .    If every set of vectors in fails to span , then .    If and , then every set of non-zero vectors in is linearly independent.       The first four Hermite polynomials are , , , and . Show that the set of these polynomials is a basis for .    The first four Laguerre polynomials are , , , and . Show that the set of these polynomials is a basis for .    Let be the set of all functions . Prove that is infinite-dimensional.    Suppose that is a linear transformation between vector spaces and that is finite-dimensional. Prove that .    Prove that is two-dimensional as a vector space over but four-dimensional as a vector space over .    Prove .    Prove .    Prove .    "
+  "body": " Dimension   In this section we will define the dimension of a vector space, finally delivering on the promise made in the introduction to this chapter to describe an intrinsic quality of vector spaces that allows a comparison between spaces.    The Dimension of a Vector Space  We are on the threshold of the definition of dimension. We will first present a result that connects (for a finite-dimensional space) the number of vectors needed for a spanning set to the concept of linear independence. We will omit the proof.    Suppose that is a vector space and that . If is a linearly independent subset of , then .     We will now use this lemma to prove a result related to dimension.    Suppose that, for every , a vector space contains a linearly independent subset of size . Then is infinite-dimensional.    We will prove the contrapositive. If is finite-dimensional, then there exists a set such that . By , for any , cannot contain a linearly independent set of vectors. This completes the proof of the contrapositive.    This theorem gives us an introduction to our first infinite-dimensional example.    Let be the vector space of all polynomials with real coefficients. (We do not restrict the degree of polynomials in .) For any , contains the linearly independent set . Therefore, by , is infinite-dimensional.    We now come to the bedrock result of this section, the result that makes the definition of dimension possible.    Suppose that and are both bases for a vector space . Then .    Since and is a linearly independent set, implies that . However, since and is a linearly independent set, also implies that . Therefore, .    Even though a vector space may have a huge number of bases, all of those bases have the same size. This is a number intrinsic to the vector space, not to any specific basis of that vector space. This is what we mean by the dimension of a vector space.    Let be a finite-dimensional vector space. If , then the dimension of , written , is the size of any basis of . If , we say that is -dimensional .  If , then we define the dimension of to be 0.    Two of the families of vector spaces we frequently discuss have easy-to-determine dimensions, as the next two examples illustrate.    Since is a basis for , then .      Since is a basis for , then .    The proofs of the next two results are a consequence of and will appear in the exercises.    The dimension of any vector space is less than or equal to the size of any spanning set.      If a vector space is finite-dimensional and is a linearly independent set in , then .    We will now begin to discuss dimension as a tool to compare vector spaces. Linear transformations are the main way we relate vector spaces to each other, so these next results will rely on that machinery.    Suppose that is a basis for a vector space . Let be a subset of a vector space . Then there is a unique linear transformation such that for each , .    Given , there exists a unique linear combination by . We define the function by . In words, we send a vector to the linear combination of the vectors using the same weights as those needed to form from the basis . This gives for each , so we only need to show that is a linear transformation.  Suppose that with . Then we have . Now we let and . Then, if , we have .  We will complete the proof by justifying the claim that is unique. Suppose that with for each . Then, if with , we have . This shows that for every , so and is unique.    The notion of alikeness that we use in linear algebra is when two vector spaces are isomorphic. The reader may wish to consult for a refresher.    Let and let be a basis for . Then is an isomorphism if and only if is a basis for .    We first suppose that is an isomorphism. We want to show that is a basis for , so we begin with linear independence. Suppose that such that . Then we have . Since is injective, by we must have . But since is a linearly independent set, we have for all . This proves that is linearly independent.  We now prove that spans . Let . Since is surjective, there exists such that . Since is a basis for , we have . Then . This proves that , so is a basis for .  We now need to prove the other implication, and we assume that is a basis for . We need to show that is an isomorphism. To show that is injective, suppose that such that . We have , so . But since is a linearly independent set by assumption, this implies that for all . This means that , so is injective.  To prove that is surjective, we assume that . Since spans , we have for some . We claim that if , then . Here is the justification: . This proves that is surjective and is thus an isomorphism.    When we view dimension as an intrinsic quality of a vector space that allows comparison between spaces, we find something surprising about vector spaces with the same dimension. They are essentially the same!    Let and be finite-dimensional vector spaces over . Then if and only if and are isomorphic.    Suppose that . Let be a basis for and let be a basis for . By , we can find such that for each , . Then by , is an isomorphism.  To prove the claim in the other direction, suppose that is an isomorphism. If is a basis for , then is a basis for by . Thus .    Here is an immediate consequence of this result.    Every finite-dimensional vector space over of dimension is isomorphic to .      Since is a three-dimensional vector space over , and are isomorphic.       Dimension and Subspaces  If we know the dimension of a vector space, then we sometimes have a quicker path to finding a basis for that space. This next result says that if we have a spanning set of the same size as a basis, then it must be a basis.    Suppose that is a vector space with . If is such that , then is a basis for .    By The Spanning Set Theorem ( ), we know that a subset of will be a basis for . But since , the size of must be . Therefore, and is a basis for .     What is true in for a spanning set is also true for a linearly independent set. To prove that, however, we first need the analog to The Spanning Set Theorem for linearly independent sets.    Suppose that is a finite-dimensional vector space and that is a linearly independent set of vectors in . Then there is a basis of which contains .    Let be a linearly independent set of vectors in . If , then is a basis and we are done. If , then there exists some vector . By the Linear Dependence Lemma ( ), the set is linearly independent.  We can repeat this process. If , we are done; otherwise, we create in the same fashion that we created . We can continue doing this, adding one vector at a time to this set and maintaining linear independence. Eventually we must reach the point where , since otherwise would imply that is infinite-dimensional.    We now have the machinery necessary to state the following theorem. The proof will appear in the exercises.    Suppose that is a vector space with and that is a linearly independent subset of of size . Then is a basis for .    The final result of this section collects some facts about dimension and subspaces which we will use in some of the sections that follow.    Suppose that is a finite-dimensional vector space and that is a subspace of . Then the following hold.   The subspace is finite-dimensional.    We have .    We have if and only if .       We will prove these facts in order. If the subspace is , then we have nothing to prove. If not, then there is some non-zero vector . If , we are done; if not, then there exists . By , the set is linearly independent. We can continue to repeat this process. At each stage we have a linearly independent set , and this cannot continue indefinitely since is a subspace of , which is finite-dimensional. Thus this process must eventually stop when for some , and that proves that is finite dimensional.  The space is finite dimensional, so it has a basis . This is a linearly independent set of vectors in , so says that can be extended to a basis of . This means that will have at least as many vectors in it as , so .  If it is obvious that , so we only need to prove the claim in the other direction. We will prove the contrapositive, so we assume . Let be a basis for . Since , there exists a vector . By the set is linearly independent in , implying that . Therefore .      We can apply this latest result to the vector space . The familiar subspaces of are all of the subspaces of .   The only subspace of dimension 0 in is the zero subspace .    One-dimensional subspaces of are lines through the origin. These can all be written as the span of a single (non-zero) vector.    Two-dimensional subspaces of are planes through the origin. These are all spanned by sets of two linearly independent vectors.    The only three-dimensional subspace of is itself.          Consider the following vectors in : . By inspection, why is the set a basis for ? Explain your answer.     Let , , , and be vectors in .   The set is not a basis for , and there's a very short argument why. What is that argument?     Must there be a subset of which is a basis of ? Why or why not?          Find the dimension of the subspace of consisting of all vectors whose first and third coordinates are equal.    For each of the following sets of vectors in the given vector space, find the dimension of the subspace spanned by that set of vectors.    in if      in if        For each of the following matrices , determine the dimensions of and .    ,      ,        Determine whether the following statements are true or false. Justify your answer either way.   If a set spans a finite-dimensional space , and if is a set of more than vectors in , then is linearly dependent.    The vector space is a subspace of .    A vector space is infinite-dimensional if it is spanned by an infinite set.       Determine whether the following statements are true or false. Justify your answer either way.   If , then there exists a spanning set of vectors in .    If every set of vectors in fails to span , then .    If and , then every set of non-zero vectors in is linearly independent.       The first four Hermite polynomials are , , , and . Show that the set of these polynomials is a basis for .    The first four Laguerre polynomials are , , , and . Show that the set of these polynomials is a basis for .    Writing Exercises   Let be a matrix.   Prove that is the number of non-pivot columns in .    Prove that is the number of pivot columns of .       Let be the set of all functions . Prove that is infinite-dimensional.    Suppose that is a linear transformation between vector spaces and that is finite-dimensional. Prove that .    Prove that is two-dimensional as a vector space over but four-dimensional as a vector space over .    Prove .    Prove .    Prove .     "
 },
 {
   "id": "lem-dim-lin-ind",
@@ -4336,7 +4336,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.3.3",
   "title": "",
-  "body": "  Let be the vector space of all polynomials with real coefficients. (We do not restrict the degree of polynomials in .) For any , contains the linearly independent set . Therefore, is infinite-dimensional.   "
+  "body": "  Let be the vector space of all polynomials with real coefficients. (We do not restrict the degree of polynomials in .) For any , contains the linearly independent set . Therefore, by , is infinite-dimensional.   "
 },
 {
   "id": "thm-bases-same-size",
@@ -4393,11 +4393,29 @@ var ptx_lunr_docs = [
   "body": "  If a vector space is finite-dimensional and is a linearly independent set in , then .   "
 },
 {
+  "id": "thm-lt-basis",
+  "level": "2",
+  "url": "sec-dimension.html#thm-lt-basis",
+  "type": "Theorem",
+  "number": "5.3.10",
+  "title": "",
+  "body": "  Suppose that is a basis for a vector space . Let be a subset of a vector space . Then there is a unique linear transformation such that for each , .    Given , there exists a unique linear combination by . We define the function by . In words, we send a vector to the linear combination of the vectors using the same weights as those needed to form from the basis . This gives for each , so we only need to show that is a linear transformation.  Suppose that with . Then we have . Now we let and . Then, if , we have .  We will complete the proof by justifying the claim that is unique. Suppose that with for each . Then, if with , we have . This shows that for every , so and is unique.   "
+},
+{
+  "id": "thm-isomorphism-basis",
+  "level": "2",
+  "url": "sec-dimension.html#thm-isomorphism-basis",
+  "type": "Theorem",
+  "number": "5.3.11",
+  "title": "",
+  "body": "  Let and let be a basis for . Then is an isomorphism if and only if is a basis for .    We first suppose that is an isomorphism. We want to show that is a basis for , so we begin with linear independence. Suppose that such that . Then we have . Since is injective, by we must have . But since is a linearly independent set, we have for all . This proves that is linearly independent.  We now prove that spans . Let . Since is surjective, there exists such that . Since is a basis for , we have . Then . This proves that , so is a basis for .  We now need to prove the other implication, and we assume that is a basis for . We need to show that is an isomorphism. To show that is injective, suppose that such that . We have , so . But since is a linearly independent set by assumption, this implies that for all . This means that , so is injective.  To prove that is surjective, we assume that . Since spans , we have for some . We claim that if , then . Here is the justification: . This proves that is surjective and is thus an isomorphism.   "
+},
+{
   "id": "thm-same-dim-isomorphic",
   "level": "2",
   "url": "sec-dimension.html#thm-same-dim-isomorphic",
   "type": "Theorem",
-  "number": "5.3.10",
+  "number": "5.3.12",
   "title": "",
   "body": "  Let and be finite-dimensional vector spaces over . Then if and only if and are isomorphic.    Suppose that . Let be a basis for and let be a basis for . By , we can find such that for each , . Then by , is an isomorphism.  To prove the claim in the other direction, suppose that is an isomorphism. If is a basis for , then is a basis for by . Thus .   "
 },
@@ -4406,16 +4424,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dimension.html#cor-iso-fn",
   "type": "Corollary",
-  "number": "5.3.11",
+  "number": "5.3.13",
   "title": "",
-  "body": "  If is a finite-dimensional vector space over and , then is isomorphic to .   "
+  "body": "  Every finite-dimensional vector space over of dimension is isomorphic to .   "
 },
 {
-  "id": "subsec-dimension-22",
+  "id": "subsec-dimension-26",
   "level": "2",
-  "url": "sec-dimension.html#subsec-dimension-22",
+  "url": "sec-dimension.html#subsec-dimension-26",
   "type": "Example",
-  "number": "5.3.12",
+  "number": "5.3.14",
   "title": "",
   "body": "  Since is a three-dimensional vector space over , and are isomorphic.   "
 },
@@ -4424,7 +4442,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dimension.html#thm-span-is-basis",
   "type": "Theorem",
-  "number": "5.3.13",
+  "number": "5.3.15",
   "title": "",
   "body": "  Suppose that is a vector space with . If is such that , then is a basis for .    By The Spanning Set Theorem ( ), we know that a subset of will be a basis for . But since , the size of must be . Therefore, and is a basis for .   "
 },
@@ -4433,7 +4451,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dimension.html#thm-extend-lin-ind-to-basis",
   "type": "Theorem",
-  "number": "5.3.14",
+  "number": "5.3.16",
   "title": "",
   "body": "  Suppose that is a finite-dimensional vector space and that is a linearly independent set of vectors in . Then there is a basis of which contains .    Let be a linearly independent set of vectors in . If , then is a basis and we are done. If , then there exists some vector . By the Linear Dependence Lemma ( ), the set is linearly independent.  We can repeat this process. If , we are done; otherwise, we create in the same fashion that we created . We can continue doing this, adding one vector at a time to this set and maintaining linear independence. Eventually we must reach the point where , since otherwise would imply that is infinite-dimensional.   "
 },
@@ -4442,7 +4460,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dimension.html#thm-lin-ind-is-basis",
   "type": "Theorem",
-  "number": "5.3.15",
+  "number": "5.3.17",
   "title": "",
   "body": "  Suppose that is a vector space with and that is a linearly independent subset of of size . Then is a basis for .   "
 },
@@ -4451,7 +4469,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dimension.html#thm-dim-subspaces",
   "type": "Theorem",
-  "number": "5.3.16",
+  "number": "5.3.18",
   "title": "",
   "body": "  Suppose that is a finite-dimensional vector space and that is a subspace of . Then the following hold.   The subspace is finite-dimensional.    We have .    We have if and only if .       We will prove these facts in order. If the subspace is , then we have nothing to prove. If not, then there is some non-zero vector . If , we are done; if not, then there exists . By , the set is linearly independent. We can continue to repeat this process. At each stage we have a linearly independent set , and this cannot continue indefinitely since is a subspace of , which is finite-dimensional. Thus this process must eventually stop when for some , and that proves that is finite dimensional.  The space is finite dimensional, so it has a basis . This is a linearly independent set of vectors in , so says that can be extended to a basis of . This means that will have at least as many vectors in it as , so .  If it is obvious that , so we only need to prove the claim in the other direction. We will prove the contrapositive, so we assume . Let be a basis for . Since , there exists a vector . By the set is linearly independent in , implying that . Therefore .   "
 },
@@ -4460,7 +4478,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dimension.html#subsec-dim-subspace-10",
   "type": "Example",
-  "number": "5.3.17",
+  "number": "5.3.19",
   "title": "",
   "body": "  We can apply this latest result to the vector space . The familiar subspaces of are all of the subspaces of .   The only subspace of dimension 0 in is the zero subspace .    One-dimensional subspaces of are lines through the origin. These can all be written as the span of a single (non-zero) vector.    Two-dimensional subspaces of are planes through the origin. These are all spanned by sets of two linearly independent vectors.    The only three-dimensional subspace of is itself.      "
 },
@@ -4471,7 +4489,7 @@ var ptx_lunr_docs = [
   "type": "Reading Question",
   "number": "5.3.3.1",
   "title": "",
-  "body": " Consider the following vectors in : . By inspection, why is the set a basis for ?   "
+  "body": " Consider the following vectors in : . By inspection, why is the set a basis for ? Explain your answer.   "
 },
 {
   "id": "sec-dimension-5-2",
@@ -4510,13 +4528,13 @@ var ptx_lunr_docs = [
   "body": " For each of the following matrices , determine the dimensions of and .    ,      ,      "
 },
 {
-  "id": "exer-num-pivots-matrix",
+  "id": "sec-dimension-6-4",
   "level": "2",
-  "url": "sec-dimension.html#exer-num-pivots-matrix",
+  "url": "sec-dimension.html#sec-dimension-6-4",
   "type": "Exercise",
   "number": "5.3.4.4",
   "title": "",
-  "body": " Let be a matrix.   Prove that is the number of non-pivot columns in .    Prove that is the number of pivot columns of .     "
+  "body": " Determine whether the following statements are true or false. Justify your answer either way.   If a set spans a finite-dimensional space , and if is a set of more than vectors in , then is linearly dependent.    The vector space is a subspace of .    A vector space is infinite-dimensional if it is spanned by an infinite set.     "
 },
 {
   "id": "sec-dimension-6-5",
@@ -4525,7 +4543,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.4.5",
   "title": "",
-  "body": " Determine whether the following statements are true or false. Justify your answer either way.   If a set spans a finite-dimensional space , and if is a set of more than vectors in , then is linearly dependent.    The vector space is a subspace of .    A vector space is infinite-dimensional if it is spanned by an infinite set.     "
+  "body": " Determine whether the following statements are true or false. Justify your answer either way.   If , then there exists a spanning set of vectors in .    If every set of vectors in fails to span , then .    If and , then every set of non-zero vectors in is linearly independent.     "
 },
 {
   "id": "sec-dimension-6-6",
@@ -4534,7 +4552,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.4.6",
   "title": "",
-  "body": " Determine whether the following statements are true or false. Justify your answer either way.   If , then there exists a spanning set of vectors in .    If every set of vectors in fails to span , then .    If and , then every set of non-zero vectors in is linearly independent.     "
+  "body": " The first four Hermite polynomials are , , , and . Show that the set of these polynomials is a basis for .  "
 },
 {
   "id": "sec-dimension-6-7",
@@ -4543,66 +4561,66 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.4.7",
   "title": "",
-  "body": " The first four Hermite polynomials are , , , and . Show that the set of these polynomials is a basis for .  "
-},
-{
-  "id": "sec-dimension-6-8",
-  "level": "2",
-  "url": "sec-dimension.html#sec-dimension-6-8",
-  "type": "Exercise",
-  "number": "5.3.4.8",
-  "title": "",
   "body": " The first four Laguerre polynomials are , , , and . Show that the set of these polynomials is a basis for .  "
 },
 {
-  "id": "sec-dimension-6-9",
+  "id": "exer-num-pivots-matrix",
   "level": "2",
-  "url": "sec-dimension.html#sec-dimension-6-9",
+  "url": "sec-dimension.html#exer-num-pivots-matrix",
+  "type": "Exercise",
+  "number": "5.3.4.8",
+  "title": "",
+  "body": " Let be a matrix.   Prove that is the number of non-pivot columns in .    Prove that is the number of pivot columns of .     "
+},
+{
+  "id": "sec-dimension-6-8-3",
+  "level": "2",
+  "url": "sec-dimension.html#sec-dimension-6-8-3",
   "type": "Exercise",
   "number": "5.3.4.9",
   "title": "",
   "body": " Let be the set of all functions . Prove that is infinite-dimensional.  "
 },
 {
-  "id": "sec-dimension-6-10",
+  "id": "sec-dimension-6-8-4",
   "level": "2",
-  "url": "sec-dimension.html#sec-dimension-6-10",
+  "url": "sec-dimension.html#sec-dimension-6-8-4",
   "type": "Exercise",
   "number": "5.3.4.10",
   "title": "",
   "body": " Suppose that is a linear transformation between vector spaces and that is finite-dimensional. Prove that .  "
 },
 {
-  "id": "sec-dimension-6-11",
+  "id": "sec-dimension-6-8-5",
   "level": "2",
-  "url": "sec-dimension.html#sec-dimension-6-11",
+  "url": "sec-dimension.html#sec-dimension-6-8-5",
   "type": "Exercise",
   "number": "5.3.4.11",
   "title": "",
   "body": " Prove that is two-dimensional as a vector space over but four-dimensional as a vector space over .  "
 },
 {
-  "id": "sec-dimension-6-12",
+  "id": "sec-dimension-6-8-6",
   "level": "2",
-  "url": "sec-dimension.html#sec-dimension-6-12",
+  "url": "sec-dimension.html#sec-dimension-6-8-6",
   "type": "Exercise",
   "number": "5.3.4.12",
   "title": "",
   "body": " Prove .  "
 },
 {
-  "id": "sec-dimension-6-13",
+  "id": "sec-dimension-6-8-7",
   "level": "2",
-  "url": "sec-dimension.html#sec-dimension-6-13",
+  "url": "sec-dimension.html#sec-dimension-6-8-7",
   "type": "Exercise",
   "number": "5.3.4.13",
   "title": "",
   "body": " Prove .  "
 },
 {
-  "id": "sec-dimension-6-14",
+  "id": "sec-dimension-6-8-8",
   "level": "2",
-  "url": "sec-dimension.html#sec-dimension-6-14",
+  "url": "sec-dimension.html#sec-dimension-6-8-8",
   "type": "Exercise",
   "number": "5.3.4.14",
   "title": "",
@@ -7219,45 +7237,18 @@ var ptx_lunr_docs = [
   "body": "  The set has the property that all nonzero elements have a multiplicative inverse if and only if is prime.   "
 },
 {
-  "id": "apdx-isomorphisms",
+  "id": "backmatter-3",
   "level": "1",
-  "url": "apdx-isomorphisms.html",
+  "url": "backmatter-3.html",
   "type": "Appendix",
   "number": "B",
-  "title": "Isomorphisms",
-  "body": " Isomorphisms  We have arrived at a point in the book where I am noticing material that should have been included earlier. In a future edition of the book, this will appear in earlier chapters\/sections, but for this edition I need to stick it in this appendix. Apologies!   The following results require background from .    Suppose that is a basis for a vector space . Let be a subset of a vector space . Then there is a unique linear transformation such that for each , .    Given , there exists a unique linear combination by . We define the function by . In words, we send a vector to the linear combination of the vectors using the same weights as those needed to form from the basis . This gives for each , so we only need to show that is a linear transformation.  Suppose that with . Then we have . Now we let and . Then, if , we have .  We will complete the proof by justifying the claim that is unique. Suppose that with for each . Then, if with , we have . This shows that for every , so and is unique.      Let and let be a basis for . Then is an isomorphism if and only if is a basis for .    We first suppose that is an isomorphism. We want to show that is a basis for , so we begin with linear independence. Suppose that such that . Then we have . Since is injective, by we must have . But since is a linearly independent set, we have for all . This proves that is linearly independent.  We now prove that spans . Let . Since is surjective, there exists such that . Since is a basis for , we have . Then . This proves that , so is a basis for .  We now need to prove the other implication, and we assume that is a basis for . We need to show that is an isomorphism. To show that is injective, suppose that such that . We have , so . But since is a linearly independent set by assumption, this implies that for all . This means that , so is injective.  To prove that is surjective, we assume that . Since spans , we have for some . We claim that if , then . Here is the justification: . This proves that is surjective and is thus an isomorphism.    "
-},
-{
-  "id": "thm-lt-basis",
-  "level": "2",
-  "url": "apdx-isomorphisms.html#thm-lt-basis",
-  "type": "Theorem",
-  "number": "B.0.1",
-  "title": "",
-  "body": "  Suppose that is a basis for a vector space . Let be a subset of a vector space . Then there is a unique linear transformation such that for each , .    Given , there exists a unique linear combination by . We define the function by . In words, we send a vector to the linear combination of the vectors using the same weights as those needed to form from the basis . This gives for each , so we only need to show that is a linear transformation.  Suppose that with . Then we have . Now we let and . Then, if , we have .  We will complete the proof by justifying the claim that is unique. Suppose that with for each . Then, if with , we have . This shows that for every , so and is unique.   "
-},
-{
-  "id": "thm-isomorphism-basis",
-  "level": "2",
-  "url": "apdx-isomorphisms.html#thm-isomorphism-basis",
-  "type": "Theorem",
-  "number": "B.0.2",
-  "title": "",
-  "body": "  Let and let be a basis for . Then is an isomorphism if and only if is a basis for .    We first suppose that is an isomorphism. We want to show that is a basis for , so we begin with linear independence. Suppose that such that . Then we have . Since is injective, by we must have . But since is a linearly independent set, we have for all . This proves that is linearly independent.  We now prove that spans . Let . Since is surjective, there exists such that . Since is a basis for , we have . Then . This proves that , so is a basis for .  We now need to prove the other implication, and we assume that is a basis for . We need to show that is an isomorphism. To show that is injective, suppose that such that . We have , so . But since is a linearly independent set by assumption, this implies that for all . This means that , so is injective.  To prove that is surjective, we assume that . Since spans , we have for some . We claim that if , then . Here is the justification: . This proves that is surjective and is thus an isomorphism.   "
+  "title": "Hints, Answers, and Solutions to Exercises",
+  "body": " Hints, Answers, and Solutions to Exercises  "
 },
 {
   "id": "backmatter-4",
   "level": "1",
   "url": "backmatter-4.html",
-  "type": "Appendix",
-  "number": "C",
-  "title": "Hints, Answers, and Solutions to Exercises",
-  "body": " Hints, Answers, and Solutions to Exercises  "
-},
-{
-  "id": "backmatter-5",
-  "level": "1",
-  "url": "backmatter-5.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",

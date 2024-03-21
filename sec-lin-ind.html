@@ -420,9 +420,8 @@ window.MathJax = {
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="apdx-mod-arith.html" class="internal"><span class="codenumber">A</span> <span class="title">The Integers Modulo <span class="process-math">\(n\)</span></span></a></div></li>
-<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="apdx-isomorphisms.html" class="internal"><span class="codenumber">B</span> <span class="title">Isomorphisms</span></a></div></li>
-<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="codenumber">C</span> <span class="title">Hints, Answers, and Solutions to Exercises</span></a></div></li>
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="codenumber">B</span> <span class="title">Hints, Answers, and Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -526,7 +525,7 @@ c_1\bfv_1 + \cdots + c_n\bfv_n = \bfo
 <div class="para">Consider the set <span class="process-math">\(V' = \{p_1, p_2\}\)</span> in <span class="process-math">\(P_2\text{,}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-p_1 = 1 + t, \hspace{6pt} \text{and} \hspace{6pt} p_2 = 3t^2\text{.}
+p_1 = 1 + t \hspace{6pt} \text{and} \hspace{6pt} p_2 = 3t^2\text{.}
 \end{equation*}
 </div>
 <div class="para">We can see that the set <span class="process-math">\(V'\)</span> is linearly independent, because the only way to produce the zero polynomial from the combination <span class="process-math">\(c_1p_1 + c_2p_2\)</span> is if <span class="process-math">\(c_1 = c_2 = 0\text{.}\)</span> This is relatively easy to see in this example, since the degrees of <span class="process-math">\(t\)</span> are not at all shared between <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\text{.}\)</span> If the coefficient of <span class="process-math">\(t^2\)</span> must be zero in the sum <span class="process-math">\(c_1p_1+c_2p_2\text{,}\)</span> then we must have <span class="process-math">\(c_2=0\text{.}\)</span> And if the coefficient of <span class="process-math">\(t\)</span> must be zero in the sum <span class="process-math">\(c_1p_1 + c_2p_2\text{,}\)</span> then we must have <span class="process-math">\(c_1=0\text{.}\)</span>
@@ -562,7 +561,7 @@ p_1 = 1 + t, \hspace{6pt} \text{and} \hspace{6pt} p_2 = 3t^2\text{.}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">This shows us that <span class="process-math">\(\bfv_3 = -2.5 \bfv_1 - 2.5 \bfv_2\text{.}\)</span> This proves that the set <span class="process-math">\(\{\bfv_1, \bfv_2, \bfv_3\}\)</span> is linearly dependent. Further, we can conclude that the following is a linear dependence relation for the vectors in the set <span class="process-math">\(\{\bfv_1, \bfv_2, \bfv_3\}\text{:}\)</span>
+<div class="para">This shows us that <span class="process-math">\(\bfv_3 = -2.5 \bfv_1 - 2.5 \bfv_2\text{,}\)</span> which proves that the set <span class="process-math">\(\{\bfv_1, \bfv_2, \bfv_3\}\)</span> is linearly dependent. Further, we can conclude that the following is a linear dependence relation for the vectors in the set <span class="process-math">\(\{\bfv_1, \bfv_2, \bfv_3\}\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -570,11 +569,11 @@ p_1 = 1 + t, \hspace{6pt} \text{and} \hspace{6pt} p_2 = 3t^2\text{.}
 \end{equation*}
 </div>
 </div></article></details><div class="para" id="sec-lin-ind-13">We will see now that sets of <em class="emphasis">two vectors</em> are particularly nice when it comes to determining linear independence. (This means that there was an easier way to complete <a href="" class="xref" data-knowl="./knowl/xref/examp-polys-lin-ind.html" title="Example 5.1.6">Example 5.1.6</a>.)</div>
-<div class="para" id="sec-lin-ind-14">Consider a set <span class="process-math">\(V' = \{\bfv, \bfw\}\)</span> in a vector space <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(V'\)</span> is linearly dependent, then we can write <span class="process-math">\(\bfv = c\bfw\)</span> or <span class="process-math">\(\bfw = d\bfv\)</span> for <span class="process-math">\(c,d \in \ff\text{.}\)</span> Conversely, if <span class="process-math">\(V'\)</span> is linearly independent, then we cannot have either <span class="process-math">\(\bfv = c\bfw\)</span> or <span class="process-math">\(\bfw = d\bfv\text{.}\)</span> This means that we have a nice characterization of linear dependence for sets of two vectors.</div>
+<div class="para" id="sec-lin-ind-14">Consider a set <span class="process-math">\(V' = \{\bfv, \bfw\}\)</span> in a vector space <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(V'\)</span> is linearly dependent, then we can write <span class="process-math">\(\bfv = c\bfw\)</span> or <span class="process-math">\(\bfw = d\bfv\)</span> for some <span class="process-math">\(c,d \in \ff\text{.}\)</span> Conversely, if <span class="process-math">\(V'\)</span> is linearly independent, then we cannot have either <span class="process-math">\(\bfv = c\bfw\)</span> or <span class="process-math">\(\bfw = d\bfv\text{.}\)</span> This means that we have a handy characterization of linear dependence for sets of two vectors.</div>
 <article class="fact theorem-like" id="fact-lin-ind-two-vectors"><h3 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
 </h3>
-<div class="para" id="fact-lin-ind-two-vectors-1-1">A set of two vectors <span class="process-math">\(\{\bfv, \bfw\}\)</span> is linearly dependent if and only if at least one of the vectors is a multiple of the other. The set is linearly indepedent if and only if neither vector is a multiple of the other.</div></article><details id="sec-lin-ind-16" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
+<div class="para" id="fact-lin-ind-two-vectors-1-1">A set of two vectors <span class="process-math">\(\{\bfv, \bfw\}\)</span> is linearly dependent if and only if at least one of the vectors is a multiple of the other. The set is linearly independent if and only if neither vector is a multiple of the other.</div></article><details id="sec-lin-ind-16" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span>
 </h3></summary><article class="example example-like"><div class="para logical" id="sec-lin-ind-16-1-1">
 <div class="para">If <span class="process-math">\(\bfv\)</span> and <span class="process-math">\(\bfw\)</span> are the following vectors in <span class="process-math">\(\rr^3\text{,}\)</span>
@@ -583,7 +582,7 @@ p_1 = 1 + t, \hspace{6pt} \text{and} \hspace{6pt} p_2 = 3t^2\text{.}
 \begin{equation*}
 \bfv = \begin{bmatrix} 
 4 \\ 3 \\ -3
-\end{bmatrix}, \hspace{12pt}
+\end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
 \bfw = \begin{bmatrix} 
 2 \\ 3 \\ -1
 \end{bmatrix}\text{,}
@@ -595,7 +594,7 @@ p_1 = 1 + t, \hspace{6pt} \text{and} \hspace{6pt} p_2 = 3t^2\text{.}
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="fact-lin-dep-zero-1-1">
-<div class="para">Any set of vectors that contains the zero vector is linearly dependent. This is true because a linear dependence relation is easy to construct. If <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n\}\)</span> is a set of vectors in a vector space <span class="process-math">\(V'\text{,}\)</span> and if <span class="process-math">\(\bfv_i = \bfo\text{,}\)</span> then</div>
+<div class="para">Any set of vectors that contains the zero vector is linearly dependent. This is true because a linear dependence relation is easy to construct. If <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n\}\)</span> is a set of vectors in a vector space <span class="process-math">\(V\text{,}\)</span> and if <span class="process-math">\(\bfv_i = \bfo\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \bfo = 0\bfv_1 + \cdots + 0\bfv_{i-1} + 1 \bfv_i + 0 \bfv_{i+1} + \cdots + 0 \bfv_n
@@ -614,21 +613,21 @@ p_1 = 1 + t, \hspace{6pt} \text{and} \hspace{6pt} p_2 = 3t^2\text{.}
 x_1\bfv_1 + \cdots + x_n\bfv_n = \bfo\text{.}
 \end{equation*}
 </div>
-<div class="para">If the columns of <span class="process-math">\(A\)</span> are linearly independent, then the only solution to this equation is <span class="process-math">\(\bfx = \bfo\text{,}\)</span> which means that <span class="process-math">\(\nll(A) = \{\bfo\}\text{.}\)</span> Alternatively, if the columns of <span class="process-math">\(A\)</span> are linearly dependent, then <span class="process-math">\(\nll(A)\)</span> contains a non-zero vector—namely, the scalars which provide a linear dependence relation for these vectors.</div>
+<div class="para">If the columns of <span class="process-math">\(A\)</span> are linearly independent, then the only solution to this equation is <span class="process-math">\(\bfx = \bfo\text{,}\)</span> which means that <span class="process-math">\(\nll(A) = \{\bfo\}\text{.}\)</span> Alternatively, if the columns of <span class="process-math">\(A\)</span> are linearly dependent, then <span class="process-math">\(\nll(A)\)</span> contains a non-zero vector—namely, the vector of scalars which provides a linear dependence relation for these vectors.</div>
 </div></article></details><article class="note remark-like" id="sec-lin-ind-21"><h3 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec-lin-ind-21-1-1">The reader may note the slight abuse of terminology in the previous proof. We referred to the columns of a matrix being linearly dependent or independent instead of the set containing the columns of the matrix. We trust that the reader will forgive and overlook this misstep since the meaning is clear and the verbal gymnastics needed to be precise at all times can prove tiresome.</div></article><div class="para" id="sec-lin-ind-22">This proposition provides another test of the linear dependence of a set of vectors.</div>
+<div class="para" id="sec-lin-ind-21-1-1">The reader may note the slight abuse of terminology in the previous proof. We referred to the columns of a matrix being linearly dependent or independent instead of the set containing the columns of the matrix. We trust that the reader will forgive and overlook this misstep since the meaning is clear and the verbal gymnastics needed to be precise at all times can prove tiresome.</div></article><div class="para" id="sec-lin-ind-22">The following proposition provides another test of the linear dependence of a set of vectors.</div>
 <article class="corollary theorem-like" id="cor-n-vectors-f-m"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.1.13</span><span class="period">.</span>
 </h3>
-<div class="para" id="cor-n-vectors-f-m-1-1">If <span class="process-math">\(n &gt; m\text{,}\)</span> then every set of <span class="process-math">\(n\)</span> vectors in <span class="process-math">\(\ff^m\)</span> is linearly dependent.</div></article><details id="cor-n-vectors-f-m-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-n-vectors-f-m-2-1">Let <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n\}\)</span> be a set of vectors in <span class="process-math">\(\ff^m\)</span> and let <span class="process-math">\(A\)</span> be the matrix with the <span class="process-math">\(\bfv_i\)</span> as its columns. By <a href="" class="xref" data-knowl="./knowl/xref/cor-underdetermined-system.html" title="Corollary 1.3.7">Corollary 1.3.7</a> (or, technically, by the version of this result generalized to any field <span class="process-math">\(\ff\)</span>), we know that the <span class="process-math">\(m\times n\)</span> linear system represented by <span class="process-math">\(A\bfx = \bfo\)</span> cannot have a unique solution. Since <span class="process-math">\(\bfx = \bfo\)</span> is a known solution, this means that the columns of <span class="process-math">\(A\)</span> must be linearly dependent by <a href="" class="xref" data-knowl="./knowl/xref/prop-lin-ind-columns.html" title="Proposition 5.1.11">Proposition 5.1.11</a>.</div></article></details><div class="para" id="sec-lin-ind-24">
-<a href="" class="xref" data-knowl="./knowl/xref/prop-lin-ind-columns.html" title="Proposition 5.1.11">Proposition 5.1.11</a> provides us with a nice algorithm to determine whether or not a set of vectors in <span class="process-math">\(\ff^m\)</span> is linearly independent.</div>
+<div class="para" id="cor-n-vectors-f-m-1-1">If <span class="process-math">\(n &gt; m\text{,}\)</span> then every set of <span class="process-math">\(n\)</span> vectors in <span class="process-math">\(\ff^m\)</span> is linearly dependent.</div></article><details id="cor-n-vectors-f-m-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-n-vectors-f-m-2-1">Let <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n\}\)</span> be a set of vectors in <span class="process-math">\(\ff^m\)</span> and let <span class="process-math">\(A\)</span> be the matrix with the elements of <span class="process-math">\(V'\)</span> as its columns. By <a href="" class="xref" data-knowl="./knowl/xref/cor-underdetermined-system.html" title="Corollary 1.3.7">Corollary 1.3.7</a> (or, technically, by the version of this result generalized to any field <span class="process-math">\(\ff\)</span>), we know that the <span class="process-math">\(m\times n\)</span> linear system represented by <span class="process-math">\(A\bfx = \bfo\)</span> cannot have a unique solution. Since <span class="process-math">\(\bfx = \bfo\)</span> is a known solution, the presence of another solution means that the columns of <span class="process-math">\(A\)</span> must be linearly dependent by <a href="" class="xref" data-knowl="./knowl/xref/prop-lin-ind-columns.html" title="Proposition 5.1.11">Proposition 5.1.11</a>.</div></article></details><div class="para" id="sec-lin-ind-24">
+<a href="" class="xref" data-knowl="./knowl/xref/prop-lin-ind-columns.html" title="Proposition 5.1.11">Proposition 5.1.11</a> provides us with a convenient algorithm to determine whether or not a set of vectors in <span class="process-math">\(\ff^m\)</span> is linearly independent.</div>
 <article class="algorithm theorem-like" id="alg-linear-independence"><h3 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">5.1.14</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="alg-linear-independence-1-1">
-<div class="para">Suppose <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n\}\)</span> is a set of vectors in a vector space <span class="process-math">\(V\text{.}\)</span> In order to determine whether <span class="process-math">\(V'\)</span> is linearly independent, we follow these steps.</div>
+<div class="para">Suppose <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n\}\)</span> is a set of vectors in a vector space <span class="process-math">\(\ff^m\text{.}\)</span> In order to determine whether or not <span class="process-math">\(V'\)</span> is linearly independent, we follow these steps.</div>
 <ol class="decimal">
 <li id="alg-linear-independence-1-1-4-1"><div class="para" id="alg-linear-independence-1-1-4-1-1">Form the matrix <span class="process-math">\(A = [\bfv_1 \cdots \bfv_n]\)</span> and row reduce it to REF. Call this matrix <span class="process-math">\(B\text{.}\)</span>
 </div></li>
@@ -686,46 +685,46 @@ x_1\bfv_1 + \cdots + x_n\bfv_n = \bfo\text{.}
 \end{equation*}
 </div>
 </div></article></details><div class="para" id="sec-lin-ind-28">
-<a href="" class="xref" data-knowl="./knowl/xref/alg-linear-independence.html" title="Algorithm 5.1.14">Algorithm 5.1.14</a> only covers the situations when our vectors come from some <span class="process-math">\(\ff^m\text{.}\)</span> In the case of other vector spaces, we will need to do some more work.</div>
+<a href="" class="xref" data-knowl="./knowl/xref/alg-linear-independence.html" title="Algorithm 5.1.14">Algorithm 5.1.14</a> only covers the situations when our vectors come from some <span class="process-math">\(\ff^m\text{.}\)</span> In the case of other vector spaces, we will need to do more work.</div>
 <details id="sec-lin-ind-29" class="example example-like born-hidden-knowl"><summary><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.17</span><span class="period">.</span>
 </h3></summary><article class="example example-like"><div class="para logical" id="sec-lin-ind-29-1-1">
 <div class="para">Consider the following three elements of <span class="process-math">\(P_2\text{:}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-results.html">
 \begin{equation*}
 p_1 = 1+t, \hspace{6pt} p_2 = t - t^2, \hspace{6pt} p_3 = 2 + 2t + t^2\text{.}
 \end{equation*}
 </div>
 <div class="para">To determine whether or not the set <span class="process-math">\(\{p_1, p_2, p_3\}\)</span> is linearly dependent, we need to return to the definition. Suppose that we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-results.html">
 \begin{equation*}
-c_1p_1 + c_2p_2 + c_3p_3 = 0\text{.}
+c_1p_1 + c_2p_2 + c_3p_3 = 0
 \end{equation*}
 </div>
-<div class="para">In other words, this linear combination is the zero polynomial, so we have</div>
-<div class="displaymath process-math">
+<div class="para">for some <span class="process-math">\(c_1, c_2, c_3 \in \rr\text{.}\)</span> In other words, this linear combination is the zero polynomial, so we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-results.html">
 \begin{equation*}
 c_1p_1 + c_2p_2 + c_3p_3 = 0 + 0t + 0t^2\text{.}
 \end{equation*}
 </div>
 <div class="para">For these specific polynomials, this means we have</div>
-<div class="displaymath process-math" id="sec-lin-ind-29-1-1-6">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-results.html" id="sec-lin-ind-29-1-1-7">
 \begin{align*}
 c_1(1+t) + c_2(t-t^2) + c_3(2+2t+t^2) \amp = 0 + 0t + 0t^2\\
 (c_1+2c_3)1 + (c_1+c_2+2c_3)t + (-c_2+c_3)t^2 \amp = 0+0t+0t^2\text{.}
 \end{align*}
 </div>
 <div class="para">Since the coefficients of the corresponding powers of <span class="process-math">\(t\)</span> must be equal on both sides of this equation, we have a linear system to solve:</div>
-<div class="displaymath process-math" id="sec-lin-ind-29-1-1-8">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-results.html" id="sec-lin-ind-29-1-1-9">
 \begin{align*}
 c_1+2c_3 \amp = 0\\
 c_1+c_2+2c_3 \amp = 0\\
 -c_2+c_3 \amp = 0\text{.}
 \end{align*}
 </div>
-<div class="para">Our variables in this system are <span class="process-math">\(c_1\text{,}\)</span> <span class="process-math">\(c_2\text{,}\)</span> and <span class="process-math">\(c_3\text{,}\)</span> and we solve this using the techniques from (insert reference here). We find that</div>
-<div class="displaymath process-math">
+<div class="para">Our variables in this system are <span class="process-math">\(c_1\text{,}\)</span> <span class="process-math">\(c_2\text{,}\)</span> and <span class="process-math">\(c_3\text{,}\)</span> and we solve the system using the techniques from <a href="sec-results.html" class="internal" title="Section 1.3: Results">Section 1.3</a>. We find that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-results.html">
 \begin{equation*}
 \begin{bmatrix} 
 1 \amp 0 \amp 2 \\ 
@@ -740,12 +739,12 @@ c_1+c_2+2c_3 \amp = 0\\
 \end{equation*}
 </div>
 <div class="para">This shows that the only solution to this linear system is the trivial one: <span class="process-math">\(c_1=c_1=c_3=0\text{.}\)</span> That means that the set <span class="process-math">\(\{p_1,p_2,p_3\}\)</span> is linearly independent.</div>
-</div></article></details><div class="para" id="sec-lin-ind-30">We end this section with two more results.</div>
+</div></article></details><div class="para" id="sec-lin-ind-30">We end this section with two additional results.</div>
 <article class="corollary theorem-like" id="cor-n-vect-in-f-n"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.1.18</span><span class="period">.</span>
 </h3>
 <div class="para" id="cor-n-vect-in-f-n-1-1">A set of <span class="process-math">\(n\)</span> vectors in <span class="process-math">\(\ff^n\)</span> is linearly independent if and only if that set spans <span class="process-math">\(\ff^n\text{.}\)</span>
-</div></article><details id="cor-n-vect-in-f-n-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-n-vect-in-f-n-2-1">Let <span class="process-math">\(A = [\bfv_1\; \cdots \bfv_n ] \in M_n(\ff)\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/thm-vectors-span-fm.html" title="Theorem 3.4.14">Theorem 3.4.14</a>, the set <span class="process-math">\(V'=\{ \bfv_1, \ldots, \bfv_n \}\)</span> spans <span class="process-math">\(\ff^n\)</span> if and only if the RREF of <span class="process-math">\(A\)</span> has a pivot in every row. On the other hand, <a href="" class="xref" data-knowl="./knowl/xref/alg-linear-independence.html" title="Algorithm 5.1.14">Algorithm 5.1.14</a> says that <span class="process-math">\(V'\)</span> is linearly independent if and only if the RREF of <span class="process-math">\(A\)</span> has a pivot in every column. Since <span class="process-math">\(A\)</span> is a square matrix, each of these happen exactly when the RREF of <span class="process-math">\(A\)</span> is <span class="process-math">\(I_n\text{.}\)</span>
+</div></article><details id="cor-n-vect-in-f-n-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-n-vect-in-f-n-2-1">Let <span class="process-math">\(A = [\bfv_1 \cdots \bfv_n ] \in M_n(\ff)\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/thm-vectors-span-fm.html" title="Theorem 3.4.14">Theorem 3.4.14</a>, we know that the set <span class="process-math">\(V'=\{ \bfv_1, \ldots, \bfv_n \}\)</span> spans <span class="process-math">\(\ff^n\)</span> if and only if the RREF of <span class="process-math">\(A\)</span> has a pivot in every row. On the other hand, <a href="" class="xref" data-knowl="./knowl/xref/alg-linear-independence.html" title="Algorithm 5.1.14">Algorithm 5.1.14</a> says that <span class="process-math">\(V'\)</span> is linearly independent if and only if the RREF of <span class="process-math">\(A\)</span> has a pivot in every column. Since <span class="process-math">\(A\)</span> is a square matrix, each of these happen exactly when the RREF of <span class="process-math">\(A\)</span> is <span class="process-math">\(I_n\text{.}\)</span>
 </div></article></details><div class="para" id="sec-lin-ind-32">The following result appears to be little more than a slight restatement of the definition of linear dependence. However, the precise wording used in this theorem turns out to be quite useful in proving some results later in the text.</div>
 <article class="theorem theorem-like" id="thm-lin-dep-lemma"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">The Linear Dependence Lemma.</span>
@@ -979,18 +978,9 @@ p_1 = 2t - 4t^2, \hspace{12pt} p_2 = -t + 2t^2
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-lin-ind-36-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-lin-ind-36-6-1-1">
-<div class="para">Let <span class="process-math">\(T:V \to W\)</span> be a linear transformation between vector spaces.</div>
-<ol class="lower-alpha">
-<li id="sec-lin-ind-36-6-1-1-2-1"><div class="para" id="sec-lin-ind-36-6-1-1-2-1-1">Prove that if <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n\}\)</span> is a linearly dependent set in <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\{T(\bfv_1), \ldots, T(\bfv_n)\}\)</span> is a linearly dependent set in <span class="process-math">\(W\text{.}\)</span>
-</div></li>
-<li id="sec-lin-ind-36-6-1-1-2-2"><div class="para" id="sec-lin-ind-36-6-1-1-2-2-1">Prove that if <span class="process-math">\(T\)</span> is injective and if <span class="process-math">\(\{T(\bfv_1), \ldots, T(\bfv_n)\}\)</span> is a linearly dependent set in <span class="process-math">\(W\text{,}\)</span> then <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n\}\)</span> is a linearly dependent set in <span class="process-math">\(V\text{.}\)</span>
-</div></li>
-</ol>
-</div></article><article class="exercise exercise-like" id="sec-lin-ind-36-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-lin-ind-36-7-1-1">
 <div class="para">Determine whether or not the following set of vectors is linearly independent in the given vector space.</div>
 <ol class="lower-alpha">
-<li id="sec-lin-ind-36-7-1-1-1-1"><div class="para logical" id="sec-lin-ind-36-7-1-1-1-1-1">
+<li id="sec-lin-ind-36-6-1-1-1-1"><div class="para logical" id="sec-lin-ind-36-6-1-1-1-1-1">
 <div class="para">
 <span class="process-math">\(\{\bfv_1, \bfv_2, \bfv_3\}\)</span> in <span class="process-math">\(\rr^4\)</span> if</div>
 <div class="displaymath process-math">
@@ -1007,7 +997,7 @@ p_1 = 2t - 4t^2, \hspace{12pt} p_2 = -t + 2t^2
 \end{equation*}
 </div>
 </div></li>
-<li id="sec-lin-ind-36-7-1-1-1-2"><div class="para logical" id="sec-lin-ind-36-7-1-1-1-2-1">
+<li id="sec-lin-ind-36-6-1-1-1-2"><div class="para logical" id="sec-lin-ind-36-6-1-1-1-2-1">
 <div class="para">
 <span class="process-math">\(\{\bfv_1, \bfv_2, \bfv_3\}\)</span> in <span class="process-math">\(\ff_5^3\)</span> if</div>
 <div class="displaymath process-math">
@@ -1024,7 +1014,7 @@ p_1 = 2t - 4t^2, \hspace{12pt} p_2 = -t + 2t^2
 \end{equation*}
 </div>
 </div></li>
-<li id="sec-lin-ind-36-7-1-1-1-3"><div class="para logical" id="sec-lin-ind-36-7-1-1-1-3-1">
+<li id="sec-lin-ind-36-6-1-1-1-3"><div class="para logical" id="sec-lin-ind-36-6-1-1-1-3-1">
 <div class="para">
 <span class="process-math">\(\{\bfv_1, \bfv_2, \bfv_3\}\)</span> in <span class="process-math">\(\ff_3^3\)</span> if</div>
 <div class="displaymath process-math">
@@ -1042,36 +1032,46 @@ p_1 = 2t - 4t^2, \hspace{12pt} p_2 = -t + 2t^2
 </div>
 </div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-lin-ind-36-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="sec-lin-ind-36-8-1-1">Suppose that <span class="process-math">\(V_1\)</span> and <span class="process-math">\(V_2\)</span> are subsets of a vector space <span class="process-math">\(V\text{.}\)</span> Prove that if <span class="process-math">\(V_1 \subseteq V_2\)</span> and <span class="process-math">\(V_1\)</span> is linearly dependent, then <span class="process-math">\(V_2\)</span> is linearly dependent.</div></article><article class="exercise exercise-like" id="sec-lin-ind-36-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-lin-ind-36-9-1-1">
+</div></article><article class="exercise exercise-like" id="sec-lin-ind-36-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-lin-ind-36-7-1-1">
+<div class="para">For each of the following subsets <span class="process-math">\(\{p_1,p_2,p_3\}\)</span> of <span class="process-math">\(P_2\text{,}\)</span> determine whether the set is linearly dependent or linearly independent. Explain your answers.</div>
+<ol class="lower-alpha">
+<li id="sec-lin-ind-36-7-1-1-3-1"><div class="para" id="sec-lin-ind-36-7-1-1-3-1-1">
+<span class="process-math">\(p_1 = 3 + 5t^2\text{,}\)</span> <span class="process-math">\(p_2 = -5-3t+2t^2\text{,}\)</span> <span class="process-math">\(p_3 = -4-5t-2t^2\)</span>
+</div></li>
+<li id="sec-lin-ind-36-7-1-1-3-2"><div class="para" id="sec-lin-ind-36-7-1-1-3-2-1">
+<span class="process-math">\(p_1 = 2-t+t^2\text{,}\)</span> <span class="process-math">\(p_2 = -3+5t-12t^2\text{,}\)</span> <span class="process-math">\(p_3 = -2-2t+8t^2\)</span>
+</div></li>
+</ol>
+</div></article><article class="subexercises" id="sec-lin-ind-36-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-lin-ind-36-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-lin-ind-36-8-2-1-1">
+<div class="para">Let <span class="process-math">\(T:V \to W\)</span> be a linear transformation between vector spaces.</div>
+<ol class="lower-alpha">
+<li id="sec-lin-ind-36-8-2-1-1-2-1"><div class="para" id="sec-lin-ind-36-8-2-1-1-2-1-1">Prove that if <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n\}\)</span> is a linearly dependent set in <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\{T(\bfv_1), \ldots, T(\bfv_n)\}\)</span> is a linearly dependent set in <span class="process-math">\(W\text{.}\)</span>
+</div></li>
+<li id="sec-lin-ind-36-8-2-1-1-2-2"><div class="para" id="sec-lin-ind-36-8-2-1-1-2-2-1">Prove that if <span class="process-math">\(T\)</span> is injective and if <span class="process-math">\(\{T(\bfv_1), \ldots, T(\bfv_n)\}\)</span> is a linearly dependent set in <span class="process-math">\(W\text{,}\)</span> then <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n\}\)</span> is a linearly dependent set in <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="sec-lin-ind-36-8-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="sec-lin-ind-36-8-3-1-1">Suppose that <span class="process-math">\(V_1\)</span> and <span class="process-math">\(V_2\)</span> are subsets of a vector space <span class="process-math">\(V\text{.}\)</span> Prove that if <span class="process-math">\(V_1 \subseteq V_2\)</span> and <span class="process-math">\(V_1\)</span> is linearly dependent, then <span class="process-math">\(V_2\)</span> is linearly dependent.</div></article><article class="exercise exercise-like" id="sec-lin-ind-36-8-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-lin-ind-36-8-4-1-1">
 <div class="para">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(T:\ff^n \to \ff^n\)</span> be a linear transformation.</div>
 <ol class="lower-alpha">
-<li id="sec-lin-ind-36-9-1-1-3-1"><div class="para" id="sec-lin-ind-36-9-1-1-3-1-1">Prove that if <span class="process-math">\(\nll(A) = \{\bfo\}\)</span> if and only if <span class="process-math">\(\col(A) = \ff^n\text{.}\)</span>
+<li id="sec-lin-ind-36-8-4-1-1-3-1"><div class="para" id="sec-lin-ind-36-8-4-1-1-3-1-1">Prove that if <span class="process-math">\(\nll(A) = \{\bfo\}\)</span> if and only if <span class="process-math">\(\col(A) = \ff^n\text{.}\)</span>
 </div></li>
-<li id="sec-lin-ind-36-9-1-1-3-2"><div class="para" id="sec-lin-ind-36-9-1-1-3-2-1">Prove that <span class="process-math">\(T\)</span> is injective if and only if it is surjective.</div></li>
+<li id="sec-lin-ind-36-8-4-1-1-3-2"><div class="para" id="sec-lin-ind-36-8-4-1-1-3-2-1">Prove that <span class="process-math">\(T\)</span> is injective if and only if it is surjective.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-lin-ind-36-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-lin-ind-36-10-1-1">
+</div></article><article class="exercise exercise-like" id="sec-lin-ind-36-8-5"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-lin-ind-36-8-5-1-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space over <span class="process-math">\(\qq\)</span> and let <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n\}\)</span> be a subset of <span class="process-math">\(V\text{.}\)</span> Prove that <span class="process-math">\(V'\)</span> is linearly dependent if and only if there exist <em class="emphasis">integers</em> <span class="process-math">\(c_1, \ldots, c_n\text{,}\)</span> not all of which are zero, such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 c_1\bfv_1 + \cdots + c_n\bfv_n = \bfo\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="sec-lin-ind-36-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-lin-ind-36-11-1-1">
-<div class="para">For each of the following subsets <span class="process-math">\(\{p_1,p_2,p_3\}\)</span> of <span class="process-math">\(P_2\text{,}\)</span> determine whether the set is linearly dependent or linearly independent. Explain your answers.</div>
-<ol class="lower-alpha">
-<li id="sec-lin-ind-36-11-1-1-3-1"><div class="para" id="sec-lin-ind-36-11-1-1-3-1-1">
-<span class="process-math">\(p_1 = 3 + 5t^2\text{,}\)</span> <span class="process-math">\(p_2 = -5-3t+2t^2\text{,}\)</span> <span class="process-math">\(p_3 = -4-5t-2t^2\)</span>
-</div></li>
-<li id="sec-lin-ind-36-11-1-1-3-2"><div class="para" id="sec-lin-ind-36-11-1-1-3-2-1">
-<span class="process-math">\(p_1 = 2-t+t^2\text{,}\)</span> <span class="process-math">\(p_2 = -3+5t-12t^2\text{,}\)</span> <span class="process-math">\(p_3 = -2-2t+8t^2\)</span>
-</div></li>
-</ol>
-</div></article><article class="exercise exercise-like" id="exer-null-lin-ind"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para" id="exer-null-lin-ind-1-1">Let <span class="process-math">\(A \in M_{m,n}(\ff)\)</span> and suppose that <span class="process-math">\(\nll(A) \neq \{\bfo\}\text{.}\)</span> Prove that the set of vectors that spans <span class="process-math">\(\nll(A)\)</span> is linearly independent.</div></article></section></section></div>
+</div></article><article class="exercise exercise-like" id="exer-null-lin-ind"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para" id="exer-null-lin-ind-1-1">Let <span class="process-math">\(A \in M_{m,n}(\ff)\)</span> and suppose that <span class="process-math">\(\nll(A) \neq \{\bfo\}\text{.}\)</span> Prove that the set of vectors that spans <span class="process-math">\(\nll(A)\)</span> is linearly independent.</div></article></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-dimension.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-basis.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
