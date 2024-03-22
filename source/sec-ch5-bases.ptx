@@ -120,6 +120,31 @@
 </note>
 
 <p>
+  Here is an example where we are looking at whether a set of two vectors is a basis.
+</p>
+
+<example>
+  <statement>
+    <p>
+      It turns out that it is fairly easy to tell whether a set of two vectors in <m>\rr^2</m> forms a basis for <m>\rr^2</m>. Since linear independence is easy to check with two vectors<mdash></mdash>is either vector a scalar multiple of the other?<mdash></mdash>we can focus on this characteristic. This means that the set <m>\{\bfv_1, \bfv_2 \}</m>, where 
+      <me>
+        \bfv_1 = \begin{bmatrix} 1 \\ -3 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
+        \bfv_2 = \begin{bmatrix} -2 \\ 5 \end{bmatrix}
+      </me>
+      is a basis for <m>\rr^2</m>. Neither vector is a scalar multiple of the other, so the set is linearly independent. And then <xref ref="cor-n-vect-in-f-n"/> tells us that this set must also span <m>\rr^2</m>. (We could also easily see this by row reducing the matrix <m>[\bfv_1\; \bfv_2]</m>.)      
+    </p>
+    <p>
+      On the other hand, the set <m>W' = \{ \bfw_1, \bfw_2 \}</m>, where 
+      <me>
+        \bfw_1 = \begin{bmatrix} 2 \\ -1 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
+        \bfw_2 = \begin{bmatrix} -4 \\ 2 \end{bmatrix}
+      </me>
+      is not a basis for <m>\rr^2</m>. Since <m>\bfw_2 = -2\bfw_1</m>, <m>W'</m> is not linearly independent, so it cannot be a basis.
+    </p>
+  </statement>
+</example>
+
+<p>
   Putting some facts together, there is a fairly straightforward condition for when a list of vectors in <m>\ff^n</m> is a basis for that space.
 </p>
   
@@ -143,20 +168,31 @@
 <example>
   <statement>
     <p>
-      It turns out that it is fairly easy to tell whether a set of two vectors in <m>\rr^2</m> forms a basis for <m>\rr^2</m>. Since linear independence is easy to check with two vectors<mdash></mdash>is either vector a scalar multiple of the other?<mdash></mdash>by <xref ref="prop-basis-of-fn"/> we can focus on this characteristic. This means that the set <m>\{\bfv_1, \bfv_2 \}</m>, where 
+      Let <m>A \in M_3(\ff_5)</m> be the following matrix:
       <me>
-        \bfv_1 = \begin{bmatrix} 1 \\ -3 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
-        \bfv_2 = \begin{bmatrix} -2 \\ 5 \end{bmatrix}
-      </me>
-      is a basis for <m>\rr^2</m>. Neither vector is a scalar multiple of the other, so the set is linearly independent. And then <xref ref="cor-n-vect-in-f-n"/> tells us that this set must also span <m>\rr^2</m>. (We could also easily see this by row reducing the matrix <m>[\bfv_1\; \bfv_2]</m>.)      
+        A = \begin{bmatrix} 3 \amp 4 \amp 4 \\
+        3 \amp 0 \amp 1 \\
+        4 \amp 3 \amp 4 \end{bmatrix}
+      </me>.
+      We will label column <m>i</m> in <m>A</m> as the vector <m>\bfv_i \in \ff_5^3</m>.
     </p>
     <p>
-      On the other hand, the set <m>W' = \{ \bfw_1, \bfw_2 \}</m>, where 
+      Since the RREF of <m>A</m> is 
       <me>
-        \bfw_1 = \begin{bmatrix} 2 \\ -1 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
-        \bfw_2 = \begin{bmatrix} -4 \\ 2 \end{bmatrix}
-      </me>
-      is not a basis for <m>\rr^2</m>. Since <m>\bfw_2 = -2\bfw_1</m>, <m>W'</m> is not linearly independent, so it cannot be a basis.
+        \begin{bmatrix} 1 \amp 0 \amp 2 \\
+        0 \amp 1 \amp 2 \\
+        0 \amp 0 \amp 0 \end{bmatrix}
+      </me>,
+      the set <m>\{\bfv_1,\bfv_2,\bfv_3\}</m> is not a basis for <m>\ff_5^3</m>.
+    </p>
+    <p>
+      On the other hand, if <m>B \in M_3(\ff_5)</m> is the matrix
+      <me>
+        B = \begin{bmatrix} 1 \amp 1 \amp 0 \\
+        1 \amp 2 \amp 3 \\
+        0 \amp 3 \amp 0 \end{bmatrix}
+      </me>,
+      then the columns of <m>B</m> form a basis for <m>\ff_5^3</m> since the RREF of <m>B</m> is <m>I_3</m>.
     </p>
   </statement>
 </example>

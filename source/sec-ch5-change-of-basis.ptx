@@ -194,7 +194,7 @@
         \bfv_2 = \begin{bmatrix} 3 \\ 1 \\ 0 \end{bmatrix}, \hspace{6pt} 
         \bfv_3 = \begin{bmatrix} 0 \\ 4 \\ 1 \end{bmatrix}
       </me>.
-      The reader should verify that <m>\mcb</m> is a basis for <m>\ff_5^3</m>. 
+      (The reader should verify that <m>\mcb</m> is a basis for <m>\ff_5^3</m>.)
     </p>
     <p>
       <xref ref="lem-change-basis-standard"/> tells us that the change-of-basis matrix <m>P_{\mcb,\mce}</m> is easy to write down: 
@@ -274,7 +274,7 @@
         \bfv_1 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}, \hspace{12pt}
         \bfv_2 = \begin{bmatrix} -1 \\ 2 \end{bmatrix}
       </me>.
-      To see why this linear transformation is easier to describe in the <m>\mcb</m>-coordinates, we recall how easy reflection across the <m>y</m>-axis is to describe relative to the standard basis<mdash></mdash>simply negate the first coordinate!). The <m>\mcb</m>-basis vectors in this case lie on the axis of reflection and along the line perpendicular to that axis. 
+      To see why this linear transformation is easier to describe in the <m>\mcb</m>-coordinates, we recall how easy reflection across the <m>y</m>-axis is to describe relative to the standard basis<mdash></mdash>simply negate the first coordinate! The <m>\mcb</m>-basis vectors in this case lie on the axis of reflection and along the line perpendicular to that axis. 
     </p>
     <p>
       We note that <m>T(\bfv_1) = \bfv_1</m> and that <m>T(\bfv_2) = -\bfv_2</m>. This shows that the coordinate matrix of <m>T</m> with respect to <m>\mcb</m> is 

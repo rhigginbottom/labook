@@ -4,7 +4,7 @@
   <title>Rank and Nullity</title>
   <introduction>
     <p>
-      In this section we will connect dimension with the subspaces that are associated with linear transformations (see <xref ref="sec-subspaces-lt"/>).
+      In this section we will connect dimension with the subspaces associated with linear transformations (see <xref ref="sec-subspaces-lt"/>).
     </p>
   </introduction>
 
@@ -48,7 +48,7 @@
 
 <note>
   <p>
-    Since the rows of <m>A</m> are the columns of <m>A^T</m>, we have <m>\row(A) = \col(A^T)</m>. 
+    Since the rows of <m>A</m> are the columns of <m>A^T</m>, it is immediate that <m>\row(A) = \col(A^T)</m>. 
   </p>
 </note>
   
@@ -59,12 +59,12 @@
 <proposition xml:id="prop-row-equiv-row-spaces">
   <statement>
     <p>
-      If <m>A</m> and <m>B</m> are row equivalent matrices, then <m>\row(A) = \row(B)</m>. Further, if <m>B</m> is in REF, then the non-zero rows of <m>B</m> form a basis for <m>\row(B)</m> (and <m>\row(A)</m>). 
+      If <m>A</m> and <m>B</m> are row equivalent matrices, then we have <m>\row(A) = \row(B)</m>. Further, if <m>B</m> is in REF, then the non-zero rows of <m>B</m> form a basis for <m>\row(B)</m> (and <m>\row(A)</m>). 
     </p>
   </statement>
   <proof>
     <p>
-      If <m>A</m> is reduced to <m>B</m>, then the rows of <m>B</m> are linear combinations of the rows of <m>A</m>. (The elementary row operations produce linear combinations of the original rows.) Therefore, any linear combination of the rows of <m>B</m> can be written as a linear combination of the rows of <m>A</m>. This proves that <m>\row(B) \subseteq \row(A)</m>. Since all row operations are reversible, we can use row operations to produce <m>A</m> from <m>B</m>, and this same argument shows that <m>\row(A) \subseteq \row(B)</m>. This proves that <m>\row(A) = \row(B)</m>. 
+      We will first show that <m>\row(A) = \row(B)</m> as sets. If <m>A</m> is reduced to <m>B</m>, then the rows of <m>B</m> are linear combinations of the rows of <m>A</m>. (The elementary row operations produce linear combinations of the original rows.) Therefore, any linear combination of the rows of <m>B</m> can be written as a linear combination of the rows of <m>A</m>. This proves that <m>\row(B) \subseteq \row(A)</m>. Since all row operations are reversible, we can use row operations to produce <m>A</m> from <m>B</m>, and this same argument shows that <m>\row(A) \subseteq \row(B)</m>. This proves that <m>\row(A) = \row(B)</m>. 
     </p>
     <p>
       If the matrix <m>B</m> is in REF, the nonzero rows are linearly independent because no nonzero row is a linear combination of the rows below it. Here we are applying the Linear Dependence Lemma (<xref ref="thm-lin-dep-lemma"/>) to the nonzero rows from bottom to top. Since the rows of <m>B</m> span <m>\row(B)</m> by definition, the fact that they are linearly independent means that they form a basis for <m>\row(B)</m>. 
@@ -87,7 +87,7 @@
 
 <note>
   <p>
-    This theorem says that <m>\rank(A) = \rank(A^T)</m>. This theorem also answers the question about the relative sizes of <m>\col(A)</m> and <m>\row(A)</m><mdash></mdash>they are the same size!
+    This theorem says that <m>\rank(A) = \rank(A^T)</m>. This theorem also answers the question about the relative sizes of <m>\col(A)</m> and <m>\row(A)</m><mdash></mdash>they are the same!
   </p>
 </note>
 
@@ -139,7 +139,7 @@
     As we saw with rank, these two uses of <q>nullity</q> coincide for the situation when <m>T</m> is multiplication by <m>A</m>. 
   </p>
   <p>
-    Some other texts use the notation <m>\nll</m> to indicate nullity instead of null space. We will not introduce any additional notation for the nullity, but we will use <m>\dim(\ker(T))</m> or <m>\dim(\nll(A))</m> as appropriate. 
+    Some other texts use the notation <m>\nll(A)</m> to indicate nullity instead of null space, as we have. We will not introduce any additional notation for the nullity, but we will use <m>\dim(\ker(T))</m> or <m>\dim(\nll(A))</m> as appropriate. 
   </p>
 </note>
 
@@ -188,7 +188,7 @@
 </example>
 
 <p>
-  When the dimensions of the domain and codomain of a linear transformation are equal, some properties of such a transformation are easier to prove.
+  When the dimensions of the domain and codomain of a linear transformation are equal, some properties of such a transformation coincide.
 </p>
 
 <corollary xml:id="cor-lin-trans-dimensions">
@@ -342,7 +342,7 @@
         6 \amp 3 \amp -3 \amp 2 \amp 13
         \end{bmatrix} 
       </me>. 
-      Find a basis for <m>\row(A)</m>. 
+      Find a basis for <m>\row(A)</m>. Explain your answer.
     </p>
   </statement>
 </exercise>
@@ -400,39 +400,6 @@
   <exercise>
     <statement>
       <p>
-        If <m>A</m> and <m>B</m> are matrices, prove that <m>\rank(AB) \le \min\{\rank(A), \rank(B) \}</m>. 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Suppose that <m>T \in L(V,W)</m> and that <m>V</m> and <m>W</m> are both finite-dimensional.
-        <ol>
-          <li>
-            <p>
-              Prove that <m>T</m> is surjective if and only if <m>\rank(T) = \dim(W)</m>. 
-            </p>
-          </li>
-          <li>
-            <p>
-              Prove that <m>T</m> is injective if and only if <m>\rank(T) = \dim(V)</m>. 
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Suppose that <m>A\bfx = \bfb</m> is a <m>6\times 6</m> linear system which is consistent but which does <em>not</em> have a unique solution. Prove that there must be a vector <m>\mathbf{c} \in \ff^6</m> such that the system <m>A\bfx = \mathbf{c}</m> is inconsistent.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         <ol>
           <li>
             <p>
@@ -467,39 +434,75 @@
       </p>
     </statement>
   </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Prove that if <m>T \in L(V,W)</m>, then <m>\rank(T) \le \min \{\dim(V), \dim(W) \}</m>. 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Prove that if <m>A \in M_{m,n}(\ff)</m>, then <m>\rank(A) \le \min \{m,n \}</m>. 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Let <m>T \in L(V,W)</m>. 
-        <ol>
-          <li>
-            <p>
-              Prove that if <m>\dim(V) > \dim(W)</m>, then <m>T</m> cannot be injective.
-            </p>
-          </li>
-          <li>
-            <p>
-              Prove that if <m>\dim(W) > \dim(V)</m>, then <m>T</m> cannot be surjective.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
+  <subexercises>
+    <title>Writing Exercises</title>    
+    <exercise>
+      <statement>
+        <p>
+          If <m>A</m> and <m>B</m> are matrices, prove that <m>\rank(AB) \le \min\{\rank(A), \rank(B) \}</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>T \in L(V,W)</m> and that <m>V</m> and <m>W</m> are both finite-dimensional.
+          <ol>
+            <li>
+              <p>
+                Prove that <m>T</m> is surjective if and only if <m>\rank(T) = \dim(W)</m>. 
+              </p>
+            </li>
+            <li>
+              <p>
+                Prove that <m>T</m> is injective if and only if <m>\rank(T) = \dim(V)</m>. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>A\bfx = \bfb</m> is a <m>6\times 6</m> linear system which is consistent but which does <em>not</em> have a unique solution. Prove that there must be a vector <m>\mathbf{c} \in \ff^6</m> such that the system <m>A\bfx = \mathbf{c}</m> is inconsistent.
+        </p>
+      </statement>
+    </exercise>  
+    <exercise>
+      <statement>
+        <p>
+          Prove that if <m>T \in L(V,W)</m>, then <m>\rank(T) \le \min \{\dim(V), \dim(W) \}</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that if <m>A \in M_{m,n}(\ff)</m>, then <m>\rank(A) \le \min \{m,n \}</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>T \in L(V,W)</m>. 
+          <ol>
+            <li>
+              <p>
+                Prove that if <m>\dim(V) > \dim(W)</m>, then <m>T</m> cannot be injective.
+              </p>
+            </li>
+            <li>
+              <p>
+                Prove that if <m>\dim(W) > \dim(V)</m>, then <m>T</m> cannot be surjective.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+  </subexercises>
 </exercises> 
 
 

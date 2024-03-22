@@ -525,7 +525,7 @@
   <exercise>
     <statement>
       <p>
-        Consider the following matrix <m>A \in M_2(\rr)</m>:
+        Consider the following matrix <m>A \in M_3(\rr)</m>:
         <me>
           A = \begin{bmatrix}
           14 \amp 3 \amp 12 \\ 
