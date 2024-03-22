@@ -431,7 +431,7 @@ window.MathJax = {
 <section class="introduction" id="sec-coordinates-2"><div class="para" id="sec-coordinates-2-1">We have recently shown (<a href="" class="xref" data-knowl="./knowl/xref/cor-iso-fn.html" title="Corollary 5.3.13">Corollary 5.3.13</a>) that all <span class="process-math">\(n\)</span>-dimensional vector spaces over <span class="process-math">\(\ff\)</span> are isomorphic to <span class="process-math">\(\ff^n\text{.}\)</span> In this section we explore the vast implications of this isomorphism.</div></section><section class="subsection" id="subsec-coord-vectors"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.5.1</span><span class="space"> </span><span class="title">Coordinates of Vectors</span>
 </h3>
-<div class="para" id="subsec-coord-vectors-2">If <span class="process-math">\(V\)</span> is a finite-dimensional vector space over <span class="process-math">\(\ff\text{,}\)</span> then it has a basis <span class="process-math">\(\mcb\text{.}\)</span> We have seen (<a href="" class="xref" data-knowl="./knowl/xref/thm-unique-rep.html" title="Theorem 5.2.10: The Unique Representation Theorem">Theorem 5.2.10</a>) that each vector in <span class="process-math">\(V\)</span> then has a <em class="emphasis">unique</em> representation as a linear combination of these basis vectors. In the definition that follows, we focus on the coefficients in these linear combinations.</div>
+<div class="para" id="subsec-coord-vectors-2">If <span class="process-math">\(V\)</span> is a finite-dimensional vector space over <span class="process-math">\(\ff\text{,}\)</span> then it has a basis <span class="process-math">\(\mcb\text{.}\)</span> We have seen (<a href="" class="xref" data-knowl="./knowl/xref/thm-unique-rep.html" title="Theorem 5.2.11: The Unique Representation Theorem">Theorem 5.2.11</a>) that each vector in <span class="process-math">\(V\)</span> then has a <em class="emphasis">unique</em> representation as a linear combination of these basis vectors. In the definition that follows, we focus on the coefficients in these linear combinations.</div>
 <article class="definition definition-like" id="def-coordinates"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.1</span><span class="period">.</span>
 </h4>
@@ -471,13 +471,13 @@ C_{\mcb}(\bfv) = [\bfv]_{\mcb}\text{.}
 <div class="para">Let <span class="process-math">\(\mcb = \{ 1, t, t^2 \}\)</span> be the standard basis of the vector space <span class="process-math">\(P_2\text{.}\)</span> If <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\)</span> are</div>
 <div class="displaymath process-math">
 \begin{equation*}
-p_1 = 2 - t + 4t^2, \hspace{12pt} p_2 = -3t^2 + 10\text{,}
+p_1 = 2 - t + 4t^2 \hspace{6pt} \text{and} \hspace{6pt} p_2 = -3t^2 + 10\text{,}
 \end{equation*}
 </div>
 <div class="para">then the coordinate vectors of <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\)</span> are</div>
 <div class="displaymath process-math">
 \begin{equation*}
-[p_1]_{\mcb} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}, \hspace{12pt}
+[p_1]_{\mcb} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
 [p_2]_{\mcb} = \begin{bmatrix} 10 \\ 0 \\ -3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
@@ -488,7 +488,7 @@ p_1 = 2 - t + 4t^2, \hspace{12pt} p_2 = -3t^2 + 10\text{,}
 <div class="para">Within <span class="process-math">\(\ff_5^3\text{,}\)</span> consider <span class="process-math">\(W = \spn\{\bfv_1, \bfv_2 \}\text{,}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\bfv_1 = \begin{bmatrix} 2 \\ 3 \\ 1 \end{bmatrix}, \hspace{12pt}
+\bfv_1 = \begin{bmatrix} 2 \\ 3 \\ 1 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
 \bfv_2 = \begin{bmatrix} 1 \\ 0 \\ 3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
@@ -532,7 +532,7 @@ p_1 = 2 - t + 4t^2, \hspace{12pt} p_2 = -3t^2 + 10\text{,}
 <li id="prop-coord-map-li-span-1-1-5-2"><div class="para" id="prop-coord-map-li-span-1-1-5-2-1">A set of vectors <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n \}\)</span> spans <span class="process-math">\(V\)</span> if and only if the set of coordinate vectors <span class="process-math">\(\{C_{\mcb}(\bfv_1), \ldots, C_{\mcb}(\bfv_n) \}\)</span> spans <span class="process-math">\(\ff^m\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><div class="para" id="subsec-coord-vectors-12">Hopefully the reader can now see exactly how helpful the coordinate mapping isomorphism is. The following example spells this out explicitly.</div>
+</div></article><div class="para" id="subsec-coord-vectors-12">Hopefully the reader can now see exactly how helpful the coordinate mapping isomorphism is. The following example should help to connect the dots.</div>
 <details id="subsec-coord-vectors-13" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.7</span><span class="period">.</span>
 </h4></summary><article class="example example-like"><div class="para logical" id="subsec-coord-vectors-13-1-1">
@@ -688,7 +688,7 @@ T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) = (a+2b) + (-3a+4b-c)
 \bfv = \begin{bmatrix} 1 \\ -3 \\ 4 \end{bmatrix}\text{,}
 \end{equation*}
 </div>
-<div class="para">we can do so using coordinate vectors and the matrix <span class="process-math">\([T]_{\mcb, \mcc}\text{.}\)</span> Since the coordinate vector of <span class="process-math">\(\bfv\)</span> with respect to <span class="process-math">\(\mcb\)</span> is fairly obvious—it is <span class="process-math">\(\bfv\)</span> itself—we can proceed with this calculation:</div>
+<div class="para">we could do so using coordinate vectors and the matrix <span class="process-math">\([T]_{\mcb, \mcc}\text{.}\)</span> Since the coordinate vector of <span class="process-math">\(\bfv\)</span> with respect to <span class="process-math">\(\mcb\)</span> is fairly obvious—it is <span class="process-math">\(\bfv\)</span> itself—we can proceed with this calculation:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 [T(\bfv)]_{\mcc} = [T]_{\mcb,\mcc} [\bfv]_{\mcb} = 
@@ -934,8 +934,9 @@ T(p) = p' + p(1)t^2\text{.}
 <li id="sec-coordinates-6-10-1-1-8-3"><div class="para" id="sec-coordinates-6-10-1-1-8-3-1">Find the coordinate matrix <span class="process-math">\([TD]_{\mcc}\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-coordinates-6-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="sec-coordinates-6-11-1-1">Verify that the coordinate mapping in <a href="" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" title="Theorem 5.5.3">Theorem 5.5.3</a> is a linear transformation.</div></article></section></section></div>
+</div></article><article class="subexercises" id="sec-coordinates-6-11"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-coordinates-6-11-2"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para" id="sec-coordinates-6-11-2-1-1">Verify that the coordinate mapping in <a href="" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" title="Theorem 5.5.3">Theorem 5.5.3</a> is a linear transformation.</div></article></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-change-of-basis.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
