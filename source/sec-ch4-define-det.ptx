@@ -395,6 +395,22 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>6</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>66</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -434,6 +450,39 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              The elementary matrix is 
+              <me>
+                E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -3 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+              </me>,
+              and <m>\det(E) = -3</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The elementary matrix is 
+              <me>
+                E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0  \end{bmatrix}
+              </me>,
+              and <m>\det(E) = -1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The elementary matrix is 
+              <me>
+                E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 7 \amp 0 \amp 1  \end{bmatrix}
+              </me>,
+              and <m>\det(E) = 1</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -448,6 +497,14 @@
         Let <m>A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m> be a matrix over <m>\rr</m> and let <m>k \in \rr</m>. Find a formula that relates <m>\det(kA)</m> to <m>k</m> and <m>\det(A)</m>. 
       </p>
     </statement>
+    <solution>
+      <p>
+        We note that <m>kA = \begin{bmatrix} ka \amp kb \\ kc \amp kd \end{bmatrix}</m>, and 
+        <me>
+          \det(kA) = kakd - kbkc = k^2ad - k^2bc = k^2(ad-bc) = k^2\det(A)
+        </me>.        
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
@@ -466,6 +523,11 @@
         Find a value of <m>c</m> so that <m>\det(A) = 0</m> or explain why this is not possible.
       </p>
     </statement>
+    <answer>
+      <p>
+        We must have <m>c = -\frac{13}{2}</m> in order to have <m>\det(A) = 0</m>.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -479,6 +541,11 @@
         Find all values of <m>x</m> such that <m>\det(A) = 0</m>.
       </p>
     </statement>
+    <answer>
+      <p>
+        The values are <m>x=1</m> and <m>x=6</m>.
+      </p>
+    </answer>
   </exercise>
   <subexercises>
   <title>Writing Exercises</title>  
@@ -502,6 +569,21 @@
         Suppose that <m>A</m> is a <m>2\times 2</m> matrix and that <m>B</m> is the result of applying the <em>replace</em> row operation to <m>A</m>. Prove that <m>\det(B) = \det(A)</m>.
       </p>
     </statement>
+    <answer>
+      <p>
+        We let <m>A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m>, and we consider the case of adding <m>k</m> times row 1 to row 2. We will call the resulting matrix <m>B</m>, and it has this appearance:
+        <me>
+          B = \begin{bmatrix} a \amp b \\ ka + c \amp kb + d \end{bmatrix}
+        </me>.
+        We know that <m>\det(A) = ad-bc</m>, and we will now calculate <m>\det(B)</m>:
+        <md>
+          <mrow>\det(B) \amp = a(kb+d) - b(ka+c)</mrow>
+          <mrow> \amp = kab + ad - kab - bc</mrow>
+          <mrow> \amp = ad - bc = \det(A)</mrow>
+        </md>.
+        Technically we have only proved one of the two necessary cases to complete this proof.
+      </p>
+    </answer>
   </exercise>
 </subexercises>
 </exercises> 

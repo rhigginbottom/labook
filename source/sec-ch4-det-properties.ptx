@@ -605,6 +605,22 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>-12</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>-3</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -635,6 +651,11 @@
         </me>. <!-- -10 -->        
       </p>
     </statement>
+    <answer>
+      <p>
+        <m>-10</m>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -707,6 +728,11 @@
         </me>. <!-- det(A)=3 -->        
       </p>
     </statement>
+    <answer>
+      <p>
+        <m>27</m>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -723,6 +749,11 @@
         Suppose that <m>A</m> is a square matrix with two identical columns. Prove that <m>\det(A)=0</m>. 
       </p>
     </statement>
+    <solution>
+      <p>
+        If <m>A</m> has identical columns, then <m>A^T</m> has identical rows. We can use an elementary row operation to add <m>-1</m> times one of these rows to the other, producing a row of zeros in this matrix we will call <m>B</m>. Since we used the replace row operation to go from <m>A^T</m> to <m>B</m>, we have <m>\det(A^T) = \det(B)</m> by <xref ref="thm-det-replace"/>. Since <m>B</m> has a row of zeros, we know that <m>\det(B) = 0</m> by <xref ref="prop-det-row-zeros"/>. This means that <m>\det(A^T)=0</m>, and since we have <m>\det(A)=\det(A^T)</m> by <xref ref="thm-det-transpose"/>, this means that <m>\det(A)=0</m>, as desired.
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
@@ -755,6 +786,15 @@
         Suppose that <m>A, B \in M_n(\ff)</m>. Show that <m>\det(AB)=\det(BA)</m> regardless of whether or not <m>AB=BA</m>. 
       </p>
     </statement>
+    <solution>
+      <p>
+        If <m>A, B \in M_n(\ff)</m>, we have
+        <me>
+          \det(AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA)
+        </me>.
+        This string of equations uses <xref ref="thm-det-matrix-product"/> twice as well as the fact that the determinant of a matrix is an element of <m>\ff</m>, and elements of <m>\ff</m> commute via multiplication.
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
