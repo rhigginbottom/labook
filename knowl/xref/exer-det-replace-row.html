@@ -15,6 +15,24 @@
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">12<span class="period">.</span></span>
 </h5>
 <div class="para">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times 2\)</span> matrix and that <span class="process-math">\(B\)</span> is the result of applying the <em class="emphasis">replace</em> row operation to <span class="process-math">\(A\text{.}\)</span> Prove that <span class="process-math">\(\det(B) = \det(A)\text{.}\)</span>
-</div></article><span class="incontext"><a class="internal" href="sec-define-det.html#exer-det-replace-row">in-context</a></span>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">We let <span class="process-math">\(A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}\text{,}\)</span> and we consider the case of adding <span class="process-math">\(k\)</span> times row 1 to row 2. We will call the resulting matrix <span class="process-math">\(B\text{,}\)</span> and it has this appearance:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B = \begin{bmatrix} a \amp b \\ ka + c \amp kb + d \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We know that <span class="process-math">\(\det(A) = ad-bc\text{,}\)</span> and we will now calculate <span class="process-math">\(\det(B)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\det(B) \amp = a(kb+d) - b(ka+c)\\
+\amp = kab + ad - kab - bc\\
+\amp = ad - bc = \det(A)\text{.}
+\end{align*}
+</div>
+<div class="para">Technically we have only proved one of the two necessary cases to complete this proof.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="sec-define-det.html#exer-det-replace-row">in-context</a></span>
 </body>
 </html>

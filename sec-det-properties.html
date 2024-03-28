@@ -835,7 +835,11 @@ B = \begin{bmatrix}
 -1 \amp -2 \amp -1 \amp 3
 \end{bmatrix}\)</span> </div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-det-properties-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-det-properties-6-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-det-properties-6-2-2-1"><ol class="lower-alpha">
+<li id="sec-det-properties-6-2-2-1-1-1"><div class="para" id="sec-det-properties-6-2-2-1-1-1-1"><span class="process-math">\(\displaystyle -12\)</span></div></li>
+<li id="sec-det-properties-6-2-2-1-1-2"><div class="para" id="sec-det-properties-6-2-2-1-1-2-1"><span class="process-math">\(\displaystyle -3\)</span></div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-det-properties-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-det-properties-6-3-1-1">
 <div class="para">Find the determinant using a combination of row reduction and cofactor expansion:</div>
 <div class="displaymath process-math">
@@ -861,7 +865,8 @@ A = \begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="sec-det-properties-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-det-properties-6-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="sec-det-properties-6-4-2-1"><span class="process-math">\(-10\)</span></div></div></details></div></article><article class="exercise exercise-like" id="sec-det-properties-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-det-properties-6-5-1-1">
 <div class="para">Use the determinant to determine whether or not the matrix is invertible. (Note that not all fields are <span class="process-math">\(\rr\text{!}\)</span>)</div>
 <ol class="lower-alpha">
@@ -907,11 +912,13 @@ A = \begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="sec-det-properties-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-det-properties-6-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="sec-det-properties-6-6-2-1"><span class="process-math">\(27\)</span></div></div></details></div></article><article class="exercise exercise-like" id="sec-det-properties-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para" id="sec-det-properties-6-7-1-1">Construct an invertible matrix <span class="process-math">\(A \in M_3(\rr)\text{.}\)</span> For each entry of <span class="process-math">\(A\text{,}\)</span> compute the corresponding cofactor. Create a new <span class="process-math">\(3\times 3\)</span> matrix with these cofactors in the same position as the entry of <span class="process-math">\(A\)</span> on which they were based; call this matrix <span class="process-math">\(C\text{.}\)</span> Calculate <span class="process-math">\(AC^T\text{.}\)</span> What do you observe?</div></article><article class="subexercises" id="sec-det-properties-6-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise exercise-like" id="sec-det-properties-6-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
 <div class="para" id="sec-det-properties-6-8-2-1-1">Suppose that <span class="process-math">\(A\)</span> is a square matrix with two identical columns. Prove that <span class="process-math">\(\det(A)=0\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+</div>
+<div class="solutions"><details id="sec-det-properties-6-8-2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="sec-det-properties-6-8-2-2-1">If <span class="process-math">\(A\)</span> has identical columns, then <span class="process-math">\(A^T\)</span> has identical rows. We can use an elementary row operation to add <span class="process-math">\(-1\)</span> times one of these rows to the other, producing a row of zeros in this matrix we will call <span class="process-math">\(B\text{.}\)</span> Since we used the replace row operation to go from <span class="process-math">\(A^T\)</span> to <span class="process-math">\(B\text{,}\)</span> we have <span class="process-math">\(\det(A^T) = \det(B)\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/thm-det-replace.html" title="Theorem 4.2.5">Theorem 4.2.5</a>. Since <span class="process-math">\(B\)</span> has a row of zeros, we know that <span class="process-math">\(\det(B) = 0\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/prop-det-row-zeros.html" title="Proposition 4.2.1">Proposition 4.2.1</a>. This means that <span class="process-math">\(\det(A^T)=0\text{,}\)</span> and since we have <span class="process-math">\(\det(A)=\det(A^T)\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/thm-det-transpose.html" title="Theorem 4.1.9">Theorem 4.1.9</a>, this means that <span class="process-math">\(\det(A)=0\text{,}\)</span> as desired.</div></div></details></div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
 <div class="para" id="sec-det-properties-6-8-3-1-1">Suppose that <span class="process-math">\(A \in M_n(\ff)\)</span> is invertible. Prove that <span class="process-math">\(\det(A^{-1})= \dfrac{1}{\det(A)}\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-det-properties-6-8-4-1-1"><ol class="lower-alpha">
@@ -919,7 +926,16 @@ A = \begin{bmatrix}
 <li id="sec-det-properties-6-8-4-1-1-1-2"><div class="para" id="sec-det-properties-6-8-4-1-1-1-2-1">Does the result or your argument in part (a) change if <span class="process-math">\(\rr\)</span> is replaced with <span class="process-math">\(\ff_7\text{?}\)</span> Explain.</div></li>
 </ol></div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-5"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
 <div class="para" id="sec-det-properties-6-8-5-1-1">Suppose that <span class="process-math">\(A, B \in M_n(\ff)\text{.}\)</span> Show that <span class="process-math">\(\det(AB)=\det(BA)\)</span> regardless of whether or not <span class="process-math">\(AB=BA\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-6"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+</div>
+<div class="solutions"><details id="sec-det-properties-6-8-5-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sec-det-properties-6-8-5-2-1">
+<div class="para">If <span class="process-math">\(A, B \in M_n(\ff)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-matrix-product.html">
+\begin{equation*}
+\det(AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA)\text{.}
+\end{equation*}
+</div>
+<div class="para">This string of equations uses <a href="" class="xref" data-knowl="./knowl/xref/thm-det-matrix-product.html" title="Theorem 4.2.13">Theorem 4.2.13</a> twice as well as the fact that the determinant of a matrix is an element of <span class="process-math">\(\ff\text{,}\)</span> and elements of <span class="process-math">\(\ff\)</span> commute via multiplication.</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-6"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
 <div class="para" id="sec-det-properties-6-8-6-1-1">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(k \in \ff\text{.}\)</span> Find a formula for <span class="process-math">\(\det(kA)\)</span> and prove that your formula is correct.</div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-7"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-det-properties-6-8-7-1-1"><ol class="lower-alpha">
 <li id="sec-det-properties-6-8-7-1-1-1-1"><div class="para logical" id="sec-det-properties-6-8-7-1-1-1-1-1">
