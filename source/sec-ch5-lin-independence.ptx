@@ -318,7 +318,7 @@
         5 \\ 0 \\ 0.5 \\ -4
         \end{bmatrix}
       </me>.
-      The set <m>\{\bfv_1, \bfv_2, \bfv_3, \bfv_4\}</m> is linearly dependent, because the matrix <m>A</m> which has the <m>\bfv_i</m> as its columns has the following RREF:
+      The set <m>\{\bfv_1, \bfv_2, \bfv_3, \bfv_4\}</m> is linearly dependent, because the matrix <m>A</m> which has the vectors <m>\bfv_i</m> as its columns has the following RREF:
       <me>
         \begin{bmatrix} 
         1 \amp 0 \amp 4 \amp 0 \\ 
@@ -667,9 +667,14 @@
           \bfv_3 = \begin{bmatrix} 
           -2 \\ 0 \\ c
           \end{bmatrix}
-        </me>. <!-- c=20 -->
+        </me>. 
       </p>
     </statement>
+    <answer>
+      <p>
+        The set is linearly dependent if and only if <m>c = 20</m>.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -677,6 +682,11 @@
         How many pivot columns must a <m>6\times 4</m> matrix have if its columns are linearly independent? Explain.
       </p>
     </statement>
+    <answer>
+      <p>
+        <m>4</m>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -706,6 +716,32 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              False.
+            </p>
+          </li>
+          <li>
+            <p>
+              False.
+            </p>
+          </li>
+          <li>
+            <p>
+              False.
+            </p>
+          </li>
+          <li>
+            <p>
+              True.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -810,6 +846,27 @@
         Suppose that <m>V_1</m> and <m>V_2</m> are subsets of a vector space <m>V</m>. Prove that if <m>V_1 \subseteq V_2</m> and <m>V_1</m> is linearly dependent, then <m>V_2</m> is linearly dependent. 
       </p>
     </statement>
+    <solution>
+      <p>
+        Suppose that 
+        <me>
+          V_1 = \{\bfv_1,\ldots, \bfv_k\}
+        </me>
+        and 
+        <me>
+          V_2 = \{\bfv_1,\ldots,\bfv_k,\bfv_{k+1},\ldots,\bfv_n\}
+        </me>.
+        Since <m>V_1</m> is linearly dependent, we know that there exist scalars <m>c_1, \ldots, c_k</m>, not all of which are zero, such that 
+        <me>
+          c_1\bfv_1 + \cdots + c_k\bfv_k = \bfo
+        </me>.
+        Then it is easy to produce a linear dependence relation for the set <m>V_2</m>:
+        <me>
+          c_1\bfv_1 + \cdots + c_k\bfv_k + 0\bfv_{k+1} + \cdots + 0\bfv_n = \bfo
+        </me>.
+        This proves that <m>V_2</m> is linearly dependent.
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
@@ -818,7 +875,7 @@
         <ol>
           <li>
             <p>
-              Prove that if <m>\nll(A) = \{\bfo\}</m> if and only if <m>\col(A) = \ff^n</m>. 
+              Prove that <m>\nll(A) = \{\bfo\}</m> if and only if <m>\col(A) = \ff^n</m>. 
             </p>
           </li>
           <li>
@@ -829,6 +886,28 @@
         </ol>
       </p>
     </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              If <m>A \in M_n(\ff)</m>, then <m>\nll(A) = \{\bfo\}</m> if and only if the RREF of <m>A</m> is <m>I_n</m>. It is always true that the null space is <m>\{\bfo \}</m> if and only if and we have a pivot in each column of the RREF; when <m>A</m> is square, this means that the RREF must be <m>I_n</m>. 
+            </p> 
+            <p> 
+              We also know that <m>\col(A) = \ff^n</m> if and only if the RREF of <m>A</m> is <m>I_n</m>. It is always true that the column space is <m>\ff^n</m> if and only if and we have a pivot in each row of the RREF; when <m>A</m> is square, this means that the RREF must be <m>I_n</m>. 
+            </p>
+            <p>
+              Putting these two paragraphs together, we conclude that <m>\nll(A) = \{\bfo\}</m> if and only if <m>\col(A) = \ff^n</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>T</m> is a linear transformation <m>\ff^n \to \ff^n</m>, then by <xref ref="thm-matrix-of-lin-trans"/> there is a matrix <m>B \in M_n(\ff)</m> such that <m>T</m> is multiplication by <m>B</m>. Then the kernel of <m>T</m> is the null space of <m>B</m> and the range of <m>T</m> is the column space of <m>B</m>. So, <m>T</m> is injective if and only if <m>\nll(B) = \{\bfo\}</m>, and <m>T</m> is surjective if and only if <m>\col(B) = \ff^n</m>. Then the result from part a completes the argument.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
