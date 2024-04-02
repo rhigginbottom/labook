@@ -1163,7 +1163,60 @@ B = \begin{bmatrix} a \amp b \\ ka + c \amp kb + d \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">This string of equations uses <a href="" class="xref" data-knowl="./knowl/xref/thm-det-matrix-product.html" title="Theorem 4.2.13">Theorem 4.2.13</a> twice as well as the fact that the determinant of a matrix is an element of <span class="process-math">\(\ff\text{,}\)</span> and elements of <span class="process-math">\(\ff\)</span> commute via multiplication.</div>
-</div></div></details></div></article></article></section></div>
+</div></div></details></div></article></article><h3 class="heading hide-type" title="Section 5.1: Linear Independence">
+<span class="codenumber">5</span><span class="space"> </span><span class="title">The Dimension of a Vector Space</span><br><span class="codenumber">5.1</span><span class="space"> </span><span class="title">Linear Independence</span>
+</h3>
+<h4 class="heading hide-type" title="Exercises 5.1"><span class="title">Exercises</span></h4>
+<article class="exercise-like"><h5 class="heading"><span class="codenumber">5.1.3<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">The set is linearly dependent if and only if <span class="process-math">\(c = 20\text{.}\)</span>
+</div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">5.1.4<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para"><span class="process-math">\(4\)</span></div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">5.1.5<span class="period">.</span></span></h5>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para">False.</div></li>
+<li><div class="para">False.</div></li>
+<li><div class="para">False.</div></li>
+<li><div class="para">True.</div></li>
+</ol></div></div></details></div></article><article class="subexercises"><h5 class="heading"><span class="title">Writing Exercises</span></h5>
+<article class="exercise-like"><h6 class="heading"><span class="codenumber">5.1.9<span class="period">.</span></span></h6>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical">
+<div class="para">Suppose that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V_1 = \{\bfv_1,\ldots, \bfv_k\}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V_2 = \{\bfv_1,\ldots,\bfv_k,\bfv_{k+1},\ldots,\bfv_n\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(V_1\)</span> is linearly dependent, we know that there exist scalars <span class="process-math">\(c_1, \ldots, c_k\text{,}\)</span> not all of which are zero, such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_1\bfv_1 + \cdots + c_k\bfv_k = \bfo\text{.}
+\end{equation*}
+</div>
+<div class="para">Then it is easy to produce a linear dependence relation for the set <span class="process-math">\(V_2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_1\bfv_1 + \cdots + c_k\bfv_k + 0\bfv_{k+1} + \cdots + 0\bfv_n = \bfo\text{.}
+\end{equation*}
+</div>
+<div class="para">This proves that <span class="process-math">\(V_2\)</span> is linearly dependent.</div>
+</div></div></details></div></article><article class="exercise-like"><h6 class="heading"><span class="codenumber">5.1.10<span class="period">.</span></span></h6>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical"><ol class="lower-alpha">
+<li>
+<div class="para">If <span class="process-math">\(A \in M_n(\ff)\text{,}\)</span> then <span class="process-math">\(\nll(A) = \{\bfo\}\)</span> if and only if the RREF of <span class="process-math">\(A\)</span> is <span class="process-math">\(I_n\text{.}\)</span> It is always true that the null space is <span class="process-math">\(\{\bfo \}\)</span> if and only if and we have a pivot in each column of the RREF; when <span class="process-math">\(A\)</span> is square, this means that the RREF must be <span class="process-math">\(I_n\text{.}\)</span>
+</div>
+<div class="para">We also know that <span class="process-math">\(\col(A) = \ff^n\)</span> if and only if the RREF of <span class="process-math">\(A\)</span> is <span class="process-math">\(I_n\text{.}\)</span> It is always true that the column space is <span class="process-math">\(\ff^n\)</span> if and only if and we have a pivot in each row of the RREF; when <span class="process-math">\(A\)</span> is square, this means that the RREF must be <span class="process-math">\(I_n\text{.}\)</span>
+</div>
+<div class="para">Putting these two paragraphs together, we conclude that <span class="process-math">\(\nll(A) = \{\bfo\}\)</span> if and only if <span class="process-math">\(\col(A) = \ff^n\text{.}\)</span>
+</div>
+</li>
+<li><div class="para">If <span class="process-math">\(T\)</span> is a linear transformation <span class="process-math">\(\ff^n \to \ff^n\text{,}\)</span> then by <a href="" class="xref" data-knowl="./knowl/xref/thm-matrix-of-lin-trans.html" title="Theorem 3.2.2">Theorem 3.2.2</a> there is a matrix <span class="process-math">\(B \in M_n(\ff)\)</span> such that <span class="process-math">\(T\)</span> is multiplication by <span class="process-math">\(B\text{.}\)</span> Then the kernel of <span class="process-math">\(T\)</span> is the null space of <span class="process-math">\(B\)</span> and the range of <span class="process-math">\(T\)</span> is the column space of <span class="process-math">\(B\text{.}\)</span> So, <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\nll(B) = \{\bfo\}\text{,}\)</span> and <span class="process-math">\(T\)</span> is surjective if and only if <span class="process-math">\(\col(B) = \ff^n\text{.}\)</span> Then the result from part a completes the argument.</div></li>
+</ol></div></div></details></div></article></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="apdx-mod-arith.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
