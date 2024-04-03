@@ -688,6 +688,20 @@
         </p>
       </statement>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove or disprove: Every basis of <m>P_2</m> must contain a polynomial of degree 2, a polynomial of degree 1, and a constant polynomial.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Write down a basis for <m>M_2(\rr)</m>. Prove that your set is a basis. (There is no need to prove that <m>M_2(\rr)</m> is a vector space as this was covered in <xref ref="matrices-vspace"/>.)
+        </p>
+      </statement>
+    </exercise>
   </subexercises>
 </exercises> 
 
