@@ -49,7 +49,7 @@
   This theorem gives us an introduction to our first infinite-dimensional example. 
 </p>
 
-<example>
+<example xml:id="infinite-dim-polys">
   <statement>
     <p>
       Let <m>P</m> be the vector space of all polynomials with real coefficients. (We do not restrict the degree of polynomials in <m>P</m>.) For any <m>n</m>, <m>P</m> contains the linearly independent set 
@@ -506,6 +506,11 @@
         Find the dimension of the subspace of <m>\rr^3</m> consisting of all vectors whose first and third coordinates are equal. 
       </p>
     </statement>
+    <answer>
+      <p>
+        The dimension is 2.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -610,6 +615,27 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              This is true by <xref ref="lem-dim-lin-ind"/>.
+            </p>
+          </li>
+          <li>
+            <p>
+              This is false, as <m>\rr^2</m> is not even a subset of <m>\rr^3</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              This is false. The vector space <m>\rr^2</m> is a counter-example, as we know that <m>\dim(\rr^2)=2</m> but it is spanned by an infinite set (the entire vector space). 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -641,6 +667,11 @@
         The first four Hermite polynomials are <m>1</m>, <m>2t</m>, <m>-2 + 4t^2</m>, and <m>-12t+8t^3</m>. Show that the set of these polynomials is a basis for <m>P_3</m>. 
       </p>
     </statement>
+    <answer>
+      <p>
+        Since <m>\dim(P_3)=4</m> and this is a set of four polynomials, we only need to argue that this set is linearly independent (see <xref ref="thm-lin-ind-is-basis"/>). If we label the polynomials as <m>p_1 = 1</m>, <m>p_2 = 2t</m>, <m>p_3=-2+4t^2</m>, and <m>p_4 = -12t+8t^3</m>, then we can argue that the set <m>\{p_1,p_2,p_3,p_4\}</m> is linearly independent by the contrapositive of the Linear Dependence Lemma. The set containing only <m>p_1</m> is linearly independent since <m>p_1 \neq 0</m>. Then the set <m>\{p_1,p_2\}</m> is linearly independent since neither polynomial is a scalar multiple of the other. Then since <m>p_3</m> cannot be a linear combination of <m>p_1</m> and <m>p_2</m> for degree reasons, <m>\{p_1,p_2,p_3\}</m> is linearly independent. Similarly, since <m>p_4</m> cannot be a linear combination of <m>p_1</m>, <m>p_2</m>, and <m>p_3</m> for degree reasons, <m>\{p_1,p_2,p_3,p_4\}</m> is linearly independent.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -669,6 +700,22 @@
           </ol>
         </p>
       </statement>
+      <answer>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The null space of a matrix has a basis vector for each column in the RREF which does not contain a pivot. Therefore, the dimension of the null space is the number of non-pivot columns.
+              </p>
+            </li>
+            <li>
+              <p>
+                By <xref ref="alg-find-basis"/>, we see that there is a vector in the basis for <m>\col(A)</m> for each pivot in the RREF of <m>A</m>. Therefore, <m>\dim(\col(A))</m> is the number of pivot columns of <m>A</m>. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </answer>
     </exercise>    
     <exercise>
       <statement>
@@ -676,6 +723,11 @@
           Let <m>V</m> be the set of all functions <m>\rr\to\rr</m>. Prove that <m>V</m> is infinite-dimensional.
         </p>
       </statement>
+      <answer>
+        <p>
+          Since <m>V</m> contains the vector space of all polynomials, and since the vector space of all polynomials is infinite-dimensional (see <xref ref="infinite-dim-polys"/>), then <m>V</m> must be infinite-dimensional.
+        </p>
+      </answer>
     </exercise>
     <exercise>
       <statement>

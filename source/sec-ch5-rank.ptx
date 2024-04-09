@@ -426,6 +426,11 @@
         Suppose a nonhomogeneous linear system of nine equations and ten variables has a solution for all possible constants on the right side of the equations. Is it possible to find two nonzero solutions of the associated homogeneous system that are not multiples of each other? Explain. 
       </p>
     </statement>
+    <answer>
+      <p>
+        This is not possible. A <m>9\times 10</m> linear system has a <m>9\times 10</m> coefficient matrix which we will call <m>A</m>. This situation can be reinterpreted as a linear transformation from <m>\ff^{10} \to \ff^9</m> which is multiplication by <m>A</m>. The information given in the problem tells us that this transformation is surjective, meaning that the rank of <m>A</m> is as large as possible, which is 9 in this case. Therefore, the Rank-Nullity Theorem says that <m>\dim(\nll(A)) = 1</m>. This means that every nonzero vector in the null space of <m>A</m> is a scalar multiple of a single basis vector. Therefore, the associated homogeneous linear system only has nonzero solutions which are multiples of each other.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -433,6 +438,11 @@
         Suppose <m>A \in M_{m,n}(\ff)</m> and <m>\bfb \in \ff^m</m>. What has to be true about the two numbers <m>\rank([A\; \bfb ])</m> and <m>\rank(A)</m> in order for the equation <m>A\bfx = \bfb</m> to be consistent? Explain.
       </p>
     </statement>
+    <answer>
+      <p>
+        These two numbers must be equal.
+      </p>
+    </answer>
   </exercise>
   <subexercises>
     <title>Writing Exercises</title>    
@@ -461,6 +471,22 @@
           </ol>
         </p>
       </statement>
+      <answer>
+        <p>
+          <ol>
+            <li>
+              <p>
+                If <m>T</m> is surjective, then <m>\range(T) = W</m>, which means that <m>\dim(\range(T)) = \dim(W)</m>. This implies that <m>\rank(T) = \dim(W)</m>. On the other hand, if <m>\rank(T) = \dim(W)</m>, then <m>\dim(\range(T)) = \dim(W)</m>. Since <m>\range(T)</m> is a subspace of <m>W</m>, <xref ref="thm-dim-subspaces"/> implies that <m>\range(T) = W</m>, which means that <m>T</m> is surjective.
+              </p>
+            </li>
+            <li>
+              <p>
+                We will be able to argue both implications at once. A linear transformation <m>T</m> is injective if and only if <m>\ker(T) = \{\bfo\}</m>. This occurs if and only if <m>\dim(\ker(T)) = 0</m>. The Rank-Nullity Theorem then says that <m>\dim(\ker(T)) = 0</m> if and only if <m>\rank(T) = \dim(V)</m>. This proves the result.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </answer>
     </exercise>
     <exercise>
       <statement>
@@ -468,6 +494,11 @@
           Suppose that <m>A\bfx = \bfb</m> is a <m>6\times 6</m> linear system which is consistent but which does <em>not</em> have a unique solution. Prove that there must be a vector <m>\mathbf{c} \in \ff^6</m> such that the system <m>A\bfx = \mathbf{c}</m> is inconsistent.
         </p>
       </statement>
+      <answer>
+        <p>
+          The given information means there is no pivot in the last column of the augmented matrix but that there is at least one non-pivot column among the first six columns. The coefficient matrix <m>A</m> then has at least one non-pivot column, meaning that <m>\rank(A) \le 5</m>. But this means that the linear transformation <m>T:\ff^6 \to \ff^6</m> which is multiplication by <m>A</m> cannot be surjective, since the rank of <m>A</m> is less than six. Therefore, we can find a vector <m>\mathbf{c} \in \ff^6</m> such that <m>A\bfx = \mathbf{c}</m> is inconsistent. 
+        </p>
+      </answer>
     </exercise>  
     <exercise>
       <statement>
@@ -482,6 +513,11 @@
           Prove that if <m>A \in M_{m,n}(\ff)</m>, then <m>\rank(A) \le \min \{m,n \}</m>. 
         </p>
       </statement>
+      <answer>
+        <p>
+          We know that <m>\rank(A)</m> is the number of pivots in the RREF of <m>A</m>, but the number of pivots must be less than both the number of columns (<m>n</m>) and the number of rows (<m>m</m>) of <m>A</m>. Then if <m>\rank(A) \le m</m> and <m>\rank(A) \le n</m>, we have <m>\rank(A) \le \min \{m,n \}</m>. 
+        </p>
+      </answer>
     </exercise>
     <exercise>
       <statement>
