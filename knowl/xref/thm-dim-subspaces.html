@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.3.18</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(V\)</span> is a finite-dimensional vector space and that <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span> Then the following hold.</div>
+<ol class="decimal">
+<li><div class="para">The subspace <span class="process-math">\(U\)</span> is finite-dimensional.</div></li>
+<li><div class="para">We have <span class="process-math">\(\dim(U) \le \dim(V)\text{.}\)</span>
+</div></li>
+<li><div class="para">We have <span class="process-math">\(\dim(U) = \dim(V)\)</span> if and only if <span class="process-math">\(U=V\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">We will prove these facts in order. If the subspace <span class="process-math">\(U\)</span> is <span class="process-math">\(\{\bfo \}\text{,}\)</span> then we have nothing to prove. If not, then there is some non-zero vector <span class="process-math">\(\bfu_1 \in U\text{.}\)</span> If <span class="process-math">\(U = \spn\{\bfu_1\}\text{,}\)</span> we are done; if not, then there exists <span class="process-math">\(\bfu_2 \in U - \spn\{\bfu_1\}\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/thm-lin-dep-lemma.html" title="Theorem 5.1.19: The Linear Dependence Lemma">Theorem 5.1.19</a>, the set <span class="process-math">\(\{\bfu_1, \bfu_2\}\)</span> is linearly independent. We can continue to repeat this process. At each stage we have a linearly independent set <span class="process-math">\(U_k = \{\bfu_1, \ldots, \bfu_k\}\text{,}\)</span> and this cannot continue indefinitely since <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V\text{,}\)</span> which is finite-dimensional. Thus this process must eventually stop when <span class="process-math">\(U = \spn(U_j)\)</span> for some <span class="process-math">\(j\text{,}\)</span> and that proves that <span class="process-math">\(U\)</span> is finite dimensional.</div> <div class="para">The space <span class="process-math">\(U\)</span> is finite dimensional, so it has a basis <span class="process-math">\(B\text{.}\)</span> This is a linearly independent set of vectors in <span class="process-math">\(V\text{,}\)</span> so <a href="" class="xref" data-knowl="./knowl/xref/thm-extend-lin-ind-to-basis.html" title="Theorem 5.3.16">Theorem 5.3.16</a> says that <span class="process-math">\(B\)</span> can be extended to a basis <span class="process-math">\(B'\)</span> of <span class="process-math">\(V\text{.}\)</span> This means that <span class="process-math">\(B'\)</span> will have at least as many vectors in it as <span class="process-math">\(B\text{,}\)</span> so <span class="process-math">\(\dim(V) \ge \dim(U)\text{.}\)</span>
+</div> <div class="para">If <span class="process-math">\(U=V\)</span> it is obvious that <span class="process-math">\(\dim(U)=\dim(V)\text{,}\)</span> so we only need to prove the claim in the other direction. We will prove the contrapositive, so we assume <span class="process-math">\(U \neq V\text{.}\)</span> Let <span class="process-math">\(B = \{\bfu_1, \ldots, \bfu_n \}\)</span> be a basis for <span class="process-math">\(U\text{.}\)</span> Since <span class="process-math">\(U \neq V\text{,}\)</span> there exists a vector <span class="process-math">\(\bfv_1 \in V - \spn(B)\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/thm-lin-dep-lemma.html" title="Theorem 5.1.19: The Linear Dependence Lemma">Theorem 5.1.19</a> the set <span class="process-math">\(\{\bfu_1, \ldots, \bfu_n, \bfv_1 \}\)</span> is linearly independent in <span class="process-math">\(V\text{,}\)</span> implying that <span class="process-math">\(\dim(V) \ge n+1\text{.}\)</span> Therefore <span class="process-math">\(\dim(U) \neq \dim(V)\text{.}\)</span>
+</div></article></details><span class="incontext"><a class="internal" href="sec-dimension.html#thm-dim-subspaces">in-context</a></span>
+</body>
+</html>
