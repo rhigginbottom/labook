@@ -518,6 +518,27 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              No.
+            </p>
+          </li>
+          <li>
+            <p>
+              No.
+            </p>
+          </li>
+          <li>
+            <p>
+              No.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -559,6 +580,15 @@
         Produce a matrix <m>A \in M_{3,4}(\ff_5)</m> which has two vectors in a basis for <m>\nll(A)</m> and two vectors in a basis for <m>\col(A)</m>. 
       </p>
     </statement>
+    <answer>
+      <p>
+        Any matrix that has two pivot columns and two non-pivot columns will work as an answer here. This is one of many such matrices:
+        <me>
+          \begin{bmatrix} 1 \amp 2 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 3 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix}
+        </me>.
+        Of course, any matrix row equivalent to a matrix like this one would also work as an answer.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -607,6 +637,11 @@
         </me>.  
       </p>
     </statement>
+    <answer>
+      <p>
+        A basis is <m>\{\bfv_1, \bfv_2, \bfv_3 \}</m>.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -617,6 +652,11 @@
         </me>.        
       </p>
     </statement>
+    <answer>
+      <p>
+        We will argue using the (contrapositive of the) Linear Dependence Lemma. Since <m>\sin(t)</m> is not the zero function, then <m>\{\sin(t)\}</m> is a linearly independent set. Also, since <m>\sin(2t)</m> is not a scalar multiple of <m>\sin(t)</m> (this can be verified by comparing graphs of the two functions), the set <m>\{\sin(t), \sin(2t)\}</m> is also linearly independent. However, there is a trig identity which says that <m>\sin(2t) = 2\sin(t)\cos(t)</m>, meaning that the set <m>\{\sin(t), \sin(2t), \sin(t)\cos(t) \}</m> is linearly dependent (as one vector is a multiple of another within this set). Therefore, one basis for <m>H</m> is <m>\{\sin(t), \sin(2t)\}</m>. 
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -687,6 +727,40 @@
           is also a basis for <m>V</m>. 
         </p>
       </statement>
+      <solution>
+        <p>
+          We let <m>B = \{ \bfv_1 + \bfv_2, \bfv_2 + \bfv_3, \ldots, \bfv_{n-1} + \bfv_n, \bfv_n \}</m>. We will first show that <m>B</m> is linearly independent.
+        </p>
+        <p>
+          We first suppose that <m>c_1, \ldots, c_n</m> are scalars such that
+          <me>
+            c_1(\bfv_1 + \bfv_2) + \cdots + c_{n-1}(\bfv_{n-1} + \bfv_n) + c_n\bfv_n = \bfo
+          </me>.
+          Rearranging this equation, we see that it is equivalent to 
+          <me>
+            c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1} + c_n)\bfv_n = \bfo
+          </me>.
+          However, since we were given that <m>B' = \{\bfv_1, \ldots, \bfv_n \}</m> is a basis for <m>V</m>, this means that the coefficients in this last equation must all be zero, since <m>B'</m> is linearly independent. This means that <m>c_1 = 0</m>, and then since we must also have <m>c_1+c_2 = 0</m>, we have <m>c_2 = 0</m>, and so on. The result is that <m>c_i = 0</m> for all <m>i</m>, <m>i=1,\ldots,n</m>. This proves that <m>B</m> is linearly independent.
+        </p>
+        <p>
+          We will now show that <m>B</m> spans <m>V</m>. Let <m>\bfv \in V</m>. We want to argue that <m>\bfv</m> can be written as a linear combination of the vectors in <m>B</m>. Since <m>B'</m> is a basis for <m>V</m>, there exist scalars <m>d_1,\ldots, d_n</m> such that 
+          <men xml:id="d-coeffs">
+            \bfv = d_1\bfv_1 + \cdots + d_n\bfv_n
+          </men>.
+          We want to argue that we can always find scalars <m>c_1, \ldots, c_n</m> such that 
+          <me>
+            \bfv = c_1(\bfv_1 + \bfv_2) + \cdots + c_n\bfv_n
+          </me>.
+          This equation can be rewritten as 
+          <men xml:id="c-coeffs">
+            \bfv = c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1}+c_n)\bfv_n
+          </men>,
+          and by The Unique Representation Theorem (<xref ref="thm-unique-rep"/>), we know that the coefficients on the right sides of <xref ref="d-coeffs"/> and <xref ref="c-coeffs"/> must be equal. Immediately we see that <m>c_1 = d_1</m> and then since we must have <m>c_1 + c_2 = d_2</m>, we conclude <m>c_2 = d_2 - d_1</m>. We can continue on in this way, eventually producing an expression for each <m>c_i</m> in terms of the <m>d_i</m> coefficients.  
+        </p>
+        <p>
+          This proves that <m>B</m> spans <m>V</m> which concludes the proof that <m>B</m> is a basis of <m>V</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise>
       <statement>
