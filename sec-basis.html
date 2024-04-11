@@ -823,7 +823,12 @@ p_1 = 3+3t-4t^2, \hspace{6pt} p_2 = 3-3t, \hspace{6pt} p_3 = 12 + 6t -12t^2
 </div>
 </div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-basis-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-basis-6-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-basis-6-2-2-1"><ol class="lower-alpha">
+<li id="sec-basis-6-2-2-1-1-1"><div class="para" id="sec-basis-6-2-2-1-1-1-1">No.</div></li>
+<li id="sec-basis-6-2-2-1-1-2"><div class="para" id="sec-basis-6-2-2-1-1-2-1">No.</div></li>
+<li id="sec-basis-6-2-2-1-1-3"><div class="para" id="sec-basis-6-2-2-1-1-3-1">No.</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-basis-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-basis-6-3-1-1">
 <div class="para">For each matrix <span class="process-math">\(A\text{,}\)</span> find a basis for <span class="process-math">\(\nll(A)\)</span> and <span class="process-math">\(\col(A)\text{.}\)</span>
 </div>
@@ -856,7 +861,16 @@ A = \begin{bmatrix}
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-basis-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="sec-basis-6-4-1-1">Produce a matrix <span class="process-math">\(A \in M_{3,4}(\ff_5)\)</span> which has two vectors in a basis for <span class="process-math">\(\nll(A)\)</span> and two vectors in a basis for <span class="process-math">\(\col(A)\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-basis-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-basis-6-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-basis-6-4-2-1">
+<div class="para">Any matrix that has two pivot columns and two non-pivot columns will work as an answer here. This is one of many such matrices:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 2 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 3 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Of course, any matrix row equivalent to a matrix like this one would also work as an answer.</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-basis-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-basis-6-5-1-1">
 <div class="para">Find a basis for <span class="process-math">\(\spn\{\bfv_1, \bfv_2, \bfv_3, \bfv_4, \bfv_5 \} \subseteq \rr^4\text{,}\)</span> if</div>
 <div class="displaymath process-math">
@@ -900,7 +914,9 @@ A = \begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="sec-basis-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-basis-6-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="sec-basis-6-6-2-1">A basis is <span class="process-math">\(\{\bfv_1, \bfv_2, \bfv_3 \}\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-basis-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-basis-6-7-1-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be the vector space of all functions <span class="process-math">\(\rr \to \rr\text{.}\)</span> Find a basis for the subspace <span class="process-math">\(H\text{,}\)</span> if</div>
 <div class="displaymath process-math">
@@ -908,7 +924,9 @@ A = \begin{bmatrix}
 H = \spn\{\sin(t), \sin(2t), \sin(t)\cos(t) \}\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="sec-basis-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-basis-6-7-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="sec-basis-6-7-2-1">We will argue using the (contrapositive of the) Linear Dependence Lemma. Since <span class="process-math">\(\sin(t)\)</span> is not the zero function, then <span class="process-math">\(\{\sin(t)\}\)</span> is a linearly independent set. Also, since <span class="process-math">\(\sin(2t)\)</span> is not a scalar multiple of <span class="process-math">\(\sin(t)\)</span> (this can be verified by comparing graphs of the two functions), the set <span class="process-math">\(\{\sin(t), \sin(2t)\}\)</span> is also linearly independent. However, there is a trig identity which says that <span class="process-math">\(\sin(2t) = 2\sin(t)\cos(t)\text{,}\)</span> meaning that the set <span class="process-math">\(\{\sin(t), \sin(2t), \sin(t)\cos(t) \}\)</span> is linearly dependent (as one vector is a multiple of another within this set). Therefore, one basis for <span class="process-math">\(H\)</span> is <span class="process-math">\(\{\sin(t), \sin(2t)\}\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-basis-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-basis-6-8-1-1">
 <div class="para">Find a matrix <span class="process-math">\(A \in M_2(\rr)\)</span> such that</div>
 <div class="displaymath process-math">
@@ -963,7 +981,45 @@ T \left( \begin{bmatrix} -1 \\ 4 \\ 6 \end{bmatrix}  \right)\text{.}
 </div>
 <div class="para">is also a basis for <span class="process-math">\(V\text{.}\)</span>
 </div>
-</div></article><article class="exercise exercise-like" id="sec-basis-6-11-4"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+</div>
+<div class="solutions"><details id="sec-basis-6-11-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sec-basis-6-11-3-2-1">We let <span class="process-math">\(B = \{ \bfv_1 + \bfv_2, \bfv_2 + \bfv_3, \ldots, \bfv_{n-1} + \bfv_n, \bfv_n \}\text{.}\)</span> We will first show that <span class="process-math">\(B\)</span> is linearly independent.</div> <div class="para logical" id="sec-basis-6-11-3-2-2">
+<div class="para">We first suppose that <span class="process-math">\(c_1, \ldots, c_n\)</span> are scalars such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_1(\bfv_1 + \bfv_2) + \cdots + c_{n-1}(\bfv_{n-1} + \bfv_n) + c_n\bfv_n = \bfo\text{.}
+\end{equation*}
+</div>
+<div class="para">Rearranging this equation, we see that it is equivalent to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1} + c_n)\bfv_n = \bfo\text{.}
+\end{equation*}
+</div>
+<div class="para">However, since we were given that <span class="process-math">\(B' = \{\bfv_1, \ldots, \bfv_n \}\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> this means that the coefficients in this last equation must all be zero, since <span class="process-math">\(B'\)</span> is linearly independent. This means that <span class="process-math">\(c_1 = 0\text{,}\)</span> and then since we must also have <span class="process-math">\(c_1+c_2 = 0\text{,}\)</span> we have <span class="process-math">\(c_2 = 0\text{,}\)</span> and so on. The result is that <span class="process-math">\(c_i = 0\)</span> for all <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(i=1,\ldots,n\text{.}\)</span> This proves that <span class="process-math">\(B\)</span> is linearly independent.</div>
+</div> <div class="para logical" id="sec-basis-6-11-3-2-3">
+<div class="para">We will now show that <span class="process-math">\(B\)</span> spans <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(\bfv \in V\text{.}\)</span> We want to argue that <span class="process-math">\(\bfv\)</span> can be written as a linear combination of the vectors in <span class="process-math">\(B\text{.}\)</span> Since <span class="process-math">\(B'\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> there exist scalars <span class="process-math">\(d_1,\ldots, d_n\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-unique-rep.html ./knowl/xref/d-coeffs.html ./knowl/xref/c-coeffs.html" id="d-coeffs">
+\begin{equation}
+\bfv = d_1\bfv_1 + \cdots + d_n\bfv_n\text{.}\tag{5.3}
+\end{equation}
+</div>
+<div class="para">We want to argue that we can always find scalars <span class="process-math">\(c_1, \ldots, c_n\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-unique-rep.html ./knowl/xref/d-coeffs.html ./knowl/xref/c-coeffs.html">
+\begin{equation*}
+\bfv = c_1(\bfv_1 + \bfv_2) + \cdots + c_n\bfv_n\text{.}
+\end{equation*}
+</div>
+<div class="para">This equation can be rewritten as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-unique-rep.html ./knowl/xref/d-coeffs.html ./knowl/xref/c-coeffs.html" id="c-coeffs">
+\begin{equation}
+\bfv = c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1}+c_n)\bfv_n\text{,}\tag{5.4}
+\end{equation}
+</div>
+<div class="para">and by The Unique Representation Theorem (<a href="" class="xref" data-knowl="./knowl/xref/thm-unique-rep.html" title="Theorem 5.2.11: The Unique Representation Theorem">Theorem 5.2.11</a>), we know that the coefficients on the right sides of <a href="" class="xref" data-knowl="./knowl/xref/d-coeffs.html" title="Equation 5.3">(5.3)</a> and <a href="" class="xref" data-knowl="./knowl/xref/c-coeffs.html" title="Equation 5.4">(5.4)</a> must be equal. Immediately we see that <span class="process-math">\(c_1 = d_1\)</span> and then since we must have <span class="process-math">\(c_1 + c_2 = d_2\text{,}\)</span> we conclude <span class="process-math">\(c_2 = d_2 - d_1\text{.}\)</span> We can continue on in this way, eventually producing an expression for each <span class="process-math">\(c_i\)</span> in terms of the <span class="process-math">\(d_i\)</span> coefficients.</div>
+</div> <div class="para" id="sec-basis-6-11-3-2-4">This proves that <span class="process-math">\(B\)</span> spans <span class="process-math">\(V\)</span> which concludes the proof that <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="sec-basis-6-11-4"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
 <div class="para" id="sec-basis-6-11-4-1-1">Prove or disprove: Every basis of <span class="process-math">\(P_2\)</span> must contain a polynomial of degree 2, a polynomial of degree 1, and a constant polynomial.</div></article><article class="exercise exercise-like" id="sec-basis-6-11-5"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
 <div class="para" id="sec-basis-6-11-5-1-1">Write down a basis for <span class="process-math">\(M_2(\rr)\text{.}\)</span> Prove that your set is a basis. (There is no need to prove that <span class="process-math">\(M_2(\rr)\)</span> is a vector space as this was covered in <a href="" class="xref" data-knowl="./knowl/xref/matrices-vspace.html" title="Example 2.3.10">Example 2.3.10</a>.)</div></article></article></section></section></div>
 <div class="ptx-content-footer">
