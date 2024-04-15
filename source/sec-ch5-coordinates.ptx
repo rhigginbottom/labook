@@ -657,15 +657,79 @@
       </p>
     </statement>
   </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the plane <m>P</m> in <m>\rr^3</m> defined by <m>x-2y+3z = 0</m>. 
+        <ol>
+          <li>
+            <p>
+              Find a basis for <m>P</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Determine whether each of the following vectors is in <m>P</m>, and for each one that is, find its coordinate vector in terms of the basis you gave in part a.
+              <ol>
+                <li>
+                  <p>
+                    <m>\bfv_1 = (1,-1,-1)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\bfv_2 = (2,3,1)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\bfv_3 = (5,-2,-3)</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
   <subexercises>
     <title>Writing Exercises</title>     
     <exercise>
       <statement>
         <p>
-          Verify that the coordinate mapping in <xref ref="thm-coord-map-isomorphism"/> is a linear transformation.
+          Prove that the coordinate mapping in <xref ref="thm-coord-map-isomorphism"/> is a linear transformation.
+        </p>
+      </statement>
+    </exercise>    
+    <exercise>
+      <statement>
+        <p>
+          Without using <xref ref="thm-isomorphism-basis"/>, prove that the coordinate mapping in <xref ref="thm-coord-map-isomorphism"/> is injective.
+        </p>
+      </statement>
+    </exercise>    
+    <exercise>
+      <statement>
+        <p>
+          Without using <xref ref="thm-isomorphism-basis"/>, prove that the coordinate mapping in <xref ref="thm-coord-map-isomorphism"/> is surjective.
         </p>
       </statement>
     </exercise> 
+    <exercise>
+      <statement>
+        <p>
+          Let <m>T:V \to W</m> be a linear transformation between finite-dimensional vector spaces, and let <m>\mcb</m> and <m>\mcc</m> be bases for <m>V</m> and <m>W</m>, respectively. Prove that <m>\rank(T)</m> (the rank of <m>T</m> as a linear transformation) is the same as <m>\rank([T]_{\mcb,\mcc})</m> (the rank of the coordinate matrix of <m>T</m>).
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove <xref ref="cor-coord-matrix-inverse"/>.
+        </p>
+      </statement>
+    </exercise>
   </subexercises>
 </exercises> 
 
