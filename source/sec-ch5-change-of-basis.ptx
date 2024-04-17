@@ -474,20 +474,23 @@
       </p>
     </statement>
   </exercise>
-  <!-- <exercise>
-    <statement>
-      <p>
-        ex1
-      </p>
-    </statement>
+  <subexercises>
+    <title>Writing Exercises</title>  
+  <exercise>
+  <statement>
+    <p>
+      Let <m>V</m> be an <m>n</m>-dimensional vector space over <m>\ff</m>, and let <m>\mcb</m> and <m>\mcc</m> be two bases for <m>V</m>. Prove that the columns of the matrix <m>P_{\mcb,\mcc}</m> are linearly independent.
+    </p>
+  </statement>
   </exercise>
   <exercise>
-    <statement>
-      <p>
-        ex1
-      </p>
-    </statement>
-  </exercise> -->
+  <statement>
+    <p>
+      Let <m>V</m> be an <m>n</m>-dimensional vector space over <m>\ff</m>, and let <m>\mcb</m> and <m>\mcc</m> be two bases for <m>V</m>. Prove that the columns of the matrix <m>P_{\mcb,\mcc}</m> span <m>\ff^n</m>.
+    </p>
+  </statement>
+  </exercise>
+  </subexercises>
 </exercises> 
 
 
