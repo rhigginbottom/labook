@@ -352,6 +352,15 @@
         Find the change-of-basis matrices <m>P_{\mcb, \mcc}</m> and <m>P_{\mcc, \mcb}</m>.
       </p>
     </statement>
+    <answer>
+      <p>
+        Here are the change-of-basis matrices:
+        <me>
+          P_{\mcb,\mcc} = \begin{bmatrix} 5/19 \amp 2/19 \\ -16/19 \amp 5/19 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt} 
+          P_{\mcc,\mcb} = \begin{bmatrix} 5/3 \amp -2/3 \\ 16/3 \amp 5/3 \end{bmatrix}
+        </me>.        
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -393,6 +402,29 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Here are the change-of-basis matrices:
+              <me>
+                P_{\mcb,\mce} = \begin{bmatrix} 1 \amp 0 \\ 2 \amp 2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt} P_{\mce,\mcb} = \begin{bmatrix} 1 \amp 0 \\ 2 \amp 2 \end{bmatrix}
+              </me>.
+              (Yes, they are the same!)
+            </p>
+          </li>
+          <li>
+            <p>
+              We find that 
+              <me>
+                [\bfv]_{\mcb} = P_{\mce,\mcb}[\bfv]_{\mce} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -473,6 +505,40 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We will use the basis <m>\mcb = \{\bfv_1,\bfv_2\}</m>, where 
+              <me>
+                \bfv_1 = \begin{bmatrix} 4 \\ -1 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt} 
+                \bfv_2 = \begin{bmatrix} 1 \\ 4 \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>[T]_{\mcb} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              We find that 
+              <me>
+                P_{\mcb,\mce} = \begin{bmatrix} 4 \amp 1 \\ -1 \amp 4 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt} 
+                P_{\mce,\mcb} = \begin{bmatrix} 4/17 \amp -1/17 \\ 1/17 \amp 4/17 \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>[T]_{\mce} = \begin{bmatrix} 15/17 \amp -8/17 \\ -8/17 \amp -15/17 \end{bmatrix}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <subexercises>
     <title>Writing Exercises</title>  
@@ -489,6 +555,14 @@
       Let <m>V</m> be an <m>n</m>-dimensional vector space over <m>\ff</m>, and let <m>\mcb</m> and <m>\mcc</m> be two bases for <m>V</m>. Prove that the columns of the matrix <m>P_{\mcb,\mcc}</m> span <m>\ff^n</m>.
     </p>
   </statement>
+  <solution>
+    <p>
+      The <m>i</m>th column of <m>P_{\mcb,\mcc}</m> is <m>[\bfv_i]_{\mcc}</m>. Or, stated differently, if <m>C_{\mcc}:V \to \ff^n</m> is the coordinate mapping, then the <m>i</m>th column of <m>P_{\mcb,\mcc}</m> is <m>C_{\mcc}(\bfv_i)</m>. 
+    </p>
+    <p>
+      We know (by <xref ref="thm-coord-map-isomorphism"/>) that the coordinate mapping is an isomorphism. Since <m>\mcb</m> is a basis for <m>V</m>, <m>\mcb</m> is a spanning set for <m>V</m>. But then the set containing the columns of <m>P_{\mcb,\mcc}</m> is <m>C_{\mcc}(\mcb)</m>, and since <m>\mcb</m> spans <m>V</m> we know that <m>C_{\mcc}(\mcb)</m> will span <m>\ff^n</m>.
+    </p>
+  </solution>
   </exercise>
   <exercise>
     <statement>

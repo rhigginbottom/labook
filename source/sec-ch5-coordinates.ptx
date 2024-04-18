@@ -434,6 +434,22 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>\bfv = \begin{bmatrix} 4 \\ -7 \end{bmatrix}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\bfv = \begin{bmatrix} -19 \\ -2 \end{bmatrix}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -472,6 +488,22 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>[\bfv]_{\mcb} = \begin{bmatrix} -2 \\ 2 \\ -1 \end{bmatrix}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>[\bfv]_{\mcb} = \begin{bmatrix} 1 \\ 0 \\ 4 \end{bmatrix}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -556,6 +588,22 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              This set of vectors spans <m>P_2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              This set of vectors does not span <m>P_2</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -579,6 +627,22 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>[T]_{\mcb,\mce} = \begin{bmatrix} 2 \amp 1 \amp 1 \\ 0 \amp -1 \amp -3 \end{bmatrix}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>T(-10+3t^2) = [T]_{\mcb,\mce} [p]_{\mcb} = \begin{bmatrix} -17 \\ -9 \end{bmatrix}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -708,6 +772,22 @@
           Without using <xref ref="thm-isomorphism-basis"/>, prove that the coordinate mapping in <xref ref="thm-coord-map-isomorphism"/> is injective.
         </p>
       </statement>
+      <solution>
+        <p>
+          Let <m>V</m> be an <m>n</m>-dimensional vector space over <m>\ff</m>, and let 
+          <me>
+            \mcb = \{\bfv_1,\ldots,\bfv_n\}
+          </me>
+          be a basis for <m>V</m>. Let <m>C_{\mcb}:V \to \ff^n</m> be the coordinate mapping. We will prove that <m>C_{\mcb}</m> is injective by showing that it has a trivial kernel.
+        </p>
+        <p>
+          Suppose that <m>\bfv \in \ker(C_{\mcb})</m>. This means that <m>C_{\mcb}(\bfv) = \bfo \in \ff^n</m>, so <m>[\bfv]_{\mcb} = \bfo</m>. Since this is the coordinate vector of <m>\bfv</m>, this tells us that 
+          <me>
+            \bfv = 0 \bfv_1 + \cdots + 0\bfv_n
+          </me>.
+          This proves that <m>\bfv = \bfo \in V</m>, and therefore <m>\ker(C_{\mcb}) = \{\bfo\}</m>. This proves that the coordinate mapping is injective.
+        </p>
+      </solution>
     </exercise>    
     <exercise>
       <statement>
