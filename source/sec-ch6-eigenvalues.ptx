@@ -4,10 +4,10 @@
   <title>Eigenvalues and Eigenvectors</title>
   <introduction>
     <p>
-      For linear transformations <m>T:V \to W</m>, there isn't often a connection between <m>\bfv</m> and <m>T(\bfv)</m> that is easy to describe. These vectors, after all, live in different vector spaces, so they need not have any obvious relationship to each other. When <m>W=V</m>, sometimes we have a different story for some vectors.
+      For linear transformations <m>T:V \to W</m>, there isn't often a connection between <m>\bfv</m> and <m>T(\bfv)</m> that is easy to describe. These vectors, after all, live in different vector spaces, so they need not have any obvious relationship to each other. When <m>W=V</m>, we sometimes have a different story to tell (for some vectors).
     </p>
     <p>
-      For a transformation <m>T \in L(V)</m>, <m>\bfv</m> and <m>T(\bfv)</m> live in the same space, so there can occasionally be an easy-to-define relationship between these two vectors. Sometimes, the action of <m>T</m> on a vector turns out to be rather simple.
+      For a transformation <m>T \in L(V)</m>, <m>\bfv</m> and <m>T(\bfv)</m> live in the same vector space, so there is occasionally an easy-to-define relationship between these two vectors. Sometimes, the action of <m>T</m> on a vector turns out to be rather simple.
     </p>
   </introduction>
 
@@ -30,7 +30,7 @@
   </definition>
 
 <p>
-  Informally, eigenvectors for <m>T</m> are nonzero vectors on which <m>T</m> acts by simple scalar multiplication. The next example shows that for a <m>T</m> that has eigenvectors, it is not (always) <em>every</em> vector in <m>V</m> that has this special property.
+  Informally, eigenvectors for <m>T</m> are nonzero vectors on which <m>T</m> acts by scalar multiplication. The next example shows that for a <m>T</m> that has eigenvectors, it is not (always) <em>every</em> vector in <m>V</m> that has this special property.
 </p>
 
 <example xml:id="examp-first-eigen">
@@ -52,7 +52,7 @@
         A \bfv = \begin{bmatrix} 3 \amp 0 \\ 7 \amp -1 \end{bmatrix} \begin{bmatrix} -2 \\ 1 \end{bmatrix} = 
         \begin{bmatrix} -6 \\ -15 \end{bmatrix}
       </me>,
-      we can say that <m>\bfv</m> is not an eigenvector for <m>A</m>, because <m>A\bfv</m> is not a scalar multiple of <m>\bfv</m>. 
+      we can see that <m>\bfv</m> is not an eigenvector for <m>A</m>, because <m>A\bfv</m> is not a scalar multiple of <m>\bfv</m>. 
     </p>
   </statement>
 </example>
@@ -86,7 +86,7 @@
 </example>
 
 <p>
-  We take a slightly different approach in this next example. Instead of verifying that a vector is an eigenvector, we provide the eigenvalue and then search for the eigenvector(s).
+  We take a slightly different approach in our next example. Instead of verifying that a vector is an eigenvector, we provide the eigenvalue and then search for the eigenvector(s).
 </p>
 
 <example xml:id="examp-find-evectors">
@@ -114,7 +114,7 @@
       <me>
         \begin{bmatrix} 4 \amp 0 \\ 7 \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}
       </me>. 
-      This shows that every eigenvector of <m>A</m> has the form <m>x_2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>, as long as <m>x_2 \neq 0</m>. The interested/vigilant reader can check that, for example, <m>A \begin{bmatrix} 0 \\ 3 \end{bmatrix} = \begin{bmatrix} 0 \\ -3 \end{bmatrix}</m>.  
+      This shows that every eigenvector of <m>A</m> corresponding to <m>\lambda = -1</m> has the form <m>x_2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>, as long as <m>x_2 \neq 0</m>. The interested/vigilant reader can check that, for example, <m>A \begin{bmatrix} 0 \\ 3 \end{bmatrix} = \begin{bmatrix} 0 \\ -3 \end{bmatrix}</m>.  
     </p>
   </statement>
 </example>
@@ -199,7 +199,7 @@
       </me>. 
       From this calculation we can see that <m>\mathrm{eig}_2(T)</m> is two-dimensional, with basis <m>\mcb = \{\bfv_1, \bfv_2 \}</m>, where 
       <me>
-        \bfv_1 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \hspace{12pt}
+        \bfv_1 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \hspace{6pt} \text(and} \hspace{6pt}
         \bfv_2 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}
       </me>.      
     </p>
@@ -251,7 +251,7 @@
         0 \amp 0 \amp 1
         \end{bmatrix}
       </me>,
-      the eigenvalues of <m>A</m> are <m>4</m>, <m>2</m>, and <m>1</m>. The reader might use this opportunity to find the associated eigenvectors!
+      the eigenvalues of <m>A</m> are <m>4</m>, <m>2</m>, and <m>1</m>. The reader might use this opportunity to find the associated eigenvectors/eigenspaces!
     </p>
   </statement>
 </example>
@@ -287,7 +287,7 @@
   </statement>
   <proof>
     <p>
-      We argue by contradiction. Suppose that the set <m>\{ \bfv_1, \ldots, \bfv_k \}</m> is linearly dependent. Since <m>\bfv_1 \neq \bfo</m> (because eigenvectors cannot be <m>\bfo</m>), we can apply the Linear Dependence Lemma (<xref ref="thm-lin-dep-lemma"/>). Therefore, there is some <m>j \ge 2</m> such that <m>\bfv_j \in \spn\{ \bfv_1, \ldots, \bfv_{j-1} \}</m>. There may be multiple subscripts <m>j</m> for which this is true; we use the smallest such <m>j</m>. We therefore have 
+      We will argue by contradiction. Suppose that the set <m>\{ \bfv_1, \ldots, \bfv_k \}</m> is linearly dependent. Since <m>\bfv_1 \neq \bfo</m> (because eigenvectors cannot be <m>\bfo</m>), we can apply the Linear Dependence Lemma (<xref ref="thm-lin-dep-lemma"/>). Therefore, there is some <m>j \ge 2</m> such that <m>\bfv_j \in \spn\{ \bfv_1, \ldots, \bfv_{j-1} \}</m>. There may be multiple subscripts <m>j</m> for which this is true; we use the smallest such <m>j</m>. We therefore have 
       <men xml:id="eqn1-lin-ind-evect">
         \bfv_j = a_1\bfv_1 + \cdots + a_{j-1}\bfv_{j-1}
       </men>,
@@ -354,9 +354,9 @@
   <p>
     Consider the matrix <m>A</m> from the previous reading question. Show that <m>-2</m> is an eigenvalue of <m>A</m> and find the corresponding eigenvectors. Follow <xref ref="examp-find-evectors"/>. 
   </p>
-  <p>
+  <!-- <p>
     Eigenspace is <m>\spn\{ \begin{bmatrix} -2 \\ 1 \end{bmatrix} \}</m>. 
-  </p>
+  </p> -->
 </statement>
 </exercise>
 </reading-questions>
@@ -487,7 +487,7 @@
   <exercise>
     <statement>
       <p>
-        Let <m>A</m> be the following matrix: 
+        Let <m>A \in M_3(\rr)</m> be the following matrix: 
         <me>
           A = \begin{bmatrix}
           1 \amp 3 \amp 5 \\ 
@@ -496,54 +496,6 @@
           \end{bmatrix}
         </me>.
         Find one eigenvalue of <m>A</m> without any calculation. Explain your reasoning.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Prove that if <m>A^2</m> is the zero matrix, then the only eigenvalue of <m>A</m> is 0.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Prove that an <m>n\times n</m> matrix <m>A</m> can have at most <m>n</m> distinct eigenvalues.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        If <m>\lambda</m> is an eigenvalue for an invertible linear transformation <m>T</m>, prove that <m>\lambda^{-1}</m> is an eigenvalue for <m>T^{-1}</m>.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        <ol>
-          <li>
-            <p>
-              Let <m>A</m> be an <m>n\times n</m> matrix. Prove that <m>\lambda</m> is an eigenvalue for <m>A</m> if and only if <m>\lambda</m> is an eigenvalue for <m>A^T</m>. (Hint: Figure out how <m>A - \lambda I</m> and <m>A^T - \lambda I</m> are related.)
-            </p>
-          </li>
-          <li>
-            <p>
-              Use part (a) to complete the proof of <xref ref="thm-evalues-triangular"/> for lower triangular matrices.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        In a matrix, a <em>row sum</em> refers to the sum of all of the entries in a particular row.
-      </p>
-      <p> Let <m>A</m> be an <m>n\times n</m> matrix where all of the row sums are equal to the same number <m>k</m>. Show that <m>k</m> is an eigenvalue of <m>A</m>. (Hint: Find an eigenvector.)
       </p>
     </statement>
   </exercise>
@@ -568,38 +520,89 @@
       </p>
     </statement>
   </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Suppose that <m>A \in M_n(\ff)</m> and that for each <m>j = 1, \ldots, n</m>, <m>\bfe_j</m> is an eigenvector of <m>A</m>. Prove that <m>A</m> is a diagonal matrix.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        <ol>
-          <li>
-            <p>
-              Suppose that <m>\lambda</m> is an eigenvalue of <m>T \in L(V)</m> and that <m>k \in \nn</m>. Prove that <m>\lambda^k</m> is an eigenvalue of <m>T^k</m> and that <m>\mathrm{eig}_{\lambda}(T) \subseteq \mathrm{eig}_{\lambda^k}(T^k)</m>. (Here <m>T^k</m> means the composition of <m>T</m> with itself <m>k</m> times.)
-            </p>
-          </li>
-          <li>
-            <p>
-              Give an example of a linear transformation <m>T:V \to V</m> with an eigenvalue <m>\lambda</m> such that <m>\mathrm{eig}_{\lambda}(T) \neq \mathrm{eig}_{\lambda^2}(T^2)</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Complete the proof of both halves of <xref ref="thm-invertible-0-evalue"/>.
-      </p>
-    </statement>
-  </exercise>
+  <subexercises>
+    <title>Writing Exercises</title>  
+    <exercise>
+      <statement>
+        <p>
+          Prove that if <m>A^2</m> is the zero matrix, then the only eigenvalue of <m>A</m> is 0.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that an <m>n\times n</m> matrix <m>A</m> can have at most <m>n</m> distinct eigenvalues.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          If <m>\lambda</m> is an eigenvalue for an invertible linear transformation <m>T</m>, prove that <m>\lambda^{-1}</m> is an eigenvalue for <m>T^{-1}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Let <m>A</m> be an <m>n\times n</m> matrix. Prove that <m>\lambda</m> is an eigenvalue for <m>A</m> if and only if <m>\lambda</m> is an eigenvalue for <m>A^T</m>. (Hint: Figure out how <m>A - \lambda I</m> and <m>A^T - \lambda I</m> are related.)
+              </p>
+            </li>
+            <li>
+              <p>
+                Use part (a) to complete the proof of <xref ref="thm-evalues-triangular"/> for lower triangular matrices.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          In a matrix, a <em>row sum</em> refers to the sum of all of the entries in a particular row.
+        </p>
+        <p> Let <m>A</m> be an <m>n\times n</m> matrix where all of the row sums are equal to the same number <m>k</m>. Show that <m>k</m> is an eigenvalue of <m>A</m>. (Hint: Find an eigenvector.)
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>A \in M_n(\ff)</m> and that for each <m>j = 1, \ldots, n</m>, <m>\bfe_j</m> is an eigenvector of <m>A</m>. Prove that <m>A</m> is a diagonal matrix.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Suppose that <m>\lambda</m> is an eigenvalue of <m>T \in L(V)</m> and that <m>k \in \nn</m>. Prove that <m>\lambda^k</m> is an eigenvalue of <m>T^k</m> and that <m>\mathrm{eig}_{\lambda}(T) \subseteq \mathrm{eig}_{\lambda^k}(T^k)</m>. (Here <m>T^k</m> means the composition of <m>T</m> with itself <m>k</m> times.)
+              </p>
+            </li>
+            <li>
+              <p>
+                Give an example of a linear transformation <m>T:V \to V</m> with an eigenvalue <m>\lambda</m> such that <m>\mathrm{eig}_{\lambda}(T) \neq \mathrm{eig}_{\lambda^2}(T^2)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Complete the proof of both halves of <xref ref="thm-invertible-0-evalue"/>.
+        </p>
+      </statement>
+    </exercise>
+  </subexercises>
 </exercises> 
 
 
