@@ -5407,7 +5407,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Eigenvalues and Eigenvectors",
-  "body": " Eigenvalues and Eigenvectors   For linear transformations , there isn't often a connection between and that is easy to describe. These vectors, after all, live in different vector spaces, so they need not have any obvious relationship to each other. When , sometimes we have a different story for some vectors.  For a transformation , and live in the same space, so there can occasionally be an easy-to-define relationship between these two vectors. Sometimes, the action of on a vector turns out to be rather simple.    Defining Eigenvalues and Eigenvectors  We first define the sorts of vectors we alluded to in the previous paragraphs.    Let be a vector space over , and let . A nonzero vector is an eigenvector for if for some . A scalar is called an eigenvalue of if there is a nontrivial solution to the equation . Such a solution is called an eigenvector for corresponding to .  If , the eigenvectors and eigenvalues of are the eigenvectors and eigenvalues of the transformation defined by .    Informally, eigenvectors for are nonzero vectors on which acts by simple scalar multiplication. The next example shows that for a that has eigenvectors, it is not (always) every vector in that has this special property.    When we are given a matrix and a vector , it is easy to determine whether or not is an eigenvector for . Consider the following: . We take the product , . Since , is an eigenvector for with eigenvalue . Also, since , we can say that is not an eigenvector for , because is not a scalar multiple of .    When is an eigenvector of , then applying may change the length of but it will not change the direction of . (To say this we must include pointing in the exact opposite direction as being in the same direction.) This is a simplification, because not every vector space has a neat, geometric interpretation.    Let be the following linear transformation: . If , it is not difficult to check that . Therefore, is an eigenvector for with eigenvalue .      Let be the linear transformation which is counterclockwise rotation about the origin by an angle of . We can see that will have an eigenvector if and only if is an integer multiple of radians. If is an even integer multiple of , then every vector in is an eigenvector for with eigenvalue , and if is an odd integer multiple of , then every vector in is an eigenvector for with eigenvalue .    We take a slightly different approach in this next example. Instead of verifying that a vector is an eigenvector, we provide the eigenvalue and then search for the eigenvector(s).    We consider the matrix from . Let's show that is an eigenvalue of and find the corresponding eigenvectors.  We know that is an eigenvalue of if the equation has a nontrivial solution for some . This is equivalent to saying that the equation has a nontrivial solution. We can also view as , so if is an eigenvalue of , there is a nonzero vector which satisfies . Viewed from the correct angle, we have reduced this problem to finding the null space of a matrix.  We will calculate : . We can see that the columns of are linearly dependent, so we know that has nontrivial solutions. This proves that is an eigenvalue of .  In order to find the eigenvectors of that correspond to , we describe the null space of the appropriate matrix. We row-reduce : . This shows that every eigenvector of has the form , as long as . The interested\/vigilant reader can check that, for example, .    The process we undertook in the previous example showed that there are almost always multiple eigenvectors for a linear transformation which correspond to a specific eigenvalue. In fact, the collection of such vectors forms almost an entire subspace.    Let be a vector space over , let , and let be an eigenvalue of . Then the set of all eigenvectors for corresponding to , along with the zero vector, is a subspace of .    We note that a nonzero vector is an eigenvector for corresponding to if and only if . The vector satisfies this equation if and only if , which is true exactly when . This shows that a nonzero is an eigenvector for corresponding to if and only if .  Since we already know ( ) that the kernel of a linear transformation is a subspace, this completes the proof of this theorem.     The awkwardness in the statement of this theorem regarding the zero vector is only present because the zero vector (by definition) cannot be an eigenvector.   This previous theorem justifies the following definition.    Let be a vector space and let . If is an eigenvalue of , then the eigenspace of corresponding to is the subspace of defined by . We will sometimes refer to the eigenspace corresponding to as the -eigenspace .    In the following example, we will calculate the eigenspace corresponding to an eigenvalue.    We consider the following matrix : . Let be multiplication by . If we know that is an eigenvalue for , we can calculate a basis for .  We need to form the matrix and then find the RREF: . The presence of free variables here confirms that is an eigenvalue of . If , then . From this calculation we can see that is two-dimensional, with basis , where .      Results About Eigenvalues and Eigenvectors  In general, the eigenvalues of a linear transformation are not easy to spot. There are some situations, however, when we can identify eigenvalues at a glance.    The eigenvalues of a triangular matrix are the entries on the main diagonal of .    Suppose is an upper triangular matrix. Then is . We can see that is an eigenvalue for if and only if , and this happens if and only if has at least one non-pivot column. Because (and therefore ) is upper triangular, has at least one non-pivot column if and only if at least one of the entries on the main diagonal of is zero. This happens if and only if equals one of the entries on the main diagonal of .  We have saved the case of a lower triangular matrix for the exercises.      If is given by , the eigenvalues of are , , and . The reader might use this opportunity to find the associated eigenvectors!    Of all possible scalars , it is especially noteworthy when is an eigenvalue for . In this situation, there is a nonzero vector such that . In other words, is a nonzero vector in .  This short argument establishes a connection between the injectivity of and the presence of as an eigenvalue for . Because of previous results, we have the following theorem. (We leave the proof of both statements in this theorem as exercises so the reader might get practice connecting the logic of various chapters of the book.)    Suppose is a finite dimensional vector space and . Then is an eigenvalue of if and only if is not invertible.  If , then is an eigenvalue of if and only if is not invertible.    The final result in this section will be useful later, but we have all of the tools we need to prove it now.    Suppose that are eigenvectors of corresponding to distinct eigenvalues . Then the set is linearly independent.    We argue by contradiction. Suppose that the set is linearly dependent. Since (because eigenvectors cannot be ), we can apply the Linear Dependence Lemma ( ). Therefore, there is some such that . There may be multiple subscripts for which this is true; we use the smallest such . We therefore have , for scalars .  We now apply to both sides of this equation and use the eigenvector assumptions (as well as the linearity of ) to get . If we multiply both sides of by and subtract the result from , we get .  Since is linearly independent by assumption, we must have for each , . But we assumed that the eigenvalues are all distinct, so this means that for all , and therefore we must have for all . But this implies, from , that , which is a contradiction as cannot be an eigenvector.  This contradiction proves that must be linearly independent.       Consider the following matrix and the vectors : .   Is an eigenvector for ? How do you know?     Is an eigenvector for ? How do you know?        Consider the matrix from the previous reading question. Show that is an eigenvalue of and find the corresponding eigenvectors. Follow .  Eigenspace is .      Let be the matrix .   Is an eigenvector for ? If so, find the eigenvalue.    Is an eigenvector for ? If so, find the eigenvalue.       Let be the matrix .   Is an eigenvalue for ? If so, find at least one eigenvector.    Is an eigenvalue for ? If so, find at least one eigenvector.       Let be the following matrix .   Show that is an eigenvalue for and find a basis for .    Show that is an eigenvalue for and find a basis for .       Let be the following matrix .   Show that is an eigenvalue for and find a basis for .    Show that is an eigenvalue for and find a basis for .       Let be the following matrix .   Show that is an eigenvalue for and find a basis for .    Show that is an eigenvalue for and find a basis for .       Let be the following matrix: . Find one eigenvalue of without any calculation. Explain your reasoning.    Prove that if is the zero matrix, then the only eigenvalue of is 0.    Prove that an matrix can have at most distinct eigenvalues.    If is an eigenvalue for an invertible linear transformation , prove that is an eigenvalue for .       Let be an matrix. Prove that is an eigenvalue for if and only if is an eigenvalue for . (Hint: Figure out how and are related.)    Use part (a) to complete the proof of for lower triangular matrices.       In a matrix, a row sum refers to the sum of all of the entries in a particular row.  Let be an matrix where all of the row sums are equal to the same number . Show that is an eigenvalue of . (Hint: Find an eigenvector.)    Let be the linear transformation which is orthogonal projection onto the line . Find all eigenvalues and all eigenvectors of this transformation.    Let be the linear transformation which is reflection across the -plane. Find all eigenvalues and all eigenvectors of this transformation.    Let be the matrix with the number 1 in every entry. Find all eigenvalues and eigenvectors for .    Suppose that and that for each , is an eigenvector of . Prove that is a diagonal matrix.       Suppose that is an eigenvalue of and that . Prove that is an eigenvalue of and that . (Here means the composition of with itself times.)    Give an example of a linear transformation with an eigenvalue such that .       Complete the proof of both halves of .    "
+  "body": " Eigenvalues and Eigenvectors   For linear transformations , there isn't often a connection between and that is easy to describe. These vectors, after all, live in different vector spaces, so they need not have any obvious relationship to each other. When , we sometimes have a different story to tell (for some vectors).  For a transformation , and live in the same vector space, so there is occasionally an easy-to-define relationship between these two vectors. Sometimes, the action of on a vector turns out to be rather simple.    Defining Eigenvalues and Eigenvectors  We first define the sorts of vectors we alluded to in the previous paragraphs.    Let be a vector space over , and let . A nonzero vector is an eigenvector for if for some . A scalar is called an eigenvalue of if there is a nontrivial solution to the equation . Such a solution is called an eigenvector for corresponding to .  If , the eigenvectors and eigenvalues of are the eigenvectors and eigenvalues of the transformation defined by .    Informally, eigenvectors for are nonzero vectors on which acts by scalar multiplication. The next example shows that for a that has eigenvectors, it is not (always) every vector in that has this special property.    When we are given a matrix and a vector , it is easy to determine whether or not is an eigenvector for . Consider the following: . We take the product , . Since , is an eigenvector for with eigenvalue . Also, since , we can see that is not an eigenvector for , because is not a scalar multiple of .    When is an eigenvector of , then applying may change the length of but it will not change the direction of . (To say this we must include pointing in the exact opposite direction as being in the same direction.) This is a simplification, because not every vector space has a neat, geometric interpretation.    Let be the following linear transformation: . If , it is not difficult to check that . Therefore, is an eigenvector for with eigenvalue .      Let be the linear transformation which is counterclockwise rotation about the origin by an angle of . We can see that will have an eigenvector if and only if is an integer multiple of radians. If is an even integer multiple of , then every vector in is an eigenvector for with eigenvalue , and if is an odd integer multiple of , then every vector in is an eigenvector for with eigenvalue .    We take a slightly different approach in our next example. Instead of verifying that a vector is an eigenvector, we provide the eigenvalue and then search for the eigenvector(s).    We consider the matrix from . Let's show that is an eigenvalue of and find the corresponding eigenvectors.  We know that is an eigenvalue of if the equation has a nontrivial solution for some . This is equivalent to saying that the equation has a nontrivial solution. We can also view as , so if is an eigenvalue of , there is a nonzero vector which satisfies . Viewed from the correct angle, we have reduced this problem to finding the null space of a matrix.  We will calculate : . We can see that the columns of are linearly dependent, so we know that has nontrivial solutions. This proves that is an eigenvalue of .  In order to find the eigenvectors of that correspond to , we describe the null space of the appropriate matrix. We row-reduce : . This shows that every eigenvector of corresponding to has the form , as long as . The interested\/vigilant reader can check that, for example, .    The process we undertook in the previous example showed that there are almost always multiple eigenvectors for a linear transformation which correspond to a specific eigenvalue. In fact, the collection of such vectors forms almost an entire subspace.    Let be a vector space over , let , and let be an eigenvalue of . Then the set of all eigenvectors for corresponding to , along with the zero vector, is a subspace of .    We note that a nonzero vector is an eigenvector for corresponding to if and only if . The vector satisfies this equation if and only if , which is true exactly when . This shows that a nonzero is an eigenvector for corresponding to if and only if .  Since we already know ( ) that the kernel of a linear transformation is a subspace, this completes the proof of this theorem.     The awkwardness in the statement of this theorem regarding the zero vector is only present because the zero vector (by definition) cannot be an eigenvector.   This previous theorem justifies the following definition.    Let be a vector space and let . If is an eigenvalue of , then the eigenspace of corresponding to is the subspace of defined by . We will sometimes refer to the eigenspace corresponding to as the -eigenspace .    In the following example, we will calculate the eigenspace corresponding to an eigenvalue.    We consider the following matrix : . Let be multiplication by . If we know that is an eigenvalue for , we can calculate a basis for .  We need to form the matrix and then find the RREF: . The presence of free variables here confirms that is an eigenvalue of . If , then . From this calculation we can see that is two-dimensional, with basis , where .      Results About Eigenvalues and Eigenvectors  In general, the eigenvalues of a linear transformation are not easy to spot. There are some situations, however, when we can identify eigenvalues at a glance.    The eigenvalues of a triangular matrix are the entries on the main diagonal of .    Suppose is an upper triangular matrix. Then is . We can see that is an eigenvalue for if and only if , and this happens if and only if has at least one non-pivot column. Because (and therefore ) is upper triangular, has at least one non-pivot column if and only if at least one of the entries on the main diagonal of is zero. This happens if and only if equals one of the entries on the main diagonal of .  We have saved the case of a lower triangular matrix for the exercises.      If is given by , the eigenvalues of are , , and . The reader might use this opportunity to find the associated eigenvectors\/eigenspaces!    Of all possible scalars , it is especially noteworthy when is an eigenvalue for . In this situation, there is a nonzero vector such that . In other words, is a nonzero vector in .  This short argument establishes a connection between the injectivity of and the presence of as an eigenvalue for . Because of previous results, we have the following theorem. (We leave the proof of both statements in this theorem as exercises so the reader might get practice connecting the logic of various chapters of the book.)    Suppose is a finite dimensional vector space and . Then is an eigenvalue of if and only if is not invertible.  If , then is an eigenvalue of if and only if is not invertible.    The final result in this section will be useful later, but we have all of the tools we need to prove it now.    Suppose that are eigenvectors of corresponding to distinct eigenvalues . Then the set is linearly independent.    We will argue by contradiction. Suppose that the set is linearly dependent. Since (because eigenvectors cannot be ), we can apply the Linear Dependence Lemma ( ). Therefore, there is some such that . There may be multiple subscripts for which this is true; we use the smallest such . We therefore have , for scalars .  We now apply to both sides of this equation and use the eigenvector assumptions (as well as the linearity of ) to get . If we multiply both sides of by and subtract the result from , we get .  Since is linearly independent by assumption, we must have for each , . But we assumed that the eigenvalues are all distinct, so this means that for all , and therefore we must have for all . But this implies, from , that , which is a contradiction as cannot be an eigenvector.  This contradiction proves that must be linearly independent.       Consider the following matrix and the vectors : .   Is an eigenvector for ? How do you know?     Is an eigenvector for ? How do you know?        Consider the matrix from the previous reading question. Show that is an eigenvalue of and find the corresponding eigenvectors. Follow .       Let be the matrix .   Is an eigenvector for ? If so, find the eigenvalue.    Is an eigenvector for ? If so, find the eigenvalue.       Let be the matrix .   Is an eigenvalue for ? If so, find at least one eigenvector.    Is an eigenvalue for ? If so, find at least one eigenvector.       Let be the following matrix .   Show that is an eigenvalue for and find a basis for .    Show that is an eigenvalue for and find a basis for .       Let be the following matrix .   Show that is an eigenvalue for and find a basis for .    Show that is an eigenvalue for and find a basis for .       Let be the following matrix .   Show that is an eigenvalue for and find a basis for .    Show that is an eigenvalue for and find a basis for .       Let be the following matrix: . Find one eigenvalue of without any calculation. Explain your reasoning.    Let be the linear transformation which is orthogonal projection onto the line . Find all eigenvalues and all eigenvectors of this transformation.    Let be the linear transformation which is reflection across the -plane. Find all eigenvalues and all eigenvectors of this transformation.    Let be the matrix with the number 1 in every entry. Find all eigenvalues and eigenvectors for .    Writing Exercises   Prove that if is the zero matrix, then the only eigenvalue of is 0.    Prove that an matrix can have at most distinct eigenvalues.    If is an eigenvalue for an invertible linear transformation , prove that is an eigenvalue for .       Let be an matrix. Prove that is an eigenvalue for if and only if is an eigenvalue for . (Hint: Figure out how and are related.)    Use part (a) to complete the proof of for lower triangular matrices.       In a matrix, a row sum refers to the sum of all of the entries in a particular row.  Let be an matrix where all of the row sums are equal to the same number . Show that is an eigenvalue of . (Hint: Find an eigenvector.)    Suppose that and that for each , is an eigenvector of . Prove that is a diagonal matrix.       Suppose that is an eigenvalue of and that . Prove that is an eigenvalue of and that . (Here means the composition of with itself times.)    Give an example of a linear transformation with an eigenvalue such that .       Complete the proof of both halves of .     "
 },
 {
   "id": "def-eigenvalues",
@@ -5425,7 +5425,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.1.2",
   "title": "",
-  "body": "  When we are given a matrix and a vector , it is easy to determine whether or not is an eigenvector for . Consider the following: . We take the product , . Since , is an eigenvector for with eigenvalue . Also, since , we can say that is not an eigenvector for , because is not a scalar multiple of .   "
+  "body": "  When we are given a matrix and a vector , it is easy to determine whether or not is an eigenvector for . Consider the following: . We take the product , . Since , is an eigenvector for with eigenvalue . Also, since , we can see that is not an eigenvector for , because is not a scalar multiple of .   "
 },
 {
   "id": "subsec-eigenvalues-7",
@@ -5452,7 +5452,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.1.5",
   "title": "",
-  "body": "  We consider the matrix from . Let's show that is an eigenvalue of and find the corresponding eigenvectors.  We know that is an eigenvalue of if the equation has a nontrivial solution for some . This is equivalent to saying that the equation has a nontrivial solution. We can also view as , so if is an eigenvalue of , there is a nonzero vector which satisfies . Viewed from the correct angle, we have reduced this problem to finding the null space of a matrix.  We will calculate : . We can see that the columns of are linearly dependent, so we know that has nontrivial solutions. This proves that is an eigenvalue of .  In order to find the eigenvectors of that correspond to , we describe the null space of the appropriate matrix. We row-reduce : . This shows that every eigenvector of has the form , as long as . The interested\/vigilant reader can check that, for example, .   "
+  "body": "  We consider the matrix from . Let's show that is an eigenvalue of and find the corresponding eigenvectors.  We know that is an eigenvalue of if the equation has a nontrivial solution for some . This is equivalent to saying that the equation has a nontrivial solution. We can also view as , so if is an eigenvalue of , there is a nonzero vector which satisfies . Viewed from the correct angle, we have reduced this problem to finding the null space of a matrix.  We will calculate : . We can see that the columns of are linearly dependent, so we know that has nontrivial solutions. This proves that is an eigenvalue of .  In order to find the eigenvectors of that correspond to , we describe the null space of the appropriate matrix. We row-reduce : . This shows that every eigenvector of corresponding to has the form , as long as . The interested\/vigilant reader can check that, for example, .   "
 },
 {
   "id": "thm-eigenspace",
@@ -5506,7 +5506,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.1.11",
   "title": "",
-  "body": "  If is given by , the eigenvalues of are , , and . The reader might use this opportunity to find the associated eigenvectors!   "
+  "body": "  If is given by , the eigenvalues of are , , and . The reader might use this opportunity to find the associated eigenvectors\/eigenspaces!   "
 },
 {
   "id": "thm-invertible-0-evalue",
@@ -5524,7 +5524,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "6.1.13",
   "title": "",
-  "body": "  Suppose that are eigenvectors of corresponding to distinct eigenvalues . Then the set is linearly independent.    We argue by contradiction. Suppose that the set is linearly dependent. Since (because eigenvectors cannot be ), we can apply the Linear Dependence Lemma ( ). Therefore, there is some such that . There may be multiple subscripts for which this is true; we use the smallest such . We therefore have , for scalars .  We now apply to both sides of this equation and use the eigenvector assumptions (as well as the linearity of ) to get . If we multiply both sides of by and subtract the result from , we get .  Since is linearly independent by assumption, we must have for each , . But we assumed that the eigenvalues are all distinct, so this means that for all , and therefore we must have for all . But this implies, from , that , which is a contradiction as cannot be an eigenvector.  This contradiction proves that must be linearly independent.   "
+  "body": "  Suppose that are eigenvectors of corresponding to distinct eigenvalues . Then the set is linearly independent.    We will argue by contradiction. Suppose that the set is linearly dependent. Since (because eigenvectors cannot be ), we can apply the Linear Dependence Lemma ( ). Therefore, there is some such that . There may be multiple subscripts for which this is true; we use the smallest such . We therefore have , for scalars .  We now apply to both sides of this equation and use the eigenvector assumptions (as well as the linearity of ) to get . If we multiply both sides of by and subtract the result from , we get .  Since is linearly independent by assumption, we must have for each , . But we assumed that the eigenvalues are all distinct, so this means that for all , and therefore we must have for all . But this implies, from , that , which is a contradiction as cannot be an eigenvector.  This contradiction proves that must be linearly independent.   "
 },
 {
   "id": "rq1-sec61",
@@ -5542,7 +5542,7 @@ var ptx_lunr_docs = [
   "type": "Reading Question",
   "number": "6.1.3.2",
   "title": "",
-  "body": " Consider the matrix from the previous reading question. Show that is an eigenvalue of and find the corresponding eigenvectors. Follow .  Eigenspace is .  "
+  "body": " Consider the matrix from the previous reading question. Show that is an eigenvalue of and find the corresponding eigenvectors. Follow .   "
 },
 {
   "id": "sec-eigenvalues-6-1",
@@ -5605,7 +5605,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.1.4.7",
   "title": "",
-  "body": " Prove that if is the zero matrix, then the only eigenvalue of is 0.  "
+  "body": " Let be the linear transformation which is orthogonal projection onto the line . Find all eigenvalues and all eigenvectors of this transformation.  "
 },
 {
   "id": "sec-eigenvalues-6-8",
@@ -5614,7 +5614,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.1.4.8",
   "title": "",
-  "body": " Prove that an matrix can have at most distinct eigenvalues.  "
+  "body": " Let be the linear transformation which is reflection across the -plane. Find all eigenvalues and all eigenvectors of this transformation.  "
 },
 {
   "id": "sec-eigenvalues-6-9",
@@ -5623,75 +5623,75 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.1.4.9",
   "title": "",
+  "body": " Let be the matrix with the number 1 in every entry. Find all eigenvalues and eigenvectors for .  "
+},
+{
+  "id": "sec-eigenvalues-6-10-2",
+  "level": "2",
+  "url": "sec-eigenvalues.html#sec-eigenvalues-6-10-2",
+  "type": "Exercise",
+  "number": "6.1.4.10",
+  "title": "",
+  "body": " Prove that if is the zero matrix, then the only eigenvalue of is 0.  "
+},
+{
+  "id": "sec-eigenvalues-6-10-3",
+  "level": "2",
+  "url": "sec-eigenvalues.html#sec-eigenvalues-6-10-3",
+  "type": "Exercise",
+  "number": "6.1.4.11",
+  "title": "",
+  "body": " Prove that an matrix can have at most distinct eigenvalues.  "
+},
+{
+  "id": "sec-eigenvalues-6-10-4",
+  "level": "2",
+  "url": "sec-eigenvalues.html#sec-eigenvalues-6-10-4",
+  "type": "Exercise",
+  "number": "6.1.4.12",
+  "title": "",
   "body": " If is an eigenvalue for an invertible linear transformation , prove that is an eigenvalue for .  "
 },
 {
-  "id": "sec-eigenvalues-6-10",
+  "id": "sec-eigenvalues-6-10-5",
   "level": "2",
-  "url": "sec-eigenvalues.html#sec-eigenvalues-6-10",
+  "url": "sec-eigenvalues.html#sec-eigenvalues-6-10-5",
   "type": "Exercise",
-  "number": "6.1.4.10",
+  "number": "6.1.4.13",
   "title": "",
   "body": "    Let be an matrix. Prove that is an eigenvalue for if and only if is an eigenvalue for . (Hint: Figure out how and are related.)    Use part (a) to complete the proof of for lower triangular matrices.     "
 },
 {
-  "id": "sec-eigenvalues-6-11",
+  "id": "sec-eigenvalues-6-10-6",
   "level": "2",
-  "url": "sec-eigenvalues.html#sec-eigenvalues-6-11",
+  "url": "sec-eigenvalues.html#sec-eigenvalues-6-10-6",
   "type": "Exercise",
-  "number": "6.1.4.11",
+  "number": "6.1.4.14",
   "title": "",
   "body": " In a matrix, a row sum refers to the sum of all of the entries in a particular row.  Let be an matrix where all of the row sums are equal to the same number . Show that is an eigenvalue of . (Hint: Find an eigenvector.)  "
 },
 {
-  "id": "sec-eigenvalues-6-12",
+  "id": "sec-eigenvalues-6-10-7",
   "level": "2",
-  "url": "sec-eigenvalues.html#sec-eigenvalues-6-12",
-  "type": "Exercise",
-  "number": "6.1.4.12",
-  "title": "",
-  "body": " Let be the linear transformation which is orthogonal projection onto the line . Find all eigenvalues and all eigenvectors of this transformation.  "
-},
-{
-  "id": "sec-eigenvalues-6-13",
-  "level": "2",
-  "url": "sec-eigenvalues.html#sec-eigenvalues-6-13",
-  "type": "Exercise",
-  "number": "6.1.4.13",
-  "title": "",
-  "body": " Let be the linear transformation which is reflection across the -plane. Find all eigenvalues and all eigenvectors of this transformation.  "
-},
-{
-  "id": "sec-eigenvalues-6-14",
-  "level": "2",
-  "url": "sec-eigenvalues.html#sec-eigenvalues-6-14",
-  "type": "Exercise",
-  "number": "6.1.4.14",
-  "title": "",
-  "body": " Let be the matrix with the number 1 in every entry. Find all eigenvalues and eigenvectors for .  "
-},
-{
-  "id": "sec-eigenvalues-6-15",
-  "level": "2",
-  "url": "sec-eigenvalues.html#sec-eigenvalues-6-15",
+  "url": "sec-eigenvalues.html#sec-eigenvalues-6-10-7",
   "type": "Exercise",
   "number": "6.1.4.15",
   "title": "",
   "body": " Suppose that and that for each , is an eigenvector of . Prove that is a diagonal matrix.  "
 },
 {
-  "id": "sec-eigenvalues-6-16",
+  "id": "sec-eigenvalues-6-10-8",
   "level": "2",
-  "url": "sec-eigenvalues.html#sec-eigenvalues-6-16",
+  "url": "sec-eigenvalues.html#sec-eigenvalues-6-10-8",
   "type": "Exercise",
   "number": "6.1.4.16",
   "title": "",
   "body": "    Suppose that is an eigenvalue of and that . Prove that is an eigenvalue of and that . (Here means the composition of with itself times.)    Give an example of a linear transformation with an eigenvalue such that .     "
 },
 {
-  "id": "sec-eigenvalues-6-17",
+  "id": "sec-eigenvalues-6-10-9",
   "level": "2",
-  "url": "sec-eigenvalues.html#sec-eigenvalues-6-17",
+  "url": "sec-eigenvalues.html#sec-eigenvalues-6-10-9",
   "type": "Exercise",
   "number": "6.1.4.17",
   "title": "",
