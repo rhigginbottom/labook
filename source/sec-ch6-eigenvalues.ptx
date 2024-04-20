@@ -199,7 +199,7 @@
       </me>. 
       From this calculation we can see that <m>\mathrm{eig}_2(T)</m> is two-dimensional, with basis <m>\mcb = \{\bfv_1, \bfv_2 \}</m>, where 
       <me>
-        \bfv_1 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \hspace{6pt} \text(and} \hspace{6pt}
+        \bfv_1 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
         \bfv_2 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}
       </me>.      
     </p>
