@@ -433,7 +433,7 @@ window.MathJax = {
 </h3>
 <div class="para" id="subsec-char-eqn-2">We recall from <a href="sec-eigenvalues.html" class="internal" title="Section 6.1: Eigenvalues and Eigenvectors">Section 6.1</a> that a scalar <span class="process-math">\(\lambda \in \ff\)</span> is an eigenvalue for a matrix <span class="process-math">\(A \in M_n(\ff)\)</span> if there is a nontrivial solution to the equation <span class="process-math">\((A- \lambda I)\bfx = \bfo\text{.}\)</span> Since this happens precisely when <span class="process-math">\(A - \lambda I\)</span> is <em class="emphasis">not</em> invertible, by <a href="" class="xref" data-knowl="./knowl/xref/thm-ivt.html" title="Theorem 5.4.13: The Invertible Matrix Theorem">Theorem 5.4.13</a> we can use the determinant to find the eigenvalues for <span class="process-math">\(A\text{.}\)</span>
 </div>
-<div class="para" id="subsec-char-eqn-3">Specifically, <span class="process-math">\(\lambda\)</span> is an eigenvalue for <span class="process-math">\(A\)</span> if and only if <span class="process-math">\(\det(A - \lambda I) = 0\text{.}\)</span> If we introduce <span class="process-math">\(\lambda\)</span> as a variable, we can begin the process of finding the eigenvalues for square matrices. We will illustrate this method in the following example before making all of the steps explicit (with the appropriate notation and terminology).</div>
+<div class="para" id="subsec-char-eqn-3">Specifically, <span class="process-math">\(\lambda\)</span> is an eigenvalue for <span class="process-math">\(A\)</span> if and only if <span class="process-math">\(\det(A - \lambda I) = 0\text{.}\)</span> If we consider <span class="process-math">\(\lambda\)</span> as a variable, we can begin the process of finding the eigenvalues for square matrices. We will illustrate this method in the following example before making all of the steps explicit (with the appropriate notation and terminology).</div>
 <details id="subsec-char-eqn-4" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span>
 </h4></summary><article class="example example-like"><div class="para logical" id="subsec-char-eqn-4-1-1">
@@ -515,7 +515,7 @@ A = \begin{bmatrix}
 </div>
 <div class="para">For the matrix <span class="process-math">\(A\)</span> given above, we have <span class="process-math">\(p_A(\lambda) = -\lambda^3 + 6\lambda^2 - 11\lambda + 6\text{.}\)</span>
 </div>
-</div></article></details><div class="para" id="subsec-char-eqn-12">Since we can solve a quadratic equation easily—either by factoring or using the quadratic formula—we mistakenly think that all polynomial equations are easy to solve. Not so. As we consider the characteristic polynomial for the matrix in the previous example, we find the task of finding the eigenvalues quite challenging.</div>
+</div></article></details><div class="para" id="subsec-char-eqn-12">Since one can solve a quadratic equation easily—either by factoring or using the quadratic formula—some mistakenly think that all polynomial equations are easy to solve. Not so. As we consider the characteristic polynomial for the matrix in the previous example, we find the task of finding the eigenvalues quite challenging.</div>
 <div class="para" id="subsec-char-eqn-13">While there is a formula for solving a cubic polynomial, it is not nearly as nice as the quadratic formula. It is, in fact, something that should rarely see the light of day. It is ugly.</div>
 <div class="para" id="subsec-char-eqn-14">In practice, the eigenvalues of an <span class="process-math">\(n\times n\)</span> matrix are usually found with a computer algebra system when <span class="process-math">\(n \ge 3\text{.}\)</span> However, there is one way that we could describe an eigenvalue problem and still have a reasonable expectation that the reader could find a solution.</div>
 <details id="subsec-char-eqn-15" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
@@ -588,7 +588,7 @@ A = \begin{bmatrix} -5 \amp -4 \\ 5 \amp -6 \end{bmatrix}\text{.}
 </div> <div class="para" id="subsec-char-eqn-20-1-2">If <span class="process-math">\(A\)</span> is considered as a matrix over <span class="process-math">\(\cc\text{,}\)</span> then it has two complex eigenvalues. But it has no real eigenvalues.</div></article></details><div class="para" id="subsec-char-eqn-21">One of the major differences between <span class="process-math">\(\rr\)</span> and <span class="process-math">\(\cc\)</span> is that <span class="process-math">\(\cc\)</span> is an <dfn class="terminology">algebraically closed field</dfn>, while <span class="process-math">\(\rr\)</span> is not. The fact that <span class="process-math">\(\cc\)</span> is algebraically closed is another way to restate the famous Fundamental Theorem of Algebra, which says that every polynomial with coefficients in <span class="process-math">\(\cc\)</span> can be completely reduced to linear factors. There are interesting, deep waters to explore here, but perhaps not in the present text.</div></section><section class="subsection" id="subsec-similarity"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="space"> </span><span class="title">Similarity</span>
 </h3>
-<div class="para" id="subsec-similarity-2">Earlier in this book we have discussed one way that matrices can be related—row equivalence. We now introduce another way they can be related which has connections to the characteristic equation.</div>
+<div class="para" id="subsec-similarity-2">Earlier in this book we discussed one way matrices can be related—row equivalence. We now introduce another relationship which has connections to the characteristic equation.</div>
 <article class="definition definition-like" id="def-similarity"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.9</span><span class="period">.</span>
 </h4>
@@ -672,7 +672,7 @@ A = \begin{bmatrix}
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-char-eqn-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="sec-char-eqn-5-2-1-1">Consider the matrix <span class="process-math">\(A\)</span> from the previous reading question. Write down two separate matrices which are similar to <span class="process-math">\(A\text{.}\)</span> Explain how you obtained these matrices.</div> </article></section><section class="exercises" id="sec-char-eqn-6"><h3 class="heading hide-type">
+<div class="para" id="sec-char-eqn-5-2-1-1">Consider the matrix <span class="process-math">\(A\)</span> from the previous reading question. Write down two separate matrices which are similar to <span class="process-math">\(A\text{.}\)</span> Explain how you obtained these matrices. (There are many, many correct answers!)</div> </article></section><section class="exercises" id="sec-char-eqn-6"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">6.2.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="sec-char-eqn-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -751,8 +751,9 @@ A = \begin{bmatrix}
 </div>
 <div class="para"> Find the characteristic polynomial of <span class="process-math">\(A\text{.}\)</span> If <span class="process-math">\(\lambda = 1\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> find the other eigenvalues of <span class="process-math">\(A\text{.}\)</span>
 </div>
-</div></article><article class="exercise exercise-like" id="sec-char-eqn-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-char-eqn-6-7-1-1">
+</div></article><article class="subexercises" id="sec-char-eqn-6-7"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-char-eqn-6-7-2"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-char-eqn-6-7-2-1-1">
 <div class="para">Let <span class="process-math">\(A \in M_n(\rr)\)</span> have <span class="process-math">\(n\)</span> real eigenvalues, <span class="process-math">\(\lambda_1, \ldots, \lambda_n\text{,}\)</span> repeated according to their multiplicities, so that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -761,12 +762,12 @@ A = \begin{bmatrix}
 </div>
 <div class="para">Prove that <span class="process-math">\(\det(A)\)</span> is the product of the <span class="process-math">\(n\)</span> eigenvalues of <span class="process-math">\(A\text{.}\)</span>
 </div>
-</div></article><article class="exercise exercise-like" id="exerc-similarity-equiv-rel"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+</div></article><article class="exercise exercise-like" id="exerc-similarity-equiv-rel"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
 <div class="para" id="exerc-similarity-equiv-rel-1-1">Prove that similarity is an equivalence relation on the set <span class="process-math">\(M_n(\ff)\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-char-eqn-6-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="sec-char-eqn-6-9-1-1">Let <span class="process-math">\(I_n \in M_n(\ff)\)</span> be the identity matrix and let <span class="process-math">\(k \in \ff\)</span> be a scalar. If <span class="process-math">\(A = kI_n\text{,}\)</span> prove that the only matrix <span class="process-math">\(A\)</span> is similar to is itself.</div></article><article class="exercise exercise-like" id="exer-det-invariant-similar"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+</div></article><article class="exercise exercise-like" id="sec-char-eqn-6-7-4"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="sec-char-eqn-6-7-4-1-1">Let <span class="process-math">\(I_n \in M_n(\ff)\)</span> be the identity matrix and let <span class="process-math">\(k \in \ff\)</span> be a scalar. If <span class="process-math">\(A = kI_n\text{,}\)</span> prove that the only matrix <span class="process-math">\(A\)</span> is similar to is itself.</div></article><article class="exercise exercise-like" id="exer-det-invariant-similar"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
 <div class="para" id="exer-det-invariant-similar-1-1">Prove that if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, then <span class="process-math">\(\det(A) = \det(B)\text{.}\)</span>
-</div></article></section></section></div>
+</div></article></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-eigenvalues.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-diagonalization.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
