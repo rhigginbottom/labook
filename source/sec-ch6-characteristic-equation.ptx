@@ -16,7 +16,7 @@
   </p>
 
   <p>
-    Specifically, <m>\lambda</m> is an eigenvalue for <m>A</m> if and only if <m>\det(A - \lambda I) = 0</m>. If we introduce <m>\lambda</m> as a variable, we can begin the process of finding the eigenvalues for square matrices. We will illustrate this method in the following example before making all of the steps explicit (with the appropriate notation and terminology). 
+    Specifically, <m>\lambda</m> is an eigenvalue for <m>A</m> if and only if <m>\det(A - \lambda I) = 0</m>. If we consider <m>\lambda</m> as a variable, we can begin the process of finding the eigenvalues for square matrices. We will illustrate this method in the following example before making all of the steps explicit (with the appropriate notation and terminology). 
   </p>
 
   <example>
@@ -115,7 +115,7 @@
 </example>
 
 <p>
-  Since we can solve a quadratic equation easily<mdash></mdash>either by factoring or using the quadratic formula<mdash></mdash>we mistakenly think that all polynomial equations are easy to solve. Not so. As we consider the characteristic polynomial for the matrix in the previous example, we find the task of finding the eigenvalues quite challenging.
+  Since one can solve a quadratic equation easily<mdash></mdash>either by factoring or using the quadratic formula<mdash></mdash>some mistakenly think that all polynomial equations are easy to solve. Not so. As we consider the characteristic polynomial for the matrix in the previous example, we find the task of finding the eigenvalues quite challenging.
 </p>
 
 <p>
@@ -216,7 +216,7 @@
   <title>Similarity</title>
   
 <p>
-  Earlier in this book we have discussed one way that matrices can be related<mdash></mdash>row equivalence. We now introduce another way they can be related which has connections to the characteristic equation.
+  Earlier in this book we discussed one way matrices can be related<mdash></mdash>row equivalence. We now introduce another relationship which has connections to the characteristic equation.
 </p>
 
 <definition xml:id="def-similarity">
@@ -344,7 +344,7 @@
 <exercise> 
 <statement>
   <p>
-    Consider the matrix <m>A</m> from the previous reading question. Write down two separate matrices which are similar to <m>A</m>. Explain how you obtained these matrices. 
+    Consider the matrix <m>A</m> from the previous reading question. Write down two separate matrices which are similar to <m>A</m>. Explain how you obtained these matrices. (There are many, many correct answers!)
   </p>
   <!-- <p>
     An infinite number of possible answers! <m>P^{-1}AP</m> for any <m>2\times 2</m> invertible <m>P</m>
@@ -436,6 +436,8 @@
     </p>
   </statement>
 </exercise>
+<subexercises>
+  <title>Writing Exercises</title>  
 <exercise>
   <statement>
     <p>
@@ -468,6 +470,7 @@
       </p>
     </statement>
   </exercise>
+</subexercises>
 </exercises> 
 
 
