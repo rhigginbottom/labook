@@ -567,7 +567,7 @@
   <exercise>
     <statement>
       <p>
-        Let <m>A \in M_n(\ff)</m>. Prove that there exist bases <m>\mcb</m> and <m>\mcc</m> for <m>\ff^n</m> such that <m>A = P_{\mcb,\mcc}</m>. 
+        Let <m>A \in M_n(\ff)</m> be invertible. Prove that there exist bases <m>\mcb</m> and <m>\mcc</m> for <m>\ff^n</m> such that <m>A = P_{\mcb,\mcc}</m>. 
       </p>
     </statement>
   </exercise>

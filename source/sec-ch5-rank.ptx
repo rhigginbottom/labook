@@ -438,11 +438,11 @@
         Suppose <m>A \in M_{m,n}(\ff)</m> and <m>\bfb \in \ff^m</m>. What has to be true about the two numbers <m>\rank([A\; \bfb ])</m> and <m>\rank(A)</m> in order for the equation <m>A\bfx = \bfb</m> to be consistent? Explain.
       </p>
     </statement>
-    <answer>
+    <!-- <answer>
       <p>
         These two numbers must be equal.
       </p>
-    </answer>
+    </answer> -->
   </exercise>
   <subexercises>
     <title>Writing Exercises</title>    
