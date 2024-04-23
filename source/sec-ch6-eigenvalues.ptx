@@ -433,6 +433,28 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              The RREF of <m>A + 4I</m> has one non-pivot column, so <m>\lambda = -4</m> is an eigenvalue for <m>A</m>. A basis for <m>\mathrm{eig}_{-4}(A)</m> is
+              <me>
+                \left\{ \begin{bmatrix} 5 \\ -2 \\ 6 \end{bmatrix} \right\}
+              </me>.              
+            </p>
+          </li>
+          <li>
+            <p>
+              The RREF of <m>A - 2I</m> has two non-pivot columns, so <m>\lambda = 2</m> is an eigenvalue for <m>A</m>. A basis for <m>\mathrm{eig}_{2}(A)</m> is
+              <me>
+                \left\{ \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \right\}
+              </me>.              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -483,6 +505,28 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              The RREF of <m>A - 4I</m> has two non-pivot columns, so <m>\lambda = 4</m> is an eigenvalue for <m>A</m>. A basis for <m>\mathrm{eig}_{4}(A)</m> is
+              <me>
+                \left\{ \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 0 \\ 1 \end{bmatrix} \right\}
+              </me>.              
+            </p>
+          </li>
+          <li>
+            <p>
+              The RREF of <m>A - 2I</m> has one non-pivot column, so <m>\lambda = 2</m> is an eigenvalue for <m>A</m>. A basis for <m>\mathrm{eig}_{2}(A)</m> is
+              <me>
+                \left\{ \begin{bmatrix} 0 \\ 4 \\ 1 \end{bmatrix} \right\}
+              </me>.              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -519,6 +563,21 @@
         Let <m>A \in M_n(\rr)</m> be the matrix with the number 1 in every entry. Find all eigenvalues and eigenvectors for <m>A</m>. 
       </p>
     </statement>
+    <answer>
+      <p>
+        Since <m>A</m> is clearly not invertible<mdash></mdash>its columns are linearly dependent<mdash></mdash>it has 0 as an eigenvalue by <xref ref="thm-invertible-0-evalue"/>. A basis for <m>\mathrm{eig}_0(A)</m> is 
+        <me>
+          \left\{ \begin{bmatrix} -1 \\ 1 \\ 0 \\ \vdots \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \ldots, \begin{bmatrix} -1 \\ 0 \\ \vdots \\ 0 \\ 0 \\ 1 \end{bmatrix} \right\}
+        </me>.
+        The dimension of <m>\mathrm{eig}_0(A)</m> is <m>n-1</m>.
+      </p>
+      <p>
+        The other eigenvalue is <m>\lambda = n</m>, and a basis for <m>\mathrm{eig}_n(A)</m> is 
+        <me>
+          \left\{ \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix} \right\}
+        </me>.        
+      </p>
+    </answer>
   </exercise>
   <subexercises>
     <title>Writing Exercises</title>  
@@ -528,6 +587,15 @@
           Prove that if <m>A^2</m> is the zero matrix, then the only eigenvalue of <m>A</m> is 0.
         </p>
       </statement>
+      <solution>
+        <p>
+          Suppose that <m>\lambda</m> is an eigenvalue of <m>A</m>. Then there exists a nonzero vector <m>\bfv</m> such that <m>A\bfv = \lambda\bfv</m>. But then 
+          <me>
+            A^2\bfv = A(\lambda\bfv) = \lambda \cdot A\bfv = \lambda^2\bfv
+          </me>.
+          If <m>A^2 = 0</m>, then <m>A^2\bfv = \bfo</m>, so we have <m>\lambda^2\bfv = \bfo</m>. But since <m>\bfv</m> is nonzero, and since <m>\ff</m> is a field, we must have <m>\lambda = 0</m>. Therefore, the only eigenvalue of <m>A</m> is 0.
+        </p>
+      </solution>
     </exercise>
     <exercise>
       <statement>
@@ -535,6 +603,11 @@
           Prove that an <m>n\times n</m> matrix <m>A</m> can have at most <m>n</m> distinct eigenvalues.
         </p>
       </statement>
+      <solution>
+        <p>
+          We will argue by contradiction. Suppose that an <m>n\times n</m> matrix <m>A</m> has <m>n+1</m> distinct eigenvalues. This means that there are corresponding eigenvectors <m>\bfv_1,\ldots, \bfv_{n+1}</m>. By <xref ref="thm-lin-ind-eigenvectors"/>, we know that the set <m>S = \{\bfv_1,\ldots, \bfv_{n+1}\}</m> is linearly independent. However, this gives us a linearly independent set of <m>n+1</m> vectors in <m>\ff^n</m>, which is a contradiction by <xref ref="cor-n-vectors-f-m"/>. This proves that <m>A</m> can have at most <m>n</m> distinct eigenvalues.
+        </p>
+      </solution>
     </exercise>
     <exercise>
       <statement>

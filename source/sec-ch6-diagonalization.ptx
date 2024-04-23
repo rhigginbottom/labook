@@ -21,7 +21,7 @@
       D = \begin{bmatrix} -3 \amp 0 \\ 0 \amp 4 \end{bmatrix}, \hspace{6pt}
       D^2 = \begin{bmatrix} 9 \amp 0 \\ 0 \amp 16 \end{bmatrix}
     </me>.
-    In general, the zeros in a diagonal matrix make the powers of that matrix easy to calculate. For this specific <m>D</m>, we have, for any integer <m>k \ge 1</m>, 
+    In general, the many zeros in a diagonal matrix make the powers of that matrix easy to calculate. For this specific <m>D</m>, we have, for any integer <m>k \ge 1</m>, 
     <me>
       D^k = \begin{bmatrix} (-3)^k \amp 0 \\ 0 \amp 4^k \end{bmatrix}
     </me>.
@@ -76,7 +76,7 @@
       <men xml:id="eqn-diag-thm-2">
         PD = \begin{bmatrix} \lambda_1\bfv_1 \amp \cdots \amp \lambda_n\bfv_n \end{bmatrix}
       </men>.
-      (If the reader has trouble believing <xref ref="eqn-diag-thm-2"/>, thinking of matrix multiplication, in each column of the product, as a linear combination of the columns of <m>P</m> with weights coming from the corresponding column of <m>D</m>, may help!) If <m>A</m> is diagonalizable, then <m>A = PDP^{-1}</m> and <m>AP = PD</m>. By <xref ref="eqn-diag-thm-1"/> and <xref ref="eqn-diag-thm-2"/>, by equating columns in <m>AP</m> and <m>PD</m> we see that <m>A\bfv_i = \lambda_i\bfv_i</m> for <m>1 \le i \le n</m>. Since <m>P</m> is invertible, the columns of <m>P</m> must be linearly independent. Further, since the columns of <m>P</m> cannot be zero vectors, this argument shows that <m>\lambda_i</m> is an eigenvalue of <m>A</m> with eigenvector <m>\bfv_i</m>, for each <m>i</m>. This proves one direction of the theorem.
+      (If the reader has trouble believing <xref ref="eqn-diag-thm-2"/>, thinking of matrix multiplication, in each column of the product, as a linear combination of the columns of <m>P</m> with weights coming from the corresponding column of <m>D</m>, may help!) If <m>A</m> is diagonalizable, then <m>A = PDP^{-1}</m> and <m>AP = PD</m>. From <xref ref="eqn-diag-thm-1"/> and <xref ref="eqn-diag-thm-2"/>, by equating columns in <m>AP</m> and <m>PD</m> we see that <m>A\bfv_i = \lambda_i\bfv_i</m> for <m>1 \le i \le n</m>. Since <m>P</m> is invertible, the columns of <m>P</m> must be linearly independent. Further, since the columns of <m>P</m> cannot be zero vectors, this argument shows that <m>\lambda_i</m> is an eigenvalue of <m>A</m> with eigenvector <m>\bfv_i</m>, for each <m>i</m>. This proves one direction of the theorem.
     </p>
     <p>
       If we are given <m>\bfv_1, \ldots, \bfv_n</m> as eigenvectors of <m>A</m> with corresponding eigenvalues <m>\lambda_1, \ldots, \lambda_n</m>, then we can form the matrices <m>P</m> and <m>D</m>. The argument in the previous paragraph shows that <m>AP = PD</m>. (Note that we have not yet used the linear independence of the eigenvectors!) If the eigenvectors are linearly independent, then <m>P</m> is invertible, and <m>AP = PD</m> implies <m>A = PDP^{-1}</m>, making <m>A</m> diagonalizable. 
@@ -287,7 +287,7 @@
 </note>
 
 <p>
-  We now collect some facts about the diagonalizability of a matrix into a theorem. (We omit the proof.)
+  The following theorem collects some facts about the diagonalizability of a matrix. (We omit the proof.)
 </p>
 
 <theorem xml:id="thm-diagonalizable-2">
@@ -337,7 +337,7 @@
 </definition>
 
 <p>
-  Based on our discussion thus far in this section, the reader may guess that the vectors in a basis <m>\mcb</m> referenced in <xref ref="def-diagonalizable-lin-transf"/> are eigenvectors for <m>T</m>. What is true for matrices is (generally) true in the proper context for linear transformations.
+  Based on our discussion thus far in this section, the reader may guess that the vectors in the basis <m>\mcb</m> referenced in <xref ref="def-diagonalizable-lin-transf"/> are eigenvectors for <m>T</m>. What is true for matrices is (generally) true in the proper context for linear transformations.
 </p>
 
 <proposition xml:id="prop-diag-lin-transf">
@@ -382,7 +382,7 @@
 </proposition>
 
 <p>
-  The final result in this section brings several prior results together, tying diagonalizability of linear transformations and diagonalizability of matrices to each other in a predictable way.
+  The final result in this section brings several prior results together, tying the diagonalizability of linear transformations and matrices to each other in a predictable way.
 </p>
 
 <theorem xml:id="thm-diagonalizability-lt-matrices">
@@ -562,82 +562,85 @@
   <exercise>
     <statement>
       <p>
-        Prove that if <m>A</m> is both invertible and diagonalizable, then so is <m>A^{-1}</m>.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Prove that if <m>A</m> has <m>n</m> linearly independent eigenvectors, then so does <m>A^T</m>.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         Consider the following matrix <m>A \in M_2(\rr)</m>:
         <me>
           A = \begin{bmatrix}
           4 \amp -1 \\ -4 \amp 4
           \end{bmatrix}
         </me>.
-        Prove that a diagonalization <m>A = PDP^{-1}</m> is not unique by finding two pairs of matrices <m>(P,D)</m> which diagonalize <m>A</m>.
+        Show that a diagonalization <m>A = PDP^{-1}</m> is not unique by finding two pairs of matrices <m>(P,D)</m> which diagonalize <m>A</m>.
       </p>
     </statement>
   </exercise>
-  <exercise>
-    <statement>
-      <p>
-        This problem explores the relationship between invertibility and diagonalizability.
-        <ol>
-          <li>
-            <p>
-              Construct a nonzero <m>2\times 2</m> matrix which is invertible but not diagonalizable.
-            </p>
-          </li>
-          <li>
-            <p>
-              Construct a nondiagonal <m>2\times 2</m> matrix that is diagonalizable but not invertible.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Let <m>T:\rr^3 \to \rr^3</m> be projection onto the <m>xy</m>-plane. Prove that <m>T</m> is diagonalizable. 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Let <m>T:\rr^2 \to \rr^2</m> be orthogonal projection onto the line <m>y = -6x</m>. Prove that <m>T</m> is diagonalizable. 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Let <m>T: \rr^2 \to \rr^2</m> be counterclockwise rotation by <m>\frac{\pi}{2}</m> radians.
-        <ol>
-          <li>
-            <p>
-              Prove that <m>T</m> is not diagonalizable.
-            </p>
-          </li>
-          <li>
-            <p>
-              Prove that <m>T^2</m> is diagonalizable.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
+  <subexercises>
+    <title>Writing Exercises</title>  
+    <exercise>
+      <statement>
+        <p>
+          Prove that if <m>A</m> is both invertible and diagonalizable, then so is <m>A^{-1}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that if <m>A</m> has <m>n</m> linearly independent eigenvectors, then so does <m>A^T</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          This problem explores the relationship between invertibility and diagonalizability.
+          <ol>
+            <li>
+              <p>
+                Construct a nonzero <m>2\times 2</m> matrix which is invertible but not diagonalizable.
+              </p>
+            </li>
+            <li>
+              <p>
+                Construct a nondiagonal <m>2\times 2</m> matrix that is diagonalizable but not invertible.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>T:\rr^3 \to \rr^3</m> be projection onto the <m>xy</m>-plane. Prove that <m>T</m> is diagonalizable. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>T:\rr^2 \to \rr^2</m> be orthogonal projection onto the line <m>y = -6x</m>. Prove that <m>T</m> is diagonalizable. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>T: \rr^2 \to \rr^2</m> be counterclockwise rotation by <m>\frac{\pi}{2}</m> radians.
+          <ol>
+            <li>
+              <p>
+                Prove that <m>T</m> is not diagonalizable.
+              </p>
+            </li>
+            <li>
+              <p>
+                Prove that <m>T^2</m> is diagonalizable.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+  </subexercises>
 </exercises> 
 
 
