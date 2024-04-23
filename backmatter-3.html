@@ -1406,7 +1406,76 @@ P_{\mce,\mcb} = \begin{bmatrix} 4/17 \amp -1/17 \\ 1/17 \amp 4/17 \end{bmatrix}\
 <div class="para">The <span class="process-math">\(i\)</span>th column of <span class="process-math">\(P_{\mcb,\mcc}\)</span> is <span class="process-math">\([\bfv_i]_{\mcc}\text{.}\)</span> Or, stated differently, if <span class="process-math">\(C_{\mcc}:V \to \ff^n\)</span> is the coordinate mapping, then the <span class="process-math">\(i\)</span>th column of <span class="process-math">\(P_{\mcb,\mcc}\)</span> is <span class="process-math">\(C_{\mcc}(\bfv_i)\text{.}\)</span>
 </div> <div class="para">We know (by <a href="" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" title="Theorem 5.5.3">Theorem 5.5.3</a>) that the coordinate mapping is an isomorphism. Since <span class="process-math">\(\mcb\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> <span class="process-math">\(\mcb\)</span> is a spanning set for <span class="process-math">\(V\text{.}\)</span> But then the set containing the columns of <span class="process-math">\(P_{\mcb,\mcc}\)</span> is <span class="process-math">\(C_{\mcc}(\mcb)\text{,}\)</span> and since <span class="process-math">\(\mcb\)</span> spans <span class="process-math">\(V\)</span> we know that <span class="process-math">\(C_{\mcc}(\mcb)\)</span> will span <span class="process-math">\(\ff^n\text{.}\)</span>
 </div>
-</div></details></div></article></article></section></div>
+</div></details></div></article></article><h3 class="heading hide-type" title="Exercises 6.1.4">
+<span class="codenumber">6</span><span class="space"> </span><span class="title">Eigenvalues and Eigenvectors</span><br><span class="codenumber">6.1</span><span class="space"> </span><span class="title">Eigenvalues and Eigenvectors</span><br><span class="codenumber">6.1.4</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise-like"><h4 class="heading"><span class="codenumber">6.1.4.3<span class="period">.</span></span></h4>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para logical">
+<div class="para">The RREF of <span class="process-math">\(A + 4I\)</span> has one non-pivot column, so <span class="process-math">\(\lambda = -4\)</span> is an eigenvalue for <span class="process-math">\(A\text{.}\)</span> A basis for <span class="process-math">\(\mathrm{eig}_{-4}(A)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix} 5 \\ -2 \\ 6 \end{bmatrix} \right\}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">The RREF of <span class="process-math">\(A - 2I\)</span> has two non-pivot columns, so <span class="process-math">\(\lambda = 2\)</span> is an eigenvalue for <span class="process-math">\(A\text{.}\)</span> A basis for <span class="process-math">\(\mathrm{eig}_{2}(A)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \right\}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">6.1.4.5<span class="period">.</span></span></h4>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical"><ol class="lower-alpha">
+<li><div class="para logical">
+<div class="para">The RREF of <span class="process-math">\(A - 4I\)</span> has two non-pivot columns, so <span class="process-math">\(\lambda = 4\)</span> is an eigenvalue for <span class="process-math">\(A\text{.}\)</span> A basis for <span class="process-math">\(\mathrm{eig}_{4}(A)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 0 \\ 1 \end{bmatrix} \right\}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">The RREF of <span class="process-math">\(A - 2I\)</span> has one non-pivot column, so <span class="process-math">\(\lambda = 2\)</span> is an eigenvalue for <span class="process-math">\(A\text{.}\)</span> A basis for <span class="process-math">\(\mathrm{eig}_{2}(A)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix} 0 \\ 4 \\ 1 \end{bmatrix} \right\}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">6.1.4.9<span class="period">.</span></span></h4>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="para logical">
+<div class="para">Since <span class="process-math">\(A\)</span> is clearly not invertible—its columns are linearly dependent—it has 0 as an eigenvalue by <a href="" class="xref" data-knowl="./knowl/xref/thm-invertible-0-evalue.html" title="Theorem 6.1.12">Theorem 6.1.12</a>. A basis for <span class="process-math">\(\mathrm{eig}_0(A)\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-invertible-0-evalue.html">
+\begin{equation*}
+\left\{ \begin{bmatrix} -1 \\ 1 \\ 0 \\ \vdots \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \ldots, \begin{bmatrix} -1 \\ 0 \\ \vdots \\ 0 \\ 0 \\ 1 \end{bmatrix} \right\}\text{.}
+\end{equation*}
+</div>
+<div class="para">The dimension of <span class="process-math">\(\mathrm{eig}_0(A)\)</span> is <span class="process-math">\(n-1\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">The other eigenvalue is <span class="process-math">\(\lambda = n\text{,}\)</span> and a basis for <span class="process-math">\(\mathrm{eig}_n(A)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix} \right\}\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><article class="subexercises"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise-like"><h5 class="heading"><span class="codenumber">6.1.4.10<span class="period">.</span></span></h5>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\text{.}\)</span> Then there exists a nonzero vector <span class="process-math">\(\bfv\)</span> such that <span class="process-math">\(A\bfv = \lambda\bfv\text{.}\)</span> But then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^2\bfv = A(\lambda\bfv) = \lambda \cdot A\bfv = \lambda^2\bfv\text{.}
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(A^2 = 0\text{,}\)</span> then <span class="process-math">\(A^2\bfv = \bfo\text{,}\)</span> so we have <span class="process-math">\(\lambda^2\bfv = \bfo\text{.}\)</span> But since <span class="process-math">\(\bfv\)</span> is nonzero, and since <span class="process-math">\(\ff\)</span> is a field, we must have <span class="process-math">\(\lambda = 0\text{.}\)</span> Therefore, the only eigenvalue of <span class="process-math">\(A\)</span> is 0.</div>
+</div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">6.1.4.11<span class="period">.</span></span></h5>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para">We will argue by contradiction. Suppose that an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> has <span class="process-math">\(n+1\)</span> distinct eigenvalues. This means that there are corresponding eigenvectors <span class="process-math">\(\bfv_1,\ldots, \bfv_{n+1}\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/thm-lin-ind-eigenvectors.html" title="Theorem 6.1.13">Theorem 6.1.13</a>, we know that the set <span class="process-math">\(S = \{\bfv_1,\ldots, \bfv_{n+1}\}\)</span> is linearly independent. However, this gives us a linearly independent set of <span class="process-math">\(n+1\)</span> vectors in <span class="process-math">\(\ff^n\text{,}\)</span> which is a contradiction by <a href="" class="xref" data-knowl="./knowl/xref/cor-n-vectors-f-m.html" title="Corollary 5.1.13">Corollary 5.1.13</a>. This proves that <span class="process-math">\(A\)</span> can have at most <span class="process-math">\(n\)</span> distinct eigenvalues.</div></div></details></div></article></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="apdx-mod-arith.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
