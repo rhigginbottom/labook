@@ -417,7 +417,22 @@
         3 \amp -1 \amp 1
         \end{bmatrix}
       </me>. <!-- 0, 3 -->
-      Find the characteristic polynomial and the eigenvalues of <m>A</m>. 
+      Find the characteristic polynomial and the eigenvalues of <m>A</m> by hand. 
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>A \in M_3(\rr)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix}
+        2 \amp 6 \amp 6 \\
+        0 \amp -1 \amp 0 \\
+        -3 \amp -6 \amp -7
+        \end{bmatrix}
+      </me>. <!-- -1, -1, -4 -->
+      Find the characteristic polynomial and the eigenvalues of <m>A</m> by hand. 
     </p>
   </statement>
 </exercise>
@@ -432,7 +447,22 @@
         0 \amp -4 \amp 9
         \end{bmatrix}
       </me>. <!-- 1, -3, 5 -->
-      Find the characteristic polynomial of <m>A</m>. If <m>\lambda = 1</m> is an eigenvalue of <m>A</m>, find the other eigenvalues of <m>A</m>.
+      Find the characteristic polynomial of <m>A</m> by hand. If <m>\lambda = 1</m> is an eigenvalue of <m>A</m>, find the other eigenvalues of <m>A</m> by hand.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>A \in M_3(\rr)</m> be the following matrix: 
+      <me>
+        A = \begin{bmatrix}
+        1 \amp -4 \amp -4 \\
+        -2 \amp -1 \amp -4 \\
+        4 \amp 4 \amp 9
+        \end{bmatrix}
+      </me>. <!-- 1, 3, 5 -->
+      Find the characteristic polynomial of <m>A</m> by hand. If <m>\lambda = 3</m> is an eigenvalue of <m>A</m>, find the other eigenvalues of <m>A</m> by hand.
     </p>
   </statement>
 </exercise>
