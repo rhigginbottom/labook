@@ -470,6 +470,13 @@
       </p>
     </statement>
   </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A \in M_n(\ff)</m>. Prove that <m>\mathrm{rank}(A) = n</m> if and only if <m>p_A(0) \neq 0</m>.
+      </p>
+    </statement>
+  </exercise>
 </subexercises>
 </exercises> 
 
