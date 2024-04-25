@@ -4,7 +4,7 @@
   <title>Invariants</title>
   <introduction>
     <p>
-      One of the fun aspects of linear algebra is that it touches so many different areas of mathematics. In this section we will connect row equivalence and similarity to the topic of mathematical invariants, which is used in many mathematical disciplines to distinguish between related objects.
+      One of the fun aspects of linear algebra is that it touches so many different areas of mathematics. In this section we will connect row equivalence and similarity to the topic of <em>mathematical invariants</em>, which is used in many mathematical disciplines to determine whether or not two objects are related.
     </p>
   </introduction>
 
@@ -19,9 +19,22 @@
     However, showing that two mathematical objects are not related is harder when working strictly from the definitions. It is difficult to show that a function with certain properties <em>cannot exist</em><mdash></mdash>not being able to find or think of such a function is not a sufficient argument! This is where <em>invariants</em> enter the picture.
   </p>
 
-  <p>
-    Two related objects have the same value of an invariant. Invariants are not a tool used to show relatedness as to show unrelatedness. If two objects have <em>different</em> values of the invariant, they cannot be related. (Merely knowing that two objects have the same value of the invariant doesn't give any immediate conclusion about the relatedness of those objects.)
-  </p>
+  <definition xml:id="def-invariant">
+    <statement>
+      <p>
+        An <term>invariant</term> of a mathematical object is a property of that object that is either the same for all members of an equivalence class or unchanged after some sort of transformation.
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      In our present context, we will be thinking about equivalence relations. This is a good opportunity to think through the logic of invariants. Suppose we have two objects <m>A</m> and <m>B</m> which are related by some equivalence relation. We will write <m>A \sim B</m>. (This tells us that <m>A</m> and <m>B</m> are in the same equivalence class.) If there is an invariant <m>f</m> in view, then <m>A \sim B</m> <em>implies</em> the values of the invariant are equal<mdash></mdash>in other words, <m>A \sim B</m> implies <m>f(A) = f(B)</m>. 
+    </p>
+    <p>
+      The contrapositive of this implication is what we end up using with great frequency. If <m>f(A) \neq f(B)</m>, then we know that <m>A \not \sim B</m>. (In other words, <m>A</m> and <m>B</m> are not related.) Importantly, knowing that <m>f(A) = f(B)</m> <em>does not</em> prove that <m>A</m> and <m>B</m> are related. The implication goes in one direction, but not the other.
+    </p>
+  </note>
 
   <p>
     Before this discussion gets too vague, let's look at an example that most readers of this book should recognize.
@@ -33,7 +46,7 @@
         We say that two geometric objects are <term>congruent</term> if they have the same shape and size. Most readers will likely have spent some time considering congruent triangles in a geometry class, where they encountered several congruence theorems for triangles: Side-Side-Side, Side-Angle-Side, etc. (Note that congruent triangles are not the same as similar triangles, though there are some, ahem, similarities.)
       </p>
       <p>
-        In this example, <em>congruence</em> is the definition of relatedness we are using. We can be even more precise. The congruence of triangles is an <em>equivalence relation</em>, and when using invariants there is usually an equivalence relation in view.
+        In this example, <em>congruence</em> provides the relevant equivalence relation on the set of all planar triangles.
       </p>
       <p>
         One invariant that can be used to distinguish between triangles that are not congruent is the area of the triangle. It is easy to show that if two triangles are congruent, they have the same area. Therefore, if two triangles have different areas, we can conclude that they are not congruent.
@@ -48,16 +61,28 @@
   </example>
 
 <p>
-  In this text, we have discussed two equivalence relations on matrices for which there exist some interesting invariants. <em>Row equivalence</em> is an equivalence relation on the set <m>M_{m,n}(\ff)</m>. (See <xref ref="exer-row-equiv-equiv-rel"/>.) More recently, we have looked at <em>similarity</em>, which is an equivalence relation on the set <m>M_n(\ff)</m>. (See <xref ref="exerc-similarity-equiv-rel"/>.)
+  In this text, we have discussed two equivalence relations on sets of matrices for which there exist some interesting invariants. For fixed values of <m>m</m> and <m>n</m>, <em>row equivalence</em> is an equivalence relation on the set <m>M_{m,n}(\ff)</m>. (See <xref ref="exer-row-equiv-equiv-rel"/>.) More recently, we have looked at <em>similarity</em>, which is an equivalence relation on the set <m>M_n(\ff)</m> for fixed values of <m>n</m>. (See <xref ref="exerc-similarity-equiv-rel"/>.)
 </p>
 
 <p>
-  We have shown in <xref ref="thm-similar-matrices-char-poly"/> that the characteristic polynomial is an invariant for similar matrices. If two matrices are similar, they have the same characteristic polynomial, and therefore the same eigenvalues (with the same multiplicities). This means if we know of two matrices of the same size with different eigenvalues, they cannot be similar.
+  We have shown in <xref ref="thm-similar-matrices-char-poly"/> that the characteristic polynomial is an invariant for similar matrices. If two matrices are similar, they have the same characteristic polynomial, and therefore the same eigenvalues (with the same multiplicities). This means that if we know of two matrices of the same size with different eigenvalues, they cannot be similar.
 </p>
 
 <p>
   Additionally<mdash></mdash>and using much the same argument<mdash></mdash>the determinant is an invariant for similar matrices. (We asked the reader to prove this in <xref ref="exer-det-invariant-similar"/>.) So, two matrices of the same size with different determinants cannot be similar.
 </p>
+
+<p>
+  We will summarize these two already-established facts in the following proposition.
+</p>
+
+<proposition xml:id="prop-det-charpoly-invariants">
+  <statement>
+    <p>
+      Let <m>n</m> be a positive integer and let <m>\ff</m> be a field. The determinant and the characteristic polynomial are both invariants on the set <m>M_n(\ff)</m>.
+    </p>
+  </statement>
+</proposition>
 
 <p>
   While the characteristic polynomial and the determinant are useful invariants for similarity, they are far from the only ones. In the second half of this section we will develop two more invariants which respect similarity, one of which is quite surprising.
@@ -77,7 +102,7 @@
     <p>
       Suppose that <m>V</m> and <m>W</m> are finite-dimensional vector spaces and that <m>T \in L(V,W)</m>. Then, for any bases <m>\mcb</m> of <m>V</m> and <m>\mcc</m> of <m>W</m>, we have 
       <me>
-        \rank(T) = \rank([T]_{\mcb,\mcc}), \hspace{12pt} \text{and} \hspace{12pt}
+        \rank(T) = \rank([T]_{\mcb,\mcc}) \hspace{12pt} \text{and} \hspace{12pt}
         \dim(\ker(T)) = \dim(\nll([T]_{\mcb,\mcc}))
       </me>.      
     </p>
@@ -94,7 +119,7 @@
       </me>.      
     </p>
     <p>
-      For the second equality, we refer to the Rank-Nullity Theorem. If <m>\dim(V)=n</m> and <m>\dim(W)=m</m>, then <m>A</m> is <m>m\times n</m>. We have proved that <m>\rank(T) = \rank(A)</m>, and comparing the two equations in <xref ref="thm-rank-nullity"/>, we are left with <m>\dim(\nll(A)) = \dim(\kerr(T))</m>, as desired. 
+      For the second equality, we refer to <xref text="custom" ref="thm-rank-nullity">The Rank-Nullity Theorem</xref>. If <m>\dim(V)=n</m> and <m>\dim(W)=m</m>, then <m>A</m> is <m>m\times n</m>. We have proved that <m>\rank(T) = \rank(A)</m>, and comparing the two equations in <xref ref="thm-rank-nullity"/>, we are left with <m>\dim(\nll(A)) = \dim(\kerr(T))</m>, as desired. 
     </p>
   </proof>
 </theorem>
@@ -384,7 +409,7 @@
         -5 \amp 4.5 \amp 1.5 \\ 
         -1.5 \amp 0 \amp 4.5 \\ 
         1 \amp -1.5 \amp 1.5
-        \end{bmatrix}, \hspace{6pt}
+        \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
         B = \begin{bmatrix}
         -3.5 \amp 3.5 \amp -3.5 \\ 
         -4.5 \amp 3.5 \amp -2.5 \\ 
@@ -409,10 +434,43 @@
 <exercise>
   <statement>
     <p>
-      Prove that the determinant is an invariant for similarity on the set of <m>n\times n</m> matrices over <m>\ff</m>. 
+      Consider the following two matrices in <m>M_3(\rr)</m>: 
+      <me>
+        A = \begin{bmatrix}
+        1 \amp -6 \amp 2 \\
+        1 \amp 2 \amp 1 \\
+        0 \amp 6 \amp -1
+        \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+        B = \begin{bmatrix}
+        10 \amp 13 \amp -5 \\
+        -3 \amp -6 \amp -1 \\
+        3 \amp 3 \amp -2
+        \end{bmatrix}
+      </me>.
+      <ol>
+        <li>
+          <p>
+            Explain why both trace and rank are <em>not</em> useful invariants to say that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+      </ol>
     </p>
   </statement>
 </exercise>
+<exercise>
+  <statement>
+    <p>
+      There are 16 elements of the set <m>M_2(\ff_2)</m>. How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.
+    </p>
+  </statement>
+</exercise>
+<subexercises>
+  <title>Writing Exercises</title>  
 <exercise>
   <statement>
     <p>
@@ -466,13 +524,6 @@
 <exercise>
   <statement>
     <p>
-      There are 16 elements of the set <m>M_2(\ff_2)</m>. How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.
-    </p>
-  </statement>
-</exercise>
-<exercise>
-  <statement>
-    <p>
       <ol>
         <li>
           <p>
@@ -519,7 +570,20 @@
       </p>
     </statement>
   </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Is invertibility an invariant for row equivalence? Justify your answer. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Is invertibility an invariant for similarity? Justify your answer. 
+      </p>
+    </statement>
+  </exercise>
+</subexercises>
 </exercises> 
-
-
 </section>
