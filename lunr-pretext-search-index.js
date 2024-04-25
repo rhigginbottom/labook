@@ -6262,32 +6262,59 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.4",
   "title": "Invariants",
-  "body": " Invariants   One of the fun aspects of linear algebra is that it touches so many different areas of mathematics. In this section we will connect row equivalence and similarity to the topic of mathematical invariants, which is used in many mathematical disciplines to distinguish between related objects.    Introduction to Invariants  Many areas of mathematics have a notion of the relatedness of the important objects of study. In linear algebra, we have already learned about vector spaces being isomorphic ( ), and this idea shows up widely. We often prove that mathematical objects are related by defining a function between them and showing that it has all the right properties.  However, showing that two mathematical objects are not related is harder when working strictly from the definitions. It is difficult to show that a function with certain properties cannot exist not being able to find or think of such a function is not a sufficient argument! This is where invariants enter the picture.  Two related objects have the same value of an invariant. Invariants are not a tool used to show relatedness as to show unrelatedness. If two objects have different values of the invariant, they cannot be related. (Merely knowing that two objects have the same value of the invariant doesn't give any immediate conclusion about the relatedness of those objects.)  Before this discussion gets too vague, let's look at an example that most readers of this book should recognize.    We say that two geometric objects are congruent if they have the same shape and size. Most readers will likely have spent some time considering congruent triangles in a geometry class, where they encountered several congruence theorems for triangles: Side-Side-Side, Side-Angle-Side, etc. (Note that congruent triangles are not the same as similar triangles, though there are some, ahem, similarities.)  In this example, congruence is the definition of relatedness we are using. We can be even more precise. The congruence of triangles is an equivalence relation , and when using invariants there is usually an equivalence relation in view.  One invariant that can be used to distinguish between triangles that are not congruent is the area of the triangle. It is easy to show that if two triangles are congruent, they have the same area. Therefore, if two triangles have different areas, we can conclude that they are not congruent.  To be specific, suppose that triangle is a 30-60-90 triangle with side lengths and triangle is a 45-45-90 triangle with side lengths . Then since the area of a right triangle is easy to calculate using the formula, we can see that both triangles and have an area of square units. But these triangles are not congruent they have different angles, after all.  In summary, the area of a triangle can be used to distinguish between triangles that are not congruent. However, area cannot be used to conclude that two triangles are congruent. In this way, area is a typical invariant.    In this text, we have discussed two equivalence relations on matrices for which there exist some interesting invariants. Row equivalence is an equivalence relation on the set . (See .) More recently, we have looked at similarity , which is an equivalence relation on the set . (See .)  We have shown in that the characteristic polynomial is an invariant for similar matrices. If two matrices are similar, they have the same characteristic polynomial, and therefore the same eigenvalues (with the same multiplicities). This means if we know of two matrices of the same size with different eigenvalues, they cannot be similar.  Additionally and using much the same argument the determinant is an invariant for similar matrices. (We asked the reader to prove this in .) So, two matrices of the same size with different determinants cannot be similar.  While the characteristic polynomial and the determinant are useful invariants for similarity, they are far from the only ones. In the second half of this section we will develop two more invariants which respect similarity, one of which is quite surprising.    Rank and Trace as Invariants  We will first state and prove a few results needed to establish rank as an invariant.    Suppose that and are finite-dimensional vector spaces and that . Then, for any bases of and of , we have .    Suppose that and let . Since , we have . By we know that is isomorphic to . The vectors are exactly the columns of , so .  For the second equality, we refer to the Rank-Nullity Theorem. If and , then is . We have proved that , and comparing the two equations in , we are left with , as desired.      Suppose that is an -dimensional vector space over , that is a basis of , and that . Suppose further that and are similar matrices in and that . Then there exists a basis of such that .    Let and suppose that . We define and, for each , we define by , so that is the coordinate vector . Since is invertible, then is a basis of , so is a basis of . (This is again due to the coordinate mapping being an isomorphism.) We also have for each , so . Therefore, by , , and so by , .      , along with show us that two matrices are similar if and only if they represent the same linear transformation with respect to different bases.   With these two results in hand, we can state the first invariant we have been pointing toward.    If are similar, then .    This follows from (in the case where and ) as well as .    In the following example, we put this invariant to work.    Let be the following matrices: . Some quick row reduction shows that while , so we know that and are not similar.    We now move into the development and discussion of our final invariant, the trace of a matrix. Of all the invariants we discuss, the trace is by far the easiest to calculate!    Let . The trace of is the sum of the numbers along the main diagonal of . In other words, .      Here are two matrices over : . By summing the entries along the main diagonal, we see that and .    We need surprisingly few additional results in order to establish the trace as an invariant.    If and , then .    We begin by using the definitions of the trace and matrix multiplication: . Since multiplication and addition in a field are both commutative, we can switch the order of summation and multiplication. The calculation is finished using the definitions of matrix multiplication and the trace again: .    This next result finishes our argument.    If and are similar matrices, then .    Suppose that . By the associativity of matrix multiplication and , we have .    We can now use the trace as an invariant.    Let and be the following matrices over : . Since and , we know that and are not similar matrices.    One consequence of this invariant is that it allows us to define the trace of a linear transformation.    Let be a finite-dimensional vector space and let . If and are two bases for , then .    This is a direct and immediate consequence of and .      Let be a finite-dimensional vector space and let . Then the trace of is , where is any basis of .      We end this section with an example of a linear transformation which was defined in . In that example, we saw that , so we can see that .       Use only the rank invariant to answer the following questions. If that invariant does not give you enough information to answer the question, explain why that is. , .   Are and similar? Explain.     Are and similar? Explain.     Are and similar? Explain.        Use only the trace invariant to answer the following questions. If that invariant does not give you enough information to answer the question, explain why that is. (The matrices for this question are the same as for the previous reading question.)   Are and similar? Explain.     Are and similar? Explain.     Are and similar? Explain.          Consider the following two matrices in : .   Explain why both determinant and rank are not useful invariants to say that and are not similar.    Prove that and are not similar.       Prove that the determinant is an invariant for similarity on the set of matrices over .    Let be this matrix: .   Write out the characteristic polynomial of , substituting and where appropriate.    Argue that, for matrices, the fact that the characteristic polynomial is an invariant (for similarity) implies that both the trace and determinant are invariants.       Is diagonalizability an invariant (for similarity) on the set ? In other words, if and are similar, must it be true that either (a) they are both diagonalizable, or (b) they are both not diagonalizable?    Suppose that .   Prove that if has distinct eigenvalues, then is the sum of the eigenvalues of .    Is the result from part (a) true if does not have distinct eigenvalues? For example, if has only two distinct eigenvalues, must be the sum of the eigenvalues (with multiplicity)?       There are 16 elements of the set . How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.       Prove that if , then .    Give an example of three matrices such that .       For a matrix , define the function as the sum of all of the entries of . Prove or disprove that is an invariant for similar matrices.    Is rank an invariant for row equivalence? Justify your answer.    Is the trace an invariant for row equivalence? Justify your answer.    Is the determinant an invariant for row equivalence? Justify your answer.    "
+  "body": " Invariants   One of the fun aspects of linear algebra is that it touches so many different areas of mathematics. In this section we will connect row equivalence and similarity to the topic of mathematical invariants , which is used in many mathematical disciplines to determine whether or not two objects are related.    Introduction to Invariants  Many areas of mathematics have a notion of the relatedness of the important objects of study. In linear algebra, we have already learned about vector spaces being isomorphic ( ), and this idea shows up widely. We often prove that mathematical objects are related by defining a function between them and showing that it has all the right properties.  However, showing that two mathematical objects are not related is harder when working strictly from the definitions. It is difficult to show that a function with certain properties cannot exist not being able to find or think of such a function is not a sufficient argument! This is where invariants enter the picture.    An invariant of a mathematical object is a property of that object that is either the same for all members of an equivalence class or unchanged after some sort of transformation.     In our present context, we will be thinking about equivalence relations. This is a good opportunity to think through the logic of invariants. Suppose we have two objects and which are related by some equivalence relation. We will write . (This tells us that and are in the same equivalence class.) If there is an invariant in view, then  implies the values of the invariant are equal in other words, implies .  The contrapositive of this implication is what we end up using with great frequency. If , then we know that . (In other words, and are not related.) Importantly, knowing that  does not prove that and are related. The implication goes in one direction, but not the other.   Before this discussion gets too vague, let's look at an example that most readers of this book should recognize.    We say that two geometric objects are congruent if they have the same shape and size. Most readers will likely have spent some time considering congruent triangles in a geometry class, where they encountered several congruence theorems for triangles: Side-Side-Side, Side-Angle-Side, etc. (Note that congruent triangles are not the same as similar triangles, though there are some, ahem, similarities.)  In this example, congruence provides the relevant equivalence relation on the set of all planar triangles.  One invariant that can be used to distinguish between triangles that are not congruent is the area of the triangle. It is easy to show that if two triangles are congruent, they have the same area. Therefore, if two triangles have different areas, we can conclude that they are not congruent.  To be specific, suppose that triangle is a 30-60-90 triangle with side lengths and triangle is a 45-45-90 triangle with side lengths . Then since the area of a right triangle is easy to calculate using the formula, we can see that both triangles and have an area of square units. But these triangles are not congruent they have different angles, after all.  In summary, the area of a triangle can be used to distinguish between triangles that are not congruent. However, area cannot be used to conclude that two triangles are congruent. In this way, area is a typical invariant.    In this text, we have discussed two equivalence relations on sets of matrices for which there exist some interesting invariants. For fixed values of and , row equivalence is an equivalence relation on the set . (See .) More recently, we have looked at similarity , which is an equivalence relation on the set for fixed values of . (See .)  We have shown in that the characteristic polynomial is an invariant for similar matrices. If two matrices are similar, they have the same characteristic polynomial, and therefore the same eigenvalues (with the same multiplicities). This means that if we know of two matrices of the same size with different eigenvalues, they cannot be similar.  Additionally and using much the same argument the determinant is an invariant for similar matrices. (We asked the reader to prove this in .) So, two matrices of the same size with different determinants cannot be similar.  We will summarize these two already-established facts in the following proposition.    Let be a positive integer and let be a field. The determinant and the characteristic polynomial are both invariants on the set .    While the characteristic polynomial and the determinant are useful invariants for similarity, they are far from the only ones. In the second half of this section we will develop two more invariants which respect similarity, one of which is quite surprising.    Rank and Trace as Invariants  We will first state and prove a few results needed to establish rank as an invariant.    Suppose that and are finite-dimensional vector spaces and that . Then, for any bases of and of , we have .    Suppose that and let . Since , we have . By we know that is isomorphic to . The vectors are exactly the columns of , so .  For the second equality, we refer to The Rank-Nullity Theorem . If and , then is . We have proved that , and comparing the two equations in , we are left with , as desired.      Suppose that is an -dimensional vector space over , that is a basis of , and that . Suppose further that and are similar matrices in and that . Then there exists a basis of such that .    Let and suppose that . We define and, for each , we define by , so that is the coordinate vector . Since is invertible, then is a basis of , so is a basis of . (This is again due to the coordinate mapping being an isomorphism.) We also have for each , so . Therefore, by , , and so by , .      , along with show us that two matrices are similar if and only if they represent the same linear transformation with respect to different bases.   With these two results in hand, we can state the first invariant we have been pointing toward.    If are similar, then .    This follows from (in the case where and ) as well as .    In the following example, we put this invariant to work.    Let be the following matrices: . Some quick row reduction shows that while , so we know that and are not similar.    We now move into the development and discussion of our final invariant, the trace of a matrix. Of all the invariants we discuss, the trace is by far the easiest to calculate!    Let . The trace of is the sum of the numbers along the main diagonal of . In other words, .      Here are two matrices over : . By summing the entries along the main diagonal, we see that and .    We need surprisingly few additional results in order to establish the trace as an invariant.    If and , then .    We begin by using the definitions of the trace and matrix multiplication: . Since multiplication and addition in a field are both commutative, we can switch the order of summation and multiplication. The calculation is finished using the definitions of matrix multiplication and the trace again: .    This next result finishes our argument.    If and are similar matrices, then .    Suppose that . By the associativity of matrix multiplication and , we have .    We can now use the trace as an invariant.    Let and be the following matrices over : . Since and , we know that and are not similar matrices.    One consequence of this invariant is that it allows us to define the trace of a linear transformation.    Let be a finite-dimensional vector space and let . If and are two bases for , then .    This is a direct and immediate consequence of and .      Let be a finite-dimensional vector space and let . Then the trace of is , where is any basis of .      We end this section with an example of a linear transformation which was defined in . In that example, we saw that , so we can see that .       Use only the rank invariant to answer the following questions. If that invariant does not give you enough information to answer the question, explain why that is. , .   Are and similar? Explain.     Are and similar? Explain.     Are and similar? Explain.        Use only the trace invariant to answer the following questions. If that invariant does not give you enough information to answer the question, explain why that is. (The matrices for this question are the same as for the previous reading question.)   Are and similar? Explain.     Are and similar? Explain.     Are and similar? Explain.          Consider the following two matrices in : .   Explain why both determinant and rank are not useful invariants to say that and are not similar.    Prove that and are not similar.       Consider the following two matrices in : .   Explain why both trace and rank are not useful invariants to say that and are not similar.    Prove that and are not similar.       There are 16 elements of the set . How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.    Writing Exercises   Let be this matrix: .   Write out the characteristic polynomial of , substituting and where appropriate.    Argue that, for matrices, the fact that the characteristic polynomial is an invariant (for similarity) implies that both the trace and determinant are invariants.       Is diagonalizability an invariant (for similarity) on the set ? In other words, if and are similar, must it be true that either (a) they are both diagonalizable, or (b) they are both not diagonalizable?    Suppose that .   Prove that if has distinct eigenvalues, then is the sum of the eigenvalues of .    Is the result from part (a) true if does not have distinct eigenvalues? For example, if has only two distinct eigenvalues, must be the sum of the eigenvalues (with multiplicity)?          Prove that if , then .    Give an example of three matrices such that .       For a matrix , define the function as the sum of all of the entries of . Prove or disprove that is an invariant for similar matrices.    Is rank an invariant for row equivalence? Justify your answer.    Is the trace an invariant for row equivalence? Justify your answer.    Is the determinant an invariant for row equivalence? Justify your answer.    Is invertibility an invariant for row equivalence? Justify your answer.    Is invertibility an invariant for similarity? Justify your answer.     "
 },
 {
-  "id": "subsec-intro-invariants-6",
+  "id": "def-invariant",
   "level": "2",
-  "url": "sec-invariants.html#subsec-intro-invariants-6",
-  "type": "Example",
+  "url": "sec-invariants.html#def-invariant",
+  "type": "Definition",
   "number": "6.4.1",
   "title": "",
-  "body": "  We say that two geometric objects are congruent if they have the same shape and size. Most readers will likely have spent some time considering congruent triangles in a geometry class, where they encountered several congruence theorems for triangles: Side-Side-Side, Side-Angle-Side, etc. (Note that congruent triangles are not the same as similar triangles, though there are some, ahem, similarities.)  In this example, congruence is the definition of relatedness we are using. We can be even more precise. The congruence of triangles is an equivalence relation , and when using invariants there is usually an equivalence relation in view.  One invariant that can be used to distinguish between triangles that are not congruent is the area of the triangle. It is easy to show that if two triangles are congruent, they have the same area. Therefore, if two triangles have different areas, we can conclude that they are not congruent.  To be specific, suppose that triangle is a 30-60-90 triangle with side lengths and triangle is a 45-45-90 triangle with side lengths . Then since the area of a right triangle is easy to calculate using the formula, we can see that both triangles and have an area of square units. But these triangles are not congruent they have different angles, after all.  In summary, the area of a triangle can be used to distinguish between triangles that are not congruent. However, area cannot be used to conclude that two triangles are congruent. In this way, area is a typical invariant.   "
+  "body": "  An invariant of a mathematical object is a property of that object that is either the same for all members of an equivalence class or unchanged after some sort of transformation.   "
+},
+{
+  "id": "subsec-intro-invariants-5",
+  "level": "2",
+  "url": "sec-invariants.html#subsec-intro-invariants-5",
+  "type": "Note",
+  "number": "6.4.2",
+  "title": "",
+  "body": " In our present context, we will be thinking about equivalence relations. This is a good opportunity to think through the logic of invariants. Suppose we have two objects and which are related by some equivalence relation. We will write . (This tells us that and are in the same equivalence class.) If there is an invariant in view, then  implies the values of the invariant are equal in other words, implies .  The contrapositive of this implication is what we end up using with great frequency. If , then we know that . (In other words, and are not related.) Importantly, knowing that  does not prove that and are related. The implication goes in one direction, but not the other.  "
+},
+{
+  "id": "subsec-intro-invariants-7",
+  "level": "2",
+  "url": "sec-invariants.html#subsec-intro-invariants-7",
+  "type": "Example",
+  "number": "6.4.3",
+  "title": "",
+  "body": "  We say that two geometric objects are congruent if they have the same shape and size. Most readers will likely have spent some time considering congruent triangles in a geometry class, where they encountered several congruence theorems for triangles: Side-Side-Side, Side-Angle-Side, etc. (Note that congruent triangles are not the same as similar triangles, though there are some, ahem, similarities.)  In this example, congruence provides the relevant equivalence relation on the set of all planar triangles.  One invariant that can be used to distinguish between triangles that are not congruent is the area of the triangle. It is easy to show that if two triangles are congruent, they have the same area. Therefore, if two triangles have different areas, we can conclude that they are not congruent.  To be specific, suppose that triangle is a 30-60-90 triangle with side lengths and triangle is a 45-45-90 triangle with side lengths . Then since the area of a right triangle is easy to calculate using the formula, we can see that both triangles and have an area of square units. But these triangles are not congruent they have different angles, after all.  In summary, the area of a triangle can be used to distinguish between triangles that are not congruent. However, area cannot be used to conclude that two triangles are congruent. In this way, area is a typical invariant.   "
+},
+{
+  "id": "prop-det-charpoly-invariants",
+  "level": "2",
+  "url": "sec-invariants.html#prop-det-charpoly-invariants",
+  "type": "Proposition",
+  "number": "6.4.4",
+  "title": "",
+  "body": "  Let be a positive integer and let be a field. The determinant and the characteristic polynomial are both invariants on the set .   "
 },
 {
   "id": "thm-rank-lt-matrix",
   "level": "2",
   "url": "sec-invariants.html#thm-rank-lt-matrix",
   "type": "Theorem",
-  "number": "6.4.2",
+  "number": "6.4.5",
   "title": "",
-  "body": "  Suppose that and are finite-dimensional vector spaces and that . Then, for any bases of and of , we have .    Suppose that and let . Since , we have . By we know that is isomorphic to . The vectors are exactly the columns of , so .  For the second equality, we refer to the Rank-Nullity Theorem. If and , then is . We have proved that , and comparing the two equations in , we are left with , as desired.   "
+  "body": "  Suppose that and are finite-dimensional vector spaces and that . Then, for any bases of and of , we have .    Suppose that and let . Since , we have . By we know that is isomorphic to . The vectors are exactly the columns of , so .  For the second equality, we refer to The Rank-Nullity Theorem . If and , then is . We have proved that , and comparing the two equations in , we are left with , as desired.   "
 },
 {
   "id": "prop-similar-matrices-same-lt",
   "level": "2",
   "url": "sec-invariants.html#prop-similar-matrices-same-lt",
   "type": "Proposition",
-  "number": "6.4.3",
+  "number": "6.4.6",
   "title": "",
   "body": "  Suppose that is an -dimensional vector space over , that is a basis of , and that . Suppose further that and are similar matrices in and that . Then there exists a basis of such that .    Let and suppose that . We define and, for each , we define by , so that is the coordinate vector . Since is invertible, then is a basis of , so is a basis of . (This is again due to the coordinate mapping being an isomorphism.) We also have for each , so . Therefore, by , , and so by , .   "
 },
@@ -6296,7 +6323,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#subsec-inv-rank-trace-5",
   "type": "Note",
-  "number": "6.4.4",
+  "number": "6.4.7",
   "title": "",
   "body": "  , along with show us that two matrices are similar if and only if they represent the same linear transformation with respect to different bases.  "
 },
@@ -6305,7 +6332,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#cor-rank-invariant",
   "type": "Corollary",
-  "number": "6.4.5",
+  "number": "6.4.8",
   "title": "",
   "body": "  If are similar, then .    This follows from (in the case where and ) as well as .   "
 },
@@ -6314,7 +6341,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#subsec-inv-rank-trace-9",
   "type": "Example",
-  "number": "6.4.6",
+  "number": "6.4.9",
   "title": "",
   "body": "  Let be the following matrices: . Some quick row reduction shows that while , so we know that and are not similar.   "
 },
@@ -6323,7 +6350,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#def-trace",
   "type": "Definition",
-  "number": "6.4.7",
+  "number": "6.4.10",
   "title": "",
   "body": "  Let . The trace of is the sum of the numbers along the main diagonal of . In other words, .   "
 },
@@ -6332,7 +6359,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#subsec-inv-rank-trace-12",
   "type": "Example",
-  "number": "6.4.8",
+  "number": "6.4.11",
   "title": "",
   "body": "  Here are two matrices over : . By summing the entries along the main diagonal, we see that and .   "
 },
@@ -6341,7 +6368,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#prop-trace-mult",
   "type": "Proposition",
-  "number": "6.4.9",
+  "number": "6.4.12",
   "title": "",
   "body": "  If and , then .    We begin by using the definitions of the trace and matrix multiplication: . Since multiplication and addition in a field are both commutative, we can switch the order of summation and multiplication. The calculation is finished using the definitions of matrix multiplication and the trace again: .   "
 },
@@ -6350,7 +6377,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#cor-trace-invariant",
   "type": "Corollary",
-  "number": "6.4.10",
+  "number": "6.4.13",
   "title": "",
   "body": "  If and are similar matrices, then .    Suppose that . By the associativity of matrix multiplication and , we have .   "
 },
@@ -6359,7 +6386,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#subsec-inv-rank-trace-18",
   "type": "Example",
-  "number": "6.4.11",
+  "number": "6.4.14",
   "title": "",
   "body": "  Let and be the following matrices over : . Since and , we know that and are not similar matrices.   "
 },
@@ -6368,7 +6395,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#cor-trace-lt",
   "type": "Corollary",
-  "number": "6.4.12",
+  "number": "6.4.15",
   "title": "",
   "body": "  Let be a finite-dimensional vector space and let . If and are two bases for , then .    This is a direct and immediate consequence of and .   "
 },
@@ -6377,7 +6404,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#def-trace-lt",
   "type": "Definition",
-  "number": "6.4.13",
+  "number": "6.4.16",
   "title": "",
   "body": "  Let be a finite-dimensional vector space and let . Then the trace of is , where is any basis of .   "
 },
@@ -6386,7 +6413,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-invariants.html#subsec-inv-rank-trace-22",
   "type": "Example",
-  "number": "6.4.14",
+  "number": "6.4.17",
   "title": "",
   "body": "  We end this section with an example of a linear transformation which was defined in . In that example, we saw that , so we can see that .   "
 },
@@ -6424,7 +6451,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.4.4.2",
   "title": "",
-  "body": " Prove that the determinant is an invariant for similarity on the set of matrices over .  "
+  "body": " Consider the following two matrices in : .   Explain why both trace and rank are not useful invariants to say that and are not similar.    Prove that and are not similar.     "
 },
 {
   "id": "sec-invariants-6-3",
@@ -6433,79 +6460,97 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.4.4.3",
   "title": "",
+  "body": " There are 16 elements of the set . How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.  "
+},
+{
+  "id": "sec-invariants-6-4-2",
+  "level": "2",
+  "url": "sec-invariants.html#sec-invariants-6-4-2",
+  "type": "Exercise",
+  "number": "6.4.4.4",
+  "title": "",
   "body": " Let be this matrix: .   Write out the characteristic polynomial of , substituting and where appropriate.    Argue that, for matrices, the fact that the characteristic polynomial is an invariant (for similarity) implies that both the trace and determinant are invariants.     "
 },
 {
-  "id": "sec-invariants-6-4",
+  "id": "sec-invariants-6-4-3",
   "level": "2",
-  "url": "sec-invariants.html#sec-invariants-6-4",
+  "url": "sec-invariants.html#sec-invariants-6-4-3",
   "type": "Exercise",
-  "number": "6.4.4.4",
+  "number": "6.4.4.5",
   "title": "",
   "body": " Is diagonalizability an invariant (for similarity) on the set ? In other words, if and are similar, must it be true that either (a) they are both diagonalizable, or (b) they are both not diagonalizable?  "
 },
 {
-  "id": "sec-invariants-6-5",
+  "id": "sec-invariants-6-4-4",
   "level": "2",
-  "url": "sec-invariants.html#sec-invariants-6-5",
+  "url": "sec-invariants.html#sec-invariants-6-4-4",
   "type": "Exercise",
-  "number": "6.4.4.5",
+  "number": "6.4.4.6",
   "title": "",
   "body": " Suppose that .   Prove that if has distinct eigenvalues, then is the sum of the eigenvalues of .    Is the result from part (a) true if does not have distinct eigenvalues? For example, if has only two distinct eigenvalues, must be the sum of the eigenvalues (with multiplicity)?     "
 },
 {
-  "id": "sec-invariants-6-6",
+  "id": "sec-invariants-6-4-5",
   "level": "2",
-  "url": "sec-invariants.html#sec-invariants-6-6",
-  "type": "Exercise",
-  "number": "6.4.4.6",
-  "title": "",
-  "body": " There are 16 elements of the set . How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.  "
-},
-{
-  "id": "sec-invariants-6-7",
-  "level": "2",
-  "url": "sec-invariants.html#sec-invariants-6-7",
+  "url": "sec-invariants.html#sec-invariants-6-4-5",
   "type": "Exercise",
   "number": "6.4.4.7",
   "title": "",
   "body": "    Prove that if , then .    Give an example of three matrices such that .     "
 },
 {
-  "id": "sec-invariants-6-8",
+  "id": "sec-invariants-6-4-6",
   "level": "2",
-  "url": "sec-invariants.html#sec-invariants-6-8",
+  "url": "sec-invariants.html#sec-invariants-6-4-6",
   "type": "Exercise",
   "number": "6.4.4.8",
   "title": "",
   "body": " For a matrix , define the function as the sum of all of the entries of . Prove or disprove that is an invariant for similar matrices.  "
 },
 {
-  "id": "sec-invariants-6-9",
+  "id": "sec-invariants-6-4-7",
   "level": "2",
-  "url": "sec-invariants.html#sec-invariants-6-9",
+  "url": "sec-invariants.html#sec-invariants-6-4-7",
   "type": "Exercise",
   "number": "6.4.4.9",
   "title": "",
   "body": " Is rank an invariant for row equivalence? Justify your answer.  "
 },
 {
-  "id": "sec-invariants-6-10",
+  "id": "sec-invariants-6-4-8",
   "level": "2",
-  "url": "sec-invariants.html#sec-invariants-6-10",
+  "url": "sec-invariants.html#sec-invariants-6-4-8",
   "type": "Exercise",
   "number": "6.4.4.10",
   "title": "",
   "body": " Is the trace an invariant for row equivalence? Justify your answer.  "
 },
 {
-  "id": "sec-invariants-6-11",
+  "id": "sec-invariants-6-4-9",
   "level": "2",
-  "url": "sec-invariants.html#sec-invariants-6-11",
+  "url": "sec-invariants.html#sec-invariants-6-4-9",
   "type": "Exercise",
   "number": "6.4.4.11",
   "title": "",
   "body": " Is the determinant an invariant for row equivalence? Justify your answer.  "
+},
+{
+  "id": "sec-invariants-6-4-10",
+  "level": "2",
+  "url": "sec-invariants.html#sec-invariants-6-4-10",
+  "type": "Exercise",
+  "number": "6.4.4.12",
+  "title": "",
+  "body": " Is invertibility an invariant for row equivalence? Justify your answer.  "
+},
+{
+  "id": "sec-invariants-6-4-11",
+  "level": "2",
+  "url": "sec-invariants.html#sec-invariants-6-4-11",
+  "type": "Exercise",
+  "number": "6.4.4.13",
+  "title": "",
+  "body": " Is invertibility an invariant for similarity? Justify your answer.  "
 },
 {
   "id": "sec-inner-products",

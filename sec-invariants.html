@@ -428,30 +428,41 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-invariants"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">6.4</span><span class="space"> </span><span class="title">Invariants</span>
 </h2>
-<section class="introduction" id="sec-invariants-2"><div class="para" id="sec-invariants-2-1">One of the fun aspects of linear algebra is that it touches so many different areas of mathematics. In this section we will connect row equivalence and similarity to the topic of mathematical invariants, which is used in many mathematical disciplines to distinguish between related objects.</div></section><section class="subsection" id="subsec-intro-invariants"><h3 class="heading hide-type">
+<section class="introduction" id="sec-invariants-2"><div class="para" id="sec-invariants-2-1">One of the fun aspects of linear algebra is that it touches so many different areas of mathematics. In this section we will connect row equivalence and similarity to the topic of <em class="emphasis">mathematical invariants</em>, which is used in many mathematical disciplines to determine whether or not two objects are related.</div></section><section class="subsection" id="subsec-intro-invariants"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.4.1</span><span class="space"> </span><span class="title">Introduction to Invariants</span>
 </h3>
 <div class="para" id="subsec-intro-invariants-2">Many areas of mathematics have a notion of the <em class="emphasis">relatedness</em> of the important objects of study. In linear algebra, we have already learned about vector spaces being isomorphic (<a href="" class="xref" data-knowl="./knowl/xref/thm-same-dim-isomorphic.html" title="Theorem 5.3.12">Theorem 5.3.12</a>), and this idea shows up widely. We often prove that mathematical objects are related by defining a function between them and showing that it has all the right properties.</div>
 <div class="para" id="subsec-intro-invariants-3">However, showing that two mathematical objects are not related is harder when working strictly from the definitions. It is difficult to show that a function with certain properties <em class="emphasis">cannot exist</em>—not being able to find or think of such a function is not a sufficient argument! This is where <em class="emphasis">invariants</em> enter the picture.</div>
-<div class="para" id="subsec-intro-invariants-4">Two related objects have the same value of an invariant. Invariants are not a tool used to show relatedness as to show unrelatedness. If two objects have <em class="emphasis">different</em> values of the invariant, they cannot be related. (Merely knowing that two objects have the same value of the invariant doesn’t give any immediate conclusion about the relatedness of those objects.)</div>
-<div class="para" id="subsec-intro-invariants-5">Before this discussion gets too vague, let’s look at an example that most readers of this book should recognize.</div>
-<details id="subsec-intro-invariants-6" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.1</span><span class="period">.</span>
-</h4></summary><article class="example example-like"><div class="para" id="subsec-intro-invariants-6-1-1">We say that two geometric objects are <dfn class="terminology">congruent</dfn> if they have the same shape and size. Most readers will likely have spent some time considering congruent triangles in a geometry class, where they encountered several congruence theorems for triangles: Side-Side-Side, Side-Angle-Side, etc. (Note that congruent triangles are not the same as similar triangles, though there are some, ahem, similarities.)</div> <div class="para" id="subsec-intro-invariants-6-1-2">In this example, <em class="emphasis">congruence</em> is the definition of relatedness we are using. We can be even more precise. The congruence of triangles is an <em class="emphasis">equivalence relation</em>, and when using invariants there is usually an equivalence relation in view.</div> <div class="para" id="subsec-intro-invariants-6-1-3">One invariant that can be used to distinguish between triangles that are not congruent is the area of the triangle. It is easy to show that if two triangles are congruent, they have the same area. Therefore, if two triangles have different areas, we can conclude that they are not congruent.</div> <div class="para" id="subsec-intro-invariants-6-1-4">To be specific, suppose that triangle <span class="process-math">\(A\)</span> is a 30-60-90 triangle with side lengths <span class="process-math">\((10, 10\sqrt{3}, 20)\)</span> and triangle <span class="process-math">\(B\)</span> is a 45-45-90 triangle with side lengths <span class="process-math">\((10\sqrt[4]{3},10\sqrt[4]{3},10\sqrt{2}\sqrt[4]{3})\text{.}\)</span> Then since the area of a right triangle is easy to calculate using the <span class="process-math">\(\frac{1}{2}bh\)</span> formula, we can see that both triangles <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have an area of <span class="process-math">\(50\sqrt{3}\)</span> square units. But these triangles are not congruent—they have different angles, after all.</div> <div class="para" id="subsec-intro-invariants-6-1-5">In summary, the area of a triangle can be used to distinguish between triangles that are <em class="emphasis">not</em> congruent. However, area cannot be used to conclude that two triangles are congruent. In this way, area is a typical invariant.</div></article></details><div class="para" id="subsec-intro-invariants-7">In this text, we have discussed two equivalence relations on matrices for which there exist some interesting invariants. <em class="emphasis">Row equivalence</em> is an equivalence relation on the set <span class="process-math">\(M_{m,n}(\ff)\text{.}\)</span> (See <a href="" class="xref" data-knowl="./knowl/xref/exer-row-equiv-equiv-rel.html" title="Exercise 1.2.10">Exercise 1.2.10</a>.) More recently, we have looked at <em class="emphasis">similarity</em>, which is an equivalence relation on the set <span class="process-math">\(M_n(\ff)\text{.}\)</span> (See <a href="" class="xref" data-knowl="./knowl/xref/exerc-similarity-equiv-rel.html" title="Exercise 6.2.4.10">Exercise 6.2.4.10</a>.)</div>
-<div class="para" id="subsec-intro-invariants-8">We have shown in <a href="" class="xref" data-knowl="./knowl/xref/thm-similar-matrices-char-poly.html" title="Theorem 6.2.11">Theorem 6.2.11</a> that the characteristic polynomial is an invariant for similar matrices. If two matrices are similar, they have the same characteristic polynomial, and therefore the same eigenvalues (with the same multiplicities). This means if we know of two matrices of the same size with different eigenvalues, they cannot be similar.</div>
-<div class="para" id="subsec-intro-invariants-9">Additionally—and using much the same argument—the determinant is an invariant for similar matrices. (We asked the reader to prove this in <a href="" class="xref" data-knowl="./knowl/xref/exer-det-invariant-similar.html" title="Exercise 6.2.4.12">Exercise 6.2.4.12</a>.) So, two matrices of the same size with different determinants cannot be similar.</div>
-<div class="para" id="subsec-intro-invariants-10">While the characteristic polynomial and the determinant are useful invariants for similarity, they are far from the only ones. In the second half of this section we will develop two more invariants which respect similarity, one of which is quite surprising.</div></section><section class="subsection" id="subsec-inv-rank-trace"><h3 class="heading hide-type">
+<article class="definition definition-like" id="def-invariant"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.4.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-invariant-1-1">An <dfn class="terminology">invariant</dfn> of a mathematical object is a property of that object that is either the same for all members of an equivalence class or unchanged after some sort of transformation.</div></article><article class="note remark-like" id="subsec-intro-invariants-5"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-intro-invariants-5-1">In our present context, we will be thinking about equivalence relations. This is a good opportunity to think through the logic of invariants. Suppose we have two objects <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> which are related by some equivalence relation. We will write <span class="process-math">\(A \sim B\text{.}\)</span> (This tells us that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are in the same equivalence class.) If there is an invariant <span class="process-math">\(f\)</span> in view, then <span class="process-math">\(A \sim B\)</span> <em class="emphasis">implies</em> the values of the invariant are equal—in other words, <span class="process-math">\(A \sim B\)</span> implies <span class="process-math">\(f(A) = f(B)\text{.}\)</span>
+</div> <div class="para" id="subsec-intro-invariants-5-2">The contrapositive of this implication is what we end up using with great frequency. If <span class="process-math">\(f(A) \neq f(B)\text{,}\)</span> then we know that <span class="process-math">\(A \not \sim B\text{.}\)</span> (In other words, <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not related.) Importantly, knowing that <span class="process-math">\(f(A) = f(B)\)</span> <em class="emphasis">does not</em> prove that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are related. The implication goes in one direction, but not the other.</div></article><div class="para" id="subsec-intro-invariants-6">Before this discussion gets too vague, let’s look at an example that most readers of this book should recognize.</div>
+<details id="subsec-intro-invariants-7" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="subsec-intro-invariants-7-1-1">We say that two geometric objects are <dfn class="terminology">congruent</dfn> if they have the same shape and size. Most readers will likely have spent some time considering congruent triangles in a geometry class, where they encountered several congruence theorems for triangles: Side-Side-Side, Side-Angle-Side, etc. (Note that congruent triangles are not the same as similar triangles, though there are some, ahem, similarities.)</div> <div class="para" id="subsec-intro-invariants-7-1-2">In this example, <em class="emphasis">congruence</em> provides the relevant equivalence relation on the set of all planar triangles.</div> <div class="para" id="subsec-intro-invariants-7-1-3">One invariant that can be used to distinguish between triangles that are not congruent is the area of the triangle. It is easy to show that if two triangles are congruent, they have the same area. Therefore, if two triangles have different areas, we can conclude that they are not congruent.</div> <div class="para" id="subsec-intro-invariants-7-1-4">To be specific, suppose that triangle <span class="process-math">\(A\)</span> is a 30-60-90 triangle with side lengths <span class="process-math">\((10, 10\sqrt{3}, 20)\)</span> and triangle <span class="process-math">\(B\)</span> is a 45-45-90 triangle with side lengths <span class="process-math">\((10\sqrt[4]{3},10\sqrt[4]{3},10\sqrt{2}\sqrt[4]{3})\text{.}\)</span> Then since the area of a right triangle is easy to calculate using the <span class="process-math">\(\frac{1}{2}bh\)</span> formula, we can see that both triangles <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have an area of <span class="process-math">\(50\sqrt{3}\)</span> square units. But these triangles are not congruent—they have different angles, after all.</div> <div class="para" id="subsec-intro-invariants-7-1-5">In summary, the area of a triangle can be used to distinguish between triangles that are <em class="emphasis">not</em> congruent. However, area cannot be used to conclude that two triangles are congruent. In this way, area is a typical invariant.</div></article></details><div class="para" id="subsec-intro-invariants-8">In this text, we have discussed two equivalence relations on sets of matrices for which there exist some interesting invariants. For fixed values of <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{,}\)</span> <em class="emphasis">row equivalence</em> is an equivalence relation on the set <span class="process-math">\(M_{m,n}(\ff)\text{.}\)</span> (See <a href="" class="xref" data-knowl="./knowl/xref/exer-row-equiv-equiv-rel.html" title="Exercise 1.2.10">Exercise 1.2.10</a>.) More recently, we have looked at <em class="emphasis">similarity</em>, which is an equivalence relation on the set <span class="process-math">\(M_n(\ff)\)</span> for fixed values of <span class="process-math">\(n\text{.}\)</span> (See <a href="" class="xref" data-knowl="./knowl/xref/exerc-similarity-equiv-rel.html" title="Exercise 6.2.4.10">Exercise 6.2.4.10</a>.)</div>
+<div class="para" id="subsec-intro-invariants-9">We have shown in <a href="" class="xref" data-knowl="./knowl/xref/thm-similar-matrices-char-poly.html" title="Theorem 6.2.11">Theorem 6.2.11</a> that the characteristic polynomial is an invariant for similar matrices. If two matrices are similar, they have the same characteristic polynomial, and therefore the same eigenvalues (with the same multiplicities). This means that if we know of two matrices of the same size with different eigenvalues, they cannot be similar.</div>
+<div class="para" id="subsec-intro-invariants-10">Additionally—and using much the same argument—the determinant is an invariant for similar matrices. (We asked the reader to prove this in <a href="" class="xref" data-knowl="./knowl/xref/exer-det-invariant-similar.html" title="Exercise 6.2.4.12">Exercise 6.2.4.12</a>.) So, two matrices of the same size with different determinants cannot be similar.</div>
+<div class="para" id="subsec-intro-invariants-11">We will summarize these two already-established facts in the following proposition.</div>
+<article class="proposition theorem-like" id="prop-det-charpoly-invariants"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.4.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-det-charpoly-invariants-1-1">Let <span class="process-math">\(n\)</span> be a positive integer and let <span class="process-math">\(\ff\)</span> be a field. The determinant and the characteristic polynomial are both invariants on the set <span class="process-math">\(M_n(\ff)\text{.}\)</span>
+</div></article><div class="para" id="subsec-intro-invariants-13">While the characteristic polynomial and the determinant are useful invariants for similarity, they are far from the only ones. In the second half of this section we will develop two more invariants which respect similarity, one of which is quite surprising.</div></section><section class="subsection" id="subsec-inv-rank-trace"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="space"> </span><span class="title">Rank and Trace as Invariants</span>
 </h3>
 <div class="para" id="subsec-inv-rank-trace-2">We will first state and prove a few results needed to establish rank as an invariant.</div>
 <article class="theorem theorem-like" id="thm-rank-lt-matrix"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.4.5</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="thm-rank-lt-matrix-1-1">
 <div class="para">Suppose that <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are finite-dimensional vector spaces and that <span class="process-math">\(T \in L(V,W)\text{.}\)</span> Then, for any bases <span class="process-math">\(\mcb\)</span> of <span class="process-math">\(V\)</span> and <span class="process-math">\(\mcc\)</span> of <span class="process-math">\(W\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\rank(T) = \rank([T]_{\mcb,\mcc}), \hspace{12pt} \text{and} \hspace{12pt}
+\rank(T) = \rank([T]_{\mcb,\mcc}) \hspace{12pt} \text{and} \hspace{12pt}
 \dim(\ker(T)) = \dim(\nll([T]_{\mcb,\mcc}))\text{.}
 \end{equation*}
 </div>
@@ -468,8 +479,8 @@ window.MathJax = {
 \rank(T) = \dim(\range(T)) = \dim(\col(A)) = \rank(A)\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="thm-rank-lt-matrix-2-2">For the second equality, we refer to the Rank-Nullity Theorem. If <span class="process-math">\(\dim(V)=n\)</span> and <span class="process-math">\(\dim(W)=m\text{,}\)</span> then <span class="process-math">\(A\)</span> is <span class="process-math">\(m\times n\text{.}\)</span> We have proved that <span class="process-math">\(\rank(T) = \rank(A)\text{,}\)</span> and comparing the two equations in <a href="" class="xref" data-knowl="./knowl/xref/thm-rank-nullity.html" title="Theorem 5.4.10: The Rank-Nullity Theorem">Theorem 5.4.10</a>, we are left with <span class="process-math">\(\dim(\nll(A)) = \dim(\kerr(T))\text{,}\)</span> as desired.</div></article></details><article class="proposition theorem-like" id="prop-similar-matrices-same-lt"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span>
+</div> <div class="para" id="thm-rank-lt-matrix-2-2">For the second equality, we refer to <a href="" class="xref" data-knowl="./knowl/xref/thm-rank-nullity.html" title="Theorem 5.4.10: The Rank-Nullity Theorem">The Rank-Nullity Theorem</a>. If <span class="process-math">\(\dim(V)=n\)</span> and <span class="process-math">\(\dim(W)=m\text{,}\)</span> then <span class="process-math">\(A\)</span> is <span class="process-math">\(m\times n\text{.}\)</span> We have proved that <span class="process-math">\(\rank(T) = \rank(A)\text{,}\)</span> and comparing the two equations in <a href="" class="xref" data-knowl="./knowl/xref/thm-rank-nullity.html" title="Theorem 5.4.10: The Rank-Nullity Theorem">Theorem 5.4.10</a>, we are left with <span class="process-math">\(\dim(\nll(A)) = \dim(\kerr(T))\text{,}\)</span> as desired.</div></article></details><article class="proposition theorem-like" id="prop-similar-matrices-same-lt"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.4.6</span><span class="period">.</span>
 </h4>
 <div class="para" id="prop-similar-matrices-same-lt-1-1">Suppose that <span class="process-math">\(V\)</span> is an <span class="process-math">\(n\)</span>-dimensional vector space over <span class="process-math">\(\ff\text{,}\)</span> that <span class="process-math">\(\mcb\)</span> is a basis of <span class="process-math">\(V\text{,}\)</span> and that <span class="process-math">\(T \in L(V)\text{.}\)</span> Suppose further that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar matrices in <span class="process-math">\(M_n(\ff)\)</span> and that <span class="process-math">\(A = [T]_{\mcb}\text{.}\)</span> Then there exists a basis <span class="process-math">\(\mcc\)</span> of <span class="process-math">\(V\)</span> such that <span class="process-math">\(B = [T]_{\mcc}\text{.}\)</span>
 </div></article><details id="prop-similar-matrices-same-lt-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="prop-similar-matrices-same-lt-2-1">
@@ -488,17 +499,17 @@ P_{\mcc,\mcb} \bfe_j = P_{\mcc,\mcb} [\bfw_j]_{\mcc} = [\bfw_j]_{\mcb} = \mathbf
 <div class="para">for each <span class="process-math">\(j\text{,}\)</span> so <span class="process-math">\(P_{\mcc,\mcb} = Q\text{.}\)</span> Therefore, by <a href="" class="xref" data-knowl="./knowl/xref/lem-inverse-change-matrix.html" title="Lemma 5.6.6">Lemma 5.6.6</a>, <span class="process-math">\(S = P_{\mcb,\mcc}\text{,}\)</span> and so by <a href="" class="xref" data-knowl="./knowl/xref/cor-change-basis-lt.html" title="Corollary 5.6.9">Corollary 5.6.9</a>, <span class="process-math">\([T]_{\mcc} = SAS^{-1} = B\text{.}\)</span>
 </div>
 </div></article></details><article class="note remark-like" id="subsec-inv-rank-trace-5"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">6.4.4</span><span class="period">.</span>
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">6.4.7</span><span class="period">.</span>
 </h4>
 <div class="para" id="subsec-inv-rank-trace-5-1">
-<a href="" class="xref" data-knowl="./knowl/xref/prop-similar-matrices-same-lt.html" title="Proposition 6.4.3">Proposition 6.4.3</a>, along with <a href="" class="xref" data-knowl="./knowl/xref/prop-sim-coord-matrices.html" title="Proposition 6.3.14">Proposition 6.3.14</a> show us that two matrices are similar if and only if they represent the same linear transformation with respect to different bases.</div></article><div class="para" id="subsec-inv-rank-trace-6">With these two results in hand, we can state the first invariant we have been pointing toward.</div>
+<a href="" class="xref" data-knowl="./knowl/xref/prop-similar-matrices-same-lt.html" title="Proposition 6.4.6">Proposition 6.4.6</a>, along with <a href="" class="xref" data-knowl="./knowl/xref/prop-sim-coord-matrices.html" title="Proposition 6.3.14">Proposition 6.3.14</a> show us that two matrices are similar if and only if they represent the same linear transformation with respect to different bases.</div></article><div class="para" id="subsec-inv-rank-trace-6">With these two results in hand, we can state the first invariant we have been pointing toward.</div>
 <article class="corollary theorem-like" id="cor-rank-invariant"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.4.5</span><span class="period">.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.4.8</span><span class="period">.</span>
 </h4>
 <div class="para" id="cor-rank-invariant-1-1">If <span class="process-math">\(A, B \in M_n(\ff)\)</span> are similar, then <span class="process-math">\(\rank(A) = \rank(B)\text{.}\)</span>
-</div></article><details id="cor-rank-invariant-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="cor-rank-invariant-2-1">This follows from <a href="" class="xref" data-knowl="./knowl/xref/thm-rank-lt-matrix.html" title="Theorem 6.4.2">Theorem 6.4.2</a> (in the case where <span class="process-math">\(V = W\)</span> and <span class="process-math">\(\mcb = \mcc\)</span>) as well as <a href="" class="xref" data-knowl="./knowl/xref/prop-similar-matrices-same-lt.html" title="Proposition 6.4.3">Proposition 6.4.3</a>.</div></article></details><div class="para" id="subsec-inv-rank-trace-8">In the following example, we put this invariant to work.</div>
+</div></article><details id="cor-rank-invariant-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="cor-rank-invariant-2-1">This follows from <a href="" class="xref" data-knowl="./knowl/xref/thm-rank-lt-matrix.html" title="Theorem 6.4.5">Theorem 6.4.5</a> (in the case where <span class="process-math">\(V = W\)</span> and <span class="process-math">\(\mcb = \mcc\)</span>) as well as <a href="" class="xref" data-knowl="./knowl/xref/prop-similar-matrices-same-lt.html" title="Proposition 6.4.6">Proposition 6.4.6</a>.</div></article></details><div class="para" id="subsec-inv-rank-trace-8">In the following example, we put this invariant to work.</div>
 <details id="subsec-inv-rank-trace-9" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.6</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.9</span><span class="period">.</span>
 </h4></summary><article class="example example-like"><div class="para logical" id="subsec-inv-rank-trace-9-1-1">
 <div class="para">Let <span class="process-math">\(A, B \in M_3(\rr)\)</span> be the following matrices:</div>
 <div class="displaymath process-math">
@@ -516,7 +527,7 @@ B = \begin{bmatrix} 2 \amp 3 \amp 4 \\
 <div class="para">Some quick row reduction shows that <span class="process-math">\(\rank(A) = 2\)</span> while <span class="process-math">\(\rank(B)=3\text{,}\)</span> so we know that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not similar.</div>
 </div></article></details><div class="para" id="subsec-inv-rank-trace-10">We now move into the development and discussion of our final invariant, the <em class="emphasis">trace</em> of a matrix. Of all the invariants we discuss, the trace is <em class="emphasis">by far</em> the easiest to calculate!</div>
 <article class="definition definition-like" id="def-trace"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.4.7</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.4.10</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="def-trace-1-1">
 <div class="para">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> The <dfn class="terminology">trace</dfn> of <span class="process-math">\(A\)</span> is the sum of the numbers along the main diagonal of <span class="process-math">\(A\text{.}\)</span> In other words,</div>
@@ -526,7 +537,7 @@ B = \begin{bmatrix} 2 \amp 3 \amp 4 \\
 \end{equation*}
 </div>
 </div></article><details id="subsec-inv-rank-trace-12" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.8</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.11</span><span class="period">.</span>
 </h4></summary><article class="example example-like"><div class="para logical" id="subsec-inv-rank-trace-12-1-1">
 <div class="para">Here are two matrices over <span class="process-math">\(\rr\text{:}\)</span>
 </div>
@@ -540,7 +551,7 @@ B = \begin{bmatrix} 2 \amp 1 \amp 0 \\ 3.5 \amp -2 \amp -3 \\ 4 \amp -2.5 \amp -
 </div>
 </div></article></details><div class="para" id="subsec-inv-rank-trace-13">We need surprisingly few additional results in order to establish the trace as an invariant.</div>
 <article class="proposition theorem-like" id="prop-trace-mult"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.4.9</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.4.12</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="prop-trace-mult-1-1">
 <div class="para">If <span class="process-math">\(A \in M_{m,n}(\ff)\)</span> and <span class="process-math">\(B \in M_{n,m}(\ff)\text{,}\)</span> then</div>
@@ -564,11 +575,11 @@ B = \begin{bmatrix} 2 \amp 1 \amp 0 \\ 3.5 \amp -2 \amp -3 \\ 4 \amp -2.5 \amp -
 </div>
 </div></article></details><div class="para" id="subsec-inv-rank-trace-15">This next result finishes our argument.</div>
 <article class="corollary theorem-like" id="cor-trace-invariant"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.4.10</span><span class="period">.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.4.13</span><span class="period">.</span>
 </h4>
 <div class="para" id="cor-trace-invariant-1-1">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar matrices, then <span class="process-math">\(\tr(A) = \tr(B)\text{.}\)</span>
 </div></article><details id="cor-trace-invariant-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="cor-trace-invariant-2-1">
-<div class="para">Suppose that <span class="process-math">\(B = PAP^{-1}\text{.}\)</span> By the associativity of matrix multiplication and <a href="" class="xref" data-knowl="./knowl/xref/prop-trace-mult.html" title="Proposition 6.4.9">Proposition 6.4.9</a>, we have</div>
+<div class="para">Suppose that <span class="process-math">\(B = PAP^{-1}\text{.}\)</span> By the associativity of matrix multiplication and <a href="" class="xref" data-knowl="./knowl/xref/prop-trace-mult.html" title="Proposition 6.4.12">Proposition 6.4.12</a>, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-trace-mult.html" id="cor-trace-invariant-2-1-3">
 \begin{align*}
 \tr(B) \amp = \tr(PAP^{-1}) = \tr((PA)P^{-1}) = \tr(P^{-1}(PA))\\
@@ -577,7 +588,7 @@ B = \begin{bmatrix} 2 \amp 1 \amp 0 \\ 3.5 \amp -2 \amp -3 \\ 4 \amp -2.5 \amp -
 </div>
 </div></article></details><div class="para" id="subsec-inv-rank-trace-17">We can now use the trace as an invariant.</div>
 <details id="subsec-inv-rank-trace-18" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.11</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.14</span><span class="period">.</span>
 </h4></summary><article class="example example-like"><div class="para logical" id="subsec-inv-rank-trace-18-1-1">
 <div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be the following matrices over <span class="process-math">\(\ff_5\text{:}\)</span>
 </div>
@@ -590,15 +601,15 @@ B = \begin{bmatrix} 2 \amp 2 \\ 3 \amp 0 \end{bmatrix}\text{.}
 <div class="para">Since <span class="process-math">\(\tr(A) = 1\)</span> and <span class="process-math">\(\tr(B) = 2\text{,}\)</span> we know that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not similar matrices.</div>
 </div></article></details><div class="para" id="subsec-inv-rank-trace-19">One consequence of this invariant is that it allows us to define the trace of a linear transformation.</div>
 <article class="corollary theorem-like" id="cor-trace-lt"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.4.12</span><span class="period">.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.4.15</span><span class="period">.</span>
 </h4>
 <div class="para" id="cor-trace-lt-1-1">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space and let <span class="process-math">\(T \in L(V)\text{.}\)</span> If <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\)</span> are two bases for <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\tr([T]_{\mcb}) = \tr([T]_{\mcc})\text{.}\)</span>
-</div></article><details id="cor-trace-lt-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="cor-trace-lt-2-1">This is a direct and immediate consequence of <a href="" class="xref" data-knowl="./knowl/xref/prop-sim-coord-matrices.html" title="Proposition 6.3.14">Proposition 6.3.14</a> and <a href="" class="xref" data-knowl="./knowl/xref/cor-trace-invariant.html" title="Corollary 6.4.10">Corollary 6.4.10</a>.</div></article></details><article class="definition definition-like" id="def-trace-lt"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.4.13</span><span class="period">.</span>
+</div></article><details id="cor-trace-lt-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="cor-trace-lt-2-1">This is a direct and immediate consequence of <a href="" class="xref" data-knowl="./knowl/xref/prop-sim-coord-matrices.html" title="Proposition 6.3.14">Proposition 6.3.14</a> and <a href="" class="xref" data-knowl="./knowl/xref/cor-trace-invariant.html" title="Corollary 6.4.13">Corollary 6.4.13</a>.</div></article></details><article class="definition definition-like" id="def-trace-lt"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.4.16</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-trace-lt-1-1">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space and let <span class="process-math">\(T \in L(V)\text{.}\)</span> Then the <dfn class="terminology">trace</dfn> of <span class="process-math">\(T\)</span> is <span class="process-math">\(\tr(T) = \tr([T]_{\mcb})\text{,}\)</span> where <span class="process-math">\(\mcb\)</span> is any basis of <span class="process-math">\(V\text{.}\)</span>
 </div></article><details id="subsec-inv-rank-trace-22" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.14</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.17</span><span class="period">.</span>
 </h4></summary><article class="example example-like"><div class="para logical" id="subsec-inv-rank-trace-22-1-1">
 <div class="para">We end this section with an example of a linear transformation <span class="process-math">\(T:P_1 \to P_1\)</span> which was defined in <a href="" class="xref" data-knowl="./knowl/xref/examp-p1.html" title="Example 6.3.16">Example 6.3.16</a>. In that example, we saw that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-p1.html">
@@ -651,7 +662,7 @@ A = \begin{bmatrix}
 -5 \amp 4.5 \amp 1.5 \\ 
 -1.5 \amp 0 \amp 4.5 \\ 
 1 \amp -1.5 \amp 1.5
-\end{bmatrix}, \hspace{6pt}
+\end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
 B = \begin{bmatrix}
 -3.5 \amp 3.5 \amp -3.5 \\ 
 -4.5 \amp 3.5 \amp -2.5 \\ 
@@ -664,9 +675,31 @@ B = \begin{bmatrix}
 <li id="sec-invariants-6-1-1-1-3-2"><div class="para" id="sec-invariants-6-1-1-1-3-2-1">Prove that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not similar.</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-invariants-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="sec-invariants-6-2-1-1">Prove that the determinant is an invariant for similarity on the set of <span class="process-math">\(n\times n\)</span> matrices over <span class="process-math">\(\ff\text{.}\)</span>
+<div class="para logical" id="sec-invariants-6-2-1-1">
+<div class="para">Consider the following two matrices in <span class="process-math">\(M_3(\rr)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix}
+1 \amp -6 \amp 2 \\
+1 \amp 2 \amp 1 \\
+0 \amp 6 \amp -1
+\end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+B = \begin{bmatrix}
+10 \amp 13 \amp -5 \\
+-3 \amp -6 \amp -1 \\
+3 \amp 3 \amp -2
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="sec-invariants-6-2-1-1-3-1"><div class="para" id="sec-invariants-6-2-1-1-3-1-1">Explain why both trace and rank are <em class="emphasis">not</em> useful invariants to say that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not similar.</div></li>
+<li id="sec-invariants-6-2-1-1-3-2"><div class="para" id="sec-invariants-6-2-1-1-3-2-1">Prove that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not similar.</div></li>
+</ol>
 </div></article><article class="exercise exercise-like" id="sec-invariants-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-invariants-6-3-1-1">
+<div class="para" id="sec-invariants-6-3-1-1">There are 16 elements of the set <span class="process-math">\(M_2(\ff_2)\text{.}\)</span> How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.</div></article><article class="subexercises" id="sec-invariants-6-4"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-invariants-6-4-2"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-invariants-6-4-2-1-1">
 <div class="para">Let <span class="process-math">\(A \in M_2(\ff)\)</span> be this <span class="process-math">\(2\times 2\)</span> matrix:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -676,23 +709,22 @@ a \amp b \\ c \amp d
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="sec-invariants-6-3-1-1-4-1"><div class="para" id="sec-invariants-6-3-1-1-4-1-1">Write out the characteristic polynomial of <span class="process-math">\(A\text{,}\)</span> substituting <span class="process-math">\(\det(A)\)</span> and <span class="process-math">\(\tr(A)\)</span> where appropriate.</div></li>
-<li id="sec-invariants-6-3-1-1-4-2"><div class="para" id="sec-invariants-6-3-1-1-4-2-1">Argue that, for <span class="process-math">\(2\times 2\)</span> matrices, the fact that the characteristic polynomial is an invariant (for similarity) implies that both the trace and determinant are invariants.</div></li>
+<li id="sec-invariants-6-4-2-1-1-4-1"><div class="para" id="sec-invariants-6-4-2-1-1-4-1-1">Write out the characteristic polynomial of <span class="process-math">\(A\text{,}\)</span> substituting <span class="process-math">\(\det(A)\)</span> and <span class="process-math">\(\tr(A)\)</span> where appropriate.</div></li>
+<li id="sec-invariants-6-4-2-1-1-4-2"><div class="para" id="sec-invariants-6-4-2-1-1-4-2-1">Argue that, for <span class="process-math">\(2\times 2\)</span> matrices, the fact that the characteristic polynomial is an invariant (for similarity) implies that both the trace and determinant are invariants.</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-invariants-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="sec-invariants-6-4-1-1">Is diagonalizability an invariant (for similarity) on the set <span class="process-math">\(M_n(\ff)\text{?}\)</span> In other words, if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, must it be true that either (a) they are both diagonalizable, or (b) they are both not diagonalizable?</div></article><article class="exercise exercise-like" id="sec-invariants-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-invariants-6-5-1-1">
+</div></article><article class="exercise exercise-like" id="sec-invariants-6-4-3"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="sec-invariants-6-4-3-1-1">Is diagonalizability an invariant (for similarity) on the set <span class="process-math">\(M_n(\ff)\text{?}\)</span> In other words, if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, must it be true that either (a) they are both diagonalizable, or (b) they are both not diagonalizable?</div></article><article class="exercise exercise-like" id="sec-invariants-6-4-4"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-invariants-6-4-4-1-1">
 <div class="para">Suppose that <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="sec-invariants-6-5-1-1-2-1"><div class="para" id="sec-invariants-6-5-1-1-2-1-1">Prove that if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues, then <span class="process-math">\(\tr(A)\)</span> is the sum of the eigenvalues of <span class="process-math">\(A\text{.}\)</span>
+<li id="sec-invariants-6-4-4-1-1-2-1"><div class="para" id="sec-invariants-6-4-4-1-1-2-1-1">Prove that if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues, then <span class="process-math">\(\tr(A)\)</span> is the sum of the eigenvalues of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-<li id="sec-invariants-6-5-1-1-2-2"><div class="para" id="sec-invariants-6-5-1-1-2-2-1">Is the result from part (a) true if <span class="process-math">\(A\)</span> does not have <span class="process-math">\(n\)</span> distinct eigenvalues? For example, if <span class="process-math">\(A \in M_3(\rr)\)</span> has only two distinct eigenvalues, must <span class="process-math">\(\tr(A)\)</span> be the sum of the eigenvalues (with multiplicity)?</div></li>
+<li id="sec-invariants-6-4-4-1-1-2-2"><div class="para" id="sec-invariants-6-4-4-1-1-2-2-1">Is the result from part (a) true if <span class="process-math">\(A\)</span> does not have <span class="process-math">\(n\)</span> distinct eigenvalues? For example, if <span class="process-math">\(A \in M_3(\rr)\)</span> has only two distinct eigenvalues, must <span class="process-math">\(\tr(A)\)</span> be the sum of the eigenvalues (with multiplicity)?</div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-invariants-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="sec-invariants-6-6-1-1">There are 16 elements of the set <span class="process-math">\(M_2(\ff_2)\text{.}\)</span> How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.</div></article><article class="exercise exercise-like" id="sec-invariants-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-invariants-6-7-1-1"><ol class="lower-alpha">
-<li id="sec-invariants-6-7-1-1-1-1"><div class="para logical" id="sec-invariants-6-7-1-1-1-1-1">
+</div></article><article class="exercise exercise-like" id="sec-invariants-6-4-5"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-invariants-6-4-5-1-1"><ol class="lower-alpha">
+<li id="sec-invariants-6-4-5-1-1-1-1"><div class="para logical" id="sec-invariants-6-4-5-1-1-1-1-1">
 <div class="para">Prove that if <span class="process-math">\(A, B, C \in M_n(\ff)\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -700,13 +732,15 @@ a \amp b \\ c \amp d
 \end{equation*}
 </div>
 </div></li>
-<li id="sec-invariants-6-7-1-1-1-2"><div class="para" id="sec-invariants-6-7-1-1-1-2-1">Give an example of three matrices <span class="process-math">\(A, B, C \in M_n(\ff)\)</span> such that <span class="process-math">\(\tr(ABC) \neq \tr(ACB)\text{.}\)</span>
+<li id="sec-invariants-6-4-5-1-1-1-2"><div class="para" id="sec-invariants-6-4-5-1-1-1-2-1">Give an example of three matrices <span class="process-math">\(A, B, C \in M_n(\ff)\)</span> such that <span class="process-math">\(\tr(ABC) \neq \tr(ACB)\text{.}\)</span>
 </div></li>
-</ol></div></article><article class="exercise exercise-like" id="sec-invariants-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="sec-invariants-6-8-1-1">For a matrix <span class="process-math">\(A \in M_n(\ff)\text{,}\)</span> define the function <span class="process-math">\(S(A)\)</span> as the sum of all of the entries of <span class="process-math">\(A\text{.}\)</span> Prove or disprove that <span class="process-math">\(S\)</span> is an invariant for similar matrices.</div></article><article class="exercise exercise-like" id="sec-invariants-6-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="sec-invariants-6-9-1-1">Is rank an invariant for row equivalence? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-invariants-6-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="sec-invariants-6-10-1-1">Is the trace an invariant for row equivalence? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-invariants-6-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="sec-invariants-6-11-1-1">Is the determinant an invariant for row equivalence? Justify your answer.</div></article></section></section></div>
+</ol></div></article><article class="exercise exercise-like" id="sec-invariants-6-4-6"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para" id="sec-invariants-6-4-6-1-1">For a matrix <span class="process-math">\(A \in M_n(\ff)\text{,}\)</span> define the function <span class="process-math">\(S(A)\)</span> as the sum of all of the entries of <span class="process-math">\(A\text{.}\)</span> Prove or disprove that <span class="process-math">\(S\)</span> is an invariant for similar matrices.</div></article><article class="exercise exercise-like" id="sec-invariants-6-4-7"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="sec-invariants-6-4-7-1-1">Is rank an invariant for row equivalence? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-invariants-6-4-8"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para" id="sec-invariants-6-4-8-1-1">Is the trace an invariant for row equivalence? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-invariants-6-4-9"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para" id="sec-invariants-6-4-9-1-1">Is the determinant an invariant for row equivalence? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-invariants-6-4-10"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para" id="sec-invariants-6-4-10-1-1">Is invertibility an invariant for row equivalence? Justify your answer.</div></article><article class="exercise exercise-like" id="sec-invariants-6-4-11"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="para" id="sec-invariants-6-4-11-1-1">Is invertibility an invariant for similarity? Justify your answer.</div></article></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-diagonalization.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
