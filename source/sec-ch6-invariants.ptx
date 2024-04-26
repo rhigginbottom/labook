@@ -465,6 +465,38 @@
 <exercise>
   <statement>
     <p>
+      Consider the following two matrices in <m>M_3(\rr)</m>: 
+      <me>
+        A = \begin{bmatrix}
+        -10 \amp -20 \amp -2 \\
+        7 \amp 14 \amp 1 \\
+        -5 \amp -10 \amp -1
+        \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+        B = \begin{bmatrix}
+        2 \amp -1 \amp 1 \\
+        2 \amp -2 \amp 2 \\
+        2 \amp -3 \amp 3
+        \end{bmatrix}
+      </me>.
+      <ol>
+        <li>
+          <p>
+            Explain why the trace, rank, and determinant are <em>not</em> useful invariants to say that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that <m>A</m> and <m>B</m> are not similar.
+          </p>
+          <!-- evalues of A are 0, -1, 4; evalues of B are 0, 1, 2 -->
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
       There are 16 elements of the set <m>M_2(\ff_2)</m>. How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.
     </p>
   </statement>

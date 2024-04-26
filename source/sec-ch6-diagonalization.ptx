@@ -230,7 +230,7 @@
       The characteristic polynomial for <m>A</m> is <m>p_A(\lambda) = -(\lambda + 2)^2(\lambda +3)</m>. So the eigenvalues of <m>A</m> are <m>\lambda = -2</m> and <m>\lambda = -3</m>. 
     </p>
     <p>
-      When we look for eigenvalues, we find the following for <m>A + 2I</m>:
+      When we look for eigenvectors, we find the following for <m>A + 2I</m>:
       <me>
         A + 2I = \begin{bmatrix} 
         2 \amp -6 \amp -4 \\ 
@@ -457,7 +457,7 @@
         </li>
         <li>
           <p>
-            Using part (a), explain why <m>A</m> is diagonalizable.
+            Using only part a (this means you should make no additional calculations), explain why <m>A</m> is diagonalizable.
           </p>
           <!-- <p>
             A <m>2\times 2</m> matrix with two distinct eigenvalues is diagonalizable.
