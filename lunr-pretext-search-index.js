@@ -2584,9 +2584,9 @@ var ptx_lunr_docs = [
   "body": " Let be the linear transformation which rotates a vector counter-clockwise around the origin by an angle of radians. Find the matrix for . (Each entry in the matrix should be an expression involving .)   The matrix for is .  "
 },
 {
-  "id": "sec-matrix-linear-trans-8-6-2",
+  "id": "transpose-invertible",
   "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-6-2",
+  "url": "sec-matrix-linear-trans.html#transpose-invertible",
   "type": "Exercise",
   "number": "3.2.6.6",
   "title": "",
@@ -5974,7 +5974,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.3",
   "title": "Diagonalization",
-  "body": " Diagonalization   An matrix often has a huge number of matrices to which it is similar. In this section, we will focus on matrices that are similar to diagonal matrices, and we do so because of how straightforward the action of a diagonal matrix is.    Diagonalizable Matrices  If is similar to a diagonal matrix , then for some invertible matrix . Such a factorization of encodes much of the information about the eigenvalues and eigenvectors of , and it also allows us to raise to integer powers rather easily.  If is diagonal, then powers of are easy to compute. Consider the following matrices and : . In general, the many zeros in a diagonal matrix make the powers of that matrix easy to calculate. For this specific , we have, for any integer , . Given the number of calculations that are usually involved in matrix multiplication, this is a huge savings in computing time.  Now, if is similar to a diagonal matrix , we find related behavior. Suppose that . Then . Since can be written as , we have . This holds for any : .  Perhaps we have convinced a skeptical reader that there are some advantages when is similar to a diagonal matrix. This is worthy of a formal definition.    A matrix is diagonalizable if for some invertible matrix and some diagonal matrix .    Given this definition, it is natural to ask exactly when a matrix is diagonalizable. That answer comes in the following theorem.   The Diagonalization Theorem   A matrix is diagonalizable if and only if has linearly independent eigenvectors.  More specifically, , for a diagonal matrix , if and only if the columns of are linearly independent eigenvectors of . In this case, the diagonal entries of are the the eigenvalues of which correspond, respectively, to the columns of .    If is an matrix with columns , and if is a diagonal matrix with diagonal entries , then we have , and also . (If the reader has trouble believing , thinking of matrix multiplication, in each column of the product, as a linear combination of the columns of with weights coming from the corresponding column of , may help!) If is diagonalizable, then and . From and , by equating columns in and we see that for . Since is invertible, the columns of must be linearly independent. Further, since the columns of cannot be zero vectors, this argument shows that is an eigenvalue of with eigenvector , for each . This proves one direction of the theorem.  If we are given as eigenvectors of with corresponding eigenvalues , then we can form the matrices and . The argument in the previous paragraph shows that . (Note that we have not yet used the linear independence of the eigenvectors!) If the eigenvectors are linearly independent, then is invertible, and implies , making diagonalizable.      says that is diagonalizable if and only if there is a basis of consisting of eigenvectors of . We call such a basis an eigenvector basis of .     How to Diagonalize a Matrix  Using , we see there are four steps to diagonalizing a matrix. We will summarize them in the following algorithm.    If , we follow these steps to diagonalize .   Find the eigenvalues of . This usually involves solving the characteristic equation for . (If the characteristic polynomial does not factor into linear factors, the matrix is not diagonalizable.)    Find linearly independent eigenvectors for . (This step may fail, in which case the matrix is not diagonalizable.)    Construct the matrix using the vectors from the previous step. Form by using the eigenvectors as its columns. The order of these vectors does not matter.    Construct from the eigenvalues. Once the matrix is formed, the order of these eigenvalues does matter the eigenvalues must be placed along the diagonal of in the order corresponding to the columns of . In other words, entry in should be the eigenvalue for the vector which is column in .       After forming and , it is a good idea to check that the process was successful. We may verify the equation , or alternatively we may check that . (This avoids the need to find .)    We consider the matrix : . Though the reader can determine this independently, we will provide the characteristic polynomial to save time and space: . From this we see that the eigenvalues of are and .  We now find bases for the associated eigenspaces. Again, we will suppress all of the calculations since the previous sections have gone through these in some detail. We find that , and . Since we have three linearly independent eigenvectors, we know from that is diagonalizable.  We now form the matrices and according to the algorithm: . We can check that our diagonalization was successful by calculating and : .    We now consider another example of a matrix.    We consider the matrix : . The characteristic polynomial for is . So the eigenvalues of are and .  When we look for eigenvectors, we find the following for : . This shows that is only one-dimensional. Since we need three total linearly independent eigenvectors to diagonalize , and we will only get one from , we needed to be two-dimensional. This shows that is not diagonalizable.    The difference between the last two examples shows that diagonalizability is subtle. There are times when we can tell if a matrix is diagonalizable without a lot of work, but sometimes we need to get all the way to the eigenspace calculation before having an answer. The following theorem states a situation in which diagonalizability is easier to confirm.    Let . If has distinct eigenvalues, is diagonalizable.    If has distinct eigenvalues, let be eigenvectors which correspond to those eigenvalues. Then, by , the set is linearly independent. Since our vectors are in , by this basis of eigenvectors of means that is diagonalizable.      We consider the following matrix : . Since is lower triangular, we can read the eigenvalues off of the main diagonal: . Since there are three distinct eigenvalues for this matrix, then says that is diagonalizable.     Having distinct eigenvalues is a sufficient condition for a matrix to be diagonalizable, but it is not necessary . In other words, a matrix can still be diagonalizable with fewer than distinct eigenvalues. We have already encountered this in .   The following theorem collects some facts about the diagonalizability of a matrix. (We omit the proof.)    Let have distinct eigenvalues .   For , the dimension of is less than or equal to the (algebraic) multiplicity of .    The matrix is diagonalizable if and only if the sum of the dimensions of the eigenspaces equals , and this happens if and only if (i) the characteristic polynomial factors completely into linear factors, and (ii) the dimension of equals the multiplicity of for each .    If is diagonalizable and is a basis for , then is an eigenvector basis for .         Linear Transformations and Diagonalizability  In we saw that, for linear transformations between finite-dimensional vector spaces, we could view these transformations as multiplication by a matrix if we were content to handle coordinate vectors. And while we didn't have the current terminology at that point, in we were calculating coordinate matrices for linear transformations using similarity. (See .)  This means that our discussion of similar matrices has implications for linear transformations broadly. And these implication are, unsurprisingly, related to eigenvalues and eigenvectors.    Let be a finite-dimensional vector space and let . Then is diagonalizable if there exists a basis of such that is diagonal.    Based on our discussion thus far in this section, the reader may guess that the vectors in the basis referenced in are eigenvectors for . What is true for matrices is (generally) true in the proper context for linear transformations.    A linear transformation is diagonalizable if and only if there exists a basis of consisting entirely of eigenvectors of .      In , we considered the linear transformation on which is reflection across the line . In that example, we looked at the basis for , where . We saw that the matrix was diagonal, and now we know that was because the basis vectors are eigenvectors for . Since lies on the line of reflection, it is an eigenvector for with eigenvalue 1, and since lies on the line perpendicular to the line of reflection, it is an eigenvector for with eigenvalue . The matrix is .    The following result is basically a restatement of , using the language of similar matrices.    Suppose that is a finite-dimensional vector space and that . Suppose further that and are bases for . Then the coordinate matrices and are similar.    Since change-of-basis matrices are invertible, this really is just a restatement of .    The final result in this section brings several prior results together, tying the diagonalizability of linear transformations and matrices to each other in a predictable way.    Let be a finite-dimensional vector space, let be a basis for , and let . Then is a diagonalizable matrix if and only if is a diagonalizable linear transformation.    This theorem says that a linear transformation is diagonalizable if there is a basis of with respect to which the coordinate matrix of is diagonalizable.  We finish this section with an example which is perhaps a bit contrived but which is also, hopefully, illustrative.    Let be the following linear transformation: . If is the standard basis for , then is . It is fairly easy to determine that is diagonalizable, since the characteristic polynomial is . Since is diagonalizable, that means that is a diagonalizable linear transformation.  Using coordinate vectors, we can also determine the basis of with respect to which has a diagonal coordinate matrix. (It is a basis of eigenvectors of !)  Since the eigenvalues of are , we can find bases for the related eigenspaces. For ease of notation, let . Now . These are the coordinate vectors for the eigenvectors of with respect to the standard basis. Therefore, an eigenvector basis of is , and is a diagonal matrix with diagonal entries and .       Consider the following matrix : .   Find the characteristic polynomial and the eigenvalues of . Show your work.     Using only part a (this means you should make no additional calculations), explain why is diagonalizable.        Let be the same matrix as in the first reading question. Following , diagonalize .       Let be the following matrices: . If , calculate .    Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't.    Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't.    Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't. (Hint: One of the eigenvalues of is .)    Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't. (Hint: One of the eigenvalues of is .)    Suppose that has three distinct eigenvalues. One eigenspace is one-dimensional and one of the other eigenspaces is two-dimensional. Is it possible for  not to be diagonalizable? Explain.    Consider the following matrix : . Show that a diagonalization is not unique by finding two pairs of matrices which diagonalize .    Writing Exercises   Prove that if is both invertible and diagonalizable, then so is .    Prove that if has linearly independent eigenvectors, then so does .    This problem explores the relationship between invertibility and diagonalizability.   Construct a nonzero matrix which is invertible but not diagonalizable.    Construct a nondiagonal matrix that is diagonalizable but not invertible.       Let be projection onto the -plane. Prove that is diagonalizable.    Let be orthogonal projection onto the line . Prove that is diagonalizable.    Let be counterclockwise rotation by radians.   Prove that is not diagonalizable.    Prove that is diagonalizable.        "
+  "body": " Diagonalization   An matrix often has a huge number of matrices to which it is similar. In this section, we will focus on matrices that are similar to diagonal matrices, and we do so because of how straightforward the action of a diagonal matrix is.    Diagonalizable Matrices  If is similar to a diagonal matrix , then for some invertible matrix . Such a factorization of encodes much of the information about the eigenvalues and eigenvectors of , and it also allows us to raise to integer powers rather easily.  If is diagonal, then powers of are easy to compute. Consider the following matrices and : . In general, the many zeros in a diagonal matrix make the powers of that matrix easy to calculate. For this specific , we have, for any integer , . Given the number of calculations that are usually involved in matrix multiplication, this is a huge savings in computing time.  Now, if is similar to a diagonal matrix , we find related behavior. Suppose that . Then . Since can be written as , we have . This holds for any : .  Perhaps we have convinced a skeptical reader that there are some advantages when is similar to a diagonal matrix. This is worthy of a formal definition.    A matrix is diagonalizable if for some invertible matrix and some diagonal matrix .    Given this definition, it is natural to ask exactly when a matrix is diagonalizable. That answer comes in the following theorem.   The Diagonalization Theorem   A matrix is diagonalizable if and only if has linearly independent eigenvectors.  More specifically, , for a diagonal matrix , if and only if the columns of are linearly independent eigenvectors of . In this case, the diagonal entries of are the the eigenvalues of which correspond, respectively, to the columns of .    If is an matrix with columns , and if is a diagonal matrix with diagonal entries , then we have , and also . (If the reader has trouble believing , thinking of matrix multiplication, in each column of the product, as a linear combination of the columns of with weights coming from the corresponding column of , may help!) If is diagonalizable, then and . From and , by equating columns in and we see that for . Since is invertible, the columns of must be linearly independent. Further, since the columns of cannot be zero vectors, this argument shows that is an eigenvalue of with eigenvector , for each . This proves one direction of the theorem.  If we are given as eigenvectors of with corresponding eigenvalues , then we can form the matrices and . The argument in the previous paragraph shows that . (Note that we have not yet used the linear independence of the eigenvectors!) If the eigenvectors are linearly independent, then is invertible, and implies , making diagonalizable.      says that is diagonalizable if and only if there is a basis of consisting of eigenvectors of . We call such a basis an eigenvector basis of .     How to Diagonalize a Matrix  Using , we see there are four steps to diagonalizing a matrix. We will summarize them in the following algorithm.    If , we follow these steps to diagonalize .   Find the eigenvalues of . This usually involves solving the characteristic equation for . (If the characteristic polynomial does not factor into linear factors, the matrix is not diagonalizable.)    Find linearly independent eigenvectors for . (This step may fail, in which case the matrix is not diagonalizable.)    Construct the matrix using the vectors from the previous step. Form by using the eigenvectors as its columns. The order of these vectors does not matter.    Construct from the eigenvalues. Once the matrix is formed, the order of these eigenvalues does matter the eigenvalues must be placed along the diagonal of in the order corresponding to the columns of . In other words, entry in should be the eigenvalue for the vector which is column in .       After forming and , it is a good idea to check that the process was successful. We may verify the equation , or alternatively we may check that . (This avoids the need to find .)    We consider the matrix : . Though the reader can determine this independently, we will provide the characteristic polynomial to save time and space: . From this we see that the eigenvalues of are and .  We now find bases for the associated eigenspaces. Again, we will suppress all of the calculations since the previous sections have gone through these in some detail. We find that , and . Since we have three linearly independent eigenvectors, we know from that is diagonalizable.  We now form the matrices and according to the algorithm: . We can check that our diagonalization was successful by calculating and : .    We now consider another example of a matrix.    We consider the matrix : . The characteristic polynomial for is . So the eigenvalues of are and .  When we look for eigenvectors, we find the following for : . This shows that is only one-dimensional. Since we need three total linearly independent eigenvectors to diagonalize , and we will only get one from , we needed to be two-dimensional. This shows that is not diagonalizable.    The difference between the last two examples shows that diagonalizability is subtle. There are times when we can tell if a matrix is diagonalizable without a lot of work, but sometimes we need to get all the way to the eigenspace calculation before having an answer. The following theorem states a situation in which diagonalizability is easier to confirm.    Let . If has distinct eigenvalues, is diagonalizable.    If has distinct eigenvalues, let be eigenvectors which correspond to those eigenvalues. Then, by , the set is linearly independent. Since our vectors are in , by this basis of eigenvectors of means that is diagonalizable.      We consider the following matrix : . Since is lower triangular, we can read the eigenvalues off of the main diagonal: . Since there are three distinct eigenvalues for this matrix, then says that is diagonalizable.     Having distinct eigenvalues is a sufficient condition for a matrix to be diagonalizable, but it is not necessary . In other words, a matrix can still be diagonalizable with fewer than distinct eigenvalues. We have already encountered this in .   The following theorem collects some facts about the diagonalizability of a matrix. (We omit the proof.)    Let have distinct eigenvalues .   For , the dimension of is less than or equal to the (algebraic) multiplicity of .    The matrix is diagonalizable if and only if the sum of the dimensions of the eigenspaces equals , and this happens if and only if (i) the characteristic polynomial factors completely into linear factors, and (ii) the dimension of equals the multiplicity of for each .    If is diagonalizable and is a basis for , then is an eigenvector basis for .         Linear Transformations and Diagonalizability  In we saw that, for linear transformations between finite-dimensional vector spaces, we could view these transformations as multiplication by a matrix if we were content to handle coordinate vectors. And while we didn't have the current terminology at that point, in we were calculating coordinate matrices for linear transformations using similarity. (See .)  This means that our discussion of similar matrices has implications for linear transformations broadly. And these implication are, unsurprisingly, related to eigenvalues and eigenvectors.    Let be a finite-dimensional vector space and let . Then is diagonalizable if there exists a basis of such that is diagonal.    Based on our discussion thus far in this section, the reader may guess that the vectors in the basis referenced in are eigenvectors for . What is true for matrices is (generally) true in the proper context for linear transformations.    A linear transformation is diagonalizable if and only if there exists a basis of consisting entirely of eigenvectors of .      In , we considered the linear transformation on which is reflection across the line . In that example, we looked at the basis for , where . We saw that the matrix was diagonal, and now we know that was because the basis vectors are eigenvectors for . Since lies on the line of reflection, it is an eigenvector for with eigenvalue 1, and since lies on the line perpendicular to the line of reflection, it is an eigenvector for with eigenvalue . The matrix is .    The following result is basically a restatement of , using the language of similar matrices.    Suppose that is a finite-dimensional vector space and that . Suppose further that and are bases for . Then the coordinate matrices and are similar.    Since change-of-basis matrices are invertible, this really is just a restatement of .    The final result in this section brings several prior results together, tying the diagonalizability of linear transformations and matrices to each other in a predictable way.    Let be a finite-dimensional vector space, let be a basis for , and let . Then is a diagonalizable matrix if and only if is a diagonalizable linear transformation.    This theorem says that a linear transformation is diagonalizable if there is a basis of with respect to which the coordinate matrix of is diagonalizable.  We finish this section with an example which is perhaps a bit contrived but which is also, hopefully, illustrative.    Let be the following linear transformation: . If is the standard basis for , then is . It is fairly easy to determine that is diagonalizable, since the characteristic polynomial is . Since is diagonalizable, that means that is a diagonalizable linear transformation.  Using coordinate vectors, we can also determine the basis of with respect to which has a diagonal coordinate matrix. (It is a basis of eigenvectors of !)  Since the eigenvalues of are , we can find bases for the related eigenspaces. For ease of notation, let . Now . These are the coordinate vectors for the eigenvectors of with respect to the standard basis. Therefore, an eigenvector basis of is , and is a diagonal matrix with diagonal entries and .       Consider the following matrix : .   Find the characteristic polynomial and the eigenvalues of . Show your work.     Using only part a (this means you should make no additional calculations), explain why is diagonalizable.        Let be the same matrix as in the first reading question. Following , diagonalize .       Let be the following matrices: . If , calculate .    Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't.    Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't.   This matrix is not diagonalizable. There is only one eigenvalue, and the dimension of the eigenspace is one.    Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't. (Hint: One of the eigenvalues of is .)    Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't. (Hint: One of the eigenvalues of is .)   This matrix is diagonalizable using the following matrices and : .    Suppose that has three distinct eigenvalues. One eigenspace is one-dimensional and one of the other eigenspaces is two-dimensional. Is it possible for  not to be diagonalizable? Explain.   No, that is not possible. The matrix must be diagonalizable. The dimension of the eigenspace that is not yet specified must be at least one. The sum of all dimensions of the eigenspaces must be at most four (since is ), and the given information tells us that this sum will be exactly four. This means that is diagonalizable.    Consider the following matrix : . Show that a diagonalization is not unique by finding two pairs of matrices which diagonalize .   Here is one pair of matrices that diagonalizes : . We can make subtle manipulations to these matrices to find another pair which diagonalizes : . There are many, many other pairs of matrices that diagonalize , mainly because the matrix can have infinitely many different columns.    Writing Exercises   Prove that if is both invertible and diagonalizable, then so is .    Let . Prove that if has linearly independent eigenvectors, then so does .   If has linearly independent eigenvectors, then it is diagonalizable by . This means there exist matrices and such that . If we take the transpose of both sides of this equation, we get . Since is diagonal, . Also, tells us that . So, we have . This proves that is diagonalizable, and allows us to conclude that has linearly independent eigenvectors.    This problem explores the relationship between invertibility and diagonalizability.   Construct a nonzero matrix which is invertible but not diagonalizable.    Construct a nondiagonal matrix that is diagonalizable but not invertible.       Let be projection onto the -plane. Prove that is diagonalizable.    Let be orthogonal projection onto the line . Prove that is diagonalizable.    Let be counterclockwise rotation by radians.   Prove that is not diagonalizable.    Prove that is diagonalizable.        "
 },
 {
   "id": "def-diagonalizable",
@@ -6163,7 +6163,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.3.5.3",
   "title": "",
-  "body": " Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't.  "
+  "body": " Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't.   This matrix is not diagonalizable. There is only one eigenvalue, and the dimension of the eigenspace is one.  "
 },
 {
   "id": "sec-diagonalization-7-4",
@@ -6181,7 +6181,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.3.5.5",
   "title": "",
-  "body": " Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't. (Hint: One of the eigenvalues of is .)  "
+  "body": " Consider the following matrix : . Determine whether or not is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't. (Hint: One of the eigenvalues of is .)   This matrix is diagonalizable using the following matrices and : .  "
 },
 {
   "id": "sec-diagonalization-7-6",
@@ -6190,7 +6190,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.3.5.6",
   "title": "",
-  "body": " Suppose that has three distinct eigenvalues. One eigenspace is one-dimensional and one of the other eigenspaces is two-dimensional. Is it possible for  not to be diagonalizable? Explain.  "
+  "body": " Suppose that has three distinct eigenvalues. One eigenspace is one-dimensional and one of the other eigenspaces is two-dimensional. Is it possible for  not to be diagonalizable? Explain.   No, that is not possible. The matrix must be diagonalizable. The dimension of the eigenspace that is not yet specified must be at least one. The sum of all dimensions of the eigenspaces must be at most four (since is ), and the given information tells us that this sum will be exactly four. This means that is diagonalizable.  "
 },
 {
   "id": "sec-diagonalization-7-7",
@@ -6199,7 +6199,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.3.5.7",
   "title": "",
-  "body": " Consider the following matrix : . Show that a diagonalization is not unique by finding two pairs of matrices which diagonalize .  "
+  "body": " Consider the following matrix : . Show that a diagonalization is not unique by finding two pairs of matrices which diagonalize .   Here is one pair of matrices that diagonalizes : . We can make subtle manipulations to these matrices to find another pair which diagonalizes : . There are many, many other pairs of matrices that diagonalize , mainly because the matrix can have infinitely many different columns.  "
 },
 {
   "id": "sec-diagonalization-7-8-2",
@@ -6217,7 +6217,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.3.5.9",
   "title": "",
-  "body": " Prove that if has linearly independent eigenvectors, then so does .  "
+  "body": " Let . Prove that if has linearly independent eigenvectors, then so does .   If has linearly independent eigenvectors, then it is diagonalizable by . This means there exist matrices and such that . If we take the transpose of both sides of this equation, we get . Since is diagonal, . Also, tells us that . So, we have . This proves that is diagonalizable, and allows us to conclude that has linearly independent eigenvectors.  "
 },
 {
   "id": "sec-diagonalization-7-8-4",
@@ -6568,7 +6568,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.1",
   "title": "Inner Products",
-  "body": " Inner Products   A general vector space need not have any relevant geometry, and in most of our work up to this point, geometric notions did not play a central role. In this chapter, however, we will begin to take advantage of the geometry present in some vector spaces.    The Dot Product  In Euclidean geometry, we are introduced to the dot product quite early. The dot product in is essential to our understandings of length and distance.    For two vectors , we have the dot product of and given by , where and .      Suppose that and are the following two vectors in : . Then .     Having facility with matrix multiplication now, the observant reader will notice that .     The length or norm of a vector is the nonnegative scalar defined by .      If is the same as in , then .    Of special usefulness for us is the fact that the dot product gives us a notion of angles and perpendicularity.    Two vectors and in are orthogonal if .     The word orthogonal is another way of saying perpendicular , but orthogonal is used much more frequently in linear algebra.     Let , , and be the following vectors in : . We can see that and are not orthogonal, since . However, and are orthogonal, as .    As this chapter continues, the reader will see just how important orthogonality is. For now, we note that all of the vectors in the standard basis of , , are orthogonal to each other. That is, whenever .  A consequence of this last fact is stated in the following proposition.    If is given by , then for each , .    By definition of the dot product, we have , since the only nonzero entry of is .    This has been a very brief review\/introduction to the dot product. As we generalize this function in the remainder of this section, we will continue to remind the reader of important facts and properties as we need them.    The Inner Product  In the same way that vectors in gave us the intuition to consider a general vector space, the dot product in points us toward a more general function on vector spaces. Our generalization of the dot product is called the inner product .   Before this definition we need a quick reminder. For a complex number , recall that the complex conjugate of is defined by . This will be used in the following definition.     Let be a vector space over a field , where is either or . An inner product on is a function that associates to each pair of vectors and in an element of the field satisfying all of the following axioms. For all , , and in , and all :    ;     ;     ; and     and if and only if .     A vector space together with an inner product is called an inner product space .     If the field we have in mind is instead of , then the first property listed in the definition is just . (If , then .) Also, if our field is , we still require to be a real number, as this is implicit in the fourth property where .   Before we introduce examples, we want to comment here on why the only fields we allow for inner product spaces are and . The inner product requires that a notion of order be present in any field over which a vector space is defined. This is inherent in the fourth property listed in the definition of an inner product, where we must have for all . We do not have this sort of ordering in a finite field like . Since, for example, 6 and 1 and all represent the same number in , we cannot in any coherent way say that this value of the field is greater than or equal to 0. Because of this lack of ordering, finite fields do not have the sort of geometric properties that we require for an inner product space.    All real vector spaces with the dot product are inner product spaces. (Once again, we would be particularly bad at generalizing if the motivating case were not an example of the general situation!)      For vectors , the standard inner product is defined by , where and .  As an example calculation, we consider the following two vectors in : . Then we have .  We will leave for the exercises the proof that the inner product axioms hold for this function.      Let denote the vector space of continuous real-valued functions on the interval . (See for a discussion of vector spaces like this one.) We can study an inner product on this space defined by the following: . Again, we provide an example of a calculation. If and , then .  Proving that the inner product axioms hold requires recalling a few facts from calculus. We leave this to the exercises.    The following properties flow fairly quickly from the definition of an inner product.    Suppose that is an inner product space. Then the following statements are all true.   For each , .    For each and each , .    For each , .    If and for every , then .       We will prove the second property and leave the others for the exercises. Using the first and third axioms from the definition of the inner product, we have .    The presence of an inner product gives us a good way to define the length of a vector.    Let be an inner product space and let . Then the norm of is . If , then is called a unit vector .    In the following examples we calculate the norm of a few vectors in different vector spaces.    We consider the following vector in : . Using the standard inner product on , we have .      Returning to the vector space with the inner product defined in , we can find the norm of : . This means that .    Using the definition of the norm, we can examine what happens to the length of a vector when it is multiplied by a scalar: . (Note that when is our field, for a scalar is .) From this calculation we can see that when a vector gets multiplied by a scalar, its length is multiplied by that same scalar, in a way. (We can make the most geometric sense of this when is our field and when is positive.)    Often we will want a unit vector that points in the same direction as a given vector. We accomplish this by dividing a vector by its length in order to form a vector of length 1.  If we consider the vector in with the dot product, then we have . Therefore, a unit vector in the direction of would be .      Orthogonality  In the same way that we used the dot product to define orthogonality in , we can now extend that definition to our more general setting.    Two vectors and in an inner product space are orthogonal if . A set of vectors is orthogonal if whenever .    One of the ways that orthogonality is used is through the following result.    An orthogonal set of nonzero vectors in an inner product space is linearly independent.    Let be an orthogonal set of vectors in . Suppose that for some scalars . We want to show that all the scalars must be zero. Then, for each , we have . Since but , we know that , so . This is true for each , , so is linearly independent.    The next result is sometimes referred to as the Pythagorean Theorem for general inner product spaces. When there are only two orthogonal vectors, the reader will recognize the reference to the Pythagorean Theorem.    If is an orthogonal set of vectors in an inner product space , then .      Results for Inner Product Spaces  The property of orthogonality is so powerful that we will occasionally want to call upon it even when it is not already on the scene.    Let be an inner product space and let . Then can be written as , where and is orthogonal to . Specifically, if , then .    If , then we can take and , as every vector is orthogonal to . So, we now suppose that .  If there exists such that with orthogonal to , then we must have . This shows that the only possibility for is .  Once has been determined, then the choice of is determined by we must have . Now it is easy to check that, with these values, we indeed have and that holds.      We consider two vectors in to understand the relationship in this lemma: . The lemma specifies our calculations: . The reader can check that and that .    There are two famous results which involve the norm in an inner product space. We present them without proof.   The Cauchy-Schwarz Inequality   For every pair of vectors in an inner product space , we have , with equality holding if and only if one vector is a scalar multiple of the other.     The Triangle Inequality   For every pair of vectors in an inner product space , we have .    We end this section with one final example of an inner product space.    We consider the vector space with a modified inner product: . The only change from the dot product in is the coefficient 2 on the first term. It is not difficult to verify that this is an inner product.  Since an inner product provides a way to measure distance and length (as well as angles), it is instructive to consider how this inner product changes our experience of . Just to take one example, if we think of the unit circle as the collection of all unit vectors in , then using this inner product we no longer have a circle but an ellipse. The radii of this ellipse would be horizontally and 1 vertically.       Consider and the inner product on defined there.   If , calculate .     Describe all of the vectors in which are orthogonal to using this inner product. All of these vectors fall on a line through the origin what is that line?        Consider the following function on . For polynomials and , define by . Explain why this function is not an inner product on . (You must show why one of the inner product axioms fails, and to do this you should use an example.)       Consider the following inner product on . For , . (You do not need to prove that this is an inner product.)   Calculate where and .    Find a nonzero vector which is orthogonal to the vector from part (a).    Calculate and for from part (a).       Use to prove that the following set of vectors in is linearly independent: , where .    Consider the following inner product on : .   Give an example of two vectors in which are orthogonal with respect to the dot product but which are not orthogonal with respect to this inner product.    Give an example of two vectors in which are orthogonal with respect to this inner product but which are not orthogonal with respect to the dot product.        Let be the following matrix over : . Define a function on by , where the right side of the equals sign uses the standard dot product in . Prove that this function is an inner product.    Define the following function on : . Prove that this is an inner product.    Consider the following function defined on : . Prove that this function is not an inner product.    Consider the following function defined on : . Prove or disprove: this function is an inner product.    Consider the following function defined on : . Prove that this function is not an inner product.    Prove that the standard inner product on , defined in , is an inner product.    Prove that the inner product defined in is an inner product.    Suppose that is a vector space, is an inner product space, and that is injective. For , define by , where the right-hand side is the inner product on . Prove that this defines an inner product on .    Prove properties 1, 3, and 4 of .    "
+  "body": " Inner Products   A general vector space need not have any relevant geometry, and in most of our work up to this point, geometric notions did not play a central role. In this chapter, however, we will begin to take advantage of the geometry present in some vector spaces.    The Dot Product  In Euclidean geometry, we are introduced to the dot product quite early. The dot product in is essential to our understandings of length and distance.    For two vectors , we have the dot product of and given by , where and .      Suppose that and are the following two vectors in : . Then .     Having facility with matrix multiplication now, the observant reader will notice that .     The length or norm of a vector is the nonnegative scalar defined by .      If is the same as in , then .    Of special relevance for us is the fact that the dot product gives us a notion of angles and perpendicularity.    Two vectors and in are orthogonal if .     The word orthogonal is another way of saying perpendicular, but orthogonal is used much more frequently in linear algebra.     Let , , and be the following vectors in : . We can see that and are not orthogonal, since . However, and are orthogonal, as .    As this chapter continues, the reader will see just how important orthogonality is. For now, we note that all of the vectors in the standard basis of , , are orthogonal to each other. That is, whenever .  A consequence of this last fact is stated in the following proposition.    If is given by , then for each , .    By definition of the dot product, we have , since the only nonzero entry of is .    This has been a very brief review\/introduction to the dot product. As we generalize this function in what follows, we will remind the reader of important facts and properties as we need them.    The Inner Product  In the same way that vectors in gave us the intuition to consider a general vector space, the dot product in points us toward a more general function on vector spaces. Our generalization of the dot product is called the inner product .   Before this definition we need a quick reminder. For a complex number , recall that the complex conjugate of is defined by . This will be used in the following definition.     Let be a vector space over a field , where is either or . An inner product on is a function that associates to each pair of vectors and in an element of the field satisfying all of the following axioms. For all , , and in , and all :    ;     ;     ; and     and if and only if .     A vector space together with an inner product is called an inner product space .     If the field we have in mind is instead of , then the first property listed in the definition is just . (If , then .) Also, if our field is , we still require to be a real number, as this is implicit in the fourth property where .   Before we introduce examples, we want to comment here on why the only fields we allow for inner product spaces are and . The inner product requires that a notion of order be present in any field over which a vector space is defined. This is inherent in the fourth property listed in the definition of an inner product, where we must have for all . We do not have this sort of ordering in a finite field like .  As we discuss in , each field is really a set of equivalence classes of under the equivalence relation congruence mod . So when we write as an element of , we're referring to , the equivalence class of all integers congruent to 2 mod 5. And although our convention is to use the integers as the equivalence class representatives for the elements of , this is not a requirement. So, 7 and 12 and could all by used as the representative of . This means that we cannot in any coherent way say that is greater than or equal to 0. Because of this lack of ordering, finite fields do not have the geometric properties that we require for an inner product space. We must bid a fond farewell to these dear friends for now, knowing that we will cross paths with them again in our mathematical futures.    All real vector spaces with the dot product are inner product spaces. (Once again, we would be particularly bad at generalizing if the motivating case were not an example of the general situation!)      For vectors , the standard inner product is defined by , where and .  As an example calculation, we consider the following two vectors in : . Then we have .  We will leave for the exercises the proof that the inner product axioms hold for this function.      Let denote the vector space of continuous real-valued functions on the interval . (See for a discussion of vector spaces like this one.) We can study an inner product on this space defined by the following: . Again, we provide an example of a calculation. If and , then .  Proving that the inner product axioms hold requires recalling a few facts from calculus. We leave this to the exercises.      We consider an inner product on , the vector space of all real-valued polynomials of degree at most two. For , we define the function . To become familiar with this function, we can calculate the inner product of and . Calculating only involves evaluating these polynomials at , , and and then finding the sum of the products. We find that .  The first inner product property holds since multiplication in the real numbers is commutative. The second and third properties hold by the definitions of vector addition and scalar multiplication in . The first part of the third property holds because the sum of squared real numbers must always be non-negative. The final part of the third property holds by an important fact about polynomials: any polynomial of degree which has zeros must be the zero polynomial. (This is why we must take three evaluation points for this function to be an inner product in .)    The following properties flow fairly quickly from the definition of an inner product.    Suppose that is an inner product space. Then the following statements are all true.   For each , .    For each and each , .    For each , .    If and for every , then .       We will prove the second property and leave the others for the exercises. Using the first and third axioms from the definition of the inner product, we have .    The presence of an inner product gives us a good way to define the length of a vector.    Let be an inner product space and let . Then the norm of is . If , then is called a unit vector .    In the following examples we calculate the norm of a few vectors in different vector spaces.    We consider the following vector in : . Using the standard inner product on , we have .      Returning to the vector space with the inner product defined in , we can find the norm of : . This means that .    Using the definition of the norm, we can examine what happens to the length of a vector when it is multiplied by a scalar: . (Note that when is our field, for a scalar is .) From this calculation we can see that when a vector is multiplied by a scalar, its length is multiplied by that same scalar, in a way. (We can make the most geometric sense of this when is our field and when is positive.)    Often we will want a unit vector that points in the same direction as a given vector. We accomplish this by dividing a vector by its length in order to form a vector of length 1.  If we consider the vector in with the dot product, then we have . Therefore, a unit vector in the direction of would be .      Orthogonality  In the same way that we used the dot product to define orthogonality in , we can now extend that definition to our more general setting.    Two vectors and in an inner product space are orthogonal if . A set of vectors is orthogonal if whenever .    One of the ways that orthogonality is used is through the following result.    An orthogonal set of nonzero vectors in an inner product space is linearly independent.    Let be an orthogonal set of vectors in . Suppose that for some scalars . We want to show that all the scalars must be zero. Then, for each , we have . Since but , we know that , so . This is true for each , , so is linearly independent.    The next result is sometimes referred to as the Pythagorean Theorem for general inner product spaces. When there are only two orthogonal vectors, the reader will recognize the reference to the Pythagorean Theorem.    If is an orthogonal set of vectors in an inner product space , then .      Results for Inner Product Spaces  The property of orthogonality is so powerful that we will occasionally want to call upon it even when it is not already on the scene.    Let be an inner product space and let . Then can be written as , where and is orthogonal to . Specifically, if , then .    If , then we can take and , as every vector is orthogonal to . So, we now suppose that .  If there exists such that with orthogonal to , then we must have . This shows that the only possibility for is .  Once has been determined, then the choice of is determined by we must have . Now it is easy to check that, with these values, we indeed have and that holds.      We consider two vectors in to understand the relationship in this lemma: . The lemma specifies our calculations: . The reader can check that and that .    There are two famous results which involve the norm in an inner product space. We present them without proof.   The Cauchy-Schwarz Inequality   For every pair of vectors in an inner product space , we have , with equality holding if and only if one vector is a scalar multiple of the other.     The Triangle Inequality   For every pair of vectors in an inner product space , we have .    We end this section with one final example of an inner product space.    We consider the vector space with a modified inner product: . The only change from the dot product in is the coefficient 2 on the first term. It is not difficult to verify that this is an inner product.  Since an inner product provides a way to measure distance and length (as well as angles), it is instructive to consider how this inner product changes our experience of . Just to take one example, if we think of the unit circle as the collection of all unit vectors in , then using this inner product we no longer have a circle but an ellipse. The radii of this ellipse would be horizontally and 1 vertically.       Consider and the inner product on defined there.   If , calculate .     Describe all of the vectors in which are orthogonal to using this inner product. All of these vectors fall on a line through the origin what is that line?        Consider the following function on . For polynomials and , define by . Explain why this function is not an inner product on . (You must show why one of the inner product axioms fails, and to do this you should use an example.)       Consider the following inner product on . For , . (You do not need to prove that this is an inner product.)   Calculate where and .    Find a nonzero vector which is orthogonal to the vector from part (a).    Calculate and for from part (a).       Use to prove that the following set of vectors in is linearly independent: , where .    Consider the following inner product on : .   Give an example of two vectors in which are orthogonal with respect to the dot product but which are not orthogonal with respect to this inner product.    Give an example of two vectors in which are orthogonal with respect to this inner product but which are not orthogonal with respect to the dot product.        Let be the following matrix over : . Define a function on by , where the right side of the equals sign uses the standard dot product in . Prove that this function is an inner product.    Writing Exercises   Define the following function on : . Prove that this is an inner product.    Consider the following function defined on : . Prove that this function is not an inner product.    Consider the following function defined on : . Prove or disprove: this function is an inner product.    Consider the following function defined on : . Prove that this function is not an inner product.    Prove that the standard inner product on , defined in , is an inner product.    Prove that the inner product defined in is an inner product.    Suppose that is a vector space, is an inner product space, and that is injective. For , define by , where the right-hand side is the inner product on . Prove that this defines an inner product on .    Prove properties 1, 3, and 4 of .     "
 },
 {
   "id": "def-dot-prod",
@@ -6631,7 +6631,7 @@ var ptx_lunr_docs = [
   "type": "Note",
   "number": "7.1.7",
   "title": "",
-  "body": " The word orthogonal is another way of saying perpendicular , but orthogonal is used much more frequently in linear algebra.  "
+  "body": " The word orthogonal is another way of saying perpendicular, but orthogonal is used much more frequently in linear algebra.  "
 },
 {
   "id": "subsec-dot-product-11",
@@ -6679,9 +6679,9 @@ var ptx_lunr_docs = [
   "body": " If the field we have in mind is instead of , then the first property listed in the definition is just . (If , then .) Also, if our field is , we still require to be a real number, as this is implicit in the fourth property where .  "
 },
 {
-  "id": "subsec-general-inner-prod-7",
+  "id": "subsec-general-inner-prod-8",
   "level": "2",
-  "url": "sec-inner-products.html#subsec-general-inner-prod-7",
+  "url": "sec-inner-products.html#subsec-general-inner-prod-8",
   "type": "Example",
   "number": "7.1.13",
   "title": "",
@@ -6706,11 +6706,20 @@ var ptx_lunr_docs = [
   "body": "  Let denote the vector space of continuous real-valued functions on the interval . (See for a discussion of vector spaces like this one.) We can study an inner product on this space defined by the following: . Again, we provide an example of a calculation. If and , then .  Proving that the inner product axioms hold requires recalling a few facts from calculus. We leave this to the exercises.   "
 },
 {
+  "id": "subsec-general-inner-prod-11",
+  "level": "2",
+  "url": "sec-inner-products.html#subsec-general-inner-prod-11",
+  "type": "Example",
+  "number": "7.1.16",
+  "title": "",
+  "body": "  We consider an inner product on , the vector space of all real-valued polynomials of degree at most two. For , we define the function . To become familiar with this function, we can calculate the inner product of and . Calculating only involves evaluating these polynomials at , , and and then finding the sum of the products. We find that .  The first inner product property holds since multiplication in the real numbers is commutative. The second and third properties hold by the definitions of vector addition and scalar multiplication in . The first part of the third property holds because the sum of squared real numbers must always be non-negative. The final part of the third property holds by an important fact about polynomials: any polynomial of degree which has zeros must be the zero polynomial. (This is why we must take three evaluation points for this function to be an inner product in .)   "
+},
+{
   "id": "prop-inner-product-properties",
   "level": "2",
   "url": "sec-inner-products.html#prop-inner-product-properties",
   "type": "Proposition",
-  "number": "7.1.16",
+  "number": "7.1.17",
   "title": "",
   "body": "  Suppose that is an inner product space. Then the following statements are all true.   For each , .    For each and each , .    For each , .    If and for every , then .       We will prove the second property and leave the others for the exercises. Using the first and third axioms from the definition of the inner product, we have .   "
 },
@@ -6719,27 +6728,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inner-products.html#def-norm",
   "type": "Definition",
-  "number": "7.1.17",
+  "number": "7.1.18",
   "title": "",
   "body": "  Let be an inner product space and let . Then the norm of is . If , then is called a unit vector .   "
 },
 {
-  "id": "subsec-general-inner-prod-15",
+  "id": "subsec-general-inner-prod-17",
   "level": "2",
-  "url": "sec-inner-products.html#subsec-general-inner-prod-15",
-  "type": "Example",
-  "number": "7.1.18",
-  "title": "",
-  "body": "  We consider the following vector in : . Using the standard inner product on , we have .   "
-},
-{
-  "id": "subsec-general-inner-prod-16",
-  "level": "2",
-  "url": "sec-inner-products.html#subsec-general-inner-prod-16",
+  "url": "sec-inner-products.html#subsec-general-inner-prod-17",
   "type": "Example",
   "number": "7.1.19",
   "title": "",
-  "body": "  Returning to the vector space with the inner product defined in , we can find the norm of : . This means that .   "
+  "body": "  We consider the following vector in : . Using the standard inner product on , we have .   "
 },
 {
   "id": "subsec-general-inner-prod-18",
@@ -6748,6 +6748,15 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.1.20",
   "title": "",
+  "body": "  Returning to the vector space with the inner product defined in , we can find the norm of : . This means that .   "
+},
+{
+  "id": "subsec-general-inner-prod-20",
+  "level": "2",
+  "url": "sec-inner-products.html#subsec-general-inner-prod-20",
+  "type": "Example",
+  "number": "7.1.21",
+  "title": "",
   "body": "  Often we will want a unit vector that points in the same direction as a given vector. We accomplish this by dividing a vector by its length in order to form a vector of length 1.  If we consider the vector in with the dot product, then we have . Therefore, a unit vector in the direction of would be .   "
 },
 {
@@ -6755,7 +6764,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inner-products.html#def-orthogonal-general",
   "type": "Definition",
-  "number": "7.1.21",
+  "number": "7.1.22",
   "title": "",
   "body": "  Two vectors and in an inner product space are orthogonal if . A set of vectors is orthogonal if whenever .   "
 },
@@ -6764,7 +6773,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inner-products.html#prop-orthogonality-lin-ind",
   "type": "Proposition",
-  "number": "7.1.22",
+  "number": "7.1.23",
   "title": "",
   "body": "  An orthogonal set of nonzero vectors in an inner product space is linearly independent.    Let be an orthogonal set of vectors in . Suppose that for some scalars . We want to show that all the scalars must be zero. Then, for each , we have . Since but , we know that , so . This is true for each , , so is linearly independent.   "
 },
@@ -6773,7 +6782,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inner-products.html#thm-pythag-inner-prods",
   "type": "Theorem",
-  "number": "7.1.23",
+  "number": "7.1.24",
   "title": "",
   "body": "  If is an orthogonal set of vectors in an inner product space , then .   "
 },
@@ -6782,7 +6791,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inner-products.html#lem-pair-orthog",
   "type": "Lemma",
-  "number": "7.1.24",
+  "number": "7.1.25",
   "title": "",
   "body": "  Let be an inner product space and let . Then can be written as , where and is orthogonal to . Specifically, if , then .    If , then we can take and , as every vector is orthogonal to . So, we now suppose that .  If there exists such that with orthogonal to , then we must have . This shows that the only possibility for is .  Once has been determined, then the choice of is determined by we must have . Now it is easy to check that, with these values, we indeed have and that holds.   "
 },
@@ -6791,7 +6800,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inner-products.html#subsec-results-inner-products-4",
   "type": "Example",
-  "number": "7.1.25",
+  "number": "7.1.26",
   "title": "",
   "body": "  We consider two vectors in to understand the relationship in this lemma: . The lemma specifies our calculations: . The reader can check that and that .   "
 },
@@ -6800,7 +6809,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inner-products.html#thm-cauchy-schwarz",
   "type": "Theorem",
-  "number": "7.1.26",
+  "number": "7.1.27",
   "title": "The Cauchy-Schwarz Inequality.",
   "body": " The Cauchy-Schwarz Inequality   For every pair of vectors in an inner product space , we have , with equality holding if and only if one vector is a scalar multiple of the other.   "
 },
@@ -6809,7 +6818,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inner-products.html#thm-triangle-ineq",
   "type": "Theorem",
-  "number": "7.1.27",
+  "number": "7.1.28",
   "title": "The Triangle Inequality.",
   "body": " The Triangle Inequality   For every pair of vectors in an inner product space , we have .   "
 },
@@ -6818,7 +6827,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inner-products.html#examp-alt-ip-r2",
   "type": "Example",
-  "number": "7.1.28",
+  "number": "7.1.29",
   "title": "",
   "body": "  We consider the vector space with a modified inner product: . The only change from the dot product in is the coefficient 2 on the first term. It is not difficult to verify that this is an inner product.  Since an inner product provides a way to measure distance and length (as well as angles), it is instructive to consider how this inner product changes our experience of . Just to take one example, if we think of the unit circle as the collection of all unit vectors in , then using this inner product we no longer have a circle but an ellipse. The radii of this ellipse would be horizontally and 1 vertically.   "
 },
@@ -6877,72 +6886,72 @@ var ptx_lunr_docs = [
   "body": " Let be the following matrix over : . Define a function on by , where the right side of the equals sign uses the standard dot product in . Prove that this function is an inner product.  "
 },
 {
-  "id": "sec-inner-products-8-5",
+  "id": "sec-inner-products-8-5-2",
   "level": "2",
-  "url": "sec-inner-products.html#sec-inner-products-8-5",
+  "url": "sec-inner-products.html#sec-inner-products-8-5-2",
   "type": "Exercise",
   "number": "7.1.6.5",
   "title": "",
   "body": " Define the following function on : . Prove that this is an inner product.  "
 },
 {
-  "id": "sec-inner-products-8-6",
+  "id": "sec-inner-products-8-5-3",
   "level": "2",
-  "url": "sec-inner-products.html#sec-inner-products-8-6",
+  "url": "sec-inner-products.html#sec-inner-products-8-5-3",
   "type": "Exercise",
   "number": "7.1.6.6",
   "title": "",
   "body": " Consider the following function defined on : . Prove that this function is not an inner product.  "
 },
 {
-  "id": "sec-inner-products-8-7",
+  "id": "sec-inner-products-8-5-4",
   "level": "2",
-  "url": "sec-inner-products.html#sec-inner-products-8-7",
+  "url": "sec-inner-products.html#sec-inner-products-8-5-4",
   "type": "Exercise",
   "number": "7.1.6.7",
   "title": "",
   "body": " Consider the following function defined on : . Prove or disprove: this function is an inner product.  "
 },
 {
-  "id": "sec-inner-products-8-8",
+  "id": "sec-inner-products-8-5-5",
   "level": "2",
-  "url": "sec-inner-products.html#sec-inner-products-8-8",
+  "url": "sec-inner-products.html#sec-inner-products-8-5-5",
   "type": "Exercise",
   "number": "7.1.6.8",
   "title": "",
   "body": " Consider the following function defined on : . Prove that this function is not an inner product.  "
 },
 {
-  "id": "sec-inner-products-8-9",
+  "id": "sec-inner-products-8-5-6",
   "level": "2",
-  "url": "sec-inner-products.html#sec-inner-products-8-9",
+  "url": "sec-inner-products.html#sec-inner-products-8-5-6",
   "type": "Exercise",
   "number": "7.1.6.9",
   "title": "",
   "body": " Prove that the standard inner product on , defined in , is an inner product.  "
 },
 {
-  "id": "sec-inner-products-8-10",
+  "id": "sec-inner-products-8-5-7",
   "level": "2",
-  "url": "sec-inner-products.html#sec-inner-products-8-10",
+  "url": "sec-inner-products.html#sec-inner-products-8-5-7",
   "type": "Exercise",
   "number": "7.1.6.10",
   "title": "",
   "body": " Prove that the inner product defined in is an inner product.  "
 },
 {
-  "id": "sec-inner-products-8-11",
+  "id": "sec-inner-products-8-5-8",
   "level": "2",
-  "url": "sec-inner-products.html#sec-inner-products-8-11",
+  "url": "sec-inner-products.html#sec-inner-products-8-5-8",
   "type": "Exercise",
   "number": "7.1.6.11",
   "title": "",
   "body": " Suppose that is a vector space, is an inner product space, and that is injective. For , define by , where the right-hand side is the inner product on . Prove that this defines an inner product on .  "
 },
 {
-  "id": "sec-inner-products-8-12",
+  "id": "sec-inner-products-8-5-9",
   "level": "2",
-  "url": "sec-inner-products.html#sec-inner-products-8-12",
+  "url": "sec-inner-products.html#sec-inner-products-8-5-9",
   "type": "Exercise",
   "number": "7.1.6.12",
   "title": "",

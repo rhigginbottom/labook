@@ -804,7 +804,8 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para"> Determine whether or not <span class="process-math">\(A\)</span> is diagonalizable. If it is, diagonalize it. If it isn’t, explain why it isn’t.</div>
-</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-diagonalization-7-3-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="sec-diagonalization-7-3-2-1">This matrix is not diagonalizable. There is only one eigenvalue, and the dimension of the eigenspace is one.</div></div></details></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-diagonalization-7-4-1-1">
 <div class="para">Consider the following matrix <span class="process-math">\(A \in M_3(\rr)\text{:}\)</span>
 </div>
@@ -832,8 +833,23 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para"> Determine whether or not <span class="process-math">\(A\)</span> is diagonalizable. If it is, diagonalize it. If it isn’t, explain why it isn’t. (Hint: One of the eigenvalues of <span class="process-math">\(A\)</span> is <span class="process-math">\(\lambda = -1\text{.}\)</span>)</div>
-</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="sec-diagonalization-7-6-1-1">Suppose that <span class="process-math">\(A \in M_4(\rr)\)</span> has three distinct eigenvalues. One eigenspace is one-dimensional and one of the other eigenspaces is two-dimensional. Is it possible for <span class="process-math">\(A\)</span> <em class="emphasis">not</em> to be diagonalizable? Explain.</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-diagonalization-7-5-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-diagonalization-7-5-2-1">
+<div class="para">This matrix is diagonalizable using the following matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P = \begin{bmatrix} -1 \amp -2 \amp -2 \\
+1 \amp 0 \amp -1 \\
+0 \amp 1 \amp 1 \end{bmatrix}, \hspace{6pt}
+D = \begin{bmatrix} -1 \amp 0 \amp 0 \\
+0 \amp -1 \amp 0 \\
+0 \amp 0 \amp -5 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="sec-diagonalization-7-6-1-1">Suppose that <span class="process-math">\(A \in M_4(\rr)\)</span> has three distinct eigenvalues. One eigenspace is one-dimensional and one of the other eigenspaces is two-dimensional. Is it possible for <span class="process-math">\(A\)</span> <em class="emphasis">not</em> to be diagonalizable? Explain.</div>
+<div class="solutions"><details id="sec-diagonalization-7-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="sec-diagonalization-7-6-2-1">No, that is not possible. The matrix <span class="process-math">\(A\)</span> must be diagonalizable. The dimension of the eigenspace that is not yet specified must be at least one. The sum of all dimensions of the eigenspaces must be at most four (since <span class="process-math">\(A\)</span> is <span class="process-math">\(4\times 4\)</span>), and the given information tells us that this sum will be exactly four. This means that <span class="process-math">\(A\)</span> is diagonalizable.</div></div></details></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-diagonalization-7-7-1-1">
 <div class="para">Consider the following matrix <span class="process-math">\(A \in M_2(\rr)\text{:}\)</span>
 </div>
@@ -846,12 +862,46 @@ A = \begin{bmatrix}
 </div>
 <div class="para">Show that a diagonalization <span class="process-math">\(A = PDP^{-1}\)</span> is not unique by finding two pairs of matrices <span class="process-math">\((P,D)\)</span> which diagonalize <span class="process-math">\(A\text{.}\)</span>
 </div>
-</div></article><article class="subexercises" id="sec-diagonalization-7-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+</div>
+<div class="solutions"><details id="sec-diagonalization-7-7-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="sec-diagonalization-7-7-2-1">
+<div class="para">Here is one pair of matrices that diagonalizes <span class="process-math">\(A\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P = \begin{bmatrix} 1 \amp -1 \\ 2 \amp 2 \end{bmatrix}, \hspace{6pt}
+D = \begin{bmatrix} 2 \amp 0 \\ 0 \amp 6 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We can make subtle manipulations to these matrices to find another pair which diagonalizes <span class="process-math">\(A\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P = \begin{bmatrix} -1 \amp 1 \\ 2 \amp 2 \end{bmatrix}, \hspace{6pt}
+D = \begin{bmatrix} 6 \amp 0 \\ 0 \amp 2 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">There are many, many other pairs of matrices that diagonalize <span class="process-math">\(A\text{,}\)</span> mainly because the matrix <span class="process-math">\(P\)</span> can have infinitely many different columns.</div>
+</div></div></details></div></article><article class="subexercises" id="sec-diagonalization-7-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise exercise-like" id="sec-diagonalization-7-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
 <div class="para" id="sec-diagonalization-7-8-2-1-1">Prove that if <span class="process-math">\(A\)</span> is both invertible and diagonalizable, then so is <span class="process-math">\(A^{-1}\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="sec-diagonalization-7-8-3-1-1">Prove that if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors, then so does <span class="process-math">\(A^T\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para" id="sec-diagonalization-7-8-3-1-1">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> Prove that if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors, then so does <span class="process-math">\(A^T\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec-diagonalization-7-8-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sec-diagonalization-7-8-3-2-1">
+<div class="para">If <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors, then it is diagonalizable by <a href="" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a>. This means there exist matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span> such that <span class="process-math">\(A = PDP^{-1}\text{.}\)</span> If we take the transpose of both sides of this equation, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-diagonalization.html ./knowl/xref/transpose-invertible.html ./knowl/xref/thm-diagonalization.html">
+\begin{equation*}
+A^T = (PDP^{-1})^T = (P^{-1})^TD^TP^T\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(D\)</span> is diagonal, <span class="process-math">\(D^T=D\text{.}\)</span> Also, <a href="" class="xref" data-knowl="./knowl/xref/transpose-invertible.html" title="Exercise 3.2.6.6">Exercise 3.2.6.6</a> tells us that <span class="process-math">\((P^{-1})^T=(P^T)^{-1}\text{.}\)</span> So, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-diagonalization.html ./knowl/xref/transpose-invertible.html ./knowl/xref/thm-diagonalization.html">
+\begin{equation*}
+A^T = (P^T)^{-1}DP^T\text{.}
+\end{equation*}
+</div>
+<div class="para">This proves that <span class="process-math">\(A^T\)</span> is diagonalizable, and <a href="" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a> allows us to conclude that <span class="process-math">\(A^T\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors.</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-diagonalization-7-8-4-1-1">
 <div class="para">This problem explores the relationship between invertibility and diagonalizability.</div>
 <ol class="lower-alpha">
