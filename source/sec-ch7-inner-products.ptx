@@ -69,7 +69,7 @@
   </example>
 
   <p>
-    Of special usefulness for us is the fact that the dot product gives us a notion of angles and perpendicularity. 
+    Of special relevance for us is the fact that the dot product gives us a notion of angles and perpendicularity. 
   </p>
 
   <definition xml:id="def-orthogonal">
@@ -82,7 +82,7 @@
 
   <note>
     <p>
-      The word <q>orthogonal</q> is another way of saying <q>perpendicular</q>, but <q>orthogonal</q> is used much more frequently in linear algebra.
+      The word <q>orthogonal</q> is another way of saying <q>perpendicular,</q> but <q>orthogonal</q> is used much more frequently in linear algebra.
     </p>
   </note>
 
@@ -118,7 +118,7 @@
     <p>
       By definition of the dot product, we have 
       <me>
-        \bfv \cdot \bfe_i = \sum_{j=1}^n v_j (\bfe_i)_j = v_j
+        \bfv \cdot \bfe_i = \sum_{j=1}^n v_j (\bfe_i)_j = v_i
       </me>,
       since the only nonzero entry of <m>\bfe_i</m> is <m>(\bfe_i)_i = 1</m>. 
     </p>
@@ -126,7 +126,7 @@
 </proposition>
 
 <p>
-  This has been a very brief review/introduction to the dot product. As we generalize this function in the remainder of this section, we will continue to remind the reader of important facts and properties as we need them.
+  This has been a very brief review/introduction to the dot product. As we generalize this function in what follows, we will remind the reader of important facts and properties as we need them.
 </p>
 
 </subsection>
@@ -184,7 +184,10 @@
 </note>
 
 <p>
-  Before we introduce examples, we want to comment here on why the only fields we allow for inner product spaces are <m>\rr</m> and <m>\cc</m>. The inner product requires that a notion of <em>order</em> be present in any field over which a vector space is defined. This is inherent in the fourth property listed in the definition of an inner product, where we must have <m>\lla \bfu, \bfu \rra \ge 0</m> for all <m>\bfu \in V</m>. We do not have this sort of ordering in a finite field like <m>\ff_5</m>. Since, for example, 6 and 1 and <m>-4</m> all represent the same number in <m>\ff_5</m>, we cannot in any coherent way say that this value of the field is <q>greater than or equal to 0.</q> Because of this lack of ordering, finite fields do not have the sort of geometric properties that we require for an inner product space.
+  Before we introduce examples, we want to comment here on why the only fields we allow for inner product spaces are <m>\rr</m> and <m>\cc</m>. The inner product requires that a notion of <em>order</em> be present in any field over which a vector space is defined. This is inherent in the fourth property listed in the definition of an inner product, where we must have <m>\lla \bfu, \bfu \rra \ge 0</m> for all <m>\bfu \in V</m>. We do not have this sort of ordering in a finite field like <m>\ff_5</m>. 
+</p>
+<p>
+  As we discuss in <xref ref="apdx-mod-arith"/>, each field <m>\ff_p</m> is really a set of equivalence classes of <m>\zz</m> under the equivalence relation congruence mod <m>p</m>. So when we write <m>2</m> as an element of <m>\ff_5</m>, we're referring to <m>[2]</m>, the equivalence class of all integers congruent to 2 mod 5. And although our convention is to use the integers <m>0, 1, \ldots, p-1</m> as the equivalence class representatives for the elements of <m>\ff_p</m>, this is not a requirement. So, 7 and 12 and <m>-3</m> could all by used as the representative of <m>[2] \in \ff_5</m>. This means that we cannot in any coherent way say that <m>[2] \in \ff_5</m> is <q>greater than or equal to 0.</q> Because of this lack of ordering, finite fields do not have the geometric properties that we require for an inner product space. We must bid a fond farewell to these dear friends for now, knowing that we will cross paths with them again in our mathematical futures.
 </p>
 
 <example>
@@ -198,7 +201,7 @@
 <example xml:id="examp-std-ip-cn">
   <statement>
     <p>
-      For vectors <m>\bfu, \bfv \in \cc^n</m>, the standard inner product is defined by 
+      For vectors <m>\bfu, \bfv \in \cc^n</m>, the <em>standard inner product</em> is defined by 
       <me>
         \lla \bfu, \bfv \rra = \sum_{i=1}^n u_i\overline{v_i}
       </me>,
@@ -237,6 +240,25 @@
     </p>
     <p>
       Proving that the inner product axioms hold requires recalling a few facts from calculus. We leave this to the exercises.
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      We consider an inner product on <m>P_2</m>, the vector space of all real-valued polynomials of degree at most two. For <m>p, q \in P_2</m>, we define the function
+      <me>
+        \ip{p, q} = p(0)q(0) + p(1)q(1) + p(2)q(2)
+      </me>.
+      To become familiar with this function, we can calculate the inner product of <m>p = t-2t^2</m> and <m>q = 3 + 4t</m>. Calculating <m>\ip{p,q}</m> only involves evaluating these polynomials at <m>t=0</m>, <m>t=1</m>, and <m>t=2</m> and then finding the sum of the products. We find that 
+      <md>
+        <mrow>\ip{p,q} \amp = p(0)q(0) + p(1)q(1) + p(2)q(2)</mrow>
+        <mrow> \amp = (0)(3) + (-1)(7) + (-6)(11) = -73</mrow>
+      </md>.
+    </p>
+    <p>
+      The first inner product property holds since multiplication in the real numbers is commutative. The second and third properties hold by the definitions of vector addition and scalar multiplication in <m>P_2</m>. The first part of the third property holds because the sum of squared real numbers must always be non-negative. The final part of the third property holds by an important fact about polynomials: any polynomial of degree <m>n</m> which has <m>n+1</m> zeros must be the zero polynomial. (This is why we must take <em>three</em> evaluation points for this function to be an inner product in <m>P_2</m>.)
     </p>
   </statement>
 </example>
@@ -336,7 +358,7 @@
   <me>
     \vnorm{c\bfv} = \sqrt{\ip{c\bfv, c\bfv}} = \sqrt{|c|^2\ip{\bfv, \bfv}} = |c| \vnorm{\bfv}
   </me>.
-  (Note that when <m>\cc</m> is our field, <m>|c|</m> for a scalar <m>c = a + bi</m> is <m>|c| = \sqrt{a^2+b^2}</m>.) From this calculation we can see that when a vector gets multiplied by a scalar, its length is multiplied by that same scalar, in a way. (We can make the most geometric sense of this when <m>\rr</m> is our field and when <m>c</m> is positive.)
+  (Note that when <m>\cc</m> is our field, <m>|c|</m> for a scalar <m>c = a + bi</m> is <m>|c| = \sqrt{a^2+b^2}</m>.) From this calculation we can see that when a vector is multiplied by a scalar, its length is multiplied by that same scalar, in a way. (We can make the most geometric sense of this when <m>\rr</m> is our field and when <m>c</m> is positive.)
 </p>
 
 <example>
@@ -351,7 +373,7 @@
       </me>.
       Therefore, a unit vector in the direction of <m>\bfv</m> would be 
       <me>
-        \frac{1}{\sqrt{17}} \bfv = \begin{bmatrix} -\frac{1}{\sqrt{17}} \\ \frac{4}{\sqrt{17}} \end{bmatrix}
+        \frac{1}{\sqrt{17}} \bfv = \begin{bmatrix} -\frac{1}{\sqrt{17}} \\[2pt] \frac{4}{\sqrt{17}} \end{bmatrix}
       </me>.      
     </p>
   </statement>
@@ -446,7 +468,7 @@
     <p>
       If there exists <m>c \in \ff</m> such that <m>\bfu = c\bfv + \bfw</m> with <m>\bfw</m> orthogonal to <m>\bfv</m>, then we must have
       <me>
-        \ip{\bfu, \bfv} = \ip{c\bfv + \bfw, \bfv} = c\ip{\bfv,\bfv} + \ip{\bfw, \bfv} = c \vnorm{\bfv^2}
+        \ip{\bfu, \bfv} = \ip{c\bfv + \bfw, \bfv} = c\ip{\bfv,\bfv} + \ip{\bfw, \bfv} = c \vnorm{\bfv}^2
       </me>.
       This shows that the only possibility for <m>c</m> is <m>c = \frac{\ip{\bfu, \bfv}}{\vnorm{\bfv}^2}</m>. 
     </p>
@@ -467,7 +489,7 @@
       The lemma specifies our calculations: 
       <me>
         c = \frac{\ip{\bfu,\bfv}}{\vnorm{\bfv}^2} = \frac{4}{5}, \hspace{6pt} 
-        \bfw = \bfu - c\bfv = \begin{bmatrix} \frac{14}{5} \\ \frac{7}{5} \end{bmatrix}
+        \bfw = \bfu - c\bfv = \begin{bmatrix} \frac{14}{5} \\[2pt] \frac{7}{5} \end{bmatrix}
       </me>.
       The reader can check that <m>\ip{\bfv,\bfw}=0</m> and that <m>\bfu = c\bfv + \bfw</m>.
     </p>
@@ -653,6 +675,8 @@
       </p>
     </statement>
   </exercise>
+  <subexercises>
+    <title>Writing Exercises</title>  
   <exercise>
     <statement>
       <p>
@@ -736,6 +760,7 @@
       </p>
     </statement>
   </exercise> -->
+</subexercises>
 </exercises> 
 
 

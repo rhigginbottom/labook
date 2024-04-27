@@ -521,6 +521,11 @@
         Determine whether or not <m>A</m> is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't.
       </p>
     </statement>
+    <answer>
+      <p>
+        This matrix is not diagonalizable. There is only one eigenvalue, and the dimension of the eigenspace is one.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -551,6 +556,19 @@
         Determine whether or not <m>A</m> is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't. (Hint: One of the eigenvalues of <m>A</m> is <m>\lambda = -1</m>.)
       </p>
     </statement>
+    <answer>
+      <p>
+        This matrix is diagonalizable using the following matrices <m>P</m> and <m>D</m>:
+        <me>
+          P = \begin{bmatrix} -1 \amp -2 \amp -2 \\
+          1 \amp 0 \amp -1 \\
+          0 \amp 1 \amp 1 \end{bmatrix}, \hspace{6pt}
+          D = \begin{bmatrix} -1 \amp 0 \amp 0 \\
+          0 \amp -1 \amp 0 \\
+          0 \amp 0 \amp -5 \end{bmatrix}
+        </me>.        
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -558,6 +576,11 @@
         Suppose that <m>A \in M_4(\rr)</m> has three distinct eigenvalues. One eigenspace is one-dimensional and one of the other eigenspaces is two-dimensional. Is it possible for <m>A</m> <em>not</em> to be diagonalizable? Explain.
       </p>
     </statement>
+    <answer>
+      <p>
+        No, that is not possible. The matrix <m>A</m> must be diagonalizable. The dimension of the eigenspace that is not yet specified must be at least one. The sum of all dimensions of the eigenspaces must be at most four (since <m>A</m> is <m>4\times 4</m>), and the given information tells us that this sum will be exactly four. This means that <m>A</m> is diagonalizable.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -571,6 +594,21 @@
         Show that a diagonalization <m>A = PDP^{-1}</m> is not unique by finding two pairs of matrices <m>(P,D)</m> which diagonalize <m>A</m>.
       </p>
     </statement>
+    <answer>
+      <p>
+        Here is one pair of matrices that diagonalizes <m>A</m>:
+        <me>
+          P = \begin{bmatrix} 1 \amp -1 \\ 2 \amp 2 \end{bmatrix}, \hspace{6pt}
+          D = \begin{bmatrix} 2 \amp 0 \\ 0 \amp 6 \end{bmatrix}
+        </me>.
+        We can make subtle manipulations to these matrices to find another pair which diagonalizes <m>A</m>:
+        <me>
+          P = \begin{bmatrix} -1 \amp 1 \\ 2 \amp 2 \end{bmatrix}, \hspace{6pt}
+          D = \begin{bmatrix} 6 \amp 0 \\ 0 \amp 2 \end{bmatrix}
+        </me>.
+        There are many, many other pairs of matrices that diagonalize <m>A</m>, mainly because the matrix <m>P</m> can have infinitely many different columns.
+      </p>
+    </answer>
   </exercise>
   <subexercises>
     <title>Writing Exercises</title>  
@@ -584,9 +622,22 @@
     <exercise>
       <statement>
         <p>
-          Prove that if <m>A</m> has <m>n</m> linearly independent eigenvectors, then so does <m>A^T</m>.
+          Let <m>A \in M_n(\ff)</m>. Prove that if <m>A</m> has <m>n</m> linearly independent eigenvectors, then so does <m>A^T</m>.
         </p>
       </statement>
+      <solution>
+        <p>
+          If <m>A</m> has <m>n</m> linearly independent eigenvectors, then it is diagonalizable by <xref ref="thm-diagonalization"/>. This means there exist matrices <m>P</m> and <m>D</m> such that <m>A = PDP^{-1}</m>. If we take the transpose of both sides of this equation, we get
+          <me>
+            A^T = (PDP^{-1})^T = (P^{-1})^TD^TP^T
+          </me>.
+          Since <m>D</m> is diagonal, <m>D^T=D</m>. Also, <xref ref="transpose-invertible"/> tells us that <m>(P^{-1})^T=(P^T)^{-1}</m>. So, we have 
+          <me>
+            A^T = (P^T)^{-1}DP^T
+          </me>.
+          This proves that <m>A^T</m> is diagonalizable, and <xref ref="thm-diagonalization"/> allows us to conclude that <m>A^T</m> has <m>n</m> linearly independent eigenvectors.
+        </p>
+      </solution>
     </exercise>
     <exercise>
       <statement>

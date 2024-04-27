@@ -712,7 +712,7 @@
   </exercise>
   <subexercises>
   <title>Writing Exercises</title>  
-  <exercise>
+  <exercise xml:id="transpose-invertible">
     <statement>
       <p>
         Let <m>A \in M_n(\ff)</m> be invertible. Prove that <m>A^T</m> is invertible and that <m>(A^T)^{-1} = (A^{-1})^T</m>.
