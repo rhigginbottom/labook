@@ -497,6 +497,98 @@
 <exercise>
   <statement>
     <p>
+      Consider the following two matrices in <m>M_2(\ff_7)</m>: 
+      <me>
+        A = \begin{bmatrix}
+        2 \amp 4 \\ 3 \amp 5
+        \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+        B = \begin{bmatrix}
+        4 \amp 4 \\ 5 \amp 3
+        \end{bmatrix}
+      </me>.
+      <ol>
+        <li>
+          <p>
+            Explain why the trace and rank are <em>not</em> useful invariants to say that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that <m>A</m> and <m>B</m> are not similar.
+          </p>
+          <!-- evalues of A are 3, 4; evalues of B are 1, 6 -->
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Consider the following two matrices in <m>M_3(\ff_7)</m>: 
+      <me>
+        A = \begin{bmatrix}
+        4 \amp 6 \amp 2 \\
+        1 \amp 5 \amp 6 \\
+        1 \amp 5 \amp 5
+        \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+        B = \begin{bmatrix}
+        2 \amp 2 \amp 2 \\
+        4 \amp 4 \amp 1 \\
+        5 \amp 5 \amp 1
+        \end{bmatrix}
+      </me>.
+      <ol>
+        <li>
+          <p>
+            Explain why the trace, rank, and determinant are <em>not</em> useful invariants to say that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that <m>A</m> and <m>B</m> are not similar.
+          </p>
+          <!-- evalues of A are 0, 1, 6; evalues of B are 0, 3, 4 -->
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Consider the following two matrices in <m>M_3(\ff_7)</m>: 
+      <me>
+        A = \begin{bmatrix}
+        2 \amp 2 \amp 4 \\
+        5 \amp 3 \amp 3 \\
+        4 \amp 0 \amp 0
+        \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+        B = \begin{bmatrix}
+        2 \amp 0 \amp 0 \\
+        5 \amp 4 \amp 3 \\
+        2 \amp 5 \amp 6
+        \end{bmatrix}
+      </me>.
+      <ol>
+        <li>
+          <p>
+            Explain why the trace, rank, determinant, and characteristic polynomial are <em>not</em> useful invariants to say that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that <m>A</m> and <m>B</m> are not similar.
+          </p>
+          <!-- evalues of A are 2,2,1; evalues of B are 2,2,1; A not diagonalizable but B is -->
+        </li>
+      </ol>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
       There are 16 elements of the set <m>M_2(\ff_2)</m>. How many equivalence classes are there for this set under the similarity equivalence relation? Use as many of the invariants as you can to distinguish between matrices that are not similar to each other.
     </p>
   </statement>
@@ -530,7 +622,7 @@
 <exercise>
   <statement>
     <p>
-      Is diagonalizability an invariant (for similarity) on the set <m>M_n(\ff)</m>? In other words, if <m>A</m> and <m>B</m> are similar, must it be true that either (a) they are both diagonalizable, or (b) they are both not diagonalizable?
+      Fix a positive integer <m>n \ge 2</m>. Is diagonalizability an invariant (for similarity) on the set <m>M_n(\ff)</m>? In other words, for <m>A,B \in M_n(\ff)</m>, if <m>A</m> and <m>B</m> are similar, must it be true that either (a) they are both diagonalizable, or (b) they are both not diagonalizable?
     </p>
   </statement>
 </exercise>
