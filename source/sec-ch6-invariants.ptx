@@ -461,6 +461,22 @@
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Since <m>\rank(A) = \rank(B) = 3</m> and <m>\tr(A)=\tr(B)=2</m>, neither the rank nor the trace can tell us whether or not <m>A</m> and <m>B</m> are similar matrices.
+          </p>
+        </li>
+        <li>
+          <p>
+            We can calculate that <m>\det(A) = -2</m> while <m>\det(B)=-12</m>, so this means that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -493,6 +509,22 @@
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            We find that <m>\tr(A)=\tr(B)=3</m>, <m>\rank(A)=\rank(B)=2</m>, and <m>\det(A)=\det(B)=0</m>, so the trace, rank, and determinant do not give us enough information to determine whether or not <m>A</m> and <m>B</m> are similar.
+          </p>
+        </li>
+        <li>
+          <p>
+            Some calculation shows that the eigenvalues for <m>A</m> are <m>\lambda=0, -1, 4</m>, while the eigenvalues for <m>B</m> are <m>\lambda=0, 1, 2</m>. Since these are different (and therefore the characteristic polynomials are different), we see that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -585,6 +617,22 @@
       </ol>
     </p>
   </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            We find that <m>\rank(A)=\rank(B)=3</m>, <m>\tr(A)=\tr(B)=5</m>, and <m>\det(A)=\det(B)=4</m>. Further, the eigenvalues for both <m>A</m> and <m>B</m> are <m>\lambda = 1, 2, 2</m>. These four invariants do not provide enough information to determine whether or not <m>A</m> and <m>B</m> are similar.
+          </p>
+        </li>
+        <li>
+          <p>
+            We can show that <m>A</m> is not diagonalizable but <m>B</m> is. Since diagonalizability is an invariant for similarity, this proves that <m>A</m> and <m>B</m> are not similar.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </answer>
 </exercise>
 <exercise>
   <statement>
@@ -686,6 +734,15 @@
       Is the trace an invariant for row equivalence? Justify your answer.
     </p>
   </statement>
+  <answer>
+    <p>
+      No, trace is not an invariant for row equivalence. Consider the following matrix <m>A \in M_2(\rr)</m>:
+      <me>
+        A = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}
+      </me>.
+      The matrix <m>A</m> is invertible, so it is row equivalent to <m>I_2</m>. However, <m>\tr(A)=3</m> and <m>\tr(I_2)=2</m>. This proves that trace is not an invariant for row equivalence.
+    </p>
+  </answer>
 </exercise>
   <exercise>
     <statement>
@@ -707,6 +764,20 @@
         Is invertibility an invariant for similarity? Justify your answer. 
       </p>
     </statement>
+    <answer>
+      <p>
+        Yes, invertibility is an invariant for similarity. This argument relies on the fact that the determinant is an invariant for similarity.
+      </p>
+      <p>
+        We will denote the similarity relation by <m>A \sim B</m>. Suppose that <m>A \sim B</m> and that <m>A</m> is invertible. This means that <m>\det(A)\neq 0</m>, and since <m>A \sim B</m>, this means that <m>\det(B) \neq 0</m> also. But the fact that <m>\det(B) \neq 0</m> means that <m>B</m> is invertible.
+      </p>
+      <p>
+        We now suppose that <m>A \sim B</m> and that <m>A</m> is not invertible. This means that <m>\det(A)=0</m>, and since <m>A\sim B</m>, this means that <m>\det(B)=0</m>. But <m>\det(B)=0</m> means that <m>B</m> is not invertible.
+      </p>
+      <p>
+        This proves that invertibility is an invariant for similarity.
+      </p>
+    </answer>
   </exercise>
 </subexercises>
 </exercises> 
