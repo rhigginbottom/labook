@@ -276,7 +276,7 @@
       <me>
         \bfe_1 = \begin{bmatrix} \frac{1}{\sqrt{2}} \\ 0 \\ \frac{1}{\sqrt{2}} \end{bmatrix}
       </me>.
-      Next, we need <m>\bfv_2 \cdot \bfe_1 = \frac{2}{\sqrt{2}}</m> for the next calculation: 
+      We need <m>\bfv_2 \cdot \bfe_1 = \frac{2}{\sqrt{2}}</m> for the next calculation: 
       <me>
         \bfe_2' = \bfv_2 - (\bfv_2 \cdot \bfe_1)\bfe_1 = \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}
       </me>.
@@ -489,6 +489,8 @@
       </p>
     </statement>
   </exercise>
+  <subexercises>
+    <title>Writing Exercises</title>  
   <exercise>
     <statement>
       <p>
@@ -496,6 +498,7 @@
       </p> <!-- Meckes 4.2.20 -->
     </statement>
   </exercise>
+</subexercises>
 </exercises> 
 
 
