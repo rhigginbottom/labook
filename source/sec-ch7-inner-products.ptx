@@ -757,17 +757,6 @@
   <exercise>
     <statement>
       <p>
-       Define the following function on <m>M_2(\rr)</m>: 
-       <me>
-        \ip{A,B} = \tr(A^TB)
-       </me>.
-       Prove that this is an inner product.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         Consider the following function defined on <m>\rr^2</m>: 
         <me>
           \ip{\bfu,\bfv} = u_1v_2 + u_2v_1
