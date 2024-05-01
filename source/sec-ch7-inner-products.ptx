@@ -660,7 +660,7 @@
       </p>
     </statement>
   </exercise>
-  <exercise>
+  <exercise xml:id="ip-A-R2">
     <statement>
       <p>
        Let <m>A</m> be the following matrix over <m>\rr</m>:
@@ -671,7 +671,84 @@
        <me>
         \ip{\bfu, \bfv} = (A\bfu) \cdot (A\bfv)
        </me>,
-       where the right side of the equals sign uses the standard dot product in <m>\rr^2</m>. Prove that this function is an inner product.
+       where the right side of the equals sign uses the standard dot product in <m>\rr^2</m>. (This function defines an inner product, but you do not need to prove this right now.)
+       <ol>
+        <li>
+          <p>
+            Let <m>\bfu</m> and <m>\bfv</m> be the following vectors:
+            <me>
+              \bfu = \begin{bmatrix} 1 \\ -2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+              \bfv = \begin{bmatrix} 2 \\ 4 \end{bmatrix}
+            </me>.
+            Calculate <m>\ip{\bfu, \bfv}</m> using this inner product.
+          </p>
+        </li>
+        <li>
+          <p>
+            Calculate <m>\vnorm{\bfu}</m> and <m>\vnorm{\bfv}</m> for the vectors <m>\bfu</m> and <m>\bfv</m> given in part a.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find a vector <m>\bfw \in \rr^2</m> which is orthogonal to the vector <m>\bfu</m> (given in part a.) with respect to this inner product.
+          </p>
+        </li>
+       </ol>       
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="trace-ip-exer">
+    <statement>
+      <p>
+       Define the following function on <m>M_2(\rr)</m>: 
+       <me>
+        \ip{A,B} = \tr(A^TB)
+       </me>.
+       (This function defines an inner product, but you do not need to prove this right now.)
+       <ol>
+        <li>
+          <p>
+            Let <m>A</m> and <m>B</m> be the following matrices:
+            <me>
+              A = \begin{bmatrix} 2 \amp 0 \\ 1 \amp -3 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+              B = \begin{bmatrix} -4 \amp 1 \\ 1 \amp 2 \end{bmatrix}
+            </me>.
+            Calculate <m>\ip{A, B}</m> using this inner product.
+          </p>
+        </li>
+        <li>
+          <p>
+            Calculate <m>\vnorm{A}</m> and <m>\vnorm{B}</m> for the matrices <m>A</m> and <m>B</m> given in part a.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find a matrix <m>C \in M_2(\rr)</m> which is orthogonal to the matrix <m>A</m> (given in part a.) with respect to this inner product.
+          </p>
+        </li>
+       </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following function defined on <m>M_2(\rr)</m>: 
+        <me>
+          \ip{A,B} = \det(A) \cdot \det(B)
+        </me>.
+        Show that this function is not an inner product.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the following function defined on <m>P_2</m>: 
+        <me>
+          \ip{p,q} = p(-1)q(-1) + p(2)q(2)
+        </me>.
+        Show that this function is not an inner product.
       </p>
     </statement>
   </exercise>
@@ -691,17 +768,6 @@
   <exercise>
     <statement>
       <p>
-        Consider the following function defined on <m>P_2</m>: 
-        <me>
-          \ip{p,q} = p(-1)q(-1) + p(2)q(2)
-        </me>.
-        Prove that this function is not an inner product.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         Consider the following function defined on <m>\rr^2</m>: 
         <me>
           \ip{\bfu,\bfv} = u_1v_2 + u_2v_1
@@ -713,11 +779,14 @@
   <exercise>
     <statement>
       <p>
-        Consider the following function defined on <m>M_2(\rr)</m>: 
-        <me>
-          \ip{A,B} = \det(A) \cdot \det(B)
-        </me>.
-        Prove that this function is not an inner product.
+        Prove that the function given in <xref ref="ip-A-R2"/> is an inner product.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove that the function given in <xref ref="trace-ip-exer"/> is an inner product.
       </p>
     </statement>
   </exercise>
