@@ -466,7 +466,7 @@
   <exercise>
   <statement>
     <p>
-      Let <m>L</m> be the line <m>y = 5x</m> in <m>\rr^2</m>. 
+      Let <m>L</m> be the line <m>y = \frac{1}{2}x</m> in <m>\rr^2</m>. (This is a subspace of <m>\rr^2</m>.)
       <ol>
         <li>
           <p>
@@ -491,15 +491,8 @@
 <exercise> 
 <statement>
   <p>
-    Repeat the previous reading question if the inner product on <m>\rr^2</m> is 
-    <me>
-      \ip{\bfu, \bfv} = 2u_1v_1 + u_2v_2
-    </me>.    
+    Consider the same situation as in the first reading question. Using <xref ref="prop-matrix-of-proj-1"/>, find the matrix of <m>\proj_L</m> with respect to the standard basis <m>\mce</m> of <m>\rr^2</m>.
   </p>
-  <!-- <p>
-    <m>\bfe_1 = \begin{bmatrix} \frac{1}{\sqrt{27}} \\ \frac{5}{\sqrt{27}} \end{bmatrix}</m>
-    <m>\proj_L(\bfv) = \begin{bmatrix} \frac{19}{27} \\ \frac{95}{27} \end{bmatrix}</m>
-  </p> -->
 </statement>
 </exercise>
 </reading-questions>
