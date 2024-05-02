@@ -630,6 +630,11 @@
         </me>.         
       </p>
     </statement>
+    <answer>
+      <p>
+        Calculation shows that the set <m>\{\bfv_1, \bfv_2,\bfv_3\}</m> is orthogonal, so then it is linearly independent.
+      </p>
+    </answer>
   </exercise><!-- 
   <exercise>
     <statement>
@@ -659,6 +664,32 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We let <m>\bfu</m> and <m>\bfv</m> be the following vectors:
+              <me>
+                \bfu = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+                \bfv = \begin{bmatrix} -2 \\ 1 \end{bmatrix}
+              </me>.
+              Then it is easy to see that <m>\bfu \cdot \bfv = 0</m>, but <m>\ip{\bfu, \bfv} = 4</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We let <m>\bfu</m> and <m>\bfv</m> be the following vectors:
+              <me>
+                \bfu = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+                \bfv = \begin{bmatrix} -6 \\ 1 \end{bmatrix}
+              </me>.
+              Then it is easy to see that <m>\ip{\bfu, \bfv} = 0</m>, but <m>\bfu \cdot \bfv = -4</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise xml:id="ip-A-R2">
     <statement>
@@ -740,6 +771,15 @@
         Show that this function is not an inner product.
       </p>
     </statement>
+    <answer>
+      <p>
+        Let <m>A = \begin{bmatrix} 1 \amp 1 \\ 2 \amp 2 \end{bmatrix}</m>. It is fairly easy to see that <m>\det(A) = 0</m>, so we have
+        <me>
+          \ip{A, A} = 0 \cdot 0 = 0
+        </me>.
+        However, since <m>A</m> is not the zero matrix (i.e., the zero vector for the vector space <m>M_2(\rr)</m>), the fourth axiom of the inner product does not hold for this function.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -764,6 +804,15 @@
         Prove or disprove: this function is an inner product.
       </p>
     </statement>
+    <solution>
+      <p>
+        This function is not an inner product. Consider the vector <m>\bfu = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>. We have
+        <me>
+          \ip{\bfu, \bfu} = (1)(0) + (0)(1) = 0
+        </me>.
+        However, since <m>\bfu</m> is not the zero vector in <m>\rr^2</m>, the fourth axiom of the inner product does not hold.
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
@@ -792,6 +841,42 @@
         Prove that the inner product defined in <xref ref="examp-ip-fn-space"/> is an inner product.
       </p>
     </statement>
+    <solution>
+      <p>
+        We will show that all four of the inner product axioms hold. For the first axiom, we note that everything here is real-valued, so we do not need to worry about any complex conjugates. Since the order of the functions within a definite integral can be switched, we have
+        <md>
+          <mrow>\ip{g, f} \amp = \int_0^1 g(x)f(x)\;dx</mrow>
+          <mrow> \amp = \int_0^1 f(x)g(x)\;dx = \ip{f,g}</mrow>
+        </md>.
+        This shows that the first axiom holds.
+      </p>
+      <p>
+        For the second axiom, we let <m>f, g, h \in C([0,1])</m>. The definite integral is linear with respect to the sum of functions, so we have
+        <md>
+          <mrow>\ip{f+g,h} \amp = \int_0^1 (f(x)+g(x))h(x)\;dx</mrow>
+          <mrow> \amp = \int_0^1 (f(x)h(x) + g(x)h(x))\;dx</mrow>
+          <mrow> \amp = \int_0^1 f(x)h(x)\;dx + \int_0^1 g(x)h(x)\;dx</mrow>
+          <mrow> \amp = \ip{f,h} + \ip{g,h}</mrow>
+        </md>.
+        This proves that the second axiom holds.
+      </p>
+      <p>
+        Let <m>f,g \in C([0,1])</m> and let <m>c \in \rr</m>. The definite integral is linear with respect to scalar multiplication by a real number, so we have
+        <md>
+          <mrow>\ip{cf,g} \amp = \int_0^1 (cf(x))g(x)\;dx</mrow>
+          <mrow> \amp = c \int_0^1 f(x)g(x)\;dx</mrow>
+          <mrow> \amp = c \ip{f,g}</mrow>
+        </md>.
+        This proves that the third axiom holds.
+      </p>
+      <p>
+        Let <m>f\in C([0,1])</m>. We observe that <m>f(x)^2</m> is a function with values that are always non-negative (since each value of this function is a real number squared). Since the definite integral can be interpreted as calculating signed area between the graph of a function and the <m>x</m>-axis, we know that 
+        <me>
+          \ip{f,f} = \int_0^1 f(x)^2\;dx \ge 0
+        </me>.
+        Finally, using this same signed area interpretation of the definite integral, the only way a non-negative function could produce a zero value for the definite integral is if the function was uniformly the zero function. This means that if <m>\ip{f,f}=0</m>, we must have <m>f(x)^2 = 0</m> and therefore <m>f(x) = 0</m>. This proves that the fourth axiom holds.
+      </p>
+    </solution>
   </exercise>
   <exercise>
     <statement>
