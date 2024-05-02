@@ -4,7 +4,7 @@
   <title>Orthogonal Projections</title>
   <introduction>
     <p>
-      An inner product provides the tool to decompose vectors into useful components. We have already seen this in <xref ref="lem-pair-orthog"/>, but in this section we will expand our discussion. The process of orthogonal projection opens the door to many useful applications.
+      An inner product provides the tool to decompose vectors into useful components. We have already seen this in <xref ref="lem-pair-orthog"/>, but in this section we will expand our discussion. The process of orthogonal projection opens the door to many applications.
     </p>
   </introduction>
 
@@ -179,7 +179,7 @@
   </statement>
   <proof>
     <p>
-      We prove property 1. Let <m>\bfv_1, \bfv_2 \in V</m>, so we can write <m>\bfv_1 = \bfu_1 + \bfw_1</m> and <m>\bfv_2 = \bfu_2 + \bfw_2</m>, for <m>\bfu_1, \bfu_2 \in U</m> and <m>\bfw_1,\bfw_2 \in U^{\perp}</m>. Then 
+      We will prove property 1. Let <m>\bfv_1, \bfv_2 \in V</m>, so we can write <m>\bfv_1 = \bfu_1 + \bfw_1</m> and <m>\bfv_2 = \bfu_2 + \bfw_2</m>, for <m>\bfu_1, \bfu_2 \in U</m> and <m>\bfw_1,\bfw_2 \in U^{\perp}</m>. Then 
       <me>
         \bfv_1 + \bfv_2 = (\bfu_1 + \bfu_2) + (\bfw_1 + \bfw_2)
       </me>,
@@ -225,7 +225,7 @@
       <me>
         \ip{\bfu, \bfv} = \bfv^* \bfu
       </me>,
-      where the operation on the right side of the equals sign is matrix multiplication.
+      where matrix multiplication is in view on the right side of the equals sign.
     </p>
   </proof>
 </proposition>
@@ -361,7 +361,7 @@
       Equality holds here if and only if <m>\vnorm{\bfv - \proj_U(\bfv)}^2 = 0</m>, which is true if and only if <m>\bfv = \proj_U(\bfv)</m>. This only happens if <m>\bfv \in U</m>.
     </p>
     <p>
-      We now prove the second part of the theorem. We know that <m>\bfv - \proj_U(\bfv) \in U^{\perp}</m> and that <m>\proj_U(\bfv) - \bfu \in U</m>, so 
+      We now move on to the second part of the theorem. We know that <m>\bfv - \proj_U(\bfv) \in U^{\perp}</m> and that <m>\proj_U(\bfv) - \bfu \in U</m>, so 
       <md>
         <mrow>\vnorm{\bfv - \bfu}^2 \amp = \vnorm{(\bfv - \proj_U(\bfv)) + (\proj_U(\bfv) - \bfu)}^2</mrow>
         <mrow> \amp = \vnorm{(\bfv - \proj_U(\bfv))}^2 + \vnorm{(\proj_U(\bfv) - \bfu)}^2</mrow>
@@ -538,20 +538,6 @@
       </p>
     </statement>
   </exercise>
-<exercise>
-  <statement>
-    <p>
-      Let <m>U</m> be a subspace of an inner product space <m>V</m>. Prove that <m>U^{\perp}</m> is a subspace of <m>V</m>. 
-    </p>
-  </statement>
-</exercise>
-<exercise>
-  <statement>
-    <p>
-      Let <m>A</m> be an <m>m\times n</m> matrix. Prove that <m>(\row(A))^{\perp} = \nll(A)</m>. 
-    </p> <!-- Lay, Thm 3, p.337 -->
-  </statement>
-</exercise>
   <exercise>
     <statement>
       <p>
@@ -574,6 +560,23 @@
       </p> <!-- y = (2/5)x + 1/2 -->
     </statement>
   </exercise>
+  <subexercises>
+    <title>Writing Exercises</title>  
+    <exercise>
+      <statement>
+        <p>
+          Let <m>U</m> be a subspace of an inner product space <m>V</m>. Prove that <m>U^{\perp}</m> is a subspace of <m>V</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m\times n</m> matrix. Prove that <m>(\row(A))^{\perp} = \nll(A)</m>. 
+        </p> <!-- Lay, Thm 3, p.337 -->
+      </statement>
+    </exercise>
+  </subexercises>
 </exercises> 
 
 
