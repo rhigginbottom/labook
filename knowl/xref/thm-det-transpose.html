@@ -15,7 +15,7 @@
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span>
 </h4>
 <div class="para">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> Then <span class="process-math">\(\det(A) = \det(A^T)\text{.}\)</span>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">We will proceed using induction on the size of the matrix. When <span class="process-math">\(n=1\text{,}\)</span> a matrix <span class="process-math">\(A\)</span> and its transpose are identical, so <span class="process-math">\(\det(A) = \det(A^T)\)</span> trivially.</div> <div class="para logical">
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We will proceed using induction on the size of the matrix. When <span class="process-math">\(n=1\text{,}\)</span> a matrix <span class="process-math">\(A\)</span> and its transpose are identical, so <span class="process-math">\(\det(A) = \det(A^T)\)</span> trivially.</div> <div class="para logical">
 <div class="para">We now suppose that for any square matrix of size <span class="process-math">\(n-1\text{,}\)</span> the determinant of the matrix and its transpose are equal. In the calculation below, we will employ a trick at the beginning in order to have a second summation sign later on. The first equation here is true because taking the average of one number <span class="process-math">\(n\)</span> times will give the same quantity again. We will use the notation <span class="process-math">\([A^T]_{ij}\)</span> to indicate the <span class="process-math">\((i,j)\)</span>-entry of <span class="process-math">\(A^T\text{.}\)</span> We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-any-row.html">
 \begin{align*}
@@ -29,7 +29,7 @@
 \det(A^T) = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det((A_{ji})^T)\text{.}
 \end{equation*}
 </div>
-<div class="para">We now invoke the induction hypothesis. Since <span class="process-math">\(A_{ji}\)</span> is a square matrix of size <span class="process-math">\(n-1\text{,}\)</span> we have <span class="process-math">\(\det((A_{ji})^T) = \det(A_{ji})\text{.}\)</span> This, along with <a href="" class="xref" data-knowl="./knowl/xref/thm-det-any-row.html" title="Theorem 4.1.7">Theorem 4.1.7</a>, allows us to finish the argument:</div>
+<div class="para">We now invoke the induction hypothesis. Since <span class="process-math">\(A_{ji}\)</span> is a square matrix of size <span class="process-math">\(n-1\text{,}\)</span> we have <span class="process-math">\(\det((A_{ji})^T) = \det(A_{ji})\text{.}\)</span> This, along with <a href="sec-define-det.html#thm-det-any-row" class="xref" data-knowl="./knowl/xref/thm-det-any-row.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.7">Theorem 4.1.7</a>, allows us to finish the argument:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-any-row.html">
 \begin{align*}
 \det(A^T) \amp = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det(A_{ji})\\
