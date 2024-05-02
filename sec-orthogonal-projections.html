@@ -428,7 +428,7 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-orthogonal-projections"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">7.3</span><span class="space"> </span><span class="title">Orthogonal Projections</span>
 </h2>
-<section class="introduction" id="sec-orthogonal-projections-2"><div class="para" id="sec-orthogonal-projections-2-1">An inner product provides the tool to decompose vectors into useful components. We have already seen this in <a href="sec-inner-products.html#lem-pair-orthog" class="xref" data-knowl="./knowl/xref/lem-pair-orthog.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 7.1.25">Lemma 7.1.25</a>, but in this section we will expand our discussion. The process of orthogonal projection opens the door to many useful applications.</div></section><section class="subsection" id="subsec-orthog-complements"><h3 class="heading hide-type">
+<section class="introduction" id="sec-orthogonal-projections-2"><div class="para" id="sec-orthogonal-projections-2-1">An inner product provides the tool to decompose vectors into useful components. We have already seen this in <a href="sec-inner-products.html#lem-pair-orthog" class="xref" data-knowl="./knowl/xref/lem-pair-orthog.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 7.1.25">Lemma 7.1.25</a>, but in this section we will expand our discussion. The process of orthogonal projection opens the door to many applications.</div></section><section class="subsection" id="subsec-orthog-complements"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.3.1</span><span class="space"> </span><span class="title">Orthogonal Complements</span>
 </h3>
 <div class="para" id="subsec-orthog-complements-2">In an inner product space, we can collect all vectors orthogonal to any given set of vectors. In particular, we can do this with a subspace.</div>
@@ -548,7 +548,7 @@ U^{\perp} = \{ \bfv \in V \mid \ip{\bfu,\bfv} = 0 \text{ for all } \bfu \in U \}
 </div></li>
 </ol>
 </div></article><details id="thm-alg-props-orthog-proj-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-alg-props-orthog-proj-2-1">
-<div class="para">We prove property 1. Let <span class="process-math">\(\bfv_1, \bfv_2 \in V\text{,}\)</span> so we can write <span class="process-math">\(\bfv_1 = \bfu_1 + \bfw_1\)</span> and <span class="process-math">\(\bfv_2 = \bfu_2 + \bfw_2\text{,}\)</span> for <span class="process-math">\(\bfu_1, \bfu_2 \in U\)</span> and <span class="process-math">\(\bfw_1,\bfw_2 \in U^{\perp}\text{.}\)</span> Then</div>
+<div class="para">We will prove property 1. Let <span class="process-math">\(\bfv_1, \bfv_2 \in V\text{,}\)</span> so we can write <span class="process-math">\(\bfv_1 = \bfu_1 + \bfw_1\)</span> and <span class="process-math">\(\bfv_2 = \bfu_2 + \bfw_2\text{,}\)</span> for <span class="process-math">\(\bfu_1, \bfu_2 \in U\)</span> and <span class="process-math">\(\bfw_1,\bfw_2 \in U^{\perp}\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \bfv_1 + \bfv_2 = (\bfu_1 + \bfu_2) + (\bfw_1 + \bfw_2)\text{,}
@@ -593,7 +593,7 @@ U^{\perp} = \{ \bfv \in V \mid \ip{\bfu,\bfv} = 0 \text{ for all } \bfu \in U \}
 \ip{\bfu, \bfv} = \bfv^* \bfu\text{,}
 \end{equation*}
 </div>
-<div class="para">where the operation on the right side of the equals sign is matrix multiplication.</div>
+<div class="para">where matrix multiplication is in view on the right side of the equals sign.</div>
 </div></article></details><div class="para" id="subsec-orthog-proj-8">Lest this endeavor become purely speculative, we now carry out an example.</div>
 <details id="subsec-orthog-proj-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.3.7</span><span class="period">.</span>
@@ -731,7 +731,7 @@ A\bfx' = A(A^*A)^{-1}A^* \bfx\text{.}
 <div class="para">Equality holds here if and only if <span class="process-math">\(\vnorm{\bfv - \proj_U(\bfv)}^2 = 0\text{,}\)</span> which is true if and only if <span class="process-math">\(\bfv = \proj_U(\bfv)\text{.}\)</span> This only happens if <span class="process-math">\(\bfv \in U\text{.}\)</span>
 </div>
 </div> <div class="para logical" id="thm-geom-props-orthog-projs-2-2">
-<div class="para">We now prove the second part of the theorem. We know that <span class="process-math">\(\bfv - \proj_U(\bfv) \in U^{\perp}\)</span> and that <span class="process-math">\(\proj_U(\bfv) - \bfu \in U\text{,}\)</span> so</div>
+<div class="para">We now move on to the second part of the theorem. We know that <span class="process-math">\(\bfv - \proj_U(\bfv) \in U^{\perp}\)</span> and that <span class="process-math">\(\proj_U(\bfv) - \bfu \in U\text{,}\)</span> so</div>
 <div class="displaymath process-math" id="thm-geom-props-orthog-projs-2-2-3">
 \begin{align*}
 \vnorm{\bfv - \bfu}^2 \amp = \vnorm{(\bfv - \proj_U(\bfv)) + (\proj_U(\bfv) - \bfu)}^2\\
@@ -851,11 +851,7 @@ A^*A = \begin{bmatrix} 46 \amp 14 \\ 14 \amp 5 \end{bmatrix}, \hspace{12pt}
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="sec-orthogonal-projections-7-3-1-1">Let <span class="process-math">\(U\)</span> be a subspace of an inner product space <span class="process-math">\(V\text{.}\)</span> Prove that <span class="process-math">\(U^{\perp}\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="sec-orthogonal-projections-7-4-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix. Prove that <span class="process-math">\((\row(A))^{\perp} = \nll(A)\text{.}\)</span>
-</div> </article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-orthogonal-projections-7-5-1-1">
+<div class="para logical" id="sec-orthogonal-projections-7-3-1-1">
 <div class="para">Consider the following inner product on <span class="process-math">\(P_2\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -865,8 +861,8 @@ A^*A = \begin{bmatrix} 46 \amp 14 \\ 14 \amp 5 \end{bmatrix}, \hspace{12pt}
 </div>
 <div class="para">Let <span class="process-math">\(U = \spn\{t - t^2, 1 + 2t\}\text{.}\)</span> If <span class="process-math">\(p = 2 - t + 2t^2\text{,}\)</span> write <span class="process-math">\(p\)</span> as the sum of a vector in <span class="process-math">\(U\)</span> and a vector in <span class="process-math">\(U^{\perp}\text{.}\)</span>
 </div>
-</div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-orthogonal-projections-7-6-1-1">
+</div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-orthogonal-projections-7-4-1-1">
 <div class="para">Consider the following four points in <span class="process-math">\(\rr^2\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -875,7 +871,12 @@ A^*A = \begin{bmatrix} 46 \amp 14 \\ 14 \amp 5 \end{bmatrix}, \hspace{12pt}
 \end{equation*}
 </div>
 <div class="para">Find the least-squares regression line for these points.</div>
-</div> </article></section></section></div>
+</div> </article><article class="subexercises" id="sec-orthogonal-projections-7-5"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-orthogonal-projections-7-5-2"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="sec-orthogonal-projections-7-5-2-1-1">Let <span class="process-math">\(U\)</span> be a subspace of an inner product space <span class="process-math">\(V\text{.}\)</span> Prove that <span class="process-math">\(U^{\perp}\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-5-3"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="sec-orthogonal-projections-7-5-3-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix. Prove that <span class="process-math">\((\row(A))^{\perp} = \nll(A)\text{.}\)</span>
+</div> </article></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-orthonormal-bases.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
