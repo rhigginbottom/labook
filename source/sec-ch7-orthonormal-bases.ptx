@@ -444,6 +444,28 @@
         </ol>
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              The orthonormal basis we obtain is 
+              <me>
+                \left\{ \frac{1}{\sqrt{17}}(2+t), \frac{1}{\sqrt{34}}(3-7t)\right\}
+              </me>.              
+            </p>
+          </li>
+          <li>
+            <p>
+              The coordinate vector is 
+              <me>
+                \begin{bmatrix} 10/ \sqrt{17} \\ -2/\sqrt{34} \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -459,6 +481,16 @@
         </me>.        
       </p>
     </statement>
+    <answer>
+      <p>
+        The orthonormal basis we obtain is
+        <me>
+          \left\{ \begin{bmatrix} 1 / \sqrt{2} \\ i/\sqrt{2} \\ 0 \end{bmatrix}, 
+          \begin{bmatrix} i/\sqrt{6} \\ 1/\sqrt{6} \\ 2i / \sqrt{6} \end{bmatrix},
+          \frac{\sqrt{3}}{2\sqrt{2}}\begin{bmatrix} -\tfrac{1}{3} + \tfrac{4}{3}i \\ -\tfrac{2}{3} + \tfrac{1}{3}i \\ \tfrac{1}{3} - \tfrac{1}{3}i \end{bmatrix} \right\}
+        </me>.        
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
