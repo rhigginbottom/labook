@@ -504,6 +504,16 @@
         Let <m>L</m> be the line <m>y = \frac{3}{5}x</m> in <m>\rr^2</m>. Write the vector <m>\bfv = \begin{bmatrix} -1 \\ 4 \end{bmatrix}</m> as the sum of a vector in <m>L</m> and a vector in <m>L^{\perp}</m>. (Use the standard dot product as the inner product in <m>\rr^2</m>.)
       </p>
     </statement>
+    <answer>
+      <p>
+        If we let <m>\bfw</m> and <m>\bfw'</m> be the following vectors,
+        <me>
+          \bfw = \begin{bmatrix} 3/2 \\ 5/2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+          \bfw' = \begin{bmatrix} -5/2 \\ 3/2 \end{bmatrix}
+        </me>,
+        then <m>\bfv = \bfw + \bfw'</m> where <m>\bfw \in L</m> and <m>\bfw' \in L^{\perp}</m>.
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -530,6 +540,30 @@
         </ol>        
       </p>
     </statement>
+    <answer>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Our matrix is 
+              <me>
+                [\proj_U]_{\mce} = \begin{bmatrix} \frac{1}{11} \amp -\frac{3}{11} \amp \frac{1}{11} \\[2pt]
+                -\frac{3}{11} \amp \frac{101}{110} \amp \frac{3}{110} \\[2pt]
+                \frac{1}{11} \amp \frac{3}{110} \amp \frac{109}{110} \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+          <li>
+            <p>
+              The vector in <m>U</m> which is closest to <m>\bfv</m> is 
+              <me>
+                \begin{bmatrix} \frac{3}{11} \\[2pt] \frac{15}{22} \\[2pt] \frac{105}{22} \end{bmatrix}
+              </me>.              
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -541,6 +575,16 @@
         Let <m>U = \spn\{t - t^2, 1 + 2t\}</m>. If <m>p = 2 - t + 2t^2</m>, write <m>p</m> as the sum of a vector in <m>U</m> and a vector in <m>U^{\perp}</m>. 
       </p>
     </statement>
+    <answer>
+      <p>
+              Let <m>q</m> and <m>q'</m> be the following polynomials:
+              <md>
+                <mrow>q \amp = \tfrac{11}{10} - \tfrac{17}{20}t + \tfrac{61}{20}t^2, \hspace{3pt} \text{and}</mrow>
+                <mrow>q'  \amp = \tfrac{9}{10} - \tfrac{3}{20}t - \tfrac{21}{20}t^2</mrow>
+              </md>.
+              Then <m>p = q + q'</m>, where <m>q \in U</m> and <m>q' \in U^{\perp}</m>.
+            </p>
+    </answer>
   </exercise>
   <exercise>
     <statement>
@@ -561,13 +605,46 @@
           Let <m>U</m> be a subspace of an inner product space <m>V</m>. Prove that <m>U^{\perp}</m> is a subspace of <m>V</m>. 
         </p>
       </statement>
+      <solution>
+        <p>
+          First, we know that <m>\ip{\bfo, \bfu} = 0</m> for all <m>\bfu \in U</m> by <xref ref="prop-inner-product-properties"/>. This proves that <m>\bfo \in U^{\perp}</m>. 
+        </p>
+        <p>
+          Next, we let <m>\bfw_1, \bfw_2 \in U^{\perp}</m> and <m>\bfu \in U</m>. Then, by the properties of the inner product, we have
+          <me>
+            \ip{\bfw_1 + \bfw_2, \bfu} = \ip{\bfw_1, \bfu} + \ip{\bfw_2, \bfu} = 0 + 0 = 0
+          </me>.
+          This shows that <m>\bfw_1 + \bfw_2 \in U^{\perp}</m>, meaning that <m>U^{\perp}</m> is closed under addition.            
+        </p>
+        <p>
+          Finally, we let <m>\bfw \in U^{\perp}</m> and <m>c \in \ff</m>. (Here, <m>\ff</m> is either <m>\rr</m> or <m>\cc</m>.) We also let <m>\bfu \in U</m>. Then, by the properties of the inner product, we have
+          <me>
+            \ip{c\bfw, \bfu} = c\ip{\bfw, \bfu} = c \cdot 0 = 0
+          </me>.  
+          This proves that <m>c\bfw \in U^{\perp}</m> so that <m>U^{\perp}</m> is closed under scalar multiplication.         
+        </p>
+        <p>
+          Since <m>U^{\perp}</m> contains the zero vector and is closed under addition and scalar multiplication, <m>U^{\perp}</m> is a subspace of <m>V</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise>
       <statement>
         <p>
-          Let <m>A</m> be an <m>m\times n</m> matrix. Prove that <m>(\row(A))^{\perp} = \nll(A)</m>. 
+          Let <m>A \in M_{m,n}(\rr)</m>. Prove that <m>(\row(A))^{\perp} = \nll(A)</m>. 
         </p> <!-- Lay, Thm 3, p.337 -->
       </statement>
+      <solution>
+        <p>
+          We will prove that each of these sets is a subset of the other. First, we let <m>\bfx \in \nll(A)</m>, so that <m>A\bfx = \bfo</m>. The fact that <m>A\bfx = \bfo</m> means that <m>\mathbf{r} \cdot \bfx = 0</m> for all rows <m>\mathbf{r}</m> of <m>A</m>. (Entry <m>i</m> in <m>A\bfx</m> is the dot product of the <m>i</m>th row of <m>A</m> with <m>\bfx</m>.) Since the rows of <m>A</m> span <m>\row(A)</m>, the fact that <m>\mathbf{r} \cdot \bfx = 0</m> for each row <m>\mathbf{r}</m> of <m>A</m> means that <m>\bfx \cdot \bfv = 0</m> for all <m>\bfv \in \row(A)</m>. This proves that <m>\bfx \in (\row(A))^{\perp}</m>, so <m>\nll(A) \subseteq (\row(A))^{\perp}</m>.
+        </p>
+        <p>
+          We now let <m>\bfx \in (\row(A))^{\perp}</m>. We want to show that <m>\bfx \in \nll(A)</m>. Since <m>\bfx \in (\row(A))^{\perp}</m>, we know that <m>\bfx \cdot \mathbf{r}=0</m> for each row <m>\mathbf{r}</m> of <m>A</m>. This shows that <m>A\bfx = \bfo</m>, which proves that <m>\bfx \in \nll(A)</m>. Therefore, <m>(\row(A))^{\perp} \subseteq \nll(A)</m>. 
+        </p>
+        <p>
+          Since we have shown that <m>\nll(A) \subseteq (\row(A))^{\perp}</m> and <m>(\row(A))^{\perp} \subseteq \nll(A)</m>, we can conclude that <m>(\row(A))^{\perp} = \nll(A)</m>, as desired.
+        </p>
+      </solution>
     </exercise>
   </subexercises>
 </exercises> 
