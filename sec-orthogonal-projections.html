@@ -823,7 +823,18 @@ A^*A = \begin{bmatrix} 46 \amp 14 \\ 14 \amp 5 \end{bmatrix}, \hspace{12pt}
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">7.3.5</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="sec-orthogonal-projections-7-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="sec-orthogonal-projections-7-1-1-1">Let <span class="process-math">\(L\)</span> be the line <span class="process-math">\(y = \frac{3}{5}x\)</span> in <span class="process-math">\(\rr^2\text{.}\)</span> Write the vector <span class="process-math">\(\bfv = \begin{bmatrix} -1 \\ 4 \end{bmatrix}\)</span> as the sum of a vector in <span class="process-math">\(L\)</span> and a vector in <span class="process-math">\(L^{\perp}\text{.}\)</span> (Use the standard dot product as the inner product in <span class="process-math">\(\rr^2\text{.}\)</span>)</div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="sec-orthogonal-projections-7-1-1-1">Let <span class="process-math">\(L\)</span> be the line <span class="process-math">\(y = \frac{3}{5}x\)</span> in <span class="process-math">\(\rr^2\text{.}\)</span> Write the vector <span class="process-math">\(\bfv = \begin{bmatrix} -1 \\ 4 \end{bmatrix}\)</span> as the sum of a vector in <span class="process-math">\(L\)</span> and a vector in <span class="process-math">\(L^{\perp}\text{.}\)</span> (Use the standard dot product as the inner product in <span class="process-math">\(\rr^2\text{.}\)</span>)</div>
+<div class="solutions"><details id="sec-orthogonal-projections-7-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-orthogonal-projections-7-1-2-1">
+<div class="para">If we let <span class="process-math">\(\bfw\)</span> and <span class="process-math">\(\bfw'\)</span> be the following vectors,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfw = \begin{bmatrix} 3/2 \\ 5/2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+\bfw' = \begin{bmatrix} -5/2 \\ 3/2 \end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">then <span class="process-math">\(\bfv = \bfw + \bfw'\)</span> where <span class="process-math">\(\bfw \in L\)</span> and <span class="process-math">\(\bfw' \in L^{\perp}\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-orthogonal-projections-7-2-1-1">
 <div class="para">Let <span class="process-math">\(U = \spn\{\bfv_1, \bfv_2 \}\text{,}\)</span> where</div>
 <div class="displaymath process-math">
@@ -843,7 +854,27 @@ A^*A = \begin{bmatrix} 46 \amp 14 \\ 14 \amp 5 \end{bmatrix}, \hspace{12pt}
 </div>
 </div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-orthogonal-projections-7-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-orthogonal-projections-7-2-2-1"><ol class="lower-alpha">
+<li id="sec-orthogonal-projections-7-2-2-1-1-1"><div class="para logical" id="sec-orthogonal-projections-7-2-2-1-1-1-1">
+<div class="para">Our matrix is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[\proj_U]_{\mce} = \begin{bmatrix} \frac{1}{11} \amp -\frac{3}{11} \amp \frac{1}{11} \\[2pt]
+-\frac{3}{11} \amp \frac{101}{110} \amp \frac{3}{110} \\[2pt]
+\frac{1}{11} \amp \frac{3}{110} \amp \frac{109}{110} \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="sec-orthogonal-projections-7-2-2-1-1-2"><div class="para logical" id="sec-orthogonal-projections-7-2-2-1-1-2-1">
+<div class="para">The vector in <span class="process-math">\(U\)</span> which is closest to <span class="process-math">\(\bfv\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} \frac{3}{11} \\[2pt] \frac{15}{22} \\[2pt] \frac{105}{22} \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-orthogonal-projections-7-3-1-1">
 <div class="para">Consider the following inner product on <span class="process-math">\(P_2\text{:}\)</span>
 </div>
@@ -854,7 +885,18 @@ A^*A = \begin{bmatrix} 46 \amp 14 \\ 14 \amp 5 \end{bmatrix}, \hspace{12pt}
 </div>
 <div class="para">Let <span class="process-math">\(U = \spn\{t - t^2, 1 + 2t\}\text{.}\)</span> If <span class="process-math">\(p = 2 - t + 2t^2\text{,}\)</span> write <span class="process-math">\(p\)</span> as the sum of a vector in <span class="process-math">\(U\)</span> and a vector in <span class="process-math">\(U^{\perp}\text{.}\)</span>
 </div>
-</div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="sec-orthogonal-projections-7-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-orthogonal-projections-7-3-2-1">
+<div class="para">Let <span class="process-math">\(q\)</span> and <span class="process-math">\(q'\)</span> be the following polynomials:</div>
+<div class="displaymath process-math" id="sec-orthogonal-projections-7-3-2-1-3">
+\begin{align*}
+q \amp = \tfrac{11}{10} - \tfrac{17}{20}t + \tfrac{61}{20}t^2, \hspace{3pt} \text{and}\\
+q'  \amp = \tfrac{9}{10} - \tfrac{3}{20}t - \tfrac{21}{20}t^2\text{.}
+\end{align*}
+</div>
+<div class="para">Then <span class="process-math">\(p = q + q'\text{,}\)</span> where <span class="process-math">\(q \in U\)</span> and <span class="process-math">\(q' \in U^{\perp}\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-orthogonal-projections-7-4-1-1">
 <div class="para">Consider the following four points in <span class="process-math">\(\rr^2\text{:}\)</span>
 </div>
@@ -867,9 +909,34 @@ A^*A = \begin{bmatrix} 46 \amp 14 \\ 14 \amp 5 \end{bmatrix}, \hspace{12pt}
 </div> </article><article class="subexercises" id="sec-orthogonal-projections-7-5"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise exercise-like" id="sec-orthogonal-projections-7-5-2"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
 <div class="para" id="sec-orthogonal-projections-7-5-2-1-1">Let <span class="process-math">\(U\)</span> be a subspace of an inner product space <span class="process-math">\(V\text{.}\)</span> Prove that <span class="process-math">\(U^{\perp}\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-5-3"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="sec-orthogonal-projections-7-5-3-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix. Prove that <span class="process-math">\((\row(A))^{\perp} = \nll(A)\text{.}\)</span>
-</div> </article></article></section></section></div>
+</div>
+<div class="solutions"><details id="sec-orthogonal-projections-7-5-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec-orthogonal-projections-7-5-2-2-1">First, we know that <span class="process-math">\(\ip{\bfo, \bfu} = 0\)</span> for all <span class="process-math">\(\bfu \in U\)</span> by <a href="sec-inner-products.html#prop-inner-product-properties" class="xref" data-knowl="./knowl/xref/prop-inner-product-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 7.1.17">Proposition 7.1.17</a>. This proves that <span class="process-math">\(\bfo \in U^{\perp}\text{.}\)</span>
+</div> <div class="para logical" id="sec-orthogonal-projections-7-5-2-2-2">
+<div class="para">Next, we let <span class="process-math">\(\bfw_1, \bfw_2 \in U^{\perp}\)</span> and <span class="process-math">\(\bfu \in U\text{.}\)</span> Then, by the properties of the inner product, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{\bfw_1 + \bfw_2, \bfu} = \ip{\bfw_1, \bfu} + \ip{\bfw_2, \bfu} = 0 + 0 = 0\text{.}
+\end{equation*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\bfw_1 + \bfw_2 \in U^{\perp}\text{,}\)</span> meaning that <span class="process-math">\(U^{\perp}\)</span> is closed under addition.</div>
+</div> <div class="para logical" id="sec-orthogonal-projections-7-5-2-2-3">
+<div class="para">Finally, we let <span class="process-math">\(\bfw \in U^{\perp}\)</span> and <span class="process-math">\(c \in \ff\text{.}\)</span> (Here, <span class="process-math">\(\ff\)</span> is either <span class="process-math">\(\rr\)</span> or <span class="process-math">\(\cc\text{.}\)</span>) We also let <span class="process-math">\(\bfu \in U\text{.}\)</span> Then, by the properties of the inner product, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ip{c\bfw, \bfu} = c\ip{\bfw, \bfu} = c \cdot 0 = 0\text{.}
+\end{equation*}
+</div>
+<div class="para">This proves that <span class="process-math">\(c\bfw \in U^{\perp}\)</span> so that <span class="process-math">\(U^{\perp}\)</span> is closed under scalar multiplication.</div>
+</div> <div class="para" id="sec-orthogonal-projections-7-5-2-2-4">Since <span class="process-math">\(U^{\perp}\)</span> contains the zero vector and is closed under addition and scalar multiplication, <span class="process-math">\(U^{\perp}\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="sec-orthogonal-projections-7-5-3"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="sec-orthogonal-projections-7-5-3-1-1">Let <span class="process-math">\(A \in M_{m,n}(\rr)\text{.}\)</span> Prove that <span class="process-math">\((\row(A))^{\perp} = \nll(A)\text{.}\)</span>
+</div> <div class="solutions"><details id="sec-orthogonal-projections-7-5-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec-orthogonal-projections-7-5-3-2-1">We will prove that each of these sets is a subset of the other. First, we let <span class="process-math">\(\bfx \in \nll(A)\text{,}\)</span> so that <span class="process-math">\(A\bfx = \bfo\text{.}\)</span> The fact that <span class="process-math">\(A\bfx = \bfo\)</span> means that <span class="process-math">\(\mathbf{r} \cdot \bfx = 0\)</span> for all rows <span class="process-math">\(\mathbf{r}\)</span> of <span class="process-math">\(A\text{.}\)</span> (Entry <span class="process-math">\(i\)</span> in <span class="process-math">\(A\bfx\)</span> is the dot product of the <span class="process-math">\(i\)</span>th row of <span class="process-math">\(A\)</span> with <span class="process-math">\(\bfx\text{.}\)</span>) Since the rows of <span class="process-math">\(A\)</span> span <span class="process-math">\(\row(A)\text{,}\)</span> the fact that <span class="process-math">\(\mathbf{r} \cdot \bfx = 0\)</span> for each row <span class="process-math">\(\mathbf{r}\)</span> of <span class="process-math">\(A\)</span> means that <span class="process-math">\(\bfx \cdot \bfv = 0\)</span> for all <span class="process-math">\(\bfv \in \row(A)\text{.}\)</span> This proves that <span class="process-math">\(\bfx \in (\row(A))^{\perp}\text{,}\)</span> so <span class="process-math">\(\nll(A) \subseteq (\row(A))^{\perp}\text{.}\)</span>
+</div> <div class="para" id="sec-orthogonal-projections-7-5-3-2-2">We now let <span class="process-math">\(\bfx \in (\row(A))^{\perp}\text{.}\)</span> We want to show that <span class="process-math">\(\bfx \in \nll(A)\text{.}\)</span> Since <span class="process-math">\(\bfx \in (\row(A))^{\perp}\text{,}\)</span> we know that <span class="process-math">\(\bfx \cdot \mathbf{r}=0\)</span> for each row <span class="process-math">\(\mathbf{r}\)</span> of <span class="process-math">\(A\text{.}\)</span> This shows that <span class="process-math">\(A\bfx = \bfo\text{,}\)</span> which proves that <span class="process-math">\(\bfx \in \nll(A)\text{.}\)</span> Therefore, <span class="process-math">\((\row(A))^{\perp} \subseteq \nll(A)\text{.}\)</span>
+</div> <div class="para" id="sec-orthogonal-projections-7-5-3-2-3">Since we have shown that <span class="process-math">\(\nll(A) \subseteq (\row(A))^{\perp}\)</span> and <span class="process-math">\((\row(A))^{\perp} \subseteq \nll(A)\text{,}\)</span> we can conclude that <span class="process-math">\((\row(A))^{\perp} = \nll(A)\text{,}\)</span> as desired.</div>
+</div></details></div></article></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-orthonormal-bases.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
