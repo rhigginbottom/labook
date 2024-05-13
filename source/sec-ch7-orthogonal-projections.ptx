@@ -508,8 +508,8 @@
       <p>
         If we let <m>\bfw</m> and <m>\bfw'</m> be the following vectors,
         <me>
-          \bfw = \begin{bmatrix} 3/2 \\ 5/2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
-          \bfw' = \begin{bmatrix} -5/2 \\ 3/2 \end{bmatrix}
+          \bfw = \begin{bmatrix} 35/34\\ 21/34 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
+          \bfw' = \begin{bmatrix} -69/34 \\ 115/34 \end{bmatrix}
         </me>,
         then <m>\bfv = \bfw + \bfw'</m> where <m>\bfw \in L</m> and <m>\bfw' \in L^{\perp}</m>.
       </p>
