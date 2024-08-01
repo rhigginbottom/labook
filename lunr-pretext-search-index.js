@@ -10,6 +10,15 @@ var ptx_lunr_docs = [
   "body": "  copyright  "
 },
 {
+  "id": "preface",
+  "level": "1",
+  "url": "preface.html",
+  "type": "Preface",
+  "number": "",
+  "title": "To Students and Instructors",
+  "body": " To Students and Instructors  This book was first written for Washington & Jefferson College (W&J) students. At W&J, we teach Linear Algebra not only for its content but also (a) as a second course-length exposure to mathematical writing, and (b) as an introduction to the abstract and axiomatic thinking that is characteristic of higher mathematics. This initial audience and purpose has shaped this book irrevocably.  As a text to be used in a second writing course, we have not included explicit writing instruction in the text. While training in logic and proof techniques is assumed from the beginning, we take care to identify proof strategies being used in these pages—especially in the early chapters. Along these lines, in most sections we have identified exercises as writing exercises which students should prioritize (and which instructors should seriously consider requiring).  The fact that this text is written to introduce students to abstract concepts has influenced the choice and order of content. We introduce fields before vector spaces, and we introduce both structures earlier than many other texts. Theorems are then stated for general fields (instead of just for or ) throughout the text until the topic requires a restriction—such as inner products in . To emphasize that not all fields should be thought of as , finite fields, the complex numbers, and other fields show up explicitly as examples. (Readers should note that care must be taken when using calculators\/software\/online aids to row-reduce matrices over fields which are not . Some pointers are provided in .)   Other Features of this Book  Each section of this book contains Reading Questions . Ideally, instructors will assign and students will complete these questions before the class period in which material from that section of the book will be covered. The main goals of these questions is to force students to actually read the text and to guide a somewhat thoughtful first exposure to the content. We have found it helpful to emphasize to students that we do not expect them to fully understand the material upon this first reading, but that multiple exposures are often needed for comprehension and it is helpful if the classroom exposure is the second encounter, not the first. (If the instructor can skim the answers to these reading questions before class, then in-class examples and explanations can be tailored to best help the students.)  We have designated some problems at the end of each section as Writing Exercises . These are collected to help students practice and develop their writing. Some of these might be good to discuss in groups during class, and some might make useful homework exercises. As mentioned above, the separation of these problems is driven by one of the original purposes of this text—to help students improve their mathematical writing.  Many of the problems at the end of the sections have answers or solutions included in . Readers will notice that not all problems have answers or solutions written out—some of this incompleteness is due to the fact that this book is still a work in progress, some is because we required students to turn in written solutions to specific problems and did not want those solutions staring our students in the face.  Finally, a word on the title. Virtually every Linear Algebra text is titled, Linear Algebra . That's fine; textbook titles are not, perhaps, where an author's greatest skill and creativity are deployed. The subtitle of this book was chosen with the metaphor of a handyman in mind. Such a worker needs to acquire some tools and improve their skill in using others. Additional implements may need sharpening or other maintenance. Linear algebra is used widely in mathematics, and for a book pitched at intermediate-level undergraduate students of mathematics, this metaphor seemed appropriate. Plus, a good acronym which sounds somewhat French (LAGAST!) is hard to resist.   "
+},
+{
   "id": "sec-intro-systems",
   "level": "1",
   "url": "sec-intro-systems.html",
@@ -7471,9 +7480,9 @@ var ptx_lunr_docs = [
   "body": "  The set has the property that all nonzero elements have a multiplicative inverse if and only if is prime.   "
 },
 {
-  "id": "backmatter-3",
+  "id": "app-solns",
   "level": "1",
-  "url": "backmatter-3.html",
+  "url": "app-solns.html",
   "type": "Appendix",
   "number": "B",
   "title": "Hints, Answers, and Solutions to Exercises",
