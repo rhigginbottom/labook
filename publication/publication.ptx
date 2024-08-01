@@ -58,7 +58,7 @@
     <!-- Magic IDs identify HTML pages to analytics services   -->
     <!-- Presence implies relevant Javascript will be added    -->
     <!-- StatCounter requires both values to be set            -->
-    <!-- <analytics google-gst="UA-0123456-1" statcounter-project="0123456" statcounter-security="0123456"/> -->
+    <analytics google-gst="G-ZFWXZ3398L"/>
     <!-- Google search, via masthead textbox is switched on    -->
     <!-- and associated with a Google account via CX number    -->
     <!-- <search google-cx=""/> -->

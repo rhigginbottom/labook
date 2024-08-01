@@ -379,9 +379,10 @@
 
   </appendix> -->
 
-  <solutions divisional="hint answer solution">
-    <title>Hints, Answers, and Solutions to Exercises</title>    
-  </solutions>
+      
+    <solutions divisional="hint answer solution" xml:id="app-solns">
+      <title>Hints, Answers, and Solutions to Exercises</title>     
+    </solutions>
 
   <colophon>
     <p>

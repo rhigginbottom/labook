@@ -15,7 +15,7 @@
   <book xml:id="my-great-book">
     <!-- The book needs a title and can have a subtitle  -->
     <title>Linear Algebra</title>
-    <subtitle>A work in progress</subtitle>
+    <subtitle>Gathering and Sharpening Tools</subtitle>
 
     <!-- Now we include files containing each main devision.       -->
 
