@@ -489,7 +489,7 @@ No student wants to write out all of these steps, and no instructor wants to gra
     <p>
       In this problem we consider <q>adding</q> an element to <m>\ff_3</m>. If <m>\ff_3[\alpha]</m> is defined by
       <me>
-        \ff_3[\alpha] = \{a + b\alpha \mid a,b \in \ff_3, \alpha^2 = -1\},
+        \ff_3[\alpha] = \{a + b\alpha \mid a,b \in \ff_3, \alpha^2 = 2\},
       </me>
       is <m>\ff_3[\alpha]</m> a field? Justify your answer.  
     </p>

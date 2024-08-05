@@ -403,17 +403,6 @@
   <exercise>
     <statement>
       <p>
-        Consider the following subset of <m>\rr^2</m>:
-        <me>
-          V = \{ (x,y) \mid y = 4x \}
-        </me>.
-        Prove that <m>V</m>, with the usual operations of vector addition and scalar multiplication in <m>\rr^2</m>, is a vector space over <m>\rr</m>. (Hint: Since <m>V</m> is a subset of <m>\rr^2</m> with the same operations as <m>\rr^2</m>, some of the axioms may not need to be proved from scratch.)
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         Consider the following three elements of <m>P_3</m>:
         <md>
           <mrow>p_1 \amp = 2t^2 - t + 6</mrow>
@@ -555,6 +544,17 @@
   </exercise>
   <subexercises>
   <title>Writing Exercises</title>  
+  <exercise>
+    <statement>
+      <p>
+        Consider the following subset of <m>\rr^2</m>:
+        <me>
+          V = \{ (x,y) \mid y = 4x \}
+        </me>.
+        Prove that <m>V</m>, with the usual operations of vector addition and scalar multiplication in <m>\rr^2</m>, is a vector space over <m>\rr</m>. (Hint: Since <m>V</m> is a subset of <m>\rr^2</m> with the same operations as <m>\rr^2</m>, some of the axioms may not need to be proved from scratch.)
+      </p>
+    </statement>
+  </exercise>
   <exercise>
     <statement>
       <p>
