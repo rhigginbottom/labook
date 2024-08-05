@@ -199,8 +199,8 @@ window.MathJax = {
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-linear-systems-fields.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Solving Linear Systems Over Fields</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-13" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-14" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-14" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-15" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -626,19 +626,22 @@ x_3 \text{ is free.}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec-linear-systems-fields-12-1-6">Even though this matrix is not yet in RREF, we do not need to continue with our algorithm. <a href="sec-linear-systems-fields.html#thm-consistent-system-f" class="xref" data-knowl="./knowl/xref/thm-consistent-system-f.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.2">Theorem 2.2.2</a> tells us that the original system is inconsistent because of the pivot in the final column. Therefore, this system has no solution.</div></article></details><section class="reading-questions" id="sec-linear-systems-fields-13"><h3 class="heading hide-type">
+</div> <div class="para" id="sec-linear-systems-fields-12-1-6">Even though this matrix is not yet in RREF, we do not need to continue with our algorithm. <a href="sec-linear-systems-fields.html#thm-consistent-system-f" class="xref" data-knowl="./knowl/xref/thm-consistent-system-f.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.2">Theorem 2.2.2</a> tells us that the original system is inconsistent because of the pivot in the final column. Therefore, this system has no solution.</div></article></details><article class="note remark-like" id="sec-linear-systems-fields-13"><h3 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-linear-systems-fields-13-1">Readers will be able to put a matrix over <span class="process-math">\(\rr\)</span> into RREF without difficulty using various computational means—handheld calculators, smartphone applications, and any number of online matrix manipulators. However, working with matrices over fields which are not <span class="process-math">\(\rr\)</span> presents some difficulties for most of these applications.</div> <div class="para" id="sec-linear-systems-fields-13-2">Students can find similar online calculators for matrices over the complex numbers through online searches. Finite fields are a bit trickier. David Augustat has created the website <a class="external" href="https://matrixer.davidaugustat.com/" target="_blank">Matrixer</a><details class="ptx-footnote" aria-live="polite" id="sec-linear-systems-fields-13-2-2"><summary class="ptx-footnote__number" title="Footnote 3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="sec-linear-systems-fields-13-2-2"><code class="code-inline tex2jax_ignore">matrixer.davidaugustat.com/</code></div></details> for this purpose, and I encourage readers to take advantage of this resource <em class="emphasis">after</em> they have first mastered the mechanics themselves. (That is, tools like this are best used to check work that is done by hand and then, when the by-hand calculations are no longer the main point, to streamline the process.)</div> <div class="para" id="sec-linear-systems-fields-13-3">Finally, we have written an R package called <code class="code-inline tex2jax_ignore">matrixmodp</code>, which can be found on <a class="external" href="https://cran.r-project.org/web/packages/matrixmodp/index.html" target="_blank">CRAN</a><details class="ptx-footnote" aria-live="polite" id="sec-linear-systems-fields-13-3-3"><summary class="ptx-footnote__number" title="Footnote 4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="sec-linear-systems-fields-13-3-3"><code class="code-inline tex2jax_ignore">cran.r-project.org/web/packages/matrixmodp/index.html</code></div></details>. This package can handle matrices over finite, prime fields, but it does not have the capability to handle matrices over more exotic finite fields. (We are aware that R is not the best vehicle for matrix algebra, but this book was largely written when we were also learning R, and this was a good excuse to learn how to author a package in that language.)</div></article><section class="reading-questions" id="sec-linear-systems-fields-14"><h3 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
-<article class="exercise exercise-like" id="sec-linear-systems-fields-13-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-systems-fields-13-1-1-1">
+<article class="exercise exercise-like" id="sec-linear-systems-fields-14-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-systems-fields-14-1-1-1">
 <div class="para">Solve the following linear equation over <span class="process-math">\(\cc\text{.}\)</span> List the steps you take in solving the equation in terms of the axioms of a field.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 (1-3i)x + (4+2i) = -1-3i
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-13-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-systems-fields-13-2-1-1">
+</div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-14-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-systems-fields-14-2-1-1">
 <div class="para">The following is a matrix with entries from <span class="process-math">\(\ff_5\text{.}\)</span> Reduce this matrix to REF. (It is not necessary to reduce the matrix to RREF.) Describe each step you take.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -649,14 +652,14 @@ x_3 \text{ is free.}
 \end{bmatrix}
 \end{equation*}
 </div>
-</div></article></section><section class="exercises" id="sec-linear-systems-fields-14"><h3 class="heading hide-type">
+</div></article></section><section class="exercises" id="sec-linear-systems-fields-15"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="sec-linear-systems-fields-14-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-systems-fields-14-1-1-1">
+<article class="exercise exercise-like" id="sec-linear-systems-fields-15-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-systems-fields-15-1-1-1">
 <div class="para">Solve the following linear system over <span class="process-math">\(\ff_2\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="sec-linear-systems-fields-14-1-1-1-2">
+<div class="displaymath process-math" id="sec-linear-systems-fields-15-1-1-1-2">
 \begin{align*}
 x + z \amp = 1\\
 y+z \amp = 0\\
@@ -664,12 +667,12 @@ x+y+z \amp = 1\text{.}
 \end{align*}
 </div>
 </div>
-<div class="solutions"><details id="sec-linear-systems-fields-14-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-linear-systems-fields-14-1-2-1">This system has the solution <span class="process-math">\(x=1\text{,}\)</span> <span class="process-math">\(y=0\text{,}\)</span> <span class="process-math">\(z=0\text{.}\)</span>
-</div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-14-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-systems-fields-14-2-1-1">
+<div class="solutions"><details id="sec-linear-systems-fields-15-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-linear-systems-fields-15-1-2-1">This system has the solution <span class="process-math">\(x=1\text{,}\)</span> <span class="process-math">\(y=0\text{,}\)</span> <span class="process-math">\(z=0\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-15-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-systems-fields-15-2-1-1">
 <div class="para">Solve the following linear system over <span class="process-math">\(\ff_3\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="sec-linear-systems-fields-14-2-1-1-2">
+<div class="displaymath process-math" id="sec-linear-systems-fields-15-2-1-1-2">
 \begin{align*}
 2x + y + z \amp =0\\
 x + 2z \amp = 2\\
@@ -678,19 +681,19 @@ y + z \amp = 1\\
 \end{align*}
 </div>
 </div>
-<div class="solutions"><details id="sec-linear-systems-fields-14-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-linear-systems-fields-14-2-2-1">This linear system is inconsistent.</div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-14-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-systems-fields-14-3-1-1">
+<div class="solutions"><details id="sec-linear-systems-fields-15-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-linear-systems-fields-15-2-2-1">This linear system is inconsistent.</div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-15-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-systems-fields-15-3-1-1">
 <div class="para">Solve the following linear system over <span class="process-math">\(\ff_7\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="sec-linear-systems-fields-14-3-1-1-2">
+<div class="displaymath process-math" id="sec-linear-systems-fields-15-3-1-1-2">
 \begin{align*}
 2x_1 + 3x_2 + x_4 \amp = 4\\
 3x_1 + x_3 + 5x_4 \amp = 6\\
 4x_1 + x_2 + 2x_3 \amp = 5\text{.}
 \end{align*}
 </div>
-</div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-14-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-systems-fields-14-4-1-1">
+</div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-15-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-systems-fields-15-4-1-1">
 <div class="para">The following matrix <span class="process-math">\(A\)</span> is defined over <span class="process-math">\(\cc\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -702,11 +705,11 @@ i \amp 1+i \amp 3 \\
 \end{equation*}
 </div>
 <div class="para">Put this matrix into RREF.</div>
-</div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-14-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-systems-fields-14-5-1-1">
+</div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-15-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-systems-fields-15-5-1-1">
 <div class="para">Solve the following linear system over <span class="process-math">\(\cc\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="sec-linear-systems-fields-14-5-1-1-2">
+<div class="displaymath process-math" id="sec-linear-systems-fields-15-5-1-1-2">
 \begin{align*}
 (-i)x + (3-i)z \amp = -1\\
 (3+2i)x + y + (-1+9i)z \amp = 6-3i\\
@@ -714,11 +717,11 @@ i \amp 1+i \amp 3 \\
 \end{align*}
 </div>
 </div>
-<div class="solutions"><details id="sec-linear-systems-fields-14-5-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-linear-systems-fields-14-5-2-1">This system is inconsistent.</div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-14-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-systems-fields-14-6-1-1">
+<div class="solutions"><details id="sec-linear-systems-fields-15-5-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-linear-systems-fields-15-5-2-1">This system is inconsistent.</div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-15-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-systems-fields-15-6-1-1">
 <div class="para">Solve the following linear system over <span class="process-math">\(\ff_5\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="sec-linear-systems-fields-14-6-1-1-2">
+<div class="displaymath process-math" id="sec-linear-systems-fields-15-6-1-1-2">
 \begin{align*}
 4x + y \amp = 2\\
 3x + 2y + 2z \amp = 1\\
@@ -726,9 +729,9 @@ x + 3y + z \amp = 0\text{.}
 \end{align*}
 </div>
 </div>
-<div class="solutions"><details id="sec-linear-systems-fields-14-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-linear-systems-fields-14-6-2-1">The unique solution is <span class="process-math">\(x = 2\text{,}\)</span> <span class="process-math">\(y = 4\text{,}\)</span> and <span class="process-math">\(z = 1\text{.}\)</span>
-</div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-14-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-systems-fields-14-7-1-1">
+<div class="solutions"><details id="sec-linear-systems-fields-15-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-linear-systems-fields-15-6-2-1">The unique solution is <span class="process-math">\(x = 2\text{,}\)</span> <span class="process-math">\(y = 4\text{,}\)</span> and <span class="process-math">\(z = 1\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-15-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-systems-fields-15-7-1-1">
 <div class="para">The following matrix <span class="process-math">\(A\)</span> is defined over <span class="process-math">\(\qq[\sqrt{2}]\)</span> (see <a href="sec-fields.html#exer-q-root-2" class="xref" data-knowl="./knowl/xref/exer-q-root-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.1.9">Exercise 2.1.9</a>):</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-q-root-2.html">
 \begin{equation*}
@@ -740,8 +743,8 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Put this matrix into RREF.</div>
-</div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-14-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-linear-systems-fields-14-8-1-1">
+</div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-15-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-linear-systems-fields-15-8-1-1">
 <div class="para">The following matrix <span class="process-math">\(A\)</span> is defined over <span class="process-math">\(\ff_3[\alpha]\)</span> (see <a href="sec-fields.html#exer-f3-alpha" class="xref" data-knowl="./knowl/xref/exer-f3-alpha.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.1.7">Exercise 2.1.7</a>):</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-f3-alpha.html">
 \begin{equation*}
@@ -753,13 +756,13 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Put this matrix into RREF.</div>
-</div></article><article class="subexercises" id="sec-linear-systems-fields-14-9"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
-<article class="exercise exercise-like" id="sec-linear-systems-fields-14-9-2"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-linear-systems-fields-14-9-2-1-1"><ol class="lower-alpha">
-<li id="sec-linear-systems-fields-14-9-2-1-1-1-1"><div class="para logical" id="sec-linear-systems-fields-14-9-2-1-1-1-1-1">
+</div></article><article class="subexercises" id="sec-linear-systems-fields-15-9"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-linear-systems-fields-15-9-2"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-linear-systems-fields-15-9-2-1-1"><ol class="lower-alpha">
+<li id="sec-linear-systems-fields-15-9-2-1-1-1-1"><div class="para logical" id="sec-linear-systems-fields-15-9-2-1-1-1-1-1">
 <div class="para">Suppose that the following is a linear system over <span class="process-math">\(\ff_3\text{:}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-2b2-det.html" id="sec-linear-systems-fields-14-9-2-1-1-1-1-1-2">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-2b2-det.html" id="sec-linear-systems-fields-15-9-2-1-1-1-1-1-2">
 \begin{align*}
 ax + by \amp =e\\
 cx + dy \amp =f\text{.}
@@ -767,17 +770,17 @@ cx + dy \amp =f\text{.}
 </div>
 <div class="para">Show that if <span class="process-math">\(ad + 2bc \neq 0\text{,}\)</span> then this linear system has a unique solution. (For reference, see <a href="sec-results.html#exer-2b2-det" class="xref" data-knowl="./knowl/xref/exer-2b2-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.3.12">Exercise 1.3.12</a>.)</div>
 </div></li>
-<li id="sec-linear-systems-fields-14-9-2-1-1-1-2"><div class="para" id="sec-linear-systems-fields-14-9-2-1-1-1-2-1">Suppose that the system stated in part a. of this problem is a system over <span class="process-math">\(\ff_p\text{.}\)</span> What is the correct inequality the coefficients <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\text{,}\)</span> and <span class="process-math">\(d\)</span> must satisfy in order for the system to have a unique solution? State your answer and prove it is correct.</div></li>
+<li id="sec-linear-systems-fields-15-9-2-1-1-1-2"><div class="para" id="sec-linear-systems-fields-15-9-2-1-1-1-2-1">Suppose that the system stated in part a. of this problem is a system over <span class="process-math">\(\ff_p\text{.}\)</span> What is the correct inequality the coefficients <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\text{,}\)</span> and <span class="process-math">\(d\)</span> must satisfy in order for the system to have a unique solution? State your answer and prove it is correct.</div></li>
 </ol></div>
-<div class="solutions"><details id="sec-linear-systems-fields-14-9-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-linear-systems-fields-14-9-2-2-1"><ol class="lower-alpha">
-<li id="sec-linear-systems-fields-14-9-2-2-1-1-1"><div class="para" id="sec-linear-systems-fields-14-9-2-2-1-1-1-1">The same argument as in <a href="sec-results.html#exer-2b2-det" class="xref" data-knowl="./knowl/xref/exer-2b2-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.3.12">Exercise 1.3.12</a> works here, recognizing that <span class="process-math">\(2=-1\)</span> in <span class="process-math">\(\ff_3\text{.}\)</span>
+<div class="solutions"><details id="sec-linear-systems-fields-15-9-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-linear-systems-fields-15-9-2-2-1"><ol class="lower-alpha">
+<li id="sec-linear-systems-fields-15-9-2-2-1-1-1"><div class="para" id="sec-linear-systems-fields-15-9-2-2-1-1-1-1">The same argument as in <a href="sec-results.html#exer-2b2-det" class="xref" data-knowl="./knowl/xref/exer-2b2-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.3.12">Exercise 1.3.12</a> works here, recognizing that <span class="process-math">\(2=-1\)</span> in <span class="process-math">\(\ff_3\text{.}\)</span>
 </div></li>
-<li id="sec-linear-systems-fields-14-9-2-2-1-1-2"><div class="para" id="sec-linear-systems-fields-14-9-2-2-1-1-2-1">The correct inequality is <span class="process-math">\(ad+(p-1)bc \neq 0\text{.}\)</span>
+<li id="sec-linear-systems-fields-15-9-2-2-1-1-2"><div class="para" id="sec-linear-systems-fields-15-9-2-2-1-1-2-1">The correct inequality is <span class="process-math">\(ad+(p-1)bc \neq 0\text{.}\)</span>
 </div></li>
-</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-14-9-3"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-linear-systems-fields-14-9-3-1-1">
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-15-9-3"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-linear-systems-fields-15-9-3-1-1">
 <div class="para">Consider a linear system</div>
-<div class="displaymath process-math" id="sec-linear-systems-fields-14-9-3-1-1-1">
+<div class="displaymath process-math" id="sec-linear-systems-fields-15-9-3-1-1-1">
 \begin{align*}
 a_{11}x_1 + \cdots + a_{1n}x_n \amp =b_1\\
 \vdots \amp \\
@@ -786,23 +789,23 @@ a_{m1}x_1 + \cdots + a_{mn}x_n \amp =b_m\text{,}
 </div>
 <div class="para">with all coefficients and constants in the integers.</div>
 <ol class="lower-alpha">
-<li id="sec-linear-systems-fields-14-9-3-1-1-2-1"><div class="para" id="sec-linear-systems-fields-14-9-3-1-1-2-1-1">Show that if the system has a solution <span class="process-math">\(\bfx \in \rr^n\)</span> then it must have a solution <span class="process-math">\(\bfy \in \qq^n\text{.}\)</span>
+<li id="sec-linear-systems-fields-15-9-3-1-1-2-1"><div class="para" id="sec-linear-systems-fields-15-9-3-1-1-2-1-1">Show that if the system has a solution <span class="process-math">\(\bfx \in \rr^n\)</span> then it must have a solution <span class="process-math">\(\bfy \in \qq^n\text{.}\)</span>
 </div></li>
-<li id="sec-linear-systems-fields-14-9-3-1-1-2-2"><div class="para" id="sec-linear-systems-fields-14-9-3-1-1-2-2-1">Show that if the system has a <em class="emphasis">unique</em> solution <span class="process-math">\(\bfx \in \qq^n\)</span> then <span class="process-math">\(\bfx\)</span> is also the <em class="emphasis">unique</em> solution in <span class="process-math">\(\rr^n\text{.}\)</span>
+<li id="sec-linear-systems-fields-15-9-3-1-1-2-2"><div class="para" id="sec-linear-systems-fields-15-9-3-1-1-2-2-1">Show that if the system has a <em class="emphasis">unique</em> solution <span class="process-math">\(\bfx \in \qq^n\)</span> then <span class="process-math">\(\bfx\)</span> is also the <em class="emphasis">unique</em> solution in <span class="process-math">\(\rr^n\text{.}\)</span>
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="sec-linear-systems-fields-14-9-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-linear-systems-fields-14-9-3-2-1"><ol class="lower-alpha">
-<li id="sec-linear-systems-fields-14-9-3-2-1-1-1"><div class="para" id="sec-linear-systems-fields-14-9-3-2-1-1-1-1">If all of the coefficients and constants begin as integers, all of the elementary row operations will produce coefficients and constants within <span class="process-math">\(\qq\text{.}\)</span> None of the elementary row operations can produce an irrational number when beginning with integers.</div></li>
-<li id="sec-linear-systems-fields-14-9-3-2-1-1-2"><div class="para" id="sec-linear-systems-fields-14-9-3-2-1-1-2-1">If there is a unique solution, there are no free variables, so whether one considers the solution in <span class="process-math">\(\qq^n\)</span> or <span class="process-math">\(\rr^n\text{,}\)</span> there cannot be another solution. Thus, the numbers in the solution set must be rational numbers.</div></li>
-</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-14-9-4"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-linear-systems-fields-14-9-4-1-1">
+<div class="solutions"><details id="sec-linear-systems-fields-15-9-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-linear-systems-fields-15-9-3-2-1"><ol class="lower-alpha">
+<li id="sec-linear-systems-fields-15-9-3-2-1-1-1"><div class="para" id="sec-linear-systems-fields-15-9-3-2-1-1-1-1">If all of the coefficients and constants begin as integers, all of the elementary row operations will produce coefficients and constants within <span class="process-math">\(\qq\text{.}\)</span> None of the elementary row operations can produce an irrational number when beginning with integers.</div></li>
+<li id="sec-linear-systems-fields-15-9-3-2-1-1-2"><div class="para" id="sec-linear-systems-fields-15-9-3-2-1-1-2-1">If there is a unique solution, there are no free variables, so whether one considers the solution in <span class="process-math">\(\qq^n\)</span> or <span class="process-math">\(\rr^n\text{,}\)</span> there cannot be another solution. Thus, the numbers in the solution set must be rational numbers.</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-linear-systems-fields-15-9-4"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-linear-systems-fields-15-9-4-1-1">
 <div class="para">Give descriptions of linear systems with each of the following properties, or state why such a system is impossible. Specific numbers and equations are not necessary, but your description should include what field is involved, the number of equations and variables, the number of free variables, etc. Explain your answers.</div>
 <ol class="lower-alpha">
-<li id="sec-linear-systems-fields-14-9-4-1-1-1-1"><div class="para" id="sec-linear-systems-fields-14-9-4-1-1-1-1-1">A consistent system with exactly 8 solutions</div></li>
-<li id="sec-linear-systems-fields-14-9-4-1-1-1-2"><div class="para" id="sec-linear-systems-fields-14-9-4-1-1-1-2-1">A consistent system with exactly 10 solutions</div></li>
-<li id="sec-linear-systems-fields-14-9-4-1-1-1-3"><div class="para" id="sec-linear-systems-fields-14-9-4-1-1-1-3-1">A consistent system with exactly 9 solutions</div></li>
-<li id="sec-linear-systems-fields-14-9-4-1-1-1-4"><div class="para" id="sec-linear-systems-fields-14-9-4-1-1-1-4-1">A consistent system with exactly 17 solutions</div></li>
+<li id="sec-linear-systems-fields-15-9-4-1-1-1-1"><div class="para" id="sec-linear-systems-fields-15-9-4-1-1-1-1-1">A consistent system with exactly 8 solutions</div></li>
+<li id="sec-linear-systems-fields-15-9-4-1-1-1-2"><div class="para" id="sec-linear-systems-fields-15-9-4-1-1-1-2-1">A consistent system with exactly 10 solutions</div></li>
+<li id="sec-linear-systems-fields-15-9-4-1-1-1-3"><div class="para" id="sec-linear-systems-fields-15-9-4-1-1-1-3-1">A consistent system with exactly 9 solutions</div></li>
+<li id="sec-linear-systems-fields-15-9-4-1-1-1-4"><div class="para" id="sec-linear-systems-fields-15-9-4-1-1-1-4-1">A consistent system with exactly 17 solutions</div></li>
 </ol>
 </div></article></article></section></section></div>
 <div class="ptx-content-footer">
