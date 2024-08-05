@@ -211,6 +211,18 @@
   </statement>
 </example>
 
+<note>
+  <p>
+    Readers will be able to put a matrix over <m>\rr</m> into RREF without difficulty using various computational means<mdash/>handheld calculators, smartphone applications, and any number of online matrix manipulators. However, working with matrices over fields which are not <m>\rr</m> presents some difficulties for most of these applications.
+  </p>
+  <p>
+    Students can find similar online calculators for matrices over the complex numbers through online searches. Finite fields are a bit trickier. David Augustat has created the website <url href="https://matrixer.davidaugustat.com/">Matrixer</url> for this purpose, and I encourage readers to take advantage of this resource <em>after</em> they have first mastered the mechanics themselves. (That is, tools like this are best used to check work that is done by hand and then, when the by-hand calculations are no longer the main point, to streamline the process.)
+  </p>
+  <p>
+    Finally, we have written an R package called <c>matrixmodp</c>, which can be found on <url href="https://cran.r-project.org/web/packages/matrixmodp/index.html">CRAN</url>. This package can handle matrices over finite, prime fields, but it does not have the capability to handle matrices over more exotic finite fields. (We are aware that R is not the best vehicle for matrix algebra, but this book was largely written when we were also learning R, and this was a good excuse to learn how to author a package in that language.)
+  </p>
+</note>
+
 <reading-questions>
 <exercise>
   <statement>

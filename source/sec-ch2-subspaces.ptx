@@ -393,7 +393,7 @@
           </li>
           <li>
             <p>
-              <m>W = \{ (a-b+1, 2a+3b, 0) \mid a,b \in \rr \}</m>
+              <m>W = \{ (a+b, 2b, ab) \mid a,b \in \rr \}</m>
             </p>
           </li>
           <li>
@@ -419,7 +419,7 @@
           </li>
           <li>
             <p>
-              Yes, <m>W</m> is a subspace. (However, <m>W</m> cannot easily be written as a span!)
+              No, <m>W</m> is not a subspace. It is not closed under scalar multiplication, for example.
             </p>
           </li>
           <li>
