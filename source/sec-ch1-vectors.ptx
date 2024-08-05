@@ -669,16 +669,16 @@
             <p>
               <me>
                 \bfu = \begin{bmatrix}
-                1 \\ 1 \\ 0
+                -2 \\ -4 \\ 1
                 \end{bmatrix}, \hspace{.15in}
                 \bfv = \begin{bmatrix}
-                2 \\ -1 \\ -3
+                -3 \\ -3 \\ 2
                 \end{bmatrix}, \hspace{.15in}
                 \bfw = \begin{bmatrix}
-                5 \\ -4 \\ -2
+                -4 \\ 0 \\ -4
                 \end{bmatrix}, \hspace{.15in}
                 \mathbf{b} = \begin{bmatrix}
-                6 \\ 1 \\ 0
+                1 \\ 0 \\ 1.5
                 \end{bmatrix}
               </me>.              
             </p>
