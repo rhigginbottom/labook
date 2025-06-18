@@ -14,7 +14,7 @@
     </p>
 
     <p>
-      While the abstraction in this book begins in earnest in <xref ref="ch-second"/>, readers will find this first chapter imminently practical and full of calculations. At the heart of this chapter is an algorithm to solve systems of linear equations. Though it might seem easy to some students, it is important to understand this chapter before moving on, as it serves as an essential foundation to what follows.
+      While the abstraction in this book begins in earnest in <xref ref="ch-second"/>, readers will find this first chapter imminently practical and full of calculations. At the heart of this chapter is an algorithm to solve systems of linear equations. Though it might seem easy to some students, it is important to understand this chapter before moving on, as it serves as an essential foundation for what follows.
     </p>
   </introduction>
 

@@ -191,8 +191,8 @@ Some of the matrix manipulations later in this section may seem to come from now
     <p>
       We suppose that we have the following <m>2\times n</m> linear system:
       <md>
-        <mrow>a_{11}x_1 + \cdots a_{1n}x_n \amp =b_1</mrow>
-        <mrow>a_{21}x_1 + \cdots a_{2n}x_n \amp =b_2</mrow>
+        <mrow>a_{11}x_1 + \cdots + a_{1n}x_n \amp =b_1</mrow>
+        <mrow>a_{21}x_1 + \cdots + a_{2n}x_n \amp =b_2</mrow>
       </md>,
       which produces the following augmented matrix:
       <me>
@@ -232,7 +232,7 @@ Some of the matrix manipulations later in this section may seem to come from now
     <me>
     C = \left[\begin{array}{@{}ccc|c@{}}
       a_{11} \amp \cdots \amp a_{1n} \amp b_1 \\
-      (ka_{11}+a_{21}) \amp \cdots \amp (ka_{1n}+a_{2n}) \amp (kb_1+b_2)
+      ka_{11}+a_{21} \amp \cdots \amp ka_{1n}+a_{2n} \amp kb_1+b_2
     \end{array}\right]
   </me>.
     In the linear system which corresponds to <m>C</m>, the first equation is unchanged from the first equation in the linear system that corresponds to <m>A</m>, so we only need to be concerned with the second equation. By virtue of the fact that <m>(c_1,\ldots,c_n)</m> satisfied both equations of the first system, we know that
@@ -316,7 +316,7 @@ Some of the matrix manipulations later in this section may seem to come from now
         0 \amp 0 \amp 1 \amp -1
         \end{array}\right]
       </me>.
-      We are halfway done, as we have 0s below the main diagonal. We now need to use elementary row operations to produce 0s above the main diagonal. We first <em>replace</em> the second row with <m>-\frac{1}{2}</m> times the third plus the second:
+      We are halfway done, as we have 0s below the main diagonal. We now need to use elementary row operations to produce 0s above the main diagonal. We first <em>replace</em> the second row with <m>-\frac{1}{2}</m> times the third row plus the second:
       <me>
         \left[\begin{array}{@{}ccc|c@{}}
         1 \amp 1 \amp -\frac{1}{2} \amp 4 \\[3pt]
@@ -361,7 +361,7 @@ Some of the matrix manipulations later in this section may seem to come from now
           each leading entry of a row is in a column to the right of the column of the leading entry for the row above it; and
         </li>
         <li>
-          all entries in a column below a leading entry are zeros.
+          all entries in a column below the leading entry of a row are zeros.
         </li>
       </ul>
       If a matrix <m>A</m> is in row-echelon form and also satisfies the following two conditions, it is in <term>reduced row-echelon form</term> (RREF):
@@ -377,8 +377,14 @@ Some of the matrix manipulations later in this section may seem to come from now
   </statement>
 </definition>
 
+<note>
+  <p>
+    The reader should observe that every matrix which is in RREF is automatically in REF, but the converse is not true.
+  </p>
+</note>
+
 <p>
-  Though that definition is a mouthful, it is useful. Here is an example showing some matrices that do and do not meet these criteria.
+  These definitions are a mouthful, but they are useful. Here is an example showing some matrices that do and do not meet these criteria.
 </p>
 
 <example>
@@ -505,7 +511,7 @@ Some of the matrix manipulations later in this section may seem to come from now
       </me>.
     </p>
     <p>
-      We now use the <m>1</m> we just created in order to produce zeros in the column above it. We add <m>-2</m> times the third row to the second, and we add <m>3</m> times the third row to the first:
+      We now use the <m>1</m> we just created to produce zeros in the column above it. We add <m>-2</m> times the third row to the second, and we add <m>3</m> times the third row to the first:
       <me>
         \left[\begin{array}{@{}cccc|c@{}}
         1 \amp 1 \amp 0 \amp 2 \amp 4 \\
@@ -515,7 +521,7 @@ Some of the matrix manipulations later in this section may seem to come from now
       </me>.
     </p>
     <p>
-      The final step is to use the pivot in position <m>(2,2)</m> in order to create a <m>0</m> above it. We add <m>-1</m> times the second row to the first:
+      The final step is to use the pivot in position <m>(2,2)</m> to create a <m>0</m> above it. We add <m>-1</m> times the second row to the first:
       <men xml:id="rref-examp">
         \left[\begin{array}{@{}cccc|c@{}}
         1 \amp 0 \amp 0 \amp -2 \amp 5 \\
@@ -567,7 +573,7 @@ Some of the matrix manipulations later in this section may seem to come from now
 <exercise>
   <statement>
     <p>
-      Put the following matrix into reduced row-echelon form. Record each of your steps along the way (both the elementary row operations you used and the matrices you obtained as a result):
+      Put the following matrix into reduced row-echelon form. Record each step along the way (both the elementary row operations used and the matrices obtained as a result):
       <me>
         A = \left[\begin{array}{@{}cc|c@{}}
           2 \amp -3 \amp 5 \\
