@@ -5,15 +5,19 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Diagonalization</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Linear Algebra">
-<meta property="book:author" content="Ryan Higginbottom">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -69,33 +73,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ryan Higginbottom">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.8.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">Gathering and Sharpening Tools</span></a></h1>
 <p class="byline">Ryan Higginbottom</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -106,7 +128,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-char-eqn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-sixth.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-invariants.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-char-eqn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-sixth.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-invariants.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
 \newcommand{\zz}{\mathbb Z}
 \newcommand{\qq}{\mathbb Q}
 \newcommand{\rr}{\mathbb R}
@@ -143,11 +166,11 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">To Students and Instructors</span></a></div></li>
 </ul>
 </li>
@@ -164,8 +187,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-29" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-31" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -365,9 +388,9 @@ window.MathJax = {
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-char-eqn.html#sec-char-eqn-6" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-diagonalization.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Diagonalization</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-diag" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Diagonalizable Matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-how-to-diagonalize" class="internal"><span class="codenumber">6.3.2</span> <span class="title">How to Diagonalize a Matrix</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-diag-linear-transf" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Linear Transformations and Diagonalizability</span></a></div></li>
@@ -431,7 +454,7 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-diagonalization"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-diagonalization"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">6.3</span><span class="space"> </span><span class="title">Diagonalization</span>
 </h2>
 <section class="introduction" id="sec-diagonalization-2"><div class="para" id="sec-diagonalization-2-1">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(A\)</span> often has a huge number of matrices to which it is similar. In this section, we will focus on matrices that are similar to diagonal matrices, and we do so because of how straightforward the action of a diagonal matrix is.</div></section><section class="subsection" id="subsec-diag"><h3 class="heading hide-type">
@@ -496,7 +519,8 @@ PD = \begin{bmatrix} \lambda_1\bfv_1 \amp \cdots \amp \lambda_n\bfv_n \end{bmatr
 \end{equation}
 </div>
 <div class="para">(If the reader has trouble believing <a href="sec-diagonalization.html#eqn-diag-thm-2" class="xref" data-knowl="./knowl/xref/eqn-diag-thm-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.5">(6.5)</a>, thinking of matrix multiplication, in each column of the product, as a linear combination of the columns of <span class="process-math">\(P\)</span> with weights coming from the corresponding column of <span class="process-math">\(D\text{,}\)</span> may help!) If <span class="process-math">\(A\)</span> is diagonalizable, then <span class="process-math">\(A = PDP^{-1}\)</span> and <span class="process-math">\(AP = PD\text{.}\)</span> From <a href="sec-diagonalization.html#eqn-diag-thm-1" class="xref" data-knowl="./knowl/xref/eqn-diag-thm-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.4">(6.4)</a> and <a href="sec-diagonalization.html#eqn-diag-thm-2" class="xref" data-knowl="./knowl/xref/eqn-diag-thm-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.5">(6.5)</a>, by equating columns in <span class="process-math">\(AP\)</span> and <span class="process-math">\(PD\)</span> we see that <span class="process-math">\(A\bfv_i = \lambda_i\bfv_i\)</span> for <span class="process-math">\(1 \le i \le n\text{.}\)</span> Since <span class="process-math">\(P\)</span> is invertible, the columns of <span class="process-math">\(P\)</span> must be linearly independent. Further, since the columns of <span class="process-math">\(P\)</span> cannot be zero vectors, this argument shows that <span class="process-math">\(\lambda_i\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> with eigenvector <span class="process-math">\(\bfv_i\text{,}\)</span> for each <span class="process-math">\(i\text{.}\)</span> This proves one direction of the theorem.</div>
-</div> <div class="para" id="thm-diagonalization-3-2">If we are given <span class="process-math">\(\bfv_1, \ldots, \bfv_n\)</span> as eigenvectors of <span class="process-math">\(A\)</span> with corresponding eigenvalues <span class="process-math">\(\lambda_1, \ldots, \lambda_n\text{,}\)</span> then we can form the matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\text{.}\)</span> The argument in the previous paragraph shows that <span class="process-math">\(AP = PD\text{.}\)</span> (Note that we have not yet used the linear independence of the eigenvectors!) If the eigenvectors are linearly independent, then <span class="process-math">\(P\)</span> is invertible, and <span class="process-math">\(AP = PD\)</span> implies <span class="process-math">\(A = PDP^{-1}\text{,}\)</span> making <span class="process-math">\(A\)</span> diagonalizable.</div></article></details><article class="note remark-like" id="subsec-diag-9"><h4 class="heading">
+</div>
+<div class="para" id="thm-diagonalization-3-2">If we are given <span class="process-math">\(\bfv_1, \ldots, \bfv_n\)</span> as eigenvectors of <span class="process-math">\(A\)</span> with corresponding eigenvalues <span class="process-math">\(\lambda_1, \ldots, \lambda_n\text{,}\)</span> then we can form the matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\text{.}\)</span> The argument in the previous paragraph shows that <span class="process-math">\(AP = PD\text{.}\)</span> (Note that we have not yet used the linear independence of the eigenvectors!) If the eigenvectors are linearly independent, then <span class="process-math">\(P\)</span> is invertible, and <span class="process-math">\(AP = PD\)</span> implies <span class="process-math">\(A = PDP^{-1}\text{,}\)</span> making <span class="process-math">\(A\)</span> diagonalizable.</div></article></details><article class="note remark-like" id="subsec-diag-9"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span>
 </h4>
 <div class="para" id="subsec-diag-9-1">
@@ -511,7 +535,7 @@ PD = \begin{bmatrix} \lambda_1\bfv_1 \amp \cdots \amp \lambda_n\bfv_n \end{bmatr
 <div class="para logical" id="alg-diagonalize-1-1">
 <div class="para">If <span class="process-math">\(A \in M_n(\ff)\text{,}\)</span> we follow these steps to diagonalize <span class="process-math">\(A\text{.}\)</span>
 </div>
-<ol class="decimal">
+<ol class="decimal" id="alg-diagonalize-1-1-3">
 <li id="alg-diagonalize-1-1-3-1"><div class="para" id="alg-diagonalize-1-1-3-1-1">Find the eigenvalues of <span class="process-math">\(A\text{.}\)</span> This usually involves solving the characteristic equation for <span class="process-math">\(A\text{.}\)</span> (If the characteristic polynomial does not factor into linear factors, the matrix is not diagonalizable.)</div></li>
 <li id="alg-diagonalize-1-1-3-2"><div class="para" id="alg-diagonalize-1-1-3-2-1">Find <span class="process-math">\(n\)</span> linearly independent eigenvectors for <span class="process-math">\(A\text{.}\)</span> (This step may fail, in which case the matrix is not diagonalizable.)</div></li>
 <li id="alg-diagonalize-1-1-3-3"><div class="para" id="alg-diagonalize-1-1-3-3-1">Construct the matrix <span class="process-math">\(P\)</span> using the vectors from the previous step. Form <span class="process-math">\(P\)</span> by using the eigenvectors as its columns. The order of these vectors does not matter.</div></li>
@@ -667,7 +691,7 @@ A = \begin{bmatrix}
 <div class="para logical" id="thm-diagonalizable-2-1-1">
 <div class="para">Let <span class="process-math">\(A \in M_n(\ff)\)</span> have distinct eigenvalues <span class="process-math">\(\lambda_1, \ldots, \lambda_p\text{.}\)</span>
 </div>
-<ol class="decimal">
+<ol class="decimal" id="thm-diagonalizable-2-1-1-3">
 <li id="thm-diagonalizable-2-1-1-3-1"><div class="para" id="thm-diagonalizable-2-1-1-3-1-1">For <span class="process-math">\(1 \le k \le p\text{,}\)</span> the dimension of <span class="process-math">\(\mathrm{eig}_{\lambda_k}(A)\)</span> is less than or equal to the (algebraic) multiplicity of <span class="process-math">\(\lambda_k\text{.}\)</span>
 </div></li>
 <li id="thm-diagonalizable-2-1-1-3-2"><div class="para" id="thm-diagonalizable-2-1-1-3-2-1">The matrix <span class="process-math">\(A\)</span> is diagonalizable if and only if the sum of the dimensions of the eigenspaces equals <span class="process-math">\(n\text{,}\)</span> and this happens if and only if (i) the characteristic polynomial factors completely into linear factors, and (ii) the dimension of <span class="process-math">\(\mathrm{eig}_{\lambda_k}(A)\)</span> equals the multiplicity of <span class="process-math">\(\lambda_k\)</span> for each <span class="process-math">\(k\text{.}\)</span>
@@ -764,7 +788,7 @@ T(a + bt) = (a-4b) + (3a-6b)t\text{.}
 A = \begin{bmatrix} -1 \amp 2 \\ 3 \amp 4 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-diagonalization-6-1-1-1-3">
 <li id="sec-diagonalization-6-1-1-1-3-1"><div class="para" id="sec-diagonalization-6-1-1-1-3-1-1">Find the characteristic polynomial and the eigenvalues of <span class="process-math">\(A\text{.}\)</span> Show your work.</div></li>
 <li id="sec-diagonalization-6-1-1-1-3-2"><div class="para" id="sec-diagonalization-6-1-1-1-3-2-1">Using only part a (this means you should make no additional calculations), explain why <span class="process-math">\(A\)</span> is diagonalizable.</div></li>
 </ol>
@@ -910,7 +934,7 @@ A^T = (P^T)^{-1}DP^T\text{.}
 </div></div></details></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-diagonalization-7-8-4-1-1">
 <div class="para">This problem explores the relationship between invertibility and diagonalizability.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-diagonalization-7-8-4-1-1-1">
 <li id="sec-diagonalization-7-8-4-1-1-1-1"><div class="para" id="sec-diagonalization-7-8-4-1-1-1-1-1">Construct a nonzero <span class="process-math">\(2\times 2\)</span> matrix which is invertible but not diagonalizable.</div></li>
 <li id="sec-diagonalization-7-8-4-1-1-1-2"><div class="para" id="sec-diagonalization-7-8-4-1-1-1-2-1">Construct a nondiagonal <span class="process-math">\(2\times 2\)</span> matrix that is diagonalizable but not invertible.</div></li>
 </ol>
@@ -919,17 +943,17 @@ A^T = (P^T)^{-1}DP^T\text{.}
 <div class="para" id="sec-diagonalization-7-8-6-1-1">Let <span class="process-math">\(T:\rr^2 \to \rr^2\)</span> be orthogonal projection onto the line <span class="process-math">\(y = -6x\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> is diagonalizable.</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-7"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-diagonalization-7-8-7-1-1">
 <div class="para">Let <span class="process-math">\(T: \rr^2 \to \rr^2\)</span> be counterclockwise rotation by <span class="process-math">\(\frac{\pi}{2}\)</span> radians.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-diagonalization-7-8-7-1-1-3">
 <li id="sec-diagonalization-7-8-7-1-1-3-1"><div class="para" id="sec-diagonalization-7-8-7-1-1-3-1-1">Prove that <span class="process-math">\(T\)</span> is not diagonalizable.</div></li>
 <li id="sec-diagonalization-7-8-7-1-1-3-2"><div class="para" id="sec-diagonalization-7-8-7-1-1-3-2-1">Prove that <span class="process-math">\(T^2\)</span> is diagonalizable.</div></li>
 </ol>
 </div></article></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-char-eqn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-invariants.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-char-eqn.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-invariants.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 <!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZFWXZ3398L"></script><script>  window.dataLayer = window.dataLayer || [];

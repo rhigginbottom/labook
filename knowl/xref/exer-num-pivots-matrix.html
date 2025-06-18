@@ -12,18 +12,18 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h5 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8<span class="period">.</span></span>
+<span class="type">Exercise</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">8<span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span></span>
 </h5>
-<div class="para logical">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\(A\)</span> be a matrix.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="exer-num-pivots-matrix-1-1-2">
 <li><div class="para">Prove that <span class="process-math">\(\dim(\nll(A))\)</span> is the number of non-pivot columns in <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li><div class="para">Prove that <span class="process-math">\(\dim(\col(A))\)</span> is the number of pivot columns of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="exer-num-pivots-matrix-2-1-1">
 <li><div class="para">The null space of a matrix has a basis vector for each column in the RREF which does not contain a pivot. Therefore, the dimension of the null space is the number of non-pivot columns.</div></li>
 <li><div class="para">By <a href="sec-basis.html#alg-find-basis" class="xref" data-knowl="./knowl/xref/alg-find-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 5.2.14">Algorithm 5.2.14</a>, we see that there is a vector in the basis for <span class="process-math">\(\col(A)\)</span> for each pivot in the RREF of <span class="process-math">\(A\text{.}\)</span> Therefore, <span class="process-math">\(\dim(\col(A))\)</span> is the number of pivot columns of <span class="process-math">\(A\text{.}\)</span>
 </div></li>

@@ -5,15 +5,19 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Vector Spaces</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Linear Algebra">
-<meta property="book:author" content="Ryan Higginbottom">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -69,33 +73,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ryan Higginbottom">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.8.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">Gathering and Sharpening Tools</span></a></h1>
 <p class="byline">Ryan Higginbottom</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -106,7 +128,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-linear-systems-fields.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-second.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-subspaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-linear-systems-fields.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-second.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-subspaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
 \newcommand{\zz}{\mathbb Z}
 \newcommand{\qq}{\mathbb Q}
 \newcommand{\rr}{\mathbb R}
@@ -143,11 +166,11 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">To Students and Instructors</span></a></div></li>
 </ul>
 </li>
@@ -164,8 +187,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-29" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-31" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -203,9 +226,9 @@ window.MathJax = {
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-systems-fields.html#sec-linear-systems-fields-15" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-vector-spaces.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Vector Spaces</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-vector-spaces.html#sec-vector-spaces-18" class="internal"><span class="codenumber">2.3</span> <span class="title">Reading Questions</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vector-spaces.html#exercises-2-3" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
@@ -431,7 +454,7 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-vector-spaces"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-vector-spaces"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.3</span><span class="space"> </span><span class="title">Vector Spaces</span>
 </h2>
 <section class="introduction" id="sec-vector-spaces-2"><div class="para" id="sec-vector-spaces-2-1">We now move to our next task of abstraction. We have generalized the real numbers and introduced the idea of a field, and we will now generalize the set and structure of the vectors <span class="process-math">\(\rr^n\)</span> (see <a href="sec-vectors.html" class="internal" title="Section 1.4: Vectors">Section 1.4</a>) to a vector space.</div></section><article class="definition definition-like" id="def-vector-space"><h3 class="heading">
@@ -439,7 +462,7 @@ window.MathJax = {
 </h3>
 <div class="para logical" id="def-vector-space-1-1">
 <div class="para">A <dfn class="terminology">vector space</dfn> over a field <span class="process-math">\(\ff\)</span> is a set <span class="process-math">\(V\)</span> on which are defined the operations of <em class="emphasis">addition</em> and <em class="emphasis">scalar multiplication</em> such that all of the following properties hold.</div>
-<ol class="decimal">
+<ol class="decimal" id="def-vector-space-1-1-6">
 <li id="def-vector-space-1-1-6-1"><div class="para" id="p-derived-def-vector-space-1-1-6-1">For all <span class="process-math">\(\bfu, \bfv \in V\text{,}\)</span> <span class="process-math">\(\bfu+\bfv \in V\text{.}\)</span> (The sum of two vectors is a vector.)</div></li>
 <li id="def-vector-space-1-1-6-2"><div class="para" id="p-derived-def-vector-space-1-1-6-2">For all <span class="process-math">\(c \in \ff\)</span> and all <span class="process-math">\(\bfv \in V\text{,}\)</span> <span class="process-math">\(c\bfv \in V\text{.}\)</span> (The scalar multiple of a vector is a vector.)</div></li>
 <li id="def-vector-space-1-1-6-3"><div class="para" id="p-derived-def-vector-space-1-1-6-3">For all <span class="process-math">\(\bfu, \bfv \in V\text{,}\)</span> <span class="process-math">\(\bfu+\bfv=\bfv+\bfu\text{.}\)</span> (Vector addition is commutative.)</div></li>
@@ -454,7 +477,7 @@ window.MathJax = {
 <div class="para">The elements of <span class="process-math">\(V\)</span> are called <em class="emphasis">vectors</em> and the elements of <span class="process-math">\(\ff\)</span> are called <em class="emphasis">scalars</em>.</div>
 </div></article><article class="note remark-like" id="sec-vector-spaces-4"><h3 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
-</h3>The reader will want to note when the multiplication of field elements is in view and when scalar multiplication (of a scalar times a vector) is in view. The context should help, as should our practice of using bold notation for vectors. The product of vectors (in the way that we take the product of field elements) is not a defined construction in a general vector space.</article><div class="para" id="sec-vector-spaces-5">Faced with this rather abstract definition, some examples are in order.</div>
+</h3></article><div class="para" id="sec-vector-spaces-5">Faced with this rather abstract definition, some examples are in order.</div>
 <details id="ex-rn" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-rn-1-1">The set <span class="process-math">\(\rr^n\text{,}\)</span> with the operations of scalar multiplication and vector addition defined in <a href="sec-vectors.html#def-vectors-algebra" class="xref" data-knowl="./knowl/xref/def-vectors-algebra.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.4.3">Definition 1.4.3</a>, is a vector space over <span class="process-math">\(\rr\text{.}\)</span> As with our definition of a field, if <span class="process-math">\(\rr^n\)</span> is not a vector space then we have carried out the enterprise of abstraction rather poorly. (See <a href="sec-vectors.html#fact-alg-props-vectors-rn" class="xref" data-knowl="./knowl/xref/fact-alg-props-vectors-rn.html" data-reveal-label="Reveal" data-close-label="Close" title="Fact 1.4.10">Fact 1.4.10</a> where we stated most of the properties of a vector space for <span class="process-math">\(\rr^n\text{,}\)</span> though we did not use that language.)</div></article></details><details id="ex-fn" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
@@ -496,7 +519,7 @@ a_1 \\ a_2 \\ \vdots \\ a_n
 <div class="para">for all <span class="process-math">\(t \in A\text{.}\)</span> This shows that axiom six holds.</div>
 </div> <div class="para" id="ex-real-functions-1-6">The rest of the axioms hold because of the definitions of vector addition and scalar multiplication and the properties of the real numbers.</div></article></details><article class="note remark-like" id="sec-vector-spaces-9"><h3 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
-</h3>The previous example can be difficult to digest, because we are considering functions to be vectors. It may take some adjustment to think of functions—rather than single real numbers (or even ordered lists of real numbers)—as the objects of study .</article><details id="ex-real-polys" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</h3>——</article><details id="ex-real-polys" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-real-polys-1-1">Let <span class="process-math">\(P_n\)</span> denote the set of all real-valued polynomials of degree less than or equal to <span class="process-math">\(n\)</span> with real coefficients. (Recall that the <em class="emphasis">degree</em> of a polynomial is the largest exponent of the variable that has a nonzero coefficient.) This means that the polynomial <span class="process-math">\(p(x) = 7x^{10}-\tfrac{1}{2}x^6 + 9\)</span> has degree <span class="process-math">\(10\)</span> and is an element of <span class="process-math">\(P_n\)</span> for all <span class="process-math">\(n \ge 10\text{.}\)</span>
 </div> <div class="para" id="ex-real-polys-1-2">We consider vector addition to be the usual algebraic sum of polynomials and scalar multiplication to be the usual product of a polynomial by a constant. Then <span class="process-math">\(P_n\)</span> is a vector space over <span class="process-math">\(\rr\text{.}\)</span>
@@ -576,7 +599,7 @@ c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m\text{.}
 </h3>
 <div class="para logical" id="thm-vspace-arithmetic-1-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space over a field <span class="process-math">\(\ff\text{.}\)</span> Then all of the following hold.</div>
-<ol class="decimal">
+<ol class="decimal" id="thm-vspace-arithmetic-1-1-3">
 <li id="zero-vect-unique"><div class="para" id="p-derived-zero-vect-unique">The zero vector in <span class="process-math">\(V\)</span> is unique.</div></li>
 <li id="thm-vspace-arithmetic-1-1-3-2"><div class="para" id="p-derived-thm-vspace-arithmetic-1-1-3-2">Additive inverses of vectors in <span class="process-math">\(V\)</span> are unique.</div></li>
 <li id="thm-vspace-arithmetic-1-1-3-3"><div class="para" id="p-derived-thm-vspace-arithmetic-1-1-3-3">For every <span class="process-math">\(\bfv \in V\text{,}\)</span> <span class="process-math">\(-(-\bfv)=\bfv\text{.}\)</span>
@@ -591,7 +614,8 @@ c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m\text{.}
 </div></li>
 </ol>
 </div></article><details id="thm-vspace-arithmetic-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-vspace-arithmetic-2-1">We will first prove property 2. Suppose that <span class="process-math">\(\bfu \in V\)</span> and that both <span class="process-math">\(\bfv, \bfw \in V\)</span> have the properties of being additive inverses of <span class="process-math">\(\bfu\text{.}\)</span> We will show that <span class="process-math">\(\bfv=\bfw\text{.}\)</span>
-</div> <div class="para logical" id="thm-vspace-arithmetic-2-2">
+</div>
+<div class="para logical" id="thm-vspace-arithmetic-2-2">
 <div class="para">Since <span class="process-math">\(\bfu+\bfv = \mathbf{0}\)</span> and <span class="process-math">\(\bfu+\bfw=\mathbf{0}\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -606,7 +630,8 @@ c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m\text{.}
 \bfv  \amp = \bfw \text{.}
 \end{align*}
 </div>
-</div> <div class="para logical" id="thm-vspace-arithmetic-2-3">
+</div>
+<div class="para logical" id="thm-vspace-arithmetic-2-3">
 <div class="para">We will now show that property 4 holds. Since <span class="process-math">\(0=0+0\)</span> in <span class="process-math">\(\ff\text{,}\)</span> we can use the distributive property (axiom 10 in <a href="sec-vector-spaces.html#def-vector-space" class="xref" data-knowl="./knowl/xref/def-vector-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.3.1">Definition 2.3.1</a>) to find the following:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-vector-space.html">
 \begin{equation*}
@@ -614,7 +639,8 @@ c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m\text{.}
 \end{equation*}
 </div>
 <div class="para">We have <span class="process-math">\(0\bfv=0\bfv+0\bfv\text{,}\)</span> and subtracting <span class="process-math">\(0\bfv\)</span> from both sides gives us <span class="process-math">\(\mathbf{0}=0\bfv\text{.}\)</span> (The reader should recall that by “subtracting” we mean adding the additive inverse, which every vector in a vector space possesses.)</div>
-</div> <div class="para logical" id="thm-vspace-arithmetic-2-4">
+</div>
+<div class="para logical" id="thm-vspace-arithmetic-2-4">
 <div class="para">To prove property 6, we must show that <span class="process-math">\((-1)\bfv\)</span> has the properties of the additive inverse of <span class="process-math">\(\bfv\text{.}\)</span> (Then, by property 2, we can conclude what we want.) We will use the distributive law (axiom 10 again) as well as the just-proved property 4:</div>
 <div class="displaymath process-math" id="thm-vspace-arithmetic-2-4-3">
 \begin{align*}
@@ -629,7 +655,7 @@ c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m\text{.}
 <article class="exercise exercise-like" id="sec-vector-spaces-18-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-vector-spaces-18-1-1-1">
 <div class="para">In this question we will explore <span class="process-math">\(\ff_5^3\text{.}\)</span> (See <a href="sec-vector-spaces.html#ex-fn" class="xref" data-knowl="./knowl/xref/ex-fn.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.4">Example 2.3.4</a>. The vector space <span class="process-math">\(\ff_5^3\)</span> should be thought of as being the same as <span class="process-math">\(\rr^3\)</span> except that the entries and the operations are coming from <span class="process-math">\(\ff_5\text{.}\)</span>)</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-vector-spaces-18-1-1-1-6">
 <li id="sec-vector-spaces-18-1-1-1-6-1"><div class="para" id="sec-vector-spaces-18-1-1-1-6-1-1">Write down two nonzero elements of <span class="process-math">\(\ff_5^3\)</span> and compute their sum.</div></li>
 <li id="sec-vector-spaces-18-1-1-1-6-2"><div class="para" id="sec-vector-spaces-18-1-1-1-6-2-1">Write down one nonzero element of <span class="process-math">\(\ff_5^3\)</span> and compute the scalar multiple of this vector by the element <span class="process-math">\(3\)</span> of <span class="process-math">\(\ff_5\text{.}\)</span>
 </div></li>
@@ -643,13 +669,13 @@ c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m\text{.}
 <div class="para logical" id="exercises-2-3-1-1-1">
 <div class="para">For each of the following, determine whether the given subset <span class="process-math">\(V\subseteq \rr^2\)</span> is a real vector space, using the usual operations of vector addition and scalar multiplication in <span class="process-math">\(\rr^2\text{.}\)</span>
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="exercises-2-3-1-1-1-3">
 <li id="exercises-2-3-1-1-1-3-1"><div class="para" id="exercises-2-3-1-1-1-3-1-1"><span class="process-math">\(\displaystyle V = \{ (x,y) \mid x,y \ge 0 \}\)</span></div></li>
 <li id="exercises-2-3-1-1-1-3-2"><div class="para" id="exercises-2-3-1-1-1-3-2-1"><span class="process-math">\(\displaystyle V = \{ (x,y) \mid xy \ge 0 \}\)</span></div></li>
 <li id="exercises-2-3-1-1-1-3-3"><div class="para" id="exercises-2-3-1-1-1-3-3-1"><span class="process-math">\(\displaystyle V = \{ (x,y) \mid y = x \}\)</span></div></li>
 </ol>
 </div>
-<div class="solutions"><details id="exercises-2-3-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-2-3-1-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-2-3-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-2-3-1-2-1"><ol class="lower-alpha lower-alpha-level-1" id="exercises-2-3-1-2-1-1">
 <li id="exercises-2-3-1-2-1-1-1"><div class="para" id="exercises-2-3-1-2-1-1-1-1">No, this is not a vector space. For example, it is not closed under scalar multiplication. We can see that <span class="process-math">\(-2(1,1) = (-2,-2) \not \in V\text{.}\)</span>
 </div></li>
 <li id="exercises-2-3-1-2-1-1-2"><div class="para" id="exercises-2-3-1-2-1-1-2-1">No, this is not a vector space. For example, it is not closed under addition. We can see that <span class="process-math">\((1,4) + (-2,-1)= (-1,3) \not \in V\text{.}\)</span>
@@ -716,7 +742,7 @@ p_3 \amp = 4t^3 + \tfrac{1}{2}t^2 + 2t + 1\text{.}
 <div class="para logical" id="exercises-2-3-6-1-1">
 <div class="para">Consider the vector space <span class="process-math">\(\ff_2^3\text{.}\)</span>
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="exercises-2-3-6-1-1-2">
 <li id="exercises-2-3-6-1-1-2-1"><div class="para" id="exercises-2-3-6-1-1-2-1-1">How many distinct vectors are in <span class="process-math">\(\ff_2^3\text{?}\)</span>
 </div></li>
 <li id="exercises-2-3-6-1-1-2-2"><div class="para logical" id="exercises-2-3-6-1-1-2-2-1">
@@ -736,7 +762,7 @@ p_3 \amp = 4t^3 + \tfrac{1}{2}t^2 + 2t + 1\text{.}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="exercises-2-3-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-2-3-6-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="exercises-2-3-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="exercises-2-3-6-2-1"><ol class="lower-alpha lower-alpha-level-1" id="exercises-2-3-6-2-1-1">
 <li id="exercises-2-3-6-2-1-1-1"><div class="para" id="exercises-2-3-6-2-1-1-1-1">This vector space contains <span class="process-math">\(2^3 = 8\)</span> distinct vectors.</div></li>
 <li id="exercises-2-3-6-2-1-1-2"><div class="para" id="exercises-2-3-6-2-1-1-2-1">The set <span class="process-math">\(\spn\{\bfu, \bfv\}\)</span> contains four distinct vectors: <span class="process-math">\(\bfo\text{,}\)</span> <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\bfu + \bfv\text{.}\)</span> These are all distinct.</div></li>
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-2-3-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
@@ -826,11 +852,11 @@ V = \{ (x,y) \mid y = 4x \}\text{.}
 <div class="para" id="exercises-2-3-10-8-1-1">Prove <a href="sec-vector-spaces.html#const-mult-zero" class="xref" data-knowl="./knowl/xref/const-mult-zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 5">Item 5</a> in <a href="sec-vector-spaces.html#thm-vspace-arithmetic" class="xref" data-knowl="./knowl/xref/thm-vspace-arithmetic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.3.12">Theorem 2.3.12</a>.</div></article><article class="exercise exercise-like" id="exercises-2-3-10-9"><h5 class="heading"><span class="codenumber">17<span class="period">.</span></span></h5>
 <div class="para" id="exercises-2-3-10-9-1-1">Prove <a href="sec-vector-spaces.html#no-zero-divs" class="xref" data-knowl="./knowl/xref/no-zero-divs.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 7">Item 7</a> in <a href="sec-vector-spaces.html#thm-vspace-arithmetic" class="xref" data-knowl="./knowl/xref/thm-vspace-arithmetic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.3.12">Theorem 2.3.12</a>.</div></article></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-linear-systems-fields.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-subspaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-linear-systems-fields.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-subspaces.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 <!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZFWXZ3398L"></script><script>  window.dataLayer = window.dataLayer || [];

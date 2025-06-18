@@ -5,15 +5,19 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Hints, Answers, and Solutions to Exercises</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Linear Algebra">
-<meta property="book:author" content="Ryan Higginbottom">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -69,33 +73,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ryan Higginbottom">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.8.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">Gathering and Sharpening Tools</span></a></h1>
 <p class="byline">Ryan Higginbottom</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -106,7 +128,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="apdx-mod-arith.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="apdx-mod-arith.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
 \newcommand{\zz}{\mathbb Z}
 \newcommand{\qq}{\mathbb Q}
 \newcommand{\rr}{\mathbb R}
@@ -143,11 +166,11 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">To Students and Instructors</span></a></div></li>
 </ul>
 </li>
@@ -164,8 +187,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-29" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-31" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -431,7 +454,7 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="solutions" id="app-solns"><h2 class="heading">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="solutions" id="app-solns"><h2 class="heading">
 <span class="type">Appendix</span><span class="space"> </span><span class="codenumber">B</span><span class="space"> </span><span class="title">Hints, Answers, and Solutions to Exercises</span>
 </h2>
 <h3 class="heading hide-type" title="Section 1.1: Systems of Linear Equations">
@@ -449,12 +472,12 @@ a+b+c \amp =0\\
 \end{align*}
 </div>
 </div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">1.1.5<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-intro-systems-20-5-2-1-1">
 <li><div class="para">No.</div></li>
 <li><div class="para">No.</div></li>
 <li><div class="para">No.</div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">1.1.6<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-intro-systems-20-6-2-1-1">
 <li><div class="para">The solution set is <span class="process-math">\(\{(8/9,-11/9)\}\text{.}\)</span>
 </div></li>
 <li><div class="para">The solution set is empty.</div></li>
@@ -465,7 +488,7 @@ a+b+c \amp =0\\
 </div></li>
 </ol></div></div></details></div></article><article class="subexercises"><h5 class="heading"><span class="title">Writing Exercises</span></h5>
 <article class="exercise-like"><h6 class="heading"><span class="codenumber">1.1.7<span class="period">.</span></span></h6>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-intro-systems-20-7-2-2-1-1">
 <li><div class="para logical">
 <div class="para">This system has no solution because the lines are parallel:</div>
 <div class="displaymath process-math">
@@ -499,7 +522,7 @@ a+b+c \amp =0\\
 </h3>
 <h4 class="heading hide-type" title="Exercises 1.2"><span class="title">Exercises</span></h4>
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">1.2.4<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-matrices-31-4-2-1-1">
 <li><div class="para">Neither</div></li>
 <li><div class="para">REF</div></li>
 <li><div class="para">REF</div></li>
@@ -514,13 +537,13 @@ C = \begin{bmatrix} 1 \amp -3/2 \\ 0 \amp 1/2 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 </div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">1.2.6<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-matrices-31-6-2-1-1">
 <li><div class="para"></div></li>
 <li><div class="para"><span class="process-math">\(\displaystyle \begin{bmatrix} 1 \amp 0 \amp 31/10 \\ 0 \amp 1 \amp -3/10 \end{bmatrix}\)</span></div></li>
 <li><div class="para"></div></li>
 <li><div class="para"><span class="process-math">\(\displaystyle \begin{bmatrix} 1 \amp 0 \amp 21/23 \\ 0 \amp 1 \amp -5/23 \\ 0 \amp 0 \amp 0 \end{bmatrix}\)</span></div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">1.2.7<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-matrices-31-7-2-1-1">
 <li><div class="para">There are 4 possible RREFs.</div></li>
 <li><div class="para">There are 7 possible RREFs.</div></li>
 <li><div class="para">There are 4 possible RREFs.</div></li>
@@ -529,7 +552,7 @@ C = \begin{bmatrix} 1 \amp -3/2 \\ 0 \amp 1/2 \end{bmatrix}\text{.}
 </h3>
 <h4 class="heading hide-type" title="Exercises 1.3"><span class="title">Exercises</span></h4>
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">1.3.1<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-results-32-1-2-1-1">
 <li><div class="para">The only solution is <span class="process-math">\((-4,5,0)\text{.}\)</span>
 </div></li>
 <li><div class="para logical">
@@ -650,7 +673,7 @@ c(\bfu + \bfv) \amp = \begin{bmatrix} cu_1 + cv_1 \\ \vdots \\ cu_n + cv_n \end{
 <h4 class="heading hide-type" title="Exercises 2.1"><span class="title">Exercises</span></h4>
 <article class="subexercises"><h5 class="heading"><span class="title">Writing Exercises</span></h5>
 <article class="exercise-like"><h6 class="heading"><span class="codenumber">2.1.6<span class="period">.</span></span></h6>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-fields-21-4-4-2-1-1">
 <li><div class="para">No, <span class="process-math">\(\zz[x]\)</span> is not a field. All of the integers are contained in <span class="process-math">\(\zz[x]\text{,}\)</span> and since (for example) <span class="process-math">\(2 \in \zz\)</span> has no multiplicative inverse in <span class="process-math">\(\zz\text{,}\)</span> it will not have a multiplicative inverse in <span class="process-math">\(\zz[x]\text{.}\)</span>
 </div></li>
 <li><div class="para logical">
@@ -663,7 +686,7 @@ c(\bfu + \bfv) \amp = \begin{bmatrix} cu_1 + cv_1 \\ \vdots \\ cu_n + cv_n \end{
 <div class="para">But since the constant term on the right side of this equation is <span class="process-math">\(0\)</span> and the constant term on the left side is <span class="process-math">\(1\text{,}\)</span> and since those are not equal, we have a contradiction.</div>
 </div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h6 class="heading"><span class="codenumber">2.1.8<span class="period">.</span></span></h6>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-fields-21-4-6-2-1-1">
 <li><div class="para"></div></li>
 <li><div class="para logical">
 <div class="para">Yes, this is a field. The most difficult axiom to check is the one about multiplicative inverses. It turns out that the multiplicative inverse of <span class="process-math">\(a + b\alpha\)</span> is <span class="process-math">\(c + d\alpha\)</span> where</div>
@@ -706,13 +729,13 @@ a \amp =b'\text{.}
 <div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para">The unique solution is <span class="process-math">\(x = 2\text{,}\)</span> <span class="process-math">\(y = 4\text{,}\)</span> and <span class="process-math">\(z = 1\text{.}\)</span>
 </div></div></details></div></article><article class="subexercises"><h5 class="heading"><span class="title">Writing Exercises</span></h5>
 <article class="exercise-like"><h6 class="heading"><span class="codenumber">2.2.9<span class="period">.</span></span></h6>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-linear-systems-fields-15-9-2-2-1-1">
 <li><div class="para">The same argument as in <a href="sec-results.html#exer-2b2-det" class="xref" data-knowl="./knowl/xref/exer-2b2-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.3.12">Exercise 1.3.12</a> works here, recognizing that <span class="process-math">\(2=-1\)</span> in <span class="process-math">\(\ff_3\text{.}\)</span>
 </div></li>
 <li><div class="para">The correct inequality is <span class="process-math">\(ad+(p-1)bc \neq 0\text{.}\)</span>
 </div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h6 class="heading"><span class="codenumber">2.2.10<span class="period">.</span></span></h6>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-linear-systems-fields-15-9-3-2-1-1">
 <li><div class="para">If all of the coefficients and constants begin as integers, all of the elementary row operations will produce coefficients and constants within <span class="process-math">\(\qq\text{.}\)</span> None of the elementary row operations can produce an irrational number when beginning with integers.</div></li>
 <li><div class="para">If there is a unique solution, there are no free variables, so whether one considers the solution in <span class="process-math">\(\qq^n\)</span> or <span class="process-math">\(\rr^n\text{,}\)</span> there cannot be another solution. Thus, the numbers in the solution set must be rational numbers.</div></li>
 </ol></div></div></details></div></article></article><h3 class="heading hide-type" title="Section 2.3: Vector Spaces">
@@ -720,7 +743,7 @@ a \amp =b'\text{.}
 </h3>
 <h4 class="heading hide-type" title="Exercises 2.3"><span class="title">Exercises</span></h4>
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">2.3.1<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="exercises-2-3-1-2-1-1">
 <li><div class="para">No, this is not a vector space. For example, it is not closed under scalar multiplication. We can see that <span class="process-math">\(-2(1,1) = (-2,-2) \not \in V\text{.}\)</span>
 </div></li>
 <li><div class="para">No, this is not a vector space. For example, it is not closed under addition. We can see that <span class="process-math">\((1,4) + (-2,-1)= (-1,3) \not \in V\text{.}\)</span>
@@ -736,7 +759,7 @@ a \amp =b'\text{.}
 \end{equation*}
 </div>
 </div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">2.3.6<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="exercises-2-3-6-2-1-1">
 <li><div class="para">This vector space contains <span class="process-math">\(2^3 = 8\)</span> distinct vectors.</div></li>
 <li><div class="para">The set <span class="process-math">\(\spn\{\bfu, \bfv\}\)</span> contains four distinct vectors: <span class="process-math">\(\bfo\text{,}\)</span> <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\bfu + \bfv\text{.}\)</span> These are all distinct.</div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">2.3.9<span class="period">.</span></span></h5>
@@ -765,14 +788,14 @@ a \amp =b'\text{.}
 </h3>
 <h4 class="heading hide-type" title="Exercises 2.4"><span class="title">Exercises</span></h4>
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">2.4.2<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-21-2-2-1-1">
 <li><div class="para">Yes, <span class="process-math">\(W\)</span> is a subspace.</div></li>
 <li><div class="para">Yes, <span class="process-math">\(W\)</span> is a subspace.</div></li>
 <li><div class="para">No, <span class="process-math">\(W\)</span> is not a subspace. It is not closed under scalar multiplication.</div></li>
 <li><div class="para">Yes, <span class="process-math">\(W\)</span> is a subspace.</div></li>
 <li><div class="para">Yes, <span class="process-math">\(W\)</span> is a subspace.</div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">2.4.4<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-21-4-2-1-1">
 <li><div class="para">Yes, <span class="process-math">\(W\)</span> is a subspace as it can be written as the span of two vectors.</div></li>
 <li><div class="para">No, <span class="process-math">\(W\)</span> is not a subspace. It is not closed under scalar multiplication, for example.</div></li>
 <li><div class="para">Yes, <span class="process-math">\(W\)</span> is a subspace as it can be written as the span of four vectors.</div></li>
@@ -820,12 +843,12 @@ T(2(1,1,0)) \amp = T(2,2,0) = (6+2-0,-4) \equiv (3,1)\\
 <div class="para">This shows that the scalar multiplication property does not hold, as <span class="process-math">\(2T(1,1,0) \neq T(2(1,1,0))\text{.}\)</span>
 </div>
 </div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">3.1.7.6<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-linear-trans-9-6-2-1-1">
 <li><div class="para"><span class="process-math">\(\displaystyle A\bfv = (0,1,0)\)</span></div></li>
 <li><div class="para"><span class="process-math">\(\displaystyle A\bfv = (1,2,2)\)</span></div></li>
 <li><div class="para"><span class="process-math">\(\displaystyle A\bfv = (0,1,0)\)</span></div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">3.1.7.8<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-linear-trans-9-8-2-1-1">
 <li><div class="para logical">
 <div class="para">No, since</div>
 <div class="displaymath process-math">
@@ -871,7 +894,8 @@ T(cf)(x) \amp = \int_0^x (cf)(y)\;dy = \int_0^x cf(y)\;dy\\
 \end{align*}
 </div>
 <div class="para">This proves that <span class="process-math">\(S\circ T\)</span> has the first property of a linear transformation.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">We now let <span class="process-math">\(c \in \ff\)</span> and <span class="process-math">\(\bfu \in U\text{.}\)</span> Then, since <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> are both linear transformations, we have</div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -882,7 +906,7 @@ T(cf)(x) \amp = \int_0^x (cf)(y)\;dy = \int_0^x cf(y)\;dy\\
 <div class="para">This shows that <span class="process-math">\(S\circ T\)</span> is a linear transformation.</div>
 </div>
 </div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">3.1.7.13<span class="period">.</span></span></h5>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-linear-trans-9-11-4-2-1-1">
 <li><div class="para logical">
 <div class="para">We assume that <span class="process-math">\(S\circ T\)</span> is injective, and we let <span class="process-math">\(\bfu_1\)</span> and <span class="process-math">\(\bfu_2\)</span> be vectors in <span class="process-math">\(U\)</span> with <span class="process-math">\(T(\bfu_1) = T(\bfu_2)\text{.}\)</span> Then, since <span class="process-math">\(S \circ T\)</span> is injective, we have</div>
 <div class="displaymath process-math">
@@ -909,13 +933,13 @@ S(T(\bfu_1)) \amp = S(T(\bfu_2))\\
 <span class="codenumber">3.3</span><span class="space"> </span><span class="title">Inverting a Matrix</span><br><span class="codenumber">3.3.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">3.3.4.2<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-inverting-matrix-6-2-2-1-1">
 <li><div class="para">The RREF of <span class="process-math">\(A\)</span> is <span class="process-math">\(I_3\)</span> and it takes nine elementary row operations to reduce <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li><div class="para">The RREF of <span class="process-math">\(A\)</span> is <span class="process-math">\(I_3\)</span> and it takes six elementary row operations to reduce <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">3.3.4.4<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-inverting-matrix-6-4-2-1-1">
 <li><div class="para logical">
 <div class="para">The matrix <span class="process-math">\(A\)</span> is invertible and the inverse of <span class="process-math">\(A\)</span> is</div>
 <div class="displaymath process-math">
@@ -942,7 +966,7 @@ S(T(\bfu_1)) \amp = S(T(\bfu_2))\\
 </div>
 </div></div></details></div></article><article class="subexercises"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">3.3.4.9<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-inverting-matrix-6-8-3-2-1-1">
 <li><div class="para logical">
 <div class="para">We suppose that <span class="process-math">\((B-C)D = 0\)</span> where <span class="process-math">\(D\)</span> is invertible. Then we have</div>
 <div class="displaymath process-math">
@@ -967,12 +991,12 @@ B  \amp = C\text{.}
 <span class="codenumber">3.4</span><span class="space"> </span><span class="title">Subspaces and Linear Transformations</span><br><span class="codenumber">3.4.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">3.4.4.1<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-1-2-1-1">
 <li><div class="para">Yes, we calculate <span class="process-math">\(A\bfx = \bfo\text{.}\)</span>
 </div></li>
 <li><div class="para">No, we calculate <span class="process-math">\(A\bfx = (6,6,5)\text{,}\)</span> where we have written the vector horizontally out of convenience.</div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">3.4.4.4<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-4-2-1-1">
 <li><div class="para logical">
 <div class="para">It is easy to calculate <span class="process-math">\(A\bfx\)</span> and see that <span class="process-math">\(A\bfx = \bfo\text{.}\)</span> To show that <span class="process-math">\(\bfx\)</span> is not in <span class="process-math">\(\col(A)\text{,}\)</span> we form the matrix <span class="process-math">\(\left[\begin{array}{@{}c|c@{}} A \amp \bfx \end{array}\right]\)</span> and row reduce:</div>
 <div class="displaymath process-math">
@@ -996,7 +1020,7 @@ A \sim \begin{bmatrix} 1 \amp -1/3 \\ 0 \amp 0 \end{bmatrix}\text{,}
 <li><div class="para">Yes, this is possible. Consider the matrix <span class="process-math">\(A = \begin{bmatrix} 1 \amp -1 \\ 1 \amp -1 \end{bmatrix}\text{.}\)</span> The vector <span class="process-math">\(\bfv = \begin{bmatrix} 1 \\ 1 \end{bmatrix}\)</span> is in the null space of <span class="process-math">\(A\text{.}\)</span> (This can easily be checked.) Also, since <span class="process-math">\(\bfv\)</span> is a column of <span class="process-math">\(A\text{,}\)</span> it is in <span class="process-math">\(\col(A)\text{.}\)</span>
 </div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">3.4.4.7<span class="period">.</span></span></h4>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-7-2-1-1">
 <li>
 <div class="para logical">
 <div class="para">This linear transformation is injective. Observe that if <span class="process-math">\(T\)</span> sends the vector <span class="process-math">\((a,b,c)\)</span> to the zero polynomial, then we have the following linear system in which each equation must hold:</div>
@@ -1037,7 +1061,7 @@ a + b + c  \amp =f\text{.}
 <div class="para">The fact that there is a pivot in each row of this RREF means that a combination of <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> can be found such that <span class="process-math">\(T(\bfx) = p\text{.}\)</span> This proves that <span class="process-math">\(T\)</span> is surjective.</div>
 </div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">3.4.4.9<span class="period">.</span></span></h4>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-9-2-1-1">
 <li><div class="para">This linear transformation is not injective. We can calculate that <span class="process-math">\(T(-\frac{2}{3} - \frac{1}{3}t + t^2) = \bfo\text{.}\)</span> Since this shows that <span class="process-math">\(T\)</span> has a nonzero vector in the kernel, <span class="process-math">\(T\)</span> is not injective.</div></li>
 <li><div class="para logical">
 <div class="para">This linear transformation is surjective. Let <span class="process-math">\(\bfx = \begin{bmatrix} d \\ e \end{bmatrix}\)</span> be an element of <span class="process-math">\(\rr^2\text{.}\)</span> We claim that we can find an element <span class="process-math">\(p \in P_2\)</span> such that <span class="process-math">\(T(p) = \bfx\text{.}\)</span> If <span class="process-math">\(p = a + bt + ct^2\text{,}\)</span> we will need to solve the following system of equations to find the coefficients of <span class="process-math">\(p\text{:}\)</span>
@@ -1061,7 +1085,8 @@ a - 2b \amp = d\\
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">3.4.4.11<span class="period">.</span></span></h5>
 <div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para">Since <span class="process-math">\(U'\)</span> is a subspace of <span class="process-math">\(U\text{,}\)</span> we must have <span class="process-math">\(\bfo \in U'\text{.}\)</span> Further, we know that <span class="process-math">\(T(\bfo) = \bfo\)</span> for all linear transformations. This proves that <span class="process-math">\(\bfo \in T(U')\text{.}\)</span>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">We now let <span class="process-math">\(\bfv_1, \bfv_2 \in T(U')\text{.}\)</span> This means that there exist <span class="process-math">\(\bfu_1, \bfu_2 \in U'\)</span> with <span class="process-math">\(T(\bfu_1) = \bfv_1\)</span> and <span class="process-math">\(T(\bfu_2) = \bfv_2\text{.}\)</span> Since <span class="process-math">\(U'\)</span> is a subspace of <span class="process-math">\(U\text{,}\)</span> we know that <span class="process-math">\(\bfu_1 + \bfu_2 \in U'\text{,}\)</span> so <span class="process-math">\(T(\bfu_1 + \bfu_2) \in T(U')\text{.}\)</span> However, because of the properties of a linear transformation, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1069,7 +1094,8 @@ T(\bfu_1 + \bfu_2) = T(\bfu_1) + T(\bfu_2) = \bfv_1 + \bfv_2\text{.}
 \end{equation*}
 </div>
 <div class="para">This proves that <span class="process-math">\(\bfv_1 + \bfv_2 \in T(U')\text{,}\)</span> which shows that <span class="process-math">\(T(U')\)</span> is closed under addition.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">Finally, we let <span class="process-math">\(\bfv \in T(U')\)</span> and <span class="process-math">\(c \in \ff\text{.}\)</span> This means that there exists <span class="process-math">\(\bfu \in U'\)</span> such that <span class="process-math">\(T(\bfu) = \bfv\text{.}\)</span> Since <span class="process-math">\(U'\)</span> is a subspace of <span class="process-math">\(U\text{,}\)</span> we know that <span class="process-math">\(c\bfu \in U'\text{,}\)</span> so <span class="process-math">\(T(c\bfu) \in T(U')\text{.}\)</span> Using the properties of a linear transformation, we see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1083,11 +1109,11 @@ T(c\bfu) = cT(\bfu) = c\bfv\text{.}
 <span class="codenumber">4</span><span class="space"> </span><span class="title">Determinants</span><br><span class="codenumber">4.1</span><span class="space"> </span><span class="title">Defining the Determinant</span><br><span class="codenumber">4.1.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">4.1.4.2<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-define-det-6-2-2-1-1">
 <li><div class="para"><span class="process-math">\(\displaystyle 6\)</span></div></li>
 <li><div class="para"><span class="process-math">\(\displaystyle 66\)</span></div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">4.1.4.4<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-define-det-6-4-2-1-1">
 <li><div class="para logical">
 <div class="para">The elementary matrix is</div>
 <div class="displaymath process-math">
@@ -1153,7 +1179,7 @@ B = \begin{bmatrix} a \amp b \\ ka + c \amp kb + d \end{bmatrix}\text{.}
 <span class="codenumber">4.2</span><span class="space"> </span><span class="title">Properties of the Determinant</span><br><span class="codenumber">4.2.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">4.2.4.2<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-6-2-2-1-1">
 <li><div class="para"><span class="process-math">\(\displaystyle -12\)</span></div></li>
 <li><div class="para"><span class="process-math">\(\displaystyle -3\)</span></div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">4.2.4.4<span class="period">.</span></span></h4>
@@ -1177,7 +1203,7 @@ B = \begin{bmatrix} a \amp b \\ ka + c \amp kb + d \end{bmatrix}\text{.}
 <div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para">The set is linearly dependent if and only if <span class="process-math">\(c = 20\text{.}\)</span>
 </div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">5.1.4<span class="period">.</span></span></h5>
 <div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para"><span class="process-math">\(4\)</span></div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">5.1.5<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-lin-ind-36-5-2-1-1">
 <li><div class="para">False.</div></li>
 <li><div class="para">False.</div></li>
 <li><div class="para">False.</div></li>
@@ -1212,7 +1238,7 @@ c_1\bfv_1 + \cdots + c_k\bfv_k + 0\bfv_{k+1} + \cdots + 0\bfv_n = \bfo\text{.}
 </div>
 <div class="para">This proves that <span class="process-math">\(V_2\)</span> is linearly dependent.</div>
 </div></div></details></div></article><article class="exercise-like"><h6 class="heading"><span class="codenumber">5.1.10<span class="period">.</span></span></h6>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-lin-ind-36-8-4-2-1-1">
 <li>
 <div class="para">If <span class="process-math">\(A \in M_n(\ff)\text{,}\)</span> then <span class="process-math">\(\nll(A) = \{\bfo\}\)</span> if and only if the RREF of <span class="process-math">\(A\)</span> is <span class="process-math">\(I_n\text{.}\)</span> It is always true that the null space is <span class="process-math">\(\{\bfo \}\)</span> if and only if and we have a pivot in each column of the RREF; when <span class="process-math">\(A\)</span> is square, this means that the RREF must be <span class="process-math">\(I_n\text{.}\)</span>
 </div>
@@ -1226,7 +1252,7 @@ c_1\bfv_1 + \cdots + c_k\bfv_k + 0\bfv_{k+1} + \cdots + 0\bfv_n = \bfo\text{.}
 <span class="codenumber">5.2</span><span class="space"> </span><span class="title">Basis of a Vector Space</span><br><span class="codenumber">5.2.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">5.2.4.2<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-basis-6-2-2-1-1">
 <li><div class="para">No.</div></li>
 <li><div class="para">No.</div></li>
 <li><div class="para">No.</div></li>
@@ -1246,7 +1272,8 @@ c_1\bfv_1 + \cdots + c_k\bfv_k + 0\bfv_{k+1} + \cdots + 0\bfv_n = \bfo\text{.}
 </div></div></details></div></article><article class="subexercises"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">5.2.4.12<span class="period">.</span></span></h5>
 <div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para">We let <span class="process-math">\(B = \{ \bfv_1 + \bfv_2, \bfv_2 + \bfv_3, \ldots, \bfv_{n-1} + \bfv_n, \bfv_n \}\text{.}\)</span> We will first show that <span class="process-math">\(B\)</span> is linearly independent.</div> <div class="para logical">
+<div class="para">We let <span class="process-math">\(B = \{ \bfv_1 + \bfv_2, \bfv_2 + \bfv_3, \ldots, \bfv_{n-1} + \bfv_n, \bfv_n \}\text{.}\)</span> We will first show that <span class="process-math">\(B\)</span> is linearly independent.</div>
+<div class="para logical">
 <div class="para">We first suppose that <span class="process-math">\(c_1, \ldots, c_n\)</span> are scalars such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1260,7 +1287,8 @@ c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1} + c_n)\bfv_n = \bfo\text{.}
 \end{equation*}
 </div>
 <div class="para">However, since we were given that <span class="process-math">\(B' = \{\bfv_1, \ldots, \bfv_n \}\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> this means that the coefficients in this last equation must all be zero, since <span class="process-math">\(B'\)</span> is linearly independent. This means that <span class="process-math">\(c_1 = 0\text{,}\)</span> and then since we must also have <span class="process-math">\(c_1+c_2 = 0\text{,}\)</span> we have <span class="process-math">\(c_2 = 0\text{,}\)</span> and so on. The result is that <span class="process-math">\(c_i = 0\)</span> for all <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(i=1,\ldots,n\text{.}\)</span> This proves that <span class="process-math">\(B\)</span> is linearly independent.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">We will now show that <span class="process-math">\(B\)</span> spans <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(\bfv \in V\text{.}\)</span> We want to argue that <span class="process-math">\(\bfv\)</span> can be written as a linear combination of the vectors in <span class="process-math">\(B\text{.}\)</span> Since <span class="process-math">\(B'\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> there exist scalars <span class="process-math">\(d_1,\ldots, d_n\)</span> such that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-unique-rep.html ./knowl/xref/d-coeffs.html ./knowl/xref/c-coeffs.html">
 \begin{equation}
@@ -1280,14 +1308,15 @@ c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1} + c_n)\bfv_n = \bfo\text{.}
 \end{equation}
 </div>
 <div class="para">and by The Unique Representation Theorem (<a href="sec-basis.html#thm-unique-rep" class="xref" data-knowl="./knowl/xref/thm-unique-rep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.11: The Unique Representation Theorem">Theorem 5.2.11</a>), we know that the coefficients on the right sides of <a href="sec-basis.html#d-coeffs" class="xref" data-knowl="./knowl/xref/d-coeffs.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3">(5.3)</a> and <a href="sec-basis.html#c-coeffs" class="xref" data-knowl="./knowl/xref/c-coeffs.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.4">(5.4)</a> must be equal. Immediately we see that <span class="process-math">\(c_1 = d_1\)</span> and then since we must have <span class="process-math">\(c_1 + c_2 = d_2\text{,}\)</span> we conclude <span class="process-math">\(c_2 = d_2 - d_1\text{.}\)</span> We can continue on in this way, eventually producing an expression for each <span class="process-math">\(c_i\)</span> in terms of the <span class="process-math">\(d_i\)</span> coefficients.</div>
-</div> <div class="para">This proves that <span class="process-math">\(B\)</span> spans <span class="process-math">\(V\)</span> which concludes the proof that <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<div class="para">This proves that <span class="process-math">\(B\)</span> spans <span class="process-math">\(V\)</span> which concludes the proof that <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span>
 </div>
 </div></details></div></article></article><h3 class="heading hide-type" title="Exercises 5.3.4">
 <span class="codenumber">5.3</span><span class="space"> </span><span class="title">Dimension</span><br><span class="codenumber">5.3.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">5.3.4.1<span class="period">.</span></span></h4>
 <div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para">The dimension is 2.</div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">5.3.4.4<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-dimension-6-4-2-1-1">
 <li><div class="para">This is true by <a href="sec-dimension.html#lem-dim-lin-ind" class="xref" data-knowl="./knowl/xref/lem-dim-lin-ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.3.1">Lemma 5.3.1</a>.</div></li>
 <li><div class="para">This is false, as <span class="process-math">\(\rr^2\)</span> is not even a subset of <span class="process-math">\(\rr^3\text{.}\)</span>
 </div></li>
@@ -1295,7 +1324,7 @@ c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1} + c_n)\bfv_n = \bfo\text{.}
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">5.3.4.6<span class="period">.</span></span></h4>
 <div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para">Since <span class="process-math">\(\dim(P_3)=4\)</span> and this is a set of four polynomials, we only need to argue that this set is linearly independent (see <a href="sec-dimension.html#thm-lin-ind-is-basis" class="xref" data-knowl="./knowl/xref/thm-lin-ind-is-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.17">Theorem 5.3.17</a>). If we label the polynomials as <span class="process-math">\(p_1 = 1\text{,}\)</span> <span class="process-math">\(p_2 = 2t\text{,}\)</span> <span class="process-math">\(p_3=-2+4t^2\text{,}\)</span> and <span class="process-math">\(p_4 = -12t+8t^3\text{,}\)</span> then we can argue that the set <span class="process-math">\(\{p_1,p_2,p_3,p_4\}\)</span> is linearly independent by the contrapositive of the Linear Dependence Lemma. The set containing only <span class="process-math">\(p_1\)</span> is linearly independent since <span class="process-math">\(p_1 \neq 0\text{.}\)</span> Then the set <span class="process-math">\(\{p_1,p_2\}\)</span> is linearly independent since neither polynomial is a scalar multiple of the other. Then since <span class="process-math">\(p_3\)</span> cannot be a linear combination of <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\)</span> for degree reasons, <span class="process-math">\(\{p_1,p_2,p_3\}\)</span> is linearly independent. Similarly, since <span class="process-math">\(p_4\)</span> cannot be a linear combination of <span class="process-math">\(p_1\text{,}\)</span> <span class="process-math">\(p_2\text{,}\)</span> and <span class="process-math">\(p_3\)</span> for degree reasons, <span class="process-math">\(\{p_1,p_2,p_3,p_4\}\)</span> is linearly independent.</div></div></details></div></article><article class="subexercises"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">5.3.4.8<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="exer-num-pivots-matrix-2-1-1">
 <li><div class="para">The null space of a matrix has a basis vector for each column in the RREF which does not contain a pivot. Therefore, the dimension of the null space is the number of non-pivot columns.</div></li>
 <li><div class="para">By <a href="sec-basis.html#alg-find-basis" class="xref" data-knowl="./knowl/xref/alg-find-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 5.2.14">Algorithm 5.2.14</a>, we see that there is a vector in the basis for <span class="process-math">\(\col(A)\)</span> for each pivot in the RREF of <span class="process-math">\(A\text{.}\)</span> Therefore, <span class="process-math">\(\dim(\col(A))\)</span> is the number of pivot columns of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
@@ -1306,7 +1335,7 @@ c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1} + c_n)\bfv_n = \bfo\text{.}
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">5.4.4.4<span class="period">.</span></span></h4>
 <div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para">This is not possible. A <span class="process-math">\(9\times 10\)</span> linear system has a <span class="process-math">\(9\times 10\)</span> coefficient matrix which we will call <span class="process-math">\(A\text{.}\)</span> This situation can be reinterpreted as a linear transformation from <span class="process-math">\(\ff^{10} \to \ff^9\)</span> which is multiplication by <span class="process-math">\(A\text{.}\)</span> The information given in the problem tells us that this transformation is surjective, meaning that the rank of <span class="process-math">\(A\)</span> is as large as possible, which is 9 in this case. Therefore, the Rank-Nullity Theorem says that <span class="process-math">\(\dim(\nll(A)) = 1\text{.}\)</span> This means that every nonzero vector in the null space of <span class="process-math">\(A\)</span> is a scalar multiple of a single basis vector. Therefore, the associated homogeneous linear system only has nonzero solutions which are multiples of each other.</div></div></details></div></article><article class="subexercises"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">5.4.4.7<span class="period">.</span></span></h5>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-rank-6-6-3-2-1-1">
 <li><div class="para">If <span class="process-math">\(T\)</span> is surjective, then <span class="process-math">\(\range(T) = W\text{,}\)</span> which means that <span class="process-math">\(\dim(\range(T)) = \dim(W)\text{.}\)</span> This implies that <span class="process-math">\(\rank(T) = \dim(W)\text{.}\)</span> On the other hand, if <span class="process-math">\(\rank(T) = \dim(W)\text{,}\)</span> then <span class="process-math">\(\dim(\range(T)) = \dim(W)\text{.}\)</span> Since <span class="process-math">\(\range(T)\)</span> is a subspace of <span class="process-math">\(W\text{,}\)</span> <a href="sec-dimension.html#thm-dim-subspaces" class="xref" data-knowl="./knowl/xref/thm-dim-subspaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.18">Theorem 5.3.18</a> implies that <span class="process-math">\(\range(T) = W\text{,}\)</span> which means that <span class="process-math">\(T\)</span> is surjective.</div></li>
 <li><div class="para">We will be able to argue both implications at once. A linear transformation <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\ker(T) = \{\bfo\}\text{.}\)</span> This occurs if and only if <span class="process-math">\(\dim(\ker(T)) = 0\text{.}\)</span> The Rank-Nullity Theorem then says that <span class="process-math">\(\dim(\ker(T)) = 0\)</span> if and only if <span class="process-math">\(\rank(T) = \dim(V)\text{.}\)</span> This proves the result.</div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">5.4.4.8<span class="period">.</span></span></h5>
@@ -1316,21 +1345,21 @@ c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1} + c_n)\bfv_n = \bfo\text{.}
 <span class="codenumber">5.5</span><span class="space"> </span><span class="title">Coordinates</span><br><span class="codenumber">5.5.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">5.5.4.1<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-1-2-1-1">
 <li><div class="para"><span class="process-math">\(\displaystyle \bfv = \begin{bmatrix} 4 \\ -7 \end{bmatrix}\)</span></div></li>
 <li><div class="para"><span class="process-math">\(\displaystyle \bfv = \begin{bmatrix} -19 \\ -2 \end{bmatrix}\)</span></div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">5.5.4.3<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-3-2-1-1">
 <li><div class="para"><span class="process-math">\(\displaystyle [\bfv]_{\mcb} = \begin{bmatrix} -2 \\ 2 \\ -1 \end{bmatrix}\)</span></div></li>
 <li><div class="para"><span class="process-math">\(\displaystyle [\bfv]_{\mcb} = \begin{bmatrix} 1 \\ 0 \\ 4 \end{bmatrix}\)</span></div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">5.5.4.6<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-6-2-1-1">
 <li><div class="para">This set of vectors spans <span class="process-math">\(P_2\text{.}\)</span>
 </div></li>
 <li><div class="para">This set of vectors does not span <span class="process-math">\(P_2\text{.}\)</span>
 </div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">5.5.4.7<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-7-2-1-1">
 <li><div class="para"><span class="process-math">\(\displaystyle [T]_{\mcb,\mce} = \begin{bmatrix} 2 \amp 1 \amp 1 \\ 0 \amp -1 \amp -3 \end{bmatrix}\)</span></div></li>
 <li><div class="para"><span class="process-math">\(\displaystyle T(-10+3t^2) = [T]_{\mcb,\mce} [p]_{\mcb} = \begin{bmatrix} -17 \\ -9 \end{bmatrix}\)</span></div></li>
 </ol></div></div></details></div></article><article class="subexercises"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
@@ -1344,7 +1373,8 @@ c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1} + c_n)\bfv_n = \bfo\text{.}
 \end{equation*}
 </div>
 <div class="para">be a basis for <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(C_{\mcb}:V \to \ff^n\)</span> be the coordinate mapping. We will prove that <span class="process-math">\(C_{\mcb}\)</span> is injective by showing that it has a trivial kernel.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">Suppose that <span class="process-math">\(\bfv \in \ker(C_{\mcb})\text{.}\)</span> This means that <span class="process-math">\(C_{\mcb}(\bfv) = \bfo \in \ff^n\text{,}\)</span> so <span class="process-math">\([\bfv]_{\mcb} = \bfo\text{.}\)</span> Since this is the coordinate vector of <span class="process-math">\(\bfv\text{,}\)</span> this tells us that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1366,7 +1396,7 @@ P_{\mcc,\mcb} = \begin{bmatrix} 2 \amp -2/3 \\ 7 \amp 5/3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 </div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">5.6.3.3<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-change-of-basis-5-3-2-1-1">
 <li><div class="para logical">
 <div class="para">Here are the change-of-basis matrices:</div>
 <div class="displaymath process-math">
@@ -1385,7 +1415,7 @@ P_{\mcb,\mce} = \begin{bmatrix} 1 \amp 0 \\ 2 \amp 2 \end{bmatrix}, \hspace{6pt}
 </div>
 </div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">5.6.3.6<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-change-of-basis-5-6-2-1-1">
 <li><div class="para logical">
 <div class="para">We will use the basis <span class="process-math">\(\mcb = \{\bfv_1,\bfv_2\}\text{,}\)</span> where</div>
 <div class="displaymath process-math">
@@ -1410,13 +1440,14 @@ P_{\mce,\mcb} = \begin{bmatrix} 4/17 \amp -1/17 \\ 1/17 \amp 4/17 \end{bmatrix}\
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">5.6.3.8<span class="period">.</span></span></h5>
 <div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para">The <span class="process-math">\(i\)</span>th column of <span class="process-math">\(P_{\mcb,\mcc}\)</span> is <span class="process-math">\([\bfv_i]_{\mcc}\text{.}\)</span> Or, stated differently, if <span class="process-math">\(C_{\mcc}:V \to \ff^n\)</span> is the coordinate mapping, then the <span class="process-math">\(i\)</span>th column of <span class="process-math">\(P_{\mcb,\mcc}\)</span> is <span class="process-math">\(C_{\mcc}(\bfv_i)\text{.}\)</span>
-</div> <div class="para">We know (by <a href="sec-coordinates.html#thm-coord-map-isomorphism" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a>) that the coordinate mapping is an isomorphism. Since <span class="process-math">\(\mcb\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> <span class="process-math">\(\mcb\)</span> is a spanning set for <span class="process-math">\(V\text{.}\)</span> But then the set containing the columns of <span class="process-math">\(P_{\mcb,\mcc}\)</span> is <span class="process-math">\(C_{\mcc}(\mcb)\text{,}\)</span> and since <span class="process-math">\(\mcb\)</span> spans <span class="process-math">\(V\)</span> we know that <span class="process-math">\(C_{\mcc}(\mcb)\)</span> will span <span class="process-math">\(\ff^n\text{.}\)</span>
+</div>
+<div class="para">We know (by <a href="sec-coordinates.html#thm-coord-map-isomorphism" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a>) that the coordinate mapping is an isomorphism. Since <span class="process-math">\(\mcb\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> <span class="process-math">\(\mcb\)</span> is a spanning set for <span class="process-math">\(V\text{.}\)</span> But then the set containing the columns of <span class="process-math">\(P_{\mcb,\mcc}\)</span> is <span class="process-math">\(C_{\mcc}(\mcb)\text{,}\)</span> and since <span class="process-math">\(\mcb\)</span> spans <span class="process-math">\(V\)</span> we know that <span class="process-math">\(C_{\mcc}(\mcb)\)</span> will span <span class="process-math">\(\ff^n\text{.}\)</span>
 </div>
 </div></details></div></article></article><h3 class="heading hide-type" title="Exercises 6.1.4">
 <span class="codenumber">6</span><span class="space"> </span><span class="title">Eigenvalues and Eigenvectors</span><br><span class="codenumber">6.1</span><span class="space"> </span><span class="title">Eigenvalues and Eigenvectors</span><br><span class="codenumber">6.1.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">6.1.4.3<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-eigenvalues-6-3-2-1-1">
 <li><div class="para logical">
 <div class="para">The RREF of <span class="process-math">\(A + 4I\)</span> has one non-pivot column, so <span class="process-math">\(\lambda = -4\)</span> is an eigenvalue for <span class="process-math">\(A\text{.}\)</span> A basis for <span class="process-math">\(\mathrm{eig}_{-4}(A)\)</span> is</div>
 <div class="displaymath process-math">
@@ -1434,7 +1465,7 @@ P_{\mce,\mcb} = \begin{bmatrix} 4/17 \amp -1/17 \\ 1/17 \amp 4/17 \end{bmatrix}\
 </div>
 </div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">6.1.4.5<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-eigenvalues-6-5-2-1-1">
 <li><div class="para logical">
 <div class="para">The RREF of <span class="process-math">\(A - 4I\)</span> has two non-pivot columns, so <span class="process-math">\(\lambda = 4\)</span> is an eigenvalue for <span class="process-math">\(A\text{.}\)</span> A basis for <span class="process-math">\(\mathrm{eig}_{4}(A)\)</span> is</div>
 <div class="displaymath process-math">
@@ -1462,7 +1493,8 @@ P_{\mce,\mcb} = \begin{bmatrix} 4/17 \amp -1/17 \\ 1/17 \amp 4/17 \end{bmatrix}\
 </div>
 <div class="para">The dimension of <span class="process-math">\(\mathrm{eig}_0(A)\)</span> is <span class="process-math">\(n-1\text{.}\)</span>
 </div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">The other eigenvalue is <span class="process-math">\(\lambda = n\text{,}\)</span> and a basis for <span class="process-math">\(\mathrm{eig}_n(A)\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1495,7 +1527,9 @@ A^2\bfv = A(\lambda\bfv) = \lambda \cdot A\bfv = \lambda^2\bfv\text{.}
 </div></div></details></div></article><article class="subexercises"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">6.2.4.10<span class="period">.</span></span></h5>
 <div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para">For the purposes of notation, we will say that <span class="process-math">\(A \sim B\)</span> if <span class="process-math">\(A\)</span> is similar to <span class="process-math">\(B\text{.}\)</span> We first note that a matrix <span class="process-math">\(A \in M_n(\ff)\)</span> is similar to itself since <span class="process-math">\(A = IPI^{-1}\text{,}\)</span> where <span class="process-math">\(I\)</span> is the <span class="process-math">\(n\times n\)</span> identity matrix. This proves that the relation is reflexive.</div> <div class="para">We now suppose that <span class="process-math">\(A, B \in M_n(\ff)\)</span> with <span class="process-math">\(A \sim B\text{.}\)</span> This means that there is an invertible matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(A = PBP^{-1}\text{.}\)</span> We can manipulate this equation to give <span class="process-math">\(B = P^{-1}AP\text{,}\)</span> and since <span class="process-math">\(P^{-1}\)</span> is invertible (and since <span class="process-math">\((P^{-1})^{-1}=P\)</span>), this proves that <span class="process-math">\(B \sim A\text{.}\)</span> This proves that the relation is symmetric.</div> <div class="para logical">
+<div class="para">For the purposes of notation, we will say that <span class="process-math">\(A \sim B\)</span> if <span class="process-math">\(A\)</span> is similar to <span class="process-math">\(B\text{.}\)</span> We first note that a matrix <span class="process-math">\(A \in M_n(\ff)\)</span> is similar to itself since <span class="process-math">\(A = IPI^{-1}\text{,}\)</span> where <span class="process-math">\(I\)</span> is the <span class="process-math">\(n\times n\)</span> identity matrix. This proves that the relation is reflexive.</div>
+<div class="para">We now suppose that <span class="process-math">\(A, B \in M_n(\ff)\)</span> with <span class="process-math">\(A \sim B\text{.}\)</span> This means that there is an invertible matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(A = PBP^{-1}\text{.}\)</span> We can manipulate this equation to give <span class="process-math">\(B = P^{-1}AP\text{,}\)</span> and since <span class="process-math">\(P^{-1}\)</span> is invertible (and since <span class="process-math">\((P^{-1})^{-1}=P\)</span>), this proves that <span class="process-math">\(B \sim A\text{.}\)</span> This proves that the relation is symmetric.</div>
+<div class="para logical">
 <div class="para">We now suppose that <span class="process-math">\(A, B, C \in M_n(\ff)\)</span> with <span class="process-math">\(A \sim B\)</span> and <span class="process-math">\(B \sim C\text{.}\)</span> This means that we have invertible matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> such that <span class="process-math">\(A = PBP^{-1}\)</span> and <span class="process-math">\(B = QCQ^{-1}\text{.}\)</span> Putting these equations together, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-inverse-product.html ./knowl/xref/prop-matrix-inverse-product.html">
 \begin{equation*}
@@ -1503,7 +1537,8 @@ A = P(QCQ^{-1})P^{-1} = (PQ)C(Q^{-1}P^{-1}) = (PQ)C(PQ)^{-1}\text{.}
 \end{equation*}
 </div>
 <div class="para">In this derivation we have used <a href="sec-matrix-linear-trans.html#prop-matrix-inverse-product" class="xref" data-knowl="./knowl/xref/prop-matrix-inverse-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.2.13">Proposition 3.2.13</a>. Since <span class="process-math">\(PQ\)</span> is invertible (again by <a href="sec-matrix-linear-trans.html#prop-matrix-inverse-product" class="xref" data-knowl="./knowl/xref/prop-matrix-inverse-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.2.13">Proposition 3.2.13</a>), this proves that <span class="process-math">\(A \sim C\text{,}\)</span> which shows that the relation is transitive.</div>
-</div> <div class="para">We have shown that the relation of similarity on the set <span class="process-math">\(M_n(\ff)\)</span> is reflexive, symmetric, and transitive, so it is an equivalence relation.</div>
+</div>
+<div class="para">We have shown that the relation of similarity on the set <span class="process-math">\(M_n(\ff)\)</span> is reflexive, symmetric, and transitive, so it is an equivalence relation.</div>
 </div></details></div></article></article><h3 class="heading hide-type" title="Exercises 6.3.5">
 <span class="codenumber">6.3</span><span class="space"> </span><span class="title">Diagonalization</span><br><span class="codenumber">6.3.5</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
@@ -1562,15 +1597,15 @@ A^T = (P^T)^{-1}DP^T\text{.}
 <span class="codenumber">6.4</span><span class="space"> </span><span class="title">Invariants</span><br><span class="codenumber">6.4.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">6.4.4.2<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-invariants-6-2-2-1-1">
 <li><div class="para">Since <span class="process-math">\(\rank(A) = \rank(B) = 3\)</span> and <span class="process-math">\(\tr(A)=\tr(B)=2\text{,}\)</span> neither the rank nor the trace can tell us whether or not <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar matrices.</div></li>
 <li><div class="para">We can calculate that <span class="process-math">\(\det(A) = -2\)</span> while <span class="process-math">\(\det(B)=-12\text{,}\)</span> so this means that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not similar.</div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">6.4.4.3<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-invariants-6-3-2-1-1">
 <li><div class="para">We find that <span class="process-math">\(\tr(A)=\tr(B)=3\text{,}\)</span> <span class="process-math">\(\rank(A)=\rank(B)=2\text{,}\)</span> and <span class="process-math">\(\det(A)=\det(B)=0\text{,}\)</span> so the trace, rank, and determinant do not give us enough information to determine whether or not <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar.</div></li>
 <li><div class="para">Some calculation shows that the eigenvalues for <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda=0, -1, 4\text{,}\)</span> while the eigenvalues for <span class="process-math">\(B\)</span> are <span class="process-math">\(\lambda=0, 1, 2\text{.}\)</span> Since these are different (and therefore the characteristic polynomials are different), we see that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not similar.</div></li>
 </ol></div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">6.4.4.6<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-invariants-6-6-2-1-1">
 <li><div class="para">We find that <span class="process-math">\(\rank(A)=\rank(B)=3\text{,}\)</span> <span class="process-math">\(\tr(A)=\tr(B)=5\text{,}\)</span> and <span class="process-math">\(\det(A)=\det(B)=4\text{.}\)</span> Further, the eigenvalues for both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <span class="process-math">\(\lambda = 1, 2, 2\text{.}\)</span> These four invariants do not provide enough information to determine whether or not <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar.</div></li>
 <li><div class="para">We can show that <span class="process-math">\(A\)</span> is not diagonalizable but <span class="process-math">\(B\)</span> is. Since diagonalizability is an invariant for similarity, this proves that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not similar.</div></li>
 </ol></div></div></details></div></article><article class="subexercises"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
@@ -1586,13 +1621,16 @@ A = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}\text{.}
 <div class="para">The matrix <span class="process-math">\(A\)</span> is invertible, so it is row equivalent to <span class="process-math">\(I_2\text{.}\)</span> However, <span class="process-math">\(\tr(A)=3\)</span> and <span class="process-math">\(\tr(I_2)=2\text{.}\)</span> This proves that trace is not an invariant for row equivalence.</div>
 </div></div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">6.4.4.17<span class="period">.</span></span></h5>
 <div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
-<div class="para">Yes, invertibility is an invariant for similarity. This argument relies on the fact that the determinant is an invariant for similarity.</div> <div class="para">We will denote the similarity relation by <span class="process-math">\(A \sim B\text{.}\)</span> Suppose that <span class="process-math">\(A \sim B\)</span> and that <span class="process-math">\(A\)</span> is invertible. This means that <span class="process-math">\(\det(A)\neq 0\text{,}\)</span> and since <span class="process-math">\(A \sim B\text{,}\)</span> this means that <span class="process-math">\(\det(B) \neq 0\)</span> also. But the fact that <span class="process-math">\(\det(B) \neq 0\)</span> means that <span class="process-math">\(B\)</span> is invertible.</div> <div class="para">We now suppose that <span class="process-math">\(A \sim B\)</span> and that <span class="process-math">\(A\)</span> is not invertible. This means that <span class="process-math">\(\det(A)=0\text{,}\)</span> and since <span class="process-math">\(A\sim B\text{,}\)</span> this means that <span class="process-math">\(\det(B)=0\text{.}\)</span> But <span class="process-math">\(\det(B)=0\)</span> means that <span class="process-math">\(B\)</span> is not invertible.</div> <div class="para">This proves that invertibility is an invariant for similarity.</div>
+<div class="para">Yes, invertibility is an invariant for similarity. This argument relies on the fact that the determinant is an invariant for similarity.</div>
+<div class="para">We will denote the similarity relation by <span class="process-math">\(A \sim B\text{.}\)</span> Suppose that <span class="process-math">\(A \sim B\)</span> and that <span class="process-math">\(A\)</span> is invertible. This means that <span class="process-math">\(\det(A)\neq 0\text{,}\)</span> and since <span class="process-math">\(A \sim B\text{,}\)</span> this means that <span class="process-math">\(\det(B) \neq 0\)</span> also. But the fact that <span class="process-math">\(\det(B) \neq 0\)</span> means that <span class="process-math">\(B\)</span> is invertible.</div>
+<div class="para">We now suppose that <span class="process-math">\(A \sim B\)</span> and that <span class="process-math">\(A\)</span> is not invertible. This means that <span class="process-math">\(\det(A)=0\text{,}\)</span> and since <span class="process-math">\(A\sim B\text{,}\)</span> this means that <span class="process-math">\(\det(B)=0\text{.}\)</span> But <span class="process-math">\(\det(B)=0\)</span> means that <span class="process-math">\(B\)</span> is not invertible.</div>
+<div class="para">This proves that invertibility is an invariant for similarity.</div>
 </div></details></div></article></article><h3 class="heading hide-type" title="Exercises 7.1.6">
 <span class="codenumber">7</span><span class="space"> </span><span class="title">Inner Products</span><br><span class="codenumber">7.1</span><span class="space"> </span><span class="title">Inner Products</span><br><span class="codenumber">7.1.6</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">7.1.6.2<span class="period">.</span></span></h4>
 <div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para">Calculation shows that the set <span class="process-math">\(\{\bfv_1, \bfv_2,\bfv_3\}\)</span> is orthogonal, so then it is linearly independent.</div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">7.1.6.3<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-inner-products-8-3-2-1-1">
 <li><div class="para logical">
 <div class="para">We let <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> be the following vectors:</div>
 <div class="displaymath process-math">
@@ -1645,7 +1683,8 @@ A = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}\text{.}
 \end{align*}
 </div>
 <div class="para">This shows that the first axiom holds.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">For the second axiom, we let <span class="process-math">\(f, g, h \in C([0,1])\text{.}\)</span> The definite integral is linear with respect to the sum of functions, so we have</div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -1656,7 +1695,8 @@ A = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}\text{.}
 \end{align*}
 </div>
 <div class="para">This proves that the second axiom holds.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">Let <span class="process-math">\(f,g \in C([0,1])\)</span> and let <span class="process-math">\(c \in \rr\text{.}\)</span> The definite integral is linear with respect to scalar multiplication by a real number, so we have</div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -1666,7 +1706,8 @@ A = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}\text{.}
 \end{align*}
 </div>
 <div class="para">This proves that the third axiom holds.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">Let <span class="process-math">\(f\in C([0,1])\text{.}\)</span> We observe that <span class="process-math">\(f(x)^2\)</span> is a function with values that are always non-negative (since each value of this function is a real number squared). Since the definite integral can be interpreted as calculating signed area between the graph of a function and the <span class="process-math">\(x\)</span>-axis, we know that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1679,7 +1720,7 @@ A = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}\text{.}
 <span class="codenumber">7.2</span><span class="space"> </span><span class="title">Orthonormal Bases</span><br><span class="codenumber">7.2.5</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise-like"><h4 class="heading"><span class="codenumber">7.2.5.2<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-orthonormal-bases-7-2-2-1-1">
 <li><div class="para logical">
 <div class="para">The orthonormal basis we obtain is</div>
 <div class="displaymath process-math">
@@ -1721,7 +1762,7 @@ A = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}\text{.}
 <div class="para">then <span class="process-math">\(\bfv = \bfw + \bfw'\)</span> where <span class="process-math">\(\bfw \in L\)</span> and <span class="process-math">\(\bfw' \in L^{\perp}\text{.}\)</span>
 </div>
 </div></div></details></div></article><article class="exercise-like"><h4 class="heading"><span class="codenumber">7.3.5.2<span class="period">.</span></span></h4>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha">
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><ol class="lower-alpha lower-alpha-level-1" id="sec-orthogonal-projections-7-2-2-1-1">
 <li><div class="para logical">
 <div class="para">Our matrix is</div>
 <div class="displaymath process-math">
@@ -1755,7 +1796,8 @@ q'  \amp = \tfrac{9}{10} - \tfrac{3}{20}t - \tfrac{21}{20}t^2\text{.}
 <article class="exercise-like"><h5 class="heading"><span class="codenumber">7.3.5.5<span class="period">.</span></span></h5>
 <div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para">First, we know that <span class="process-math">\(\ip{\bfo, \bfu} = 0\)</span> for all <span class="process-math">\(\bfu \in U\)</span> by <a href="sec-inner-products.html#prop-inner-product-properties" class="xref" data-knowl="./knowl/xref/prop-inner-product-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 7.1.17">Proposition 7.1.17</a>. This proves that <span class="process-math">\(\bfo \in U^{\perp}\text{.}\)</span>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">Next, we let <span class="process-math">\(\bfw_1, \bfw_2 \in U^{\perp}\)</span> and <span class="process-math">\(\bfu \in U\text{.}\)</span> Then, by the properties of the inner product, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1763,7 +1805,8 @@ q'  \amp = \tfrac{9}{10} - \tfrac{3}{20}t - \tfrac{21}{20}t^2\text{.}
 \end{equation*}
 </div>
 <div class="para">This shows that <span class="process-math">\(\bfw_1 + \bfw_2 \in U^{\perp}\text{,}\)</span> meaning that <span class="process-math">\(U^{\perp}\)</span> is closed under addition.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">Finally, we let <span class="process-math">\(\bfw \in U^{\perp}\)</span> and <span class="process-math">\(c \in \ff\text{.}\)</span> (Here, <span class="process-math">\(\ff\)</span> is either <span class="process-math">\(\rr\)</span> or <span class="process-math">\(\cc\text{.}\)</span>) We also let <span class="process-math">\(\bfu \in U\text{.}\)</span> Then, by the properties of the inner product, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1771,20 +1814,23 @@ q'  \amp = \tfrac{9}{10} - \tfrac{3}{20}t - \tfrac{21}{20}t^2\text{.}
 \end{equation*}
 </div>
 <div class="para">This proves that <span class="process-math">\(c\bfw \in U^{\perp}\)</span> so that <span class="process-math">\(U^{\perp}\)</span> is closed under scalar multiplication.</div>
-</div> <div class="para">Since <span class="process-math">\(U^{\perp}\)</span> contains the zero vector and is closed under addition and scalar multiplication, <span class="process-math">\(U^{\perp}\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<div class="para">Since <span class="process-math">\(U^{\perp}\)</span> contains the zero vector and is closed under addition and scalar multiplication, <span class="process-math">\(U^{\perp}\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
 </div>
 </div></details></div></article><article class="exercise-like"><h5 class="heading"><span class="codenumber">7.3.5.6<span class="period">.</span></span></h5>
 <div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para">We will prove that each of these sets is a subset of the other. First, we let <span class="process-math">\(\bfx \in \nll(A)\text{,}\)</span> so that <span class="process-math">\(A\bfx = \bfo\text{.}\)</span> The fact that <span class="process-math">\(A\bfx = \bfo\)</span> means that <span class="process-math">\(\mathbf{r} \cdot \bfx = 0\)</span> for all rows <span class="process-math">\(\mathbf{r}\)</span> of <span class="process-math">\(A\text{.}\)</span> (Entry <span class="process-math">\(i\)</span> in <span class="process-math">\(A\bfx\)</span> is the dot product of the <span class="process-math">\(i\)</span>th row of <span class="process-math">\(A\)</span> with <span class="process-math">\(\bfx\text{.}\)</span>) Since the rows of <span class="process-math">\(A\)</span> span <span class="process-math">\(\row(A)\text{,}\)</span> the fact that <span class="process-math">\(\mathbf{r} \cdot \bfx = 0\)</span> for each row <span class="process-math">\(\mathbf{r}\)</span> of <span class="process-math">\(A\)</span> means that <span class="process-math">\(\bfx \cdot \bfv = 0\)</span> for all <span class="process-math">\(\bfv \in \row(A)\text{.}\)</span> This proves that <span class="process-math">\(\bfx \in (\row(A))^{\perp}\text{,}\)</span> so <span class="process-math">\(\nll(A) \subseteq (\row(A))^{\perp}\text{.}\)</span>
-</div> <div class="para">We now let <span class="process-math">\(\bfx \in (\row(A))^{\perp}\text{.}\)</span> We want to show that <span class="process-math">\(\bfx \in \nll(A)\text{.}\)</span> Since <span class="process-math">\(\bfx \in (\row(A))^{\perp}\text{,}\)</span> we know that <span class="process-math">\(\bfx \cdot \mathbf{r}=0\)</span> for each row <span class="process-math">\(\mathbf{r}\)</span> of <span class="process-math">\(A\text{.}\)</span> This shows that <span class="process-math">\(A\bfx = \bfo\text{,}\)</span> which proves that <span class="process-math">\(\bfx \in \nll(A)\text{.}\)</span> Therefore, <span class="process-math">\((\row(A))^{\perp} \subseteq \nll(A)\text{.}\)</span>
-</div> <div class="para">Since we have shown that <span class="process-math">\(\nll(A) \subseteq (\row(A))^{\perp}\)</span> and <span class="process-math">\((\row(A))^{\perp} \subseteq \nll(A)\text{,}\)</span> we can conclude that <span class="process-math">\((\row(A))^{\perp} = \nll(A)\text{,}\)</span> as desired.</div>
+</div>
+<div class="para">We now let <span class="process-math">\(\bfx \in (\row(A))^{\perp}\text{.}\)</span> We want to show that <span class="process-math">\(\bfx \in \nll(A)\text{.}\)</span> Since <span class="process-math">\(\bfx \in (\row(A))^{\perp}\text{,}\)</span> we know that <span class="process-math">\(\bfx \cdot \mathbf{r}=0\)</span> for each row <span class="process-math">\(\mathbf{r}\)</span> of <span class="process-math">\(A\text{.}\)</span> This shows that <span class="process-math">\(A\bfx = \bfo\text{,}\)</span> which proves that <span class="process-math">\(\bfx \in \nll(A)\text{.}\)</span> Therefore, <span class="process-math">\((\row(A))^{\perp} \subseteq \nll(A)\text{.}\)</span>
+</div>
+<div class="para">Since we have shown that <span class="process-math">\(\nll(A) \subseteq (\row(A))^{\perp}\)</span> and <span class="process-math">\((\row(A))^{\perp} \subseteq \nll(A)\text{,}\)</span> we can conclude that <span class="process-math">\((\row(A))^{\perp} = \nll(A)\text{,}\)</span> as desired.</div>
 </div></details></div></article></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="apdx-mod-arith.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="apdx-mod-arith.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter-4.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 <!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZFWXZ3398L"></script><script>  window.dataLayer = window.dataLayer || [];

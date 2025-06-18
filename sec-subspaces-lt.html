@@ -5,15 +5,19 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Subspaces and Linear Transformations</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Linear Algebra">
-<meta property="book:author" content="Ryan Higginbottom">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -69,33 +73,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ryan Higginbottom">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.8.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">Gathering and Sharpening Tools</span></a></h1>
 <p class="byline">Ryan Higginbottom</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -106,7 +128,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-inverting-matrix.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-third.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-dets.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-inverting-matrix.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-third.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-dets.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
 \newcommand{\zz}{\mathbb Z}
 \newcommand{\qq}{\mathbb Q}
 \newcommand{\rr}{\mathbb R}
@@ -143,11 +166,11 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">To Students and Instructors</span></a></div></li>
 </ul>
 </li>
@@ -164,8 +187,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-29" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-30" class="internal"><span class="codenumber">1.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#sec-matrices-31" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -254,9 +277,9 @@ window.MathJax = {
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-inverting-matrix.html#sec-inverting-matrix-6" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-subspaces-lt.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Subspaces and Linear Transformations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces-lt.html#subsec-kernel" class="internal"><span class="codenumber">3.4.1</span> <span class="title">The Kernel of a Linear Transformation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces-lt.html#subsec-range" class="internal"><span class="codenumber">3.4.2</span> <span class="title">The Range as a Subspace</span></a></div></li>
 <li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-subspaces-lt.html#sec-subspaces-lt-5" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Reading Questions</span></a></div></li>
@@ -431,7 +454,7 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-subspaces-lt"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-subspaces-lt"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">3.4</span><span class="space"> </span><span class="title">Subspaces and Linear Transformations</span>
 </h2>
 <section class="introduction" id="sec-subspaces-lt-2"><div class="para" id="sec-subspaces-lt-2-1">Every linear transformation between vector spaces brings with it some descriptions of related subspaces of the domain and codomain. We will explore some of these subspaces in this section.</div></section><section class="subsection" id="subsec-kernel"><h3 class="heading hide-type">
@@ -454,14 +477,16 @@ window.MathJax = {
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-kernel-subspace-1-1">Let <span class="process-math">\(T:V\to W\)</span> be a linear transformation. Then <span class="process-math">\(\kerr(T)\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
-</div></article><details id="thm-kernel-subspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-kernel-subspace-2-1">We will prove this theorem using the criteria for a subspace spelled out in <a href="sec-subspaces.html#thm-prove-subspace" class="xref" data-knowl="./knowl/xref/thm-prove-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.3">Theorem 2.4.3</a>. Since <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> we have <span class="process-math">\(\bfo_V \in \kerr(T)\text{.}\)</span> (The fact that <span class="process-math">\(T(\bfo_V)=\bfo_W\)</span> is found in <a href="sec-linear-trans.html#lin-trans-zero" class="xref" data-knowl="./knowl/xref/lin-trans-zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.1.7.14">Exercise 3.1.7.14</a>.)</div> <div class="para logical" id="thm-kernel-subspace-2-2">
+</div></article><details id="thm-kernel-subspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-kernel-subspace-2-1">We will prove this theorem using the criteria for a subspace spelled out in <a href="sec-subspaces.html#thm-prove-subspace" class="xref" data-knowl="./knowl/xref/thm-prove-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.3">Theorem 2.4.3</a>. Since <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> we have <span class="process-math">\(\bfo_V \in \kerr(T)\text{.}\)</span> (The fact that <span class="process-math">\(T(\bfo_V)=\bfo_W\)</span> is found in <a href="sec-linear-trans.html#lin-trans-zero" class="xref" data-knowl="./knowl/xref/lin-trans-zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.1.7.14">Exercise 3.1.7.14</a>.)</div>
+<div class="para logical" id="thm-kernel-subspace-2-2">
 <div class="para">Let <span class="process-math">\(\bfv_1,\bfv_2 \in \kerr(T)\text{.}\)</span> Using the additive property of <span class="process-math">\(T\)</span> and the fact that these vectors are in the kernel, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 T(\bfv_1 + \bfv_2) = T(\bfv_1) + T(\bfv_2) = \bfo_W + \bfo_W = \bfo_W\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="thm-kernel-subspace-2-3">
+</div>
+<div class="para logical" id="thm-kernel-subspace-2-3">
 <div class="para">Finally, we let <span class="process-math">\(\bfv \in \kerr(T)\)</span> and <span class="process-math">\(k \in \ff\text{.}\)</span> Then we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -543,7 +568,8 @@ A = \begin{bmatrix}
 </h4>
 <div class="para" id="thm-injective-kernel-1-1">Let <span class="process-math">\(T:V\to W\)</span> be a linear transformation. Then <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\kerr(T) = \{\bfo\}\text{.}\)</span>
 </div></article><details id="thm-injective-kernel-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-injective-kernel-2-1">We first suppose that <span class="process-math">\(T\)</span> is injective. (We recall the definition of injectivity from <a href="sec-linear-trans.html#def-injective-surjective-bijective" class="xref" data-knowl="./knowl/xref/def-injective-surjective-bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.9">Definition 3.1.9</a>.) Since <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> the injectivity of <span class="process-math">\(T\)</span> implies that <span class="process-math">\(\bfv = \bfo_V\)</span> if <span class="process-math">\(T(\bfv)=\bfo_W\)</span> for any <span class="process-math">\(\bfv \in V\text{.}\)</span> Therefore, <span class="process-math">\(\kerr(T) = \{\bfo\}\text{.}\)</span>
-</div> <div class="para logical" id="thm-injective-kernel-2-2">
+</div>
+<div class="para logical" id="thm-injective-kernel-2-2">
 <div class="para">Next, we suppose that <span class="process-math">\(\kerr(T) = \{\bfo\}\text{.}\)</span> We want to prove that <span class="process-math">\(T\)</span> is injective, so we let <span class="process-math">\(\bfv_1, \bfv_2 \in V\)</span> with <span class="process-math">\(T(\bfv_1)=T(\bfv_2)\text{.}\)</span> We want to show that <span class="process-math">\(\bfv_1=\bfv_2\text{.}\)</span> By the linearity of <span class="process-math">\(T\)</span> we have</div>
 <div class="displaymath process-math" id="thm-injective-kernel-2-2-7">
 \begin{align*}
@@ -570,7 +596,8 @@ p(0) \\ p'(0)
 </h4>
 <div class="para" id="cor-unique-soln-1-1">Suppose that the linear system represented by the equation <span class="process-math">\(A\bfx = \bfb\)</span> is consistent. Then this system has a unique solution if and only if <span class="process-math">\(\nll(A) = \{\bfo\} \text{.}\)</span>
 </div></article><details id="cor-unique-soln-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-unique-soln-2-1">We first assume that the system has a unique solution. Since the linear system is consistent, then there exists a vector <span class="process-math">\(\bfv\)</span> such that <span class="process-math">\(A\bfv = \bfb\text{.}\)</span> If <span class="process-math">\(\bfw \in \nll(A)\text{,}\)</span> then <span class="process-math">\(A(\bfv + \bfw) = A\bfv + A\bfw = \bfb + \bfo = \bfb\text{,}\)</span> so <span class="process-math">\(\bfv + \bfw\)</span> is also a solution. But since there is a unique solution, we must have <span class="process-math">\(\bfv = \bfv+\bfw\text{,}\)</span> so <span class="process-math">\(\bfw = \bfo\text{.}\)</span> This shows that <span class="process-math">\(\nll(A) = \{\bfo\}\text{.}\)</span>
-</div> <div class="para" id="cor-unique-soln-2-2">We now assume that <span class="process-math">\(\nll(A) = \{\bfo\}\text{.}\)</span> From <a href="sec-subspaces-lt.html#thm-injective-kernel" class="xref" data-knowl="./knowl/xref/thm-injective-kernel.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.4.7">Theorem 3.4.7</a> we know that the associated linear transformation is injective. Since the system is consistent, there must be only one vector that the transformation sends to <span class="process-math">\(\bfb\)</span> so the system has a unique solution.</div></article></details></section><section class="subsection" id="subsec-range"><h3 class="heading hide-type">
+</div>
+<div class="para" id="cor-unique-soln-2-2">We now assume that <span class="process-math">\(\nll(A) = \{\bfo\}\text{.}\)</span> From <a href="sec-subspaces-lt.html#thm-injective-kernel" class="xref" data-knowl="./knowl/xref/thm-injective-kernel.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.4.7">Theorem 3.4.7</a> we know that the associated linear transformation is injective. Since the system is consistent, there must be only one vector that the transformation sends to <span class="process-math">\(\bfb\)</span> so the system has a unique solution.</div></article></details></section><section class="subsection" id="subsec-range"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="space"> </span><span class="title">The Range as a Subspace</span>
 </h3>
 <div class="para" id="subsec-range-2">We have examined the kernel as a subspace of the domain of a linear transformation. We now turn our attention to a well-known subset of the codomain. The reader will be familiar with the range (or image) of a linear transformation. We can now prove that this is a subspace.</div>
@@ -578,7 +605,8 @@ p(0) \\ p'(0)
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.10</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-range-subspace-1-1">Let <span class="process-math">\(T:V\to W\)</span> be a linear transformation between vector spaces over <span class="process-math">\(\ff\text{.}\)</span> Then <span class="process-math">\(\range(T)\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span>
-</div></article><details id="thm-range-subspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-range-subspace-2-1">Since we know that <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> it follows that <span class="process-math">\(\bfo_W \in \range(T)\text{.}\)</span> We now need to show the other properties demanded by <a href="sec-subspaces.html#thm-prove-subspace" class="xref" data-knowl="./knowl/xref/thm-prove-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.3">Theorem 2.4.3</a>.</div> <div class="para logical" id="thm-range-subspace-2-2">
+</div></article><details id="thm-range-subspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-range-subspace-2-1">Since we know that <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> it follows that <span class="process-math">\(\bfo_W \in \range(T)\text{.}\)</span> We now need to show the other properties demanded by <a href="sec-subspaces.html#thm-prove-subspace" class="xref" data-knowl="./knowl/xref/thm-prove-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.3">Theorem 2.4.3</a>.</div>
+<div class="para logical" id="thm-range-subspace-2-2">
 <div class="para">If <span class="process-math">\(\bfw_1, \bfw_2 \in \range(T)\text{,}\)</span> then there exist vectors <span class="process-math">\(\bfv_1, \bfv_2 \in V\)</span> with <span class="process-math">\(T(\bfv_1)=\bfw_1\)</span> and <span class="process-math">\(T(\bfv_2)=\bfw_2\text{.}\)</span> Then, using the linearity of <span class="process-math">\(T\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -586,7 +614,8 @@ p(0) \\ p'(0)
 \end{equation*}
 </div>
 <div class="para">This proves that <span class="process-math">\(\bfw_1+\bfw_2 \in \range(T)\text{,}\)</span> so <span class="process-math">\(\range(T)\)</span> is closed under addition.</div>
-</div> <div class="para logical" id="thm-range-subspace-2-3">
+</div>
+<div class="para logical" id="thm-range-subspace-2-3">
 <div class="para">Finally, we let <span class="process-math">\(k \in \ff\)</span> and <span class="process-math">\(\bfw \in \range(T)\text{,}\)</span> so there exists a vector <span class="process-math">\(\bfv \in V\)</span> such that <span class="process-math">\(T(\bfv) = \bfw\text{.}\)</span> Then, using the fact that <span class="process-math">\(T\)</span> is a linear transformation, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -635,7 +664,9 @@ k\bfw = kT(\bfv) = T(k\bfv)\text{,}
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.14</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-vectors-span-fm-1-1">A set of vectors <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n \}\)</span> spans <span class="process-math">\(\ff^m\)</span> if and only if the RREF of the matrix <span class="process-math">\(A = [\bfv_1 \cdots \bfv_n]\)</span> has a pivot in every row.</div></article><details id="thm-vectors-span-fm-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-vectors-span-fm-2-1">The set of vectors <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n \}\)</span> spans <span class="process-math">\(\ff^m\)</span> if and only if <span class="process-math">\(\bfb \in \col(A)\)</span> for every <span class="process-math">\(\bfb \in \ff^m\text{.}\)</span> This happens when the linear system with augmented matrix <span class="process-math">\([A \mid \bfb]\)</span> is consistent for each <span class="process-math">\(\bfb\text{.}\)</span>
-</div> <div class="para" id="thm-vectors-span-fm-2-2">We know from <a href="sec-linear-systems-fields.html#thm-consistent-system-f" class="xref" data-knowl="./knowl/xref/thm-consistent-system-f.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.2">Theorem 2.2.2</a> that a linear system over <span class="process-math">\(\ff\)</span> is consistent if and only if there is no pivot in the final column of the augmented matrix. If the RREF of <span class="process-math">\(A\)</span> has a pivot in every row, then there cannot be a pivot in the final column of the RREF of <span class="process-math">\([A \mid \bfb]\)</span> since each row already contains one pivot.</div> <div class="para" id="thm-vectors-span-fm-2-3">We will prove the contrapositive of the other implication. Suppose that the RREF of <span class="process-math">\(A\)</span> does not have a pivot in every row. We will create a vector in <span class="process-math">\(\ff^m\)</span> which is not in the span of this set of vectors. Since the RREF of <span class="process-math">\(A\)</span> does not have a pivot in every row, let the smallest row number with no pivot be <span class="process-math">\(k\text{.}\)</span> Form the augmented matrix with the RREF of <span class="process-math">\(A\)</span> and the vector <span class="process-math">\(\bfe_k\text{.}\)</span> Now reverse the elementary row operations that were taken to reduce <span class="process-math">\(A\)</span> to its RREF. The result will be an augmented matrix <span class="process-math">\([A \mid \bfb]\)</span> which is related to an inconsistent system. (There will be a pivot in the final column of the RREF of this matrix. We constructed it this way!) This proves that the set <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n \}\)</span> does not span <span class="process-math">\(\ff^m\text{.}\)</span>
+</div>
+<div class="para" id="thm-vectors-span-fm-2-2">We know from <a href="sec-linear-systems-fields.html#thm-consistent-system-f" class="xref" data-knowl="./knowl/xref/thm-consistent-system-f.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.2">Theorem 2.2.2</a> that a linear system over <span class="process-math">\(\ff\)</span> is consistent if and only if there is no pivot in the final column of the augmented matrix. If the RREF of <span class="process-math">\(A\)</span> has a pivot in every row, then there cannot be a pivot in the final column of the RREF of <span class="process-math">\([A \mid \bfb]\)</span> since each row already contains one pivot.</div>
+<div class="para" id="thm-vectors-span-fm-2-3">We will prove the contrapositive of the other implication. Suppose that the RREF of <span class="process-math">\(A\)</span> does not have a pivot in every row. We will create a vector in <span class="process-math">\(\ff^m\)</span> which is not in the span of this set of vectors. Since the RREF of <span class="process-math">\(A\)</span> does not have a pivot in every row, let the smallest row number with no pivot be <span class="process-math">\(k\text{.}\)</span> Form the augmented matrix with the RREF of <span class="process-math">\(A\)</span> and the vector <span class="process-math">\(\bfe_k\text{.}\)</span> Now reverse the elementary row operations that were taken to reduce <span class="process-math">\(A\)</span> to its RREF. The result will be an augmented matrix <span class="process-math">\([A \mid \bfb]\)</span> which is related to an inconsistent system. (There will be a pivot in the final column of the RREF of this matrix. We constructed it this way!) This proves that the set <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n \}\)</span> does not span <span class="process-math">\(\ff^m\text{.}\)</span>
 </div></article></details><details id="subsec-range-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.15</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-range-12-1-1">
@@ -723,7 +754,7 @@ A = \begin{bmatrix}
 </div>
 <div class="para">Let <span class="process-math">\(T:\rr^2 \to \rr^3\)</span> be the linear transformation which is multiplication by <span class="process-math">\(A\text{.}\)</span>
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-5-1-1-1-5">
 <li id="sec-subspaces-lt-5-1-1-1-5-1"><div class="para" id="sec-subspaces-lt-5-1-1-1-5-1-1">Calculate <span class="process-math">\(\nll(A)\text{.}\)</span>
 </div></li>
 <li id="sec-subspaces-lt-5-1-1-1-5-2"><div class="para" id="sec-subspaces-lt-5-1-1-1-5-2-1">Is <span class="process-math">\(T\)</span> injective? Explain.</div></li>
@@ -762,12 +793,12 @@ A = \begin{bmatrix}
 </div>
 <div class="para">For each of the following vectors <span class="process-math">\(\bfx \in \ff_7^4\text{,}\)</span> determine whether or not <span class="process-math">\(\bfx \in \nll(A)\text{.}\)</span>
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-1-1-1-6">
 <li id="sec-subspaces-lt-6-1-1-1-6-1"><div class="para" id="sec-subspaces-lt-6-1-1-1-6-1-1"><span class="process-math">\(\displaystyle \bfx = \begin{bmatrix} 6 \\ 1 \\ 4 \\ 2 \end{bmatrix}\)</span></div></li>
 <li id="sec-subspaces-lt-6-1-1-1-6-2"><div class="para" id="sec-subspaces-lt-6-1-1-1-6-2-1"><span class="process-math">\(\displaystyle \bfx = \begin{bmatrix} 4 \\ 3 \\ 1 \\ 2 \end{bmatrix}\)</span></div></li>
 </ol>
 </div>
-<div class="solutions"><details id="sec-subspaces-lt-6-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-subspaces-lt-6-1-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="sec-subspaces-lt-6-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-subspaces-lt-6-1-2-1"><ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-1-2-1-1">
 <li id="sec-subspaces-lt-6-1-2-1-1-1"><div class="para" id="sec-subspaces-lt-6-1-2-1-1-1-1">Yes, we calculate <span class="process-math">\(A\bfx = \bfo\text{.}\)</span>
 </div></li>
 <li id="sec-subspaces-lt-6-1-2-1-1-2"><div class="para" id="sec-subspaces-lt-6-1-2-1-1-2-1">No, we calculate <span class="process-math">\(A\bfx = (6,6,5)\text{,}\)</span> where we have written the vector horizontally out of convenience.</div></li>
@@ -775,7 +806,7 @@ A = \begin{bmatrix}
 <div class="para logical" id="sec-subspaces-lt-6-2-1-1">
 <div class="para">For each of the following matrices <span class="process-math">\(A\)</span> over <span class="process-math">\(\rr\text{,}\)</span> find <span class="process-math">\(\nll(A)\)</span> by producing a set of vectors that spans <span class="process-math">\(\nll(A)\text{.}\)</span>
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-2-1-1-5">
 <li id="sec-subspaces-lt-6-2-1-1-5-1"><div class="para" id="sec-subspaces-lt-6-2-1-1-5-1-1"><span class="process-math">\(\displaystyle A = \begin{bmatrix}
 2 \amp 3 \amp 4 \amp 2 \\
 -5 \amp -1 \amp 5 \amp -3
@@ -811,7 +842,7 @@ A = \begin{bmatrix}
 \end{bmatrix} \text{.}
 \end{equation*}
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-4-1-1-5">
 <li id="sec-subspaces-lt-6-4-1-1-5-1"><div class="para" id="sec-subspaces-lt-6-4-1-1-5-1-1">Show that <span class="process-math">\(\bfx \in \nll(A)\)</span> and <span class="process-math">\(\bfx \not \in \col(A)\text{.}\)</span>
 </div></li>
 <li id="sec-subspaces-lt-6-4-1-1-5-2"><div class="para" id="sec-subspaces-lt-6-4-1-1-5-2-1">Explain why it is not possible, for this particular matrix <span class="process-math">\(A\text{,}\)</span> to find a non-zero vector in <span class="process-math">\(\nll(A) \cap \col(A)\text{.}\)</span>
@@ -819,7 +850,7 @@ A = \begin{bmatrix}
 <li id="sec-subspaces-lt-6-4-1-1-5-3"><div class="para" id="sec-subspaces-lt-6-4-1-1-5-3-1">Is it possible to find a matrix <span class="process-math">\(A \in M_2(\rr)\)</span> such that there exists a non-zero vector in <span class="process-math">\(\nll(A) \cap \col(A)\text{?}\)</span> Justify your answer thoroughly.</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="sec-subspaces-lt-6-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-subspaces-lt-6-4-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="sec-subspaces-lt-6-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-subspaces-lt-6-4-2-1"><ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-4-2-1-1">
 <li id="sec-subspaces-lt-6-4-2-1-1-1"><div class="para logical" id="sec-subspaces-lt-6-4-2-1-1-1-1">
 <div class="para">It is easy to calculate <span class="process-math">\(A\bfx\)</span> and see that <span class="process-math">\(A\bfx = \bfo\text{.}\)</span> To show that <span class="process-math">\(\bfx\)</span> is not in <span class="process-math">\(\col(A)\text{,}\)</span> we form the matrix <span class="process-math">\(\left[\begin{array}{@{}c|c@{}} A \amp \bfx \end{array}\right]\)</span> and row reduce:</div>
 <div class="displaymath process-math">
@@ -887,12 +918,12 @@ T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) =
 (a+b) + (b+ c)t + (a+b+c)t^2\text{.}
 \end{equation*}
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-7-1-1-3">
 <li id="sec-subspaces-lt-6-7-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-7-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
 <li id="sec-subspaces-lt-6-7-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-7-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="sec-subspaces-lt-6-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec-subspaces-lt-6-7-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="sec-subspaces-lt-6-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec-subspaces-lt-6-7-2-1"><ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-7-2-1-1">
 <li id="sec-subspaces-lt-6-7-2-1-1-1">
 <div class="para logical" id="sec-subspaces-lt-6-7-2-1-1-1-1">
 <div class="para">This linear transformation is injective. Observe that if <span class="process-math">\(T\)</span> sends the vector <span class="process-math">\((a,b,c)\)</span> to the zero polynomial, then we have the following linear system in which each equation must hold:</div>
@@ -942,7 +973,7 @@ T \left( \begin{bmatrix} a \\ b \end{bmatrix} \right) =
 a + bt + bt^2\text{.}
 \end{equation*}
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-8-1-1-3">
 <li id="sec-subspaces-lt-6-8-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-8-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
 <li id="sec-subspaces-lt-6-8-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-8-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
 </ol>
@@ -955,12 +986,12 @@ a + bt + bt^2\text{.}
 T(a+bt+ct^2) = \begin{bmatrix} a-2b \\ 3b + c \end{bmatrix} \text{.}
 \end{equation*}
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-9-1-1-3">
 <li id="sec-subspaces-lt-6-9-1-1-3-1"><div class="para" id="sec-subspaces-lt-6-9-1-1-3-1-1">Either prove or disprove that <span class="process-math">\(T\)</span> is injective.</div></li>
 <li id="sec-subspaces-lt-6-9-1-1-3-2"><div class="para" id="sec-subspaces-lt-6-9-1-1-3-2-1">Either prove or disprove that <span class="process-math">\(T\)</span> is surjective.</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="sec-subspaces-lt-6-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec-subspaces-lt-6-9-2-1"><ol class="lower-alpha">
+<div class="solutions"><details id="sec-subspaces-lt-6-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec-subspaces-lt-6-9-2-1"><ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-9-2-1-1">
 <li id="sec-subspaces-lt-6-9-2-1-1-1"><div class="para" id="sec-subspaces-lt-6-9-2-1-1-1-1">This linear transformation is not injective. We can calculate that <span class="process-math">\(T(-\frac{2}{3} - \frac{1}{3}t + t^2) = \bfo\text{.}\)</span> Since this shows that <span class="process-math">\(T\)</span> has a nonzero vector in the kernel, <span class="process-math">\(T\)</span> is not injective.</div></li>
 <li id="sec-subspaces-lt-6-9-2-1-1-2"><div class="para logical" id="sec-subspaces-lt-6-9-2-1-1-2-1">
 <div class="para">This linear transformation is surjective. Let <span class="process-math">\(\bfx = \begin{bmatrix} d \\ e \end{bmatrix}\)</span> be an element of <span class="process-math">\(\rr^2\text{.}\)</span> We claim that we can find an element <span class="process-math">\(p \in P_2\)</span> such that <span class="process-math">\(T(p) = \bfx\text{.}\)</span> If <span class="process-math">\(p = a + bt + ct^2\text{,}\)</span> we will need to solve the following system of equations to find the coefficients of <span class="process-math">\(p\text{:}\)</span>
@@ -983,7 +1014,7 @@ a - 2b \amp = d\\
 </ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-subspaces-lt-6-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-subspaces-lt-6-10-1-1">
 <div class="para">For each of the following, consider a linear transformation <span class="process-math">\(T: \rr^n \to \rr^m\)</span> which is multiplication by the given <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{.}\)</span> In each case, determine whether or not <span class="process-math">\(T\)</span> is injective and whether or not <span class="process-math">\(T\)</span> is surjective. Explain your answers.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-subspaces-lt-6-10-1-1-6">
 <li id="sec-subspaces-lt-6-10-1-1-6-1"><div class="para" id="sec-subspaces-lt-6-10-1-1-6-1-1"><span class="process-math">\(\displaystyle A = \begin{bmatrix} 
 2 \amp -4 \amp -14 \\ 
 -4 \amp -1 \amp 10 \\ 
@@ -1018,7 +1049,8 @@ T(U') = \{ T(\bfu) \in V \mid \bfu \in U' \} \text{.}
 </div>
 <div class="solutions"><details id="sec-subspaces-lt-6-11-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="sec-subspaces-lt-6-11-2-2-1">Since <span class="process-math">\(U'\)</span> is a subspace of <span class="process-math">\(U\text{,}\)</span> we must have <span class="process-math">\(\bfo \in U'\text{.}\)</span> Further, we know that <span class="process-math">\(T(\bfo) = \bfo\)</span> for all linear transformations. This proves that <span class="process-math">\(\bfo \in T(U')\text{.}\)</span>
-</div> <div class="para logical" id="sec-subspaces-lt-6-11-2-2-2">
+</div>
+<div class="para logical" id="sec-subspaces-lt-6-11-2-2-2">
 <div class="para">We now let <span class="process-math">\(\bfv_1, \bfv_2 \in T(U')\text{.}\)</span> This means that there exist <span class="process-math">\(\bfu_1, \bfu_2 \in U'\)</span> with <span class="process-math">\(T(\bfu_1) = \bfv_1\)</span> and <span class="process-math">\(T(\bfu_2) = \bfv_2\text{.}\)</span> Since <span class="process-math">\(U'\)</span> is a subspace of <span class="process-math">\(U\text{,}\)</span> we know that <span class="process-math">\(\bfu_1 + \bfu_2 \in U'\text{,}\)</span> so <span class="process-math">\(T(\bfu_1 + \bfu_2) \in T(U')\text{.}\)</span> However, because of the properties of a linear transformation, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1026,7 +1058,8 @@ T(\bfu_1 + \bfu_2) = T(\bfu_1) + T(\bfu_2) = \bfv_1 + \bfv_2\text{.}
 \end{equation*}
 </div>
 <div class="para">This proves that <span class="process-math">\(\bfv_1 + \bfv_2 \in T(U')\text{,}\)</span> which shows that <span class="process-math">\(T(U')\)</span> is closed under addition.</div>
-</div> <div class="para logical" id="sec-subspaces-lt-6-11-2-2-3">
+</div>
+<div class="para logical" id="sec-subspaces-lt-6-11-2-2-3">
 <div class="para">Finally, we let <span class="process-math">\(\bfv \in T(U')\)</span> and <span class="process-math">\(c \in \ff\text{.}\)</span> This means that there exists <span class="process-math">\(\bfu \in U'\)</span> such that <span class="process-math">\(T(\bfu) = \bfv\text{.}\)</span> Since <span class="process-math">\(U'\)</span> is a subspace of <span class="process-math">\(U\text{,}\)</span> we know that <span class="process-math">\(c\bfu \in U'\text{,}\)</span> so <span class="process-math">\(T(c\bfu) \in T(U')\text{.}\)</span> Using the properties of a linear transformation, we see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1052,11 +1085,11 @@ U_1 = \{ \bfu \in U \mid T(\bfu) \in V' \}\text{.}
 <div class="para" id="sec-subspaces-lt-6-11-5-1-1">Prove that if <span class="process-math">\(n &lt; m\text{,}\)</span> then no set of <span class="process-math">\(n\)</span> vectors can span <span class="process-math">\(\ff^m\text{.}\)</span>
 </div></article></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-inverting-matrix.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-dets.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-inverting-matrix.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-dets.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 <!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZFWXZ3398L"></script><script>  window.dataLayer = window.dataLayer || [];

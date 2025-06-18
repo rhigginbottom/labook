@@ -12,9 +12,9 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">3.1.5</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span>
 </h4>
-<div class="para">Let <span class="process-math">\(\ff\)</span> be a field and let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix with entries from <span class="process-math">\(\ff\text{.}\)</span> (We will refer to this in what follows as “a matrix over <span class="process-math">\(\ff\text{.}\)</span>”) Then multiplication by <span class="process-math">\(A\)</span> is a linear transformation from <span class="process-math">\(\ff^n\)</span> to <span class="process-math">\(\ff^m\text{.}\)</span> (We will denote the function which is multiplication by <span class="process-math">\(A\)</span> by <span class="process-math">\(T_A:\ff^n \to \ff^m\text{.}\)</span>)</div> <div class="para logical">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Let <span class="process-math">\(\ff\)</span> be a field and let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix with entries from <span class="process-math">\(\ff\text{.}\)</span> (We will refer to this in what follows as “a matrix over <span class="process-math">\(\ff\text{.}\)</span>”) Then multiplication by <span class="process-math">\(A\)</span> is a linear transformation from <span class="process-math">\(\ff^n\)</span> to <span class="process-math">\(\ff^m\text{.}\)</span> (We will denote the function which is multiplication by <span class="process-math">\(A\)</span> by <span class="process-math">\(T_A:\ff^n \to \ff^m\text{.}\)</span>)</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">To justify this claim we must first explain what we mean by “multiplication by <span class="process-math">\(A\text{.}\)</span>” We will let <span class="process-math">\(\bfv \in \ff^n\)</span> and denote entry <span class="process-math">\((i,j)\)</span> in <span class="process-math">\(A\)</span> by <span class="process-math">\(a_{ij}\text{.}\)</span> We will further denote the entries of <span class="process-math">\(\bfv\)</span> by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -34,7 +34,7 @@ a_{m1}v_1 + \cdots + a_{mn}v_n
 \end{equation}
 </div>
 <div class="para">One way to state this is that entry <span class="process-math">\(j\)</span> in <span class="process-math">\(A\bfv\)</span> is the sum of the entry-wise product of row <span class="process-math">\(j\)</span> in <span class="process-math">\(A\)</span> with <span class="process-math">\(\bfv\text{.}\)</span> Since <span class="process-math">\(A\bfv\)</span> is an element of <span class="process-math">\(\ff^m\text{,}\)</span> the domain and codomain of <span class="process-math">\(T_A\)</span> are correct.</div>
-</div> <div class="para">What we have defined is the product of a matrix and a vector. However, an alternate description of this product will be more useful in proving that <span class="process-math">\(T_A\)</span> is a linear transformation.</div> <div class="para logical">
+</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">What we have defined is the product of a matrix and a vector. However, an alternate description of this product will be more useful in proving that <span class="process-math">\(T_A\)</span> is a linear transformation.</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">If the columns of <span class="process-math">\(A\)</span> are thought of as vectors <span class="process-math">\(\mathbf{a}_1, \ldots, \mathbf{a}_n\text{,}\)</span> then the product <span class="process-math">\(A\bfv\)</span> is also</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-matrix-vector-mult.html">
 \begin{equation}
@@ -42,7 +42,7 @@ A\bfv = v_1\mathbf{a}_1 + \cdots + v_n\mathbf{a}_n = \sum_{i=1}^n v_i\mathbf{a}_
 \end{equation}
 </div>
 <div class="para">In words, <span class="process-math">\(A\bfv\)</span> is a linear combination of the columns of <span class="process-math">\(A\)</span> with weights coming from the entries of <span class="process-math">\(\bfv\text{.}\)</span> (We have reserved proving the equivalence of these two formulations to <a href="sec-linear-trans.html#exer-matrix-vector-mult" class="xref" data-knowl="./knowl/xref/exer-matrix-vector-mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.1.7.16">Exercise 3.1.7.16</a>.)</div>
-</div> <div class="para logical">
+</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">With this equivalent definition, proving that <span class="process-math">\(T_A\)</span> is a linear transformation is a snap. Let <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> be vectors in <span class="process-math">\(\ff^n\)</span> and let <span class="process-math">\(c \in \ff\text{.}\)</span> We will further denote the entries of <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -61,7 +61,7 @@ T_A(\bfu) + T_A(\bfv) \amp = A\bfu + A\bfv = \sum_{i=1}^n u_i\mathbf{a}_i + \sum
 \end{align*}
 </div>
 <div class="para">These two expressions are equal due to the fact that <span class="process-math">\(\ff^m\)</span> is a vector space.</div>
-</div> <div class="para logical">
+</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">We have one final calculation to prove that <span class="process-math">\(T_A\)</span> is a linear transformation. Let <span class="process-math">\(\bfv\)</span> be a vector in <span class="process-math">\(\ff^n\)</span> and let <span class="process-math">\(c\)</span> be in <span class="process-math">\(\ff\text{.}\)</span> Then we have</div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -70,6 +70,6 @@ cT_A(\bfv) \amp = c A(\bfv) = c \sum_{i=1}^n v_i\mathbf{a}_i.
 \end{align*}
 </div>
 <div class="para">Once again, thsse expressions are equal because <span class="process-math">\(\ff^m\)</span> is a vector space.</div>
-</div> <div class="para">These calculations prove that <span class="process-math">\(T_A\)</span> is a linear transformation.</div></article><span class="incontext"><a class="internal" href="sec-linear-trans.html#examp-matrix-vector-prod">in-context</a></span>
+</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">These calculations prove that <span class="process-math">\(T_A\)</span> is a linear transformation.</div></article><span class="incontext"><a class="internal" href="sec-linear-trans.html#examp-matrix-vector-prod">in-context</a></span>
 </body>
 </html>

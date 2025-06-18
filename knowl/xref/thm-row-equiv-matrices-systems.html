@@ -12,14 +12,15 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.2.7</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span>
 </h3>
-<div class="para">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are augmented matrices corresponding to systems of linear equations. Then if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent, the linear systems to which they correspond are also equivalent.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">We will prove this statement directly. Because elementary row operations only involve one or two rows of a matrix at a time, it is sufficient to prove this theorem for systems of two linear equations.</div> <div class="para logical">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are augmented matrices corresponding to systems of linear equations. Then if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent, the linear systems to which they correspond are also equivalent.</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">We will prove this statement directly. Because elementary row operations only involve one or two rows of a matrix at a time, it is sufficient to prove this theorem for systems of two linear equations.</div>
+<div class="para logical">
 <div class="para">We suppose that we have the following <span class="process-math">\(2\times n\)</span> linear system:</div>
 <div class="displaymath process-math">
 \begin{align*}
-a_{11}x_1 + \cdots a_{1n}x_n \amp =b_1\\
-a_{21}x_1 + \cdots a_{2n}x_n \amp =b_2\text{,}
+a_{11}x_1 + \cdots + a_{1n}x_n \amp =b_1\\
+a_{21}x_1 + \cdots + a_{2n}x_n \amp =b_2\text{,}
 \end{align*}
 </div>
 <div class="para">which produces the following augmented matrix:</div>
@@ -32,7 +33,8 @@ a_{21} \amp \cdots \amp a_{2n} \amp b_2
 \end{equation*}
 </div>
 <div class="para">Further, we suppose that <span class="process-math">\((c_1,\ldots,c_n)\)</span> is a solution to the linear system. If we apply the <em class="emphasis">switch</em> row operation to <span class="process-math">\(A\text{,}\)</span> this corresponds to writing the second equation above the first in the linear system. It is immediate that <span class="process-math">\((c_1,\ldots,c_n)\)</span> is still a solution to this system.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">If we apply the <em class="emphasis">scale</em> row operation to <span class="process-math">\(A\text{,}\)</span> multiplying row 1 (without loss of generality) by a nonzero constant <span class="process-math">\(d\text{,}\)</span> then we have the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -43,7 +45,8 @@ a_{21} \amp \cdots \amp a_{2n} \amp b_2
 \end{equation*}
 </div>
 <div class="para">We must show that <span class="process-math">\((c_1,\ldots,c_n)\)</span> is a solution to the corresponding linear system.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">It is obvious that <span class="process-math">\((c_1,\ldots,c_n)\)</span> satisfies the second equation in this new linear system since that equation is unchanged. If <span class="process-math">\((c_1,\ldots,c_n)\)</span> satisfied the first equation of the original system, then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -57,14 +60,15 @@ da_{11}c_1 + \cdots + da_{1n}c_n \amp = d(a_{11}c_1 + \cdots + a_{1n}c_n) \\
 \amp = d(b_1)\text{.}
 \end{align*}
 </div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">We must now show that the <em class="emphasis">replace</em> row operation preserves solutions. We let <span class="process-math">\(k\)</span> be a nonzero constant and we replace (without loss of generality) the second row of <span class="process-math">\(A\)</span> with the old second row plus <span class="process-math">\(k\)</span> times the first row. Here is the resulting matrix <span class="process-math">\(C\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
 C = \left[\begin{array}{@{}ccc|c@{}}
 a_{11} \amp \cdots \amp a_{1n} \amp b_1 \\
-(ka_{11}+a_{21}) \amp \cdots \amp (ka_{1n}+a_{2n}) \amp (kb_1+b_2)
+ka_{11}+a_{21} \amp \cdots \amp ka_{1n}+a_{2n} \amp kb_1+b_2
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
@@ -91,6 +95,7 @@ a_{21}c_1 + \cdots + a_{2n}c_n = b_2\text{.}
 \end{split}
 \end{equation*}
 </div>
-</div> <div class="para">There is technically one more collection of facts to verify before this proof is complete. We have shown that, for all three elementary row operations, if <span class="process-math">\((c_1,\ldots,c_n)\)</span> is a solution to the linear system corresponding to <span class="process-math">\(A\)</span> then it will also be a solution to the linear system corresponding to <span class="process-math">\(B\)</span> (where <span class="process-math">\(B\)</span> is the result of applying one elementary row operation to <span class="process-math">\(A\)</span>). But “equivalent” linear systems means that the solution sets are equal <em class="emphasis">as sets</em>. This means that we must assume we have a solution for the linear system corresponding to the matrix <span class="process-math">\(B\)</span> and show that it is a solution for the linear system corresponding to <span class="process-math">\(A\text{.}\)</span> We claim that this concern can be dispensed with by invoking another result in this section. Connecting the last dots of this proof is left to the reader in <a href="sec-matrices.html#exer-finish-proof-1" class="xref" data-knowl="./knowl/xref/exer-finish-proof-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.2.12">Exercise 1.2.12</a>.</div></article></details><span class="incontext"><a class="internal" href="sec-matrices.html#thm-row-equiv-matrices-systems">in-context</a></span>
+</div>
+<div class="para">There is technically one more collection of facts to verify before this proof is complete. We have shown that, for all three elementary row operations, if <span class="process-math">\((c_1,\ldots,c_n)\)</span> is a solution to the linear system corresponding to <span class="process-math">\(A\)</span> then it will also be a solution to the linear system corresponding to <span class="process-math">\(B\)</span> (where <span class="process-math">\(B\)</span> is the result of applying one elementary row operation to <span class="process-math">\(A\)</span>). But “equivalent” linear systems means that the solution sets are equal <em class="emphasis">as sets</em>. This means that we must assume we have a solution for the linear system corresponding to the matrix <span class="process-math">\(B\)</span> and show that it is a solution for the linear system corresponding to <span class="process-math">\(A\text{.}\)</span> We claim that this concern can be dispensed with by invoking another result in this section. Connecting the last dots of this proof is left to the reader in <a href="sec-matrices.html#exer-finish-proof-1" class="xref" data-knowl="./knowl/xref/exer-finish-proof-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.2.12">Exercise 1.2.12</a>.</div></article></details><span class="incontext"><a class="internal" href="sec-matrices.html#thm-row-equiv-matrices-systems">in-context</a></span>
 </body>
 </html>
