@@ -6,18 +6,24 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Rank and Nullity</title>
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -73,11 +79,11 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Linear Algebra">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ryan Higginbottom">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra">
+<meta property="book:author" content="Ryan Higginbottom">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
@@ -109,14 +115,14 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
-<script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">Gathering and Sharpening Tools</span></a></h1>
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra</span> <span class="subtitle">Gathering and Sharpening Tools</span></a></h1>
 <p class="byline">Ryan Higginbottom</p>
-</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
@@ -129,7 +135,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-dimension.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-dimension.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-coordinates.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
 \newcommand{\zz}{\mathbb Z}
 \newcommand{\qq}{\mathbb Q}
 \newcommand{\rr}{\mathbb R}
@@ -166,7 +172,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
@@ -192,10 +198,10 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-results.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Results</span></a></div>
+<div class="toc-title-box"><a href="sec-results.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Solving Linear Systems With Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-results.html#sec-results-31" class="internal"><span class="codenumber">1.3</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-results.html#sec-results-32" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-results.html#sec-results-29" class="internal"><span class="codenumber">1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-results.html#sec-results-30" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -454,13 +460,15 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-rank"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-rank"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.4</span><span class="space"> </span><span class="title">Rank and Nullity</span>
 </h2>
-<section class="introduction" id="sec-rank-2"><div class="para" id="sec-rank-2-1">In this section we will connect dimension with the subspaces associated with linear transformations (see <a href="sec-subspaces-lt.html" class="internal" title="Section 3.4: Subspaces and Linear Transformations">Section 3.4</a>).</div></section><section class="subsection" id="subsec-define-rank-nullity"><h3 class="heading hide-type">
+<section class="introduction" id="sec-rank-2"><div class="para" id="sec-rank-2-1">In this section we will connect dimension with the subspaces associated with linear transformations (see <a href="sec-subspaces-lt.html" class="internal" title="Section 3.4: Subspaces and Linear Transformations">Section 3.4</a>).<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-define-rank-nullity"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="space"> </span><span class="title">Defining Rank and Nullity</span>
 </h3>
-<div class="para" id="subsec-define-rank-nullity-2">We begin by defining the dimension of the range of a linear transformation.</div>
+<div class="para" id="subsec-define-rank-nullity-2">We begin by defining the dimension of the range of a linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-define-rank-nullity-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="def-rank"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span>
 </h4>
@@ -479,32 +487,46 @@ eBookConfig.enable_chatcodes =  false;
 \rank(A) = \dim(\col(A))\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para" id="subsec-define-rank-nullity-4">It may seem strange to define the same word in two ways. However, since the range of <span class="process-math">\(T\)</span> is exactly the column space of <span class="process-math">\(A\)</span> when <span class="process-math">\(T\)</span> is multiplication by <span class="process-math">\(A\text{,}\)</span> these two definitions coincide.</div>
-<div class="para" id="subsec-define-rank-nullity-5">When <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix over <span class="process-math">\(\ff\text{,}\)</span> its rows are vectors in <span class="process-math">\(\ff^n\)</span> and its columns are vectors in <span class="process-math">\(\ff^m\text{.}\)</span> This is why the column space of <span class="process-math">\(A\)</span> is a subspace of <span class="process-math">\(\ff^m\text{.}\)</span> We can also examine the analogous space for the rows.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-rank-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 5.4.1"><a href="#def-rank" title="Copy permalink for Definition 5.4.1">🔗</a></div></article><div class="para" id="subsec-define-rank-nullity-4">It may seem strange to define the same word in two ways. However, since the range of <span class="process-math">\(T\)</span> is exactly the column space of <span class="process-math">\(A\)</span> when <span class="process-math">\(T\)</span> is multiplication by <span class="process-math">\(A\text{,}\)</span> these two definitions coincide.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-define-rank-nullity-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-define-rank-nullity-5">When <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix over <span class="process-math">\(\ff\text{,}\)</span> its rows are vectors in <span class="process-math">\(\ff^n\)</span> and its columns are vectors in <span class="process-math">\(\ff^m\text{.}\)</span> This is why the column space of <span class="process-math">\(A\)</span> is a subspace of <span class="process-math">\(\ff^m\text{.}\)</span> We can also examine the analogous space for the rows.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-define-rank-nullity-5" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="def-row-space"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="def-row-space-1-1">The set of all linear combinations of the rows of a matrix <span class="process-math">\(A\)</span> is called the <dfn class="terminology">row space</dfn> of <span class="process-math">\(A\text{.}\)</span> We denote this by <span class="process-math">\(\row(A)\text{.}\)</span>
-</div></article><article class="note remark-like" id="subsec-define-rank-nullity-7"><h4 class="heading">
+<div class="para" id="def-row-space-1-1">The set of all linear combinations of the rows of a matrix <span class="process-math">\(A\)</span> is called the <dfn class="terminology">row space</dfn> of <span class="process-math">\(A\text{.}\)</span> We denote this by <span class="process-math">\(\row(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-row-space-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 5.4.2"><a href="#def-row-space" title="Copy permalink for Definition 5.4.2">🔗</a></div></article><article class="note remark-like" id="subsec-define-rank-nullity-7"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-define-rank-nullity-7-1">Since the rows of <span class="process-math">\(A\)</span> are the columns of <span class="process-math">\(A^T\text{,}\)</span> it is immediate that <span class="process-math">\(\row(A) = \col(A^T)\text{.}\)</span>
-</div></article><div class="para" id="subsec-define-rank-nullity-8">With the definition of the row space it is natural to wonder how the sizes of the row and column spaces compare to each other. The following results will help us settle this matter.</div>
+<div class="para" id="subsec-define-rank-nullity-7-1">Since the rows of <span class="process-math">\(A\)</span> are the columns of <span class="process-math">\(A^T\text{,}\)</span> it is immediate that <span class="process-math">\(\row(A) = \col(A^T)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-define-rank-nullity-7-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 5.4.3"><a href="#subsec-define-rank-nullity-7" title="Copy permalink for Note 5.4.3">🔗</a></div></article><div class="para" id="subsec-define-rank-nullity-8">With the definition of the row space it is natural to wonder how the sizes of the row and column spaces compare to each other. The following results will help us settle this matter.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-define-rank-nullity-8" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="proposition theorem-like" id="prop-row-equiv-row-spaces"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="prop-row-equiv-row-spaces-1-1">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent matrices, then we have <span class="process-math">\(\row(A) = \row(B)\text{.}\)</span> Further, if <span class="process-math">\(B\)</span> is in REF, then the non-zero rows of <span class="process-math">\(B\)</span> form a basis for <span class="process-math">\(\row(B)\)</span> (and <span class="process-math">\(\row(A)\)</span>).</div></article><details id="prop-row-equiv-row-spaces-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-row-equiv-row-spaces-2-1">We will first show that <span class="process-math">\(\row(A) = \row(B)\)</span> as sets. If <span class="process-math">\(A\)</span> is reduced to <span class="process-math">\(B\text{,}\)</span> then the rows of <span class="process-math">\(B\)</span> are linear combinations of the rows of <span class="process-math">\(A\text{.}\)</span> (The elementary row operations produce linear combinations of the original rows.) Therefore, any linear combination of the rows of <span class="process-math">\(B\)</span> can be written as a linear combination of the rows of <span class="process-math">\(A\text{.}\)</span> This proves that <span class="process-math">\(\row(B) \subseteq \row(A)\text{.}\)</span> Since all row operations are reversible, we can use row operations to produce <span class="process-math">\(A\)</span> from <span class="process-math">\(B\text{,}\)</span> and this same argument shows that <span class="process-math">\(\row(A) \subseteq \row(B)\text{.}\)</span> This proves that <span class="process-math">\(\row(A) = \row(B)\text{.}\)</span>
+<div class="para" id="prop-row-equiv-row-spaces-1-1">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent matrices, then we have <span class="process-math">\(\row(A) = \row(B)\text{.}\)</span> Further, if <span class="process-math">\(B\)</span> is in REF, then the non-zero rows of <span class="process-math">\(B\)</span> form a basis for <span class="process-math">\(\row(B)\)</span> (and <span class="process-math">\(\row(A)\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#prop-row-equiv-row-spaces-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="prop-row-equiv-row-spaces-2-2">If the matrix <span class="process-math">\(B\)</span> is in REF, the nonzero rows are linearly independent because no nonzero row is a linear combination of the rows below it. Here we are applying the Linear Dependence Lemma (<a href="sec-lin-ind.html#thm-lin-dep-lemma" class="xref" data-knowl="./knowl/xref/thm-lin-dep-lemma.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.19: The Linear Dependence Lemma">Theorem 5.1.19</a>) to the nonzero rows from bottom to top. Since the rows of <span class="process-math">\(B\)</span> span <span class="process-math">\(\row(B)\)</span> by definition, the fact that they are linearly independent means that they form a basis for <span class="process-math">\(\row(B)\text{.}\)</span>
-</div></article></details><article class="theorem theorem-like" id="thm-row-space-dim"><h4 class="heading">
+<div class="autopermalink" data-description="Proposition 5.4.4"><a href="#prop-row-equiv-row-spaces" title="Copy permalink for Proposition 5.4.4">🔗</a></div></article><details id="prop-row-equiv-row-spaces-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-row-equiv-row-spaces-2-1">We will first show that <span class="process-math">\(\row(A) = \row(B)\)</span> as sets. If <span class="process-math">\(A\)</span> is reduced to <span class="process-math">\(B\text{,}\)</span> then the rows of <span class="process-math">\(B\)</span> are linear combinations of the rows of <span class="process-math">\(A\text{.}\)</span> (The elementary row operations produce linear combinations of the original rows.) Therefore, any linear combination of the rows of <span class="process-math">\(B\)</span> can be written as a linear combination of the rows of <span class="process-math">\(A\text{.}\)</span> This proves that <span class="process-math">\(\row(B) \subseteq \row(A)\text{.}\)</span> Since all row operations are reversible, we can use row operations to produce <span class="process-math">\(A\)</span> from <span class="process-math">\(B\text{,}\)</span> and this same argument shows that <span class="process-math">\(\row(A) \subseteq \row(B)\text{.}\)</span> This proves that <span class="process-math">\(\row(A) = \row(B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-row-equiv-row-spaces-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-row-equiv-row-spaces-2-2">If the matrix <span class="process-math">\(B\)</span> is in REF, the nonzero rows are linearly independent because no nonzero row is a linear combination of the rows below it. Here we are applying the Linear Dependence Lemma (<a href="sec-lin-ind.html#thm-lin-dep-lemma" class="xref" data-knowl="./knowl/xref/thm-lin-dep-lemma.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.19: The Linear Dependence Lemma">Theorem 5.1.19</a>) to the nonzero rows from bottom to top. Since the rows of <span class="process-math">\(B\)</span> span <span class="process-math">\(\row(B)\)</span> by definition, the fact that they are linearly independent means that they form a basis for <span class="process-math">\(\row(B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-row-equiv-row-spaces-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.4.4.1"><a href="#prop-row-equiv-row-spaces-2" title="Copy permalink for Proof 5.4.4.1">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-row-space-dim"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="thm-row-space-dim-1-1">Let <span class="process-math">\(A \in M_{m,n}(\ff)\text{.}\)</span> Then <span class="process-math">\(\rank(A) = \dim(\row(A))\text{.}\)</span>
-</div></article><details id="thm-row-space-dim-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-row-space-dim-2-1">If we put <span class="process-math">\(A\)</span> into REF, then <a href="sec-rank.html#prop-row-equiv-row-spaces" class="xref" data-knowl="./knowl/xref/prop-row-equiv-row-spaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.4.4">Proposition 5.4.4</a> tells us that the number of pivots is <span class="process-math">\(\dim(\row(A))\)</span> since that is the number of vectors in a basis of <span class="process-math">\(\row(A)\text{.}\)</span> However, the number of pivots in a REF (or the RREF) of <span class="process-math">\(A\)</span> is also <span class="process-math">\(\rank(A)\text{.}\)</span> (See <a href="sec-dimension.html#exer-num-pivots-matrix" class="xref" data-knowl="./knowl/xref/exer-num-pivots-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.3.4.8">Exercise 5.3.4.8</a>.) This proves that <span class="process-math">\(\rank(A) = \dim(\row(A))\text{.}\)</span>
-</div></article></details><article class="note remark-like" id="subsec-define-rank-nullity-11"><h4 class="heading">
+<div class="para" id="thm-row-space-dim-1-1">Let <span class="process-math">\(A \in M_{m,n}(\ff)\text{.}\)</span> Then <span class="process-math">\(\rank(A) = \dim(\row(A))\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-row-space-dim-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5.4.5"><a href="#thm-row-space-dim" title="Copy permalink for Theorem 5.4.5">🔗</a></div></article><details id="thm-row-space-dim-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-row-space-dim-2-1">If we put <span class="process-math">\(A\)</span> into REF, then <a href="sec-rank.html#prop-row-equiv-row-spaces" class="xref" data-knowl="./knowl/xref/prop-row-equiv-row-spaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.4.4">Proposition 5.4.4</a> tells us that the number of pivots is <span class="process-math">\(\dim(\row(A))\)</span> since that is the number of vectors in a basis of <span class="process-math">\(\row(A)\text{.}\)</span> However, the number of pivots in a REF (or the RREF) of <span class="process-math">\(A\)</span> is also <span class="process-math">\(\rank(A)\text{.}\)</span> (See <a href="sec-dimension.html#exer-num-pivots-matrix" class="xref" data-knowl="./knowl/xref/exer-num-pivots-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.3.4.8">Exercise 5.3.4.8</a>.) This proves that <span class="process-math">\(\rank(A) = \dim(\row(A))\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-row-space-dim-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.4.5.1"><a href="#thm-row-space-dim-2" title="Copy permalink for Proof 5.4.5.1">🔗</a></div></article></details><article class="note remark-like" id="subsec-define-rank-nullity-11"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">5.4.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-define-rank-nullity-11-1">This theorem says that <span class="process-math">\(\rank(A) = \rank(A^T)\text{.}\)</span> This theorem also answers the question about the relative sizes of <span class="process-math">\(\col(A)\)</span> and <span class="process-math">\(\row(A)\)</span>—they are the same!</div></article><details id="subsec-define-rank-nullity-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="subsec-define-rank-nullity-11-1">This theorem says that <span class="process-math">\(\rank(A) = \rank(A^T)\text{.}\)</span> This theorem also answers the question about the relative sizes of <span class="process-math">\(\col(A)\)</span> and <span class="process-math">\(\row(A)\)</span>—they are the same!<div class="autopermalink" data-description="Paragraph"><a href="#subsec-define-rank-nullity-11-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 5.4.6"><a href="#subsec-define-rank-nullity-11" title="Copy permalink for Note 5.4.6">🔗</a></div></article><details id="subsec-define-rank-nullity-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.7</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-define-rank-nullity-12-1-1">
 <div class="para">Consider the following matrix <span class="process-math">\(A \in M_{4,5}(\ff_5)\text{:}\)</span>
@@ -539,20 +561,27 @@ A \sim \begin{bmatrix}
 \bfv_3 \amp = [0\; 0\; 1\; 1\; 4 ]\text{.}
 \end{align*}
 </div>
-</div></article></details><div class="para" id="subsec-define-rank-nullity-13">We have defined the dimension of the range of a linear transformation <span class="process-math">\(T\text{,}\)</span> so we now turn to the kernel.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-define-rank-nullity-12-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 5.4.7"><a href="#subsec-define-rank-nullity-12" title="Copy permalink for Example 5.4.7">🔗</a></div></article></details><div class="para" id="subsec-define-rank-nullity-13">We have defined the dimension of the range of a linear transformation <span class="process-math">\(T\text{,}\)</span> so we now turn to the kernel.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-define-rank-nullity-13" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="def-nullity"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="def-nullity-1-1">If <span class="process-math">\(T\)</span> is a linear transformation, then the <dfn class="terminology">nullity</dfn> of <span class="process-math">\(T\)</span> is the dimension of the kernel of <span class="process-math">\(T\text{.}\)</span> If <span class="process-math">\(A\)</span> is a matrix, then the <dfn class="terminology">nullity</dfn> of <span class="process-math">\(A\)</span> is the dimension of the null space of <span class="process-math">\(A\text{.}\)</span>
-</div></article><article class="note remark-like" id="subsec-define-rank-nullity-15"><h4 class="heading">
+<div class="para" id="def-nullity-1-1">If <span class="process-math">\(T\)</span> is a linear transformation, then the <dfn class="terminology">nullity</dfn> of <span class="process-math">\(T\)</span> is the dimension of the kernel of <span class="process-math">\(T\text{.}\)</span> If <span class="process-math">\(A\)</span> is a matrix, then the <dfn class="terminology">nullity</dfn> of <span class="process-math">\(A\)</span> is the dimension of the null space of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-nullity-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 5.4.8"><a href="#def-nullity" title="Copy permalink for Definition 5.4.8">🔗</a></div></article><article class="note remark-like" id="subsec-define-rank-nullity-15"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">5.4.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-define-rank-nullity-15-1">As we saw with rank, these two uses of “nullity” coincide for the situation when <span class="process-math">\(T\)</span> is multiplication by <span class="process-math">\(A\text{.}\)</span>
+<div class="para" id="subsec-define-rank-nullity-15-1">As we saw with rank, these two uses of “nullity” coincide for the situation when <span class="process-math">\(T\)</span> is multiplication by <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-define-rank-nullity-15-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-define-rank-nullity-15-2">Some other texts use the notation <span class="process-math">\(\nll(A)\)</span> to indicate nullity instead of null space, as we have. We will not introduce any additional notation for the nullity, but we will use <span class="process-math">\(\dim(\ker(T))\)</span> or <span class="process-math">\(\dim(\nll(A))\)</span> as appropriate.</div></article></section><section class="subsection" id="subsec-rank-thm"><h3 class="heading hide-type">
+<div class="para" id="subsec-define-rank-nullity-15-2">Some other texts use the notation <span class="process-math">\(\nll(A)\)</span> to indicate nullity instead of null space, as we have. We will not introduce any additional notation for the nullity, but we will use <span class="process-math">\(\dim(\ker(T))\)</span> or <span class="process-math">\(\dim(\nll(A))\)</span> as appropriate.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-define-rank-nullity-15-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 5.4.9"><a href="#subsec-define-rank-nullity-15" title="Copy permalink for Note 5.4.9">🔗</a></div></article><div class="autopermalink" data-description="Subsection 5.4.1: Defining Rank and Nullity"><a href="#subsec-define-rank-nullity" title="Copy permalink for Subsection 5.4.1: Defining Rank and Nullity">🔗</a></div></section><section class="subsection" id="subsec-rank-thm"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="space"> </span><span class="title">The Rank-Nullity Theorem</span>
 </h3>
-<div class="para" id="subsec-rank-thm-2">The following theorem brings together the rank and nullity of a matrix/linear transformation.</div>
+<div class="para" id="subsec-rank-thm-2">The following theorem brings together the rank and nullity of a matrix/linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-rank-thm-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="theorem theorem-like" id="thm-rank-nullity"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">The Rank-Nullity Theorem.</span>
 </h4>
@@ -569,57 +598,144 @@ A \sim \begin{bmatrix}
 \rank(T) + \dim(\ker(T)) = \dim(V)\text{.}
 \end{equation*}
 </div>
-</div></article><details id="thm-rank-nullity-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-rank-nullity-3-1">We will prove the result for matrices. The proof for linear transformations is a bit more technical. (The reader should note that the result for linear transformations implies the result for matrices!)</div>
-<div class="para" id="thm-rank-nullity-3-2">If <span class="process-math">\(A \in M_{m,n}(\ff)\text{,}\)</span> let <span class="process-math">\(B\)</span> be the RREF of <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(\rank(A)\)</span> is the number of pivot columns in <span class="process-math">\(B\text{.}\)</span> Further, <span class="process-math">\(\dim(\nll(A))\)</span> is the number of non-pivot columns in <span class="process-math">\(B\text{.}\)</span> (See <a href="sec-dimension.html#exer-num-pivots-matrix" class="xref" data-knowl="./knowl/xref/exer-num-pivots-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.3.4.8">Exercise 5.3.4.8</a>.) Since each of the <span class="process-math">\(n\)</span> columns of <span class="process-math">\(B\)</span> must be either a pivot or a non-pivot column, and since <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same number of columns, this proves the theorem.</div></article></details><details id="subsec-rank-thm-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-rank-nullity-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5.4.10: The Rank-Nullity Theorem"><a href="#thm-rank-nullity" title="Copy permalink for Theorem 5.4.10: The Rank-Nullity Theorem">🔗</a></div></article><details id="thm-rank-nullity-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-rank-nullity-3-1">We will prove the result for matrices. The proof for linear transformations is a bit more technical. (The reader should note that the result for linear transformations implies the result for matrices!)<div class="autopermalink" data-description="Paragraph"><a href="#thm-rank-nullity-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="thm-rank-nullity-3-2">If <span class="process-math">\(A \in M_{m,n}(\ff)\text{,}\)</span> let <span class="process-math">\(B\)</span> be the RREF of <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(\rank(A)\)</span> is the number of pivot columns in <span class="process-math">\(B\text{.}\)</span> Further, <span class="process-math">\(\dim(\nll(A))\)</span> is the number of non-pivot columns in <span class="process-math">\(B\text{.}\)</span> (See <a href="sec-dimension.html#exer-num-pivots-matrix" class="xref" data-knowl="./knowl/xref/exer-num-pivots-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.3.4.8">Exercise 5.3.4.8</a>.) Since each of the <span class="process-math">\(n\)</span> columns of <span class="process-math">\(B\)</span> must be either a pivot or a non-pivot column, and since <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same number of columns, this proves the theorem.<div class="autopermalink" data-description="Paragraph"><a href="#thm-rank-nullity-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.4.10.1"><a href="#thm-rank-nullity-3" title="Copy permalink for Proof 5.4.10.1">🔗</a></div></article></details><details id="subsec-rank-thm-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.11</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-rank-thm-4-1-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(5\times 6\)</span> matrix with a three-dimensional null space, this theorem tells us that the rank of <span class="process-math">\(A\)</span> is <span class="process-math">\(6-3=3\text{.}\)</span>
-</div> <div class="para" id="subsec-rank-thm-4-1-2">Let us consider an additional scenario: Could a <span class="process-math">\(6\times 8\)</span> matrix <span class="process-math">\(A\)</span> have a one-dimensional null space? If such a matrix existed, it would have a rank of <span class="process-math">\(8-1=7\text{,}\)</span> according to <a href="sec-rank.html#thm-rank-nullity" class="xref" data-knowl="./knowl/xref/thm-rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.10: The Rank-Nullity Theorem">Theorem 5.4.10</a>. But the largest rank that a <span class="process-math">\(6\times 8\)</span> matrix can have is 6, since there cannot be more pivots than there are rows. So the answer is no, a <span class="process-math">\(6\times 8\)</span> matrix cannot have a one-dimensional null space.</div></article></details><div class="para" id="subsec-rank-thm-5">When the dimensions of the domain and codomain of a linear transformation are equal, some properties of such a transformation coincide.</div>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-rank-thm-4-1-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(5\times 6\)</span> matrix with a three-dimensional null space, this theorem tells us that the rank of <span class="process-math">\(A\)</span> is <span class="process-math">\(6-3=3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-rank-thm-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-rank-thm-4-1-2">Let us consider an additional scenario: Could a <span class="process-math">\(6\times 8\)</span> matrix <span class="process-math">\(A\)</span> have a one-dimensional null space? If such a matrix existed, it would have a rank of <span class="process-math">\(8-1=7\text{,}\)</span> according to <a href="sec-rank.html#thm-rank-nullity" class="xref" data-knowl="./knowl/xref/thm-rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.10: The Rank-Nullity Theorem">Theorem 5.4.10</a>. But the largest rank that a <span class="process-math">\(6\times 8\)</span> matrix can have is 6, since there cannot be more pivots than there are rows. So the answer is no, a <span class="process-math">\(6\times 8\)</span> matrix cannot have a one-dimensional null space.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-rank-thm-4-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 5.4.11"><a href="#subsec-rank-thm-4" title="Copy permalink for Example 5.4.11">🔗</a></div></article></details><div class="para" id="subsec-rank-thm-5">When the dimensions of the domain and codomain of a linear transformation are equal, some properties of such a transformation coincide.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-rank-thm-5" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="corollary theorem-like" id="cor-lin-trans-dimensions"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.4.12</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="cor-lin-trans-dimensions-1-1">
 <div class="para">If <span class="process-math">\(T \in L(V,W)\)</span> and <span class="process-math">\(\dim(V) = \dim(W)\text{,}\)</span> then the following are equivalent.</div>
 <ol class="decimal" id="cor-lin-trans-dimensions-1-1-3">
-<li id="cor-lin-trans-dimensions-1-1-3-1"><div class="para" id="cor-lin-trans-dimensions-1-1-3-1-1">The transformation <span class="process-math">\(T\)</span> is injective.</div></li>
-<li id="cor-lin-trans-dimensions-1-1-3-2"><div class="para" id="cor-lin-trans-dimensions-1-1-3-2-1">The transformation <span class="process-math">\(T\)</span> is surjective.</div></li>
-<li id="cor-lin-trans-dimensions-1-1-3-3"><div class="para" id="cor-lin-trans-dimensions-1-1-3-3-1">The transformation <span class="process-math">\(T\)</span> is an isomorphism.</div></li>
+<li id="cor-lin-trans-dimensions-1-1-3-1">
+<div class="para" id="cor-lin-trans-dimensions-1-1-3-1-1">The transformation <span class="process-math">\(T\)</span> is injective.<div class="autopermalink" data-description="Paragraph"><a href="#cor-lin-trans-dimensions-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#cor-lin-trans-dimensions-1-1-3-1" title="Copy permalink for Item 1">🔗</a></div>
+</li>
+<li id="cor-lin-trans-dimensions-1-1-3-2">
+<div class="para" id="cor-lin-trans-dimensions-1-1-3-2-1">The transformation <span class="process-math">\(T\)</span> is surjective.<div class="autopermalink" data-description="Paragraph"><a href="#cor-lin-trans-dimensions-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#cor-lin-trans-dimensions-1-1-3-2" title="Copy permalink for Item 2">🔗</a></div>
+</li>
+<li id="cor-lin-trans-dimensions-1-1-3-3">
+<div class="para" id="cor-lin-trans-dimensions-1-1-3-3-1">The transformation <span class="process-math">\(T\)</span> is an isomorphism.<div class="autopermalink" data-description="Paragraph"><a href="#cor-lin-trans-dimensions-1-1-3-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#cor-lin-trans-dimensions-1-1-3-3" title="Copy permalink for Item 3">🔗</a></div>
+</li>
 </ol>
-</div></article><details id="cor-lin-trans-dimensions-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-lin-trans-dimensions-2-1">By <a href="sec-subspaces-lt.html#thm-injective-kernel" class="xref" data-knowl="./knowl/xref/thm-injective-kernel.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.4.7">Theorem 3.4.7</a>, <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\kerr(T) = \{\bfo\}\text{.}\)</span> In other words, <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\dim(\kerr(T)) = 0\text{.}\)</span> By <a href="sec-rank.html#thm-rank-nullity" class="xref" data-knowl="./knowl/xref/thm-rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.10: The Rank-Nullity Theorem">Theorem 5.4.10</a>, this happens if and only if <span class="process-math">\(\rank(T) = \dim(V)\text{,}\)</span> and if <span class="process-math">\(\dim(V) = \dim(W)\text{,}\)</span> <span class="process-math">\(\rank(T)=\dim(W)\)</span> if and only if <span class="process-math">\(T\)</span> is injective. This proves that <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(T\)</span> is surjective. Since a bijective linear transformation is an isomorphism, our proof is complete.</div></article></details><div class="para" id="subsec-rank-thm-7">To close out this section, we present a long theorem with many equivalent statements. We will omit a proof, because the equivalence of most of these statements has been already established at various places in this text. (In other books, this theorem forms the central focus of the text. It is certainly important, but we have chosen a different emphasis.)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#cor-lin-trans-dimensions-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 5.4.12"><a href="#cor-lin-trans-dimensions" title="Copy permalink for Corollary 5.4.12">🔗</a></div></article><details id="cor-lin-trans-dimensions-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-lin-trans-dimensions-2-1">By <a href="sec-subspaces-lt.html#thm-injective-kernel" class="xref" data-knowl="./knowl/xref/thm-injective-kernel.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.4.7">Theorem 3.4.7</a>, <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\kerr(T) = \{\bfo\}\text{.}\)</span> In other words, <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\dim(\kerr(T)) = 0\text{.}\)</span> By <a href="sec-rank.html#thm-rank-nullity" class="xref" data-knowl="./knowl/xref/thm-rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.10: The Rank-Nullity Theorem">Theorem 5.4.10</a>, this happens if and only if <span class="process-math">\(\rank(T) = \dim(V)\text{,}\)</span> and if <span class="process-math">\(\dim(V) = \dim(W)\text{,}\)</span> <span class="process-math">\(\rank(T)=\dim(W)\)</span> if and only if <span class="process-math">\(T\)</span> is injective. This proves that <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(T\)</span> is surjective. Since a bijective linear transformation is an isomorphism, our proof is complete.<div class="autopermalink" data-description="Paragraph"><a href="#cor-lin-trans-dimensions-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.4.12.1"><a href="#cor-lin-trans-dimensions-2" title="Copy permalink for Proof 5.4.12.1">🔗</a></div></article></details><div class="para" id="subsec-rank-thm-7">To close out this section, we present a long theorem with many equivalent statements. We will omit a proof, because the equivalence of most of these statements has been already established at various places in this text. (In other books, this theorem forms the central focus of the text. It is certainly important, but we have chosen a different emphasis.)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-rank-thm-7" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="theorem theorem-like" id="thm-ivt"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">The Invertible Matrix Theorem.</span>
 </h4>
 <div class="para logical" id="thm-ivt-2-1">
 <div class="para">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> Then the following statements are equivalent.</div>
 <ol class="decimal" id="thm-ivt-2-1-2">
-<li id="thm-ivt-2-1-2-1"><div class="para" id="thm-ivt-2-1-2-1-1">The matrix <span class="process-math">\(A\)</span> is invertible.</div></li>
-<li id="thm-ivt-2-1-2-2"><div class="para" id="thm-ivt-2-1-2-2-1">The matrix <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_n\text{.}\)</span>
-</div></li>
-<li id="thm-ivt-2-1-2-3"><div class="para" id="thm-ivt-2-1-2-3-1">The matrix <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> pivots.</div></li>
-<li id="thm-ivt-2-1-2-4"><div class="para" id="thm-ivt-2-1-2-4-1">The equation <span class="process-math">\(A\bfx = \bfo\)</span> has only the trivial solution.</div></li>
-<li id="thm-ivt-2-1-2-5"><div class="para" id="thm-ivt-2-1-2-5-1">The columns of <span class="process-math">\(A\)</span> form a linearly independent set.</div></li>
-<li id="thm-ivt-2-1-2-6"><div class="para" id="thm-ivt-2-1-2-6-1">If <span class="process-math">\(T_A:\ff^n \to \ff^n\)</span> is multiplication by <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(T\)</span> is injective.</div></li>
-<li id="thm-ivt-2-1-2-7"><div class="para" id="thm-ivt-2-1-2-7-1">The equation <span class="process-math">\(A\bfx = \bfb\)</span> has a solution for all <span class="process-math">\(\bfb \in \ff^n\text{.}\)</span>
-</div></li>
-<li id="thm-ivt-2-1-2-8"><div class="para" id="thm-ivt-2-1-2-8-1">The columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\rr^n\text{.}\)</span>
-</div></li>
-<li id="thm-ivt-2-1-2-9"><div class="para" id="thm-ivt-2-1-2-9-1">The linear transformation <span class="process-math">\(T_A\)</span> is surjective.</div></li>
-<li id="thm-ivt-2-1-2-10"><div class="para" id="thm-ivt-2-1-2-10-1">There is an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(AB = BA = I_n\text{.}\)</span>
-</div></li>
-<li id="thm-ivt-2-1-2-11"><div class="para" id="thm-ivt-2-1-2-11-1">The matrix <span class="process-math">\(A^T\)</span> is invertible.</div></li>
-<li id="thm-ivt-2-1-2-12"><div class="para" id="thm-ivt-2-1-2-12-1">We have <span class="process-math">\(\det(A) \neq 0\text{.}\)</span>
-</div></li>
-<li id="thm-ivt-2-1-2-13"><div class="para" id="thm-ivt-2-1-2-13-1">The columns of <span class="process-math">\(A\)</span> form a basis for <span class="process-math">\(\ff^n\text{.}\)</span>
-</div></li>
-<li id="thm-ivt-2-1-2-14"><div class="para" id="thm-ivt-2-1-2-14-1">We have <span class="process-math">\(\col(A) = \ff^n\text{.}\)</span>
-</div></li>
-<li id="thm-ivt-2-1-2-15"><div class="para" id="thm-ivt-2-1-2-15-1">We have <span class="process-math">\(\rank(A) = n\text{.}\)</span>
-</div></li>
-<li id="thm-ivt-2-1-2-16"><div class="para" id="thm-ivt-2-1-2-16-1">We have <span class="process-math">\(\nll(A) = \{\bfo\}\text{.}\)</span>
-</div></li>
-<li id="thm-ivt-2-1-2-17"><div class="para" id="thm-ivt-2-1-2-17-1">We have <span class="process-math">\(\dim(\nll(A)) = 0\text{.}\)</span>
-</div></li>
+<li id="thm-ivt-2-1-2-1">
+<div class="para" id="thm-ivt-2-1-2-1-1">The matrix <span class="process-math">\(A\)</span> is invertible.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-ivt-2-1-2-1" title="Copy permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-2">
+<div class="para" id="thm-ivt-2-1-2-2-1">The matrix <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-ivt-2-1-2-2" title="Copy permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-3">
+<div class="para" id="thm-ivt-2-1-2-3-1">The matrix <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> pivots.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#thm-ivt-2-1-2-3" title="Copy permalink for Item 3">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-4">
+<div class="para" id="thm-ivt-2-1-2-4-1">The equation <span class="process-math">\(A\bfx = \bfo\)</span> has only the trivial solution.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#thm-ivt-2-1-2-4" title="Copy permalink for Item 4">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-5">
+<div class="para" id="thm-ivt-2-1-2-5-1">The columns of <span class="process-math">\(A\)</span> form a linearly independent set.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#thm-ivt-2-1-2-5" title="Copy permalink for Item 5">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-6">
+<div class="para" id="thm-ivt-2-1-2-6-1">If <span class="process-math">\(T_A:\ff^n \to \ff^n\)</span> is multiplication by <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(T\)</span> is injective.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-6-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#thm-ivt-2-1-2-6" title="Copy permalink for Item 6">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-7">
+<div class="para" id="thm-ivt-2-1-2-7-1">The equation <span class="process-math">\(A\bfx = \bfb\)</span> has a solution for all <span class="process-math">\(\bfb \in \ff^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-7-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7"><a href="#thm-ivt-2-1-2-7" title="Copy permalink for Item 7">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-8">
+<div class="para" id="thm-ivt-2-1-2-8-1">The columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\rr^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-8-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 8"><a href="#thm-ivt-2-1-2-8" title="Copy permalink for Item 8">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-9">
+<div class="para" id="thm-ivt-2-1-2-9-1">The linear transformation <span class="process-math">\(T_A\)</span> is surjective.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-9-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 9"><a href="#thm-ivt-2-1-2-9" title="Copy permalink for Item 9">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-10">
+<div class="para" id="thm-ivt-2-1-2-10-1">There is an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(AB = BA = I_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-10-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 10"><a href="#thm-ivt-2-1-2-10" title="Copy permalink for Item 10">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-11">
+<div class="para" id="thm-ivt-2-1-2-11-1">The matrix <span class="process-math">\(A^T\)</span> is invertible.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-11-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 11"><a href="#thm-ivt-2-1-2-11" title="Copy permalink for Item 11">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-12">
+<div class="para" id="thm-ivt-2-1-2-12-1">We have <span class="process-math">\(\det(A) \neq 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-12-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 12"><a href="#thm-ivt-2-1-2-12" title="Copy permalink for Item 12">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-13">
+<div class="para" id="thm-ivt-2-1-2-13-1">The columns of <span class="process-math">\(A\)</span> form a basis for <span class="process-math">\(\ff^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-13-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 13"><a href="#thm-ivt-2-1-2-13" title="Copy permalink for Item 13">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-14">
+<div class="para" id="thm-ivt-2-1-2-14-1">We have <span class="process-math">\(\col(A) = \ff^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-14-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 14"><a href="#thm-ivt-2-1-2-14" title="Copy permalink for Item 14">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-15">
+<div class="para" id="thm-ivt-2-1-2-15-1">We have <span class="process-math">\(\rank(A) = n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-15-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 15"><a href="#thm-ivt-2-1-2-15" title="Copy permalink for Item 15">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-16">
+<div class="para" id="thm-ivt-2-1-2-16-1">We have <span class="process-math">\(\nll(A) = \{\bfo\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-16-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 16"><a href="#thm-ivt-2-1-2-16" title="Copy permalink for Item 16">🔗</a></div>
+</li>
+<li id="thm-ivt-2-1-2-17">
+<div class="para" id="thm-ivt-2-1-2-17-1">We have <span class="process-math">\(\dim(\nll(A)) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1-2-17-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 17"><a href="#thm-ivt-2-1-2-17" title="Copy permalink for Item 17">🔗</a></div>
+</li>
 </ol>
-</div></article><div class="para" id="subsec-rank-thm-9">This theorem ties together threads from almost every section we’ve covered, which is quite an achievement! The reader should note that this result only applies to <em class="emphasis">square</em> matrices.</div></section><section class="reading-questions" id="sec-rank-5"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-ivt-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5.4.13: The Invertible Matrix Theorem"><a href="#thm-ivt" title="Copy permalink for Theorem 5.4.13: The Invertible Matrix Theorem">🔗</a></div></article><div class="para" id="subsec-rank-thm-9">This theorem ties together threads from almost every section we’ve covered, which is quite an achievement! The reader should note that this result only applies to <em class="emphasis">square</em> matrices.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-rank-thm-9" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 5.4.2: The Rank-Nullity Theorem"><a href="#subsec-rank-thm" title="Copy permalink for Subsection 5.4.2: The Rank-Nullity Theorem">🔗</a></div></section><section class="reading-questions" id="sec-rank-5"><h3 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
 <article class="exercise exercise-like" id="sec-rank-5-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -636,15 +752,20 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Find a basis for <span class="process-math">\(\row(A)\text{.}\)</span> Explain your answer.</div>
-</div></article><article class="exercise exercise-like" id="sec-rank-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="sec-rank-5-2-1-1">Suppose that <span class="process-math">\(T: V \to W\)</span> is a linear transformation and that <span class="process-math">\(\dim(V) = 4\)</span> and <span class="process-math">\(\dim(W) = 5\text{.}\)</span> What are the possible values for <span class="process-math">\(\dim(\kerr(T))\text{?}\)</span> Explain.</div></article></section><section class="exercises" id="sec-rank-6"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-5-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 5.4.3.1"><a href="#sec-rank-5-1" title="Copy permalink for Reading Question 5.4.3.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-rank-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="sec-rank-5-2-1-1">Suppose that <span class="process-math">\(T: V \to W\)</span> is a linear transformation and that <span class="process-math">\(\dim(V) = 4\)</span> and <span class="process-math">\(\dim(W) = 5\text{.}\)</span> What are the possible values for <span class="process-math">\(\dim(\kerr(T))\text{?}\)</span> Explain.<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-5-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 5.4.3.2"><a href="#sec-rank-5-2" title="Copy permalink for Reading Question 5.4.3.2">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 5.4.3"><a href="#sec-rank-5" title="Copy permalink for Reading Questions 5.4.3">🔗</a></div></section><section class="exercises" id="sec-rank-6"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="sec-rank-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-rank-6-1-1-1">
 <div class="para">Find the rank and nullity of each of the following matrices.</div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-rank-6-1-1-1-1">
-<li id="sec-rank-6-1-1-1-1-1"><div class="para logical" id="sec-rank-6-1-1-1-1-1-1">
+<li id="sec-rank-6-1-1-1-1-1">
+<div class="para logical" id="sec-rank-6-1-1-1-1-1-1">
 <div class="para"><span class="process-math">\(A \in M_{3,4}(\rr)\text{,}\)</span></div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -655,8 +776,12 @@ A = \begin{bmatrix}
 \end{bmatrix}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-rank-6-1-1-1-1-2"><div class="para logical" id="sec-rank-6-1-1-1-1-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-1-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.4.4.1.a"><a href="#sec-rank-6-1-1-1-1-1" title="Copy permalink for Item 5.4.4.1.a">🔗</a></div>
+</li>
+<li id="sec-rank-6-1-1-1-1-2">
+<div class="para logical" id="sec-rank-6-1-1-1-1-2-1">
 <div class="para"><span class="process-math">\(A \in M_{4,5}(\ff_3)\text{,}\)</span></div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -668,60 +793,131 @@ A = \begin{bmatrix}
 \end{bmatrix}
 \end{equation*}
 </div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-1-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.4.4.1.b"><a href="#sec-rank-6-1-1-1-1-2" title="Copy permalink for Item 5.4.4.1.b">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-rank-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="sec-rank-6-2-1-1">Let <span class="process-math">\(D: P_n \to P_{n-1}\)</span> be the differentiation linear transformation. Calculate <span class="process-math">\(\rank(D)\)</span> and <span class="process-math">\(\dim(\ker(D))\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-rank-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-rank-6-3-1-1"><ol class="lower-alpha lower-alpha-level-1" id="sec-rank-6-3-1-1-1">
-<li id="sec-rank-6-3-1-1-1-1"><div class="para" id="sec-rank-6-3-1-1-1-1-1">If a <span class="process-math">\(5\times 3\)</span> matrix <span class="process-math">\(A\)</span> has rank 3, find <span class="process-math">\(\dim(\nll(A))\text{,}\)</span> <span class="process-math">\(\dim(\row(A))\text{,}\)</span> and <span class="process-math">\(\rank(A^T)\text{.}\)</span>
-</div></li>
-<li id="sec-rank-6-3-1-1-1-2"><div class="para" id="sec-rank-6-3-1-1-1-2-1">If the null space of a <span class="process-math">\(7\times 6\)</span> matrix <span class="process-math">\(A\)</span> is 5-dimensional, what is the dimension of the column space of <span class="process-math">\(A\text{?}\)</span>
-</div></li>
-<li id="sec-rank-6-3-1-1-1-3"><div class="para" id="sec-rank-6-3-1-1-1-3-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(7\times 9\)</span> matrix, what is the smallest possible dimension of <span class="process-math">\(\nll(A)\text{?}\)</span>
-</div></li>
-</ol></div></article><article class="exercise exercise-like" id="sec-rank-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="sec-rank-6-4-1-1">Suppose a nonhomogeneous linear system of nine equations and ten variables has a solution for all possible constants on the right side of the equations. Is it possible to find two nonzero solutions of the associated homogeneous system that are not multiples of each other? Explain.</div>
-<div class="solutions"><details id="sec-rank-6-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-rank-6-4-2-1">This is not possible. A <span class="process-math">\(9\times 10\)</span> linear system has a <span class="process-math">\(9\times 10\)</span> coefficient matrix which we will call <span class="process-math">\(A\text{.}\)</span> This situation can be reinterpreted as a linear transformation from <span class="process-math">\(\ff^{10} \to \ff^9\)</span> which is multiplication by <span class="process-math">\(A\text{.}\)</span> The information given in the problem tells us that this transformation is surjective, meaning that the rank of <span class="process-math">\(A\)</span> is as large as possible, which is 9 in this case. Therefore, the Rank-Nullity Theorem says that <span class="process-math">\(\dim(\nll(A)) = 1\text{.}\)</span> This means that every nonzero vector in the null space of <span class="process-math">\(A\)</span> is a scalar multiple of a single basis vector. Therefore, the associated homogeneous linear system only has nonzero solutions which are multiples of each other.</div></div></details></div></article><article class="exercise exercise-like" id="sec-rank-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="sec-rank-6-5-1-1">Suppose <span class="process-math">\(A \in M_{m,n}(\ff)\)</span> and <span class="process-math">\(\bfb \in \ff^m\text{.}\)</span> What has to be true about the two numbers <span class="process-math">\(\rank([A\; \bfb ])\)</span> and <span class="process-math">\(\rank(A)\)</span> in order for the equation <span class="process-math">\(A\bfx = \bfb\)</span> to be consistent? Explain.</div></article><article class="subexercises" id="sec-rank-6-6"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.4.4.1"><a href="#sec-rank-6-1" title="Copy permalink for Exercise 5.4.4.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-rank-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="sec-rank-6-2-1-1">Let <span class="process-math">\(D: P_n \to P_{n-1}\)</span> be the differentiation linear transformation. Calculate <span class="process-math">\(\rank(D)\)</span> and <span class="process-math">\(\dim(\ker(D))\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.4.4.2"><a href="#sec-rank-6-2" title="Copy permalink for Exercise 5.4.4.2">🔗</a></div></article><article class="exercise exercise-like" id="sec-rank-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-rank-6-3-1-1">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-rank-6-3-1-1-1">
+<li id="sec-rank-6-3-1-1-1-1">
+<div class="para" id="sec-rank-6-3-1-1-1-1-1">If a <span class="process-math">\(5\times 3\)</span> matrix <span class="process-math">\(A\)</span> has rank 3, find <span class="process-math">\(\dim(\nll(A))\text{,}\)</span> <span class="process-math">\(\dim(\row(A))\text{,}\)</span> and <span class="process-math">\(\rank(A^T)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-3-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.4.4.3.a"><a href="#sec-rank-6-3-1-1-1-1" title="Copy permalink for Item 5.4.4.3.a">🔗</a></div>
+</li>
+<li id="sec-rank-6-3-1-1-1-2">
+<div class="para" id="sec-rank-6-3-1-1-1-2-1">If the null space of a <span class="process-math">\(7\times 6\)</span> matrix <span class="process-math">\(A\)</span> is 5-dimensional, what is the dimension of the column space of <span class="process-math">\(A\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-3-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.4.4.3.b"><a href="#sec-rank-6-3-1-1-1-2" title="Copy permalink for Item 5.4.4.3.b">🔗</a></div>
+</li>
+<li id="sec-rank-6-3-1-1-1-3">
+<div class="para" id="sec-rank-6-3-1-1-1-3-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(7\times 9\)</span> matrix, what is the smallest possible dimension of <span class="process-math">\(\nll(A)\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-3-1-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.4.4.3.c"><a href="#sec-rank-6-3-1-1-1-3" title="Copy permalink for Item 5.4.4.3.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.4.4.3"><a href="#sec-rank-6-3" title="Copy permalink for Exercise 5.4.4.3">🔗</a></div></article><article class="exercise exercise-like" id="sec-rank-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="sec-rank-6-4-1-1">Suppose a nonhomogeneous linear system of nine equations and ten variables has a solution for all possible constants on the right side of the equations. Is it possible to find two nonzero solutions of the associated homogeneous system that are not multiples of each other? Explain.<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-rank-6-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="sec-rank-6-4-2-1">This is not possible. A <span class="process-math">\(9\times 10\)</span> linear system has a <span class="process-math">\(9\times 10\)</span> coefficient matrix which we will call <span class="process-math">\(A\text{.}\)</span> This situation can be reinterpreted as a linear transformation from <span class="process-math">\(\ff^{10} \to \ff^9\)</span> which is multiplication by <span class="process-math">\(A\text{.}\)</span> The information given in the problem tells us that this transformation is surjective, meaning that the rank of <span class="process-math">\(A\)</span> is as large as possible, which is 9 in this case. Therefore, the Rank-Nullity Theorem says that <span class="process-math">\(\dim(\nll(A)) = 1\text{.}\)</span> This means that every nonzero vector in the null space of <span class="process-math">\(A\)</span> is a scalar multiple of a single basis vector. Therefore, the associated homogeneous linear system only has nonzero solutions which are multiples of each other.<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 5.4.4.4.1"><a href="#sec-rank-6-4-2" title="Copy permalink for Answer 5.4.4.4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 5.4.4.4"><a href="#sec-rank-6-4" title="Copy permalink for Exercise 5.4.4.4">🔗</a></div></article><article class="exercise exercise-like" id="sec-rank-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="sec-rank-6-5-1-1">Suppose <span class="process-math">\(A \in M_{m,n}(\ff)\)</span> and <span class="process-math">\(\bfb \in \ff^m\text{.}\)</span> What has to be true about the two numbers <span class="process-math">\(\rank([A\; \bfb ])\)</span> and <span class="process-math">\(\rank(A)\)</span> in order for the equation <span class="process-math">\(A\bfx = \bfb\)</span> to be consistent? Explain.<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.4.4.5"><a href="#sec-rank-6-5" title="Copy permalink for Exercise 5.4.4.5">🔗</a></div></article><article class="subexercises" id="sec-rank-6-6"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise exercise-like" id="sec-rank-6-6-2"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="sec-rank-6-6-2-1-1">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are matrices, prove that <span class="process-math">\(\rank(AB) \le \min\{\rank(A), \rank(B) \}\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-rank-6-6-3"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para" id="sec-rank-6-6-2-1-1">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are matrices, prove that <span class="process-math">\(\rank(AB) \le \min\{\rank(A), \rank(B) \}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.4.4.6"><a href="#sec-rank-6-6-2" title="Copy permalink for Exercise 5.4.4.6">🔗</a></div></article><article class="exercise exercise-like" id="sec-rank-6-6-3"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-rank-6-6-3-1-1">
 <div class="para">Suppose that <span class="process-math">\(T \in L(V,W)\)</span> and that <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are both finite-dimensional.</div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-rank-6-6-3-1-1-4">
-<li id="sec-rank-6-6-3-1-1-4-1"><div class="para" id="sec-rank-6-6-3-1-1-4-1-1">Prove that <span class="process-math">\(T\)</span> is surjective if and only if <span class="process-math">\(\rank(T) = \dim(W)\text{.}\)</span>
-</div></li>
-<li id="sec-rank-6-6-3-1-1-4-2"><div class="para" id="sec-rank-6-6-3-1-1-4-2-1">Prove that <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\rank(T) = \dim(V)\text{.}\)</span>
-</div></li>
+<li id="sec-rank-6-6-3-1-1-4-1">
+<div class="para" id="sec-rank-6-6-3-1-1-4-1-1">Prove that <span class="process-math">\(T\)</span> is surjective if and only if <span class="process-math">\(\rank(T) = \dim(W)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-3-1-1-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.4.4.7.a"><a href="#sec-rank-6-6-3-1-1-4-1" title="Copy permalink for Item 5.4.4.7.a">🔗</a></div>
+</li>
+<li id="sec-rank-6-6-3-1-1-4-2">
+<div class="para" id="sec-rank-6-6-3-1-1-4-2-1">Prove that <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\rank(T) = \dim(V)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-3-1-1-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.4.4.7.b"><a href="#sec-rank-6-6-3-1-1-4-2" title="Copy permalink for Item 5.4.4.7.b">🔗</a></div>
+</li>
 </ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-rank-6-6-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-rank-6-6-3-2-1"><ol class="lower-alpha lower-alpha-level-1" id="sec-rank-6-6-3-2-1-1">
-<li id="sec-rank-6-6-3-2-1-1-1"><div class="para" id="sec-rank-6-6-3-2-1-1-1-1">If <span class="process-math">\(T\)</span> is surjective, then <span class="process-math">\(\range(T) = W\text{,}\)</span> which means that <span class="process-math">\(\dim(\range(T)) = \dim(W)\text{.}\)</span> This implies that <span class="process-math">\(\rank(T) = \dim(W)\text{.}\)</span> On the other hand, if <span class="process-math">\(\rank(T) = \dim(W)\text{,}\)</span> then <span class="process-math">\(\dim(\range(T)) = \dim(W)\text{.}\)</span> Since <span class="process-math">\(\range(T)\)</span> is a subspace of <span class="process-math">\(W\text{,}\)</span> <a href="sec-dimension.html#thm-dim-subspaces" class="xref" data-knowl="./knowl/xref/thm-dim-subspaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.18">Theorem 5.3.18</a> implies that <span class="process-math">\(\range(T) = W\text{,}\)</span> which means that <span class="process-math">\(T\)</span> is surjective.</div></li>
-<li id="sec-rank-6-6-3-2-1-1-2"><div class="para" id="sec-rank-6-6-3-2-1-1-2-1">We will be able to argue both implications at once. A linear transformation <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\ker(T) = \{\bfo\}\text{.}\)</span> This occurs if and only if <span class="process-math">\(\dim(\ker(T)) = 0\text{.}\)</span> The Rank-Nullity Theorem then says that <span class="process-math">\(\dim(\ker(T)) = 0\)</span> if and only if <span class="process-math">\(\rank(T) = \dim(V)\text{.}\)</span> This proves the result.</div></li>
-</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-rank-6-6-4"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para" id="sec-rank-6-6-4-1-1">Suppose that <span class="process-math">\(A\bfx = \bfb\)</span> is a <span class="process-math">\(6\times 6\)</span> linear system which is consistent but which does <em class="emphasis">not</em> have a unique solution. Prove that there must be a vector <span class="process-math">\(\mathbf{c} \in \ff^6\)</span> such that the system <span class="process-math">\(A\bfx = \mathbf{c}\)</span> is inconsistent.</div>
-<div class="solutions"><details id="sec-rank-6-6-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-rank-6-6-4-2-1">The given information means there is no pivot in the last column of the augmented matrix but that there is at least one non-pivot column among the first six columns. The coefficient matrix <span class="process-math">\(A\)</span> then has at least one non-pivot column, meaning that <span class="process-math">\(\rank(A) \le 5\text{.}\)</span> But this means that the linear transformation <span class="process-math">\(T:\ff^6 \to \ff^6\)</span> which is multiplication by <span class="process-math">\(A\)</span> cannot be surjective, since the rank of <span class="process-math">\(A\)</span> is less than six. Therefore, we can find a vector <span class="process-math">\(\mathbf{c} \in \ff^6\)</span> such that <span class="process-math">\(A\bfx = \mathbf{c}\)</span> is inconsistent.</div></div></details></div></article><article class="exercise exercise-like" id="sec-rank-6-6-5"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="sec-rank-6-6-5-1-1">Prove that if <span class="process-math">\(T \in L(V,W)\text{,}\)</span> then <span class="process-math">\(\rank(T) \le \min \{\dim(V), \dim(W) \}\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-rank-6-6-6"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<div class="para" id="sec-rank-6-6-6-1-1">Prove that if <span class="process-math">\(A \in M_{m,n}(\ff)\text{,}\)</span> then <span class="process-math">\(\rank(A) \le \min \{m,n \}\text{.}\)</span>
+<div class="solutions"><details id="sec-rank-6-6-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="sec-rank-6-6-3-2-1">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-rank-6-6-3-2-1-1">
+<li id="sec-rank-6-6-3-2-1-1-1">
+<div class="para" id="sec-rank-6-6-3-2-1-1-1-1">If <span class="process-math">\(T\)</span> is surjective, then <span class="process-math">\(\range(T) = W\text{,}\)</span> which means that <span class="process-math">\(\dim(\range(T)) = \dim(W)\text{.}\)</span> This implies that <span class="process-math">\(\rank(T) = \dim(W)\text{.}\)</span> On the other hand, if <span class="process-math">\(\rank(T) = \dim(W)\text{,}\)</span> then <span class="process-math">\(\dim(\range(T)) = \dim(W)\text{.}\)</span> Since <span class="process-math">\(\range(T)\)</span> is a subspace of <span class="process-math">\(W\text{,}\)</span> <a href="sec-dimension.html#thm-dim-subspaces" class="xref" data-knowl="./knowl/xref/thm-dim-subspaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.18">Theorem 5.3.18</a> implies that <span class="process-math">\(\range(T) = W\text{,}\)</span> which means that <span class="process-math">\(T\)</span> is surjective.<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-3-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-rank-6-6-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-rank-6-6-6-2-1">We know that <span class="process-math">\(\rank(A)\)</span> is the number of pivots in the RREF of <span class="process-math">\(A\text{,}\)</span> but the number of pivots must be less than both the number of columns (<span class="process-math">\(n\)</span>) and the number of rows (<span class="process-math">\(m\)</span>) of <span class="process-math">\(A\text{.}\)</span> Then if <span class="process-math">\(\rank(A) \le m\)</span> and <span class="process-math">\(\rank(A) \le n\text{,}\)</span> we have <span class="process-math">\(\rank(A) \le \min \{m,n \}\text{.}\)</span>
-</div></div></details></div></article><article class="exercise exercise-like" id="sec-rank-6-6-7"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="autopermalink" data-description="Item 5.4.4.7.a"><a href="#sec-rank-6-6-3-2-1-1-1" title="Copy permalink for Item 5.4.4.7.a">🔗</a></div>
+</li>
+<li id="sec-rank-6-6-3-2-1-1-2">
+<div class="para" id="sec-rank-6-6-3-2-1-1-2-1">We will be able to argue both implications at once. A linear transformation <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\ker(T) = \{\bfo\}\text{.}\)</span> This occurs if and only if <span class="process-math">\(\dim(\ker(T)) = 0\text{.}\)</span> The Rank-Nullity Theorem then says that <span class="process-math">\(\dim(\ker(T)) = 0\)</span> if and only if <span class="process-math">\(\rank(T) = \dim(V)\text{.}\)</span> This proves the result.<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-3-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.4.4.7.b"><a href="#sec-rank-6-6-3-2-1-1-2" title="Copy permalink for Item 5.4.4.7.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 5.4.4.7.1"><a href="#sec-rank-6-6-3-2" title="Copy permalink for Answer 5.4.4.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 5.4.4.7"><a href="#sec-rank-6-6-3" title="Copy permalink for Exercise 5.4.4.7">🔗</a></div></article><article class="exercise exercise-like" id="sec-rank-6-6-4"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para" id="sec-rank-6-6-4-1-1">Suppose that <span class="process-math">\(A\bfx = \bfb\)</span> is a <span class="process-math">\(6\times 6\)</span> linear system which is consistent but which does <em class="emphasis">not</em> have a unique solution. Prove that there must be a vector <span class="process-math">\(\mathbf{c} \in \ff^6\)</span> such that the system <span class="process-math">\(A\bfx = \mathbf{c}\)</span> is inconsistent.<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-rank-6-6-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="sec-rank-6-6-4-2-1">The given information means there is no pivot in the last column of the augmented matrix but that there is at least one non-pivot column among the first six columns. The coefficient matrix <span class="process-math">\(A\)</span> then has at least one non-pivot column, meaning that <span class="process-math">\(\rank(A) \le 5\text{.}\)</span> But this means that the linear transformation <span class="process-math">\(T:\ff^6 \to \ff^6\)</span> which is multiplication by <span class="process-math">\(A\)</span> cannot be surjective, since the rank of <span class="process-math">\(A\)</span> is less than six. Therefore, we can find a vector <span class="process-math">\(\mathbf{c} \in \ff^6\)</span> such that <span class="process-math">\(A\bfx = \mathbf{c}\)</span> is inconsistent.<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 5.4.4.8.1"><a href="#sec-rank-6-6-4-2" title="Copy permalink for Answer 5.4.4.8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 5.4.4.8"><a href="#sec-rank-6-6-4" title="Copy permalink for Exercise 5.4.4.8">🔗</a></div></article><article class="exercise exercise-like" id="sec-rank-6-6-5"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="sec-rank-6-6-5-1-1">Prove that if <span class="process-math">\(T \in L(V,W)\text{,}\)</span> then <span class="process-math">\(\rank(T) \le \min \{\dim(V), \dim(W) \}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.4.4.9"><a href="#sec-rank-6-6-5" title="Copy permalink for Exercise 5.4.4.9">🔗</a></div></article><article class="exercise exercise-like" id="sec-rank-6-6-6"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para" id="sec-rank-6-6-6-1-1">Prove that if <span class="process-math">\(A \in M_{m,n}(\ff)\text{,}\)</span> then <span class="process-math">\(\rank(A) \le \min \{m,n \}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-rank-6-6-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="sec-rank-6-6-6-2-1">We know that <span class="process-math">\(\rank(A)\)</span> is the number of pivots in the RREF of <span class="process-math">\(A\text{,}\)</span> but the number of pivots must be less than both the number of columns (<span class="process-math">\(n\)</span>) and the number of rows (<span class="process-math">\(m\)</span>) of <span class="process-math">\(A\text{.}\)</span> Then if <span class="process-math">\(\rank(A) \le m\)</span> and <span class="process-math">\(\rank(A) \le n\text{,}\)</span> we have <span class="process-math">\(\rank(A) \le \min \{m,n \}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 5.4.4.10.1"><a href="#sec-rank-6-6-6-2" title="Copy permalink for Answer 5.4.4.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 5.4.4.10"><a href="#sec-rank-6-6-6" title="Copy permalink for Exercise 5.4.4.10">🔗</a></div></article><article class="exercise exercise-like" id="sec-rank-6-6-7"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-rank-6-6-7-1-1">
 <div class="para">Let <span class="process-math">\(T \in L(V,W)\text{.}\)</span>
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-rank-6-6-7-1-1-2">
-<li id="sec-rank-6-6-7-1-1-2-1"><div class="para" id="sec-rank-6-6-7-1-1-2-1-1">Prove that if <span class="process-math">\(\dim(V) &gt; \dim(W)\text{,}\)</span> then <span class="process-math">\(T\)</span> cannot be injective.</div></li>
-<li id="sec-rank-6-6-7-1-1-2-2"><div class="para" id="sec-rank-6-6-7-1-1-2-2-1">Prove that if <span class="process-math">\(\dim(W) &gt; \dim(V)\text{,}\)</span> then <span class="process-math">\(T\)</span> cannot be surjective.</div></li>
+<li id="sec-rank-6-6-7-1-1-2-1">
+<div class="para" id="sec-rank-6-6-7-1-1-2-1-1">Prove that if <span class="process-math">\(\dim(V) &gt; \dim(W)\text{,}\)</span> then <span class="process-math">\(T\)</span> cannot be injective.<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-7-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.4.4.11.a"><a href="#sec-rank-6-6-7-1-1-2-1" title="Copy permalink for Item 5.4.4.11.a">🔗</a></div>
+</li>
+<li id="sec-rank-6-6-7-1-1-2-2">
+<div class="para" id="sec-rank-6-6-7-1-1-2-2-1">Prove that if <span class="process-math">\(\dim(W) &gt; \dim(V)\text{,}\)</span> then <span class="process-math">\(T\)</span> cannot be surjective.<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-7-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.4.4.11.b"><a href="#sec-rank-6-6-7-1-1-2-2" title="Copy permalink for Item 5.4.4.11.b">🔗</a></div>
+</li>
 </ol>
-</div></article></article></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="sec-dimension.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-coordinates.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-rank-6-6-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.4.4.11"><a href="#sec-rank-6-6-7" title="Copy permalink for Exercise 5.4.4.11">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-rank-6-6" title="Copy permalink for Subexercises: Writing Exercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 5.4.4"><a href="#sec-rank-6" title="Copy permalink for Exercises 5.4.4">🔗</a></div></section><div class="autopermalink" data-description="Section 5.4: Rank and Nullity"><a href="#sec-rank" title="Copy permalink for Section 5.4: Rank and Nullity">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-dimension.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-coordinates.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 <!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZFWXZ3398L"></script><script>  window.dataLayer = window.dataLayer || [];

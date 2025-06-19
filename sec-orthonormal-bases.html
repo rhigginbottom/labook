@@ -6,18 +6,24 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Orthonormal Bases</title>
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -73,11 +79,11 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Linear Algebra">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ryan Higginbottom">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra">
+<meta property="book:author" content="Ryan Higginbottom">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
@@ -109,14 +115,14 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
-<script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">Gathering and Sharpening Tools</span></a></h1>
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra</span> <span class="subtitle">Gathering and Sharpening Tools</span></a></h1>
 <p class="byline">Ryan Higginbottom</p>
-</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
@@ -129,7 +135,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-inner-products.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-orthogonal-projections.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
 \newcommand{\zz}{\mathbb Z}
 \newcommand{\qq}{\mathbb Q}
 \newcommand{\rr}{\mathbb R}
@@ -166,7 +172,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
@@ -192,10 +198,10 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-results.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Results</span></a></div>
+<div class="toc-title-box"><a href="sec-results.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Solving Linear Systems With Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-results.html#sec-results-31" class="internal"><span class="codenumber">1.3</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-results.html#sec-results-32" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-results.html#sec-results-29" class="internal"><span class="codenumber">1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-results.html#sec-results-30" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -454,21 +460,25 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-orthonormal-bases"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-orthonormal-bases"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">Orthonormal Bases</span>
 </h2>
-<section class="introduction" id="sec-orthonormal-bases-2"><div class="para" id="sec-orthonormal-bases-2-1">While the previous section extended the dot product in <span class="process-math">\(\rr^n\)</span> to the notion of an inner product in <span class="process-math">\(V\text{,}\)</span> in this section we focus on bases for a vector space. One remarkably nice feature of the standard basis in <span class="process-math">\(\rr^n\)</span> is that, with respect to the dot product, it is an orthogonal set in which every vector is a unit vector. In this section we will see that such a basis exists in every inner product space.</div></section><section class="subsection" id="subsec-orthonormality"><h3 class="heading hide-type">
+<section class="introduction" id="sec-orthonormal-bases-2"><div class="para" id="sec-orthonormal-bases-2-1">While the previous section extended the dot product in <span class="process-math">\(\rr^n\)</span> to the notion of an inner product in <span class="process-math">\(V\text{,}\)</span> in this section we focus on bases for a vector space. One remarkably nice feature of the standard basis in <span class="process-math">\(\rr^n\)</span> is that, with respect to the dot product, it is an orthogonal set in which every vector is a unit vector. In this section we will see that such a basis exists in every inner product space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-orthonormality"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="space"> </span><span class="title">Orthonormality</span>
 </h3>
-<div class="para" id="subsec-orthonormality-2">Our first definition is the most important in the section, as we generalize the important characteristics of the standard basis in <span class="process-math">\(\rr^n\text{.}\)</span>
+<div class="para" id="subsec-orthonormality-2">Our first definition is the most important in the section, as we generalize the important characteristics of the standard basis in <span class="process-math">\(\rr^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-orthonormality-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-orthonormal"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="def-orthonormal-1-1">Let <span class="process-math">\(V\)</span> be an inner product space, and let <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n\}\)</span> be a subset of <span class="process-math">\(V\text{.}\)</span> Then <span class="process-math">\(V'\)</span> is an <dfn class="terminology">orthonormal</dfn> set if it is an orthogonal set and <span class="process-math">\(\vnorm{\bfv_i}=1\)</span> for all <span class="process-math">\(\bfv_i \in V'\text{.}\)</span> If <span class="process-math">\(V'\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> then it is called an <dfn class="terminology">orthonormal basis</dfn>.</div></article><details id="subsec-orthonormality-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="def-orthonormal-1-1">Let <span class="process-math">\(V\)</span> be an inner product space, and let <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n\}\)</span> be a subset of <span class="process-math">\(V\text{.}\)</span> Then <span class="process-math">\(V'\)</span> is an <dfn class="terminology">orthonormal</dfn> set if it is an orthogonal set and <span class="process-math">\(\vnorm{\bfv_i}=1\)</span> for all <span class="process-math">\(\bfv_i \in V'\text{.}\)</span> If <span class="process-math">\(V'\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> then it is called an <dfn class="terminology">orthonormal basis</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-orthonormal-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.2.1"><a href="#def-orthonormal" title="Copy permalink for Definition 7.2.1">🔗</a></div></article><details id="subsec-orthonormality-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-orthonormality-4-1-1">The standard basis is an orthonormal basis of either <span class="process-math">\(\rr^n\)</span> or <span class="process-math">\(\cc^n\text{.}\)</span>
-</div></article></details><details id="examp-onb1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-orthonormality-4-1-1">The standard basis is an orthonormal basis of either <span class="process-math">\(\rr^n\)</span> or <span class="process-math">\(\cc^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-orthonormality-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.2.2"><a href="#subsec-orthonormality-4" title="Copy permalink for Example 7.2.2">🔗</a></div></article></details><details id="examp-onb1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="examp-onb1-1-1">
 <div class="para">The following is an orthonormal basis of either <span class="process-math">\(\rr^2\)</span> or <span class="process-math">\(\cc^2\text{:}\)</span>
@@ -478,7 +488,9 @@ eBookConfig.enable_chatcodes =  false;
 \mcb = \left\{  \begin{bmatrix} \frac{1}{\sqrt{2}} \\[6pt] \frac{1}{\sqrt{2}} \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\[6pt] -\frac{1}{\sqrt{2}} \end{bmatrix} \right\}\text{.}
 \end{equation*}
 </div>
-</div></article></details><details id="subsec-orthonormality-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#examp-onb1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.2.3"><a href="#examp-onb1" title="Copy permalink for Example 7.2.3">🔗</a></div></article></details><details id="subsec-orthonormality-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-orthonormality-6-1-1">
 <div class="para">For any fixed <span class="process-math">\(\theta \in \rr\text{,}\)</span> the following is an orthonormal basis of <span class="process-math">\(\rr^2\)</span> or <span class="process-math">\(\cc^2\text{:}\)</span>
@@ -488,7 +500,9 @@ eBookConfig.enable_chatcodes =  false;
 \mcb = \left\{ \begin{bmatrix} \cos(\theta) \\ \sin(\theta) \end{bmatrix}, \begin{bmatrix} -\sin(\theta) \\ \cos(\theta) \end{bmatrix} \right\}\text{.}
 \end{equation*}
 </div>
-</div></article></details><details id="subsec-orthonormality-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-orthonormality-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.2.4"><a href="#subsec-orthonormality-6" title="Copy permalink for Example 7.2.4">🔗</a></div></article></details><details id="subsec-orthonormality-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-orthonormality-7-1-1">
 <div class="para">Because of the requirement that each vector be a unit vector, the vectors in an orthonormal basis aren’t the prettiest to behold. Here is an orthonormal basis of <span class="process-math">\(\rr^3\text{:}\)</span>
@@ -498,7 +512,9 @@ eBookConfig.enable_chatcodes =  false;
 \mcb = \left\{ \begin{bmatrix} \frac{1}{\sqrt{5}} \\[6pt] \frac{2}{\sqrt{5}} \\[6pt] 0 \end{bmatrix}, \begin{bmatrix} -\frac{\sqrt{2}}{\sqrt{15}} \\[6pt] \frac{1}{\sqrt{30}} \\[6pt] -\frac{\sqrt{5}}{\sqrt{6}} \end{bmatrix}, \begin{bmatrix} -\frac{\sqrt{2}}{\sqrt{3}} \\[6pt] \frac{1}{\sqrt{6}} \\[6pt] \frac{1}{\sqrt{6}} \end{bmatrix} \right\}\text{.}
 \end{equation*}
 </div>
-</div></article></details><details id="examp-p1-onb" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-orthonormality-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.2.5"><a href="#subsec-orthonormality-7" title="Copy permalink for Example 7.2.5">🔗</a></div></article></details><details id="examp-p1-onb" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="examp-p1-onb-1-1">
 <div class="para">Consider the following inner product on the space <span class="process-math">\(P_1\text{:}\)</span>
@@ -522,10 +538,13 @@ eBookConfig.enable_chatcodes =  false;
 \end{align*}
 </div>
 <div class="para">Thus, <span class="process-math">\(\mcb\)</span> is an orthonormal basis for <span class="process-math">\(P_1\)</span> with this inner product.</div>
-</div></article></details></section><section class="subsection" id="subsec-orthonormal-coordinates"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#examp-p1-onb-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.2.6"><a href="#examp-p1-onb" title="Copy permalink for Example 7.2.6">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 7.2.1: Orthonormality"><a href="#subsec-orthonormality" title="Copy permalink for Subsection 7.2.1: Orthonormality">🔗</a></div></section><section class="subsection" id="subsec-orthonormal-coordinates"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="space"> </span><span class="title">Coordinates in Orthonormal Bases</span>
 </h3>
-<div class="para" id="subsec-orthonormal-coordinates-2">Having an orthonormal basis makes some tasks easier than they would be otherwise. In particular, when we need to find coordinates of vectors with respect to an orthonormal basis, the path is fairly gentle to walk.</div>
+<div class="para" id="subsec-orthonormal-coordinates-2">Having an orthonormal basis makes some tasks easier than they would be otherwise. In particular, when we need to find coordinates of vectors with respect to an orthonormal basis, the path is fairly gentle to walk.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-orthonormal-coordinates-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="theorem theorem-like" id="thm-coords-orthonorm-basis"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.7</span><span class="period">.</span>
 </h4>
@@ -542,7 +561,9 @@ eBookConfig.enable_chatcodes =  false;
 [[T]_{\mcb,\mcc}]_{jk} = \ip{T(\bfv_k),\bfw_j}\text{.}\tag{7.3}
 \end{equation}
 </div>
-</div></article><details id="thm-coords-orthonorm-basis-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-coords-orthonorm-basis-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-coords-orthonorm-basis-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 7.2.7"><a href="#thm-coords-orthonorm-basis" title="Copy permalink for Theorem 7.2.7">🔗</a></div></article><details id="thm-coords-orthonorm-basis-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-coords-orthonorm-basis-2-1">
 <div class="para">For <span class="process-math">\(\bfv \in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-cob-thm-1.html">
 \begin{equation*}
@@ -562,6 +583,7 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 <div class="para">which is the same as <a href="sec-orthonormal-bases.html#eqn-cob-thm-1" class="xref" data-knowl="./knowl/xref/eqn-cob-thm-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2">(7.2)</a>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-coords-orthonorm-basis-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-coords-orthonorm-basis-2-2">
 <div class="para">We proceed similarly for the second statement in the theorem. For any <span class="process-math">\(\bfw \in W\text{,}\)</span> we have</div>
@@ -578,7 +600,10 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 \end{equation*}
 </div>
 <div class="para">This is the same as <a href="sec-orthonormal-bases.html#eqn-cob-thm-2" class="xref" data-knowl="./knowl/xref/eqn-cob-thm-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3">(7.3)</a>.</div>
-</div></article></details><div class="para" id="subsec-orthonormal-coordinates-4">We can illustrate one part of this theorem with an example.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-coords-orthonorm-basis-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.2.7.1"><a href="#thm-coords-orthonorm-basis-2" title="Copy permalink for Proof 7.2.7.1">🔗</a></div></article></details><div class="para" id="subsec-orthonormal-coordinates-4">We can illustrate one part of this theorem with an example.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-orthonormal-coordinates-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <details id="subsec-orthonormal-coordinates-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.8</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-orthonormal-coordinates-5-1-1">
@@ -589,7 +614,9 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 \begin{bmatrix} -\frac{3}{\sqrt{2}} \\[6pt] \frac{7}{\sqrt{2}} \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article></details><div class="para" id="subsec-orthonormal-coordinates-6">The previous theorem has an important consequence. The inner product of any two vectors in an inner product space is the same as the usual inner product of their coordinate vectors in <span class="process-math">\(\cc^n\text{.}\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-orthonormal-coordinates-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.2.8"><a href="#subsec-orthonormal-coordinates-5" title="Copy permalink for Example 7.2.8">🔗</a></div></article></details><div class="para" id="subsec-orthonormal-coordinates-6">The previous theorem has an important consequence. The inner product of any two vectors in an inner product space is the same as the usual inner product of their coordinate vectors in <span class="process-math">\(\cc^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-orthonormal-coordinates-6" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-ip-coords"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.9</span><span class="period">.</span>
@@ -607,7 +634,9 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 \vnorm{\bfv}^2 = \sum_{i=1}^n |\ip{\bfv, \bfv_i}|^2\text{.}
 \end{equation*}
 </div>
-</div></article><details id="thm-ip-coords-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-ip-coords-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-ip-coords-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 7.2.9"><a href="#thm-ip-coords" title="Copy permalink for Theorem 7.2.9">🔗</a></div></article><details id="thm-ip-coords-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-ip-coords-2-1">
 <div class="para">By <a href="sec-orthonormal-bases.html#thm-coords-orthonorm-basis" class="xref" data-knowl="./knowl/xref/thm-coords-orthonorm-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.7">Theorem 7.2.7</a>, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-coords-orthonorm-basis.html">
 \begin{equation*}
@@ -623,10 +652,13 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 \amp = \sum_{i=1}^n \ip{\bfu, \bfv_i} \overline{\ip{\bfv, \bfv_i}}\text{.}
 \end{align*}
 </div>
-</div></article></details></section><section class="subsection" id="subsec-gram-schmidt"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-ip-coords-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.2.9.1"><a href="#thm-ip-coords-2" title="Copy permalink for Proof 7.2.9.1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 7.2.2: Coordinates in Orthonormal Bases"><a href="#subsec-orthonormal-coordinates" title="Copy permalink for Subsection 7.2.2: Coordinates in Orthonormal Bases">🔗</a></div></section><section class="subsection" id="subsec-gram-schmidt"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="space"> </span><span class="title">The Gram-Schmidt Process</span>
 </h3>
-<div class="para" id="subsec-gram-schmidt-2">Orthonormal bases are quite useful, but they do not appear around every corner. In this section we will describe a reliable process to produce an orthonormal basis of an inner product space.</div>
+<div class="para" id="subsec-gram-schmidt-2">Orthonormal bases are quite useful, but they do not appear around every corner. In this section we will describe a reliable process to produce an orthonormal basis of an inner product space.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-gram-schmidt-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="algorithm theorem-like" id="alg-gram-schmidt"><h4 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">7.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">The Gram-Schmidt Process.</span>
 </h4>
@@ -634,11 +666,18 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 <div class="para">This process results in an orthonormal basis for any finite-dimensional inner product space <span class="process-math">\(V\text{.}\)</span>
 </div>
 <ol class="decimal" id="alg-gram-schmidt-2-1-2">
-<li id="alg-gram-schmidt-2-1-2-1"><div class="para" id="alg-gram-schmidt-2-1-2-1-1">Start with a basis <span class="process-math">\(\{ \bfv_1, \ldots, \bfv_n \}\)</span> of <span class="process-math">\(V\text{.}\)</span>
-</div></li>
-<li id="alg-gram-schmidt-2-1-2-2"><div class="para" id="alg-gram-schmidt-2-1-2-2-1">Define <span class="process-math">\(\bfe_1 = \frac{1}{\vnorm{\bfv_1}} \bfv_1\text{.}\)</span>
-</div></li>
-<li id="alg-gram-schmidt-2-1-2-3"><div class="para logical" id="alg-gram-schmidt-2-1-2-3-1">
+<li id="alg-gram-schmidt-2-1-2-1">
+<div class="para" id="alg-gram-schmidt-2-1-2-1-1">Start with a basis <span class="process-math">\(\{ \bfv_1, \ldots, \bfv_n \}\)</span> of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#alg-gram-schmidt-2-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#alg-gram-schmidt-2-1-2-1" title="Copy permalink for Item 1">🔗</a></div>
+</li>
+<li id="alg-gram-schmidt-2-1-2-2">
+<div class="para" id="alg-gram-schmidt-2-1-2-2-1">Define <span class="process-math">\(\bfe_1 = \frac{1}{\vnorm{\bfv_1}} \bfv_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#alg-gram-schmidt-2-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#alg-gram-schmidt-2-1-2-2" title="Copy permalink for Item 2">🔗</a></div>
+</li>
+<li id="alg-gram-schmidt-2-1-2-3">
+<div class="para logical" id="alg-gram-schmidt-2-1-2-3-1">
 <div class="para">For <span class="process-math">\(j = 2, \ldots, n\text{,}\)</span> define <span class="process-math">\(\bfe_j\)</span> recursively by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -651,17 +690,26 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 \bfe_j = \frac{1}{\vnorm{\bfe_j'}}\bfe_j'\text{.}
 \end{equation*}
 </div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#alg-gram-schmidt-2-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#alg-gram-schmidt-2-1-2-3" title="Copy permalink for Item 3">🔗</a></div>
+</li>
 </ol>
 <div class="para">Then <span class="process-math">\(\{ \bfe_1, \ldots, \bfe_n \}\)</span> is an orthonormal basis of <span class="process-math">\(V\text{.}\)</span> Additionally, for each <span class="process-math">\(j=1, \ldots, n\text{,}\)</span> <span class="process-math">\(\spn\{\bfe_1, \ldots, \bfe_j \} = \spn\{\bfv_1, \ldots, \bfv_j \}\text{.}\)</span>
 </div>
-</div></article><article class="note remark-like" id="subsec-gram-schmidt-4"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#alg-gram-schmidt-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Algorithm 7.2.10: The Gram-Schmidt Process"><a href="#alg-gram-schmidt" title="Copy permalink for Algorithm 7.2.10: The Gram-Schmidt Process">🔗</a></div></article><article class="note remark-like" id="subsec-gram-schmidt-4"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">7.2.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-gram-schmidt-4-1">We omit the proof that the Gram-Schmidt process does what it claims to do, as the proof is on the long and technical side. However, it may be helpful for the readers to have a non-technical description of the process. Starting with the original basis, for each vector we strip away the parts of the vector that point in the direction of previous basis vectors. (We understand that “direction” only makes geometric sense in <span class="process-math">\(\rr^n\text{,}\)</span> but perhaps the reader will allow this use of analogy.) What remains gets normalized to be a unit vector and then added to the growing orthonormal basis.</div></article><div class="para" id="subsec-gram-schmidt-5">To get a good handle on this algorithm, we now present some examples.</div>
+<div class="para" id="subsec-gram-schmidt-4-1">We omit the proof that the Gram-Schmidt process does what it claims to do, as the proof is on the long and technical side. However, it may be helpful for the readers to have a non-technical description of the process. Starting with the original basis, for each vector we strip away the parts of the vector that point in the direction of previous basis vectors. (We understand that “direction” only makes geometric sense in <span class="process-math">\(\rr^n\text{,}\)</span> but perhaps the reader will allow this use of analogy.) What remains gets normalized to be a unit vector and then added to the growing orthonormal basis.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-gram-schmidt-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 7.2.11"><a href="#subsec-gram-schmidt-4" title="Copy permalink for Note 7.2.11">🔗</a></div></article><div class="para" id="subsec-gram-schmidt-5">To get a good handle on this algorithm, we now present some examples.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-gram-schmidt-5" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <details id="subsec-gram-schmidt-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.12</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-gram-schmidt-6-1-1">Consider the vector space <span class="process-math">\(P_1\)</span> with the inner product introduced in <a href="sec-orthonormal-bases.html#examp-p1-onb" class="xref" data-knowl="./knowl/xref/examp-p1-onb.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.2.6">Example 7.2.6</a>. The standard basis for <span class="process-math">\(P_1\)</span> is <span class="process-math">\(\{1, t\}\text{,}\)</span> but this is not an orthonormal basis. We will apply the Gram-Schmidt process to this basis.</div> <div class="para logical" id="subsec-gram-schmidt-6-1-2">
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-gram-schmidt-6-1-1">Consider the vector space <span class="process-math">\(P_1\)</span> with the inner product introduced in <a href="sec-orthonormal-bases.html#examp-p1-onb" class="xref" data-knowl="./knowl/xref/examp-p1-onb.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.2.6">Example 7.2.6</a>. The standard basis for <span class="process-math">\(P_1\)</span> is <span class="process-math">\(\{1, t\}\text{,}\)</span> but this is not an orthonormal basis. We will apply the Gram-Schmidt process to this basis.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-gram-schmidt-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="subsec-gram-schmidt-6-1-2">
 <div class="para">First, we calculate that <span class="process-math">\(\ip{1,1} = \sqrt{2}\text{,}\)</span> so our first vector in the orthonormal basis should be <span class="process-math">\(\bfe_1 = \frac{1}{\sqrt{2}}\bfv_1 = \frac{1}{\sqrt{2}}\text{.}\)</span> Then, for the second calculation we need</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -681,7 +729,9 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 \end{equation*}
 </div>
 <div class="para">The reader may want to verify that <span class="process-math">\(\{ \bfe_1. \bfe_2\}\)</span> is indeed an orthonormal set in <span class="process-math">\(P_1\)</span> with this inner product.</div>
-</div></article></details><details id="subsec-gram-schmidt-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-gram-schmidt-6-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.2.12"><a href="#subsec-gram-schmidt-6" title="Copy permalink for Example 7.2.12">🔗</a></div></article></details><details id="subsec-gram-schmidt-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.13</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-gram-schmidt-7-1-1">
 <div class="para">We will carry out the Gram-Schmidt process on a basis for <span class="process-math">\(\rr^3\)</span> where we will use the standard dot product in <span class="process-math">\(\rr^3\text{.}\)</span> Consider the set <span class="process-math">\(\mcb = \{\bfv_1, \bfv_2, \bfv_3 \}\text{,}\)</span> where</div>
@@ -733,7 +783,9 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 </div>
 <div class="para">The set <span class="process-math">\(\{ \bfe_1, \bfe_2, \bfe_3 \}\)</span> is an orthonormal basis of <span class="process-math">\(\rr^3\text{.}\)</span>
 </div>
-</div></article></details><details id="subsec-gram-schmidt-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-gram-schmidt-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.2.13"><a href="#subsec-gram-schmidt-7" title="Copy permalink for Example 7.2.13">🔗</a></div></article></details><details id="subsec-gram-schmidt-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.14</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-gram-schmidt-8-1-1">
 <div class="para">In our final example we will consider <span class="process-math">\(\rr^2\)</span> with the alternative inner product introduced in <a href="sec-inner-products.html#examp-alt-ip-r2" class="xref" data-knowl="./knowl/xref/examp-alt-ip-r2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.1.29">Example 7.1.29</a>. We consider a basis <span class="process-math">\(\{\bfv_1, \bfv_2 \}\)</span> for <span class="process-math">\(\rr^2\text{,}\)</span> where</div>
@@ -761,16 +813,25 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 \bfe_2 = \begin{bmatrix} \frac{1}{\sqrt{6}} \\[6pt] -\frac{2}{\sqrt{6}} \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article></details><div class="para" id="subsec-gram-schmidt-9">While the Gram-Schmidt process has obvious computational implications, it also has some theoretical consequences.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-gram-schmidt-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.2.14"><a href="#subsec-gram-schmidt-8" title="Copy permalink for Example 7.2.14">🔗</a></div></article></details><div class="para" id="subsec-gram-schmidt-9">While the Gram-Schmidt process has obvious computational implications, it also has some theoretical consequences.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-gram-schmidt-9" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="corollary theorem-like" id="cor-exist-orthonormal-basis"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.2.15</span><span class="period">.</span>
 </h4>
-<div class="para" id="cor-exist-orthonormal-basis-1-1">Every finite-dimensional inner product space <span class="process-math">\(V\)</span> has an orthonormal basis.</div></article><details id="cor-exist-orthonormal-basis-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-exist-orthonormal-basis-2-1">Since we know that every finite-dimensional vector space has a basis (<a href="sec-basis.html#cor-basis-fin-dim" class="xref" data-knowl="./knowl/xref/cor-basis-fin-dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.2.13">Corollary 5.2.13</a>), we can apply the Gram-Schmidt process to that basis. This proves that such a <span class="process-math">\(V\)</span> always has an orthonormal basis.</div></article></details><article class="corollary theorem-like" id="cor-extend-to-orthonormal-basis"><h4 class="heading">
+<div class="para" id="cor-exist-orthonormal-basis-1-1">Every finite-dimensional inner product space <span class="process-math">\(V\)</span> has an orthonormal basis.<div class="autopermalink" data-description="Paragraph"><a href="#cor-exist-orthonormal-basis-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 7.2.15"><a href="#cor-exist-orthonormal-basis" title="Copy permalink for Corollary 7.2.15">🔗</a></div></article><details id="cor-exist-orthonormal-basis-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-exist-orthonormal-basis-2-1">Since we know that every finite-dimensional vector space has a basis (<a href="sec-basis.html#cor-basis-fin-dim" class="xref" data-knowl="./knowl/xref/cor-basis-fin-dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.2.13">Corollary 5.2.13</a>), we can apply the Gram-Schmidt process to that basis. This proves that such a <span class="process-math">\(V\)</span> always has an orthonormal basis.<div class="autopermalink" data-description="Paragraph"><a href="#cor-exist-orthonormal-basis-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.2.15.1"><a href="#cor-exist-orthonormal-basis-2" title="Copy permalink for Proof 7.2.15.1">🔗</a></div></article></details><article class="corollary theorem-like" id="cor-extend-to-orthonormal-basis"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.2.16</span><span class="period">.</span>
 </h4>
-<div class="para" id="cor-extend-to-orthonormal-basis-1-1">Suppose that <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_k \}\)</span> is an orthonormal set in a finite-dimensional inner product space <span class="process-math">\(V\text{.}\)</span> Then <span class="process-math">\(V'\)</span> can be extended to an orthonormal basis of <span class="process-math">\(V\text{.}\)</span>
-</div></article><details id="cor-extend-to-orthonormal-basis-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-extend-to-orthonormal-basis-2-1">By <a href="sec-dimension.html#thm-extend-lin-ind-to-basis" class="xref" data-knowl="./knowl/xref/thm-extend-lin-ind-to-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.16">Theorem 5.3.16</a>, <span class="process-math">\(V'\)</span> can be extended to a basis <span class="process-math">\(\mcb = \{ \bfv_1, \ldots, \bfv_n \}\)</span> of <span class="process-math">\(V\text{.}\)</span> We can apply the Gram-Schmidt process to <span class="process-math">\(\mcb\text{,}\)</span> producing an orthonormal basis <span class="process-math">\(\{ \bfe_1, \ldots, \bfe_n \}\)</span> of <span class="process-math">\(V\text{.}\)</span> Since <span class="process-math">\(V'\)</span> is an orthonormal set, the Gram-Schmidt process will produce vectors <span class="process-math">\(\bfe_i\)</span> such that <span class="process-math">\(\bfe_j = \bfv_j\)</span> for <span class="process-math">\(j=1, \ldots, k\text{,}\)</span> meaning that <span class="process-math">\(V'\)</span> is a subset of <span class="process-math">\(\mcb\text{.}\)</span> This justifies the claim that <span class="process-math">\(\mcb\)</span> is an extension of <span class="process-math">\(V'\text{.}\)</span>
-</div></article></details></section><section class="reading-questions" id="sec-orthonormal-bases-6"><h3 class="heading hide-type">
+<div class="para" id="cor-extend-to-orthonormal-basis-1-1">Suppose that <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_k \}\)</span> is an orthonormal set in a finite-dimensional inner product space <span class="process-math">\(V\text{.}\)</span> Then <span class="process-math">\(V'\)</span> can be extended to an orthonormal basis of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-extend-to-orthonormal-basis-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 7.2.16"><a href="#cor-extend-to-orthonormal-basis" title="Copy permalink for Corollary 7.2.16">🔗</a></div></article><details id="cor-extend-to-orthonormal-basis-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-extend-to-orthonormal-basis-2-1">By <a href="sec-dimension.html#thm-extend-lin-ind-to-basis" class="xref" data-knowl="./knowl/xref/thm-extend-lin-ind-to-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.16">Theorem 5.3.16</a>, <span class="process-math">\(V'\)</span> can be extended to a basis <span class="process-math">\(\mcb = \{ \bfv_1, \ldots, \bfv_n \}\)</span> of <span class="process-math">\(V\text{.}\)</span> We can apply the Gram-Schmidt process to <span class="process-math">\(\mcb\text{,}\)</span> producing an orthonormal basis <span class="process-math">\(\{ \bfe_1, \ldots, \bfe_n \}\)</span> of <span class="process-math">\(V\text{.}\)</span> Since <span class="process-math">\(V'\)</span> is an orthonormal set, the Gram-Schmidt process will produce vectors <span class="process-math">\(\bfe_i\)</span> such that <span class="process-math">\(\bfe_j = \bfv_j\)</span> for <span class="process-math">\(j=1, \ldots, k\text{,}\)</span> meaning that <span class="process-math">\(V'\)</span> is a subset of <span class="process-math">\(\mcb\text{.}\)</span> This justifies the claim that <span class="process-math">\(\mcb\)</span> is an extension of <span class="process-math">\(V'\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-extend-to-orthonormal-basis-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.2.16.1"><a href="#cor-extend-to-orthonormal-basis-2" title="Copy permalink for Proof 7.2.16.1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 7.2.3: The Gram-Schmidt Process"><a href="#subsec-gram-schmidt" title="Copy permalink for Subsection 7.2.3: The Gram-Schmidt Process">🔗</a></div></section><section class="reading-questions" id="sec-orthonormal-bases-6"><h3 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
 <article class="exercise exercise-like" id="sec-orthonormal-bases-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -783,7 +844,8 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 \end{equation*}
 </div>
 <div class="para">(You do not need to prove that this is an inner product.) Let <span class="process-math">\(p_1 = \frac{1}{4}t+\frac{1}{2}\)</span> and <span class="process-math">\(p_2 = \frac{1}{4}t - \frac{1}{2}\text{.}\)</span> Prove or disprove that <span class="process-math">\(\{ p_1, p_2 \}\)</span> is an orthonormal basis of <span class="process-math">\(P_1\text{.}\)</span> Show your work.</div>
-</div> </article><article class="exercise exercise-like" id="sec-orthonormal-bases-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-6-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="autopermalink" data-description="Reading Question 7.2.4.1"><a href="#sec-orthonormal-bases-6-1" title="Copy permalink for Reading Question 7.2.4.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-orthonormal-bases-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-orthonormal-bases-6-2-1-1">
 <div class="para">Consider the set <span class="process-math">\(\{ \bfv_1, \bfv_2 \}\)</span> of vectors in <span class="process-math">\(\rr^2\text{,}\)</span> where</div>
 <div class="displaymath process-math">
@@ -794,7 +856,8 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 </div>
 <div class="para">Using the standard dot product in <span class="process-math">\(\rr^2\text{,}\)</span> use the Gram-Schmidt process on this basis to produce an orthonormal basis for <span class="process-math">\(\rr^2\text{.}\)</span>
 </div>
-</div> </article></section><section class="exercises" id="sec-orthonormal-bases-7"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-6-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="autopermalink" data-description="Reading Question 7.2.4.2"><a href="#sec-orthonormal-bases-6-2" title="Copy permalink for Reading Question 7.2.4.2">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 7.2.4"><a href="#sec-orthonormal-bases-6" title="Copy permalink for Reading Questions 7.2.4">🔗</a></div></section><section class="exercises" id="sec-orthonormal-bases-7"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="sec-orthonormal-bases-7-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -810,10 +873,20 @@ T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-orthonormal-bases-7-1-1-1-3">
-<li id="sec-orthonormal-bases-7-1-1-1-3-1"><div class="para" id="sec-orthonormal-bases-7-1-1-1-3-1-1">Use the Gram-Schmidt process to create an orthonormal basis from <span class="process-math">\(\mcb\text{.}\)</span> (Use the standard dot product on <span class="process-math">\(\rr^2\text{.}\)</span>)</div></li>
-<li id="sec-orthonormal-bases-7-1-1-1-3-2"><div class="para" id="sec-orthonormal-bases-7-1-1-1-3-2-1">Let <span class="process-math">\(\bfv = \begin{bmatrix} 3 \\ 3 \end{bmatrix}\text{.}\)</span> Use <a href="sec-orthonormal-bases.html#thm-coords-orthonorm-basis" class="xref" data-knowl="./knowl/xref/thm-coords-orthonorm-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.7">Theorem 7.2.7</a> to find the coordinate vector of <span class="process-math">\(\bfv\)</span> with respect to the orthonormal basis of <span class="process-math">\(\rr^2\)</span> you created in part (a).</div></li>
+<li id="sec-orthonormal-bases-7-1-1-1-3-1">
+<div class="para" id="sec-orthonormal-bases-7-1-1-1-3-1-1">Use the Gram-Schmidt process to create an orthonormal basis from <span class="process-math">\(\mcb\text{.}\)</span> (Use the standard dot product on <span class="process-math">\(\rr^2\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-1-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.2.5.1.a"><a href="#sec-orthonormal-bases-7-1-1-1-3-1" title="Copy permalink for Item 7.2.5.1.a">🔗</a></div>
+</li>
+<li id="sec-orthonormal-bases-7-1-1-1-3-2">
+<div class="para" id="sec-orthonormal-bases-7-1-1-1-3-2-1">Let <span class="process-math">\(\bfv = \begin{bmatrix} 3 \\ 3 \end{bmatrix}\text{.}\)</span> Use <a href="sec-orthonormal-bases.html#thm-coords-orthonorm-basis" class="xref" data-knowl="./knowl/xref/thm-coords-orthonorm-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.7">Theorem 7.2.7</a> to find the coordinate vector of <span class="process-math">\(\bfv\)</span> with respect to the orthonormal basis of <span class="process-math">\(\rr^2\)</span> you created in part (a).<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-1-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.2.5.1.b"><a href="#sec-orthonormal-bases-7-1-1-1-3-2" title="Copy permalink for Item 7.2.5.1.b">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-orthonormal-bases-7-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.5.1"><a href="#sec-orthonormal-bases-7-1" title="Copy permalink for Exercise 7.2.5.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-orthonormal-bases-7-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-orthonormal-bases-7-2-1-1">
 <div class="para">Consider the basis <span class="process-math">\(\mcb = \{p_1, p_2 \}\)</span> for <span class="process-math">\(P_1\text{,}\)</span> where</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-coords-orthonorm-basis.html">
@@ -829,29 +902,52 @@ p_1 = 2+t, \hspace{12pt} p_2 = 1-2t\text{.}
 </div>
 <div class="para">(You do not need to prove that this is an inner product.)</div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-orthonormal-bases-7-2-1-1-6">
-<li id="sec-orthonormal-bases-7-2-1-1-6-1"><div class="para" id="sec-orthonormal-bases-7-2-1-1-6-1-1">Use the Gram-Schmidt process to create an orthonormal basis from <span class="process-math">\(\mcb\text{.}\)</span>
-</div></li>
-<li id="sec-orthonormal-bases-7-2-1-1-6-2"><div class="para" id="sec-orthonormal-bases-7-2-1-1-6-2-1">Let <span class="process-math">\(p = 1 + t\text{.}\)</span> Use <a href="sec-orthonormal-bases.html#thm-coords-orthonorm-basis" class="xref" data-knowl="./knowl/xref/thm-coords-orthonorm-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.7">Theorem 7.2.7</a> to find the coordinate vector of <span class="process-math">\(p\)</span> with respect to the orthonormal basis of <span class="process-math">\(P_1\)</span> you created in part (a).</div></li>
-</ol>
+<li id="sec-orthonormal-bases-7-2-1-1-6-1">
+<div class="para" id="sec-orthonormal-bases-7-2-1-1-6-1-1">Use the Gram-Schmidt process to create an orthonormal basis from <span class="process-math">\(\mcb\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-2-1-1-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-orthonormal-bases-7-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-orthonormal-bases-7-2-2-1"><ol class="lower-alpha lower-alpha-level-1" id="sec-orthonormal-bases-7-2-2-1-1">
-<li id="sec-orthonormal-bases-7-2-2-1-1-1"><div class="para logical" id="sec-orthonormal-bases-7-2-2-1-1-1-1">
+<div class="autopermalink" data-description="Item 7.2.5.2.a"><a href="#sec-orthonormal-bases-7-2-1-1-6-1" title="Copy permalink for Item 7.2.5.2.a">🔗</a></div>
+</li>
+<li id="sec-orthonormal-bases-7-2-1-1-6-2">
+<div class="para" id="sec-orthonormal-bases-7-2-1-1-6-2-1">Let <span class="process-math">\(p = 1 + t\text{.}\)</span> Use <a href="sec-orthonormal-bases.html#thm-coords-orthonorm-basis" class="xref" data-knowl="./knowl/xref/thm-coords-orthonorm-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.7">Theorem 7.2.7</a> to find the coordinate vector of <span class="process-math">\(p\)</span> with respect to the orthonormal basis of <span class="process-math">\(P_1\)</span> you created in part (a).<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-2-1-1-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.2.5.2.b"><a href="#sec-orthonormal-bases-7-2-1-1-6-2" title="Copy permalink for Item 7.2.5.2.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-orthonormal-bases-7-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="sec-orthonormal-bases-7-2-2-1">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-orthonormal-bases-7-2-2-1-1">
+<li id="sec-orthonormal-bases-7-2-2-1-1-1">
+<div class="para logical" id="sec-orthonormal-bases-7-2-2-1-1-1-1">
 <div class="para">The orthonormal basis we obtain is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left\{ \frac{1}{\sqrt{17}}(2+t), \frac{1}{\sqrt{34}}(3-7t)\right\}\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-orthonormal-bases-7-2-2-1-1-2"><div class="para logical" id="sec-orthonormal-bases-7-2-2-1-1-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-2-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.2.5.2.a"><a href="#sec-orthonormal-bases-7-2-2-1-1-1" title="Copy permalink for Item 7.2.5.2.a">🔗</a></div>
+</li>
+<li id="sec-orthonormal-bases-7-2-2-1-1-2">
+<div class="para logical" id="sec-orthonormal-bases-7-2-2-1-1-2-1">
 <div class="para">The coordinate vector is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix} 10/ \sqrt{17} \\ -2/\sqrt{34} \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></li>
-</ol></div></div></details></div></article><article class="exercise exercise-like" id="sec-orthonormal-bases-7-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-2-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.2.5.2.b"><a href="#sec-orthonormal-bases-7-2-2-1-1-2" title="Copy permalink for Item 7.2.5.2.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 7.2.5.2.1"><a href="#sec-orthonormal-bases-7-2-2" title="Copy permalink for Answer 7.2.5.2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 7.2.5.2"><a href="#sec-orthonormal-bases-7-2" title="Copy permalink for Exercise 7.2.5.2">🔗</a></div></article><article class="exercise exercise-like" id="sec-orthonormal-bases-7-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-orthonormal-bases-7-3-1-1">
 <div class="para">Carry out the Gram-Schmidt process on the following set of vectors in <span class="process-math">\(\cc^3\text{.}\)</span> Use the standard dot product in <span class="process-math">\(\cc^3\text{:}\)</span>
 </div>
@@ -865,8 +961,10 @@ i \\ 0 \\ 1
 \right\}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-orthonormal-bases-7-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-orthonormal-bases-7-3-2-1">
+<div class="solutions"><details id="sec-orthonormal-bases-7-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="sec-orthonormal-bases-7-3-2-1">
 <div class="para">The orthonormal basis we obtain is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -875,7 +973,11 @@ i \\ 0 \\ 1
 \frac{\sqrt{3}}{2\sqrt{2}}\begin{bmatrix} -\tfrac{1}{3} + \tfrac{4}{3}i \\ -\tfrac{2}{3} + \tfrac{1}{3}i \\ \tfrac{1}{3} - \tfrac{1}{3}i \end{bmatrix} \right\}\text{.}
 \end{equation*}
 </div>
-</div></div></details></div></article><article class="exercise exercise-like" id="sec-orthonormal-bases-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 7.2.5.3.1"><a href="#sec-orthonormal-bases-7-3-2" title="Copy permalink for Answer 7.2.5.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 7.2.5.3"><a href="#sec-orthonormal-bases-7-3" title="Copy permalink for Exercise 7.2.5.3">🔗</a></div></article><article class="exercise exercise-like" id="sec-orthonormal-bases-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-orthonormal-bases-7-4-1-1">
 <div class="para">Consider the standard basis of the vector space <span class="process-math">\(P_2\text{.}\)</span> Carry out the Gram-Schmidt process on this basis with respect to the following inner product on <span class="process-math">\(P_2\text{:}\)</span>
 </div>
@@ -884,7 +986,9 @@ i \\ 0 \\ 1
 \ip{p,q} = \int_0^1 p(t)q(t)\; dt\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="sec-orthonormal-bases-7-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.5.4"><a href="#sec-orthonormal-bases-7-4" title="Copy permalink for Exercise 7.2.5.4">🔗</a></div></article><article class="exercise exercise-like" id="sec-orthonormal-bases-7-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-orthonormal-bases-7-5-1-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be the following matrix in <span class="process-math">\(M_3(\rr)\text{:}\)</span>
 </div>
@@ -904,15 +1008,18 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">where the standard dot product is in view on the right side of this equation. Find an orthonormal basis of <span class="process-math">\(\rr^3\)</span> with respect to this inner product.</div>
-</div></article><article class="subexercises" id="sec-orthonormal-bases-7-6"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.5.5"><a href="#sec-orthonormal-bases-7-5" title="Copy permalink for Exercise 7.2.5.5">🔗</a></div></article><article class="subexercises" id="sec-orthonormal-bases-7-6"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
 <article class="exercise exercise-like" id="sec-orthonormal-bases-7-6-2"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="sec-orthonormal-bases-7-6-2-1-1">Suppose that the matrix of <span class="process-math">\(T \in L(V)\)</span> with respect to some basis <span class="process-math">\(\mcb\)</span> is upper triangular. Show that if <span class="process-math">\(\mcc\)</span> is the orthonormal basis obtained by applying the Gram-Schmidt process to <span class="process-math">\(\mcb\text{,}\)</span> then <span class="process-math">\([T]_{\mcc}\)</span> is also upper triangular.</div> </article></article></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="sec-inner-products.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-orthogonal-projections.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<div class="para" id="sec-orthonormal-bases-7-6-2-1-1">Suppose that the matrix of <span class="process-math">\(T \in L(V)\)</span> with respect to some basis <span class="process-math">\(\mcb\)</span> is upper triangular. Show that if <span class="process-math">\(\mcc\)</span> is the orthonormal basis obtained by applying the Gram-Schmidt process to <span class="process-math">\(\mcb\text{,}\)</span> then <span class="process-math">\([T]_{\mcc}\)</span> is also upper triangular.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthonormal-bases-7-6-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="autopermalink" data-description="Exercise 7.2.5.6"><a href="#sec-orthonormal-bases-7-6-2" title="Copy permalink for Exercise 7.2.5.6">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-orthonormal-bases-7-6" title="Copy permalink for Subexercises: Writing Exercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 7.2.5"><a href="#sec-orthonormal-bases-7" title="Copy permalink for Exercises 7.2.5">🔗</a></div></section><div class="autopermalink" data-description="Section 7.2: Orthonormal Bases"><a href="#sec-orthonormal-bases" title="Copy permalink for Section 7.2: Orthonormal Bases">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-inner-products.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-orthogonal-projections.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 <!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZFWXZ3398L"></script><script>  window.dataLayer = window.dataLayer || [];

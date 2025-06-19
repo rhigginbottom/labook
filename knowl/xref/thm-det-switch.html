@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,11 +19,13 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">4.2.3</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(B\)</span> be the result of switching two rows in <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(\det(B) = -\det(A)\text{.}\)</span>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We will proceed by induction on <span class="process-math">\(n\text{.}\)</span> This result only makes sense for <span class="process-math">\(n \ge 2\text{,}\)</span> and the base case of <span class="process-math">\(n=2\)</span> was covered in <a href="sec-define-det.html#exer-det-switch-rows" class="xref" data-knowl="./knowl/xref/exer-det-switch-rows.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.1.4.11">Exercise 4.1.4.11</a>.</div>
-<div class="para">We let <span class="process-math">\(k\)</span> be an integer such that <span class="process-math">\(k \ge 2\)</span> and we assume the result is true for all <span class="process-math">\(k\times k\)</span> matrices. Let <span class="process-math">\(A\)</span> be a <span class="process-math">\((k+1)\times (k+1)\)</span> matrix and let <span class="process-math">\(B\)</span> be the result of switching two rows in <span class="process-math">\(A\text{.}\)</span> We want to show that <span class="process-math">\(\det(B)=-\det(A)\text{.}\)</span>
+<div class="para">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(B\)</span> be the result of switching two rows in <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(\det(B) = -\det(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-det-switch-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.2.3"><a href="#thm-det-switch" title="Copy permalink for Theorem 4.2.3">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We will proceed by induction on <span class="process-math">\(n\text{.}\)</span> This result only makes sense for <span class="process-math">\(n \ge 2\text{,}\)</span> and the base case of <span class="process-math">\(n=2\)</span> was covered in <a href="sec-define-det.html#exer-det-switch-rows" class="xref" data-knowl="./knowl/xref/exer-det-switch-rows.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.1.4.11">Exercise 4.1.4.11</a>.<div class="autopermalink" data-description="Paragraph"><a href="#thm-det-switch-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">We let <span class="process-math">\(k\)</span> be an integer such that <span class="process-math">\(k \ge 2\)</span> and we assume the result is true for all <span class="process-math">\(k\times k\)</span> matrices. Let <span class="process-math">\(A\)</span> be a <span class="process-math">\((k+1)\times (k+1)\)</span> matrix and let <span class="process-math">\(B\)</span> be the result of switching two rows in <span class="process-math">\(A\text{.}\)</span> We want to show that <span class="process-math">\(\det(B)=-\det(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-det-switch-2-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
 <div class="para">Since <span class="process-math">\(k \ge 2\text{,}\)</span> we have <span class="process-math">\(k+1 \ge 3\text{,}\)</span> which means that we can calculate <span class="process-math">\(\det(B)\)</span> by expansion along a row that is not involved in the row exchange. Suppose that <span class="process-math">\(B\)</span> was produced by switching rows <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{.}\)</span> We will calculate <span class="process-math">\(\det(B)\)</span> by expanding along row <span class="process-math">\(i\text{,}\)</span> where <span class="process-math">\(i\)</span> is distinct from both <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{.}\)</span> We have</div>
@@ -34,7 +43,10 @@
 \end{align*}
 </div>
 <div class="para">This completes the inductive step.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-det-switch-2-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">We have shown that the result holds for all <span class="process-math">\(n \ge 2\)</span> by the Principle of Mathematical Induction.</div></article></details><span class="incontext"><a class="internal" href="sec-det-properties.html#thm-det-switch">in-context</a></span>
+<div class="para">We have shown that the result holds for all <span class="process-math">\(n \ge 2\)</span> by the Principle of Mathematical Induction.<div class="autopermalink" data-description="Paragraph"><a href="#thm-det-switch-2-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.2.3.1"><a href="#thm-det-switch-2" title="Copy permalink for Proof 4.2.3.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sec-det-properties.html#thm-det-switch">in-context</a></span>
 </body>
 </html>

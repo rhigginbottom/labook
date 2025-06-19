@@ -6,18 +6,24 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Diagonalization</title>
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -73,11 +79,11 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Linear Algebra">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Ryan Higginbottom">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra">
+<meta property="book:author" content="Ryan Higginbottom">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
@@ -109,14 +115,14 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
-<script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra:</span> <span class="subtitle">Gathering and Sharpening Tools</span></a></h1>
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra</span> <span class="subtitle">Gathering and Sharpening Tools</span></a></h1>
 <p class="byline">Ryan Higginbottom</p>
-</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
@@ -129,7 +135,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-char-eqn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-sixth.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-invariants.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
 \newcommand{\zz}{\mathbb Z}
 \newcommand{\qq}{\mathbb Q}
 \newcommand{\rr}{\mathbb R}
@@ -166,7 +172,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
@@ -192,10 +198,10 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-results.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Results</span></a></div>
+<div class="toc-title-box"><a href="sec-results.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Solving Linear Systems With Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-results.html#sec-results-31" class="internal"><span class="codenumber">1.3</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-results.html#sec-results-32" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-results.html#sec-results-29" class="internal"><span class="codenumber">1.3</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-results.html#sec-results-30" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -454,13 +460,15 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-diagonalization"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-diagonalization"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">6.3</span><span class="space"> </span><span class="title">Diagonalization</span>
 </h2>
-<section class="introduction" id="sec-diagonalization-2"><div class="para" id="sec-diagonalization-2-1">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(A\)</span> often has a huge number of matrices to which it is similar. In this section, we will focus on matrices that are similar to diagonal matrices, and we do so because of how straightforward the action of a diagonal matrix is.</div></section><section class="subsection" id="subsec-diag"><h3 class="heading hide-type">
+<section class="introduction" id="sec-diagonalization-2"><div class="para" id="sec-diagonalization-2-1">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(A\)</span> often has a huge number of matrices to which it is similar. In this section, we will focus on matrices that are similar to diagonal matrices, and we do so because of how straightforward the action of a diagonal matrix is.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-diag"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="space"> </span><span class="title">Diagonalizable Matrices</span>
 </h3>
-<div class="para" id="subsec-diag-2">If <span class="process-math">\(A\)</span> is similar to a diagonal matrix <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(A = PDP^{-1}\)</span> for some invertible matrix <span class="process-math">\(P\text{.}\)</span> Such a factorization of <span class="process-math">\(A\)</span> encodes much of the information about the eigenvalues and eigenvectors of <span class="process-math">\(A\text{,}\)</span> and it also allows us to raise <span class="process-math">\(A\)</span> to integer powers rather easily.</div>
+<div class="para" id="subsec-diag-2">If <span class="process-math">\(A\)</span> is similar to a diagonal matrix <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(A = PDP^{-1}\)</span> for some invertible matrix <span class="process-math">\(P\text{.}\)</span> Such a factorization of <span class="process-math">\(A\)</span> encodes much of the information about the eigenvalues and eigenvectors of <span class="process-math">\(A\text{,}\)</span> and it also allows us to raise <span class="process-math">\(A\)</span> to integer powers rather easily.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="subsec-diag-3">
 <div class="para">If <span class="process-math">\(D\)</span> is diagonal, then powers of <span class="process-math">\(D\)</span> are easy to compute. Consider the following matrices <span class="process-math">\(D\)</span> and <span class="process-math">\(D^2\text{:}\)</span>
 </div>
@@ -478,6 +486,7 @@ D^k = \begin{bmatrix} (-3)^k \amp 0 \\ 0 \amp 4^k \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">Given the number of calculations that are usually involved in matrix multiplication, this is a huge savings in computing time.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-diag-4">
 <div class="para">Now, if <span class="process-math">\(A\)</span> is similar to a diagonal matrix <span class="process-math">\(D\text{,}\)</span> we find related behavior. Suppose that <span class="process-math">\(A = PDP^{-1}\text{.}\)</span> Then</div>
@@ -494,18 +503,24 @@ A^2  \amp = (PDP^{-1})(PDP^{-1}) = PD(P^{-1}P)DP^{-1}\\
 A^k = PD^kP^{-1}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-4" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-diag-5">Perhaps we have convinced a skeptical reader that there are some advantages when <span class="process-math">\(A\)</span> is similar to a diagonal matrix. This is worthy of a formal definition.</div>
+<div class="para" id="subsec-diag-5">Perhaps we have convinced a skeptical reader that there are some advantages when <span class="process-math">\(A\)</span> is similar to a diagonal matrix. This is worthy of a formal definition.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-5" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="def-diagonalizable"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="def-diagonalizable-1-1">A matrix <span class="process-math">\(A \in M_n(\ff)\)</span> is <dfn class="terminology">diagonalizable</dfn> if <span class="process-math">\(A = PDP^{-1}\)</span> for some invertible matrix <span class="process-math">\(P\)</span> and some diagonal matrix <span class="process-math">\(D\text{.}\)</span>
-</div></article><div class="para" id="subsec-diag-7">Given this definition, it is natural to ask exactly when a matrix is diagonalizable. That answer comes in the following theorem.</div>
+<div class="para" id="def-diagonalizable-1-1">A matrix <span class="process-math">\(A \in M_n(\ff)\)</span> is <dfn class="terminology">diagonalizable</dfn> if <span class="process-math">\(A = PDP^{-1}\)</span> for some invertible matrix <span class="process-math">\(P\)</span> and some diagonal matrix <span class="process-math">\(D\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-diagonalizable-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 6.3.1"><a href="#def-diagonalizable" title="Copy permalink for Definition 6.3.1">🔗</a></div></article><div class="para" id="subsec-diag-7">Given this definition, it is natural to ask exactly when a matrix is diagonalizable. That answer comes in the following theorem.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-7" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="theorem theorem-like" id="thm-diagonalization"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">The Diagonalization Theorem.</span>
 </h4>
-<div class="para" id="thm-diagonalization-2-1">A matrix <span class="process-math">\(A \in M_n(\ff)\)</span> is diagonalizable if and only if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors.</div> <div class="para" id="thm-diagonalization-2-2">More specifically, <span class="process-math">\(A = PDP^{-1}\text{,}\)</span> for a diagonal matrix <span class="process-math">\(D\text{,}\)</span> if and only if the columns of <span class="process-math">\(P\)</span> are <span class="process-math">\(n\)</span> linearly independent eigenvectors of <span class="process-math">\(A\text{.}\)</span> In this case, the diagonal entries of <span class="process-math">\(D\)</span> are the the eigenvalues of <span class="process-math">\(A\)</span> which correspond, respectively, to the columns of <span class="process-math">\(P\text{.}\)</span>
-</div></article><details id="thm-diagonalization-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-diagonalization-3-1">
+<div class="para" id="thm-diagonalization-2-1">A matrix <span class="process-math">\(A \in M_n(\ff)\)</span> is diagonalizable if and only if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors.<div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalization-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="thm-diagonalization-2-2">More specifically, <span class="process-math">\(A = PDP^{-1}\text{,}\)</span> for a diagonal matrix <span class="process-math">\(D\text{,}\)</span> if and only if the columns of <span class="process-math">\(P\)</span> are <span class="process-math">\(n\)</span> linearly independent eigenvectors of <span class="process-math">\(A\text{.}\)</span> In this case, the diagonal entries of <span class="process-math">\(D\)</span> are the the eigenvalues of <span class="process-math">\(A\)</span> which correspond, respectively, to the columns of <span class="process-math">\(P\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalization-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.3.2: The Diagonalization Theorem"><a href="#thm-diagonalization" title="Copy permalink for Theorem 6.3.2: The Diagonalization Theorem">🔗</a></div></article><details id="thm-diagonalization-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-diagonalization-3-1">
 <div class="para">If <span class="process-math">\(P\)</span> is an <span class="process-math">\(n\times n\)</span> matrix with columns <span class="process-math">\(\bfv_1, \ldots, \bfv_n\text{,}\)</span> and if <span class="process-math">\(D\)</span> is a diagonal matrix with diagonal entries <span class="process-math">\(\lambda_1, \ldots, \lambda_n\text{,}\)</span> then we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-diag-thm-2.html ./knowl/xref/eqn-diag-thm-1.html ./knowl/xref/eqn-diag-thm-2.html" id="eqn-diag-thm-1">
 \begin{equation}
@@ -519,16 +534,21 @@ PD = \begin{bmatrix} \lambda_1\bfv_1 \amp \cdots \amp \lambda_n\bfv_n \end{bmatr
 \end{equation}
 </div>
 <div class="para">(If the reader has trouble believing <a href="sec-diagonalization.html#eqn-diag-thm-2" class="xref" data-knowl="./knowl/xref/eqn-diag-thm-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.5">(6.5)</a>, thinking of matrix multiplication, in each column of the product, as a linear combination of the columns of <span class="process-math">\(P\)</span> with weights coming from the corresponding column of <span class="process-math">\(D\text{,}\)</span> may help!) If <span class="process-math">\(A\)</span> is diagonalizable, then <span class="process-math">\(A = PDP^{-1}\)</span> and <span class="process-math">\(AP = PD\text{.}\)</span> From <a href="sec-diagonalization.html#eqn-diag-thm-1" class="xref" data-knowl="./knowl/xref/eqn-diag-thm-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.4">(6.4)</a> and <a href="sec-diagonalization.html#eqn-diag-thm-2" class="xref" data-knowl="./knowl/xref/eqn-diag-thm-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.5">(6.5)</a>, by equating columns in <span class="process-math">\(AP\)</span> and <span class="process-math">\(PD\)</span> we see that <span class="process-math">\(A\bfv_i = \lambda_i\bfv_i\)</span> for <span class="process-math">\(1 \le i \le n\text{.}\)</span> Since <span class="process-math">\(P\)</span> is invertible, the columns of <span class="process-math">\(P\)</span> must be linearly independent. Further, since the columns of <span class="process-math">\(P\)</span> cannot be zero vectors, this argument shows that <span class="process-math">\(\lambda_i\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> with eigenvector <span class="process-math">\(\bfv_i\text{,}\)</span> for each <span class="process-math">\(i\text{.}\)</span> This proves one direction of the theorem.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalization-3-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="thm-diagonalization-3-2">If we are given <span class="process-math">\(\bfv_1, \ldots, \bfv_n\)</span> as eigenvectors of <span class="process-math">\(A\)</span> with corresponding eigenvalues <span class="process-math">\(\lambda_1, \ldots, \lambda_n\text{,}\)</span> then we can form the matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\text{.}\)</span> The argument in the previous paragraph shows that <span class="process-math">\(AP = PD\text{.}\)</span> (Note that we have not yet used the linear independence of the eigenvectors!) If the eigenvectors are linearly independent, then <span class="process-math">\(P\)</span> is invertible, and <span class="process-math">\(AP = PD\)</span> implies <span class="process-math">\(A = PDP^{-1}\text{,}\)</span> making <span class="process-math">\(A\)</span> diagonalizable.</div></article></details><article class="note remark-like" id="subsec-diag-9"><h4 class="heading">
+<div class="para" id="thm-diagonalization-3-2">If we are given <span class="process-math">\(\bfv_1, \ldots, \bfv_n\)</span> as eigenvectors of <span class="process-math">\(A\)</span> with corresponding eigenvalues <span class="process-math">\(\lambda_1, \ldots, \lambda_n\text{,}\)</span> then we can form the matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\text{.}\)</span> The argument in the previous paragraph shows that <span class="process-math">\(AP = PD\text{.}\)</span> (Note that we have not yet used the linear independence of the eigenvectors!) If the eigenvectors are linearly independent, then <span class="process-math">\(P\)</span> is invertible, and <span class="process-math">\(AP = PD\)</span> implies <span class="process-math">\(A = PDP^{-1}\text{,}\)</span> making <span class="process-math">\(A\)</span> diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalization-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.3.2.1"><a href="#thm-diagonalization-3" title="Copy permalink for Proof 6.3.2.1">🔗</a></div></article></details><article class="note remark-like" id="subsec-diag-9"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span>
 </h4>
 <div class="para" id="subsec-diag-9-1">
-<a href="sec-diagonalization.html#thm-diagonalization" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a> says that <span class="process-math">\(A\)</span> is diagonalizable if and only if there is a basis of <span class="process-math">\(\ff^n\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{.}\)</span> We call such a basis an <dfn class="terminology">eigenvector basis</dfn> of <span class="process-math">\(\ff^n\text{.}\)</span>
-</div></article></section><section class="subsection" id="subsec-how-to-diagonalize"><h3 class="heading hide-type">
+<a href="sec-diagonalization.html#thm-diagonalization" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a> says that <span class="process-math">\(A\)</span> is diagonalizable if and only if there is a basis of <span class="process-math">\(\ff^n\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{.}\)</span> We call such a basis an <dfn class="terminology">eigenvector basis</dfn> of <span class="process-math">\(\ff^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-9-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 6.3.3"><a href="#subsec-diag-9" title="Copy permalink for Note 6.3.3">🔗</a></div></article><div class="autopermalink" data-description="Subsection 6.3.1: Diagonalizable Matrices"><a href="#subsec-diag" title="Copy permalink for Subsection 6.3.1: Diagonalizable Matrices">🔗</a></div></section><section class="subsection" id="subsec-how-to-diagonalize"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="space"> </span><span class="title">How to Diagonalize a Matrix</span>
 </h3>
-<div class="para" id="subsec-how-to-diagonalize-2">Using <a href="sec-diagonalization.html#thm-diagonalization" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a>, we see there are four steps to diagonalizing a matrix. We will summarize them in the following algorithm.</div>
+<div class="para" id="subsec-how-to-diagonalize-2">Using <a href="sec-diagonalization.html#thm-diagonalization" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a>, we see there are four steps to diagonalizing a matrix. We will summarize them in the following algorithm.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="algorithm theorem-like" id="alg-diagonalize"><h4 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span>
 </h4>
@@ -536,13 +556,31 @@ PD = \begin{bmatrix} \lambda_1\bfv_1 \amp \cdots \amp \lambda_n\bfv_n \end{bmatr
 <div class="para">If <span class="process-math">\(A \in M_n(\ff)\text{,}\)</span> we follow these steps to diagonalize <span class="process-math">\(A\text{.}\)</span>
 </div>
 <ol class="decimal" id="alg-diagonalize-1-1-3">
-<li id="alg-diagonalize-1-1-3-1"><div class="para" id="alg-diagonalize-1-1-3-1-1">Find the eigenvalues of <span class="process-math">\(A\text{.}\)</span> This usually involves solving the characteristic equation for <span class="process-math">\(A\text{.}\)</span> (If the characteristic polynomial does not factor into linear factors, the matrix is not diagonalizable.)</div></li>
-<li id="alg-diagonalize-1-1-3-2"><div class="para" id="alg-diagonalize-1-1-3-2-1">Find <span class="process-math">\(n\)</span> linearly independent eigenvectors for <span class="process-math">\(A\text{.}\)</span> (This step may fail, in which case the matrix is not diagonalizable.)</div></li>
-<li id="alg-diagonalize-1-1-3-3"><div class="para" id="alg-diagonalize-1-1-3-3-1">Construct the matrix <span class="process-math">\(P\)</span> using the vectors from the previous step. Form <span class="process-math">\(P\)</span> by using the eigenvectors as its columns. The order of these vectors does not matter.</div></li>
-<li id="alg-diagonalize-1-1-3-4"><div class="para" id="alg-diagonalize-1-1-3-4-1">Construct <span class="process-math">\(D\)</span> from the eigenvalues. Once the matrix <span class="process-math">\(P\)</span> is formed, the order of these eigenvalues <em class="emphasis">does</em> matter—the eigenvalues must be placed along the diagonal of <span class="process-math">\(D\)</span> in the order corresponding to the columns of <span class="process-math">\(P\text{.}\)</span> In other words, entry <span class="process-math">\(d_{ii}\)</span> in <span class="process-math">\(D\)</span> should be the eigenvalue for the vector which is column <span class="process-math">\(i\)</span> in <span class="process-math">\(P\text{.}\)</span>
-</div></li>
+<li id="alg-diagonalize-1-1-3-1">
+<div class="para" id="alg-diagonalize-1-1-3-1-1">Find the eigenvalues of <span class="process-math">\(A\text{.}\)</span> This usually involves solving the characteristic equation for <span class="process-math">\(A\text{.}\)</span> (If the characteristic polynomial does not factor into linear factors, the matrix is not diagonalizable.)<div class="autopermalink" data-description="Paragraph"><a href="#alg-diagonalize-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#alg-diagonalize-1-1-3-1" title="Copy permalink for Item 1">🔗</a></div>
+</li>
+<li id="alg-diagonalize-1-1-3-2">
+<div class="para" id="alg-diagonalize-1-1-3-2-1">Find <span class="process-math">\(n\)</span> linearly independent eigenvectors for <span class="process-math">\(A\text{.}\)</span> (This step may fail, in which case the matrix is not diagonalizable.)<div class="autopermalink" data-description="Paragraph"><a href="#alg-diagonalize-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#alg-diagonalize-1-1-3-2" title="Copy permalink for Item 2">🔗</a></div>
+</li>
+<li id="alg-diagonalize-1-1-3-3">
+<div class="para" id="alg-diagonalize-1-1-3-3-1">Construct the matrix <span class="process-math">\(P\)</span> using the vectors from the previous step. Form <span class="process-math">\(P\)</span> by using the eigenvectors as its columns. The order of these vectors does not matter.<div class="autopermalink" data-description="Paragraph"><a href="#alg-diagonalize-1-1-3-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#alg-diagonalize-1-1-3-3" title="Copy permalink for Item 3">🔗</a></div>
+</li>
+<li id="alg-diagonalize-1-1-3-4">
+<div class="para" id="alg-diagonalize-1-1-3-4-1">Construct <span class="process-math">\(D\)</span> from the eigenvalues. Once the matrix <span class="process-math">\(P\)</span> is formed, the order of these eigenvalues <em class="emphasis">does</em> matter—the eigenvalues must be placed along the diagonal of <span class="process-math">\(D\)</span> in the order corresponding to the columns of <span class="process-math">\(P\text{.}\)</span> In other words, entry <span class="process-math">\(d_{ii}\)</span> in <span class="process-math">\(D\)</span> should be the eigenvalue for the vector which is column <span class="process-math">\(i\)</span> in <span class="process-math">\(P\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#alg-diagonalize-1-1-3-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#alg-diagonalize-1-1-3-4" title="Copy permalink for Item 4">🔗</a></div>
+</li>
 </ol>
-</div></article><div class="para" id="subsec-how-to-diagonalize-4">After forming <span class="process-math">\(P\)</span> and <span class="process-math">\(D\text{,}\)</span> it is a good idea to check that the process was successful. We may verify the equation <span class="process-math">\(A = PDP^{-1}\text{,}\)</span> or alternatively we may check that <span class="process-math">\(AP = PD\text{.}\)</span> (This avoids the need to find <span class="process-math">\(P^{-1}\text{.}\)</span>)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#alg-diagonalize-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Algorithm 6.3.4"><a href="#alg-diagonalize" title="Copy permalink for Algorithm 6.3.4">🔗</a></div></article><div class="para" id="subsec-how-to-diagonalize-4">After forming <span class="process-math">\(P\)</span> and <span class="process-math">\(D\text{,}\)</span> it is a good idea to check that the process was successful. We may verify the equation <span class="process-math">\(A = PDP^{-1}\text{,}\)</span> or alternatively we may check that <span class="process-math">\(AP = PD\text{.}\)</span> (This avoids the need to find <span class="process-math">\(P^{-1}\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <details id="examp-diagonalize-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.5</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="examp-diagonalize-1-1-1">
@@ -565,6 +603,7 @@ p_A(\lambda) = -(\lambda+3)(\lambda-2)^2\text{.}
 </div>
 <div class="para">From this we see that the eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda = -3\)</span> and <span class="process-math">\(\lambda = 2\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#examp-diagonalize-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="examp-diagonalize-1-1-2">
 <div class="para">We now find bases for the associated eigenspaces. Again, we will suppress all of the calculations since the previous sections have gone through these in some detail. We find that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-diagonalization.html">
@@ -580,6 +619,7 @@ p_A(\lambda) = -(\lambda+3)(\lambda-2)^2\text{.}
 \end{equation*}
 </div>
 <div class="para">Since we have three linearly independent eigenvectors, we know from <a href="sec-diagonalization.html#thm-diagonalization" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a> that <span class="process-math">\(A\)</span> is diagonalizable.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#examp-diagonalize-1-1-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="examp-diagonalize-1-1-3">
 <div class="para">We now form the matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span> according to the algorithm:</div>
 <div class="displaymath process-math">
@@ -628,7 +668,10 @@ PD \amp = \begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{align*}
 </div>
-</div></article></details><div class="para" id="subsec-how-to-diagonalize-6">We now consider another example of a <span class="process-math">\(3\times 3\)</span> matrix.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#examp-diagonalize-1-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.3.5"><a href="#examp-diagonalize-1" title="Copy permalink for Example 6.3.5">🔗</a></div></article></details><div class="para" id="subsec-how-to-diagonalize-6">We now consider another example of a <span class="process-math">\(3\times 3\)</span> matrix.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-6" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <details id="subsec-how-to-diagonalize-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.6</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-how-to-diagonalize-7-1-1">
@@ -645,6 +688,7 @@ A = \begin{bmatrix}
 </div>
 <div class="para"> The characteristic polynomial for <span class="process-math">\(A\)</span> is <span class="process-math">\(p_A(\lambda) = -(\lambda + 2)^2(\lambda +3)\text{.}\)</span> So the eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda = -2\)</span> and <span class="process-math">\(\lambda = -3\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="subsec-how-to-diagonalize-7-1-2">
 <div class="para">When we look for eigenvectors, we find the following for <span class="process-math">\(A + 2I\text{:}\)</span>
 </div>
@@ -662,11 +706,18 @@ A + 2I = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">This shows that <span class="process-math">\(\mathrm{eig}_{-2}(A)\)</span> is only one-dimensional. Since we need three total linearly independent eigenvectors to diagonalize <span class="process-math">\(A\text{,}\)</span> and we will only get one from <span class="process-math">\(\mathrm{eig}_{-3}(A)\text{,}\)</span> we needed <span class="process-math">\(\mathrm{eig}_{-2}(A)\)</span> to be two-dimensional. This shows that <span class="process-math">\(A\)</span> is not diagonalizable.</div>
-</div></article></details><div class="para" id="subsec-how-to-diagonalize-8">The difference between the last two examples shows that diagonalizability is subtle. There are times when we can tell if a matrix is diagonalizable without a lot of work, but sometimes we need to get all the way to the eigenspace calculation before having an answer. The following theorem states a situation in which diagonalizability is easier to confirm.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-7-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.3.6"><a href="#subsec-how-to-diagonalize-7" title="Copy permalink for Example 6.3.6">🔗</a></div></article></details><div class="para" id="subsec-how-to-diagonalize-8">The difference between the last two examples shows that diagonalizability is subtle. There are times when we can tell if a matrix is diagonalizable without a lot of work, but sometimes we need to get all the way to the eigenspace calculation before having an answer. The following theorem states a situation in which diagonalizability is easier to confirm.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-8" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="theorem theorem-like" id="thm-distinct-evalues-diagonalizable"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="thm-distinct-evalues-diagonalizable-1-1">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> If <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues, <span class="process-math">\(A\)</span> is diagonalizable.</div></article><details id="thm-distinct-evalues-diagonalizable-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-distinct-evalues-diagonalizable-2-1">If <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues, let <span class="process-math">\(\bfv_1, \ldots, \bfv_n\)</span> be eigenvectors which correspond to those eigenvalues. Then, by <a href="sec-eigenvalues.html#thm-lin-ind-eigenvectors" class="xref" data-knowl="./knowl/xref/thm-lin-ind-eigenvectors.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1.13">Theorem 6.1.13</a>, the set <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n \}\)</span> is linearly independent. Since our vectors are in <span class="process-math">\(\ff^n\text{,}\)</span> by <a href="sec-diagonalization.html#thm-diagonalization" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a> this basis of eigenvectors of <span class="process-math">\(A\)</span> means that <span class="process-math">\(A\)</span> is diagonalizable.</div></article></details><details id="subsec-how-to-diagonalize-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="thm-distinct-evalues-diagonalizable-1-1">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> If <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues, <span class="process-math">\(A\)</span> is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-distinct-evalues-diagonalizable-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.3.7"><a href="#thm-distinct-evalues-diagonalizable" title="Copy permalink for Theorem 6.3.7">🔗</a></div></article><details id="thm-distinct-evalues-diagonalizable-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-distinct-evalues-diagonalizable-2-1">If <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues, let <span class="process-math">\(\bfv_1, \ldots, \bfv_n\)</span> be eigenvectors which correspond to those eigenvalues. Then, by <a href="sec-eigenvalues.html#thm-lin-ind-eigenvectors" class="xref" data-knowl="./knowl/xref/thm-lin-ind-eigenvectors.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1.13">Theorem 6.1.13</a>, the set <span class="process-math">\(V' = \{\bfv_1, \ldots, \bfv_n \}\)</span> is linearly independent. Since our vectors are in <span class="process-math">\(\ff^n\text{,}\)</span> by <a href="sec-diagonalization.html#thm-diagonalization" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a> this basis of eigenvectors of <span class="process-math">\(A\)</span> means that <span class="process-math">\(A\)</span> is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-distinct-evalues-diagonalizable-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.3.7.1"><a href="#thm-distinct-evalues-diagonalizable-2" title="Copy permalink for Proof 6.3.7.1">🔗</a></div></article></details><details id="subsec-how-to-diagonalize-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.8</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-how-to-diagonalize-10-1-1">
 <div class="para">We consider the following matrix <span class="process-math">\(A \in M_3(\rr)\text{:}\)</span>
@@ -681,10 +732,15 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Since <span class="process-math">\(A\)</span> is lower triangular, we can read the eigenvalues off of the main diagonal: <span class="process-math">\(\lambda = 1, -2, 5\text{.}\)</span> Since there are three distinct eigenvalues for this <span class="process-math">\(3\times 3\)</span> matrix, then <a href="sec-diagonalization.html#thm-distinct-evalues-diagonalizable" class="xref" data-knowl="./knowl/xref/thm-distinct-evalues-diagonalizable.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.7">Theorem 6.3.7</a> says that <span class="process-math">\(A\)</span> is diagonalizable.</div>
-</div></article></details><article class="note remark-like" id="subsec-how-to-diagonalize-11"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-10-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.3.8"><a href="#subsec-how-to-diagonalize-10" title="Copy permalink for Example 6.3.8">🔗</a></div></article></details><article class="note remark-like" id="subsec-how-to-diagonalize-11"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">6.3.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-how-to-diagonalize-11-1">Having <span class="process-math">\(n\)</span> distinct eigenvalues is a <em class="emphasis">sufficient</em> condition for a matrix to be diagonalizable, but it is not <em class="emphasis">necessary</em>. In other words, a matrix can still be diagonalizable with fewer than <span class="process-math">\(n\)</span> distinct eigenvalues. We have already encountered this in <a href="sec-diagonalization.html#examp-diagonalize-1" class="xref" data-knowl="./knowl/xref/examp-diagonalize-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.3.5">Example 6.3.5</a>.</div></article><div class="para" id="subsec-how-to-diagonalize-12">The following theorem collects some facts about the diagonalizability of a matrix. (We omit the proof.)</div>
+<div class="para" id="subsec-how-to-diagonalize-11-1">Having <span class="process-math">\(n\)</span> distinct eigenvalues is a <em class="emphasis">sufficient</em> condition for a matrix to be diagonalizable, but it is not <em class="emphasis">necessary</em>. In other words, a matrix can still be diagonalizable with fewer than <span class="process-math">\(n\)</span> distinct eigenvalues. We have already encountered this in <a href="sec-diagonalization.html#examp-diagonalize-1" class="xref" data-knowl="./knowl/xref/examp-diagonalize-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.3.5">Example 6.3.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-11-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 6.3.9"><a href="#subsec-how-to-diagonalize-11" title="Copy permalink for Note 6.3.9">🔗</a></div></article><div class="para" id="subsec-how-to-diagonalize-12">The following theorem collects some facts about the diagonalizability of a matrix. (We omit the proof.)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-12" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="theorem theorem-like" id="thm-diagonalizable-2"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.10</span><span class="period">.</span>
 </h4>
@@ -692,27 +748,44 @@ A = \begin{bmatrix}
 <div class="para">Let <span class="process-math">\(A \in M_n(\ff)\)</span> have distinct eigenvalues <span class="process-math">\(\lambda_1, \ldots, \lambda_p\text{.}\)</span>
 </div>
 <ol class="decimal" id="thm-diagonalizable-2-1-1-3">
-<li id="thm-diagonalizable-2-1-1-3-1"><div class="para" id="thm-diagonalizable-2-1-1-3-1-1">For <span class="process-math">\(1 \le k \le p\text{,}\)</span> the dimension of <span class="process-math">\(\mathrm{eig}_{\lambda_k}(A)\)</span> is less than or equal to the (algebraic) multiplicity of <span class="process-math">\(\lambda_k\text{.}\)</span>
-</div></li>
-<li id="thm-diagonalizable-2-1-1-3-2"><div class="para" id="thm-diagonalizable-2-1-1-3-2-1">The matrix <span class="process-math">\(A\)</span> is diagonalizable if and only if the sum of the dimensions of the eigenspaces equals <span class="process-math">\(n\text{,}\)</span> and this happens if and only if (i) the characteristic polynomial factors completely into linear factors, and (ii) the dimension of <span class="process-math">\(\mathrm{eig}_{\lambda_k}(A)\)</span> equals the multiplicity of <span class="process-math">\(\lambda_k\)</span> for each <span class="process-math">\(k\text{.}\)</span>
-</div></li>
-<li id="thm-diagonalizable-2-1-1-3-3"><div class="para" id="thm-diagonalizable-2-1-1-3-3-1">If <span class="process-math">\(A\)</span> is diagonalizable and <span class="process-math">\(\mcb_k\)</span> is a basis for <span class="process-math">\(\mathrm{eig}_{\lambda_k}(A)\text{,}\)</span> then <span class="process-math">\(\mcb = \mcb_1 \cup \cdots \cup \mcb_p\)</span> is an eigenvector basis for <span class="process-math">\(\ff^n\text{.}\)</span>
-</div></li>
+<li id="thm-diagonalizable-2-1-1-3-1">
+<div class="para" id="thm-diagonalizable-2-1-1-3-1-1">For <span class="process-math">\(1 \le k \le p\text{,}\)</span> the dimension of <span class="process-math">\(\mathrm{eig}_{\lambda_k}(A)\)</span> is less than or equal to the (algebraic) multiplicity of <span class="process-math">\(\lambda_k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalizable-2-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-diagonalizable-2-1-1-3-1" title="Copy permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-diagonalizable-2-1-1-3-2">
+<div class="para" id="thm-diagonalizable-2-1-1-3-2-1">The matrix <span class="process-math">\(A\)</span> is diagonalizable if and only if the sum of the dimensions of the eigenspaces equals <span class="process-math">\(n\text{,}\)</span> and this happens if and only if (i) the characteristic polynomial factors completely into linear factors, and (ii) the dimension of <span class="process-math">\(\mathrm{eig}_{\lambda_k}(A)\)</span> equals the multiplicity of <span class="process-math">\(\lambda_k\)</span> for each <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalizable-2-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-diagonalizable-2-1-1-3-2" title="Copy permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-diagonalizable-2-1-1-3-3">
+<div class="para" id="thm-diagonalizable-2-1-1-3-3-1">If <span class="process-math">\(A\)</span> is diagonalizable and <span class="process-math">\(\mcb_k\)</span> is a basis for <span class="process-math">\(\mathrm{eig}_{\lambda_k}(A)\text{,}\)</span> then <span class="process-math">\(\mcb = \mcb_1 \cup \cdots \cup \mcb_p\)</span> is an eigenvector basis for <span class="process-math">\(\ff^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalizable-2-1-1-3-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#thm-diagonalizable-2-1-1-3-3" title="Copy permalink for Item 3">🔗</a></div>
+</li>
 </ol>
-</div></article></section><section class="subsection" id="subsec-diag-linear-transf"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalizable-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.3.10"><a href="#thm-diagonalizable-2" title="Copy permalink for Theorem 6.3.10">🔗</a></div></article><div class="autopermalink" data-description="Subsection 6.3.2: How to Diagonalize a Matrix"><a href="#subsec-how-to-diagonalize" title="Copy permalink for Subsection 6.3.2: How to Diagonalize a Matrix">🔗</a></div></section><section class="subsection" id="subsec-diag-linear-transf"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="space"> </span><span class="title">Linear Transformations and Diagonalizability</span>
 </h3>
-<div class="para" id="subsec-diag-linear-transf-2">In <a href="sec-coordinates.html#subsec-coordinates-matrices" class="internal" title="Subsection 5.5.2: Coordinates and Linear Transformations">Subsection 5.5.2</a> we saw that, for linear transformations between finite-dimensional vector spaces, we could view these transformations as multiplication by a matrix if we were content to handle coordinate vectors. And while we didn’t have the current terminology at that point, in <a href="sec-change-of-basis.html" class="internal" title="Section 5.6: Change of Basis">Section 5.6</a> we were calculating coordinate matrices for linear transformations using similarity. (See <a href="sec-change-of-basis.html#examp-change-basis-lt" class="xref" data-knowl="./knowl/xref/examp-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.6.10">Example 5.6.10</a>.)</div>
-<div class="para" id="subsec-diag-linear-transf-3">This means that our discussion of similar matrices has implications for linear transformations broadly. And these implication are, unsurprisingly, related to eigenvalues and eigenvectors.</div>
+<div class="para" id="subsec-diag-linear-transf-2">In <a href="sec-coordinates.html#subsec-coordinates-matrices" class="internal" title="Subsection 5.5.2: Coordinates and Linear Transformations">Subsection 5.5.2</a> we saw that, for linear transformations between finite-dimensional vector spaces, we could view these transformations as multiplication by a matrix if we were content to handle coordinate vectors. And while we didn’t have the current terminology at that point, in <a href="sec-change-of-basis.html" class="internal" title="Section 5.6: Change of Basis">Section 5.6</a> we were calculating coordinate matrices for linear transformations using similarity. (See <a href="sec-change-of-basis.html#examp-change-basis-lt" class="xref" data-knowl="./knowl/xref/examp-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.6.10">Example 5.6.10</a>.)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-diag-linear-transf-3">This means that our discussion of similar matrices has implications for linear transformations broadly. And these implication are, unsurprisingly, related to eigenvalues and eigenvectors.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="def-diagonalizable-lin-transf"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="def-diagonalizable-lin-transf-1-1">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space and let <span class="process-math">\(T \in L(V)\text{.}\)</span> Then <span class="process-math">\(T\)</span> is <dfn class="terminology">diagonalizable</dfn> if there exists a basis <span class="process-math">\(\mcb\)</span> of <span class="process-math">\(V\)</span> such that <span class="process-math">\([T]_{\mcb}\)</span> is diagonal.</div></article><div class="para" id="subsec-diag-linear-transf-5">Based on our discussion thus far in this section, the reader may guess that the vectors in the basis <span class="process-math">\(\mcb\)</span> referenced in <a href="sec-diagonalization.html#def-diagonalizable-lin-transf" class="xref" data-knowl="./knowl/xref/def-diagonalizable-lin-transf.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.3.11">Definition 6.3.11</a> are eigenvectors for <span class="process-math">\(T\text{.}\)</span> What is true for matrices is (generally) true in the proper context for linear transformations.</div>
+<div class="para" id="def-diagonalizable-lin-transf-1-1">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space and let <span class="process-math">\(T \in L(V)\text{.}\)</span> Then <span class="process-math">\(T\)</span> is <dfn class="terminology">diagonalizable</dfn> if there exists a basis <span class="process-math">\(\mcb\)</span> of <span class="process-math">\(V\)</span> such that <span class="process-math">\([T]_{\mcb}\)</span> is diagonal.<div class="autopermalink" data-description="Paragraph"><a href="#def-diagonalizable-lin-transf-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 6.3.11"><a href="#def-diagonalizable-lin-transf" title="Copy permalink for Definition 6.3.11">🔗</a></div></article><div class="para" id="subsec-diag-linear-transf-5">Based on our discussion thus far in this section, the reader may guess that the vectors in the basis <span class="process-math">\(\mcb\)</span> referenced in <a href="sec-diagonalization.html#def-diagonalizable-lin-transf" class="xref" data-knowl="./knowl/xref/def-diagonalizable-lin-transf.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.3.11">Definition 6.3.11</a> are eigenvectors for <span class="process-math">\(T\text{.}\)</span> What is true for matrices is (generally) true in the proper context for linear transformations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-5" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="proposition theorem-like" id="prop-diag-lin-transf"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.3.12</span><span class="period">.</span>
 </h4>
-<div class="para" id="prop-diag-lin-transf-1-1">A linear transformation <span class="process-math">\(T \in L(V)\)</span> is diagonalizable if and only if there exists a basis <span class="process-math">\(\mcb\)</span> of <span class="process-math">\(V\)</span> consisting entirely of eigenvectors of <span class="process-math">\(T\text{.}\)</span>
-</div></article><details id="subsec-diag-linear-transf-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="prop-diag-lin-transf-1-1">A linear transformation <span class="process-math">\(T \in L(V)\)</span> is diagonalizable if and only if there exists a basis <span class="process-math">\(\mcb\)</span> of <span class="process-math">\(V\)</span> consisting entirely of eigenvectors of <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-diag-lin-transf-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 6.3.12"><a href="#prop-diag-lin-transf" title="Copy permalink for Proposition 6.3.12">🔗</a></div></article><details id="subsec-diag-linear-transf-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.13</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-diag-linear-transf-7-1-1">
 <div class="para">In <a href="sec-change-of-basis.html#examp-change-basis-lt" class="xref" data-knowl="./knowl/xref/examp-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.6.10">Example 5.6.10</a>, we considered the linear transformation on <span class="process-math">\(\rr^2\)</span> which is reflection across the line <span class="process-math">\(y = \frac{1}{2}x\text{.}\)</span> In that example, we looked at the basis <span class="process-math">\(\mcb = \{\bfv_1, \bfv_2 \}\)</span> for <span class="process-math">\(\rr^2\text{,}\)</span> where</div>
@@ -728,16 +801,28 @@ A = \begin{bmatrix}
 [T]_{\mcb} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article></details><div class="para" id="subsec-diag-linear-transf-8">The following result is basically a restatement of <a href="sec-change-of-basis.html#cor-change-basis-lt" class="xref" data-knowl="./knowl/xref/cor-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.6.9">Corollary 5.6.9</a>, using the language of similar matrices.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.3.13"><a href="#subsec-diag-linear-transf-7" title="Copy permalink for Example 6.3.13">🔗</a></div></article></details><div class="para" id="subsec-diag-linear-transf-8">The following result is basically a restatement of <a href="sec-change-of-basis.html#cor-change-basis-lt" class="xref" data-knowl="./knowl/xref/cor-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.6.9">Corollary 5.6.9</a>, using the language of similar matrices.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-8" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="proposition theorem-like" id="prop-sim-coord-matrices"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.3.14</span><span class="period">.</span>
 </h4>
-<div class="para" id="prop-sim-coord-matrices-1-1">Suppose that <span class="process-math">\(V\)</span> is a finite-dimensional vector space and that <span class="process-math">\(T \in L(V)\text{.}\)</span> Suppose further that <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\)</span> are bases for <span class="process-math">\(V\text{.}\)</span> Then the coordinate matrices <span class="process-math">\([T]_{\mcb}\)</span> and <span class="process-math">\([T]_{\mcc}\)</span> are similar.</div></article><details id="prop-sim-coord-matrices-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-sim-coord-matrices-2-1">Since change-of-basis matrices are invertible, this really is just a restatement of <a href="sec-change-of-basis.html#cor-change-basis-lt" class="xref" data-knowl="./knowl/xref/cor-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.6.9">Corollary 5.6.9</a>.</div></article></details><div class="para" id="subsec-diag-linear-transf-10">The final result in this section brings several prior results together, tying the diagonalizability of linear transformations and matrices to each other in a predictable way.</div>
+<div class="para" id="prop-sim-coord-matrices-1-1">Suppose that <span class="process-math">\(V\)</span> is a finite-dimensional vector space and that <span class="process-math">\(T \in L(V)\text{.}\)</span> Suppose further that <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\)</span> are bases for <span class="process-math">\(V\text{.}\)</span> Then the coordinate matrices <span class="process-math">\([T]_{\mcb}\)</span> and <span class="process-math">\([T]_{\mcc}\)</span> are similar.<div class="autopermalink" data-description="Paragraph"><a href="#prop-sim-coord-matrices-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 6.3.14"><a href="#prop-sim-coord-matrices" title="Copy permalink for Proposition 6.3.14">🔗</a></div></article><details id="prop-sim-coord-matrices-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-sim-coord-matrices-2-1">Since change-of-basis matrices are invertible, this really is just a restatement of <a href="sec-change-of-basis.html#cor-change-basis-lt" class="xref" data-knowl="./knowl/xref/cor-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.6.9">Corollary 5.6.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#prop-sim-coord-matrices-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.3.14.1"><a href="#prop-sim-coord-matrices-2" title="Copy permalink for Proof 6.3.14.1">🔗</a></div></article></details><div class="para" id="subsec-diag-linear-transf-10">The final result in this section brings several prior results together, tying the diagonalizability of linear transformations and matrices to each other in a predictable way.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-10" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="theorem theorem-like" id="thm-diagonalizability-lt-matrices"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.15</span><span class="period">.</span>
 </h4>
-<div class="para" id="thm-diagonalizability-lt-matrices-1-1">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space, let <span class="process-math">\(\mcb\)</span> be a basis for <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(T \in L(V)\text{.}\)</span> Then <span class="process-math">\([T]_{\mcb}\)</span> is a diagonalizable matrix if and only if <span class="process-math">\(T\)</span> is a diagonalizable linear transformation.</div></article><div class="para" id="subsec-diag-linear-transf-12">This theorem says that a linear transformation <span class="process-math">\(T\)</span> is diagonalizable if there is a basis of <span class="process-math">\(V\)</span> with respect to which the coordinate matrix of <span class="process-math">\(T\)</span> is diagonalizable.</div>
-<div class="para" id="subsec-diag-linear-transf-13">We finish this section with an example which is perhaps a bit contrived but which is also, hopefully, illustrative.</div>
+<div class="para" id="thm-diagonalizability-lt-matrices-1-1">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space, let <span class="process-math">\(\mcb\)</span> be a basis for <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(T \in L(V)\text{.}\)</span> Then <span class="process-math">\([T]_{\mcb}\)</span> is a diagonalizable matrix if and only if <span class="process-math">\(T\)</span> is a diagonalizable linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalizability-lt-matrices-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.3.15"><a href="#thm-diagonalizability-lt-matrices" title="Copy permalink for Theorem 6.3.15">🔗</a></div></article><div class="para" id="subsec-diag-linear-transf-12">This theorem says that a linear transformation <span class="process-math">\(T\)</span> is diagonalizable if there is a basis of <span class="process-math">\(V\)</span> with respect to which the coordinate matrix of <span class="process-math">\(T\)</span> is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-12" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-diag-linear-transf-13">We finish this section with an example which is perhaps a bit contrived but which is also, hopefully, illustrative.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-13" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <details id="examp-p1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.16</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="examp-p1-1-1">
@@ -760,7 +845,9 @@ T(a + bt) = (a-4b) + (3a-6b)t\text{.}
 \end{equation*}
 </div>
 <div class="para">Since <span class="process-math">\([T]_{\mcb}\)</span> is diagonalizable, that means that <span class="process-math">\(T\)</span> is a diagonalizable linear transformation.</div>
-</div> <div class="para" id="examp-p1-1-2">Using coordinate vectors, we can also determine the basis <span class="process-math">\(\mcc\)</span> of <span class="process-math">\(P_1\)</span> with respect to which <span class="process-math">\(T\)</span> has a diagonal coordinate matrix. (It is a basis of eigenvectors of <span class="process-math">\(T\text{!}\)</span>)</div> <div class="para logical" id="examp-p1-1-3">
+<div class="autopermalink" data-description="Paragraph"><a href="#examp-p1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="examp-p1-1-2">Using coordinate vectors, we can also determine the basis <span class="process-math">\(\mcc\)</span> of <span class="process-math">\(P_1\)</span> with respect to which <span class="process-math">\(T\)</span> has a diagonal coordinate matrix. (It is a basis of eigenvectors of <span class="process-math">\(T\text{!}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#examp-p1-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="examp-p1-1-3">
 <div class="para">Since the eigenvalues of <span class="process-math">\([T]_{\mcb}\)</span> are <span class="process-math">\(\lambda = -2, -3\text{,}\)</span> we can find bases for the related eigenspaces. For ease of notation, let <span class="process-math">\([T]_{\mcb} = A\text{.}\)</span> Now</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -776,7 +863,9 @@ T(a + bt) = (a-4b) + (3a-6b)t\text{.}
 </div>
 <div class="para">and <span class="process-math">\([T]_{\mcc}\)</span> is a diagonal matrix with diagonal entries <span class="process-math">\(-2\)</span> and <span class="process-math">\(-3\text{.}\)</span>
 </div>
-</div></article></details></section><section class="reading-questions" id="sec-diagonalization-6"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#examp-p1-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.3.16"><a href="#examp-p1" title="Copy permalink for Example 6.3.16">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 6.3.3: Linear Transformations and Diagonalizability"><a href="#subsec-diag-linear-transf" title="Copy permalink for Subsection 6.3.3: Linear Transformations and Diagonalizability">🔗</a></div></section><section class="reading-questions" id="sec-diagonalization-6"><h3 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
 <article class="exercise exercise-like" id="sec-diagonalization-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -789,12 +878,22 @@ A = \begin{bmatrix} -1 \amp 2 \\ 3 \amp 4 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-diagonalization-6-1-1-1-3">
-<li id="sec-diagonalization-6-1-1-1-3-1"><div class="para" id="sec-diagonalization-6-1-1-1-3-1-1">Find the characteristic polynomial and the eigenvalues of <span class="process-math">\(A\text{.}\)</span> Show your work.</div></li>
-<li id="sec-diagonalization-6-1-1-1-3-2"><div class="para" id="sec-diagonalization-6-1-1-1-3-2-1">Using only part a (this means you should make no additional calculations), explain why <span class="process-math">\(A\)</span> is diagonalizable.</div></li>
+<li id="sec-diagonalization-6-1-1-1-3-1">
+<div class="para" id="sec-diagonalization-6-1-1-1-3-1-1">Find the characteristic polynomial and the eigenvalues of <span class="process-math">\(A\text{.}\)</span> Show your work.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-6-1-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6.3.4.1.a"><a href="#sec-diagonalization-6-1-1-1-3-1" title="Copy permalink for Item 6.3.4.1.a">🔗</a></div>
+</li>
+<li id="sec-diagonalization-6-1-1-1-3-2">
+<div class="para" id="sec-diagonalization-6-1-1-1-3-2-1">Using only part a (this means you should make no additional calculations), explain why <span class="process-math">\(A\)</span> is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-6-1-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6.3.4.1.b"><a href="#sec-diagonalization-6-1-1-1-3-2" title="Copy permalink for Item 6.3.4.1.b">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-diagonalization-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="sec-diagonalization-6-2-1-1">Let <span class="process-math">\(A\)</span> be the same matrix as in the first reading question. Following <a href="sec-diagonalization.html#alg-diagonalize" class="xref" data-knowl="./knowl/xref/alg-diagonalize.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 6.3.4">Algorithm 6.3.4</a>, diagonalize <span class="process-math">\(A\text{.}\)</span>
-</div> </article></section><section class="exercises" id="sec-diagonalization-7"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-6-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 6.3.4.1"><a href="#sec-diagonalization-6-1" title="Copy permalink for Reading Question 6.3.4.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="sec-diagonalization-6-2-1-1">Let <span class="process-math">\(A\)</span> be the same matrix as in the first reading question. Following <a href="sec-diagonalization.html#alg-diagonalize" class="xref" data-knowl="./knowl/xref/alg-diagonalize.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 6.3.4">Algorithm 6.3.4</a>, diagonalize <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-6-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="autopermalink" data-description="Reading Question 6.3.4.2"><a href="#sec-diagonalization-6-2" title="Copy permalink for Reading Question 6.3.4.2">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 6.3.4"><a href="#sec-diagonalization-6" title="Copy permalink for Reading Questions 6.3.4">🔗</a></div></section><section class="exercises" id="sec-diagonalization-7"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">6.3.5</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="sec-diagonalization-7-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -808,7 +907,9 @@ D = \begin{bmatrix} -2 \amp 0 \\ 0 \amp -1 \end{bmatrix}\text{.}
 </div>
 <div class="para">If <span class="process-math">\(A = PDP^{-1}\text{,}\)</span> calculate <span class="process-math">\(A^4\text{.}\)</span>
 </div>
-</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.3.5.1"><a href="#sec-diagonalization-7-1" title="Copy permalink for Exercise 6.3.5.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-diagonalization-7-2-1-1">
 <div class="para">Consider the following matrix <span class="process-math">\(A \in M_2(\rr)\text{:}\)</span>
 </div>
@@ -821,7 +922,9 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para"> Determine whether or not <span class="process-math">\(A\)</span> is diagonalizable. If it is, diagonalize it. If it isn’t, explain why it isn’t.</div>
-</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.3.5.2"><a href="#sec-diagonalization-7-2" title="Copy permalink for Exercise 6.3.5.2">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-diagonalization-7-3-1-1">
 <div class="para">Consider the following matrix <span class="process-math">\(A \in M_2(\rr)\text{:}\)</span>
 </div>
@@ -834,8 +937,14 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para"> Determine whether or not <span class="process-math">\(A\)</span> is diagonalizable. If it is, diagonalize it. If it isn’t, explain why it isn’t.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-diagonalization-7-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-diagonalization-7-3-2-1">This matrix is not diagonalizable. There is only one eigenvalue, and the dimension of the eigenspace is one.</div></div></details></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="solutions"><details id="sec-diagonalization-7-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="sec-diagonalization-7-3-2-1">This matrix is not diagonalizable. There is only one eigenvalue, and the dimension of the eigenspace is one.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 6.3.5.3.1"><a href="#sec-diagonalization-7-3-2" title="Copy permalink for Answer 6.3.5.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6.3.5.3"><a href="#sec-diagonalization-7-3" title="Copy permalink for Exercise 6.3.5.3">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-diagonalization-7-4-1-1">
 <div class="para">Consider the following matrix <span class="process-math">\(A \in M_3(\rr)\text{:}\)</span>
 </div>
@@ -849,7 +958,9 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para"> Determine whether or not <span class="process-math">\(A\)</span> is diagonalizable. If it is, diagonalize it. If it isn’t, explain why it isn’t. (Hint: One of the eigenvalues of <span class="process-math">\(A\)</span> is <span class="process-math">\(\lambda = 5\text{.}\)</span>)</div>
-</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.3.5.4"><a href="#sec-diagonalization-7-4" title="Copy permalink for Exercise 6.3.5.4">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-diagonalization-7-5-1-1">
 <div class="para">Consider the following matrix <span class="process-math">\(A \in M_3(\rr)\text{:}\)</span>
 </div>
@@ -863,8 +974,10 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para"> Determine whether or not <span class="process-math">\(A\)</span> is diagonalizable. If it is, diagonalize it. If it isn’t, explain why it isn’t. (Hint: One of the eigenvalues of <span class="process-math">\(A\)</span> is <span class="process-math">\(\lambda = -1\text{.}\)</span>)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-diagonalization-7-5-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-diagonalization-7-5-2-1">
+<div class="solutions"><details id="sec-diagonalization-7-5-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="sec-diagonalization-7-5-2-1">
 <div class="para">This matrix is diagonalizable using the following matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -877,9 +990,19 @@ D = \begin{bmatrix} -1 \amp 0 \amp 0 \\
 0 \amp 0 \amp -5 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></div></details></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="sec-diagonalization-7-6-1-1">Suppose that <span class="process-math">\(A \in M_4(\rr)\)</span> has three distinct eigenvalues. One eigenspace is one-dimensional and one of the other eigenspaces is two-dimensional. Is it possible for <span class="process-math">\(A\)</span> <em class="emphasis">not</em> to be diagonalizable? Explain.</div>
-<div class="solutions"><details id="sec-diagonalization-7-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="sec-diagonalization-7-6-2-1">No, that is not possible. The matrix <span class="process-math">\(A\)</span> must be diagonalizable. The dimension of the eigenspace that is not yet specified must be at least one. The sum of all dimensions of the eigenspaces must be at most four (since <span class="process-math">\(A\)</span> is <span class="process-math">\(4\times 4\)</span>), and the given information tells us that this sum will be exactly four. This means that <span class="process-math">\(A\)</span> is diagonalizable.</div></div></details></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 6.3.5.5.1"><a href="#sec-diagonalization-7-5-2" title="Copy permalink for Answer 6.3.5.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6.3.5.5"><a href="#sec-diagonalization-7-5" title="Copy permalink for Exercise 6.3.5.5">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="sec-diagonalization-7-6-1-1">Suppose that <span class="process-math">\(A \in M_4(\rr)\)</span> has three distinct eigenvalues. One eigenspace is one-dimensional and one of the other eigenspaces is two-dimensional. Is it possible for <span class="process-math">\(A\)</span> <em class="emphasis">not</em> to be diagonalizable? Explain.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-diagonalization-7-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="sec-diagonalization-7-6-2-1">No, that is not possible. The matrix <span class="process-math">\(A\)</span> must be diagonalizable. The dimension of the eigenspace that is not yet specified must be at least one. The sum of all dimensions of the eigenspaces must be at most four (since <span class="process-math">\(A\)</span> is <span class="process-math">\(4\times 4\)</span>), and the given information tells us that this sum will be exactly four. This means that <span class="process-math">\(A\)</span> is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 6.3.5.6.1"><a href="#sec-diagonalization-7-6-2" title="Copy permalink for Answer 6.3.5.6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6.3.5.6"><a href="#sec-diagonalization-7-6" title="Copy permalink for Exercise 6.3.5.6">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-diagonalization-7-7-1-1">
 <div class="para">Consider the following matrix <span class="process-math">\(A \in M_2(\rr)\text{:}\)</span>
 </div>
@@ -892,8 +1015,10 @@ A = \begin{bmatrix}
 </div>
 <div class="para">Show that a diagonalization <span class="process-math">\(A = PDP^{-1}\)</span> is not unique by finding two pairs of matrices <span class="process-math">\((P,D)\)</span> which diagonalize <span class="process-math">\(A\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-diagonalization-7-7-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="sec-diagonalization-7-7-2-1">
+<div class="solutions"><details id="sec-diagonalization-7-7-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="sec-diagonalization-7-7-2-1">
 <div class="para">Here is one pair of matrices that diagonalizes <span class="process-math">\(A\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -911,13 +1036,19 @@ D = \begin{bmatrix} 6 \amp 0 \\ 0 \amp 2 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">There are many, many other pairs of matrices that diagonalize <span class="process-math">\(A\text{,}\)</span> mainly because the matrix <span class="process-math">\(P\)</span> can have infinitely many different columns.</div>
-</div></div></details></div></article><article class="subexercises" id="sec-diagonalization-7-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
-<article class="exercise exercise-like" id="sec-diagonalization-7-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para" id="sec-diagonalization-7-8-2-1-1">Prove that if <span class="process-math">\(A\)</span> is both invertible and diagonalizable, then so is <span class="process-math">\(A^{-1}\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="sec-diagonalization-7-8-3-1-1">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> Prove that if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors, then so does <span class="process-math">\(A^T\text{.}\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-7-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-diagonalization-7-8-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec-diagonalization-7-8-3-2-1">
+<div class="autopermalink" data-description="Answer 6.3.5.7.1"><a href="#sec-diagonalization-7-7-2" title="Copy permalink for Answer 6.3.5.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6.3.5.7"><a href="#sec-diagonalization-7-7" title="Copy permalink for Exercise 6.3.5.7">🔗</a></div></article><article class="subexercises" id="sec-diagonalization-7-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-diagonalization-7-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para" id="sec-diagonalization-7-8-2-1-1">Prove that if <span class="process-math">\(A\)</span> is both invertible and diagonalizable, then so is <span class="process-math">\(A^{-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.3.5.8"><a href="#sec-diagonalization-7-8-2" title="Copy permalink for Exercise 6.3.5.8">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="sec-diagonalization-7-8-3-1-1">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> Prove that if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors, then so does <span class="process-math">\(A^T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-diagonalization-7-8-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec-diagonalization-7-8-3-2-1">
 <div class="para">If <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors, then it is diagonalizable by <a href="sec-diagonalization.html#thm-diagonalization" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a>. This means there exist matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span> such that <span class="process-math">\(A = PDP^{-1}\text{.}\)</span> If we take the transpose of both sides of this equation, we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-diagonalization.html ./knowl/xref/transpose-invertible.html ./knowl/xref/thm-diagonalization.html">
 \begin{equation*}
@@ -931,29 +1062,57 @@ A^T = (P^T)^{-1}DP^T\text{.}
 \end{equation*}
 </div>
 <div class="para">This proves that <span class="process-math">\(A^T\)</span> is diagonalizable, and <a href="sec-diagonalization.html#thm-diagonalization" class="xref" data-knowl="./knowl/xref/thm-diagonalization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.2: The Diagonalization Theorem">Theorem 6.3.2</a> allows us to conclude that <span class="process-math">\(A^T\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors.</div>
-</div></div></details></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.5.9.1"><a href="#sec-diagonalization-7-8-3-2" title="Copy permalink for Solution 6.3.5.9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6.3.5.9"><a href="#sec-diagonalization-7-8-3" title="Copy permalink for Exercise 6.3.5.9">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-diagonalization-7-8-4-1-1">
 <div class="para">This problem explores the relationship between invertibility and diagonalizability.</div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-diagonalization-7-8-4-1-1-1">
-<li id="sec-diagonalization-7-8-4-1-1-1-1"><div class="para" id="sec-diagonalization-7-8-4-1-1-1-1-1">Construct a nonzero <span class="process-math">\(2\times 2\)</span> matrix which is invertible but not diagonalizable.</div></li>
-<li id="sec-diagonalization-7-8-4-1-1-1-2"><div class="para" id="sec-diagonalization-7-8-4-1-1-1-2-1">Construct a nondiagonal <span class="process-math">\(2\times 2\)</span> matrix that is diagonalizable but not invertible.</div></li>
+<li id="sec-diagonalization-7-8-4-1-1-1-1">
+<div class="para" id="sec-diagonalization-7-8-4-1-1-1-1-1">Construct a nonzero <span class="process-math">\(2\times 2\)</span> matrix which is invertible but not diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-4-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6.3.5.10.a"><a href="#sec-diagonalization-7-8-4-1-1-1-1" title="Copy permalink for Item 6.3.5.10.a">🔗</a></div>
+</li>
+<li id="sec-diagonalization-7-8-4-1-1-1-2">
+<div class="para" id="sec-diagonalization-7-8-4-1-1-1-2-1">Construct a nondiagonal <span class="process-math">\(2\times 2\)</span> matrix that is diagonalizable but not invertible.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-4-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6.3.5.10.b"><a href="#sec-diagonalization-7-8-4-1-1-1-2" title="Copy permalink for Item 6.3.5.10.b">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-5"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
-<div class="para" id="sec-diagonalization-7-8-5-1-1">Let <span class="process-math">\(T:\rr^3 \to \rr^3\)</span> be projection onto the <span class="process-math">\(xy\)</span>-plane. Prove that <span class="process-math">\(T\)</span> is diagonalizable.</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-6"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
-<div class="para" id="sec-diagonalization-7-8-6-1-1">Let <span class="process-math">\(T:\rr^2 \to \rr^2\)</span> be orthogonal projection onto the line <span class="process-math">\(y = -6x\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> is diagonalizable.</div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-7"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.3.5.10"><a href="#sec-diagonalization-7-8-4" title="Copy permalink for Exercise 6.3.5.10">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-5"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para" id="sec-diagonalization-7-8-5-1-1">Let <span class="process-math">\(T:\rr^3 \to \rr^3\)</span> be projection onto the <span class="process-math">\(xy\)</span>-plane. Prove that <span class="process-math">\(T\)</span> is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.3.5.11"><a href="#sec-diagonalization-7-8-5" title="Copy permalink for Exercise 6.3.5.11">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-6"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para" id="sec-diagonalization-7-8-6-1-1">Let <span class="process-math">\(T:\rr^2 \to \rr^2\)</span> be orthogonal projection onto the line <span class="process-math">\(y = -6x\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.3.5.12"><a href="#sec-diagonalization-7-8-6" title="Copy permalink for Exercise 6.3.5.12">🔗</a></div></article><article class="exercise exercise-like" id="sec-diagonalization-7-8-7"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-diagonalization-7-8-7-1-1">
 <div class="para">Let <span class="process-math">\(T: \rr^2 \to \rr^2\)</span> be counterclockwise rotation by <span class="process-math">\(\frac{\pi}{2}\)</span> radians.</div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-diagonalization-7-8-7-1-1-3">
-<li id="sec-diagonalization-7-8-7-1-1-3-1"><div class="para" id="sec-diagonalization-7-8-7-1-1-3-1-1">Prove that <span class="process-math">\(T\)</span> is not diagonalizable.</div></li>
-<li id="sec-diagonalization-7-8-7-1-1-3-2"><div class="para" id="sec-diagonalization-7-8-7-1-1-3-2-1">Prove that <span class="process-math">\(T^2\)</span> is diagonalizable.</div></li>
+<li id="sec-diagonalization-7-8-7-1-1-3-1">
+<div class="para" id="sec-diagonalization-7-8-7-1-1-3-1-1">Prove that <span class="process-math">\(T\)</span> is not diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-7-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6.3.5.13.a"><a href="#sec-diagonalization-7-8-7-1-1-3-1" title="Copy permalink for Item 6.3.5.13.a">🔗</a></div>
+</li>
+<li id="sec-diagonalization-7-8-7-1-1-3-2">
+<div class="para" id="sec-diagonalization-7-8-7-1-1-3-2-1">Prove that <span class="process-math">\(T^2\)</span> is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-7-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6.3.5.13.b"><a href="#sec-diagonalization-7-8-7-1-1-3-2" title="Copy permalink for Item 6.3.5.13.b">🔗</a></div>
+</li>
 </ol>
-</div></article></article></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="sec-char-eqn.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-invariants.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-diagonalization-7-8-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.3.5.13"><a href="#sec-diagonalization-7-8-7" title="Copy permalink for Exercise 6.3.5.13">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-diagonalization-7-8" title="Copy permalink for Subexercises: Writing Exercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 6.3.5"><a href="#sec-diagonalization-7" title="Copy permalink for Exercises 6.3.5">🔗</a></div></section><div class="autopermalink" data-description="Section 6.3: Diagonalization"><a href="#sec-diagonalization" title="Copy permalink for Section 6.3: Diagonalization">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-char-eqn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-invariants.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 <!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZFWXZ3398L"></script><script>  window.dataLayer = window.dataLayer || [];

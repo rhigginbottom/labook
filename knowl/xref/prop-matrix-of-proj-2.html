@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,16 +19,18 @@
 </head>
 <body class="ignore-math">
 <article class="proposition theorem-like"><h4 class="heading">
-<span class="type">Proposition</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">7.3.8</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.3.8</span><span class="period">.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para logical">
 <div class="para">Let <span class="process-math">\(U\)</span> be a subspace of <span class="process-math">\(\rr^n\)</span> or <span class="process-math">\(\cc^n\)</span> with basis <span class="process-math">\(\{ \bfv_1, \ldots, \bfv_k \}\text{.}\)</span> Let <span class="process-math">\(A\)</span> be the <span class="process-math">\(n \times k\)</span> matrix with columns <span class="process-math">\(\bfv_1, \ldots, \bfv_k\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 [\proj_U]_{\mce} = A(A^*A)^{-1}A^*\text{.}
 \end{equation*}
 </div>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-of-proj-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 7.3.8"><a href="#prop-matrix-of-proj-2" title="Copy permalink for Proposition 7.3.8">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
 <div class="para">We note that <span class="process-math">\(\proj_U(\bfx)\)</span> is an element of <span class="process-math">\(U\text{,}\)</span> so it can be written as a linear combination of the columns of <span class="process-math">\(A\text{.}\)</span> In other words, there is a vector <span class="process-math">\(\bfx'\)</span> which satisfies <span class="process-math">\(\proj_U(\bfx) = A\bfx'\text{.}\)</span> By part 3 of <a href="sec-orthogonal-projections.html#thm-alg-props-orthog-proj" class="xref" data-knowl="./knowl/xref/thm-alg-props-orthog-proj.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.5">Theorem 7.3.5</a>,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-alg-props-orthog-proj.html">
 \begin{equation*}
@@ -48,6 +57,7 @@ A\bfx' = A(A^*A)^{-1}A^* \bfx\text{.}
 </div>
 <div class="para">This completes the proof, since <span class="process-math">\(A\bfx' = \proj_U(\bfx)\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-of-proj-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
 <div class="para">In the last paragraph we assumed that <span class="process-math">\(A^*A\)</span> was invertible, so we now prove that fact. We can do this by proving that the null space of <span class="process-math">\(A^*A\)</span> is trivial. Suppose that <span class="process-math">\(A^*A\bfx = \bfo\text{,}\)</span> so we have</div>
@@ -57,6 +67,8 @@ A\bfx' = A(A^*A)^{-1}A^* \bfx\text{.}
 \end{equation*}
 </div>
 <div class="para">But since the columns of <span class="process-math">\(A\)</span> are linearly independent (they are basis vectors for <span class="process-math">\(U\)</span>), <span class="process-math">\(A\)</span> must have rank <span class="process-math">\(k\text{.}\)</span> By the Rank-Nullity Theorem (<a href="sec-rank.html#thm-rank-nullity" class="xref" data-knowl="./knowl/xref/thm-rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.10: The Rank-Nullity Theorem">Theorem 5.4.10</a>), this means that <span class="process-math">\(\dim(\nll(A)) = 0\text{,}\)</span> and since <span class="process-math">\(\vnorm{A\bfx}^2 = 0\)</span> means <span class="process-math">\(A\bfx = \bfo\text{,}\)</span> we must have <span class="process-math">\(\bfx = \bfo\text{.}\)</span> This proves that <span class="process-math">\(A^*A\)</span> is invertible.</div>
-</div></article></details><span class="incontext"><a class="internal" href="sec-orthogonal-projections.html#prop-matrix-of-proj-2">in-context</a></span>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-of-proj-2-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.3.8.1"><a href="#prop-matrix-of-proj-2-2" title="Copy permalink for Proof 7.3.8.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sec-orthogonal-projections.html#prop-matrix-of-proj-2">in-context</a></span>
 </body>
 </html>

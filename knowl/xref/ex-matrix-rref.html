@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,9 +19,9 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h3 class="heading">
-<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.2.14</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.14</span><span class="period">.</span>
 </h3>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para logical">
 <div class="para">We consider the following matrix <span class="process-math">\(A\)</span> and put it into reduced row-echelon form:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -25,7 +32,8 @@ A = \left[\begin{array}{@{}cccc|c@{}}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-matrix-rref-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
 <div class="para">The first column is nonzero, and we will leave the current top row in its place. Though it is not <em class="emphasis">necessary</em> to create a <span class="process-math">\(1\)</span> in the pivot position at this point in the process, it is often useful to do so. (We are not violating <a href="sec-matrices.html#alg-row-reduction" class="xref" data-knowl="./knowl/xref/alg-row-reduction.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 1.2.13: The Row Reduction Algorithm">Algorithm 1.2.13</a> by producing a leading 1 this early in the process, but this is a step of row reduction that many, including this author, prefer to perform now to make future steps less painful.) We multiply the first row by <span class="process-math">\(-\frac{1}{2}\)</span> to achieve this:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/alg-row-reduction.html">
 \begin{equation*}
@@ -36,7 +44,8 @@ A = \left[\begin{array}{@{}cccc|c@{}}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-matrix-rref-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
 <div class="para">We now use the <span class="process-math">\(1\)</span> in the <span class="process-math">\((1,1)\)</span> position to create zeros in the column below it. We add <span class="process-math">\(-2\)</span> times row 1 to row 2 and we add <span class="process-math">\(3\)</span> times row 1 to row 3. Since there is no “interaction” between these operations, we will perform them at the same time, though the reader should certainly take one operation at a time if this combination raises one’s blood pressure:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -47,7 +56,8 @@ A = \left[\begin{array}{@{}cccc|c@{}}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-matrix-rref-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
 <div class="para">According to the algorithm, we now ignore row 1 and repeat the process for the remaining matrix. There is already a <span class="process-math">\(1\)</span> at the “top” of (this portion of) the second column, so we use that entry to create zeros below it. We add twice the second row to the third row:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -58,7 +68,8 @@ A = \left[\begin{array}{@{}cccc|c@{}}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-matrix-rref-1-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
 <div class="para">The matrix is in row-echelon form now, so we proceed to step 5 of the algorithm. We multiply the third row by <span class="process-math">\(-1\)</span> to produce a <span class="process-math">\(1\)</span> in the <span class="process-math">\((3,3)\)</span> position:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -69,7 +80,8 @@ A = \left[\begin{array}{@{}cccc|c@{}}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-matrix-rref-1-5" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
 <div class="para">We now use the <span class="process-math">\(1\)</span> we just created to produce zeros in the column above it. We add <span class="process-math">\(-2\)</span> times the third row to the second, and we add <span class="process-math">\(3\)</span> times the third row to the first:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -80,7 +92,8 @@ A = \left[\begin{array}{@{}cccc|c@{}}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-matrix-rref-1-6" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
 <div class="para">The final step is to use the pivot in position <span class="process-math">\((2,2)\)</span> to create a <span class="process-math">\(0\)</span> above it. We add <span class="process-math">\(-1\)</span> times the second row to the first:</div>
 <div class="displaymath process-math">
 \begin{equation}
@@ -91,6 +104,9 @@ A = \left[\begin{array}{@{}cccc|c@{}}
 \end{array}\right]\text{.}\tag{1.4}
 \end{equation}
 </div>
-</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">The process is now complete, so the matrix in <a href="sec-matrices.html#rref-examp" class="xref" data-knowl="./knowl/xref/rref-examp.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4">(1.4)</a> is the result of reducing <span class="process-math">\(A\)</span> to RREF.</div></article><span class="incontext"><a class="internal" href="sec-matrices.html#ex-matrix-rref">in-context</a></span>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-matrix-rref-1-7" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para">The process is now complete, so the matrix in <a href="sec-matrices.html#rref-examp" class="xref" data-knowl="./knowl/xref/rref-examp.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4">(1.4)</a> is the result of reducing <span class="process-math">\(A\)</span> to RREF.<div class="autopermalink" data-description="Paragraph"><a href="#ex-matrix-rref-1-8" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.2.14"><a href="#ex-matrix-rref" title="Copy permalink for Example 1.2.14">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-matrices.html#ex-matrix-rref">in-context</a></span>
 </body>
 </html>
