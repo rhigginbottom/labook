@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-results" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Results</title>
+  <title>Solving Linear Systems With Matrices</title>
   <introduction>
     <p>
       In the previous section, we learned how to write the augmented matrix of a linear system and <xref ref="alg-row-reduction"/> provided a process to reduce any matrix to RREF. In this section, we will learn how to use the RREF of a matrix to solve the corresponding linear system. We will also prove some important results related to these solutions.
@@ -119,7 +119,7 @@
   </p>
 
 <p>
-  The two previous examples, combined with <xref ref="best-matrix"/>, give us a sense of what solutions to linear systems can look like given certain characteristics of the augmented matrices. We can now state in theorem form what we observed to be true in these examples.
+  The two previous examples, combined with <xref ref="best-matrix"/>, give us a sense of what solutions to linear systems can look like given certain characteristics of the associated augmented matrices. We can now state in theorem form what we observed to be true in these examples.
 </p>
 
 <theorem xml:id="thm-consistent-system">
@@ -191,7 +191,7 @@
 
 </corollary>
 
-<p>
+<!-- <p>
   There are two natural definitions related to <xref ref="cor-underdetermined-system"/> which we now state.
 </p>
 
@@ -201,7 +201,7 @@
       An <m>m\times n</m> linear system is called <term>underdetermined</term> if <m>m &lt; n</m>. An <m>m\times n</m> linear system is called <term>overdetermined</term> if <m>m &gt; n</m>.
     </p>
   </statement>
-</definition>
+</definition> -->
 
 <p>
   The two previous theorems provide the last step to an algorithm for solving any linear system.
@@ -278,10 +278,10 @@
   </statement>
   <proof>
     <p>
-      The first sentence in this lemma has essentially been proved in the discussion within <xref ref="ex-matrix-inf-solns"/>. We will prove the second statement directly. We consider <m>A</m> as the augmented matrix of a consistent <m>m\times n</m> linear system. Suppose <m>A</m> is row equivalent to <m>B</m>, where <m>B</m> is in RREF. Recall that part of the definition of RREF (<xref ref="def-REF"/>) is that pivots are the leftmost non-zero number in their row.
+      The first sentence in this lemma has essentially been proved in the discussion within <xref ref="ex-matrix-inf-solns"/>. We will prove the second statement directly. We consider <m>A</m> as the augmented matrix of a consistent <m>m\times n</m> linear system. Suppose <m>A</m> is row equivalent to <m>B</m>, where <m>B</m> is in RREF. We recall that part of the definition of RREF (<xref ref="def-REF"/>) is that pivots are the leftmost non-zero number in their row.
     </p>
     <p>
-      Consider the linear equation corresponding to row <m>d</m> of <m>B</m>; this equation will begin with a basic variable <m>x_i</m> and will possibly involve other variables <m>x_j</m>, with <m>j &gt; i</m>, before the equals sign. However, all of these other variables <m>x_j</m> will be free variables, because any other basic variable <m>x_k</m>, with <m>k &gt; i</m>, will correspond to a column in which that pivot is the only non-zero number. In other words, all entries <m>b_{dk}</m> along row <m>d</m> in <m>B</m> which correspond to pivot columns <m>k</m>, for <m>k &gt; i</m>, will be zero.
+      We consider the linear equation corresponding to row <m>d</m> of <m>B</m>; this equation will begin with a basic variable <m>x_i</m> and will possibly involve other variables <m>x_j</m>, with <m>j &gt; i</m>, before the equals sign. However, all of these other variables <m>x_j</m> will be free variables, because any other basic variable <m>x_k</m>, with <m>k &gt; i</m>, will correspond to a column in which that pivot is the only non-zero number. In other words, all entries <m>b_{dk}</m> along row <m>d</m> in <m>B</m> which correspond to pivot columns <m>k</m>, for <m>k &gt; i</m>, will be zero.
     </p>
   </proof>
 
@@ -627,14 +627,14 @@
     </p>
   </hint>
 </exercise>
-<exercise>
+<!-- <exercise>
   <statement>
     <p>
       I do believe we need to replace or eliminate this exercise!
-      <!-- If <m>A</m> is a <m>3\times 5</m> matrix whose final column is all zeros, what is the maximum possible number of parameters in the solution of the linear system which has augmented matrix <m>A</m>? Explain your answer. -->
+      If <m>A</m> is a <m>3\times 5</m> matrix whose final column is all zeros, what is the maximum possible number of parameters in the solution of the linear system which has augmented matrix <m>A</m>? Explain your answer.
     </p>
   </statement>
-</exercise>
+</exercise> -->
 <exercise xml:id="exer-2b2-det">
   <statement>
     <p>
@@ -661,7 +661,7 @@
 <exercise>
   <statement>
     <p>
-      Explain why every linear system over <m>\rr</m> has either no solutions, exactly one solution, or an infinite number of solutions.
+      Using only results from this section, explain why every linear system over <m>\rr</m> has either no solutions, exactly one solution, or an infinite number of solutions.
     </p>
   </statement>
 </exercise>
@@ -680,7 +680,7 @@
 <exercise>
   <statement>
     <p>
-      What would you have to know about the pivot columns in an augmented matrix in order to know that the linear system has exactly one solution? Explain. 
+      What would one have to know about the pivot columns in an augmented matrix in order to conclude that the linear system has exactly one solution? Explain. 
     </p>
   </statement>
 </exercise>
