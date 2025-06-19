@@ -145,8 +145,9 @@
     </p>
 
     <figure>
+      <caption>A graph of two intersecting lines</caption>
       <image xml:id="intersecting-lines" width="40%">
-        <shortdescription>The graph of two lines on coordinate axes. The lines have slopes 1 and -2. The lines meet at the point (2,1).</shortdescription>
+        <shortdescription>The graph of two lines on coordinate axes. The lines have slopes 1 and -2 and meet at the point (2,1). See long description.</shortdescription>
           <description>
             <p>
              The graph of two lines plotted on coordinate axes. The horizontal axis ranges from <m>-1</m> to <m>3</m> and the vertical axis ranges from <m>-1</m> to <m>7</m>. One line has slope <m>1</m> and <m>y</m>-intercept <m>-1</m> and the other line has slope <m>-2</m> and <m>y</m>-intercept <m>5</m>. The lines intersect at the point <m>(2,1)</m>. The lines are labeled with their defining equations.
@@ -179,8 +180,9 @@
     </p>
 
     <figure>
+      <caption>A graph of two parallel lines</caption>
       <image xml:id="parallel-lines" width="40%">
-        <shortdescription>The graph of two lines on coordinate axes. The lines both have slopes -2. The lines are parallel and do not intersect.</shortdescription>
+        <shortdescription>The graph of two lines on coordinate axes. The lines both have slope -2 and are parallel. See long description.</shortdescription>
           <description>
             <p>
              The graph of two lines plotted on coordinate axes. The horizontal axis ranges from <m>-1</m> to <m>3</m> and the vertical axis ranges from <m>-1</m> to <m>7</m>. One line has slope <m>-2</m> and <m>y</m>-intercept <m>3</m> and the other line has slope <m>-2</m> and <m>y</m>-intercept <m>5</m>. The lines are parallel and do not intersect. The lines are labeled with their defining equations.
@@ -214,8 +216,9 @@
     </p>
 
     <figure>
+      <caption>A graph of two indentical lines</caption>
       <image xml:id="identical-lines" width="40%">
-        <shortdescription>The graph of one line on coordinate axes. The line has slope -2 and y intercept 5.</shortdescription>
+        <shortdescription>The graph of one line on coordinate axes. The line has slope -2 and y intercept 5. See long description.</shortdescription>
           <description>
             <p>
              The graph of one lines plotted on coordinate axes. The horizontal axis ranges from <m>-1</m> to <m>3</m> and the vertical axis ranges from <m>-1</m> to <m>7</m>. The line has slope <m>-2</m> and <m>y</m>-intercept <m>5</m>. The line is bold indicating that both equations produce the same graph. The line is labeled with its defining equation.

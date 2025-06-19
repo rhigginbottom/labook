@@ -122,7 +122,7 @@
 <definition xml:id="def-lin-comb-span">
   <statement>
     <p>
-      Let <m>c_1, c_2, \ldots, c_m</m> be real numbers and let <m>\bfv_1, \bfv_2, \ldots, \bfv_m \in \rr^n</m>. Then the <term>linear combination</term> of the vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_m </m> with <term>weights</term> <m>c_1, c_2, \ldots, c_m</m> is
+      Let <m>c_1, c_2, \ldots, c_m</m> be real numbers and let <m>{\bfv_1, \bfv_2, \ldots, \bfv_m \in \rr^n}</m>. Then the <term>linear combination</term> of the vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_m </m> with <term>weights</term> <m>c_1, c_2, \ldots, c_m</m> is
       <me>
         c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m
       </me>.
@@ -372,7 +372,12 @@
   <figure>
     <caption>Illustration of two vectors in the plane</caption>
     <image xml:id="two-vectors" width="50%">
-      <description>Drawing of the vectors u and v in the plane</description>
+        <shortdescription>Graph of two vectors on coordinate axes. Both vectors begin at the origin ending at (1,-2) and (-3,1). See long description.</shortdescription>
+          <description>
+            <p>
+             The graph of two vectors plotted on coordinate axes. The horizontal axis ranges from <m>-3</m> to <m>3</m> and the vertical axis ranges from <m>-2</m> to <m>2</m>. The vector <m>\bfv</m> is drawn in red and begins at the origin extending to <m>(-3,1)</m>. The vector <m>\bfu</m> is drawn in blue and begins at the origin extending to the point <m>(1,-2)</m>.
+            </p>
+          </description>
     <latex-image>
       \begin{tikzpicture}
       \begin{axis}[axis lines=center, x=.75cm, y=.75cm, xmin=-4,ymin=-3,xmax=4,ymax=3,
@@ -399,7 +404,12 @@
 <figure>
   <caption>Illustration of scalar multiplication</caption>
   <image xml:id="scalar-mult" width="50%">
-    <description>Drawing of the vector v scaled by one, one half, and negative one</description>
+        <shortdescription>Graph of three vectors on axes, starting at the origin ending at (-3,1), (-1.5,0.5), and (3,-1). See long description. </shortdescription>
+          <description>
+            <p>
+             The graph of three vectors plotted on coordinate axes. The horizontal axis ranges from <m>-3</m> to <m>3</m> and the vertical axis ranges from <m>-2</m> to <m>2</m>. The vector <m>\bfv</m> is drawn in red and begins at the origin extending to <m>(-3,1)</m>. The vector <m>\frac{1}{2}\bfv</m> is drawn in blue and begins at the origin extending to the point <m>(-1.5,0.5)</m>. The vector <m>-\bfv</m> is drawn in green and begins at the origin extending to the point <m>(3,-1)</m>.
+            </p>
+          </description>
     <latex-image>
       \begin{tikzpicture}
       \begin{axis}[axis lines=center, x=.75cm, y=.75cm, xmin=-4,ymin=-3,xmax=4,ymax=3,
@@ -430,7 +440,12 @@
 <figure>
   <caption>Illustration of vector addition</caption>
   <image xml:id="vector-sum" width="50%">
-    <description>Drawing of the sum of vectors u and v</description>
+        <shortdescription>The graph of four vectors; three vectors go from (0,0) to (-3,1), (1,-2), and (-2,-1). See long description.</shortdescription>
+          <description>
+            <p>
+             The graph of four vectors plotted on coordinate axes. The horizontal axis ranges from <m>-3</m> to <m>3</m> and the vertical axis ranges from <m>-2</m> to <m>2</m>. The vector <m>\bfv</m> is drawn in red and begins at the origin extending to <m>(-3,1)</m>. The vector <m>\bfu</m> is drawn in blue and begins at the origin extending to the point <m>(1,-2)</m>. A vector drawn in dashed red extends from <m>(1,-2)</m> to <m>(-2,-1)</m>; this vector is labeled <m>\bfv</m>. The vector <m>\bfu + \bfv</m> is drawn in black begins at the origin and extends to <m>(-2,-1)</m>.
+            </p>
+          </description>
     <latex-image>
       \begin{tikzpicture}
       \begin{axis}[axis lines=center, x=.75cm, y=.75cm, xmin=-4,ymin=-3,xmax=4,ymax=3,
@@ -485,7 +500,12 @@
 <figure>
   <caption>Illustration of a linear combination</caption>
   <image xml:id="linear-comb" width="50%">
-    <description>Drawing of w as a linear combination of u and v</description>
+        <shortdescription>The graph of four vectors; three vectors go from (0,0) to (-1.6,3.2), (2,2), and (3.6,-1.2). See long description.</shortdescription>
+          <description>
+            <p>
+             The graph of four vectors plotted on coordinate axes. The horizontal axis ranges from <m>-3</m> to <m>3</m> and the vertical axis ranges from <m>-1</m> to <m>3</m>. The vector <m>-1.2\bfv</m> is drawn in red and begins at the origin extending to <m>(3.6,-1.2)</m>. The vector <m>-1.6\bfu</m> is drawn in blue and begins at the origin extending to the point <m>(-1.6,3.2)</m>. A vector drawn in dashed red extends from <m>(-1.6,3.2)</m> to <m>(2,2)</m>; this vector is labeled <m>-1.2\bfv</m>. The vector <m>\bfw</m> is drawn in black begins at the origin and extends to <m>(2,2)</m>.
+            </p>
+          </description>
     <latex-image>
       \begin{tikzpicture}
       \begin{axis}[axis lines=center, x=.75cm, y=.75cm, xmin=-4,ymin=-2,xmax=4,ymax=4,
@@ -782,7 +802,7 @@
   <exercise>
     <statement>
       <p>
-        State criteria on vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_n</m> in <m>\rr^3</m> such that <m>\mathrm{Span}\{\bfv_1,\ldots,\bfv_n\} = \rr^3</m>. Explain your answer.
+        State criteria on vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_n</m> in <m>\rr^3</m> such that <m>{\mathrm{Span}\{\bfv_1,\ldots,\bfv_n\} = \rr^3}</m>. Explain your answer.
       </p>
     </statement>
   </exercise>
