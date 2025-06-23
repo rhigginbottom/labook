@@ -4,7 +4,7 @@
   <title>Solving Linear Systems Over Fields</title>
   <introduction>
     <p>
-      Having now defined a field, in this section we will show how the problems of chapter 1 can be solved in this general setting. We have laid the groundwork for reproducing the results of the first three sections of <xref ref="ch-first"/> for a field <m>\ff</m> instead of the real numbers.
+      Having now defined a field, in this section we will show how the problems of chapter 1 can be solved in this general setting. We have laid the groundwork for reproducing the results of the first three sections of <xref ref="ch-first"/> for a general field <m>\ff</m> instead of the real numbers.
     </p>
   </introduction>
 
@@ -147,6 +147,12 @@
       </p>
   </statement>
 </example>
+
+<note>
+  <p>
+    A linear system over a field <m>\ff</m> will have either no solutions, a unique solution, or a number of solutions related to the size of the field and the number of free variables. When the field is infinite, we have what is sometimes known as the <q>trichotomy law</q>, namely that the number of solutions to a linear system over such a field will either be zero, one, or infinite. This law needs some modification when the field is finite. (See <xref ref="ex-trichotomy"/> and compare it to <xref ref="ex-trichotomy-2"/>.)
+  </p>
+</note>
 
 <example>
   <statement>
@@ -418,7 +424,7 @@
         </li>
         <li>
           <p>
-            Suppose that the system stated in part a. of this problem is a system over <m>\ff_p</m>. What is the correct inequality the coefficients <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m> must satisfy in order for the system to have a unique solution? State your answer and prove it is correct.
+            Suppose that the system stated in part (a) of this problem is a system over <m>\ff_p</m>. What is the correct inequality the coefficients <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m> must satisfy in order for the system to have a unique solution? State your answer and prove it is correct.
           </p>
         </li>
       </ol>
@@ -482,7 +488,7 @@
     </p>
   </answer>
 </exercise>
-<exercise>
+<exercise xml:id="ex-trichotomy-2">
   <statement>
     <p>
       Give descriptions of linear systems with each of the following properties, or state why such a system is impossible. Specific numbers and equations are not necessary, but your description should include what field is involved, the number of equations and variables, the number of free variables, etc. Explain your answers.

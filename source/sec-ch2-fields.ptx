@@ -135,7 +135,7 @@ No student wants to write out all of these steps, and no instructor wants to gra
     What are presented in <xref ref="def-field"/> are known as the <term>axioms</term> of a field. This may be the reader's first exposure to axioms in mathematics, and this is worthy of a comment or two.
   </p>
   <p>
-    Much of theoretical mathematics is built upon axiomatic reasoning. The thinking goes like this: If we assume a limited number of properties are true, and we assume nothing beyond those properties, what else follows <em>necessarily?</em> So, we can ask what is true of a field, not just what is true of the real numbers. While the real numbers may have specific properties that a general field does not, anything that is true of a general field must be true of the real numbers.
+    Much of theoretical mathematics is built upon axiomatic reasoning. The thinking goes like this: If we assume a limited number of properties are true, and we assume nothing beyond those properties, what else follows <em>necessarily?</em> In this way we can ask what is true of a field, not just what is true of the real numbers. While the real numbers may have specific properties that a general field does not, anything that is true of a general field must be true of the real numbers.
   </p>
 </paragraphs>
 
@@ -195,7 +195,7 @@ No student wants to write out all of these steps, and no instructor wants to gra
   </statement>
 </example>
 
-<example>
+<example xml:id="ex-nonneg-reals">
   <statement>
     <p>
       The set of non-negative real numbers <m>\rr^{\ge 0}</m> is not a field. (When thinking about a subset of the real numbers, we will assume that the usual addition and multiplication are in view unless otherwise stated.) While this set is closed under addition and multiplication, it does not contain <em>additive inverses</em> for positive real numbers. For example, the number <m>9</m> has no additive inverse in this set.
@@ -213,6 +213,15 @@ No student wants to write out all of these steps, and no instructor wants to gra
     </p>
   </statement>
 </example>
+
+<note>
+  <p>
+    This notion of <q>inherited</q> properties comes up with some frequency, so we will undertake a brief explanation. Supppser we have <m>A \subseteq B</m> for two sets <m>A</m> and <m>B</m>, and we have an operation <m>\oplus</m> defined on <m>B</m>. Any property that is intrinsic to the operation (rather than to the set) will hold in both <m>B</m> and <m>A</m>. For example, if <m>\oplus</m> is commutative in <m>B</m>, then <m>\oplus</m> will also be commutative in <m>A</m> since <m>A \subseteq B</m>. 
+  </p>
+  <p>
+    Not all field properties are <q>inherited</q> in this same way with subsets because some properties depend on the elements of the set <m>A</m> and not just the operation. <xref ref="ex-nonneg-reals"/> is a good example of this; <m>\rr^{\ge 0}</m> is a subset of <m>\rr</m> with the same operations, but it is not a field because (for example) the property of additive inverses is not an inherited property in the same way that the commutativity or associativity of addition is inherited.
+  </p>
+</note>
 
 <p>
   We refer the reader to <xref ref="apdx-mod-arith"/> for the definitions of <m>\zz_n</m> and <m>\ff_p</m>, related notational conventions, and a refresher on modular arithmetic. All of this is necessary for the following example.
@@ -334,7 +343,7 @@ No student wants to write out all of these steps, and no instructor wants to gra
 <exercise>
   <statement>
     <p>
-      Carry out the following calculations within <m>\ff_7</m>.
+      Carry out the following calculations within <m>\ff_7</m>. (All answers should be a number between <m>0</m> and <m>6</m>.)
       <ol>
         <li>
           <p>
@@ -445,10 +454,11 @@ No student wants to write out all of these steps, and no instructor wants to gra
 <exercise>
   <statement>
     <p>
-      For a set <m>A</m>, define the set of polynomials over <m>A</m> in the usual way:
+      Let <m>A</m> be a set and let <m>n</m> be a nonnegative integer. Define a polynomial <m>p(x)</m> of degree <m>n</m> over <m>A</m> by
       <me>
-        A[x] = \{a_0 + a_1x + a_2x^2 + \cdots \mid a_i \in A\}.
+        p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n,
       </me>
+      where <m>a_i \in A</m> for all <m>i</m>. Define <m>A[x]</m> as the set of polynomials of any degree over <m>A</m>.
       <ol>
         <li>
           <p>
