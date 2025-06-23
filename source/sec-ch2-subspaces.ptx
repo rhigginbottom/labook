@@ -107,12 +107,12 @@
       The vector space <m>\rr^2</m> is <em>not</em> a subspace of the vector space <m>\rr^3</m>. This may seem surprising, as the operations for these spaces are clearly compatible, and we often think of <m>\rr^2</m> as <q>living inside</q> of <m>\rr^3</m>.
     </p>
     <p>
-      However, this common way of thinking is wrong because the space <m>\rr^2</m> is not even a subset of <m>\rr^3</m>; thus, it is impossible for <m>\rr^2</m> to be a subspace of <m>\rr^3</m>. (The set <m>\rr^2</m> consists of ordered pairs of real numbers, and <m>\rr^3</m> consists of ordered triples of real numbers.)
+      However, this common way of thinking is wrong because the space <m>\rr^2</m> is not even a subset of <m>\rr^3</m>; thus, it is impossible for <m>\rr^2</m> to be a subspace of <m>\rr^3</m>. (The set <m>\rr^2</m> consists of ordered pairs of real numbers while <m>\rr^3</m> consists of ordered triples of real numbers.)
     </p>
     <p>
       We can make a slight adjustment to match the way that many people think of <m>\rr^2</m> as <q>living inside</q> of <m>\rr^3</m>. We define the set <m>A</m> in the following way:
       <me>
-        A = \{(x,y,0) \in \rr^3 \}
+        A = \{(x,y,0) \mid x,y \in \rr \}
       </me>.
       Then <m>A</m> is what we usually call the <q><m>xy</m>-plane</q> in <m>\rr^3</m>. This subset <m>A</m> <em>is</em> a subspace of <m>\rr^3</m>.
     </p>

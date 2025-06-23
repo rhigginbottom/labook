@@ -50,7 +50,9 @@
 </definition>
 
 <note>
-  The reader will want to note when the multiplication of field elements is in view and when scalar multiplication (of a scalar times a vector) is in view. The context should help, as should our practice of using bold notation for vectors. The product of vectors (in the way that we take the product of field elements) is not a defined construction in a general vector space.
+  <p> 
+    The reader will want to note when the multiplication of field elements is in view and when scalar multiplication (of a scalar times a vector) is in view. The context should help, as should our practice of using bold notation for vectors. The product of vectors (in the way that we take the product of field elements) is not a defined construction in a general vector space.
+  </p>
 </note>
 
 <p>
@@ -93,11 +95,11 @@
       <me>
         (f+g)(t) = f(t)+g(t)
       </me>
-      for all <m>t \in A</m>. Additionally, if <m>c \in \rr</m> and <m>f \in V</m>, then we define scalar multiplication as
+      for all <m>t \in A</m>. (The vector <m>f+g</m> must be a function <m>A \to \rr</m>, so we here define how to calculate the value of this function for every <m>t \in A</m>.) Additionally, if <m>c \in \rr</m> and <m>f \in V</m>, then we define scalar multiplication as
       <me>
         (cf)(t) = cf(t)
       </me>
-      for all <m>t \in A</m>. We will now argue that <m>V</m> is a vector space.
+      for all <m>t \in A</m>. (Again, we are defining the value of the function <m>cf</m> at each element of <m>A</m>.) We will now argue that <m>V</m> is a vector space.
     </p>
     <p>
       Looking back at <xref ref="def-vector-space"/>, the first two axioms hold by the way we defined the operations. Axioms three and four hold because addition in <m>\rr</m> is both commutative and associative. (Since these vectors in <m>V</m> are functions which take values in <m>\rr</m>, the properties of <m>\rr</m> are once again crucial.)
@@ -119,7 +121,9 @@
 </example>
 
 <note>
-  The previous example can be difficult to digest, because we are considering functions to be vectors. It may take some adjustment to think of functions<mdash/>rather than single real numbers (or even ordered lists of real numbers)<mdash/>as the objects of study .
+  <p> 
+    The previous example can be difficult to digest, because we are considering functions to be vectors. It may take some adjustment to think of functions<mdash/>rather than single real numbers (or even ordered lists of real numbers)<mdash/>as the objects of study .
+  </p>
 </note>
 
 <example xml:id="ex-real-polys">
@@ -147,7 +151,7 @@
       It is a good exercise to grapple with the axioms and determine whether or not <m>V</m> with these operations is a vector space.
     </p>
     <p>
-      (We are using the symbols <m>\oplus</m> and <m>\odot</m> because these operations we are defining are not familiar ones, and most readers likely have no previous associations with these symbols. For our purposes, these symbols have no overarching meaning; they will be redefined for the purposes of specific examples.)
+      (We are using the symbols <m>\oplus</m> and <m>\odot</m> because these operations we are defining are not familiar ones, and most readers likely have no previous associations with these symbols. For our purposes, these symbols have no overarching meaning; they will be redefined for the purposes of specific examples and exercises.)
     </p>
     <p>
       With some work, the reader will find that this is <em>not</em> a vector space. All we need to do in order to show this is not a vector space is to find one axiom that does not hold. We will show that the fifth axiom (regarding the zero vector) does not hold.
@@ -331,7 +335,7 @@
   <exercise>
     <statement>
       <p>
-        For each of the following, determine whether the given subset <m>V\subseteq \rr^2</m> is a real vector space, using the usual operations of vector addition and scalar multiplication in <m>\rr^2</m>. 
+        For each of the following, determine whether the given subset <m>V\subseteq \rr^2</m> is a real vector space, using the usual operations of vector addition and scalar multiplication in <m>\rr^2</m>. (By a <q>real vector space</q> we simply mean a vector space over the field <m>\rr</m>.)
         <ol>
           <li>
             <p>
