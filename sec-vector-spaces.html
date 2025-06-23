@@ -517,6 +517,8 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Definition 2.3.1"><a href="#def-vector-space" title="Copy permalink for Definition 2.3.1">🔗</a></div></article><article class="note remark-like" id="sec-vector-spaces-4"><h3 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
 </h3>
+<div class="para" id="sec-vector-spaces-4-1">The reader will want to note when the multiplication of field elements is in view and when scalar multiplication (of a scalar times a vector) is in view. The context should help, as should our practice of using bold notation for vectors. The product of vectors (in the way that we take the product of field elements) is not a defined construction in a general vector space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vector-spaces-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" data-description="Note 2.3.2"><a href="#sec-vector-spaces-4" title="Copy permalink for Note 2.3.2">🔗</a></div></article><div class="para" id="sec-vector-spaces-5">Faced with this rather abstract definition, some examples are in order.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vector-spaces-5" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <details id="ex-rn" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
@@ -549,13 +551,13 @@ a_1 \\ a_2 \\ \vdots \\ a_n
 (f+g)(t) = f(t)+g(t)
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(t \in A\text{.}\)</span> Additionally, if <span class="process-math">\(c \in \rr\)</span> and <span class="process-math">\(f \in V\text{,}\)</span> then we define scalar multiplication as</div>
+<div class="para">for all <span class="process-math">\(t \in A\text{.}\)</span> (The vector <span class="process-math">\(f+g\)</span> must be a function <span class="process-math">\(A \to \rr\text{,}\)</span> so we here define how to calculate the value of this function for every <span class="process-math">\(t \in A\text{.}\)</span>) Additionally, if <span class="process-math">\(c \in \rr\)</span> and <span class="process-math">\(f \in V\text{,}\)</span> then we define scalar multiplication as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 (cf)(t) = cf(t)
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(t \in A\text{.}\)</span> We will now argue that <span class="process-math">\(V\)</span> is a vector space.</div>
+<div class="para">for all <span class="process-math">\(t \in A\text{.}\)</span> (Again, we are defining the value of the function <span class="process-math">\(cf\)</span> at each element of <span class="process-math">\(A\text{.}\)</span>) We will now argue that <span class="process-math">\(V\)</span> is a vector space.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-real-functions-1-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="ex-real-functions-1-3">Looking back at <a href="sec-vector-spaces.html#def-vector-space" class="xref" data-knowl="./knowl/xref/def-vector-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.3.1">Definition 2.3.1</a>, the first two axioms hold by the way we defined the operations. Axioms three and four hold because addition in <span class="process-math">\(\rr\)</span> is both commutative and associative. (Since these vectors in <span class="process-math">\(V\)</span> are functions which take values in <span class="process-math">\(\rr\text{,}\)</span> the properties of <span class="process-math">\(\rr\)</span> are once again crucial.)<div class="autopermalink" data-description="Paragraph"><a href="#ex-real-functions-1-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="ex-real-functions-1-4">The zero vector in <span class="process-math">\(V\)</span> is the function <span class="process-math">\(f(t)=0\text{,}\)</span> the function which is uniformly zero for each value <span class="process-math">\(t \in A\text{.}\)</span> This function has the properties of the zero vector mandated by axiom five.<div class="autopermalink" data-description="Paragraph"><a href="#ex-real-functions-1-4" title="Copy permalink for Paragraph">🔗</a></div>
@@ -572,7 +574,10 @@ a_1 \\ a_2 \\ \vdots \\ a_n
 </div>
 <div class="autopermalink" data-description="Example 2.3.5"><a href="#ex-real-functions" title="Copy permalink for Example 2.3.5">🔗</a></div></article></details><article class="note remark-like" id="sec-vector-spaces-9"><h3 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
-</h3>——<div class="autopermalink" data-description="Note 2.3.6"><a href="#sec-vector-spaces-9" title="Copy permalink for Note 2.3.6">🔗</a></div></article><details id="ex-real-polys" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</h3>
+<div class="para" id="sec-vector-spaces-9-1">The previous example can be difficult to digest, because we are considering functions to be vectors. It may take some adjustment to think of functions—rather than single real numbers (or even ordered lists of real numbers)—as the objects of study .<div class="autopermalink" data-description="Paragraph"><a href="#sec-vector-spaces-9-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 2.3.6"><a href="#sec-vector-spaces-9" title="Copy permalink for Note 2.3.6">🔗</a></div></article><details id="ex-real-polys" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-real-polys-1-1">Let <span class="process-math">\(P_n\)</span> denote the set of all real-valued polynomials of degree less than or equal to <span class="process-math">\(n\)</span> with real coefficients. (Recall that the <em class="emphasis">degree</em> of a polynomial is the largest exponent of the variable that has a nonzero coefficient.) This means that the polynomial <span class="process-math">\(p(x) = 7x^{10}-\tfrac{1}{2}x^6 + 9\)</span> has degree <span class="process-math">\(10\)</span> and is an element of <span class="process-math">\(P_n\)</span> for all <span class="process-math">\(n \ge 10\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-real-polys-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="ex-real-polys-1-2">We consider vector addition to be the usual algebraic sum of polynomials and scalar multiplication to be the usual product of a polynomial by a constant. Then <span class="process-math">\(P_n\)</span> is a vector space over <span class="process-math">\(\rr\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-real-polys-1-2" title="Copy permalink for Paragraph">🔗</a></div>
@@ -594,7 +599,7 @@ c\odot \bfu = (cu_1,1)\text{.}
 </div>
 <div class="para">It is a good exercise to grapple with the axioms and determine whether or not <span class="process-math">\(V\)</span> with these operations is a vector space.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-vector-spaces-11-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sec-vector-spaces-11-1-2">(We are using the symbols <span class="process-math">\(\oplus\)</span> and <span class="process-math">\(\odot\)</span> because these operations we are defining are not familiar ones, and most readers likely have no previous associations with these symbols. For our purposes, these symbols have no overarching meaning; they will be redefined for the purposes of specific examples.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-vector-spaces-11-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-vector-spaces-11-1-2">(We are using the symbols <span class="process-math">\(\oplus\)</span> and <span class="process-math">\(\odot\)</span> because these operations we are defining are not familiar ones, and most readers likely have no previous associations with these symbols. For our purposes, these symbols have no overarching meaning; they will be redefined for the purposes of specific examples and exercises.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-vector-spaces-11-1-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sec-vector-spaces-11-1-3">With some work, the reader will find that this is <em class="emphasis">not</em> a vector space. All we need to do in order to show this is not a vector space is to find one axiom that does not hold. We will show that the fifth axiom (regarding the zero vector) does not hold.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vector-spaces-11-1-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sec-vector-spaces-11-1-4">We must be careful here, because the terminology can become confusing. By “zero vector” we do not always mean in <span class="process-math">\(\rr^2\)</span> the ordered pair <span class="process-math">\((0,0)\text{.}\)</span> Depending on the operations that are in view, the zero vector may exist in a form other than <span class="process-math">\((0,0)\text{.}\)</span> To show this axiom does not hold, we must argue that <em class="emphasis">no</em> element of <span class="process-math">\(\rr^2\)</span> can have the properties of a zero vector given these operations.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vector-spaces-11-1-4" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-vector-spaces-11-1-5">
@@ -778,26 +783,25 @@ c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m\text{.}
 </h3>
 <article class="exercise exercise-like" id="exercises-2-3-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para logical" id="exercises-2-3-1-1-1">
-<div class="para">For each of the following, determine whether the given subset <span class="process-math">\(V\subseteq \rr^2\)</span> is a real vector space, using the usual operations of vector addition and scalar multiplication in <span class="process-math">\(\rr^2\text{.}\)</span>
+<div class="para">For each of the following, determine whether the given subset <span class="process-math">\(V\subseteq \rr^2\)</span> is a real vector space, using the usual operations of vector addition and scalar multiplication in <span class="process-math">\(\rr^2\text{.}\)</span> (By a “real vector space” we simply mean a vector space over the field <span class="process-math">\(\rr\text{.}\)</span>)</div>
+<ol class="lower-alpha lower-alpha-level-1" id="exercises-2-3-1-1-1-5">
+<li id="exercises-2-3-1-1-1-5-1">
+<div class="para" id="exercises-2-3-1-1-1-5-1-1">
+<span class="process-math">\(\displaystyle V = \{ (x,y) \mid x,y \ge 0 \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-2-3-1-1-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<ol class="lower-alpha lower-alpha-level-1" id="exercises-2-3-1-1-1-3">
-<li id="exercises-2-3-1-1-1-3-1">
-<div class="para" id="exercises-2-3-1-1-1-3-1-1">
-<span class="process-math">\(\displaystyle V = \{ (x,y) \mid x,y \ge 0 \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-2-3-1-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 2.3.1.a"><a href="#exercises-2-3-1-1-1-3-1" title="Copy permalink for Item 2.3.1.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 2.3.1.a"><a href="#exercises-2-3-1-1-1-5-1" title="Copy permalink for Item 2.3.1.a">🔗</a></div>
 </li>
-<li id="exercises-2-3-1-1-1-3-2">
-<div class="para" id="exercises-2-3-1-1-1-3-2-1">
-<span class="process-math">\(\displaystyle V = \{ (x,y) \mid xy \ge 0 \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-2-3-1-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="exercises-2-3-1-1-1-5-2">
+<div class="para" id="exercises-2-3-1-1-1-5-2-1">
+<span class="process-math">\(\displaystyle V = \{ (x,y) \mid xy \ge 0 \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-2-3-1-1-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2.3.1.b"><a href="#exercises-2-3-1-1-1-3-2" title="Copy permalink for Item 2.3.1.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 2.3.1.b"><a href="#exercises-2-3-1-1-1-5-2" title="Copy permalink for Item 2.3.1.b">🔗</a></div>
 </li>
-<li id="exercises-2-3-1-1-1-3-3">
-<div class="para" id="exercises-2-3-1-1-1-3-3-1">
-<span class="process-math">\(\displaystyle V = \{ (x,y) \mid y = x \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-2-3-1-1-1-3-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="exercises-2-3-1-1-1-5-3">
+<div class="para" id="exercises-2-3-1-1-1-5-3-1">
+<span class="process-math">\(\displaystyle V = \{ (x,y) \mid y = x \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-2-3-1-1-1-5-3-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2.3.1.c"><a href="#exercises-2-3-1-1-1-3-3" title="Copy permalink for Item 2.3.1.c">🔗</a></div>
+<div class="autopermalink" data-description="Item 2.3.1.c"><a href="#exercises-2-3-1-1-1-5-3" title="Copy permalink for Item 2.3.1.c">🔗</a></div>
 </li>
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises-2-3-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
