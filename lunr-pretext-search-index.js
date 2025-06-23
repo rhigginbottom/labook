@@ -739,9 +739,9 @@ var ptx_lunr_docs = [
   "body": "     Prove that if , then the reduced row-echelon form of is .    Use part (a) to prove that if , then the linear system has exactly one solution.      "
 },
 {
-  "id": "sec-results-30-10-4",
+  "id": "ex-trichotomy",
   "level": "2",
-  "url": "sec-results.html#sec-results-30-10-4",
+  "url": "sec-results.html#ex-trichotomy",
   "type": "Exercise",
   "number": "1.3.12",
   "title": "",
@@ -1042,7 +1042,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Fields",
-  "body": " Fields   In this section we will consider the real numbers and study their most important properties in a general setting. In the process, we will learn how to handle axioms and abstract algebraic concepts.   In , we used the real numbers as the familiar world within which all of our calculations took place. Before we offer any definitions or results in this chapter, we will ponder exactly what properties of the real numbers were essential to these calculations. (The reader is likely so familiar with the real numbers that its important properties have been internalized and are not in the conscious mind. In this section we will make those properties explicit.)  The most basic concept in this book is the linear equation. What properties of the real numbers are used to solve a simple linear equation? In what follows we will solve the equation and draw to the surface some of these important properties: .  No student wants to write out all of these steps, and no instructor wants to grade such a solution! But the point is to notice the properties of the real numbers which are vital to solving an equation like this and which we usually ignore.  In we used the associativity of addition in . That is, we can move the parentheses around in addition and still have an equivalent expression. (The reader should see subtraction as a form of addition.)  In we used the fact that has an additive inverse a number we can add to to get . (The additive inverse of is .)  In we used the fact that is an additive identity in when we add to any real number , we get again.  In we used the associativity of multiplication in . We can move the parentheses around in multiplication just like we can in addition.  In we used the fact that is the multiplicative inverse of in . In other words, we can multiply by to get .  Finally, in we used the fact that is a multiplicative identity in when we multiply any real number by , that real number is unchanged.    By identifying these properties, our goal is to envision other mathematical realms in which solving linear equations would work the same way it does within . Toward this end, we now define an algebraic object called a field which has all of the properties used above (plus a few we haven't yet mentioned).    A field is a set with operations and and distinct elements such that all of the following properties hold.   For all , . (We say that is closed under addition .)    For all , . (We say that is closed under multiplication .)    For all , . (We say that addition in is commutative .)    For all , . (We say that addition in is associative .)    For each , . (We say that is an additive identity in .)    For each , there exists an element , such that . (We say that each has an additive inverse in .)    For each , . (We say that multiplication is commutative in .)    For each , . (We say that multiplication is associative in .)    For each , . (We say that is a multiplicative identity in .)    For each with , there exists an element such that . (We say that every nonzero element in has a multiplicative inverse .)    For each , . (We say that addition and multiplication in satisfy the distributive law .)        Axioms 5 and 6 could perhaps be stated with a bit more precision. Some texts state axiom 5 like this: the set must have an additive identity, that is, an element such that for all . Those same texts may also state axiom 6 without reference to the symbol : for each , there exists an element such that , where is the additive identity of the field.  For some students, the use of the symbol might be helpful, reminding them of the essential property of the additive identity through familiarity. But this may be confusing when handling a set which contains the symbol when that symbol does not function as the relevant additive identity.  Our point here is that the use of in the axioms for a field (and some of the subsequent theorems) is intended to stand in for a generic symbol for the additive identity. Similarly, the symbol stands in as the generic symbol for the multiplicative identity. (A reader could imagine a restatement of axioms 9 and 10 above using a letter as the multiplicative identity in the way we have demonstrated axioms 5 and 6 can be restated.)  The reader should also note that in a generic field the term nonzero means not the additive identity.     A note about axioms  What are presented in are known as the axioms of a field. This may be the reader's first exposure to axioms in mathematics, and this is worthy of a comment or two.  Much of theoretical mathematics is built upon axiomatic reasoning. The thinking goes like this: If we assume a limited number of properties are true, and we assume nothing beyond those properties, what else follows necessarily? So, we can ask what is true of a field, not just what is true of the real numbers. While the real numbers may have specific properties that a general field does not, anything that is true of a general field must be true of the real numbers.   Working through some examples (and non-examples) will help us make sense of this definition.    The set of real numbers is a field. (If the real numbers were not a field, then we wouldn't have done a very good job of abstracting the properties of the real numbers for this definition!)      The complex numbers are defined in this way: , where . Addition and multiplication are defined in this way: . Notice that the addition and multiplication occuring within the parentheses on the right side of these equations are happening within . In this way, showing that some of the field axioms hold for depends on being a field.  The elements and in are , and these elements are not equal. (We recall that part of the definition of a field is that the elements and are distinct.)  With these definitions, one can check that satisfies the properties of a field. We will prove a few of these properties, and we will assign a few of these proofs in the exercises.  The definitions of and in show that is closed under addition and multiplication. (Notably, this relies on being closed under addition and multiplication!) To prove that the addition in is commutative, we consider two complex numbers and . Then . (We note that line used the fact that addition of real numbers is commutative.) This proves that addition in is commutative.  We will also prove that is an additive identity in . If , then . (This uses the fact that is an additive identity.) We note that although the definition of a field requires us to examine addition by  on both sides, since we just proved that addition is commutative, what we have already shown is sufficient.      The set of non-negative real numbers is not a field. (When thinking about a subset of the real numbers, we will assume that the usual addition and multiplication are in view unless otherwise stated.) While this set is closed under addition and multiplication, it does not contain additive inverses for positive real numbers. For example, the number has no additive inverse in this set.      The set of rational numbers  is a field. The rational numbers are defined as the set of all quotients (hence the symbol ) of integers; more formally, . We do not need to show that all of the field axioms hold in order to prove that is a field. Since is a subset of , and since it therefore inherits its operations from , some of the field axioms hold automatically. (These would include the associativity and commutativity of addition. What else holds by inheritance? ) Checking some of these details is left to the exercises.    We refer the reader to for the definitions of and , related notational conventions, and a refresher on modular arithmetic. All of this is necessary for the following example.    When is a prime integer, then is a field.  Working within can be a bit destabilizing at first, as the calculations take some practice. However, this effort pays off because the smallest finite fields offer some of the most tangible sandboxes in which to play. We will be using for small throughout this chapter to develop some interesting examples.  Part of the definition of a field is that one can divide by any nonzero element. But because we work within so often, division within is strange. In , for instance, the multiplicative inverse of is . (Another way to say this is that, within , the element that acts the most like is .)  The field contains only the elements and , and it therefore is a model for anything that is binary . For this reason, working in is often very useful in computer science.    Having defined fields, we now turn to the consequences of this definition. In other words, if a set with two operations meets the definition of a field, what else must also be true? The following theorem presents some basic results that flow from the axioms of a field. Some of these will look familiar because they are true in and that's where most people are comfortable working.    For any field , the following are true.   The additive identity in is unique.    The multiplicative identity in is unique.    Additive inverses in are unique. (This means that for every element , there exists a unique element which is the additive inverse of . The truth of this statement justifies our use of the notation for the additive inverse of an element .)    Multiplicative inverses in are unique. (The truth of this statement justifies our use of the notation for the multiplicative inverse of a nonzero element .)    For every , .    For every nonzero , .    For every , .    For every , .    If and , then either or .       We will prove a few of these and leave the rest as exercises.  To prove ( ) that the additive identity is unique, we must prove that is the only element in which has the properties of an additive identity. We suppose that is such that for every element . Since this must be true for every , it must be true for . The previous equation then becomes . Since is an additive identity, , which combined with the fact that means that . This proves that the additive identity, , is unique.  To prove ( ) that additive inverses are unique, we must prove that for any element , there is a unique element that behaves like an additive inverse of . We let and we suppose that are both additive inverses of . We wish to show that .  Our assumptions mean that . We then use these assumptions, along with some of the properties of fields (the associativity of addition and the properties of the additive identity) in this calculation: . This proves that additive inverses are unique.    We offer one final note on notation. We will often use juxtaposition to denote multiplication within a field. That is, we may write instead of to indicate the product of two elements in a field. We trust the reader will adjust quickly to this seismic shift.     Carry out the following calculations within .              (Complete this calculation in the two different ways present in the distributive law and verify that they are equal.)         What is the additive inverse of in ? What is the multiplicative inverse of in ? Explain your answers.       says that is not a field because 9 is not prime. Identify a nonzero element of that does not have a multiplicative inverse and explain why it does not have an inverse.        Carry out the following calculations in . (Remember that your answer for calculations in should be a number between and .)                                 We know that since is not a prime, is not a field. In particular, the axiom about multiplicative inverses does not hold. For each nonzero element of , determine whether or not it has a multiplicative inverse. If the element has a multiplicative inverse, state that inverse.       For each nonzero element of , find the multiplicative inverse.      Writing Exercises    Finish . In other words, complete the proof begun in that is a field.      Consider . Which of the field axioms for hold by inheritance and for which of the axioms is there something that needs to be proved? Put each of the field axioms into one of these two categories. For each axiom that doesn't hold merely by inheritance, prove that it holds for .      For a set , define the set of polynomials over in the usual way:    Is a field? Justify your answer.    Is a field? Justify your answer.          No, is not a field. All of the integers are contained in , and since (for example) has no multiplicative inverse in , it will not have a multiplicative inverse in .    No, is not a field. The element has no multiplicative inverse. We can argue this by contradiction. If was the multiplicative inverse of , then . But since the constant term on the right side of this equation is and the constant term on the left side is , and since those are not equal, we have a contradiction.         In this problem we consider adding an element to . If is defined by is a field? Justify your answer.      In this problem we consider adding an element to .   If is defined by is a field? Justify your answer.    If is defined by is a field? Justify your answer.              Yes, this is a field. The most difficult axiom to check is the one about multiplicative inverses. It turns out that the multiplicative inverse of is where . One needs to check that for all non-zero elements of we have . But this is relatively easy to verify.         Define by Is a field? Justify your answer.      Consider the set with operations defined as follows: . Is with these operations a field? Justify your answer.    Yes, this is a field. Some of the axioms are quite tedious to check. It is perhaps worth noting that the multiplicative inverse of is .      Prove of .      Prove of .    Let be a non-zero element with multiplicative inverse . Suppose that the element also has the properties of a multiplicative inverse of . This means that . If we multiply both sides of this equation by , we have . This proves that , so multiplicative inverses are unique.      Prove of .      Prove of .      Prove of .      "
+  "body": " Fields   In this section we will consider the real numbers and study their most important properties in a general setting. In the process, we will learn how to handle axioms and abstract algebraic concepts.   In , we used the real numbers as the familiar world within which all of our calculations took place. Before we offer any definitions or results in this chapter, we will ponder exactly what properties of the real numbers were essential to these calculations. (The reader is likely so familiar with the real numbers that its important properties have been internalized and are not in the conscious mind. In this section we will make those properties explicit.)  The most basic concept in this book is the linear equation. What properties of the real numbers are used to solve a simple linear equation? In what follows we will solve the equation and draw to the surface some of these important properties: .  No student wants to write out all of these steps, and no instructor wants to grade such a solution! But the point is to notice the properties of the real numbers which are vital to solving an equation like this and which we usually ignore.  In we used the associativity of addition in . That is, we can move the parentheses around in addition and still have an equivalent expression. (The reader should see subtraction as a form of addition.)  In we used the fact that has an additive inverse a number we can add to to get . (The additive inverse of is .)  In we used the fact that is an additive identity in when we add to any real number , we get again.  In we used the associativity of multiplication in . We can move the parentheses around in multiplication just like we can in addition.  In we used the fact that is the multiplicative inverse of in . In other words, we can multiply by to get .  Finally, in we used the fact that is a multiplicative identity in when we multiply any real number by , that real number is unchanged.    By identifying these properties, our goal is to envision other mathematical realms in which solving linear equations would work the same way it does within . Toward this end, we now define an algebraic object called a field which has all of the properties used above (plus a few we haven't yet mentioned).    A field is a set with operations and and distinct elements such that all of the following properties hold.   For all , . (We say that is closed under addition .)    For all , . (We say that is closed under multiplication .)    For all , . (We say that addition in is commutative .)    For all , . (We say that addition in is associative .)    For each , . (We say that is an additive identity in .)    For each , there exists an element , such that . (We say that each has an additive inverse in .)    For each , . (We say that multiplication is commutative in .)    For each , . (We say that multiplication is associative in .)    For each , . (We say that is a multiplicative identity in .)    For each with , there exists an element such that . (We say that every nonzero element in has a multiplicative inverse .)    For each , . (We say that addition and multiplication in satisfy the distributive law .)        Axioms 5 and 6 could perhaps be stated with a bit more precision. Some texts state axiom 5 like this: the set must have an additive identity, that is, an element such that for all . Those same texts may also state axiom 6 without reference to the symbol : for each , there exists an element such that , where is the additive identity of the field.  For some students, the use of the symbol might be helpful, reminding them of the essential property of the additive identity through familiarity. But this may be confusing when handling a set which contains the symbol when that symbol does not function as the relevant additive identity.  Our point here is that the use of in the axioms for a field (and some of the subsequent theorems) is intended to stand in for a generic symbol for the additive identity. Similarly, the symbol stands in as the generic symbol for the multiplicative identity. (A reader could imagine a restatement of axioms 9 and 10 above using a letter as the multiplicative identity in the way we have demonstrated axioms 5 and 6 can be restated.)  The reader should also note that in a generic field the term nonzero means not the additive identity.     A note about axioms  What are presented in are known as the axioms of a field. This may be the reader's first exposure to axioms in mathematics, and this is worthy of a comment or two.  Much of theoretical mathematics is built upon axiomatic reasoning. The thinking goes like this: If we assume a limited number of properties are true, and we assume nothing beyond those properties, what else follows necessarily? In this way we can ask what is true of a field, not just what is true of the real numbers. While the real numbers may have specific properties that a general field does not, anything that is true of a general field must be true of the real numbers.   Working through some examples (and non-examples) will help us make sense of this definition.    The set of real numbers is a field. (If the real numbers were not a field, then we wouldn't have done a very good job of abstracting the properties of the real numbers for this definition!)      The complex numbers are defined in this way: , where . Addition and multiplication are defined in this way: . Notice that the addition and multiplication occuring within the parentheses on the right side of these equations are happening within . In this way, showing that some of the field axioms hold for depends on being a field.  The elements and in are , and these elements are not equal. (We recall that part of the definition of a field is that the elements and are distinct.)  With these definitions, one can check that satisfies the properties of a field. We will prove a few of these properties, and we will assign a few of these proofs in the exercises.  The definitions of and in show that is closed under addition and multiplication. (Notably, this relies on being closed under addition and multiplication!) To prove that the addition in is commutative, we consider two complex numbers and . Then . (We note that line used the fact that addition of real numbers is commutative.) This proves that addition in is commutative.  We will also prove that is an additive identity in . If , then . (This uses the fact that is an additive identity.) We note that although the definition of a field requires us to examine addition by  on both sides, since we just proved that addition is commutative, what we have already shown is sufficient.      The set of non-negative real numbers is not a field. (When thinking about a subset of the real numbers, we will assume that the usual addition and multiplication are in view unless otherwise stated.) While this set is closed under addition and multiplication, it does not contain additive inverses for positive real numbers. For example, the number has no additive inverse in this set.      The set of rational numbers  is a field. The rational numbers are defined as the set of all quotients (hence the symbol ) of integers; more formally, . We do not need to show that all of the field axioms hold in order to prove that is a field. Since is a subset of , and since it therefore inherits its operations from , some of the field axioms hold automatically. (These would include the associativity and commutativity of addition. What else holds by inheritance? ) Checking some of these details is left to the exercises.     This notion of inherited properties comes up with some frequency, so we will undertake a brief explanation. Supppser we have for two sets and , and we have an operation defined on . Any property that is intrinsic to the operation (rather than to the set) will hold in both and . For example, if is commutative in , then will also be commutative in since .  Not all field properties are inherited in this same way with subsets because some properties depend on the elements of the set and not just the operation. is a good example of this; is a subset of with the same operations, but it is not a field because (for example) the property of additive inverses is not an inherited property in the same way that the commutativity or associativity of addition is inherited.   We refer the reader to for the definitions of and , related notational conventions, and a refresher on modular arithmetic. All of this is necessary for the following example.    When is a prime integer, then is a field.  Working within can be a bit destabilizing at first, as the calculations take some practice. However, this effort pays off because the smallest finite fields offer some of the most tangible sandboxes in which to play. We will be using for small throughout this chapter to develop some interesting examples.  Part of the definition of a field is that one can divide by any nonzero element. But because we work within so often, division within is strange. In , for instance, the multiplicative inverse of is . (Another way to say this is that, within , the element that acts the most like is .)  The field contains only the elements and , and it therefore is a model for anything that is binary . For this reason, working in is often very useful in computer science.    Having defined fields, we now turn to the consequences of this definition. In other words, if a set with two operations meets the definition of a field, what else must also be true? The following theorem presents some basic results that flow from the axioms of a field. Some of these will look familiar because they are true in and that's where most people are comfortable working.    For any field , the following are true.   The additive identity in is unique.    The multiplicative identity in is unique.    Additive inverses in are unique. (This means that for every element , there exists a unique element which is the additive inverse of . The truth of this statement justifies our use of the notation for the additive inverse of an element .)    Multiplicative inverses in are unique. (The truth of this statement justifies our use of the notation for the multiplicative inverse of a nonzero element .)    For every , .    For every nonzero , .    For every , .    For every , .    If and , then either or .       We will prove a few of these and leave the rest as exercises.  To prove ( ) that the additive identity is unique, we must prove that is the only element in which has the properties of an additive identity. We suppose that is such that for every element . Since this must be true for every , it must be true for . The previous equation then becomes . Since is an additive identity, , which combined with the fact that means that . This proves that the additive identity, , is unique.  To prove ( ) that additive inverses are unique, we must prove that for any element , there is a unique element that behaves like an additive inverse of . We let and we suppose that are both additive inverses of . We wish to show that .  Our assumptions mean that . We then use these assumptions, along with some of the properties of fields (the associativity of addition and the properties of the additive identity) in this calculation: . This proves that additive inverses are unique.    We offer one final note on notation. We will often use juxtaposition to denote multiplication within a field. That is, we may write instead of to indicate the product of two elements in a field. We trust the reader will adjust quickly to this seismic shift.     Carry out the following calculations within . (All answers should be a number between and .)              (Complete this calculation in the two different ways present in the distributive law and verify that they are equal.)         What is the additive inverse of in ? What is the multiplicative inverse of in ? Explain your answers.       says that is not a field because 9 is not prime. Identify a nonzero element of that does not have a multiplicative inverse and explain why it does not have an inverse.        Carry out the following calculations in . (Remember that your answer for calculations in should be a number between and .)                                 We know that since is not a prime, is not a field. In particular, the axiom about multiplicative inverses does not hold. For each nonzero element of , determine whether or not it has a multiplicative inverse. If the element has a multiplicative inverse, state that inverse.       For each nonzero element of , find the multiplicative inverse.      Writing Exercises    Finish . In other words, complete the proof begun in that is a field.      Consider . Which of the field axioms for hold by inheritance and for which of the axioms is there something that needs to be proved? Put each of the field axioms into one of these two categories. For each axiom that doesn't hold merely by inheritance, prove that it holds for .      Let be a set and let be a nonnegative integer. Define a polynomial of degree over by where for all . Define as the set of polynomials of any degree over .   Is a field? Justify your answer.    Is a field? Justify your answer.          No, is not a field. All of the integers are contained in , and since (for example) has no multiplicative inverse in , it will not have a multiplicative inverse in .    No, is not a field. The element has no multiplicative inverse. We can argue this by contradiction. If was the multiplicative inverse of , then . But since the constant term on the right side of this equation is and the constant term on the left side is , and since those are not equal, we have a contradiction.         In this problem we consider adding an element to . If is defined by is a field? Justify your answer.      In this problem we consider adding an element to .   If is defined by is a field? Justify your answer.    If is defined by is a field? Justify your answer.              Yes, this is a field. The most difficult axiom to check is the one about multiplicative inverses. It turns out that the multiplicative inverse of is where . One needs to check that for all non-zero elements of we have . But this is relatively easy to verify.         Define by Is a field? Justify your answer.      Consider the set with operations defined as follows: . Is with these operations a field? Justify your answer.    Yes, this is a field. Some of the axioms are quite tedious to check. It is perhaps worth noting that the multiplicative inverse of is .      Prove of .      Prove of .    Let be a non-zero element with multiplicative inverse . Suppose that the element also has the properties of a multiplicative inverse of . This means that . If we multiply both sides of this equation by , we have . This proves that , so multiplicative inverses are unique.      Prove of .      Prove of .      Prove of .      "
 },
 {
   "id": "def-field",
@@ -1090,9 +1090,9 @@ var ptx_lunr_docs = [
   "body": "  The complex numbers are defined in this way: , where . Addition and multiplication are defined in this way: . Notice that the addition and multiplication occuring within the parentheses on the right side of these equations are happening within . In this way, showing that some of the field axioms hold for depends on being a field.  The elements and in are , and these elements are not equal. (We recall that part of the definition of a field is that the elements and are distinct.)  With these definitions, one can check that satisfies the properties of a field. We will prove a few of these properties, and we will assign a few of these proofs in the exercises.  The definitions of and in show that is closed under addition and multiplication. (Notably, this relies on being closed under addition and multiplication!) To prove that the addition in is commutative, we consider two complex numbers and . Then . (We note that line used the fact that addition of real numbers is commutative.) This proves that addition in is commutative.  We will also prove that is an additive identity in . If , then . (This uses the fact that is an additive identity.) We note that although the definition of a field requires us to examine addition by  on both sides, since we just proved that addition is commutative, what we have already shown is sufficient.   "
 },
 {
-  "id": "sec-fields-13",
+  "id": "ex-nonneg-reals",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-13",
+  "url": "sec-fields.html#ex-nonneg-reals",
   "type": "Example",
   "number": "2.1.5",
   "title": "",
@@ -1108,11 +1108,20 @@ var ptx_lunr_docs = [
   "body": "  The set of rational numbers  is a field. The rational numbers are defined as the set of all quotients (hence the symbol ) of integers; more formally, . We do not need to show that all of the field axioms hold in order to prove that is a field. Since is a subset of , and since it therefore inherits its operations from , some of the field axioms hold automatically. (These would include the associativity and commutativity of addition. What else holds by inheritance? ) Checking some of these details is left to the exercises.   "
 },
 {
-  "id": "sec-fields-16",
+  "id": "sec-fields-15",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-16",
-  "type": "Example",
+  "url": "sec-fields.html#sec-fields-15",
+  "type": "Note",
   "number": "2.1.7",
+  "title": "",
+  "body": " This notion of inherited properties comes up with some frequency, so we will undertake a brief explanation. Supppser we have for two sets and , and we have an operation defined on . Any property that is intrinsic to the operation (rather than to the set) will hold in both and . For example, if is commutative in , then will also be commutative in since .  Not all field properties are inherited in this same way with subsets because some properties depend on the elements of the set and not just the operation. is a good example of this; is a subset of with the same operations, but it is not a field because (for example) the property of additive inverses is not an inherited property in the same way that the commutativity or associativity of addition is inherited.  "
+},
+{
+  "id": "sec-fields-17",
+  "level": "2",
+  "url": "sec-fields.html#sec-fields-17",
+  "type": "Example",
+  "number": "2.1.8",
   "title": "",
   "body": "  When is a prime integer, then is a field.  Working within can be a bit destabilizing at first, as the calculations take some practice. However, this effort pays off because the smallest finite fields offer some of the most tangible sandboxes in which to play. We will be using for small throughout this chapter to develop some interesting examples.  Part of the definition of a field is that one can divide by any nonzero element. But because we work within so often, division within is strange. In , for instance, the multiplicative inverse of is . (Another way to say this is that, within , the element that acts the most like is .)  The field contains only the elements and , and it therefore is a model for anything that is binary . For this reason, working in is often very useful in computer science.   "
 },
@@ -1121,90 +1130,90 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-fields.html#thm-field-arithmetic",
   "type": "Theorem",
-  "number": "2.1.8",
+  "number": "2.1.9",
   "title": "",
   "body": "  For any field , the following are true.   The additive identity in is unique.    The multiplicative identity in is unique.    Additive inverses in are unique. (This means that for every element , there exists a unique element which is the additive inverse of . The truth of this statement justifies our use of the notation for the additive inverse of an element .)    Multiplicative inverses in are unique. (The truth of this statement justifies our use of the notation for the multiplicative inverse of a nonzero element .)    For every , .    For every nonzero , .    For every , .    For every , .    If and , then either or .       We will prove a few of these and leave the rest as exercises.  To prove ( ) that the additive identity is unique, we must prove that is the only element in which has the properties of an additive identity. We suppose that is such that for every element . Since this must be true for every , it must be true for . The previous equation then becomes . Since is an additive identity, , which combined with the fact that means that . This proves that the additive identity, , is unique.  To prove ( ) that additive inverses are unique, we must prove that for any element , there is a unique element that behaves like an additive inverse of . We let and we suppose that are both additive inverses of . We wish to show that .  Our assumptions mean that . We then use these assumptions, along with some of the properties of fields (the associativity of addition and the properties of the additive identity) in this calculation: . This proves that additive inverses are unique.   "
 },
 {
-  "id": "sec-fields-20-1",
+  "id": "sec-fields-21-1",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-20-1",
+  "url": "sec-fields.html#sec-fields-21-1",
   "type": "Reading Question",
   "number": "2.1.1",
   "title": "",
-  "body": "  Carry out the following calculations within .              (Complete this calculation in the two different ways present in the distributive law and verify that they are equal.)      "
+  "body": "  Carry out the following calculations within . (All answers should be a number between and .)              (Complete this calculation in the two different ways present in the distributive law and verify that they are equal.)      "
 },
 {
-  "id": "sec-fields-20-2",
+  "id": "sec-fields-21-2",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-20-2",
+  "url": "sec-fields.html#sec-fields-21-2",
   "type": "Reading Question",
   "number": "2.1.2",
   "title": "",
   "body": "  What is the additive inverse of in ? What is the multiplicative inverse of in ? Explain your answers.   "
 },
 {
-  "id": "sec-fields-20-3",
+  "id": "sec-fields-21-3",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-20-3",
+  "url": "sec-fields.html#sec-fields-21-3",
   "type": "Reading Question",
   "number": "2.1.3",
   "title": "",
   "body": "   says that is not a field because 9 is not prime. Identify a nonzero element of that does not have a multiplicative inverse and explain why it does not have an inverse.   "
 },
 {
-  "id": "sec-fields-21-1",
+  "id": "sec-fields-22-1",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-1",
+  "url": "sec-fields.html#sec-fields-22-1",
   "type": "Exercise",
   "number": "2.1.1",
   "title": "",
   "body": "  Carry out the following calculations in . (Remember that your answer for calculations in should be a number between and .)                              "
 },
 {
-  "id": "sec-fields-21-2",
+  "id": "sec-fields-22-2",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-2",
+  "url": "sec-fields.html#sec-fields-22-2",
   "type": "Exercise",
   "number": "2.1.2",
   "title": "",
   "body": "  We know that since is not a prime, is not a field. In particular, the axiom about multiplicative inverses does not hold. For each nonzero element of , determine whether or not it has a multiplicative inverse. If the element has a multiplicative inverse, state that inverse.    "
 },
 {
-  "id": "sec-fields-21-3",
+  "id": "sec-fields-22-3",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-3",
+  "url": "sec-fields.html#sec-fields-22-3",
   "type": "Exercise",
   "number": "2.1.3",
   "title": "",
   "body": "  For each nonzero element of , find the multiplicative inverse.    "
 },
 {
-  "id": "sec-fields-21-4-2",
+  "id": "sec-fields-22-4-2",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-4-2",
+  "url": "sec-fields.html#sec-fields-22-4-2",
   "type": "Exercise",
   "number": "2.1.4",
   "title": "",
   "body": "  Finish . In other words, complete the proof begun in that is a field.   "
 },
 {
-  "id": "sec-fields-21-4-3",
+  "id": "sec-fields-22-4-3",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-4-3",
+  "url": "sec-fields.html#sec-fields-22-4-3",
   "type": "Exercise",
   "number": "2.1.5",
   "title": "",
   "body": "  Consider . Which of the field axioms for hold by inheritance and for which of the axioms is there something that needs to be proved? Put each of the field axioms into one of these two categories. For each axiom that doesn't hold merely by inheritance, prove that it holds for .   "
 },
 {
-  "id": "sec-fields-21-4-4",
+  "id": "sec-fields-22-4-4",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-4-4",
+  "url": "sec-fields.html#sec-fields-22-4-4",
   "type": "Exercise",
   "number": "2.1.6",
   "title": "",
-  "body": "  For a set , define the set of polynomials over in the usual way:    Is a field? Justify your answer.    Is a field? Justify your answer.          No, is not a field. All of the integers are contained in , and since (for example) has no multiplicative inverse in , it will not have a multiplicative inverse in .    No, is not a field. The element has no multiplicative inverse. We can argue this by contradiction. If was the multiplicative inverse of , then . But since the constant term on the right side of this equation is and the constant term on the left side is , and since those are not equal, we have a contradiction.      "
+  "body": "  Let be a set and let be a nonnegative integer. Define a polynomial of degree over by where for all . Define as the set of polynomials of any degree over .   Is a field? Justify your answer.    Is a field? Justify your answer.          No, is not a field. All of the integers are contained in , and since (for example) has no multiplicative inverse in , it will not have a multiplicative inverse in .    No, is not a field. The element has no multiplicative inverse. We can argue this by contradiction. If was the multiplicative inverse of , then . But since the constant term on the right side of this equation is and the constant term on the left side is , and since those are not equal, we have a contradiction.      "
 },
 {
   "id": "exer-f3-alpha",
@@ -1216,9 +1225,9 @@ var ptx_lunr_docs = [
   "body": "  In this problem we consider adding an element to . If is defined by is a field? Justify your answer.   "
 },
 {
-  "id": "sec-fields-21-4-6",
+  "id": "sec-fields-22-4-6",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-4-6",
+  "url": "sec-fields.html#sec-fields-22-4-6",
   "type": "Exercise",
   "number": "2.1.8",
   "title": "",
@@ -1234,54 +1243,54 @@ var ptx_lunr_docs = [
   "body": "  Define by Is a field? Justify your answer.   "
 },
 {
-  "id": "sec-fields-21-4-8",
+  "id": "sec-fields-22-4-8",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-4-8",
+  "url": "sec-fields.html#sec-fields-22-4-8",
   "type": "Exercise",
   "number": "2.1.10",
   "title": "",
   "body": "  Consider the set with operations defined as follows: . Is with these operations a field? Justify your answer.    Yes, this is a field. Some of the axioms are quite tedious to check. It is perhaps worth noting that the multiplicative inverse of is .   "
 },
 {
-  "id": "sec-fields-21-4-9",
+  "id": "sec-fields-22-4-9",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-4-9",
+  "url": "sec-fields.html#sec-fields-22-4-9",
   "type": "Exercise",
   "number": "2.1.11",
   "title": "",
   "body": "  Prove of .   "
 },
 {
-  "id": "sec-fields-21-4-10",
+  "id": "sec-fields-22-4-10",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-4-10",
+  "url": "sec-fields.html#sec-fields-22-4-10",
   "type": "Exercise",
   "number": "2.1.12",
   "title": "",
   "body": "  Prove of .    Let be a non-zero element with multiplicative inverse . Suppose that the element also has the properties of a multiplicative inverse of . This means that . If we multiply both sides of this equation by , we have . This proves that , so multiplicative inverses are unique.   "
 },
 {
-  "id": "sec-fields-21-4-11",
+  "id": "sec-fields-22-4-11",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-4-11",
+  "url": "sec-fields.html#sec-fields-22-4-11",
   "type": "Exercise",
   "number": "2.1.13",
   "title": "",
   "body": "  Prove of .   "
 },
 {
-  "id": "sec-fields-21-4-12",
+  "id": "sec-fields-22-4-12",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-4-12",
+  "url": "sec-fields.html#sec-fields-22-4-12",
   "type": "Exercise",
   "number": "2.1.14",
   "title": "",
   "body": "  Prove of .   "
 },
 {
-  "id": "sec-fields-21-4-13",
+  "id": "sec-fields-22-4-13",
   "level": "2",
-  "url": "sec-fields.html#sec-fields-21-4-13",
+  "url": "sec-fields.html#sec-fields-22-4-13",
   "type": "Exercise",
   "number": "2.1.15",
   "title": "",
@@ -1294,7 +1303,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Solving Linear Systems Over Fields",
-  "body": " Solving Linear Systems Over Fields   Having now defined a field, in this section we will show how the problems of chapter 1 can be solved in this general setting. We have laid the groundwork for reproducing the results of the first three sections of for a field instead of the real numbers.   We now return to where we began in : the humble linear equation. If fields are generalizations of the real numbers, and if we can solve linear equations when everything in sight comes from the real numbers, we should be able to solve linear equations when everything in sight comes from a general field.    Consider the following equation where all variable values, constants, and coefficients are drawn from : . Solving this equation in would be easy; let's solve it in .  We first note that the additive inverse of in is , so our first step is to add to both sides of the equation: . We now need the multiplicative inverse of in , which is . We multiply both sides by to get our answer: .  When we check that our solution works (we plug back into the original equation and perform the computations in ), we find that it does: .    The point of this section is that the algorithm for solving linear systems ( ) which worked for also works for a general field . In order to be comfortable with this notion, we need to talk quickly through the development of that algorithm in this general setting.  Because a general field contains both and (or rather, an additive and a multiplicative identity), and because within a field we can perform all of the operations needed to solve linear systems, everything we want to do is legitimate. The definitions of the coefficient and augmented matrices, the elementary row operations, the echelon forms, pivots, and the row reduction algorithm (all found in and ) are the same once we move away from . Similarly, the three important theorems we have encountered so far (which we will reproduce below) all hold over a general field . We will omit the proofs of these theorems because the earlier proofs, when translated from to , are still valid.    Suppose is the augmented matrix of a linear system over a field , and suppose that is in reduced row-echelon form. Then the linear system is consistent if and only if there is no pivot in the final column of .      Suppose that is the augmented matrix corresponding to a consistent linear system over a field , and suppose that is in reduced row-echelon form. Then the system has a unique solution if and only if there is a pivot in each of the first columns of .      Let be an matrix with entries in a field and let be row equivalent to both and . If and are in reduced row-echelon form, then .    The algorithm for solving a linear system, supported by these theorems, remains the same as in . We will finish this section with two examples where we go through this algorithm carefully.    The following is a linear system over : . We will begin to solve this system by forming the augmented matrix: . Since working with fields other than is still new, we will explain all of the steps needed to reduce this matrix to its RREF. We first add the first row to the second row to produce a in the position. (Remember that is the additive inverse of in !) This matrix is the result: .  We now add twice the first row to the third to produce a in the position. Here is that matrix: .  We now notice that the second and third rows are the same. This means the third row will end up being a row of zeros, and we can achieve this by adding twice the second row to the third (in , this is the same as subtracting the second row from the third): .  The final step in reducing this matrix is to take care of the entry which is above the pivot in the position. We add the second row to the first, and this is the matrix which results: .  Our matrix is now in RREF, and from we can conclude that this linear system is consistent. Further, from we can see that there is not a unique solution to this system. We can write the solutions to this system, however: Since has three elements, there are three possible values for , meaning that there are three solutions to this linear system.      The following is a linear system over : . This example may seem a bit intimidating at first, especially for readers who have not dealt much with . But when we follow our step-by-step approach, we should arrive at a solution with minimal problems.  First, we write down the augmented matrix of this system: . To start row reducing this matrix, we need a in the entry. Instead of following rigidly by exchanging rows and then dividing (or multiplying by an inverse), we will skip the first step and handle the rows as they are.  For a nonzero element of , the multiplicative inverse is . This means that the inverse of is . So, in order to get a in the position, we multiply the first row of the matrix by . Here is the result: .  We now work to clear out the other entries in the first column. We add times the first row to the second and we add times the first row to the third. (We are taking care of two steps at once here.) This is the result: . (For readers who are new to , verifying these calculations would be an excellent exercise!)  Since we already have a in the entry, we can use that to produce a zero below it in that column. We add times the second row to the third row, and we get this: .  Even though this matrix is not yet in RREF, we do not need to continue with our algorithm. tells us that the original system is inconsistent because of the pivot in the final column. Therefore, this system has no solution.     Readers will be able to put a matrix over into RREF without difficulty using various computational means handheld calculators, smartphone applications, and any number of online matrix manipulators. However, working with matrices over fields which are not presents some difficulties for most of these applications.  Students can find similar online calculators for matrices over the complex numbers through online searches. Finite fields are a bit trickier. David Augustat has created the website Matrixer for this purpose, and we encourage readers to take advantage of this resource after they have first mastered the mechanics themselves. (That is, tools like this are best used to check work that is done by hand and then, when the by-hand calculations are no longer the main point, to streamline the process.)  Finally, we have written an R package called matrixmodp , which can be found on CRAN . This package can handle matrices over finite, prime fields, but it does not have the capability to handle matrices over more exotic finite fields. (We are aware that R is not the best vehicle for matrix algebra, but this book was largely written when we were also learning R, and this was a good excuse to learn how to author a package in that language.)      Solve the following linear equation over . List the steps you take in solving the equation in terms of the axioms of a field.       The following is a matrix with entries from . Reduce this matrix to REF. (It is not necessary to reduce the matrix to RREF.) Describe each step you take.         Solve the following linear system over : .    This system has the solution , , .      Solve the following linear system over : .    This linear system is inconsistent.      Solve the following linear system over : .      The following matrix is defined over : . Put this matrix into RREF.      Solve the following linear system over : .    This system is inconsistent.      Solve the following linear system over : .    The unique solution is , , and .       The following matrix is defined over (see ): . Put this matrix into RREF.      The following matrix is defined over (see ): . Put this matrix into RREF.     Writing Exercises        Suppose that the following is a linear system over : . Show that if , then this linear system has a unique solution. (For reference, see .)    Suppose that the system stated in part a. of this problem is a system over . What is the correct inequality the coefficients , , , and must satisfy in order for the system to have a unique solution? State your answer and prove it is correct.          The same argument as in works here, recognizing that in .    The correct inequality is .         Consider a linear system , with all coefficients and constants in the integers.   Show that if the system has a solution then it must have a solution .    Show that if the system has a unique solution then is also the unique solution in .          If all of the coefficients and constants begin as integers, all of the elementary row operations will produce coefficients and constants within . None of the elementary row operations can produce an irrational number when beginning with integers.    If there is a unique solution, there are no free variables, so whether one considers the solution in or , there cannot be another solution. Thus, the numbers in the solution set must be rational numbers.         Give descriptions of linear systems with each of the following properties, or state why such a system is impossible. Specific numbers and equations are not necessary, but your description should include what field is involved, the number of equations and variables, the number of free variables, etc. Explain your answers.   A consistent system with exactly 8 solutions    A consistent system with exactly 10 solutions    A consistent system with exactly 9 solutions    A consistent system with exactly 17 solutions         "
+  "body": " Solving Linear Systems Over Fields   Having now defined a field, in this section we will show how the problems of chapter 1 can be solved in this general setting. We have laid the groundwork for reproducing the results of the first three sections of for a general field instead of the real numbers.   We now return to where we began in : the humble linear equation. If fields are generalizations of the real numbers, and if we can solve linear equations when everything in sight comes from the real numbers, we should be able to solve linear equations when everything in sight comes from a general field.    Consider the following equation where all variable values, constants, and coefficients are drawn from : . Solving this equation in would be easy; let's solve it in .  We first note that the additive inverse of in is , so our first step is to add to both sides of the equation: . We now need the multiplicative inverse of in , which is . We multiply both sides by to get our answer: .  When we check that our solution works (we plug back into the original equation and perform the computations in ), we find that it does: .    The point of this section is that the algorithm for solving linear systems ( ) which worked for also works for a general field . In order to be comfortable with this notion, we need to talk quickly through the development of that algorithm in this general setting.  Because a general field contains both and (or rather, an additive and a multiplicative identity), and because within a field we can perform all of the operations needed to solve linear systems, everything we want to do is legitimate. The definitions of the coefficient and augmented matrices, the elementary row operations, the echelon forms, pivots, and the row reduction algorithm (all found in and ) are the same once we move away from . Similarly, the three important theorems we have encountered so far (which we will reproduce below) all hold over a general field . We will omit the proofs of these theorems because the earlier proofs, when translated from to , are still valid.    Suppose is the augmented matrix of a linear system over a field , and suppose that is in reduced row-echelon form. Then the linear system is consistent if and only if there is no pivot in the final column of .      Suppose that is the augmented matrix corresponding to a consistent linear system over a field , and suppose that is in reduced row-echelon form. Then the system has a unique solution if and only if there is a pivot in each of the first columns of .      Let be an matrix with entries in a field and let be row equivalent to both and . If and are in reduced row-echelon form, then .    The algorithm for solving a linear system, supported by these theorems, remains the same as in . We will finish this section with two examples where we go through this algorithm carefully.    The following is a linear system over : . We will begin to solve this system by forming the augmented matrix: . Since working with fields other than is still new, we will explain all of the steps needed to reduce this matrix to its RREF. We first add the first row to the second row to produce a in the position. (Remember that is the additive inverse of in !) This matrix is the result: .  We now add twice the first row to the third to produce a in the position. Here is that matrix: .  We now notice that the second and third rows are the same. This means the third row will end up being a row of zeros, and we can achieve this by adding twice the second row to the third (in , this is the same as subtracting the second row from the third): .  The final step in reducing this matrix is to take care of the entry which is above the pivot in the position. We add the second row to the first, and this is the matrix which results: .  Our matrix is now in RREF, and from we can conclude that this linear system is consistent. Further, from we can see that there is not a unique solution to this system. We can write the solutions to this system, however: Since has three elements, there are three possible values for , meaning that there are three solutions to this linear system.     A linear system over a field will have either no solutions, a unique solution, or a number of solutions related to the size of the field and the number of free variables. When the field is infinite, we have what is sometimes known as the trichotomy law , namely that the number of solutions to a linear system over such a field will either be zero, one, or infinite. This law needs some modification when the field is finite. (See and compare it to .)     The following is a linear system over : . This example may seem a bit intimidating at first, especially for readers who have not dealt much with . But when we follow our step-by-step approach, we should arrive at a solution with minimal problems.  First, we write down the augmented matrix of this system: . To start row reducing this matrix, we need a in the entry. Instead of following rigidly by exchanging rows and then dividing (or multiplying by an inverse), we will skip the first step and handle the rows as they are.  For a nonzero element of , the multiplicative inverse is . This means that the inverse of is . So, in order to get a in the position, we multiply the first row of the matrix by . Here is the result: .  We now work to clear out the other entries in the first column. We add times the first row to the second and we add times the first row to the third. (We are taking care of two steps at once here.) This is the result: . (For readers who are new to , verifying these calculations would be an excellent exercise!)  Since we already have a in the entry, we can use that to produce a zero below it in that column. We add times the second row to the third row, and we get this: .  Even though this matrix is not yet in RREF, we do not need to continue with our algorithm. tells us that the original system is inconsistent because of the pivot in the final column. Therefore, this system has no solution.     Readers will be able to put a matrix over into RREF without difficulty using various computational means handheld calculators, smartphone applications, and any number of online matrix manipulators. However, working with matrices over fields which are not presents some difficulties for most of these applications.  Students can find similar online calculators for matrices over the complex numbers through online searches. Finite fields are a bit trickier. David Augustat has created the website Matrixer for this purpose, and we encourage readers to take advantage of this resource after they have first mastered the mechanics themselves. (That is, tools like this are best used to check work that is done by hand and then, when the by-hand calculations are no longer the main point, to streamline the process.)  Finally, we have written an R package called matrixmodp , which can be found on CRAN . This package can handle matrices over finite, prime fields, but it does not have the capability to handle matrices over more exotic finite fields. (We are aware that R is not the best vehicle for matrix algebra, but this book was largely written when we were also learning R, and this was a good excuse to learn how to author a package in that language.)      Solve the following linear equation over . List the steps you take in solving the equation in terms of the axioms of a field.       The following is a matrix with entries from . Reduce this matrix to REF. (It is not necessary to reduce the matrix to RREF.) Describe each step you take.         Solve the following linear system over : .    This system has the solution , , .      Solve the following linear system over : .    This linear system is inconsistent.      Solve the following linear system over : .      The following matrix is defined over : . Put this matrix into RREF.      Solve the following linear system over : .    This system is inconsistent.      Solve the following linear system over : .    The unique solution is , , and .       The following matrix is defined over (see ): . Put this matrix into RREF.      The following matrix is defined over (see ): . Put this matrix into RREF.     Writing Exercises        Suppose that the following is a linear system over : . Show that if , then this linear system has a unique solution. (For reference, see .)    Suppose that the system stated in part (a) of this problem is a system over . What is the correct inequality the coefficients , , , and must satisfy in order for the system to have a unique solution? State your answer and prove it is correct.          The same argument as in works here, recognizing that in .    The correct inequality is .         Consider a linear system , with all coefficients and constants in the integers.   Show that if the system has a solution then it must have a solution .    Show that if the system has a unique solution then is also the unique solution in .          If all of the coefficients and constants begin as integers, all of the elementary row operations will produce coefficients and constants within . None of the elementary row operations can produce an irrational number when beginning with integers.    If there is a unique solution, there are no free variables, so whether one considers the solution in or , there cannot be another solution. Thus, the numbers in the solution set must be rational numbers.         Give descriptions of linear systems with each of the following properties, or state why such a system is impossible. Specific numbers and equations are not necessary, but your description should include what field is involved, the number of equations and variables, the number of free variables, etc. Explain your answers.   A consistent system with exactly 8 solutions    A consistent system with exactly 10 solutions    A consistent system with exactly 9 solutions    A consistent system with exactly 17 solutions         "
 },
 {
   "id": "sec-linear-systems-fields-4",
@@ -1345,132 +1354,141 @@ var ptx_lunr_docs = [
   "id": "sec-linear-systems-fields-12",
   "level": "2",
   "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-12",
-  "type": "Example",
+  "type": "Note",
   "number": "2.2.6",
   "title": "",
-  "body": "  The following is a linear system over : . This example may seem a bit intimidating at first, especially for readers who have not dealt much with . But when we follow our step-by-step approach, we should arrive at a solution with minimal problems.  First, we write down the augmented matrix of this system: . To start row reducing this matrix, we need a in the entry. Instead of following rigidly by exchanging rows and then dividing (or multiplying by an inverse), we will skip the first step and handle the rows as they are.  For a nonzero element of , the multiplicative inverse is . This means that the inverse of is . So, in order to get a in the position, we multiply the first row of the matrix by . Here is the result: .  We now work to clear out the other entries in the first column. We add times the first row to the second and we add times the first row to the third. (We are taking care of two steps at once here.) This is the result: . (For readers who are new to , verifying these calculations would be an excellent exercise!)  Since we already have a in the entry, we can use that to produce a zero below it in that column. We add times the second row to the third row, and we get this: .  Even though this matrix is not yet in RREF, we do not need to continue with our algorithm. tells us that the original system is inconsistent because of the pivot in the final column. Therefore, this system has no solution.   "
+  "body": " A linear system over a field will have either no solutions, a unique solution, or a number of solutions related to the size of the field and the number of free variables. When the field is infinite, we have what is sometimes known as the trichotomy law , namely that the number of solutions to a linear system over such a field will either be zero, one, or infinite. This law needs some modification when the field is finite. (See and compare it to .)  "
 },
 {
   "id": "sec-linear-systems-fields-13",
   "level": "2",
   "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-13",
-  "type": "Note",
+  "type": "Example",
   "number": "2.2.7",
+  "title": "",
+  "body": "  The following is a linear system over : . This example may seem a bit intimidating at first, especially for readers who have not dealt much with . But when we follow our step-by-step approach, we should arrive at a solution with minimal problems.  First, we write down the augmented matrix of this system: . To start row reducing this matrix, we need a in the entry. Instead of following rigidly by exchanging rows and then dividing (or multiplying by an inverse), we will skip the first step and handle the rows as they are.  For a nonzero element of , the multiplicative inverse is . This means that the inverse of is . So, in order to get a in the position, we multiply the first row of the matrix by . Here is the result: .  We now work to clear out the other entries in the first column. We add times the first row to the second and we add times the first row to the third. (We are taking care of two steps at once here.) This is the result: . (For readers who are new to , verifying these calculations would be an excellent exercise!)  Since we already have a in the entry, we can use that to produce a zero below it in that column. We add times the second row to the third row, and we get this: .  Even though this matrix is not yet in RREF, we do not need to continue with our algorithm. tells us that the original system is inconsistent because of the pivot in the final column. Therefore, this system has no solution.   "
+},
+{
+  "id": "sec-linear-systems-fields-14",
+  "level": "2",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-14",
+  "type": "Note",
+  "number": "2.2.8",
   "title": "",
   "body": " Readers will be able to put a matrix over into RREF without difficulty using various computational means handheld calculators, smartphone applications, and any number of online matrix manipulators. However, working with matrices over fields which are not presents some difficulties for most of these applications.  Students can find similar online calculators for matrices over the complex numbers through online searches. Finite fields are a bit trickier. David Augustat has created the website Matrixer for this purpose, and we encourage readers to take advantage of this resource after they have first mastered the mechanics themselves. (That is, tools like this are best used to check work that is done by hand and then, when the by-hand calculations are no longer the main point, to streamline the process.)  Finally, we have written an R package called matrixmodp , which can be found on CRAN . This package can handle matrices over finite, prime fields, but it does not have the capability to handle matrices over more exotic finite fields. (We are aware that R is not the best vehicle for matrix algebra, but this book was largely written when we were also learning R, and this was a good excuse to learn how to author a package in that language.)  "
 },
 {
-  "id": "sec-linear-systems-fields-14-1",
+  "id": "sec-linear-systems-fields-15-1",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-14-1",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-1",
   "type": "Reading Question",
   "number": "2.2.1",
   "title": "",
   "body": "  Solve the following linear equation over . List the steps you take in solving the equation in terms of the axioms of a field.    "
 },
 {
-  "id": "sec-linear-systems-fields-14-2",
+  "id": "sec-linear-systems-fields-15-2",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-14-2",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-2",
   "type": "Reading Question",
   "number": "2.2.2",
   "title": "",
   "body": "  The following is a matrix with entries from . Reduce this matrix to REF. (It is not necessary to reduce the matrix to RREF.) Describe each step you take.    "
 },
 {
-  "id": "sec-linear-systems-fields-15-1",
+  "id": "sec-linear-systems-fields-16-1",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-1",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-16-1",
   "type": "Exercise",
   "number": "2.2.1",
   "title": "",
   "body": "  Solve the following linear system over : .    This system has the solution , , .   "
 },
 {
-  "id": "sec-linear-systems-fields-15-2",
+  "id": "sec-linear-systems-fields-16-2",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-2",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-16-2",
   "type": "Exercise",
   "number": "2.2.2",
   "title": "",
   "body": "  Solve the following linear system over : .    This linear system is inconsistent.   "
 },
 {
-  "id": "sec-linear-systems-fields-15-3",
+  "id": "sec-linear-systems-fields-16-3",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-3",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-16-3",
   "type": "Exercise",
   "number": "2.2.3",
   "title": "",
   "body": "  Solve the following linear system over : .   "
 },
 {
-  "id": "sec-linear-systems-fields-15-4",
+  "id": "sec-linear-systems-fields-16-4",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-4",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-16-4",
   "type": "Exercise",
   "number": "2.2.4",
   "title": "",
   "body": "  The following matrix is defined over : . Put this matrix into RREF.   "
 },
 {
-  "id": "sec-linear-systems-fields-15-5",
+  "id": "sec-linear-systems-fields-16-5",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-5",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-16-5",
   "type": "Exercise",
   "number": "2.2.5",
   "title": "",
   "body": "  Solve the following linear system over : .    This system is inconsistent.   "
 },
 {
-  "id": "sec-linear-systems-fields-15-6",
+  "id": "sec-linear-systems-fields-16-6",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-6",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-16-6",
   "type": "Exercise",
   "number": "2.2.6",
   "title": "",
   "body": "  Solve the following linear system over : .    The unique solution is , , and .    "
 },
 {
-  "id": "sec-linear-systems-fields-15-7",
+  "id": "sec-linear-systems-fields-16-7",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-7",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-16-7",
   "type": "Exercise",
   "number": "2.2.7",
   "title": "",
   "body": "  The following matrix is defined over (see ): . Put this matrix into RREF.   "
 },
 {
-  "id": "sec-linear-systems-fields-15-8",
+  "id": "sec-linear-systems-fields-16-8",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-8",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-16-8",
   "type": "Exercise",
   "number": "2.2.8",
   "title": "",
   "body": "  The following matrix is defined over (see ): . Put this matrix into RREF.   "
 },
 {
-  "id": "sec-linear-systems-fields-15-9-2",
+  "id": "sec-linear-systems-fields-16-9-2",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-9-2",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-16-9-2",
   "type": "Exercise",
   "number": "2.2.9",
   "title": "",
-  "body": "     Suppose that the following is a linear system over : . Show that if , then this linear system has a unique solution. (For reference, see .)    Suppose that the system stated in part a. of this problem is a system over . What is the correct inequality the coefficients , , , and must satisfy in order for the system to have a unique solution? State your answer and prove it is correct.          The same argument as in works here, recognizing that in .    The correct inequality is .      "
+  "body": "     Suppose that the following is a linear system over : . Show that if , then this linear system has a unique solution. (For reference, see .)    Suppose that the system stated in part (a) of this problem is a system over . What is the correct inequality the coefficients , , , and must satisfy in order for the system to have a unique solution? State your answer and prove it is correct.          The same argument as in works here, recognizing that in .    The correct inequality is .      "
 },
 {
-  "id": "sec-linear-systems-fields-15-9-3",
+  "id": "sec-linear-systems-fields-16-9-3",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-9-3",
+  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-16-9-3",
   "type": "Exercise",
   "number": "2.2.10",
   "title": "",
   "body": "  Consider a linear system , with all coefficients and constants in the integers.   Show that if the system has a solution then it must have a solution .    Show that if the system has a unique solution then is also the unique solution in .          If all of the coefficients and constants begin as integers, all of the elementary row operations will produce coefficients and constants within . None of the elementary row operations can produce an irrational number when beginning with integers.    If there is a unique solution, there are no free variables, so whether one considers the solution in or , there cannot be another solution. Thus, the numbers in the solution set must be rational numbers.      "
 },
 {
-  "id": "sec-linear-systems-fields-15-9-4",
+  "id": "ex-trichotomy-2",
   "level": "2",
-  "url": "sec-linear-systems-fields.html#sec-linear-systems-fields-15-9-4",
+  "url": "sec-linear-systems-fields.html#ex-trichotomy-2",
   "type": "Exercise",
   "number": "2.2.11",
   "title": "",
