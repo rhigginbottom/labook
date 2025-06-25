@@ -619,27 +619,85 @@ cT_A(\bfv) \amp = c A(\bfv) = c \sum_{i=1}^n v_i\mathbf{a}_i.
 </h4>
 <div class="para" id="def-diag-identity-matrices-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. (So <span class="process-math">\(A\)</span> is <em class="emphasis">square</em>.) We say that <span class="process-math">\(A\)</span> is a <dfn class="terminology">diagonal matrix</dfn> if <span class="process-math">\(a_{ij} = 0\)</span> for all <span class="process-math">\((i,j)\)</span> such that <span class="process-math">\(i \neq j\text{.}\)</span> If <span class="process-math">\(A\)</span> is diagonal and <span class="process-math">\(a_{ii}=1\)</span> for all <span class="process-math">\(i = 1,\ldots,n\text{,}\)</span> then <span class="process-math">\(A\)</span> is called an <dfn class="terminology">identity matrix</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-diag-identity-matrices-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.1.7"><a href="#def-diag-identity-matrices" title="Copy permalink for Definition 3.1.7">🔗</a></div></article><article class="note remark-like" id="note-define-ej"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
+<div class="autopermalink" data-description="Definition 3.1.7"><a href="#def-diag-identity-matrices" title="Copy permalink for Definition 3.1.7">🔗</a></div></article><div class="para" id="subsec-lin-trans-matrices-7">The next example shows what the linear transformation <span class="process-math">\(T_A\)</span> is like when <span class="process-math">\(A\)</span> is a diagonal or identity matrix.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-lin-trans-matrices-7" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-lin-trans-matrices-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-lin-trans-matrices-8-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be the following matrices over <span class="process-math">\(\rr\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 2 \amp 0 \amp 0 \\
+0 \amp -1 \amp 0 \\
+0 \amp 0 \amp -3 \end{bmatrix} \hspace{.3in}
+B = \begin{bmatrix} 1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We note that both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are diagonal matrices and that <span class="process-math">\(B\)</span> is an identity matrix.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-lin-trans-matrices-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="subsec-lin-trans-matrices-8-1-2">
+<div class="para">Building on <a href="sec-linear-trans.html#examp-matrix-vector-prod" class="xref" data-knowl="./knowl/xref/examp-matrix-vector-prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.5">Example 3.1.5</a>, both <span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_B\)</span> are linear transformations from <span class="process-math">\(\rr^3\)</span> to <span class="process-math">\(\rr^3\text{.}\)</span> Let <span class="process-math">\(\bfx\)</span> be an element of <span class="process-math">\(\rr^3\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-matrix-vector-prod.html">
+\begin{equation*}
+\bfx = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-matrix-vector-prod.html">
+\begin{equation*}
+T_A(\bfx) = \begin{bmatrix} 2 \amp 0 \amp 0 \\
+0 \amp -1 \amp 0 \\
+0 \amp 0 \amp -3 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
+\begin{bmatrix} 2x_1 \\ -x_2 \\ -3x_3 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We also have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-matrix-vector-prod.html">
+\begin{equation*}
+T_B(\bfx) = \begin{bmatrix} 1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
+\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \bfx\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(T_B(\bfx) = \bfx\)</span> for all <span class="process-math">\(\bfx \in \rr^3\text{,}\)</span> the linear transformation <span class="process-math">\(T_B\)</span> acts as the identity function on <span class="process-math">\(\rr^3\text{.}\)</span> The action of <span class="process-math">\(T_A\)</span> on <span class="process-math">\(\rr^3\)</span> is slightly more complex, but only by a bit. Because of all the zeros in <span class="process-math">\(A\text{,}\)</span> the effect of the transformation <span class="process-math">\(T_A\)</span> is just multiplication of each coordinate of a vector in <span class="process-math">\(\rr^3\)</span> by the corresponding diagonal entry in <span class="process-math">\(A\text{.}\)</span> What we observe for multiplication by a diagonal or identity matrix in <span class="process-math">\(M_3(\rr)\)</span> can easily be extended to <span class="process-math">\(M_n(\ff)\)</span> for any <span class="process-math">\(n \in \nn\)</span> and any field <span class="process-math">\(\ff\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-lin-trans-matrices-8-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.1.8"><a href="#subsec-lin-trans-matrices-8" title="Copy permalink for Example 3.1.8">🔗</a></div></article></details><article class="note remark-like" id="note-define-ej"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
 </h4>
 <div class="para" id="note-define-ej-1">We often use the notation <span class="process-math">\(\mathbf{e}_1,\ldots, \mathbf{e}_n\)</span> to refer to the columns of the <span class="process-math">\(n\times n\)</span> identity matrix. In other words, <span class="process-math">\(\mathbf{e}_j\)</span> is the vector with a <span class="process-math">\(1\)</span> in entry <span class="process-math">\(j\)</span> and zeros elsewhere.<div class="autopermalink" data-description="Paragraph"><a href="#note-define-ej-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Note 3.1.8"><a href="#note-define-ej" title="Copy permalink for Note 3.1.8">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.1.2: Linear Transformations and Matrices"><a href="#subsec-lin-trans-matrices" title="Copy permalink for Subsection 3.1.2: Linear Transformations and Matrices">🔗</a></div></section><section class="subsection" id="subsec-props-linear-trans"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Note 3.1.9"><a href="#note-define-ej" title="Copy permalink for Note 3.1.9">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.1.2: Linear Transformations and Matrices"><a href="#subsec-lin-trans-matrices" title="Copy permalink for Subsection 3.1.2: Linear Transformations and Matrices">🔗</a></div></section><section class="subsection" id="subsec-props-linear-trans"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="space"> </span><span class="title">Properties of Linear Transformations</span>
 </h3>
-<div class="para" id="subsec-props-linear-trans-2">Recall that while linear transformations must have special properties, they are first of all <em class="emphasis">functions</em>. And, as functions, properties like injectivity and surjectivity can apply to linear transformations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-props-linear-trans-2">Recall that while linear transformations must have special properties, they are first of all <em class="emphasis">functions</em>. And, as functions, we can discuss the composition of linear transformations as well as properties like injectivity and surjectivity.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<article class="definition definition-like" id="def-injective-surjective-bijective"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
+<article class="definition definition-like" id="def-comp-linear-trans"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
 </h4>
-<div class="para" id="def-injective-surjective-bijective-1-1">Let <span class="process-math">\(T:V \to W\)</span> be a linear transformation between vector spaces. We say that <span class="process-math">\(T\)</span> is <dfn class="terminology">injective</dfn> if <span class="process-math">\(T(\bfv_1)=T(\bfv_2)\)</span> implies <span class="process-math">\(\bfv_1=\bfv_2\)</span> for all <span class="process-math">\(\bfv_1, \bfv_2 \in V\text{.}\)</span> Injective linear transformations are also referred to as <em class="emphasis">one-to-one</em> since no two distinct elements of the domain may correspond to the same element of the range.<div class="autopermalink" data-description="Paragraph"><a href="#def-injective-surjective-bijective-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="def-injective-surjective-bijective-1-2">A linear transformation <span class="process-math">\(T\)</span> is called <dfn class="terminology">surjective</dfn> if for every <span class="process-math">\(\bfw \in W\)</span> there exists a vector <span class="process-math">\(\bfv \in V\)</span> such that <span class="process-math">\(T(\bfv) = \bfw\text{.}\)</span> For surjective functions, the image/range is the same as the codomain. (The range is a subset of the codomain for every function, but these sets are equal if and only if the function is surjective.) Sometimes surjective functions are referred to as <em class="emphasis">onto</em> functions.<div class="autopermalink" data-description="Paragraph"><a href="#def-injective-surjective-bijective-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="def-comp-linear-trans-1-1">If <span class="process-math">\(T:U \to V\)</span> and <span class="process-math">\(S:V \to W\)</span> are linear transformations between vector spaces, then the function <span class="process-math">\(S \circ T:U \to W\)</span> defined by <span class="process-math">\({(S \circ T)(\bfu) = S(T(\bfu))}\)</span> for each <span class="process-math">\(\bfu \in U\)</span> is the <dfn class="terminology">composition</dfn> of the transformations <span class="process-math">\(T\)</span> and <span class="process-math">\(S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-comp-linear-trans-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 3.1.10"><a href="#def-comp-linear-trans" title="Copy permalink for Definition 3.1.10">🔗</a></div></article><article class="note remark-like" id="subsec-props-linear-trans-4"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-props-linear-trans-4-1">We note that <a href="sec-linear-trans.html#def-comp-linear-trans" class="xref" data-knowl="./knowl/xref/def-comp-linear-trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.10">Definition 3.1.10</a> is only possible when the <em class="emphasis">codomain of <span class="process-math">\(T\)</span></em> is the same as the <em class="emphasis">domain of <span class="process-math">\(S\)</span></em>. It is not difficult to show that <span class="process-math">\(S\circ T\)</span> is a linear transformation. (See <a href="sec-linear-trans.html#exer-lin-trans-comp" class="xref" data-knowl="./knowl/xref/exer-lin-trans-comp.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.1.7.12">Exercise 3.1.7.12</a>.)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 3.1.11"><a href="#subsec-props-linear-trans-4" title="Copy permalink for Note 3.1.11">🔗</a></div></article><article class="definition definition-like" id="def-injective-surjective-bijective"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-injective-surjective-bijective-1-1">Let <span class="process-math">\(T:V \to W\)</span> be a linear transformation between vector spaces. We say that <span class="process-math">\(T\)</span> is <dfn class="terminology">injective</dfn> if <span class="process-math">\(T(\bfv_1)=T(\bfv_2)\)</span> implies <span class="process-math">\(\bfv_1=\bfv_2\)</span> for all <span class="process-math">\(\bfv_1, \bfv_2 \in V\text{.}\)</span> Injective linear transformations are also referred to as <em class="emphasis">one-to-one</em> since no two distinct elements of the domain may correspond to the same element of the image. <details class="ptx-footnote" aria-live="polite" id="def-injective-surjective-bijective-1-1-8"><summary class="ptx-footnote__number" title="Footnote 5"><sup> 5 </sup></summary><div class="ptx-footnote__contents" id="def-injective-surjective-bijective-1-1-8">Recall that by “image” we mean “range”.</div></details>.<div class="autopermalink" data-description="Paragraph"><a href="#def-injective-surjective-bijective-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-injective-surjective-bijective-1-2">A linear transformation <span class="process-math">\(T\)</span> is called <dfn class="terminology">surjective</dfn> if for every <span class="process-math">\(\bfw \in W\)</span> there exists a vector <span class="process-math">\(\bfv \in V\)</span> such that <span class="process-math">\(T(\bfv) = \bfw\text{.}\)</span> For surjective functions, the image is the same as the codomain. (The image is a subset of the codomain for every function, but these sets are equal if and only if the function is surjective.) Sometimes surjective functions are referred to as <em class="emphasis">onto</em> functions.<div class="autopermalink" data-description="Paragraph"><a href="#def-injective-surjective-bijective-1-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="def-injective-surjective-bijective-1-3">If a linear transformation is both injective and surjective, we say that it is <dfn class="terminology">bijective</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-injective-surjective-bijective-1-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.1.9"><a href="#def-injective-surjective-bijective" title="Copy permalink for Definition 3.1.9">🔗</a></div></article><details id="subsec-props-linear-trans-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-props-linear-trans-4-1-1">Let’s reconsider the linear transformation <span class="process-math">\(D:P_5 \to P_4\)</span> which appeared in <a href="sec-linear-trans.html#examp-deriv-lin-trans" class="xref" data-knowl="./knowl/xref/examp-deriv-lin-trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.3">Example 3.1.3</a>. We observe that <span class="process-math">\(D\)</span> is surjective but not injective.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="subsec-props-linear-trans-4-1-2">
+<div class="autopermalink" data-description="Definition 3.1.12"><a href="#def-injective-surjective-bijective" title="Copy permalink for Definition 3.1.12">🔗</a></div></article><details id="subsec-props-linear-trans-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="subsec-props-linear-trans-6-1-1">Let’s reconsider the linear transformation <span class="process-math">\(D:P_5 \to P_4\)</span> which appeared in <a href="sec-linear-trans.html#examp-deriv-lin-trans" class="xref" data-knowl="./knowl/xref/examp-deriv-lin-trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.3">Example 3.1.3</a>. We observe that <span class="process-math">\(D\)</span> is surjective but not injective.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="subsec-props-linear-trans-6-1-2">
 <div class="para">The transformation is surjective because we know about the antiderivative. Let <span class="process-math">\(q \in P_4\)</span> have the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -653,56 +711,112 @@ p(t) = \tfrac{1}{5}a_4t^5 + \tfrac{1}{4}a_3t^4 + \tfrac{1}{3}a_2t^3 + \tfrac{1}{
 \end{equation*}
 </div>
 <div class="para">It is but the work of a Calculus I student to verify that <span class="process-math">\(D(p)=q\text{,}\)</span> thus showing that <span class="process-math">\(D\)</span> is surjective. (We note that we could have chosen <span class="process-math">\(p\)</span> to have any constant term at all; we used the constant term of <span class="process-math">\(0\text{.}\)</span>)</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-4-1-2" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec-props-linear-trans-4-1-3">Finally, we will show that <span class="process-math">\(D\)</span> is not injective by looking at an example of two elements of <span class="process-math">\(P_5\)</span> which have the same image under <span class="process-math">\(D\)</span> in <span class="process-math">\(P_4\text{.}\)</span> Let <span class="process-math">\(p_1 = t^2 + 10\)</span> and <span class="process-math">\(p_2 = t^2 + 20\text{.}\)</span> Then we see that even though <span class="process-math">\(p_1 \neq p_2\text{,}\)</span> we have <span class="process-math">\(D(p_1)=D(p_2)\text{,}\)</span> and this proves that <span class="process-math">\(D\)</span> is not injective.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-4-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-6-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-props-linear-trans-6-1-3">Finally, we will show that <span class="process-math">\(D\)</span> is not injective by looking at an example of two elements of <span class="process-math">\(P_5\)</span> which have the same image under <span class="process-math">\(D\)</span> in <span class="process-math">\(P_4\text{.}\)</span> Let <span class="process-math">\({p_1 = t^2 + 10}\)</span> and <span class="process-math">\(p_2 = t^2 + 20\text{.}\)</span> Then we see that even though <span class="process-math">\(p_1 \neq p_2\text{,}\)</span> we have <span class="process-math">\({D(p_1)=D(p_2)=2t}\text{,}\)</span> and this proves that <span class="process-math">\(D\)</span> is not injective.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-6-1-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.1.10"><a href="#subsec-props-linear-trans-4" title="Copy permalink for Example 3.1.10">🔗</a></div></article></details><div class="para" id="subsec-props-linear-trans-5">We will define one more property of linear transformations here that will resurface in <a href="sec-matrix-linear-trans.html" class="internal" title="Section 3.2: The Matrix of a Linear Transformation">Section 3.2</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-5" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 3.1.13"><a href="#subsec-props-linear-trans-6" title="Copy permalink for Example 3.1.13">🔗</a></div></article></details><div class="para" id="subsec-props-linear-trans-7">We will define one more property of linear transformations here that will resurface in <a href="sec-matrix-linear-trans.html" class="internal" title="Section 3.2: The Matrix of a Linear Transformation">Section 3.2</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-props-linear-trans-7" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-lin-trans-invertible"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.14</span><span class="period">.</span>
 </h4>
-<div class="para" id="def-lin-trans-invertible-1-1">Let <span class="process-math">\(T:V \to W\)</span> be a linear transformation between vector spaces. The <dfn class="terminology">identity transformation</dfn> on <span class="process-math">\(V\)</span> is the linear transformation <span class="process-math">\(I_V:V \to V\)</span> which is <span class="process-math">\(I_V(\bfv)=\bfv\)</span> for each <span class="process-math">\(\bfv \in V\text{.}\)</span> (If the vector space we have in mind is clear, we will drop the subscript and use the notation <span class="process-math">\(I\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#def-lin-trans-invertible-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="def-lin-trans-invertible-1-1">Let <span class="process-math">\(T:V \to W\)</span> be a linear transformation between vector spaces. The <dfn class="terminology">identity transformation</dfn> on <span class="process-math">\(V\)</span> is the linear transformation <span class="process-math">\({I_V:V \to V}\)</span> which is <span class="process-math">\(I_V(\bfv)=\bfv\)</span> for each <span class="process-math">\(\bfv \in V\text{.}\)</span> (If the vector space we have in mind is clear, we will drop the subscript and use the notation <span class="process-math">\(I\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#def-lin-trans-invertible-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="def-lin-trans-invertible-1-2">We say that the linear transformation <span class="process-math">\(T\)</span> is <dfn class="terminology">invertible</dfn> if there exists a linear transformation <span class="process-math">\(S:W \to V\)</span> such that <span class="process-math">\(S \circ T = I_V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-lin-trans-invertible-1-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.1.11"><a href="#def-lin-trans-invertible" title="Copy permalink for Definition 3.1.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.1.3: Properties of Linear Transformations"><a href="#subsec-props-linear-trans" title="Copy permalink for Subsection 3.1.3: Properties of Linear Transformations">🔗</a></div></section><section class="subsection" id="subsec-isomorphisms"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Definition 3.1.14"><a href="#def-lin-trans-invertible" title="Copy permalink for Definition 3.1.14">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.1.3: Properties of Linear Transformations"><a href="#subsec-props-linear-trans" title="Copy permalink for Subsection 3.1.3: Properties of Linear Transformations">🔗</a></div></section><section class="subsection" id="subsec-isomorphisms"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="space"> </span><span class="title">Isomorphisms</span>
 </h3>
 <div class="para" id="subsec-isomorphisms-2">Bijective functions are important in almost all settings, and the linear algebra setting is no exception. We have a specific name for bijective linear transformations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-isomorphism"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-isomorphism-1-1">A bijective linear transformation <span class="process-math">\(T\)</span> between vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> is called an <dfn class="terminology">isomorphism</dfn>. If there exists an isomorphism between vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{,}\)</span> then these spaces are said to be <dfn class="terminology">isomorphic</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-isomorphism-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.1.12"><a href="#def-isomorphism" title="Copy permalink for Definition 3.1.12">🔗</a></div></article><div class="para" id="subsec-isomorphisms-4">The reader should think of isomorphic vector spaces as <em class="emphasis">essentially the same</em>. Such spaces will not be exactly the same, of course, in the same way that two finite sets of the same size are not necessarily identical. But the presence of an isomorphism means that the vector space operations are compatible in such a way that such spaces share many of the same properties.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-4" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 3.1.15"><a href="#def-isomorphism" title="Copy permalink for Definition 3.1.15">🔗</a></div></article><div class="para" id="subsec-isomorphisms-4">The reader should think of isomorphic vector spaces as <em class="emphasis">essentially the same</em>. Such spaces will not be exactly the same, of course, in the same way that two finite sets of the same size are not necessarily identical. But the presence of an isomorphism means that the vector space operations are compatible in such a way that such spaces share many of the same properties.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-4" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<article class="note remark-like" id="notation-set-lts"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span>
+<details id="examp-r2-p1-iso" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.16</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="examp-r2-p1-iso-1-1">
+<div class="para">The vector spaces <span class="process-math">\(\rr^2\)</span> and <span class="process-math">\(P_1\)</span> are isomorphic. To prove this, we consider the function <span class="process-math">\(T:\rr^2 \to P_1\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T \left( \begin{bmatrix} a \\ b \end{bmatrix}\right) = a + bt\text{.}
+\end{equation*}
+</div>
+<div class="para">To justify the claim that <span class="process-math">\(\rr^2\)</span> and <span class="process-math">\(P_1\)</span> are isomorphic, we must prove that <span class="process-math">\(T\)</span> is a bijective linear transformation. We will prove that <span class="process-math">\(T\)</span> is a linear transformation and ask the reader to prove bijectivity in the exercises.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#examp-r2-p1-iso-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="examp-r2-p1-iso-1-2">
+<div class="para">We let <span class="process-math">\(\bfx_1\)</span> and <span class="process-math">\(\bfx_2\)</span> be elements of <span class="process-math">\(\rr^2\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfx_1 = \begin{bmatrix} a_1 \\ b_1 \end{bmatrix}, \hspace{.3in}
+\bfx_2 = \begin{bmatrix} a_2 \\ b_2 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(\bfx_1 + \bfx_2) = T \left(\begin{bmatrix} a_1 + a_2 \\ b_1 + b_2 \end{bmatrix}\right) = (a_1 + a_2) + (b_1 + b_2)t\text{,}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(\bfx_1) + T(\bfx_2) = (a_1 + b_1t) + (a_2 + b_2)t\text{.}
+\end{equation*}
+</div>
+<div class="para">The properties <span class="process-math">\(P_1\)</span> possesses as a vector space show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(\bfx_1 + \bfx_2) = T(\bfx_1) + T(\bfx_2)\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#examp-r2-p1-iso-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="examp-r2-p1-iso-1-3">
+<div class="para">We now suppose that <span class="process-math">\(\bfx \in \rr^2\)</span> and <span class="process-math">\(c \in \rr\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bfx = \begin{bmatrix} a \\ b \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math" id="examp-r2-p1-iso-1-3-4">
+\begin{align*}
+T(c\bfx) \amp = T\left( \begin{bmatrix} ca \\ cb \end{bmatrix}\right) = ca + cbt\\
+cT(\bfx) \amp = c(a + bt) = ca + cbt\text{.}
+\end{align*}
+</div>
+<div class="para">Again, we see that <span class="process-math">\(T(c\bfx) = cT(\bfx)\)</span> using the properties of <span class="process-math">\(P_1\)</span> as a vector space.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#examp-r2-p1-iso-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="examp-r2-p1-iso-1-4">We have shown that <span class="process-math">\(T\)</span> is a linear transformation. It is also bijective (see <a href="sec-linear-trans.html#exer-prove-lt-bijective" class="xref" data-knowl="./knowl/xref/exer-prove-lt-bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.1.7.18">Exercise 3.1.7.18</a>), so it is an isomorphism, meaning that <span class="process-math">\(\rr^2\)</span> and <span class="process-math">\(P_1\)</span> are isomorphic.<div class="autopermalink" data-description="Paragraph"><a href="#examp-r2-p1-iso-1-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.1.16"><a href="#examp-r2-p1-iso" title="Copy permalink for Example 3.1.16">🔗</a></div></article></details><article class="note remark-like" id="notation-set-lts"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.1.17</span><span class="period">.</span>
 </h4>
 <div class="para" id="notation-set-lts-1">If <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces, then the set of all linear transformations from <span class="process-math">\(V\to W\)</span> is denoted <span class="process-math">\(L(V,W)\text{.}\)</span> When <span class="process-math">\(W=V\text{,}\)</span> we will write <span class="process-math">\(L(V)\)</span> instead of <span class="process-math">\(L(V,V)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#notation-set-lts-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Note 3.1.13"><a href="#notation-set-lts" title="Copy permalink for Note 3.1.13">🔗</a></div></article><div class="para" id="subsec-isomorphisms-6">We can now prove that two concepts we have defined in this section are one and the same for linear transformations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-6" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Note 3.1.17"><a href="#notation-set-lts" title="Copy permalink for Note 3.1.17">🔗</a></div></article><div class="para" id="subsec-isomorphisms-7">We can now prove that two concepts we have defined in this section are one and the same for linear transformations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-7" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="proposition theorem-like" id="prop-isomorphism-invertible"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.14</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.18</span><span class="period">.</span>
 </h4>
 <div class="para" id="prop-isomorphism-invertible-1-1">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces over <span class="process-math">\(\ff\text{,}\)</span> and let <span class="process-math">\(T \in L(V,W)\text{.}\)</span> Then <span class="process-math">\(T\)</span> is an isomorphism if and only if <span class="process-math">\(T\)</span> is invertible.<div class="autopermalink" data-description="Paragraph"><a href="#prop-isomorphism-invertible-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 3.1.14"><a href="#prop-isomorphism-invertible" title="Copy permalink for Proposition 3.1.14">🔗</a></div></article><details id="prop-isomorphism-invertible-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-isomorphism-invertible-2-1">This fact is true for functions without any of the linear transformation properties being involved. (A function is bijective if and only if it has an inverse.)<div class="autopermalink" data-description="Paragraph"><a href="#prop-isomorphism-invertible-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proposition 3.1.18"><a href="#prop-isomorphism-invertible" title="Copy permalink for Proposition 3.1.18">🔗</a></div></article><details id="prop-isomorphism-invertible-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-isomorphism-invertible-2-1">This fact is true for functions without any of the linear transformation properties being involved. (A function is bijective if and only if it has an inverse.)<div class="autopermalink" data-description="Paragraph"><a href="#prop-isomorphism-invertible-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 3.1.14.1"><a href="#prop-isomorphism-invertible-2" title="Copy permalink for Proof 3.1.14.1">🔗</a></div></article></details><article class="proposition theorem-like" id="prop-inverse-lt"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span>
+<div class="autopermalink" data-description="Proof 3.1.18.1"><a href="#prop-isomorphism-invertible-2" title="Copy permalink for Proof 3.1.18.1">🔗</a></div></article></details><article class="proposition theorem-like" id="prop-inverse-lt"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.19</span><span class="period">.</span>
 </h4>
 <div class="para" id="prop-inverse-lt-1-1">If <span class="process-math">\(T \in L(V,W)\)</span> is invertible, then <span class="process-math">\(T^{-1}:W \to V\)</span> is also a linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#prop-inverse-lt-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 3.1.15"><a href="#prop-inverse-lt" title="Copy permalink for Proposition 3.1.15">🔗</a></div></article><details id="prop-inverse-lt-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="prop-inverse-lt-2-1">
+<div class="autopermalink" data-description="Proposition 3.1.19"><a href="#prop-inverse-lt" title="Copy permalink for Proposition 3.1.19">🔗</a></div></article><details id="prop-inverse-lt-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="prop-inverse-lt-2-1">
 <div class="para">We will check the two properties of a linear transformation. (See <a href="sec-linear-trans.html#def-lin-trans" class="xref" data-knowl="./knowl/xref/def-lin-trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.1">Definition 3.1.1</a>.) Suppose that <span class="process-math">\(\bfw_1, \bfw_2 \in W\text{.}\)</span> Since <span class="process-math">\(T \circ T^{-1} = I_W\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-lin-trans.html">
 \begin{equation*}
 \bfw_1 + \bfw_2 = T(T^{-1}(\bfw_1)) + T(T^{-1}(\bfw_2)) = T(T^{-1}(\bfw_1) + T^{-1}(\bfw_2))\text{.}
 \end{equation*}
 </div>
-<div class="para">When we apply <span class="process-math">\(T^{-1}\)</span> to the beginning and end of this equality, using <span class="process-math">\(T^{-1}\circ T = I_V\text{,}\)</span> we get</div>
+<div class="para">When we apply <span class="process-math">\(T^{-1}\)</span> to the beginning and end of this equality, using <span class="process-math">\({T^{-1}\circ T = I_V}\text{,}\)</span> we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-lin-trans.html">
 \begin{equation*}
 T^{-1}(\bfw_1 + \bfw_2) = T^{-1}(\bfw_1) + T^{-1}(\bfw_2)\text{.}
@@ -727,35 +841,35 @@ T^{-1}(c\bfw) = cT^{-1}(\bfw)\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#prop-inverse-lt-2-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 3.1.15.1"><a href="#prop-inverse-lt-2" title="Copy permalink for Proof 3.1.15.1">🔗</a></div></article></details><div class="para" id="subsec-isomorphisms-9">Before we leave this subsection, it is worth pointing out that when <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces, the set <span class="process-math">\(L(V,W)\)</span> itself has some important structure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-9" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 3.1.19.1"><a href="#prop-inverse-lt-2" title="Copy permalink for Proof 3.1.19.1">🔗</a></div></article></details><div class="para" id="subsec-isomorphisms-10">Before we leave this subsection, it is worth pointing out that when <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces, the set <span class="process-math">\(L(V,W)\)</span> itself has some important structure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-10" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-isomorphisms-10">
+<div class="para logical" id="subsec-isomorphisms-11">
 <div class="para">When <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces over <span class="process-math">\(\ff\text{,}\)</span> we can define the sum and scalar multiple of linear transformations since both of these operations happen on the level of elements. If <span class="process-math">\(S, T \in L(V,W)\)</span> and <span class="process-math">\(c \in \ff\text{,}\)</span> then we define <span class="process-math">\(S+T\)</span> and <span class="process-math">\(cT\)</span> in the following way. For all <span class="process-math">\(\bfv \in V\text{,}\)</span>
 </div>
-<ul class="disc" id="subsec-isomorphisms-10-9">
-<li id="subsec-isomorphisms-10-9-1">
-<div class="para" id="subsec-isomorphisms-10-9-1-1">
-<span class="process-math">\((S+T)(\bfv) = S(\bfv) + T(\bfv)\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-10-9-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<ul class="disc" id="subsec-isomorphisms-11-9">
+<li id="subsec-isomorphisms-11-9-1">
+<div class="para" id="subsec-isomorphisms-11-9-1-1">
+<span class="process-math">\((S+T)(\bfv) = S(\bfv) + T(\bfv)\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-11-9-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-isomorphisms-10-9-1" title="Copy permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-isomorphisms-11-9-1" title="Copy permalink for Item">🔗</a></div>
 </li>
-<li id="subsec-isomorphisms-10-9-2">
-<div class="para" id="subsec-isomorphisms-10-9-2-1">
-<span class="process-math">\((cT)(\bfv) = cT(\bfv)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-10-9-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="subsec-isomorphisms-11-9-2">
+<div class="para" id="subsec-isomorphisms-11-9-2-1">
+<span class="process-math">\((cT)(\bfv) = cT(\bfv)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-11-9-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#subsec-isomorphisms-10-9-2" title="Copy permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-isomorphisms-11-9-2" title="Copy permalink for Item">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-10" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-11" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-isomorphisms-11">These operations as defined make <span class="process-math">\(L(V,W)\)</span> into its own vector space. We will leave the proof of this theorem for the exercises.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-11" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-isomorphisms-12">These operations as defined make <span class="process-math">\(L(V,W)\)</span> into its own vector space. We will leave the proof of this theorem for the exercises.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-isomorphisms-12" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-linear-maps-vspace"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.16</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.20</span><span class="period">.</span>
 </h4>
-<div class="para" id="thm-linear-maps-vspace-1-1">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces over a field <span class="process-math">\(\ff\text{,}\)</span> and let <span class="process-math">\(S, T \in L(V,W)\)</span> and <span class="process-math">\(c \in \ff\text{.}\)</span> Then <span class="process-math">\(S+T\)</span> and <span class="process-math">\(cT\)</span> are both linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\text{,}\)</span> and <span class="process-math">\(L(V,W)\)</span> is a vector space with these operations.<div class="autopermalink" data-description="Paragraph"><a href="#thm-linear-maps-vspace-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="thm-linear-maps-vspace-1-1">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces over a field <span class="process-math">\(\ff\text{,}\)</span> and let <span class="process-math">\({S, T \in L(V,W)}\)</span> and <span class="process-math">\(c \in \ff\text{.}\)</span> Then <span class="process-math">\(S+T\)</span> and <span class="process-math">\(cT\)</span> are both linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\text{,}\)</span> and <span class="process-math">\(L(V,W)\)</span> is a vector space with these operations.<div class="autopermalink" data-description="Paragraph"><a href="#thm-linear-maps-vspace-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 3.1.16"><a href="#thm-linear-maps-vspace" title="Copy permalink for Theorem 3.1.16">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.1.4: Isomorphisms"><a href="#subsec-isomorphisms" title="Copy permalink for Subsection 3.1.4: Isomorphisms">🔗</a></div></section><section class="subsection" id="subsec-matrix-vector-form-lin-system"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Theorem 3.1.20"><a href="#thm-linear-maps-vspace" title="Copy permalink for Theorem 3.1.20">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.1.4: Isomorphisms"><a href="#subsec-isomorphisms" title="Copy permalink for Subsection 3.1.4: Isomorphisms">🔗</a></div></section><section class="subsection" id="subsec-matrix-vector-form-lin-system"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="space"> </span><span class="title">The Matrix-Vector Form of a Linear System</span>
 </h3>
 <div class="para" id="subsec-matrix-vector-form-lin-system-2">Having defined the product of a matrix and a vector in <a href="sec-linear-trans.html#examp-matrix-vector-prod" class="xref" data-knowl="./knowl/xref/examp-matrix-vector-prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.5">Example 3.1.5</a>, we can reformulate one of the foundational (and introductory) matters of this book. We will now put the notion of a linear system—in particular, the solutions to linear systems—in a different context.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-vector-form-lin-system-2" title="Copy permalink for Paragraph">🔗</a></div>
@@ -777,7 +891,7 @@ a_{m1}x_1 + \cdots + a_{mn}x_n \amp = b_m\text{.}\notag
 <div class="para" id="subsec-matrix-vector-form-lin-system-4">With this reformulation, the questions of the existence and uniqueness of solutions to a system of equations (see the end of <a href="sec-intro-systems.html" class="internal" title="Section 1.1: Systems of Linear Equations">Section 1.1</a>) can now be stated in the language of the injectivity and surjectivity of linear transformations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-vector-form-lin-system-4" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <details id="subsec-matrix-vector-form-lin-system-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.17</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.21</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-matrix-vector-form-lin-system-5-1-1">
 <div class="para">Consider the linear transformation <span class="process-math">\(T_A:\rr^3 \to \rr^3\)</span> which is multiplication by this matrix:</div>
 <div class="displaymath process-math">
@@ -846,7 +960,7 @@ A \amp \bfv
 <div class="para">then we have both <span class="process-math">\(T_A(\bfx_1)=\bfv\)</span> and <span class="process-math">\(T_A(\bfx_2)=\bfv\text{.}\)</span> (The vector <span class="process-math">\(\bfx_1\)</span> results from setting the free variable equal to <span class="process-math">\(0\text{,}\)</span> and we obtain <span class="process-math">\(\bfx_2\)</span> by setting the free variable equal to <span class="process-math">\(1\text{.}\)</span>) Finally, we note that the linear system which corresponds to the augmented matrix <span class="process-math">\([A \mid \bfv]\)</span> is consistent with many solutions—that is, a solution is not unique.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-vector-form-lin-system-5-1-4" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.1.17"><a href="#subsec-matrix-vector-form-lin-system-5" title="Copy permalink for Example 3.1.17">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 3.1.5: The Matrix-Vector Form of a Linear System"><a href="#subsec-matrix-vector-form-lin-system" title="Copy permalink for Subsection 3.1.5: The Matrix-Vector Form of a Linear System">🔗</a></div></section><section class="reading-questions" id="sec-linear-trans-8"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 3.1.21"><a href="#subsec-matrix-vector-form-lin-system-5" title="Copy permalink for Example 3.1.21">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 3.1.5: The Matrix-Vector Form of a Linear System"><a href="#subsec-matrix-vector-form-lin-system" title="Copy permalink for Subsection 3.1.5: The Matrix-Vector Form of a Linear System">🔗</a></div></section><section class="reading-questions" id="sec-linear-trans-8"><h3 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
 <article class="exercise exercise-like" id="sec-linear-trans-8-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -903,7 +1017,7 @@ A = \begin{bmatrix}
 <div class="autopermalink" data-description="Item 3.1.6.2.c"><a href="#sec-linear-trans-8-2-1-1-8-3" title="Copy permalink for Item 3.1.6.2.c">🔗</a></div>
 </li>
 <li id="sec-linear-trans-8-2-1-1-8-4">
-<div class="para" id="sec-linear-trans-8-2-1-1-8-4-1">Determine whether or not <span class="process-math">\(\mathbf{c}\)</span> is in the range of <span class="process-math">\(T_A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-trans-8-2-1-1-8-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-linear-trans-8-2-1-1-8-4-1">Determine whether or not <span class="process-math">\(\mathbf{c}\)</span> is in the image of <span class="process-math">\(T_A\text{.}\)</span> (Reminder: by “image” here we mean “range”.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-trans-8-2-1-1-8-4-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 3.1.6.2.d"><a href="#sec-linear-trans-8-2-1-1-8-4" title="Copy permalink for Item 3.1.6.2.d">🔗</a></div>
 </li>
@@ -1161,12 +1275,12 @@ A = \begin{bmatrix}
 <article class="exercise exercise-like" id="sec-linear-trans-9-11-2"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
 <div class="para logical" id="sec-linear-trans-9-11-2-1-1">
 <div class="para">Define the function <span class="process-math">\(T:C[0,\infty) \to C[0,\infty)\)</span> to be the following:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-contin-functions.html">
 \begin{equation*}
 (T(f))(x) = \int_0^x f(y)\;dy\text{.}
 \end{equation*}
 </div>
-<div class="para">Prove that <span class="process-math">\(T\)</span> is a linear transformation.</div>
+<div class="para">Prove that <span class="process-math">\(T\)</span> is a linear transformation. (See <a href="sec-subspaces.html#exer-contin-functions" class="xref" data-knowl="./knowl/xref/exer-contin-functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.4.5">Exercise 2.4.5</a> for a reminder of the definition of <span class="process-math">\(C[0,\infty)\text{.}\)</span>)</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-trans-9-11-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="sec-linear-trans-9-11-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
@@ -1288,9 +1402,12 @@ S(T(\bfu_1)) \amp = S(T(\bfu_2))\\
 <div class="para" id="exer-matrix-vector-mult-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix over a field <span class="process-math">\(\ff\text{,}\)</span> and let <span class="process-math">\(\bfv\)</span> be a vector in <span class="process-math">\(\ff^n\text{.}\)</span> Prove that the formulations of the matrix-vector product given in <a href="sec-linear-trans.html#form-matrix-vect-prod" class="xref" data-knowl="./knowl/xref/form-matrix-vect-prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1">(3.1)</a> and <a href="sec-linear-trans.html#matrix-vector-def2" class="xref" data-knowl="./knowl/xref/matrix-vector-def2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2">(3.2)</a> are equivalent.<div class="autopermalink" data-description="Paragraph"><a href="#exer-matrix-vector-mult-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Exercise 3.1.7.16"><a href="#exer-matrix-vector-mult" title="Copy permalink for Exercise 3.1.7.16">🔗</a></div></article><article class="exercise exercise-like" id="sec-linear-trans-9-11-8"><h5 class="heading"><span class="codenumber">17<span class="period">.</span></span></h5>
-<div class="para" id="sec-linear-trans-9-11-8-1-1">Prove <a href="sec-linear-trans.html#thm-linear-maps-vspace" class="xref" data-knowl="./knowl/xref/thm-linear-maps-vspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.16">Theorem 3.1.16</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-trans-9-11-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-linear-trans-9-11-8-1-1">Prove <a href="sec-linear-trans.html#thm-linear-maps-vspace" class="xref" data-knowl="./knowl/xref/thm-linear-maps-vspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.20">Theorem 3.1.20</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-trans-9-11-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.7.17"><a href="#sec-linear-trans-9-11-8" title="Copy permalink for Exercise 3.1.7.17">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-linear-trans-9-11" title="Copy permalink for Subexercises: Writing Exercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 3.1.7"><a href="#sec-linear-trans-9" title="Copy permalink for Exercises 3.1.7">🔗</a></div></section><div class="autopermalink" data-description="Section 3.1: Linear Transformations"><a href="#sec-linear-trans" title="Copy permalink for Section 3.1: Linear Transformations">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Exercise 3.1.7.17"><a href="#sec-linear-trans-9-11-8" title="Copy permalink for Exercise 3.1.7.17">🔗</a></div></article><article class="exercise exercise-like" id="exer-prove-lt-bijective"><h5 class="heading"><span class="codenumber">18<span class="period">.</span></span></h5>
+<div class="para" id="exer-prove-lt-bijective-1-1">Finish the proof in <a href="sec-linear-trans.html#examp-r2-p1-iso" class="xref" data-knowl="./knowl/xref/examp-r2-p1-iso.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.16">Example 3.1.16</a> that <span class="process-math">\(\rr^2\)</span> and <span class="process-math">\(P_1\)</span> are isomorphic. Specifically, prove that the linear transformation given in this example is bijective.<div class="autopermalink" data-description="Paragraph"><a href="#exer-prove-lt-bijective-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.7.18"><a href="#exer-prove-lt-bijective" title="Copy permalink for Exercise 3.1.7.18">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-linear-trans-9-11" title="Copy permalink for Subexercises: Writing Exercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 3.1.7"><a href="#sec-linear-trans-9" title="Copy permalink for Exercises 3.1.7">🔗</a></div></section><div class="autopermalink" data-description="Section 3.1: Linear Transformations"><a href="#sec-linear-trans" title="Copy permalink for Section 3.1: Linear Transformations">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-third.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-matrix-linear-trans.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
