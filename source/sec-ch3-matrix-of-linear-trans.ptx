@@ -111,13 +111,10 @@
 <subsection xml:id="subsec-matrix-mult">
   <title>Composition and Matrix Multiplication</title>
   <p>
-    Since linear transformations are functions, we can <em>compose</em> them with other linear transformations. In order for this to make sense, we need to have the codomains and domains match up correctly.
+    Since linear transformations are functions, we can <em>compose</em> them with other linear transformations. In order for this to make sense, we need to have the codomains and domains match up correctly. (The reader should recall a brief introduction to this idea in <xref ref="def-comp-linear-trans"/>.)
   </p>
   <p>
-    If <m>T:U \to V</m> and <m>S:V \to W</m> are linear transformations between vector spaces, then we can define the function <m>S \circ T:U \to W</m> by <m>(S \circ T)(\bfu) = S(T(\bfu))</m> for each <m>\bfu \in U</m>. Note that such a definition is only possible when the <em>codomain of <m>T</m></em> is the same as the <em>domain of <m>S</m></em>. It is not difficult to show that <m>S\circ T</m> is a linear transformation. (See <xref ref="exer-lin-trans-comp"/>.)
-  </p>
-  <p>
-    If <m>U = \ff^n</m>, <m>V = \ff^m</m>, and <m>W = \ff^p</m>, then the linear transformation <m>S \circ T</m> is defined <m>\ff^n \to \ff^p</m>, and <xref ref="thm-matrix-of-lin-trans"/> says that there is a unique matrix over <m>\ff</m> which carries out this linear transformation. What is that matrix? 
+    If <m>T:U \to V</m> and <m>S:V \to W</m> are linear transformations between vector spaces, then the linear transformation <m>S \circ T</m> is defined <m>U \to W</m>. If <m>U = \ff^n</m>, <m>V = \ff^m</m>, and <m>W = \ff^p</m>, then the linear transformation <m>S \circ T</m> is defined <m>\ff^n \to \ff^p</m>, and <xref ref="thm-matrix-of-lin-trans"/> says that there is a unique matrix over <m>\ff</m> which carries out this linear transformation. What is that matrix? 
   </p>
   <p>
     <xref ref="thm-matrix-of-lin-trans"/> tells us that there are matrices <m>A</m> and <m>B</m> such that the transformations <m>T</m> and <m>S</m> are multiplication by <m>B</m> and <m>A</m>, respectively. The matrix <m>B</m> is <m>m\times n</m> and <m>A</m> is <m>p\times m</m>. We will <em>define</em> the product of <m>A</m> and <m>B</m> so that the matrix of <m>S\circ T</m> is the matrix product <m>AB</m>.

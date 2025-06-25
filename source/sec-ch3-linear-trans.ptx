@@ -181,6 +181,48 @@
   </statement>
 </definition>
 
+<p>
+  The next example shows what the linear transformation <m>T_A</m> is like when <m>A</m> is a diagonal or identity matrix.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A</m> and <m>B</m> be the following matrices over <m>\rr</m>:
+      <me>
+        A = \begin{bmatrix} 2 \amp 0 \amp 0 \\
+        0 \amp -1 \amp 0 \\
+        0 \amp 0 \amp -3 \end{bmatrix} \hspace{.3in}
+        B = \begin{bmatrix} 1 \amp 0 \amp 0 \\
+        0 \amp 1 \amp 0 \\
+        0 \amp 0 \amp 1 \end{bmatrix}
+      </me>.
+      We note that both <m>A</m> and <m>B</m> are diagonal matrices and that <m>B</m> is an identity matrix.
+    </p>
+    <p>
+      Building on <xref ref="examp-matrix-vector-prod"/>, both <m>T_A</m> and <m>T_B</m> are linear transformations from <m>\rr^3</m> to <m>\rr^3</m>. Let <m>\bfx</m> be an element of <m>\rr^3</m> where
+      <me>
+        \bfx = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
+      </me>.
+      Then we have 
+      <me>
+        T_A(\bfx) = \begin{bmatrix} 2 \amp 0 \amp 0 \\
+        0 \amp -1 \amp 0 \\
+        0 \amp 0 \amp -3 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
+        \begin{bmatrix} 2x_1 \\ -x_2 \\ -3x_3 \end{bmatrix}
+      </me>.
+      We also have
+      <me>
+        T_B(\bfx) = \begin{bmatrix} 1 \amp 0 \amp 0 \\
+        0 \amp 1 \amp 0 \\
+        0 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
+        \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \bfx
+      </me>.
+      Since <m>T_B(\bfx) = \bfx</m> for all <m>\bfx \in \rr^3</m>, the linear transformation <m>T_B</m> acts as the identity function on <m>\rr^3</m>. The action of <m>T_A</m> on <m>\rr^3</m> is slightly more complex, but only by a bit. Because of all the zeros in <m>A</m>, the effect of the transformation <m>T_A</m> is just multiplication of each coordinate of a vector in <m>\rr^3</m> by the corresponding diagonal entry in <m>A</m>. What we observe for multiplication by a diagonal or identity matrix in <m>M_3(\rr)</m> can easily be extended to <m>M_n(\ff)</m> for any <m>n \in \nn</m> and any field <m>\ff</m>.
+    </p>
+  </statement>
+</example>
+
 <note xml:id="note-define-ej">
   <p>
     We often use the notation <m>\mathbf{e}_1,\ldots, \mathbf{e}_n</m> to refer to the columns of the <m>n\times n</m> identity matrix. In other words, <m>\mathbf{e}_j</m> is the vector with a <m>1</m> in entry <m>j</m> and zeros elsewhere.
@@ -191,16 +233,30 @@
 <subsection xml:id="subsec-props-linear-trans">
   <title>Properties of Linear Transformations</title>
   <p>
-    Recall that while linear transformations must have special properties, they are first of all <em>functions</em>. And, as functions, properties like injectivity and surjectivity can apply to linear transformations.
+    Recall that while linear transformations must have special properties, they are first of all <em>functions</em>. And, as functions, we can discuss the composition of linear transformations as well as properties like injectivity and surjectivity.
   </p>
+
+  <definition xml:id="def-comp-linear-trans">
+    <statement>
+      <p>
+        If <m>T:U \to V</m> and <m>S:V \to W</m> are linear transformations between vector spaces, then the function <m>S \circ T:U \to W</m> defined by <m>{(S \circ T)(\bfu) = S(T(\bfu))}</m> for each <m>\bfu \in U</m> is the <term>composition</term> of the transformations <m>T</m> and <m>S</m>. 
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      We note that <xref ref="def-comp-linear-trans"/> is only possible when the <em>codomain of <m>T</m></em> is the same as the <em>domain of <m>S</m></em>. It is not difficult to show that <m>S\circ T</m> is a linear transformation. (See <xref ref="exer-lin-trans-comp"/>.)
+    </p>
+  </note>
 
   <definition xml:id="def-injective-surjective-bijective">
     <statement>
       <p>
-        Let <m>T:V \to W</m> be a linear transformation between vector spaces. We say that <m>T</m> is <term>injective</term> if <m>T(\bfv_1)=T(\bfv_2)</m> implies <m>\bfv_1=\bfv_2</m> for all <m>\bfv_1, \bfv_2 \in V</m>. Injective linear transformations are also referred to as <em>one-to-one</em> since no two distinct elements of the domain may correspond to the same element of the range.
+        Let <m>T:V \to W</m> be a linear transformation between vector spaces. We say that <m>T</m> is <term>injective</term> if <m>T(\bfv_1)=T(\bfv_2)</m> implies <m>\bfv_1=\bfv_2</m> for all <m>\bfv_1, \bfv_2 \in V</m>. Injective linear transformations are also referred to as <em>one-to-one</em> since no two distinct elements of the domain may correspond to the same element of the image. <fn>Recall that by <q>image</q> we mean <q>range</q>.</fn>.
       </p>
       <p>
-        A linear transformation <m>T</m> is called <term>surjective</term> if for every <m>\bfw \in W</m> there exists a vector <m>\bfv \in V</m> such that <m>T(\bfv) = \bfw</m>. For surjective functions, the image/range is the same as the codomain. (The range is a subset of the codomain for every function, but these sets are equal if and only if the function is surjective.) Sometimes surjective functions are referred to as <em>onto</em> functions.
+        A linear transformation <m>T</m> is called <term>surjective</term> if for every <m>\bfw \in W</m> there exists a vector <m>\bfv \in V</m> such that <m>T(\bfv) = \bfw</m>. For surjective functions, the image is the same as the codomain. (The image is a subset of the codomain for every function, but these sets are equal if and only if the function is surjective.) Sometimes surjective functions are referred to as <em>onto</em> functions.
       </p>
       <p>
         If a linear transformation is both injective and surjective, we say that it is <term>bijective</term>.
@@ -225,7 +281,7 @@
         It is but the work of a Calculus I student to verify that <m>D(p)=q</m>, thus showing that <m>D</m> is surjective. (We note that we could have chosen <m>p</m> to have any constant term at all; we used the constant term of <m>0</m>.)
       </p>
       <p>
-        Finally, we will show that <m>D</m> is not injective by looking at an example of two elements of <m>P_5</m> which have the same image under <m>D</m> in <m>P_4</m>. Let <m>p_1 = t^2 + 10</m> and <m>p_2 = t^2 + 20</m>. Then we see that even though <m>p_1 \neq p_2</m>, we have <m>D(p_1)=D(p_2)</m>, and this proves that <m>D</m> is not injective. 
+        Finally, we will show that <m>D</m> is not injective by looking at an example of two elements of <m>P_5</m> which have the same image under <m>D</m> in <m>P_4</m>. Let <m>{p_1 = t^2 + 10}</m> and <m>p_2 = t^2 + 20</m>. Then we see that even though <m>p_1 \neq p_2</m>, we have <m>{D(p_1)=D(p_2)=2t}</m>, and this proves that <m>D</m> is not injective. 
       </p>
     </statement>
   </example>
@@ -237,7 +293,7 @@
   <definition xml:id="def-lin-trans-invertible">
     <statement>
       <p>
-        Let <m>T:V \to W</m> be a linear transformation between vector spaces. The <term>identity transformation</term> on <m>V</m> is the linear transformation <m>I_V:V \to V</m> which is <m>I_V(\bfv)=\bfv</m> for each <m>\bfv \in V</m>. (If the vector space we have in mind is clear, we will drop the subscript and use the notation <m>I</m>.)
+        Let <m>T:V \to W</m> be a linear transformation between vector spaces. The <term>identity transformation</term> on <m>V</m> is the linear transformation <m>{I_V:V \to V}</m> which is <m>I_V(\bfv)=\bfv</m> for each <m>\bfv \in V</m>. (If the vector space we have in mind is clear, we will drop the subscript and use the notation <m>I</m>.)
       </p>
       <p>
         We say that the linear transformation <m>T</m> is <term>invertible</term> if there exists a linear transformation <m>S:W \to V</m> such that <m>S \circ T = I_V</m>.
@@ -263,6 +319,52 @@
   <p>
     The reader should think of isomorphic vector spaces as <em>essentially the same</em>. Such spaces will not be exactly the same, of course, in the same way that two finite sets of the same size are not necessarily identical. But the presence of an isomorphism means that the vector space operations are compatible in such a way that such spaces share many of the same properties. 
   </p>
+
+  <example xml:id="examp-r2-p1-iso">
+    <statement>
+      <p>
+        The vector spaces <m>\rr^2</m> and <m>P_1</m> are isomorphic. To prove this, we consider the function <m>T:\rr^2 \to P_1</m> defined by
+        <me>
+          T \left( \begin{bmatrix} a \\ b \end{bmatrix}\right) = a + bt
+        </me>.
+        To justify the claim that <m>\rr^2</m> and <m>P_1</m> are isomorphic, we must prove that <m>T</m> is a bijective linear transformation. We will prove that <m>T</m> is a linear transformation and ask the reader to prove bijectivity in the exercises.
+      </p>
+      <p>
+        We let <m>\bfx_1</m> and <m>\bfx_2</m> be elements of <m>\rr^2</m> where
+        <me>
+          \bfx_1 = \begin{bmatrix} a_1 \\ b_1 \end{bmatrix}, \hspace{.3in}
+          \bfx_2 = \begin{bmatrix} a_2 \\ b_2 \end{bmatrix}
+        </me>.
+        Then we have
+        <me>
+          T(\bfx_1 + \bfx_2) = T \left(\begin{bmatrix} a_1 + a_2 \\ b_1 + b_2 \end{bmatrix}\right) = (a_1 + a_2) + (b_1 + b_2)t
+        </me>,
+        and 
+        <me>
+          T(\bfx_1) + T(\bfx_2) = (a_1 + b_1t) + (a_2 + b_2)t
+        </me>.
+        The properties <m>P_1</m> possesses as a vector space show that
+        <me>
+          T(\bfx_1 + \bfx_2) = T(\bfx_1) + T(\bfx_2)
+        </me>.
+      </p>
+      <p>
+        We now suppose that <m>\bfx \in \rr^2</m> and <m>c \in \rr</m>, where
+        <me>
+          \bfx = \begin{bmatrix} a \\ b \end{bmatrix}
+        </me>.
+        Then
+        <md>
+          <mrow>T(c\bfx) \amp = T\left( \begin{bmatrix} ca \\ cb \end{bmatrix}\right) = ca + cbt</mrow>
+          <mrow>cT(\bfx) \amp = c(a + bt) = ca + cbt</mrow>
+        </md>.
+        Again, we see that <m>T(c\bfx) = cT(\bfx)</m> using the properties of <m>P_1</m> as a vector space.
+      </p>
+      <p>
+        We have shown that <m>T</m> is a linear transformation. It is also bijective (see <xref ref="exer-prove-lt-bijective"/>), so it is an isomorphism, meaning that <m>\rr^2</m> and <m>P_1</m> are isomorphic.
+      </p>
+    </statement>
+  </example>
   
   <note xml:id="notation-set-lts">
     <p>
@@ -299,7 +401,7 @@
         <me>
           \bfw_1 + \bfw_2 = T(T^{-1}(\bfw_1)) + T(T^{-1}(\bfw_2)) = T(T^{-1}(\bfw_1) + T^{-1}(\bfw_2))
         </me>.
-        When we apply <m>T^{-1}</m> to the beginning and end of this equality, using <m>T^{-1}\circ T = I_V</m>, we get 
+        When we apply <m>T^{-1}</m> to the beginning and end of this equality, using <m>{T^{-1}\circ T = I_V}</m>, we get 
         <me>
           T^{-1}(\bfw_1 + \bfw_2) = T^{-1}(\bfw_1) + T^{-1}(\bfw_2)
         </me>.     
@@ -345,7 +447,7 @@
   <theorem xml:id="thm-linear-maps-vspace">
     <statement>
       <p>
-        Let <m>V</m> and <m>W</m> be vector spaces over a field <m>\ff</m>, and let <m>S, T \in L(V,W)</m> and <m>c \in \ff</m>. Then <m>S+T</m> and <m>cT</m> are both linear transformations from <m>V</m> to <m>W</m>, and <m>L(V,W)</m> is a vector space with these operations.
+        Let <m>V</m> and <m>W</m> be vector spaces over a field <m>\ff</m>, and let <m>{S, T \in L(V,W)}</m> and <m>c \in \ff</m>. Then <m>S+T</m> and <m>cT</m> are both linear transformations from <m>V</m> to <m>W</m>, and <m>L(V,W)</m> is a vector space with these operations.
       </p>
     </statement>
   </theorem>
@@ -505,7 +607,7 @@
           </li>
           <li>
             <p>
-              Determine whether or not <m>\mathbf{c}</m> is in the range of <m>T_A</m>.
+              Determine whether or not <m>\mathbf{c}</m> is in the image of <m>T_A</m>. (Reminder: by <q>image</q> here we mean <q>range</q>.)
             </p>
             <!-- <p>
               No, matrix reduces to <m>\begin{bmatrix} 1 \amp 0 \amp 3 \amp 0 \\ 
@@ -772,7 +874,7 @@
         <me>
           (T(f))(x) = \int_0^x f(y)\;dy
         </me>.
-        Prove that <m>T</m> is a linear transformation.
+        Prove that <m>T</m> is a linear transformation. (See <xref ref="exer-contin-functions"/> for a reminder of the definition of <m>C[0,\infty)</m>.)
       </p>
     </statement>
     <answer>
@@ -893,6 +995,13 @@
     <statement>
       <p>
         Prove <xref ref="thm-linear-maps-vspace"/>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exer-prove-lt-bijective">
+    <statement>
+      <p>
+        Finish the proof in <xref ref="examp-r2-p1-iso"/> that <m>\rr^2</m> and <m>P_1</m> are isomorphic. Specifically, prove that the linear transformation given in this example is bijective.
       </p>
     </statement>
   </exercise>

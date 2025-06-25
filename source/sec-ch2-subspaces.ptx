@@ -347,7 +347,7 @@
   <exercise>
     <statement>
       <p>
-        Let <m>C[0,10]</m> be the vector space of continuous functions defined <m>[0,10] \to \rr</m>, and let <m>D[0,10]</m> be the set of differentiable functions defined <m>[0,10] \to \rr</m>.
+        Let <m>C[0,10]</m> be the vector space of continuous functions defined <m>[0,10] \to \rr</m>, and let <m>D[0,10]</m> be the set of differentiable functions defined <m>[0,10] \to \rr</m>. (The fact that <m>C[0,10]</m> is a vector space is established in <xref ref="exer-contin-functions"/>.)
       </p>
       <p>
         For each of the following, determine whether or not the subset <m>W</m> of <m>C[0,10]</m> is a subspace of <m>C[0,10]</m>. Explain your answers.
