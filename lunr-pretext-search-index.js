@@ -2392,7 +2392,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "The Matrix of a Linear Transformation",
-  "body": " The Matrix of a Linear Transformation   As we saw in the previous section, linear transformations can be defined using matrices and they can also be defined with no matrices in sight. In this section we will see that, for a certain class of linear transformations, there is always a matrix in sight .    Constructing the Matrix  Our claim might seem fanciful at first. Can every linear transformation be realized using a matrix? The surprising answer is yes , for a specific kind of linear transformation.  We first make an observation related to the definition of the matrix-vector product in .   If is an matrix with columns , and if we recall the definition of from , then . The truth of this equality comes by thinking of in the way expressed in , as a linear combination of the columns of with weights from the entries in .   We now suppose that is a field and that is a linear transformation. We claim that there is a unique matrix such that for every , . In other words, we claim that the work of the linear transformation can be carried out through multiplication by .  We will define the matrix which does the job. For each , define the vector by . We then define as the matrix with columns .  Since any vector , written as , has the property that , we can verify that the action of is the same as the action of multiplication by : . Note that we used the fact that is a linear transformation in this last string of equalities.  We have just proved the following theorem.    If is a linear transformation, then there exists a unique matrix over such that for all .    A scrupulous reader may protest our use of the word unique in the statement of this theorem. Here is the argument concerning uniqueness. If the theorem is true, then (for this theorem) there is only one way it could possibly work. If a matrix exists, it must have the property that for all . Since we have shown that such a construction does work, the matrix we obtain must be unique.  This theorem is quite powerful. We will demonstrate that power through two examples that find their origin in .    We take our notation from . Let be the linear transformation which reflects a vector in the Cartesian plane across the -axis, and let be the linear transformation which rotates a vector counter-clockwise around the origin by radians. In this example we will find the matrices and such that and for all .  In the proof of , we saw that the way to form the matrix of a linear transformation is to calculate the image of the vectors . In this context, we need to calculate the image of and under and .  The calculations we seek are below: . This tells us that the matrices and are as follows: . Any curious reader can check that these matrices are correct by choosing a vector in and multiplying by and by separately. The results should align with the actions of and , respectively.      Composition and Matrix Multiplication  Since linear transformations are functions, we can compose them with other linear transformations. In order for this to make sense, we need to have the codomains and domains match up correctly. (The reader should recall a brief introduction to this idea in .)  If and are linear transformations between vector spaces, then the linear transformation is defined . If , , and , then the linear transformation is defined , and says that there is a unique matrix over which carries out this linear transformation. What is that matrix?   tells us that there are matrices and such that the transformations and are multiplication by and , respectively. The matrix is and is . We will define the product of and so that the matrix of is the matrix product .    Let be a matrix over a field and let be an matrix over . Then the matrix product  is the unique matrix over such that for all , .     When we take the matrix product , the number of columns of must match the number of rows of . The matrix product makes no sense (and cannot be computed) otherwise. The matrix then has the same number of rows as and the same number of columns as .   Though we have defined matrix multiplication in terms of the composition of linear transformations, we can multiply matrices of the correct dimensions even when we have no specific linear transformations in mind. This is similar to our understanding of row-reducing a matrix this arose in the context of solving linear systems, but the process can be carried out on any matrix.  We have defined matrix multiplication, but we have not specified how the entries in the matrix product are calculated. Fear not; the wait is over.  We will use the definition of matrix multiplication and the formula we have for the product of a matrix and a vector (see ). Since is a vector, we will record a formula for entry in this vector. In what follows, we assume and the entries of ; we also assume : .  When we look again at the formula in for the product of a matrix and a vector, we see that for all and all . In words, this means that the -entry of is the entry-wise product of row in with column in . (Later we will acknowledge this as the dot product of two vectors in .)  We will try to make this concrete with some examples.    Let and be the following matrices over : . Note that the product makes sense since the number of columns of is the same as the number of rows of . Here is the matrix product: . Since the sizes of and allow it, we can also calculate in this example: . Finally, we observe that .      Let and be the following matrices over : . Since is and is , we can calculate , which will be . (In this example we cannot calculate .) Here is the matrix product: . To obtain the last equality, we remember that we are working in .    Since we defined matrix multiplication in the context of the composition of linear transformations, our next example picks up on this theme.    We return to and consider the linear transformations , where reflects a vector in the Cartesian plane across the -axis and rotates a vector counter-clockwise around the origin by radians. In the previous example, we calculated the matrices and for and , respectively. What is the matrix for ?  We have defined matrix multiplication to answer exactly this question. We only need to multiply the matrices in the proper order. The matrix for is . A related question in this context is whether or not linear transformations commute . In other words, is ? For this example, answering that question boils down to comparing the matrix product with the product which we have just calculated: . From this we can see that and are two distinct linear transformations.    As we start to deal more regularly with matrices in the context of linear transformations, we need to recall the notation and from .   The next theorem records some facts about matrix multiplication which will be useful later in the text. We will walk the reader through the proof of this theorem in the exercises at the end of this section.    Let , , and . Then    ,     , and     .       This theorem says that, if all of the matrix products make sense, matrix multiplication is associative and obeys both of the distributive laws.  There is one other useful way to think about matrix multiplication in terms of the columns of the matrix.    Let , , and let the columns of be . Then the columns of are .    By our definition of the matrix product, for each we have . The observation in means that , so we have . Since is the th column of , this proves the proposition.    From the understanding we developed in , this proposition means that every column of the matrix product is a linear combination of the columns of , when the product is defined.    Invertible Matrices  With matrix multiplication defined in terms of the composition of linear transformations, we turn to a specific composition in this subsection. Specifically, we will think about matrices for linear transformations and when is the identity transformation.  In , we called such linear transformations invertible . When such a linear transformation can be accomplished by matrix multiplication, we will refer to the connected matrix using this same term.    Let . The matrix is an inverse matrix for if .  If a matrix has an inverse, we say that is invertible or non-singular . If is a matrix for which no inverse matrix exists, we say that is singular or not invertible.    It may strike the reader as strange that only square matrices have a chance at being invertible we have only defined invertibility for square matrices. There is a good reason for this, which we will explore in the exercises.  If we know an inverse of a matrix , then we can solve matrix-vector equations with ease: .  The next three propositions present some properties of matrix inverses.    If a matrix has an inverse, that inverse is unique.    Let and suppose that both are inverses for . Then we have .    This proposition allows us to refer to the inverse of a matrix and to use the notation for that matrix.    Suppose that are both invertible. Then is invertible as well and .    If and are both invertible, then both and exist. Since matrix multiplication is associative, the following calculations show that the matrix satisfies the properties of the inverse of , thereby making invertible: .    This final proposition states what may seem like an obvious fact, but which should still be justified. That justification is left to the exercises.    Let be invertible. Then is also invertible and .    While we are not yet ready to calculate the inverse of a matrix (stay tuned!), we can provide examples of invertible matrices and their inverses.    Consider the following matrix : . We can verify that is by computing the product in both orders and verifying that the result is in both cases.  Similarly, here is a matrix over which is invertible: . The reader is encouraged to verify that the following matrix satisfies the properties of the inverse of : .      The Transpose of a Matrix  The transpose of a matrix is useful notation for some formulas that will appear later.    If , then the transpose of , denoted , is the element of whose rows are the columns of . In other words, for all and all .     The transpose is an easy way to turn a column vector into a row vector and vice versa.     If is the matrix , then is the matrix .    Some matrices are unaffected by taking the transpose. These deserve a special designation!    A matrix which is equal to its own transpose is called a symmetric matrix . (All symmetric matrices must be square by necessity.)    The following theorem collects some properties related to the transpose of a matrix.     Let , let , and let . Then the following properties hold:    ;     ;     ; and     .       The first three parts of this theorem are immediate from the definitions and require no proof. To prove the fourth part, we will compare the -entry of both and . First, from the definition of the transpose and we see that . To compare, entry of is . Since multiplication is commutative in fields, these two expressions are equal.     While it might be more aesthetically pleasing if we did not have to switch the order of the multiplication when taking the transpose of a product, this type of formula makes sense when considering the dimensions of the matrices involved. If is and is , then the expression wouldn't even make sense unless . Further, reversing the order in a formula involving matrix multiplication is typical, as we have already seen in .       Let be the linear transformation which is rotation clockwise around the origin by radians. Find the matrix for . (Refer to .) Explain your process.      Consider the following two matrices and over : . Calculate both and .      Write down a matrix over which is symmetric. (See .)        Let , , and be the following matrices over : . For each of the following, determine whether the given calculation makes sense. If it does, find the requested matrix. (Do this by hand, without technology.) If it doesn't make sense, explain why it doesn't.                                      Let be the linear transformation which reflects a vector across the line . Find the matrix for .      Let be the linear transformation which projects a vector onto the line . Find the matrix for .    The matrix for is .      Let be the linear transformation which projects a vector onto the line . Find the matrix for .       Let be the linear transformation which rotates a vector counter-clockwise around the origin by an angle of radians. Find the matrix for . (Each entry in the matrix should be an expression involving .)    The matrix for is .     Writing Exercises    Let be invertible. Prove that is invertible and that .       Let .   Suppose that is left-invertible , meaning that there is an matrix such that . Prove that .    Suppose that is right-invertible , meaning that there is an matrix such that . Prove that .    Prove that any which is invertible must be a square matrix.         Prove .    Let be invertible. This means that exists and that . These equalities involving and show that is invertible and that is a matrix which has the properties of the inverse of . Since the inverse of a matrix is unique, it must be that .      In fields, we have the cancellation law for multiplication. If and , then . Does matrix multiplication have this property?  Let , , and be matrices over such that and make sense and are the same size and is not the zero matrix. If , must it be true that ? Either prove this is true or provide a counter-example.      In fields, multiplication has the no zero divisors property. If , then either or . Does matrix multiplication have this property?  Let and be matrices over such that makes sense. Let be the matrix of the same size as consisting of all zeros. If , must it be true that either or is a matrix of all zeros? Either prove this is true or provide a counter-example.      Let be of the form .   What conditions must , , and satisfy so that ?    How many matrices in of this form have the property that ?         "
+  "body": " The Matrix of a Linear Transformation   As we saw in the previous section, linear transformations can be defined using matrices and they can also be defined with no matrices in sight. In this section we will see that, for a certain class of linear transformations, there is always a matrix in sight .    Constructing the Matrix  Our claim might seem fanciful at first. Can every linear transformation be realized using a matrix? The surprising answer is yes , for a specific kind of linear transformation.  We first make an observation related to the definition of the matrix-vector product in .   If is an matrix with columns , and if we recall the definition of from , then . The truth of this equality comes by thinking of in the way expressed in , as a linear combination of the columns of with weights from the entries in .   We now suppose that is a field and that is a linear transformation. We claim that there is a unique matrix such that for every , . In other words, we claim that the work of the linear transformation can be carried out through multiplication by .  We will define the matrix which does the job. For each , define the vector by . We then define as the matrix with columns .  Since any vector , written as , has the property that , we can verify that the action of is the same as the action of multiplication by : . Note that we used the fact that is a linear transformation in this last string of equalities.  We have just proved the following theorem.    If is a linear transformation, then there exists a unique matrix over such that for all .    A scrupulous reader may protest our use of the word unique in the statement of this theorem. Here is the argument concerning uniqueness. If the theorem is true, then (for this theorem) there is only one way it could possibly work. If a matrix exists, it must have the property that for all . Since we have shown that such a construction does work, the matrix we obtain must be unique.  This theorem is quite powerful. We will demonstrate that power through two examples that find their origin in .    We take our notation from . Let be the linear transformation which reflects a vector in the Cartesian plane across the -axis, and let be the linear transformation which rotates a vector counter-clockwise around the origin by radians. In this example we will find the matrices and such that and for all .  In the proof of , we saw that the way to form the matrix of a linear transformation is to calculate the image of the vectors . In this context, we need to calculate the image of and under and .  The calculations we seek are below: . This tells us that the matrices and are as follows: . Any curious reader can check that these matrices are correct by choosing a vector in and multiplying by and by separately. The results should align with the actions of and , respectively.      Composition and Matrix Multiplication  Since linear transformations are functions, we can compose them with other linear transformations. In order for this to make sense, we need to have the codomains and domains match up correctly. (The reader should recall a brief introduction to this idea in .)  If and are linear transformations between vector spaces, then the linear transformation is defined. If , , and , then the linear transformation is defined from to , and says that there is a unique matrix over which carries out this linear transformation. What is that matrix?   tells us that there are matrices and such that the transformations and are multiplication by and , respectively. The matrix is and is . We will define the product of and so that the matrix of is the matrix product .    Let be a matrix over a field and let be an matrix over . Then the matrix product  is the unique matrix over such that for all , .     When we take the matrix product , the number of columns of must match the number of rows of . The matrix product makes no sense (and cannot be computed) otherwise. The matrix then has the same number of rows as and the same number of columns as .   Though we have defined matrix multiplication in terms of the composition of linear transformations, we can multiply matrices of the correct dimensions even when we have no specific linear transformations in mind. This is similar to our understanding of row-reducing a matrix row reduction arose in the context of solving linear systems, but the process can be carried out on any matrix.  There is one alternate, useful way to think about matrix multiplication in terms of the columns of the matrix.    Let , , and let the columns of be . Then the columns of are .    By our definition of the matrix product, for each we have . The observation in means that , so we have . Since is the th column of , this proves the proposition.    From the understanding we developed in , this proposition means that every column of the matrix product is a linear combination of the columns of .  We have defined matrix multiplication, but we have not specified how the entries in the matrix product are calculated. Fear not; the wait is over.  We will use the definition of matrix multiplication and the formula we have for the product of a matrix and a vector (see formula ). Since is a vector, we will record a formula for entry in this vector. In what follows, we assume and the entries of ; we also assume : .  When we look again at the formula in for the product of a matrix and a vector, we see that for all and all . In words, this means that the -entry of is the entry-wise product of row in with column in . (In we will acknowledge this as the dot product of two vectors in .)  We will try to make this concrete with some examples.    Let and be the following matrices over : . Note that the product makes sense since the number of columns of is the same as the number of rows of . Here is the matrix product: . Since the sizes of and allow it, we can also calculate in this example: . Finally, we observe that .      Let and be the following matrices over : . Since is and is , we can calculate , which will be . (In this example we cannot calculate .) Here is the matrix product: . To obtain the last equality, we remember that we are working in .    Since we defined matrix multiplication in the context of the composition of linear transformations, our next example picks up on this theme.    We return to and consider the linear transformations , where reflects a vector in the Cartesian plane across the -axis and rotates a vector counter-clockwise around the origin by radians. In the previous example, we calculated the matrices and for and , respectively. What is the matrix for ?  We have defined matrix multiplication to answer questions exactly like this. We only need to multiply the matrices in the proper order. The matrix for is . A related question in this context is whether or not linear transformations commute . In other words, is ? For this example, answering that question boils down to comparing the matrix product with the product which we have just calculated: . From this we can see that and are distinct linear transformations.    As we start to deal more regularly with matrices in the context of linear transformations, we need to recall the notation and from .   The next theorem records some facts about matrix multiplication which will be useful later in the text. We will walk the reader through the proof of this theorem in the exercises at the end of this section.    Let , , and . Then    ,     , and     .       This theorem says that, if all of the matrix products make sense, matrix multiplication is associative and obeys both of the distributive laws.    The Transpose of a Matrix  The transpose of a matrix is useful notation for some formulas that will appear later.    If , then the transpose of , denoted , is the element of whose rows are the columns of . In other words, for all and all .     The transpose is an easy way to turn a column vector into a row vector and vice versa.     If is the matrix , then is the matrix .    Some matrices are unaffected by taking the transpose. These deserve a special designation!    A matrix which is equal to its own transpose is called a symmetric matrix . (All symmetric matrices must be square by necessity.)    The following theorem collects some properties related to the transpose of a matrix.     Let , let , and let . Then the following properties hold:    ;     ;     ; and     .       The first three parts of this theorem are immediate from the definitions and require no proof. To prove the fourth part, we will compare the -entry of both and . First, from the definition of the transpose and we see that . To compare, entry of is . Since multiplication is commutative in fields, these two expressions are equal.     While it might be more aesthetically pleasing if we did not have to switch the order of the multiplication when taking the transpose of a product, this type of formula makes sense when considering the dimensions of the matrices involved. If is and is , then the expression wouldn't even make sense unless .       Let be the linear transformation which is rotation clockwise around the origin by radians. Find the matrix for . (Refer to .) Explain your process.      Consider the following two matrices and over : . Calculate both and .      Write down a matrix over which is symmetric. (See .)        Let , , and be the following matrices over : . For each of the following, determine whether the given calculation makes sense. If it does, find the requested matrix. (Do this by hand, without technology.) If it doesn't make sense, explain why it doesn't.                                      Let be the linear transformation which reflects a vector across the line . Find the matrix for .      Let be the linear transformation which projects a vector onto the line . Find the matrix for .    The matrix for is .      Let be the linear transformation which projects a vector onto the line . Find the matrix for .       Let be the linear transformation which rotates a vector counter-clockwise around the origin by an angle of radians. Find the matrix for . (Each entry in the matrix should be an expression involving .)    The matrix for is .     Writing Exercises    In fields, we have the cancellation law for multiplication. If and , then . Does matrix multiplication have this property?  Let , , and be matrices over such that and make sense and are the same size and is not the zero matrix. If , must it be true that ? Either prove this is true or provide a counter-example.      In fields, multiplication has the no zero divisors property. If , then either or . Does matrix multiplication have this property?  Let and be matrices over such that makes sense. Let be the matrix of the same size as consisting of all zeros. If , must it be true that either or is a matrix of all zeros? Either prove this is true or provide a counter-example.      Let be of the form .   What conditions must , , and satisfy so that ?    How many matrices in of this form have the property that ?         "
 },
 {
   "id": "note-matrix-times-ej",
@@ -2440,101 +2440,56 @@ var ptx_lunr_docs = [
   "body": " When we take the matrix product , the number of columns of must match the number of rows of . The matrix product makes no sense (and cannot be computed) otherwise. The matrix then has the same number of rows as and the same number of columns as .  "
 },
 {
-  "id": "subsec-matrix-mult-12",
+  "id": "prop-matrix-mult",
   "level": "2",
-  "url": "sec-matrix-linear-trans.html#subsec-matrix-mult-12",
-  "type": "Example",
+  "url": "sec-matrix-linear-trans.html#prop-matrix-mult",
+  "type": "Proposition",
   "number": "3.2.6",
   "title": "",
-  "body": "  Let and be the following matrices over : . Note that the product makes sense since the number of columns of is the same as the number of rows of . Here is the matrix product: . Since the sizes of and allow it, we can also calculate in this example: . Finally, we observe that .   "
-},
-{
-  "id": "subsec-matrix-mult-13",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#subsec-matrix-mult-13",
-  "type": "Example",
-  "number": "3.2.7",
-  "title": "",
-  "body": "  Let and be the following matrices over : . Since is and is , we can calculate , which will be . (In this example we cannot calculate .) Here is the matrix product: . To obtain the last equality, we remember that we are working in .   "
+  "body": "  Let , , and let the columns of be . Then the columns of are .    By our definition of the matrix product, for each we have . The observation in means that , so we have . Since is the th column of , this proves the proposition.   "
 },
 {
   "id": "subsec-matrix-mult-15",
   "level": "2",
   "url": "sec-matrix-linear-trans.html#subsec-matrix-mult-15",
   "type": "Example",
+  "number": "3.2.7",
+  "title": "",
+  "body": "  Let and be the following matrices over : . Note that the product makes sense since the number of columns of is the same as the number of rows of . Here is the matrix product: . Since the sizes of and allow it, we can also calculate in this example: . Finally, we observe that .   "
+},
+{
+  "id": "subsec-matrix-mult-16",
+  "level": "2",
+  "url": "sec-matrix-linear-trans.html#subsec-matrix-mult-16",
+  "type": "Example",
   "number": "3.2.8",
   "title": "",
-  "body": "  We return to and consider the linear transformations , where reflects a vector in the Cartesian plane across the -axis and rotates a vector counter-clockwise around the origin by radians. In the previous example, we calculated the matrices and for and , respectively. What is the matrix for ?  We have defined matrix multiplication to answer exactly this question. We only need to multiply the matrices in the proper order. The matrix for is . A related question in this context is whether or not linear transformations commute . In other words, is ? For this example, answering that question boils down to comparing the matrix product with the product which we have just calculated: . From this we can see that and are two distinct linear transformations.   "
+  "body": "  Let and be the following matrices over : . Since is and is , we can calculate , which will be . (In this example we cannot calculate .) Here is the matrix product: . To obtain the last equality, we remember that we are working in .   "
+},
+{
+  "id": "subsec-matrix-mult-18",
+  "level": "2",
+  "url": "sec-matrix-linear-trans.html#subsec-matrix-mult-18",
+  "type": "Example",
+  "number": "3.2.9",
+  "title": "",
+  "body": "  We return to and consider the linear transformations , where reflects a vector in the Cartesian plane across the -axis and rotates a vector counter-clockwise around the origin by radians. In the previous example, we calculated the matrices and for and , respectively. What is the matrix for ?  We have defined matrix multiplication to answer questions exactly like this. We only need to multiply the matrices in the proper order. The matrix for is . A related question in this context is whether or not linear transformations commute . In other words, is ? For this example, answering that question boils down to comparing the matrix product with the product which we have just calculated: . From this we can see that and are distinct linear transformations.   "
 },
 {
   "id": "thm-matrix-mult-facts",
   "level": "2",
   "url": "sec-matrix-linear-trans.html#thm-matrix-mult-facts",
   "type": "Theorem",
-  "number": "3.2.9",
-  "title": "",
-  "body": "  Let , , and . Then    ,     , and     .      "
-},
-{
-  "id": "prop-matrix-mult",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#prop-matrix-mult",
-  "type": "Proposition",
   "number": "3.2.10",
   "title": "",
-  "body": "  Let , , and let the columns of be . Then the columns of are .    By our definition of the matrix product, for each we have . The observation in means that , so we have . Since is the th column of , this proves the proposition.   "
-},
-{
-  "id": "def-invertible-matrix",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#def-invertible-matrix",
-  "type": "Definition",
-  "number": "3.2.11",
-  "title": "",
-  "body": "  Let . The matrix is an inverse matrix for if .  If a matrix has an inverse, we say that is invertible or non-singular . If is a matrix for which no inverse matrix exists, we say that is singular or not invertible.   "
-},
-{
-  "id": "prop-matrix-inverse-unique",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#prop-matrix-inverse-unique",
-  "type": "Proposition",
-  "number": "3.2.12",
-  "title": "",
-  "body": "  If a matrix has an inverse, that inverse is unique.    Let and suppose that both are inverses for . Then we have .   "
-},
-{
-  "id": "prop-matrix-inverse-product",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#prop-matrix-inverse-product",
-  "type": "Proposition",
-  "number": "3.2.13",
-  "title": "",
-  "body": "  Suppose that are both invertible. Then is invertible as well and .    If and are both invertible, then both and exist. Since matrix multiplication is associative, the following calculations show that the matrix satisfies the properties of the inverse of , thereby making invertible: .   "
-},
-{
-  "id": "prop-matrix-inverse-involution",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#prop-matrix-inverse-involution",
-  "type": "Proposition",
-  "number": "3.2.14",
-  "title": "",
-  "body": "  Let be invertible. Then is also invertible and .   "
-},
-{
-  "id": "examp-inverse-matrices",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#examp-inverse-matrices",
-  "type": "Example",
-  "number": "3.2.15",
-  "title": "",
-  "body": "  Consider the following matrix : . We can verify that is by computing the product in both orders and verifying that the result is in both cases.  Similarly, here is a matrix over which is invertible: . The reader is encouraged to verify that the following matrix satisfies the properties of the inverse of : .   "
+  "body": "  Let , , and . Then    ,     , and     .      "
 },
 {
   "id": "def-transpose",
   "level": "2",
   "url": "sec-matrix-linear-trans.html#def-transpose",
   "type": "Definition",
-  "number": "3.2.16",
+  "number": "3.2.11",
   "title": "",
   "body": "  If , then the transpose of , denoted , is the element of whose rows are the columns of . In other words, for all and all .   "
 },
@@ -2543,7 +2498,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-matrix-linear-trans.html#subsec-matrix-transpose-4",
   "type": "Note",
-  "number": "3.2.17",
+  "number": "3.2.12",
   "title": "",
   "body": " The transpose is an easy way to turn a column vector into a row vector and vice versa.  "
 },
@@ -2552,7 +2507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-matrix-linear-trans.html#subsec-matrix-transpose-5",
   "type": "Example",
-  "number": "3.2.18",
+  "number": "3.2.13",
   "title": "",
   "body": "  If is the matrix , then is the matrix .   "
 },
@@ -2561,7 +2516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-matrix-linear-trans.html#def-symmetric-matrix",
   "type": "Definition",
-  "number": "3.2.19",
+  "number": "3.2.14",
   "title": "",
   "body": "  A matrix which is equal to its own transpose is called a symmetric matrix . (All symmetric matrices must be square by necessity.)   "
 },
@@ -2570,7 +2525,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-matrix-linear-trans.html#thm-properties-transpose",
   "type": "Theorem",
-  "number": "3.2.20",
+  "number": "3.2.15",
   "title": "",
   "body": "  Let , let , and let . Then the following properties hold:    ;     ;     ; and     .       The first three parts of this theorem are immediate from the definitions and require no proof. To prove the fourth part, we will compare the -entry of both and . First, from the definition of the transpose and we see that . To compare, entry of is . Since multiplication is commutative in fields, these two expressions are equal.   "
 },
@@ -2579,133 +2534,106 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-matrix-linear-trans.html#subsec-matrix-transpose-10",
   "type": "Note",
-  "number": "3.2.21",
+  "number": "3.2.16",
   "title": "",
-  "body": " While it might be more aesthetically pleasing if we did not have to switch the order of the multiplication when taking the transpose of a product, this type of formula makes sense when considering the dimensions of the matrices involved. If is and is , then the expression wouldn't even make sense unless . Further, reversing the order in a formula involving matrix multiplication is typical, as we have already seen in .  "
+  "body": " While it might be more aesthetically pleasing if we did not have to switch the order of the multiplication when taking the transpose of a product, this type of formula makes sense when considering the dimensions of the matrices involved. If is and is , then the expression wouldn't even make sense unless .  "
+},
+{
+  "id": "sec-matrix-linear-trans-6-1",
+  "level": "2",
+  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-6-1",
+  "type": "Reading Question",
+  "number": "3.2.4.1",
+  "title": "",
+  "body": "  Let be the linear transformation which is rotation clockwise around the origin by radians. Find the matrix for . (Refer to .) Explain your process.   "
+},
+{
+  "id": "sec-matrix-linear-trans-6-2",
+  "level": "2",
+  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-6-2",
+  "type": "Reading Question",
+  "number": "3.2.4.2",
+  "title": "",
+  "body": "  Consider the following two matrices and over : . Calculate both and .   "
+},
+{
+  "id": "sec-matrix-linear-trans-6-3",
+  "level": "2",
+  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-6-3",
+  "type": "Reading Question",
+  "number": "3.2.4.3",
+  "title": "",
+  "body": "  Write down a matrix over which is symmetric. (See .)   "
 },
 {
   "id": "sec-matrix-linear-trans-7-1",
   "level": "2",
   "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-7-1",
-  "type": "Reading Question",
+  "type": "Exercise",
   "number": "3.2.5.1",
   "title": "",
-  "body": "  Let be the linear transformation which is rotation clockwise around the origin by radians. Find the matrix for . (Refer to .) Explain your process.   "
+  "body": "  Let , , and be the following matrices over : . For each of the following, determine whether the given calculation makes sense. If it does, find the requested matrix. (Do this by hand, without technology.) If it doesn't make sense, explain why it doesn't.                                   "
 },
 {
   "id": "sec-matrix-linear-trans-7-2",
   "level": "2",
   "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-7-2",
-  "type": "Reading Question",
+  "type": "Exercise",
   "number": "3.2.5.2",
   "title": "",
-  "body": "  Consider the following two matrices and over : . Calculate both and .   "
+  "body": "  Let be the linear transformation which reflects a vector across the line . Find the matrix for .   "
 },
 {
   "id": "sec-matrix-linear-trans-7-3",
   "level": "2",
   "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-7-3",
-  "type": "Reading Question",
+  "type": "Exercise",
   "number": "3.2.5.3",
-  "title": "",
-  "body": "  Write down a matrix over which is symmetric. (See .)   "
-},
-{
-  "id": "sec-matrix-linear-trans-8-1",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-1",
-  "type": "Exercise",
-  "number": "3.2.6.1",
-  "title": "",
-  "body": "  Let , , and be the following matrices over : . For each of the following, determine whether the given calculation makes sense. If it does, find the requested matrix. (Do this by hand, without technology.) If it doesn't make sense, explain why it doesn't.                                   "
-},
-{
-  "id": "sec-matrix-linear-trans-8-2",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-2",
-  "type": "Exercise",
-  "number": "3.2.6.2",
-  "title": "",
-  "body": "  Let be the linear transformation which reflects a vector across the line . Find the matrix for .   "
-},
-{
-  "id": "sec-matrix-linear-trans-8-3",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-3",
-  "type": "Exercise",
-  "number": "3.2.6.3",
   "title": "",
   "body": "  Let be the linear transformation which projects a vector onto the line . Find the matrix for .    The matrix for is .   "
 },
 {
-  "id": "sec-matrix-linear-trans-8-4",
+  "id": "sec-matrix-linear-trans-7-4",
   "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-4",
+  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-7-4",
   "type": "Exercise",
-  "number": "3.2.6.4",
+  "number": "3.2.5.4",
   "title": "",
   "body": "  Let be the linear transformation which projects a vector onto the line . Find the matrix for .   "
 },
 {
-  "id": "sec-matrix-linear-trans-8-5",
+  "id": "sec-matrix-linear-trans-7-5",
   "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-5",
+  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-7-5",
   "type": "Exercise",
-  "number": "3.2.6.5",
+  "number": "3.2.5.5",
   "title": "",
   "body": "  Let be the linear transformation which rotates a vector counter-clockwise around the origin by an angle of radians. Find the matrix for . (Each entry in the matrix should be an expression involving .)    The matrix for is .   "
 },
 {
-  "id": "transpose-invertible",
+  "id": "sec-matrix-linear-trans-7-6-2",
   "level": "2",
-  "url": "sec-matrix-linear-trans.html#transpose-invertible",
+  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-7-6-2",
   "type": "Exercise",
-  "number": "3.2.6.6",
-  "title": "",
-  "body": "  Let be invertible. Prove that is invertible and that .   "
-},
-{
-  "id": "sec-matrix-linear-trans-8-6-3",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-6-3",
-  "type": "Exercise",
-  "number": "3.2.6.7",
-  "title": "",
-  "body": "  Let .   Suppose that is left-invertible , meaning that there is an matrix such that . Prove that .    Suppose that is right-invertible , meaning that there is an matrix such that . Prove that .    Prove that any which is invertible must be a square matrix.      "
-},
-{
-  "id": "sec-matrix-linear-trans-8-6-4",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-6-4",
-  "type": "Exercise",
-  "number": "3.2.6.8",
-  "title": "",
-  "body": "  Prove .    Let be invertible. This means that exists and that . These equalities involving and show that is invertible and that is a matrix which has the properties of the inverse of . Since the inverse of a matrix is unique, it must be that .   "
-},
-{
-  "id": "sec-matrix-linear-trans-8-6-5",
-  "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-6-5",
-  "type": "Exercise",
-  "number": "3.2.6.9",
+  "number": "3.2.5.6",
   "title": "",
   "body": "  In fields, we have the cancellation law for multiplication. If and , then . Does matrix multiplication have this property?  Let , , and be matrices over such that and make sense and are the same size and is not the zero matrix. If , must it be true that ? Either prove this is true or provide a counter-example.   "
 },
 {
-  "id": "sec-matrix-linear-trans-8-6-6",
+  "id": "sec-matrix-linear-trans-7-6-3",
   "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-6-6",
+  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-7-6-3",
   "type": "Exercise",
-  "number": "3.2.6.10",
+  "number": "3.2.5.7",
   "title": "",
   "body": "  In fields, multiplication has the no zero divisors property. If , then either or . Does matrix multiplication have this property?  Let and be matrices over such that makes sense. Let be the matrix of the same size as consisting of all zeros. If , must it be true that either or is a matrix of all zeros? Either prove this is true or provide a counter-example.   "
 },
 {
-  "id": "sec-matrix-linear-trans-8-6-7",
+  "id": "sec-matrix-linear-trans-7-6-4",
   "level": "2",
-  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-8-6-7",
+  "url": "sec-matrix-linear-trans.html#sec-matrix-linear-trans-7-6-4",
   "type": "Exercise",
-  "number": "3.2.6.11",
+  "number": "3.2.5.8",
   "title": "",
   "body": "  Let be of the form .   What conditions must , , and satisfy so that ?    How many matrices in of this form have the property that ?      "
 },
@@ -2716,14 +2644,59 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Inverting a Matrix",
-  "body": " Inverting a Matrix   In , we introduced the definition of an invertible matrix and discussed some properties of the inverse of a matrix. We will now introduce a method to determine whether or not a matrix is invertible. Additionally, when a matrix is invertible we will be able to calculate its inverse.    Elementary Matrices  The method we will present in this section begins with a simple definition.    An elementary matrix is one that is formed by performing a single elementary row operation on an identity matrix.    Because elementary matrices are related to elementary row operations, there are three types of elementary matrices. The following example provides one elementary matrix of each type.    Our first elementary matrix results from switching the second and third rows in : . Next we will look at a matrix which comes about by adding 4 times the first row of to the second row: . Finally, we have a matrix which is formed by multiplying the second row of by 7: .    Multiplying by an elementary matrix has the effect of carrying out an elementary row operation. In other words, if the matrix results from applying an elementary row operation to , and if is another matrix, then is the matrix after this same elementary row operation has been applied. We will demonstrate this in an example before stating the relevant theorem. (The proof of the theorem is saved for the exercises.)    Let be the following matrix over : . If we label as the matrix in , then we can calculate : . The reader can verify that is the result of adding four times the first row of to the second row of .      If the elementary matrix results from performing an elementary row operation on , and if is an matrix, then is the matrix that results from applying this same elementary row operation to .    Each elementary row operation is reversible in the sense that there is another elementary row operation which reverses the work that was done by the first. (This appears as .) We can use this fact to establish the following useful proposition.    Every elementary matrix is invertible.    Let be an elementary matrix and let denote the elementary matrix which represents the reverse elementary row operation from . By the definition of these matrices and , we see that . This shows that and are inverses of each other and, in particular, this proves that is invertible.    We will now connect elementary matrices to the RREF of a matrix in the following proposition. This is largely a restatement of using elementary matrices.    If , then there exists in RREF and elementary matrices such that .    Since each matrix can be reduced to a matrix in RREF, and since elementary row operations are accomplished by multiplying by elementary matrices, there exist elementary matrices such that . Since elementary matrices are invertible, by repeated application of we see that is invertible and . Then we have . We note that each is an elementary matrix, and if we define for each , we have our result.      Finding the Inverse of a Matrix  We will now move on to develop an algorithm for finding the inverse of a matrix (when one exists). We need a lemma before stating our most important result of the section.    If is invertible, then for every , the equation has a unique solution.    Let be any vector in . Since is invertible, exists, and we can show that is a solution to the equation : . To show that this solution is unique, suppose is another solution to this equation, so . Then we have .      A matrix is invertible if and only if is row equivalent to . When is invertible, any sequence of elementary row operations that reduces to also transforms into .    If is invertible, then by the equation has a unique solution for every . Now means that the RREF of has a pivot in each of its columns. Since is square, this means the RREF has a pivot in each row as well, meaning that the RREF of must be .  Conversely, suppose that is row equivalent to . By , there exist elementary matrices such that . This means that , and since the product of invertible matrices is invertible, this proves that is invertible.  If we multiply both sides of by , we get , which shows the sequence of elementary row operations (through multiplication by elementary matrices) used to transform into . On the other hand, if we take the equation from the previous paragraph and invert both sides, we get , which we can easily adjust to . This establishes the final claim in the theorem.    This theorem provides an algorithm for us to determine when a matrix is invertible and, in the case it is invertible, to calculate its inverse.    In order to determine whether or not a matrix is invertible, follow these steps.   Reduce the matrix to its RREF.    If the RREF has the form , then is invertible and .    If the RREF does not have in its left columns, then is not invertible.       We will end this section with several examples in which we work through this algorithm.    Consider the following matrix : . To determine whether or not this matrix is invertible, we row reduce the matrix : . We see that is invertible and that .      Consider the following matrix : . We now row reduce to determine whether or not is invertible. We find that is row equivalent to . This calculation shows that is not invertible.      Consider the following matrix : . We now row reduce : . This proves that is invertible and that .        Consider the following matrix defined over : . Write down elementary matrices which reduce to . In other words, find elementary matrices such that .       Consider the following matrix defined over : . Determine whether or not is invertible. Explain your answer. If is invertible, find the inverse.         For each of the following matrices , find the RREF of (call it ), and elementary matrices such that .    :      :      :          For each of the following matrices , find the RREF of (call it ), and elementary matrices such that .    :      :           The RREF of is and it takes nine elementary row operations to reduce .    The RREF of is and it takes six elementary row operations to reduce .         For each of the following matrices in , determine whether or not is invertible using the algorithm from this section. In the cases where is invertible, find the inverse.                  For each of the following matrices in , determine whether or not is invertible using the algorithm from this section. In the cases where is invertible, find the inverse.                   The matrix is invertible and the inverse of is .    The matrix is not invertible since its RREF is .         Use an inverse matrix to solve the following linear system over : .      Use an inverse matrix to solve the following linear system over : .    If , then the inverse over is . Then we have .      Use an inverse matrix to solve the following linear system over : .     Writing Exercises    Suppose , where is an matrix and and are matrices.   Show that if is invertible, then .    Provide an example where but is not invertible and .         Suppose that , where and are matrices, is an matrix, and is the zero matrix.   Show that if is invertible, then .    Provide an example where but is not invertible and .          We suppose that where is invertible. Then we have .    Suppose that , , and . Then, it is true that is not invertible. We obviously have . But we do have and then .         Suppose that and are matrices and that is invertible. Prove that is invertible.      Suppose that is upper triangular and invertible. (A matrix is upper triangular when all entries below the main diagonal are .) Prove that is also upper triangular.    Suppose that is invertible and upper triangular. Then we can use elementary row operations to reduce to . But the elementary row operations that are needed for this reduction will be only the scaling operation and the replacement operation, where we add a multiple of one row to another higher up in the matrix. (Specifically, we will only need to add a multiple of a row to a row where .) The elementary matrices that correspond to these specific elementary row operations are all upper triangular. And since the product of upper triangular matrices is upper triangular (this should probably be proved), this shows that will be upper triangular.      How many matrices in are invertible? What proportion of the matrices in are invertible?      How many matrices in are invertible? What proportion of the matrices in are invertible?      Prove . (You will need three cases.)       "
+  "body": " Inverting a Matrix   In this section we will introduce the definition of an invertible matrix and discuss some properties of the inverse of a matrix. We will then introduce a method to determine whether or not a matrix is invertible. Additionally, when a matrix is invertible we will be able to calculate its inverse.    Invertible Matrices  With matrix multiplication defined in terms of the composition of linear transformations, we turn to a specific composition in this subsection. Specifically, we will think about matrices for linear transformations and when is the identity transformation.  In , we called such linear transformations invertible . When such a linear transformation can be accomplished by matrix multiplication, we will refer to the connected matrix using this same term.    Let . The matrix is an inverse matrix for if .  If a matrix has an inverse, we say that is invertible or non-singular . If is a matrix for which no inverse matrix exists, we say that is singular or not invertible.    It may strike the reader as strange that only square matrices have a chance at being invertible. (That is, we have only defined invertibility for square matrices.) There is a good reason for this, which we will explore in the exercises.  If we know an inverse of a matrix , then we can solve matrix-vector equations with ease: .  The next three propositions present some properties of matrix inverses.    If a matrix has an inverse, that inverse is unique.    Let and suppose that both are inverses for . Then we have .    This proposition allows us to refer to the inverse of a matrix and to use the notation for that matrix.    Suppose that are both invertible. Then is invertible as well and .    If and are both invertible, then both and exist. Since matrix multiplication is associative, the following calculations show that the matrix satisfies the properties of the inverse of , thereby making invertible: .    This final proposition states what may seem like an obvious fact, but which should still be justified. That justification is left to the exercises.    Let be invertible. Then is also invertible and .    While we are not yet ready to calculate the inverse of a matrix (stay tuned!), we can provide examples of invertible matrices and their inverses.    Consider the following matrix : . We can verify that is by computing the product in both orders and verifying that the result is in both cases.  Similarly, here is a matrix over which is invertible: . The reader is encouraged to verify that the following matrix satisfies the properties of the inverse of : .      Elementary Matrices  The method of determining the invertibility of a matrix starts with a simple definition.    An elementary matrix is one that is formed by performing a single elementary row operation on an identity matrix.    Because elementary matrices are related to elementary row operations, there are three types of elementary matrices. The following example provides one elementary matrix (over ) of each type.    Our first elementary matrix results from switching the second and third rows in : . Next we will look at a matrix which comes about by adding 4 times the first row of to the second row: . Finally, we have a matrix which is formed by multiplying the second row of by 7: .    Multiplying by an elementary matrix has the effect of carrying out an elementary row operation. In other words, if the matrix results from applying an elementary row operation to , and if is another matrix, then is the matrix after this same elementary row operation has been applied. We will demonstrate this in an example before stating the relevant theorem. (The proof of the theorem is saved for the exercises.)    Let be the following matrix over : . If we label as the matrix in , then we can calculate : . The reader can verify that is the result of adding four times the first row of to the second row of .      If the elementary matrix results from performing an elementary row operation on , and if is an matrix, then is the matrix that results from applying this same elementary row operation to .    Each elementary row operation is reversible in the sense that there is another elementary row operation that reverses the work done by the first. (This appears as .) We can use this fact to establish the following useful proposition.    Every elementary matrix is invertible.    Let be an elementary matrix and let denote the elementary matrix which represents the reverse elementary row operation from . By the definition of these matrices and , we see that . This shows that and are inverses of each other and, in particular, this proves that is invertible.    We will now connect elementary matrices to the RREF of a matrix in the following proposition. This is largely a restatement of using elementary matrices.    If , then there exists in RREF and elementary matrices such that .    Since each matrix can be reduced to a matrix in RREF, and since elementary row operations are accomplished by multiplying by elementary matrices, there exist elementary matrices such that . Since elementary matrices are invertible, by repeated application of we see that is invertible and . Then we have . We note that each is an elementary matrix, and if we define for each , we have our result.      Finding the Inverse of a Matrix  We will now move on to develop an algorithm for finding the inverse of a matrix (when one exists). We need a lemma before stating our most important result of the section.    If is invertible, then for every , the equation has a unique solution.    Let be any vector in . Since is invertible, exists, and we can show that is a solution to the equation : . To show that this solution is unique, suppose is another solution to this equation, so . Then we have .      A matrix is invertible if and only if is row equivalent to . When is invertible, any sequence of elementary row operations that reduces to also transforms into .    If is invertible, then by the equation has a unique solution for every . Now means that the RREF of has a pivot in each of its columns. Since is square, this means the RREF has a pivot in each row as well, meaning that the RREF of must be .  Conversely, suppose that is row equivalent to . By , there exist elementary matrices such that . This means that , and since the product of invertible matrices is invertible, this proves that is invertible.  If we multiply both sides of by , we get , which shows the sequence of elementary row operations (through multiplication by elementary matrices) used to transform into . On the other hand, if we take the equation from the previous paragraph and invert both sides, we get , which we can easily adjust to . This establishes the final claim in the theorem.    This theorem provides an algorithm for us to determine when a matrix is invertible and, in the case it is invertible, to calculate its inverse.    In order to determine whether or not a matrix is invertible, follow these steps.   Reduce the matrix to its RREF.    If the RREF has the form , then is invertible and .    If the RREF does not have in its left columns, then is not invertible.       We will end this section with several examples in which we work through this algorithm.    Consider the following matrix : . To determine whether or not this matrix is invertible, we row reduce the matrix : . We see that is invertible and that .      Consider the following matrix : . We now row reduce to determine whether or not is invertible. We find that is row equivalent to . This calculation shows that is not invertible.      Consider the following matrix : . We now row reduce : . This proves that is invertible and that .        Consider the following matrix defined over : . Write down elementary matrices which reduce to . In other words, find elementary matrices such that .       Consider the following matrix defined over : . Determine whether or not is invertible. Explain your answer. If is invertible, find the inverse.         For each of the following matrices , find the RREF of (call it ), and elementary matrices such that .    :      :      :          For each of the following matrices , find the RREF of (call it ), and elementary matrices such that .    :      :           The RREF of is and it takes nine elementary row operations to reduce .    The RREF of is and it takes six elementary row operations to reduce .         For each of the following matrices in , determine whether or not is invertible using the algorithm from this section. In the cases where is invertible, find the inverse.                  For each of the following matrices in , determine whether or not is invertible using the algorithm from this section. In the cases where is invertible, find the inverse.                   The matrix is invertible and the inverse of is .    The matrix is not invertible since its RREF is .         Use an inverse matrix to solve the following linear system over : .      Use an inverse matrix to solve the following linear system over : .    If , then the inverse over is . Then we have .      Use an inverse matrix to solve the following linear system over : .     Writing Exercises    Let be invertible. Prove that is invertible and that .       Let .   Suppose that is left-invertible , meaning that there is an matrix such that . Prove that .    Suppose that is right-invertible , meaning that there is an matrix such that . Prove that .    Prove that any which is invertible must be a square matrix.         Prove .    Let be invertible. This means that exists and that . These equalities involving and show that is invertible and that is a matrix which has the properties of the inverse of . Since the inverse of a matrix is unique, it must be that .      Suppose , where is an matrix and and are matrices.   Show that if is invertible, then .    Provide an example where but is not invertible and .         Suppose that , where and are matrices, is an matrix, and is the zero matrix.   Show that if is invertible, then .    Provide an example where but is not invertible and .          We suppose that where is invertible. Then we have .    Suppose that , , and . Then, it is true that is not invertible. We obviously have . But we do have and then .         Suppose that and are matrices and that is invertible. Prove that is invertible.      Suppose that is upper triangular and invertible. (A matrix is upper triangular when all entries below the main diagonal are .) Prove that is also upper triangular.    Suppose that is invertible and upper triangular. Then we can use elementary row operations to reduce to . But the elementary row operations that are needed for this reduction will be only the scaling operation and the replacement operation, where we add a multiple of one row to another higher up in the matrix. (Specifically, we will only need to add a multiple of a row to a row where .) The elementary matrices that correspond to these specific elementary row operations are all upper triangular. And since the product of upper triangular matrices is upper triangular (this should probably be proved), this shows that will be upper triangular.      How many matrices in are invertible? What proportion of the matrices in are invertible?      How many matrices in are invertible? What proportion of the matrices in are invertible?      Prove . (You will need three cases.)       "
+},
+{
+  "id": "def-invertible-matrix",
+  "level": "2",
+  "url": "sec-inverting-matrix.html#def-invertible-matrix",
+  "type": "Definition",
+  "number": "3.3.1",
+  "title": "",
+  "body": "  Let . The matrix is an inverse matrix for if .  If a matrix has an inverse, we say that is invertible or non-singular . If is a matrix for which no inverse matrix exists, we say that is singular or not invertible.   "
+},
+{
+  "id": "prop-matrix-inverse-unique",
+  "level": "2",
+  "url": "sec-inverting-matrix.html#prop-matrix-inverse-unique",
+  "type": "Proposition",
+  "number": "3.3.2",
+  "title": "",
+  "body": "  If a matrix has an inverse, that inverse is unique.    Let and suppose that both are inverses for . Then we have .   "
+},
+{
+  "id": "prop-matrix-inverse-product",
+  "level": "2",
+  "url": "sec-inverting-matrix.html#prop-matrix-inverse-product",
+  "type": "Proposition",
+  "number": "3.3.3",
+  "title": "",
+  "body": "  Suppose that are both invertible. Then is invertible as well and .    If and are both invertible, then both and exist. Since matrix multiplication is associative, the following calculations show that the matrix satisfies the properties of the inverse of , thereby making invertible: .   "
+},
+{
+  "id": "prop-matrix-inverse-involution",
+  "level": "2",
+  "url": "sec-inverting-matrix.html#prop-matrix-inverse-involution",
+  "type": "Proposition",
+  "number": "3.3.4",
+  "title": "",
+  "body": "  Let be invertible. Then is also invertible and .   "
+},
+{
+  "id": "examp-inverse-matrices",
+  "level": "2",
+  "url": "sec-inverting-matrix.html#examp-inverse-matrices",
+  "type": "Example",
+  "number": "3.3.5",
+  "title": "",
+  "body": "  Consider the following matrix : . We can verify that is by computing the product in both orders and verifying that the result is in both cases.  Similarly, here is a matrix over which is invertible: . The reader is encouraged to verify that the following matrix satisfies the properties of the inverse of : .   "
 },
 {
   "id": "def-elementary-matrix",
   "level": "2",
   "url": "sec-inverting-matrix.html#def-elementary-matrix",
   "type": "Definition",
-  "number": "3.3.1",
+  "number": "3.3.6",
   "title": "",
   "body": "  An elementary matrix is one that is formed by performing a single elementary row operation on an identity matrix.   "
 },
@@ -2732,7 +2705,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#subsec-elementary-matrices-5",
   "type": "Example",
-  "number": "3.3.2",
+  "number": "3.3.7",
   "title": "",
   "body": "  Our first elementary matrix results from switching the second and third rows in : . Next we will look at a matrix which comes about by adding 4 times the first row of to the second row: . Finally, we have a matrix which is formed by multiplying the second row of by 7: .   "
 },
@@ -2741,7 +2714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#subsec-elementary-matrices-7",
   "type": "Example",
-  "number": "3.3.3",
+  "number": "3.3.8",
   "title": "",
   "body": "  Let be the following matrix over : . If we label as the matrix in , then we can calculate : . The reader can verify that is the result of adding four times the first row of to the second row of .   "
 },
@@ -2750,7 +2723,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#thm-el-matrices-action",
   "type": "Theorem",
-  "number": "3.3.4",
+  "number": "3.3.9",
   "title": "",
   "body": "  If the elementary matrix results from performing an elementary row operation on , and if is an matrix, then is the matrix that results from applying this same elementary row operation to .   "
 },
@@ -2759,7 +2732,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#prop-el-matrices-invertible",
   "type": "Proposition",
-  "number": "3.3.5",
+  "number": "3.3.10",
   "title": "",
   "body": "  Every elementary matrix is invertible.    Let be an elementary matrix and let denote the elementary matrix which represents the reverse elementary row operation from . By the definition of these matrices and , we see that . This shows that and are inverses of each other and, in particular, this proves that is invertible.   "
 },
@@ -2768,7 +2741,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#prop-el-matrices-rref",
   "type": "Proposition",
-  "number": "3.3.6",
+  "number": "3.3.11",
   "title": "",
   "body": "  If , then there exists in RREF and elementary matrices such that .    Since each matrix can be reduced to a matrix in RREF, and since elementary row operations are accomplished by multiplying by elementary matrices, there exist elementary matrices such that . Since elementary matrices are invertible, by repeated application of we see that is invertible and . Then we have . We note that each is an elementary matrix, and if we define for each , we have our result.   "
 },
@@ -2777,7 +2750,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#lem-inv-matrix-unique-sol",
   "type": "Lemma",
-  "number": "3.3.7",
+  "number": "3.3.12",
   "title": "",
   "body": "  If is invertible, then for every , the equation has a unique solution.    Let be any vector in . Since is invertible, exists, and we can show that is a solution to the equation : . To show that this solution is unique, suppose is another solution to this equation, so . Then we have .   "
 },
@@ -2786,7 +2759,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#thm-find-inverse-matrix",
   "type": "Theorem",
-  "number": "3.3.8",
+  "number": "3.3.13",
   "title": "",
   "body": "  A matrix is invertible if and only if is row equivalent to . When is invertible, any sequence of elementary row operations that reduces to also transforms into .    If is invertible, then by the equation has a unique solution for every . Now means that the RREF of has a pivot in each of its columns. Since is square, this means the RREF has a pivot in each row as well, meaning that the RREF of must be .  Conversely, suppose that is row equivalent to . By , there exist elementary matrices such that . This means that , and since the product of invertible matrices is invertible, this proves that is invertible.  If we multiply both sides of by , we get , which shows the sequence of elementary row operations (through multiplication by elementary matrices) used to transform into . On the other hand, if we take the equation from the previous paragraph and invert both sides, we get , which we can easily adjust to . This establishes the final claim in the theorem.   "
 },
@@ -2795,7 +2768,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#alg-matrix-inverse",
   "type": "Algorithm",
-  "number": "3.3.9",
+  "number": "3.3.14",
   "title": "",
   "body": "  In order to determine whether or not a matrix is invertible, follow these steps.   Reduce the matrix to its RREF.    If the RREF has the form , then is invertible and .    If the RREF does not have in its left columns, then is not invertible.      "
 },
@@ -2804,7 +2777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#subsec-finding-inverses-8",
   "type": "Example",
-  "number": "3.3.10",
+  "number": "3.3.15",
   "title": "",
   "body": "  Consider the following matrix : . To determine whether or not this matrix is invertible, we row reduce the matrix : . We see that is invertible and that .   "
 },
@@ -2813,7 +2786,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#subsec-finding-inverses-9",
   "type": "Example",
-  "number": "3.3.11",
+  "number": "3.3.16",
   "title": "",
   "body": "  Consider the following matrix : . We now row reduce to determine whether or not is invertible. We find that is row equivalent to . This calculation shows that is not invertible.   "
 },
@@ -2822,106 +2795,133 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#subsec-finding-inverses-10",
   "type": "Example",
-  "number": "3.3.12",
+  "number": "3.3.17",
   "title": "",
   "body": "  Consider the following matrix : . We now row reduce : . This proves that is invertible and that .   "
-},
-{
-  "id": "sec-inverting-matrix-5-1",
-  "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-5-1",
-  "type": "Reading Question",
-  "number": "3.3.3.1",
-  "title": "",
-  "body": "  Consider the following matrix defined over : . Write down elementary matrices which reduce to . In other words, find elementary matrices such that .    "
-},
-{
-  "id": "sec-inverting-matrix-5-2",
-  "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-5-2",
-  "type": "Reading Question",
-  "number": "3.3.3.2",
-  "title": "",
-  "body": "  Consider the following matrix defined over : . Determine whether or not is invertible. Explain your answer. If is invertible, find the inverse.    "
 },
 {
   "id": "sec-inverting-matrix-6-1",
   "level": "2",
   "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-1",
-  "type": "Exercise",
+  "type": "Reading Question",
   "number": "3.3.4.1",
   "title": "",
-  "body": "  For each of the following matrices , find the RREF of (call it ), and elementary matrices such that .    :      :      :       "
+  "body": "  Consider the following matrix defined over : . Write down elementary matrices which reduce to . In other words, find elementary matrices such that .    "
 },
 {
   "id": "sec-inverting-matrix-6-2",
   "level": "2",
   "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-2",
-  "type": "Exercise",
+  "type": "Reading Question",
   "number": "3.3.4.2",
+  "title": "",
+  "body": "  Consider the following matrix defined over : . Determine whether or not is invertible. Explain your answer. If is invertible, find the inverse.    "
+},
+{
+  "id": "sec-inverting-matrix-7-1",
+  "level": "2",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-1",
+  "type": "Exercise",
+  "number": "3.3.5.1",
+  "title": "",
+  "body": "  For each of the following matrices , find the RREF of (call it ), and elementary matrices such that .    :      :      :       "
+},
+{
+  "id": "sec-inverting-matrix-7-2",
+  "level": "2",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-2",
+  "type": "Exercise",
+  "number": "3.3.5.2",
   "title": "",
   "body": "  For each of the following matrices , find the RREF of (call it ), and elementary matrices such that .    :      :           The RREF of is and it takes nine elementary row operations to reduce .    The RREF of is and it takes six elementary row operations to reduce .      "
 },
 {
-  "id": "sec-inverting-matrix-6-3",
+  "id": "sec-inverting-matrix-7-3",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-3",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-3",
   "type": "Exercise",
-  "number": "3.3.4.3",
+  "number": "3.3.5.3",
   "title": "",
   "body": "  For each of the following matrices in , determine whether or not is invertible using the algorithm from this section. In the cases where is invertible, find the inverse.               "
 },
 {
-  "id": "sec-inverting-matrix-6-4",
+  "id": "sec-inverting-matrix-7-4",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-4",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-4",
   "type": "Exercise",
-  "number": "3.3.4.4",
+  "number": "3.3.5.4",
   "title": "",
   "body": "  For each of the following matrices in , determine whether or not is invertible using the algorithm from this section. In the cases where is invertible, find the inverse.                   The matrix is invertible and the inverse of is .    The matrix is not invertible since its RREF is .      "
 },
 {
-  "id": "sec-inverting-matrix-6-5",
+  "id": "sec-inverting-matrix-7-5",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-5",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-5",
   "type": "Exercise",
-  "number": "3.3.4.5",
+  "number": "3.3.5.5",
   "title": "",
   "body": "  Use an inverse matrix to solve the following linear system over : .   "
 },
 {
-  "id": "sec-inverting-matrix-6-6",
+  "id": "sec-inverting-matrix-7-6",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-6",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-6",
   "type": "Exercise",
-  "number": "3.3.4.6",
+  "number": "3.3.5.6",
   "title": "",
   "body": "  Use an inverse matrix to solve the following linear system over : .    If , then the inverse over is . Then we have .   "
 },
 {
-  "id": "sec-inverting-matrix-6-7",
+  "id": "sec-inverting-matrix-7-7",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-7",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-7",
   "type": "Exercise",
-  "number": "3.3.4.7",
+  "number": "3.3.5.7",
   "title": "",
   "body": "  Use an inverse matrix to solve the following linear system over : .   "
 },
 {
-  "id": "sec-inverting-matrix-6-8-2",
+  "id": "transpose-invertible",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-8-2",
+  "url": "sec-inverting-matrix.html#transpose-invertible",
   "type": "Exercise",
-  "number": "3.3.4.8",
+  "number": "3.3.5.8",
+  "title": "",
+  "body": "  Let be invertible. Prove that is invertible and that .   "
+},
+{
+  "id": "sec-inverting-matrix-7-8-3",
+  "level": "2",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-8-3",
+  "type": "Exercise",
+  "number": "3.3.5.9",
+  "title": "",
+  "body": "  Let .   Suppose that is left-invertible , meaning that there is an matrix such that . Prove that .    Suppose that is right-invertible , meaning that there is an matrix such that . Prove that .    Prove that any which is invertible must be a square matrix.      "
+},
+{
+  "id": "sec-inverting-matrix-7-8-4",
+  "level": "2",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-8-4",
+  "type": "Exercise",
+  "number": "3.3.5.10",
+  "title": "",
+  "body": "  Prove .    Let be invertible. This means that exists and that . These equalities involving and show that is invertible and that is a matrix which has the properties of the inverse of . Since the inverse of a matrix is unique, it must be that .   "
+},
+{
+  "id": "sec-inverting-matrix-7-8-5",
+  "level": "2",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-8-5",
+  "type": "Exercise",
+  "number": "3.3.5.11",
   "title": "",
   "body": "  Suppose , where is an matrix and and are matrices.   Show that if is invertible, then .    Provide an example where but is not invertible and .      "
 },
 {
-  "id": "sec-inverting-matrix-6-8-3",
+  "id": "sec-inverting-matrix-7-8-6",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-8-3",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-8-6",
   "type": "Exercise",
-  "number": "3.3.4.9",
+  "number": "3.3.5.12",
   "title": "",
   "body": "  Suppose that , where and are matrices, is an matrix, and is the zero matrix.   Show that if is invertible, then .    Provide an example where but is not invertible and .          We suppose that where is invertible. Then we have .    Suppose that , , and . Then, it is true that is not invertible. We obviously have . But we do have and then .      "
 },
@@ -2930,43 +2930,43 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inverting-matrix.html#exer-invertible-product",
   "type": "Exercise",
-  "number": "3.3.4.10",
+  "number": "3.3.5.13",
   "title": "",
   "body": "  Suppose that and are matrices and that is invertible. Prove that is invertible.   "
 },
 {
-  "id": "sec-inverting-matrix-6-8-5",
+  "id": "sec-inverting-matrix-7-8-8",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-8-5",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-8-8",
   "type": "Exercise",
-  "number": "3.3.4.11",
+  "number": "3.3.5.14",
   "title": "",
   "body": "  Suppose that is upper triangular and invertible. (A matrix is upper triangular when all entries below the main diagonal are .) Prove that is also upper triangular.    Suppose that is invertible and upper triangular. Then we can use elementary row operations to reduce to . But the elementary row operations that are needed for this reduction will be only the scaling operation and the replacement operation, where we add a multiple of one row to another higher up in the matrix. (Specifically, we will only need to add a multiple of a row to a row where .) The elementary matrices that correspond to these specific elementary row operations are all upper triangular. And since the product of upper triangular matrices is upper triangular (this should probably be proved), this shows that will be upper triangular.   "
 },
 {
-  "id": "sec-inverting-matrix-6-8-6",
+  "id": "sec-inverting-matrix-7-8-9",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-8-6",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-8-9",
   "type": "Exercise",
-  "number": "3.3.4.12",
+  "number": "3.3.5.15",
   "title": "",
   "body": "  How many matrices in are invertible? What proportion of the matrices in are invertible?   "
 },
 {
-  "id": "sec-inverting-matrix-6-8-7",
+  "id": "sec-inverting-matrix-7-8-10",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-8-7",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-8-10",
   "type": "Exercise",
-  "number": "3.3.4.13",
+  "number": "3.3.5.16",
   "title": "",
   "body": "  How many matrices in are invertible? What proportion of the matrices in are invertible?   "
 },
 {
-  "id": "sec-inverting-matrix-6-8-8",
+  "id": "sec-inverting-matrix-7-8-11",
   "level": "2",
-  "url": "sec-inverting-matrix.html#sec-inverting-matrix-6-8-8",
+  "url": "sec-inverting-matrix.html#sec-inverting-matrix-7-8-11",
   "type": "Exercise",
-  "number": "3.3.4.14",
+  "number": "3.3.5.17",
   "title": "",
   "body": "  Prove . (You will need three cases.)   "
 },
@@ -2977,7 +2977,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "Subspaces and Linear Transformations",
-  "body": " Subspaces and Linear Transformations   Every linear transformation between vector spaces brings with it some descriptions of related subspaces of the domain and codomain. We will explore some of these subspaces in this section.    The Kernel of a Linear Transformation  The kernel of a linear transformation is the set of all vectors that sends to the zero vector.    If is a linear transformation between vector spaces, then the kernel of is the set .    While it may seem strange to single out the vectors that are sent to , this set reveals a lot about .    Let be a linear transformation. Then is a subspace of .    We will prove this theorem using the criteria for a subspace spelled out in . Since , we have . (The fact that is found in .)  Let . Using the additive property of and the fact that these vectors are in the kernel, we have .  Finally, we let and . Then we have . This calculation used the fact that was assumed to be in the kernel and the scalar multiplication property of .      Let be the set of all differentiable functions from . Let be the linear transformation which takes the derivative. (We proved a very similar function was a linear transformation in .) What is the kernel of ?  We recall from calculus that a function has for all in an interval if and only if is a constant function. This proves that is the set of all constant functions, and it further establishes that set as a subspace of .    While not all linear transformations are linked to matrices, some are. The kernel has an alternate name in those situations.    If , then the null space of is .    Since we have shown that the kernel is a subspace, the word space in the term null space is justified.  We also recall the link between matrix-vector equations like and linear systems. The definition of the null space shows that the set of solutions to a homogeneous linear system can be described as the null space of a matrix.    Let be the matrix . We can find by row reducing the matrix . Here is the RREF: . From this we see that , , and is free. In other words, any vector in looks like . So we have where .      There is an important fact contained in this last example. When we have a homogeneous system, we can always pay attention to just the coefficient matrix instead of the augmented matrix. No elementary row operation can produce a non-zero entry in a column of zeros.    The following theorem is one of the reasons that the kernel is so useful.    Let be a linear transformation. Then is injective if and only if .    We first suppose that is injective. (We recall the definition of injectivity from .) Since , the injectivity of implies that if for any . Therefore, .  Next, we suppose that . We want to prove that is injective, so we let with . We want to show that . By the linearity of we have . Since , we must have , meaning that . This proves that is injective.      Consider the linear transformation given by . To examine , we need to look at polynomials such that and . If , then and , so if , we must have and . This means that the only polynomial in is the zero polynomial. Therefore, is injective.    We now present one final fact related to the kernel.    Suppose that the linear system represented by the equation is consistent. Then this system has a unique solution if and only if .    We first assume that the system has a unique solution. Since the linear system is consistent, then there exists a vector such that . If , then , so is also a solution. But since there is a unique solution, we must have , so . This shows that .  We now assume that . From we know that the associated linear transformation is injective. Since the system is consistent, there must be only one vector that the transformation sends to so the system has a unique solution.      The Range as a Subspace  We have examined the kernel as a subspace of the domain of a linear transformation. We now turn our attention to a well-known subset of the codomain. The reader will be familiar with the range (or image) of a linear transformation. We can now prove that this is a subspace.    Let be a linear transformation between vector spaces over . Then is a subspace of .    Since we know that , it follows that . We now need to show the other properties demanded by .  If , then there exist vectors with and . Then, using the linearity of , we have . This proves that , so is closed under addition.  Finally, we let and , so there exists a vector such that . Then, using the fact that is a linear transformation, we have , which proves that . Thus, is closed under scalar multiplication. We conclude that is a subspace of .    As usual, when our linear transformation is linked to a matrix, we have more to say.    If , then the column space of , written , is the set of all linear combinations of the columns of . If , then .    When we introduced the matrix-vector product in , we noted that is a linear combination of the columns of with weights coming from the entries in . So, a vector in can be written as for some . Therefore, another way to write the column space is . From this description, we can see that the column space of a matrix and the range of a linear transformation are the same.    If is a linear transformation given by multiplication by a matrix , then .    We can also restate the consistency of linear systems using the language of the column space.    If , then the linear system is consistent if and only if .    Since the column space of a matrix is a subspace of the codomain of the associated linear transformation, there will be some occasions when that subspace is as large as it could be. The next theorem gives conditions for just that situation.    A set of vectors spans if and only if the RREF of the matrix has a pivot in every row.    The set of vectors spans if and only if for every . This happens when the linear system with augmented matrix is consistent for each .  We know from that a linear system over is consistent if and only if there is no pivot in the final column of the augmented matrix. If the RREF of has a pivot in every row, then there cannot be a pivot in the final column of the RREF of since each row already contains one pivot.  We will prove the contrapositive of the other implication. Suppose that the RREF of does not have a pivot in every row. We will create a vector in which is not in the span of this set of vectors. Since the RREF of does not have a pivot in every row, let the smallest row number with no pivot be . Form the augmented matrix with the RREF of and the vector . Now reverse the elementary row operations that were taken to reduce to its RREF. The result will be an augmented matrix which is related to an inconsistent system. (There will be a pivot in the final column of the RREF of this matrix. We constructed it this way!) This proves that the set does not span .      Define the vectors in as . How large is ?  We form the matrix and find the RREF: . Since there is a pivot in each row, the set spans .      Consider the following vectors in : . When we row reduce the matrix , we get . Since there is not a pivot in every row, the set does not span .        Let be the following matrix: . Let be the linear transformation which is multiplication by .   Calculate .    Is injective? Explain.         Consider the following three vectors in : . Does the set span ? Explain.        Consider the following matrix in : . For each of the following vectors , determine whether or not .                   Yes, we calculate .    No, we calculate , where we have written the vector horizontally out of convenience.         For each of the following matrices over , find by producing a set of vectors that spans .                  Find a matrix so that the following set is : .      Let and be the following, with entries from : .   Show that and .    Explain why it is not possible, for this particular matrix , to find a non-zero vector in .    Is it possible to find a matrix such that there exists a non-zero vector in ? Justify your answer thoroughly.          It is easy to calculate and see that . To show that is not in , we form the matrix and row reduce: . The pivot in the last column shows that .    Since , we can see that any vector in the null space of must be a multiple of . And since is not in , no non-zero multiple of can be in . This shows that the only vector in is the zero vector.    Yes, this is possible. Consider the matrix . The vector is in the null space of . (This can easily be checked.) Also, since is a column of , it is in .         Consider the following linear transformation : . This is not injective. Find distinct vectors and in such that .      Consider the following linear transformation : . This is not surjective. Find a vector such that is not in the image of .      Consider the following linear transformation : .   Either prove or disprove that is injective.    Either prove or disprove that is surjective.          This linear transformation is injective. Observe that if sends the vector to the zero polynomial, then we have the following linear system in which each equation must hold: . We can solve this using methods from earlier in this book. We find that . This shows that the only solution to this linear system is the trivial one that is, where . But this means that the only vector that sends to the zero polynomial is the zero vector.  This proves that the kernel of contains only the zero vector, so is injective.    We claim that is surjective. Let be an arbitrary element of . In order to demonstrate that there is an element such that , we need to solve the following linear system: . However, the RREF of the coefficient matrix for this system looks like this: . The fact that there is a pivot in each row of this RREF means that a combination of , , and can be found such that . This proves that is surjective.         Consider the following linear transformation : .   Either prove or disprove that is injective.    Either prove or disprove that is surjective.         Consider the following linear transformation : .   Either prove or disprove that is injective.    Either prove or disprove that is surjective.          This linear transformation is not injective. We can calculate that . Since this shows that has a nonzero vector in the kernel, is not injective.    This linear transformation is surjective. Let be an element of . We claim that we can find an element such that . If , we will need to solve the following system of equations to find the coefficients of : . But the coefficient matrix of this system has the following RREF: . The important thing to notice here is that there is a pivot in each row of this RREF. This means that the linear system always has a solution, so we can always find values of , , and such that . This proves that is surjective.         For each of the following, consider a linear transformation which is multiplication by the given matrix . In each case, determine whether or not is injective and whether or not is surjective. Explain your answers.                           Writing Exercises    Suppose that is a linear transformation between vector spaces over . If is a subspace of , prove that is a subspace of , where .    Since is a subspace of , we must have . Further, we know that for all linear transformations. This proves that .  We now let . This means that there exist with and . Since is a subspace of , we know that , so . However, because of the properties of a linear transformation, we have . This proves that , which shows that is closed under addition.  Finally, we let and . This means that there exists such that . Since is a subspace of , we know that , so . Using the properties of a linear transformation, we see that . This proves that , showing that is closed under scalar multiplication. This completes the proof that is a subspace of .      Suppose that is a linear transformation between vector spaces over . If is a subspace of , define the set by . Prove that is a subspace of .      Let and let . Prove that .      Prove that if , then no set of vectors can span .      "
+  "body": " Subspaces and Linear Transformations   Every linear transformation between vector spaces brings with it some descriptions of related subspaces of the domain and codomain. We will explore some of these subspaces in this section.    The Kernel of a Linear Transformation  The kernel of a linear transformation is the set of all vectors that sends to the zero vector.    If is a linear transformation between vector spaces, then the kernel of is the set .    While it may seem strange to single out the vectors that are sent to , this set reveals a lot about .    Let be a linear transformation. Then is a subspace of .    We will prove this theorem using the criteria for a subspace spelled out in . Since , we have . (The fact that is found in .)  Let . Using the additive property of and the fact that these vectors are in the kernel, we have .  Finally, we let and . Then we have . This calculation used the fact that was assumed to be in the kernel and the scalar multiplication property of .      Let be the set of all differentiable functions from . Let be the linear transformation which takes the derivative. (We proved a very similar function was a linear transformation in .) What is the kernel of ?  We recall from calculus that a function has for all in an interval if and only if is a constant function. This proves that is the set of all constant functions, and it further establishes that set as a subspace of .    While not all linear transformations are linked to matrices, some are. The kernel has an alternate name in those situations.    If , then the null space of is .    Since we have shown that the kernel is a subspace, the word space in the term null space is justified.  We also recall the link between matrix-vector equations like and linear systems. The definition of the null space shows that the set of solutions to a homogeneous linear system can be described as the null space of a matrix.    Let be the matrix . We can find by row reducing the matrix . Here is the RREF: . From this we see that , , and is free. In other words, any vector in looks like . So we have where .      There is an important fact contained in this last example. When we have a homogeneous system, we can always pay attention to just the coefficient matrix instead of the augmented matrix. No elementary row operation can produce a non-zero entry in a column of zeros.    The following theorem is one of the reasons that the kernel is so useful.    Let be a linear transformation. Then is injective if and only if .    We first suppose that is injective. (We recall the definition of injectivity from .) Since , the injectivity of implies that if for any . Therefore, .  Next, we suppose that . We want to prove that is injective, so we let with . We want to show that . By the linearity of we have . Since , we must have , meaning that . This proves that is injective.      Consider the linear transformation given by . To examine , we need to look at polynomials such that and . If , then and , so if , we must have and . This means that the only polynomial in is the zero polynomial. Therefore, is injective.    We now present one final fact related to the kernel.    Suppose that the linear system represented by the equation is consistent. Then this system has a unique solution if and only if .    We first assume that the system has a unique solution. Since the linear system is consistent, then there exists a vector such that . If , then , so is also a solution. But since there is a unique solution, we must have , so . This shows that .  We now assume that . From we know that the associated linear transformation is injective. Since the system is consistent, there must be only one vector that the transformation sends to so the system has a unique solution.      The Image as a Subspace  We have examined the kernel as a subspace of the domain of a linear transformation. We now turn our attention to a well-known subset of the codomain. The reader will be familiar with the image (or range) of a linear transformation. We can now prove that this is a subspace.   We will use the notation for the image of a linear transformation .     Let be a linear transformation between vector spaces over . Then is a subspace of .    Since we know that , it follows that . We now need to show the other properties demanded by .  If , then there exist vectors with and . Then, using the linearity of , we have . This proves that , so is closed under addition.  Finally, we let and , so there exists a vector such that . Then, using the fact that is a linear transformation, we have , which proves that . Thus, is closed under scalar multiplication. We conclude that is a subspace of .    As usual, when our linear transformation is linked to a matrix, we have more to say.    If , then the column space of , written , is the set of all linear combinations of the columns of . If , then .    When we introduced the matrix-vector product in , we noted that is a linear combination of the columns of with weights coming from the entries in . So, a vector in can be written as for some . Therefore, another way to write the column space is . From this description, we can see that the column space of a matrix and the image of a linear transformation are the same.    If is a linear transformation given by multiplication by a matrix , then .    We can also restate the consistency of linear systems using the language of the column space.    If , then the linear system is consistent if and only if .    Since the column space of a matrix is a subspace of the codomain of the associated linear transformation, there will be some occasions when that subspace is as large as it could be. The next theorem gives conditions for just that situation.    A set of vectors spans if and only if the RREF of the matrix has a pivot in every row.    The set of vectors spans if and only if for every . This happens when the linear system with augmented matrix is consistent for each .  We know from that a linear system over is consistent if and only if there is no pivot in the final column of the augmented matrix. If the RREF of has a pivot in every row, then there cannot be a pivot in the final column of the RREF of since each row already contains one pivot.  We will prove the contrapositive of the other implication. Suppose that the RREF of does not have a pivot in every row. We will create a vector in which is not in the span of this set of vectors. Since the RREF of does not have a pivot in every row, let the smallest row number with no pivot be . Form the augmented matrix with the RREF of and the vector . Now reverse the elementary row operations that were taken to reduce to its RREF. The result will be an augmented matrix which is related to an inconsistent system. (There will be a pivot in the final column of the RREF of this matrix. We constructed it this way!) This proves that the set does not span .      Define the vectors in as . How large is ?  We form the matrix and find the RREF: . Since there is a pivot in each row, the set spans .      Consider the following vectors in : . When we row reduce the matrix , we get . Since there is not a pivot in every row, the set does not span .        Let be the following matrix: . Let be the linear transformation which is multiplication by .   Calculate .    Is injective? Explain.         Consider the following three vectors in : . Does the set span ? Explain.        Consider the following matrix in : . For each of the following vectors , determine whether or not .                   Yes, we calculate .    No, we calculate , where we have written the vector horizontally out of convenience.         For each of the following matrices over , find by producing a set of vectors that spans .                  Find a matrix so that the following set is : .      Let and be the following, with entries from : .   Show that and .    Explain why it is not possible, for this particular matrix , to find a non-zero vector in .    Is it possible to find a matrix such that there exists a non-zero vector in ? Justify your answer thoroughly.          It is easy to calculate and see that . To show that is not in , we form the matrix and row reduce: . The pivot in the last column shows that .    Since , we can see that any vector in the null space of must be a multiple of . And since is not in , no non-zero multiple of can be in . This shows that the only vector in is the zero vector.    Yes, this is possible. Consider the matrix . The vector is in the null space of . (This can easily be checked.) Also, since is a column of , it is in .         Consider the following linear transformation : . This is not injective. Find distinct vectors and in such that .      Consider the following linear transformation : . This is not surjective. Find a vector such that is not in the image of .      Consider the following linear transformation : .   Either prove or disprove that is injective.    Either prove or disprove that is surjective.          This linear transformation is injective. Observe that if sends the vector to the zero polynomial, then we have the following linear system in which each equation must hold: . We can solve this using methods from earlier in this book. We find that . This shows that the only solution to this linear system is the trivial one that is, where . But this means that the only vector that sends to the zero polynomial is the zero vector.  This proves that the kernel of contains only the zero vector, so is injective.    We claim that is surjective. Let be an arbitrary element of . In order to demonstrate that there is an element such that , we need to solve the following linear system: . However, the RREF of the coefficient matrix for this system looks like this: . The fact that there is a pivot in each row of this RREF means that a combination of , , and can be found such that . This proves that is surjective.         Consider the following linear transformation : .   Either prove or disprove that is injective.    Either prove or disprove that is surjective.         Consider the following linear transformation : .   Either prove or disprove that is injective.    Either prove or disprove that is surjective.          This linear transformation is not injective. We can calculate that . Since this shows that has a nonzero vector in the kernel, is not injective.    This linear transformation is surjective. Let be an element of . We claim that we can find an element such that . If , we will need to solve the following system of equations to find the coefficients of : . But the coefficient matrix of this system has the following RREF: . The important thing to notice here is that there is a pivot in each row of this RREF. This means that the linear system always has a solution, so we can always find values of , , and such that . This proves that is surjective.         For each of the following, consider a linear transformation which is multiplication by the given matrix . In each case, determine whether or not is injective and whether or not is surjective. Explain your answers.                           Writing Exercises    Suppose that is a linear transformation between vector spaces over . If is a subspace of , prove that is a subspace of , where .    Since is a subspace of , we must have . Further, we know that for all linear transformations. This proves that .  We now let . This means that there exist with and . Since is a subspace of , we know that , so . However, because of the properties of a linear transformation, we have . This proves that , which shows that is closed under addition.  Finally, we let and . This means that there exists such that . Since is a subspace of , we know that , so . Using the properties of a linear transformation, we see that . This proves that , showing that is closed under scalar multiplication. This completes the proof that is a subspace of .      Suppose that is a linear transformation between vector spaces over . If is a subspace of , define the set by . Prove that is a subspace of .      Let and let . Prove that .      Prove that if , then no set of vectors can span .      "
 },
 {
   "id": "def-kernel",
@@ -3061,11 +3061,20 @@ var ptx_lunr_docs = [
   "body": "  Suppose that the linear system represented by the equation is consistent. Then this system has a unique solution if and only if .    We first assume that the system has a unique solution. Since the linear system is consistent, then there exists a vector such that . If , then , so is also a solution. But since there is a unique solution, we must have , so . This shows that .  We now assume that . From we know that the associated linear transformation is injective. Since the system is consistent, there must be only one vector that the transformation sends to so the system has a unique solution.   "
 },
 {
+  "id": "subsec-range-3",
+  "level": "2",
+  "url": "sec-subspaces-lt.html#subsec-range-3",
+  "type": "Note",
+  "number": "3.4.10",
+  "title": "",
+  "body": " We will use the notation for the image of a linear transformation .  "
+},
+{
   "id": "thm-range-subspace",
   "level": "2",
   "url": "sec-subspaces-lt.html#thm-range-subspace",
   "type": "Theorem",
-  "number": "3.4.10",
+  "number": "3.4.11",
   "title": "",
   "body": "  Let be a linear transformation between vector spaces over . Then is a subspace of .    Since we know that , it follows that . We now need to show the other properties demanded by .  If , then there exist vectors with and . Then, using the linearity of , we have . This proves that , so is closed under addition.  Finally, we let and , so there exists a vector such that . Then, using the fact that is a linear transformation, we have , which proves that . Thus, is closed under scalar multiplication. We conclude that is a subspace of .   "
 },
@@ -3074,7 +3083,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-subspaces-lt.html#def-column-space",
   "type": "Definition",
-  "number": "3.4.11",
+  "number": "3.4.12",
   "title": "",
   "body": "  If , then the column space of , written , is the set of all linear combinations of the columns of . If , then .   "
 },
@@ -3083,7 +3092,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-subspaces-lt.html#fact-range-col-space",
   "type": "Fact",
-  "number": "3.4.12",
+  "number": "3.4.13",
   "title": "",
   "body": "  If is a linear transformation given by multiplication by a matrix , then .   "
 },
@@ -3092,7 +3101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-subspaces-lt.html#fact-consistent-column-space",
   "type": "Fact",
-  "number": "3.4.13",
+  "number": "3.4.14",
   "title": "",
   "body": "  If , then the linear system is consistent if and only if .   "
 },
@@ -3101,18 +3110,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-subspaces-lt.html#thm-vectors-span-fm",
   "type": "Theorem",
-  "number": "3.4.14",
-  "title": "",
-  "body": "  A set of vectors spans if and only if the RREF of the matrix has a pivot in every row.    The set of vectors spans if and only if for every . This happens when the linear system with augmented matrix is consistent for each .  We know from that a linear system over is consistent if and only if there is no pivot in the final column of the augmented matrix. If the RREF of has a pivot in every row, then there cannot be a pivot in the final column of the RREF of since each row already contains one pivot.  We will prove the contrapositive of the other implication. Suppose that the RREF of does not have a pivot in every row. We will create a vector in which is not in the span of this set of vectors. Since the RREF of does not have a pivot in every row, let the smallest row number with no pivot be . Form the augmented matrix with the RREF of and the vector . Now reverse the elementary row operations that were taken to reduce to its RREF. The result will be an augmented matrix which is related to an inconsistent system. (There will be a pivot in the final column of the RREF of this matrix. We constructed it this way!) This proves that the set does not span .   "
-},
-{
-  "id": "subsec-range-12",
-  "level": "2",
-  "url": "sec-subspaces-lt.html#subsec-range-12",
-  "type": "Example",
   "number": "3.4.15",
   "title": "",
-  "body": "  Define the vectors in as . How large is ?  We form the matrix and find the RREF: . Since there is a pivot in each row, the set spans .   "
+  "body": "  A set of vectors spans if and only if the RREF of the matrix has a pivot in every row.    The set of vectors spans if and only if for every . This happens when the linear system with augmented matrix is consistent for each .  We know from that a linear system over is consistent if and only if there is no pivot in the final column of the augmented matrix. If the RREF of has a pivot in every row, then there cannot be a pivot in the final column of the RREF of since each row already contains one pivot.  We will prove the contrapositive of the other implication. Suppose that the RREF of does not have a pivot in every row. We will create a vector in which is not in the span of this set of vectors. Since the RREF of does not have a pivot in every row, let the smallest row number with no pivot be . Form the augmented matrix with the RREF of and the vector . Now reverse the elementary row operations that were taken to reduce to its RREF. The result will be an augmented matrix which is related to an inconsistent system. (There will be a pivot in the final column of the RREF of this matrix. We constructed it this way!) This proves that the set does not span .   "
 },
 {
   "id": "subsec-range-13",
@@ -3120,6 +3120,15 @@ var ptx_lunr_docs = [
   "url": "sec-subspaces-lt.html#subsec-range-13",
   "type": "Example",
   "number": "3.4.16",
+  "title": "",
+  "body": "  Define the vectors in as . How large is ?  We form the matrix and find the RREF: . Since there is a pivot in each row, the set spans .   "
+},
+{
+  "id": "subsec-range-14",
+  "level": "2",
+  "url": "sec-subspaces-lt.html#subsec-range-14",
+  "type": "Example",
+  "number": "3.4.17",
   "title": "",
   "body": "  Consider the following vectors in : . When we row reduce the matrix , we get . Since there is not a pivot in every row, the set does not span .   "
 },
