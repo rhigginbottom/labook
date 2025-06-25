@@ -72,7 +72,7 @@
   <example xml:id="examp-rotate-reflect-2">
     <statement>
       <p>
-        We take our notation from <xref ref="examp-rotate-reflect"/>. Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which reflects a vector in the Cartesian plane across the <m>x</m>-axis, and let <m>S:\rr^2\to\rr^2</m> be the linear transformation which rotates a vector counter-clockwise around the origin by <m>\frac{\pi}{2}</m> radians. In this example we will find the <m>2\times 2</m> matrices <m>A</m> and <m>B</m> such that <m>T(\bfv)=A\bfv</m> and <m>S(\bfv)=B\bfv</m> for all <m>\bfv \in \rr^2</m>. 
+        We take our notation from <xref ref="examp-rotate-reflect"/>. Let <m>{T:\rr^2 \to \rr^2}</m> be the linear transformation which reflects a vector in the Cartesian plane across the <m>x</m>-axis, and let <m>S:\rr^2\to\rr^2</m> be the linear transformation which rotates a vector counter-clockwise around the origin by <m>\frac{\pi}{2}</m> radians. In this example we will find the <m>2\times 2</m> matrices <m>A</m> and <m>B</m> such that <m>T(\bfv)=A\bfv</m> and <m>S(\bfv)=B\bfv</m> for all <m>\bfv \in \rr^2</m>. 
       </p>
       <p>
         In the proof of <xref ref="thm-matrix-of-lin-trans"/>, we saw that the way to form the matrix of a linear transformation is to calculate the image of the vectors <m>\mathbf{e}_1, \ldots, \mathbf{e}_n</m>. In this context, we need to calculate the image of <m>\mathbf{e}_1</m> and <m>\mathbf{e}_2</m> under <m>T</m> and <m>S</m>.
@@ -114,7 +114,7 @@
     Since linear transformations are functions, we can <em>compose</em> them with other linear transformations. In order for this to make sense, we need to have the codomains and domains match up correctly. (The reader should recall a brief introduction to this idea in <xref ref="def-comp-linear-trans"/>.)
   </p>
   <p>
-    If <m>T:U \to V</m> and <m>S:V \to W</m> are linear transformations between vector spaces, then the linear transformation <m>S \circ T</m> is defined <m>U \to W</m>. If <m>U = \ff^n</m>, <m>V = \ff^m</m>, and <m>W = \ff^p</m>, then the linear transformation <m>S \circ T</m> is defined <m>\ff^n \to \ff^p</m>, and <xref ref="thm-matrix-of-lin-trans"/> says that there is a unique matrix over <m>\ff</m> which carries out this linear transformation. What is that matrix? 
+    If <m>T:U \to V</m> and <m>S:V \to W</m> are linear transformations between vector spaces, then the linear transformation <m>S \circ T: U \to W</m> is defined. If <m>U = \ff^n</m>, <m>V = \ff^m</m>, and <m>W = \ff^p</m>, then the linear transformation <m>S \circ T</m> is defined from <m>\ff^n</m> to <m>\ff^p</m>, and <xref ref="thm-matrix-of-lin-trans"/> says that there is a unique matrix over <m>\ff</m> which carries out this linear transformation. What is that matrix? 
   </p>
   <p>
     <xref ref="thm-matrix-of-lin-trans"/> tells us that there are matrices <m>A</m> and <m>B</m> such that the transformations <m>T</m> and <m>S</m> are multiplication by <m>B</m> and <m>A</m>, respectively. The matrix <m>B</m> is <m>m\times n</m> and <m>A</m> is <m>p\times m</m>. We will <em>define</em> the product of <m>A</m> and <m>B</m> so that the matrix of <m>S\circ T</m> is the matrix product <m>AB</m>.
@@ -138,15 +138,44 @@
   </note>
 
   <p>
-    Though we have defined matrix multiplication in terms of the composition of linear transformations, we can multiply matrices of the correct dimensions even when we have no specific linear transformations in mind. This is similar to our understanding of row-reducing a matrix<mdash></mdash>this arose in the context of solving linear systems, but the process can be carried out on any matrix.
+    Though we have defined matrix multiplication in terms of the composition of linear transformations, we can multiply matrices of the correct dimensions even when we have no specific linear transformations in mind. This is similar to our understanding of row-reducing a matrix<mdash></mdash>row reduction arose in the context of solving linear systems, but the process can be carried out on any matrix.
   </p>
+
+  <p>
+  There is one alternate, useful way to think about matrix multiplication<mdash></mdash>in terms of the columns of the matrix. 
+</p>
+
+<proposition xml:id="prop-matrix-mult">
+  <statement>
+    <p>
+      Let <m>A \in M_{m,n}(\ff)</m>, <m>B \in M_{n,p}(\ff)</m>, and let the columns of <m>B</m> be <m>\mathbf{b}_1,\ldots,\mathbf{b}_p</m>. Then the columns of <m>AB</m> are <m>A\mathbf{b}_1,\ldots,A\mathbf{b}_p</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      By our definition of the matrix product, for each <m>j=1, \ldots, p</m> we have 
+      <me>
+        (AB)\mathbf{e}_j = A(B\mathbf{e}_j)
+      </me>.
+      The observation in <xref ref="note-matrix-times-ej"/> means that <m>B\mathbf{e}_j=\mathbf{b}_j</m>, so we have 
+      <me>
+        (AB)\mathbf{e}_j = A \mathbf{b}_j
+      </me>.
+      Since <m>(AB)\mathbf{e}_j</m> is the <m>j</m>th column of <m>AB</m>, this proves the proposition.
+    </p>
+  </proof>
+</proposition>
+
+<p>
+  From the understanding we developed in <xref ref="examp-matrix-vector-prod"/>, this proposition means that every column of the matrix product <m>AB</m> is a linear combination of the columns of <m>A</m>.
+</p>
 
 <p>
   We have defined matrix multiplication, but we have not specified how the entries in the matrix product are calculated. Fear not; the wait is over.
 </p>
 
 <p>
-  We will use the definition of matrix multiplication and the formula we have for the product of a matrix and a vector (see <xref ref="form-matrix-vect-prod"/>). Since <m>(AB)\bfu</m> is a vector, we will record a formula for entry <m>i</m> in this vector. In what follows, we assume <m>A=[a_{ij}]</m> and the entries of <m>B=[b_{ij}]</m>; we also assume <m>\bfu = [u_i]</m>:
+  We will use the definition of matrix multiplication and the formula we have for the product of a matrix and a vector (see formula <xref ref="form-matrix-vect-prod"/>). Since <m>(AB)\bfu</m> is a vector, we will record a formula for entry <m>i</m> in this vector. In what follows, we assume <m>A=[a_{ij}]</m> and the entries of <m>B=[b_{ij}]</m>; we also assume <m>\bfu = [u_i]</m>:
   <md>
     <mrow>[(AB)\bfu]_i \amp = [A(B\bfu)]_i = \sum_{k=1}^m a_{ik} [B\bfu]_k</mrow> 
     <mrow> \amp = \sum_{k=1}^m a_{ik} \sum_{j=1}^n b_{kj}u_j = \sum_{j=1}^n \left(\sum_{k=1}^m a_{ik}  b_{kj} \right) u_j </mrow>
@@ -158,7 +187,7 @@
   <men xml:id="form-matrix-product-entry">
     [AB]_{ij} = \sum_{k=1}^m a_{ik}b_{kj}
   </men>
-  for all <m>1 \le i \le p</m> and all <m>1 \le j \le n</m>. In words, this means that the <m>(i,j)</m>-entry of <m>AB</m> is the entry-wise product of row <m>i</m> in <m>A</m> with column <m>j</m> in <m>B</m>. (Later we will acknowledge this as the <em>dot product</em> of two vectors in <m>\ff^m</m>.)
+  for all <m>1 \le i \le p</m> and all <m>1 \le j \le n</m>. In words, this means that the <m>(i,j)</m>-entry of <m>AB</m> is the entry-wise product of row <m>i</m> in <m>A</m> with column <m>j</m> in <m>B</m>. (In <xref ref="subsec-dot-product"/> we will acknowledge this as the <em>dot product</em> of two vectors in <m>\ff^m</m>.)
 </p>
 
 <p>
@@ -234,7 +263,7 @@
       We return to <xref ref="examp-rotate-reflect-2"/> and consider the linear transformations <m>S,T:\rr^2 \to \rr^2</m>, where <m>T</m> reflects a vector in the Cartesian plane across the <m>x</m>-axis and <m>S</m> rotates a vector counter-clockwise around the origin by <m>\frac{\pi}{2}</m> radians. In the previous example, we calculated the matrices <m>A</m> and <m>B</m> for <m>T</m> and <m>S</m>, respectively. What is the matrix for <m>S\circ T</m>?
     </p>
     <p>
-      We have defined matrix multiplication to answer exactly this question. We only need to multiply the matrices in the proper order. The matrix for <m>S\circ T</m> is
+      We have defined matrix multiplication to answer questions exactly like this. We only need to multiply the matrices in the proper order. The matrix for <m>S\circ T</m> is
       <me>
         BA = \begin{bmatrix}
         0 \amp -1 \\ 1 \amp 0
@@ -256,7 +285,7 @@
         0 \amp -1 \\ -1 \amp 0
         \end{bmatrix}
       </me>.
-      From this we can see that <m>S\circ T</m> and <m>T\circ S</m> are two distinct linear transformations.
+      From this we can see that <m>S\circ T</m> and <m>T\circ S</m> are distinct linear transformations.
     </p>
   </statement>
 </example>
@@ -278,7 +307,7 @@
 <theorem xml:id="thm-matrix-mult-facts">
   <statement>
     <p>
-      Let <m>A, A_1, A_2 \in M_{m,n}(\ff)</m>, <m>B, B_1, B_2 \in M_{n,p}(\ff)</m>, and <m>C \in M_{p,q}(\ff)</m>. Then 
+      Let <m>A, A_1, A_2 \in M_{m,n}(\ff)</m>, <m>B, B_1, B_2 \in M_{n,p}(\ff)</m>, and <m>{C \in M_{p,q}(\ff)}</m>. Then 
       <ol>
         <li>
           <p>
@@ -304,167 +333,6 @@
   This theorem says that, if all of the matrix products make sense, matrix multiplication is associative and obeys both of the distributive laws.
 </p>
 
-<p>
-  There is one other useful way to think about matrix multiplication<mdash></mdash>in terms of the columns of the matrix. 
-</p>
-
-<proposition xml:id="prop-matrix-mult">
-  <statement>
-    <p>
-      Let <m>A \in M_{m,n}(\ff)</m>, <m>B \in M_{n,p}(\ff)</m>, and let the columns of <m>B</m> be <m>\mathbf{b}_1,\ldots,\mathbf{b}_p</m>. Then the columns of <m>AB</m> are <m>A\mathbf{b}_1,\ldots,A\mathbf{b}_p</m>.
-    </p>
-  </statement>
-  <proof>
-    <p>
-      By our definition of the matrix product, for each <m>j=1, \ldots, p</m> we have 
-      <me>
-        (AB)\mathbf{e}_j = A(B\mathbf{e}_j)
-      </me>.
-      The observation in <xref ref="note-matrix-times-ej"/> means that <m>B\mathbf{e}_j=\mathbf{b}_j</m>, so we have 
-      <me>
-        (AB)\mathbf{e}_j = A \mathbf{b}_j
-      </me>.
-      Since <m>(AB)\mathbf{e}_j</m> is the <m>j</m>th column of <m>AB</m>, this proves the proposition.
-    </p>
-  </proof>
-</proposition>
-
-<p>
-  From the understanding we developed in <xref ref="examp-matrix-vector-prod"/>, this proposition means that every column of the matrix product <m>AB</m> is a linear combination of the columns of <m>A</m>, when the product <m>AB</m> is defined.
-</p>
-</subsection>
-
-<subsection xml:id="subsec-linear-trans-invertible">
-  <title>Invertible Matrices</title>
-  <p>
-    With matrix multiplication defined in terms of the composition of linear transformations, we turn to a specific composition in this subsection. Specifically, we will think about matrices for linear transformations <m>S</m> and <m>T</m> when <m>S\circ T</m> is the identity transformation. 
-  </p>
-  <p>
-    In <xref ref="def-lin-trans-invertible"/>, we called such linear transformations <em>invertible</em>. When such a linear transformation can be accomplished by matrix multiplication, we will refer to the connected matrix using this same term.
-  </p>
-
-  <definition xml:id="def-invertible-matrix">
-    <statement>
-      <p>
-        Let <m>A \in M_n(\ff)</m>. The matrix <m>B</m> is an <term>inverse</term> matrix for <m>A</m> if 
-        <me>
-          AB = BA = I_n
-        </me>.        
-      </p>
-      <p>
-        If a matrix <m>A</m> has an inverse, we say that <m>A</m> is <term>invertible</term> or <term>non-singular</term>. If <m>A</m> is a matrix for which no inverse matrix exists, we say that <m>A</m> is <term>singular</term> or not invertible.
-      </p>
-    </statement>
-  </definition>
-
-  <p>
-    It may strike the reader as strange that only square matrices have a chance at being invertible<mdash></mdash>we have only defined invertibility for square matrices. There is a good reason for this, which we will explore in the exercises. 
-  </p>
-
-  <p>
-    If we know an inverse <m>B</m> of a matrix <m>A</m>, then we can solve matrix-vector equations with ease:
-    <md>
-      <mrow>A\bfx \amp = \bfy</mrow>
-      <mrow>B(A\bfx) \amp = B\bfy</mrow>
-      <mrow>(BA)\bfx \amp = B\bfy</mrow>
-      <mrow>I \bfx \amp = B\bfy</mrow>
-      <mrow>\bfx \amp = B\bfy</mrow>
-    </md>.
-  </p>
-
-  <p>
-    The next three propositions present some properties of matrix inverses.
-  </p>
-
-  <proposition xml:id="prop-matrix-inverse-unique">
-    <statement>
-      <p>
-        If a matrix <m>A \in M_n(\ff)</m> has an inverse, that inverse is unique.
-      </p>
-    </statement>
-    <proof>
-      <p>
-        Let <m>A \in M_n(\ff)</m> and suppose that both <m>B,C \in M_n(\ff)</m> are inverses for <m>A</m>. Then we have 
-        <me>
-          B = BI_n = B(AC) = (BA)C = I_nC = C
-        </me>.        
-      </p>
-    </proof>
-  </proposition>
-
-  <p>
-    This proposition allows us to refer to <em>the inverse</em> of a matrix <m>A</m> and to use the notation <m>A^{-1}</m> for that matrix.
-  </p>
-
-  <proposition xml:id="prop-matrix-inverse-product">
-    <statement>
-      <p>
-        Suppose that <m>A,B \in M_n(\ff)</m> are both invertible. Then <m>AB</m> is invertible as well and 
-        <me>
-          (AB)^{-1} = B^{-1}A^{-1}
-        </me>.        
-      </p>
-    </statement>
-    <proof>
-      <p>
-        If <m>A</m> and <m>B</m> are both invertible, then both <m>A^{-1}</m> and <m>B^{-1}</m> exist. Since matrix multiplication is associative, the following calculations show that the matrix <m>B^{-1}A^{-1}</m> satisfies the properties of the inverse of <m>AB</m>, thereby making <m>AB</m> invertible:
-        <md>
-          <mrow>(AB)(B^{-1}A^{-1}) \amp = A(BB^{-1})A^{-1} = A(I_n)A^{-1} = AA^{-1} = I_n;</mrow>
-          <mrow>(B^{-1}A^{-1})(AB) \amp = B^{-1}(A^{-1}A)B = B^{-1}(I_n)B = B^{-1}B = I_n</mrow>
-        </md>.
-      </p>
-    </proof>
-  </proposition>
-
-  <p>
-    This final proposition states what may seem like an obvious fact, but which should still be justified. That justification is left to the exercises.
-  </p>
-
-  <proposition xml:id="prop-matrix-inverse-involution">
-    <statement>
-      <p>
-        Let <m>A \in M_n(\ff)</m> be invertible. Then <m>A^{-1}</m> is also invertible and <m>(A^{-1})^{-1} = A</m>.
-      </p>
-    </statement>
-  </proposition>
-
-  <p>
-    While we are not yet ready to calculate the inverse of a matrix (stay tuned!), we can provide examples of invertible matrices and their inverses.
-  </p>
-
-  <example xml:id="examp-inverse-matrices">
-    <statement>
-      <p>
-        Consider the following matrix <m>A \in M_2(\rr)</m>:
-        <me>
-          A = \begin{bmatrix}
-          3 \amp 5 \\ 1 \amp 2
-          \end{bmatrix}
-        </me>.
-        We can verify that <m>A^{-1}</m> is 
-        <me>
-          A^{-1} = \begin{bmatrix}
-          2 \amp -5 \\ -1 \amp 3
-          \end{bmatrix}
-        </me>
-        by computing the product in both orders and verifying that the result is <m>I_2</m> in both cases.
-      </p>
-      <p>
-        Similarly, here is a <m>3\times 3</m> matrix over <m>\ff_3</m> which is invertible:
-        <me>
-          B = \begin{bmatrix}
-          1 \amp 2 \amp 1 \\ 0 \amp 2 \amp 0 \\ 1 \amp 2 \amp 0
-          \end{bmatrix}
-        </me>.
-        The reader is encouraged to verify that the following matrix satisfies the properties of the inverse of <m>B</m>:
-        <me>
-          B^{-1} = \begin{bmatrix}
-          0 \amp 2 \amp 1 \\ 0 \amp 2 \amp 0 \\ 1 \amp 0 \amp 2
-          \end{bmatrix}
-        </me>.        
-      </p>
-    </statement>
-  </example>
 </subsection>
 
 <subsection xml:id="subsec-matrix-transpose">
@@ -572,7 +440,7 @@
 
   <note>
     <p>
-      While it might be more aesthetically pleasing if we did not have to switch the order of the multiplication when taking the transpose of a product, this type of formula makes sense when considering the dimensions of the matrices involved. If <m>A</m> is <m>m\times n</m> and <m>B</m> is <m>n\times p</m>, then the expression <m>A^TB^T</m> wouldn't even make sense unless <m>m=p</m>. Further, reversing the order in a formula involving matrix multiplication is typical, as we have already seen in <xref ref="prop-matrix-inverse-product"/>.
+      While it might be more aesthetically pleasing if we did not have to switch the order of the multiplication when taking the transpose of a product, this type of formula makes sense when considering the dimensions of the matrices involved. If <m>A</m> is <m>m\times n</m> and <m>B</m> is <m>n\times p</m>, then the expression <m>A^TB^T</m> wouldn't even make sense unless <m>m=p</m>. 
     </p>
   </note>
 </subsection>
@@ -709,56 +577,6 @@
   </exercise>
   <subexercises>
   <title>Writing Exercises</title>  
-  <exercise xml:id="transpose-invertible">
-    <statement>
-      <p>
-        Let <m>A \in M_n(\ff)</m> be invertible. Prove that <m>A^T</m> is invertible and that <m>(A^T)^{-1} = (A^{-1})^T</m>.
-      </p>
-    </statement>
-  </exercise>
-  <!-- <exercise>
-    <statement>
-      <p>
-        Prove theorem 3.2.10.
-      </p>
-    </statement>
-  </exercise> -->
-  <exercise>
-    <statement>
-      <p>
-        Let <m>A \in M_{m,n}(\ff)</m>. 
-        <ol>
-          <li>
-            <p>
-              Suppose that <m>A</m> is <term>left-invertible</term>, meaning that there is an <m>n\times m</m> matrix <m>B</m> such that <m>BA=I_n</m>. Prove that <m>m \ge n</m>. 
-            </p>
-          </li>
-          <li>
-            <p>
-              Suppose that <m>A</m> is <term>right-invertible</term>, meaning that there is an <m>n \times m</m> matrix <m>B</m> such that <m>AB = I_m</m>. Prove that <m>m \le n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Prove that any <m>A</m> which is invertible must be a square matrix.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Prove <xref ref="prop-matrix-inverse-involution"/>. 
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Let <m>A \in M_n(\ff)</m> be invertible. This means that <m>A^{-1}</m> exists and that <m>AA^{-1} = A^{-1}A = I_n</m>. These equalities involving <m>A</m> and <m>A^{-1}</m> show that <m>A^{-1}</m> is invertible and that <m>A</m> is a matrix which has the properties of the inverse of <m>A^{-1}</m>. Since the inverse of a matrix is unique, it must be that <m>(A^{-1})^{-1} = A</m>.
-      </p>
-    </solution>
-  </exercise>
   <exercise>
     <statement>
       <p>

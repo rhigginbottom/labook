@@ -36,6 +36,7 @@
 \newcommand{\kerr}{\mathrm{ker}}
 \newcommand{\nll}{\mathrm{null}}
 \newcommand{\proj}{\mathrm{proj}}
+\newcommand{\img}{\mathrm{im}}
 \newcommand{\range}{\mathrm{range}}
 \newcommand{\tr}{\mathrm{tr}}
 \newcommand{\col}{\mathrm{col}}

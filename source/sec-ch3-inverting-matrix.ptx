@@ -4,15 +4,148 @@
   <title>Inverting a Matrix</title>
   <introduction>
     <p>
-      In <xref ref="sec-matrix-linear-trans"/>, we introduced the definition of an <em>invertible matrix</em> and discussed some properties of the <em>inverse</em> of a matrix. We will now introduce a method to determine whether or not a matrix is invertible. Additionally, when a matrix is invertible we will be able to calculate its inverse.
+      In this section we will introduce the definition of an <em>invertible matrix</em> and discuss some properties of the <em>inverse</em> of a matrix. We will then introduce a method to determine whether or not a matrix is invertible. Additionally, when a matrix is invertible we will be able to calculate its inverse.
     </p>
   </introduction>
+
+<subsection xml:id="subsec-linear-trans-invertible">
+  <title>Invertible Matrices</title>
+  <p>
+    With matrix multiplication defined in terms of the composition of linear transformations, we turn to a specific composition in this subsection. Specifically, we will think about matrices for linear transformations <m>S</m> and <m>T</m> when <m>S\circ T</m> is the identity transformation. 
+  </p>
+  <p>
+    In <xref ref="def-lin-trans-invertible"/>, we called such linear transformations <em>invertible</em>. When such a linear transformation can be accomplished by matrix multiplication, we will refer to the connected matrix using this same term.
+  </p>
+
+  <definition xml:id="def-invertible-matrix">
+    <statement>
+      <p>
+        Let <m>A \in M_n(\ff)</m>. The matrix <m>B</m> is an <term>inverse</term> matrix for <m>A</m> if 
+        <me>
+          AB = BA = I_n
+        </me>.        
+      </p>
+      <p>
+        If a matrix <m>A</m> has an inverse, we say that <m>A</m> is <term>invertible</term> or <term>non-singular</term>. If <m>A</m> is a matrix for which no inverse matrix exists, we say that <m>A</m> is <term>singular</term> or not invertible.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    It may strike the reader as strange that only square matrices have a chance at being invertible. (That is, we have only defined invertibility for square matrices.) There is a good reason for this, which we will explore in the exercises. 
+  </p>
+
+  <p>
+    If we know an inverse <m>B</m> of a matrix <m>A</m>, then we can solve matrix-vector equations with ease:
+    <md>
+      <mrow>A\bfx \amp = \bfy</mrow>
+      <mrow>B(A\bfx) \amp = B\bfy</mrow>
+      <mrow>(BA)\bfx \amp = B\bfy</mrow>
+      <mrow>I \bfx \amp = B\bfy</mrow>
+      <mrow>\bfx \amp = B\bfy</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The next three propositions present some properties of matrix inverses.
+  </p>
+
+  <proposition xml:id="prop-matrix-inverse-unique">
+    <statement>
+      <p>
+        If a matrix <m>A \in M_n(\ff)</m> has an inverse, that inverse is unique.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>A \in M_n(\ff)</m> and suppose that both <m>B,C \in M_n(\ff)</m> are inverses for <m>A</m>. Then we have 
+        <me>
+          B = BI_n = B(AC) = (BA)C = I_nC = C
+        </me>.        
+      </p>
+    </proof>
+  </proposition>
+
+  <p>
+    This proposition allows us to refer to <em>the inverse</em> of a matrix <m>A</m> and to use the notation <m>A^{-1}</m> for that matrix.
+  </p>
+
+  <proposition xml:id="prop-matrix-inverse-product">
+    <statement>
+      <p>
+        Suppose that <m>A,B \in M_n(\ff)</m> are both invertible. Then <m>AB</m> is invertible as well and 
+        <me>
+          (AB)^{-1} = B^{-1}A^{-1}
+        </me>.        
+      </p>
+    </statement>
+    <proof>
+      <p>
+        If <m>A</m> and <m>B</m> are both invertible, then both <m>A^{-1}</m> and <m>B^{-1}</m> exist. Since matrix multiplication is associative, the following calculations show that the matrix <m>B^{-1}A^{-1}</m> satisfies the properties of the inverse of <m>AB</m>, thereby making <m>AB</m> invertible:
+        <md>
+          <mrow>(AB)(B^{-1}A^{-1}) \amp = A(BB^{-1})A^{-1} = A(I_n)A^{-1} = AA^{-1} = I_n;</mrow>
+          <mrow>(B^{-1}A^{-1})(AB) \amp = B^{-1}(A^{-1}A)B = B^{-1}(I_n)B = B^{-1}B = I_n</mrow>
+        </md>.
+      </p>
+    </proof>
+  </proposition>
+
+  <p>
+    This final proposition states what may seem like an obvious fact, but which should still be justified. That justification is left to the exercises.
+  </p>
+
+  <proposition xml:id="prop-matrix-inverse-involution">
+    <statement>
+      <p>
+        Let <m>A \in M_n(\ff)</m> be invertible. Then <m>A^{-1}</m> is also invertible and <m>(A^{-1})^{-1} = A</m>.
+      </p>
+    </statement>
+  </proposition>
+
+  <p>
+    While we are not yet ready to calculate the inverse of a matrix (stay tuned!), we can provide examples of invertible matrices and their inverses.
+  </p>
+
+  <example xml:id="examp-inverse-matrices">
+    <statement>
+      <p>
+        Consider the following matrix <m>A \in M_2(\rr)</m>:
+        <me>
+          A = \begin{bmatrix}
+          3 \amp 5 \\ 1 \amp 2
+          \end{bmatrix}
+        </me>.
+        We can verify that <m>A^{-1}</m> is 
+        <me>
+          A^{-1} = \begin{bmatrix}
+          2 \amp -5 \\ -1 \amp 3
+          \end{bmatrix}
+        </me>
+        by computing the product in both orders and verifying that the result is <m>I_2</m> in both cases.
+      </p>
+      <p>
+        Similarly, here is a <m>3\times 3</m> matrix over <m>\ff_3</m> which is invertible:
+        <me>
+          B = \begin{bmatrix}
+          1 \amp 2 \amp 1 \\ 0 \amp 2 \amp 0 \\ 1 \amp 2 \amp 0
+          \end{bmatrix}
+        </me>.
+        The reader is encouraged to verify that the following matrix satisfies the properties of the inverse of <m>B</m>:
+        <me>
+          B^{-1} = \begin{bmatrix}
+          0 \amp 2 \amp 1 \\ 0 \amp 2 \amp 0 \\ 1 \amp 0 \amp 2
+          \end{bmatrix}
+        </me>.        
+      </p>
+    </statement>
+  </example>
+</subsection>
 
 <subsection xml:id="subsec-elementary-matrices">
   <title>Elementary Matrices</title>
 
   <p>
-    The method we will present in this section begins with a simple definition.
+    The method of determining the invertibility of a matrix starts with a simple definition.
   </p>
 
   <definition xml:id="def-elementary-matrix">
@@ -24,7 +157,7 @@
   </definition>
 
   <p>
-    Because elementary matrices are related to elementary row operations, there are three types of elementary matrices. The following example provides one elementary matrix of each type.
+    Because elementary matrices are related to elementary row operations, there are three types of elementary matrices. The following example provides one elementary matrix (over <m>\rr</m>) of each type.
   </p>
 
   <example>
@@ -96,7 +229,7 @@
   </theorem>
 
   <p>
-    Each elementary row operation is <q>reversible</q> in the sense that there is another elementary row operation which reverses the work that was done by the first. (This appears as <xref ref="exer-reversible"/>.) We can use this fact to establish the following useful proposition.
+    Each elementary row operation is <q>reversible</q> in the sense that there is another elementary row operation that reverses the work done by the first. (This appears as <xref ref="exer-reversible"/>.) We can use this fact to establish the following useful proposition.
   </p>
 
   <proposition xml:id="prop-el-matrices-invertible">
@@ -135,7 +268,11 @@
         <me>
           B = D_k\cdots D_1A
         </me>.
-        Since elementary matrices are invertible, by repeated application of <xref ref="prop-matrix-inverse-product"/> we see that <m>D_k\cdots D_1</m> is invertible and <m>(D_k\cdots D_1)^{-1} = D_1^{-1}\cdots D_k^{-1}</m>. Then we have 
+        Since elementary matrices are invertible, by repeated application of <xref ref="prop-matrix-inverse-product"/> we see that <m>D_k\cdots D_1</m> is invertible and 
+        <me>
+          (D_k\cdots D_1)^{-1} = D_1^{-1}\cdots D_k^{-1}
+        </me>.
+        Then we have 
         <md>
           <mrow>B \amp = (D_k\cdots D_1)A</mrow>
           <mrow>(D_k\cdots D_1)^{-1}B \amp = (D_k\cdots D_1)^{-1}(D_k\cdots D_1)A </mrow>
@@ -580,6 +717,56 @@
   </exercise>
   <subexercises>
   <title>Writing Exercises</title>  
+  <exercise xml:id="transpose-invertible">
+    <statement>
+      <p>
+        Let <m>A \in M_n(\ff)</m> be invertible. Prove that <m>A^T</m> is invertible and that <m>(A^T)^{-1} = (A^{-1})^T</m>.
+      </p>
+    </statement>
+  </exercise>
+  <!-- <exercise>
+    <statement>
+      <p>
+        Prove theorem 3.2.10.
+      </p>
+    </statement>
+  </exercise> -->
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A \in M_{m,n}(\ff)</m>. 
+        <ol>
+          <li>
+            <p>
+              Suppose that <m>A</m> is <term>left-invertible</term>, meaning that there is an <m>n\times m</m> matrix <m>B</m> such that <m>BA=I_n</m>. Prove that <m>m \ge n</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose that <m>A</m> is <term>right-invertible</term>, meaning that there is an <m>n \times m</m> matrix <m>B</m> such that <m>AB = I_m</m>. Prove that <m>m \le n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove that any <m>A</m> which is invertible must be a square matrix.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="prop-matrix-inverse-involution"/>. 
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>A \in M_n(\ff)</m> be invertible. This means that <m>A^{-1}</m> exists and that <m>AA^{-1} = A^{-1}A = I_n</m>. These equalities involving <m>A</m> and <m>A^{-1}</m> show that <m>A^{-1}</m> is invertible and that <m>A</m> is a matrix which has the properties of the inverse of <m>A^{-1}</m>. Since the inverse of a matrix is unique, it must be that <m>(A^{-1})^{-1} = A</m>.
+      </p>
+    </solution>
+  </exercise>
   <exercise>
     <statement>
       <p>
