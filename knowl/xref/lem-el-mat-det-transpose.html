@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.2.15</span><span class="period">.</span>
+</h4>
+<div class="para">If <span class="process-math">\(E\)</span> is an elementary <span class="process-math">\(n\times n\)</span> matrix over a field <span class="process-math">\(\ff\text{,}\)</span> then <span class="process-math">\(\det(E) = \det(E^T)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-el-mat-det-transpose-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 4.2.15"><a href="#lem-el-mat-det-transpose" title="Copy permalink for Lemma 4.2.15">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We have three cases to consider, but two of the cases are immediate. If <span class="process-math">\(E\)</span> is an elementary matrix that performs the <em class="emphasis">scale</em> or <em class="emphasis">switch</em> row operation, then <span class="process-math">\(E = E^T\text{,}\)</span> so the result follows easily. (We ask the reader to prove this fact in <a href="sec-det-properties.html#el-mat-equals-tr" class="xref" data-knowl="./knowl/xref/el-mat-equals-tr.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.2.5.15">Exercise 4.2.5.15</a>.)<div class="autopermalink" data-description="Paragraph"><a href="#lem-el-mat-det-transpose-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">We now suppose that <span class="process-math">\(E\)</span> performs the <em class="emphasis">replace</em> row operation. We assume that <span class="process-math">\(E\)</span> performs the row operation of adding <span class="process-math">\(k\)</span> times row <span class="process-math">\(i\)</span> to row <span class="process-math">\(j\text{,}\)</span> where <span class="process-math">\(i \neq j\text{.}\)</span> This means that <span class="process-math">\(E\)</span> is the matrix <span class="process-math">\(I_n\)</span> with the extra feature of containing the entry <span class="process-math">\(k\)</span> in position <span class="process-math">\((j,i)\text{.}\)</span> From <a href="sec-det-properties.html#prop-det-elem-matrices" class="xref" data-knowl="./knowl/xref/prop-det-elem-matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.2.8">Proposition 4.2.8</a>, we know that <span class="process-math">\(\det(E)=1\text{,}\)</span> so we only need to prove that <span class="process-math">\(\det(E^T)=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-el-mat-det-transpose-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">The matrix <span class="process-math">\(E^T\)</span> is <span class="process-math">\(I_n\)</span> except for the fact that it contains the element <span class="process-math">\(k\)</span> in position <span class="process-math">\((i,j)\text{.}\)</span> We will calculate <span class="process-math">\(\det(E^T)\)</span> by using cofactor expansion along row <span class="process-math">\(j\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(E^T) = \sum_{q=1}^n a_{jq}C_{jq}= 1\cdot C_{jj}\text{.}
+\end{equation*}
+</div>
+<div class="para">This calculation reduces to one term because there is only one nonzero element in row <span class="process-math">\(j\)</span> of <span class="process-math">\(E^T\text{.}\)</span> (Choosing row <span class="process-math">\(j\)</span> for expansion means the element <span class="process-math">\(k\)</span> in position <span class="process-math">\((i,j)\)</span> is removed when calculating the determinant of the submatrix.) Since <span class="process-math">\((E^T)_{jj} = I_{n-1}\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(E^T) = (-1)^{j+j} \det((E^T)_{jj}) = (-1)^{2j} \det(I_{n-1}) = 1\cdot 1 = 1\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\det(E^T)=1\)</span> and <span class="process-math">\(\det(E)=1\text{,}\)</span> this concludes our final case.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-el-mat-det-transpose-2-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.2.15.1"><a href="#lem-el-mat-det-transpose-2" title="Copy permalink for Proof 4.2.15.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sec-det-properties.html#lem-el-mat-det-transpose">in-context</a></span>
+</body>
+</html>

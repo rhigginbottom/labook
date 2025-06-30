@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.8.3';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.8e4157bd77a28b29.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -156,7 +156,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\kerr}{\mathrm{ker}}
 \newcommand{\nll}{\mathrm{null}}
 \newcommand{\proj}{\mathrm{proj}}
-\newcommand{\image}{\mathrm{im}}
+\newcommand{\img}{\mathrm{im}}
 \newcommand{\range}{\mathrm{range}}
 \newcommand{\tr}{\mathrm{tr}}
 \newcommand{\col}{\mathrm{col}}
@@ -312,8 +312,9 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#det-elem-row-ops" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Determinant and Elementary Row Operations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#subsec-det-main-results" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Invertibility and the Determinant</span></a></div></li>
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#subsec-proving-det-transpose-thm" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Proving Theorem 4.1.9</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-7" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -578,7 +579,7 @@ A = \begin{bmatrix}
 \end{vmatrix} \text{.}
 \end{equation*}
 </div>
-<div class="para">Once we reduce the matrix to a triangular form, we can use <a href="sec-define-det.html#prop-det-triangular" class="xref" data-knowl="./knowl/xref/prop-det-triangular.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.1.12">Proposition 4.1.12</a>, so we do not need to reduce the matrix to RREF, only to REF. This means that the rest of the row reduction can be performed using only the <em class="emphasis">replace</em> operation, which does not change the determinant:</div>
+<div class="para">Once we reduce the matrix to a triangular form, we can use <a href="sec-define-det.html#prop-det-triangular" class="xref" data-knowl="./knowl/xref/prop-det-triangular.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.1.13">Proposition 4.1.13</a>, so we do not need to reduce the matrix to RREF, only to REF. This means that the rest of the row reduction can be performed using only the <em class="emphasis">replace</em> operation, which does not change the determinant:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-det-triangular.html" id="det-elem-row-ops-12-1-1-7">
 \begin{align*}
 \det(A) \amp = - \begin{vmatrix} 
@@ -608,7 +609,7 @@ A = \begin{bmatrix}
 </h4>
 <div class="para" id="lem-det-identity-1-1">For any <span class="process-math">\(n \ge 1\text{,}\)</span> we have <span class="process-math">\(\det(I_n)=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-det-identity-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 4.2.7"><a href="#lem-det-identity" title="Copy permalink for Lemma 4.2.7">🔗</a></div></article><details id="lem-det-identity-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-det-identity-2-1">Since the identity matrix is, among other things, a triangular matrix, <a href="sec-define-det.html#prop-det-triangular" class="xref" data-knowl="./knowl/xref/prop-det-triangular.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.1.12">Proposition 4.1.12</a> applies. The entries along the main diagonal are all <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(\det(I_n)=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-det-identity-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Lemma 4.2.7"><a href="#lem-det-identity" title="Copy permalink for Lemma 4.2.7">🔗</a></div></article><details id="lem-det-identity-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-det-identity-2-1">Since the identity matrix is, among other things, a triangular matrix, <a href="sec-define-det.html#prop-det-triangular" class="xref" data-knowl="./knowl/xref/prop-det-triangular.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.1.13">Proposition 4.1.13</a> applies. The entries along the main diagonal are all <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(\det(I_n)=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-det-identity-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Proof 4.2.7.1"><a href="#lem-det-identity-2" title="Copy permalink for Proof 4.2.7.1">🔗</a></div></article></details><div class="para" id="subsec-det-main-results-4">We will now apply this lemma to record the determinant of any elementary matrix.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-main-results-4" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
@@ -693,7 +694,7 @@ A \sim \begin{bmatrix}
 \end{vmatrix} \text{.}
 \end{equation*}
 </div>
-<div class="para">We now invoke <a href="sec-define-det.html#prop-det-triangular" class="xref" data-knowl="./knowl/xref/prop-det-triangular.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.1.12">Proposition 4.1.12</a> to see that <span class="process-math">\(\det(B) = -(-1)(16) = 16\text{.}\)</span> Since <span class="process-math">\(\det(B)=\det(A)\text{,}\)</span> we have <span class="process-math">\(\det(A)=16\text{.}\)</span>
+<div class="para">We now invoke <a href="sec-define-det.html#prop-det-triangular" class="xref" data-knowl="./knowl/xref/prop-det-triangular.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.1.13">Proposition 4.1.13</a> to see that <span class="process-math">\(\det(B) = -(-1)(16) = 16\text{.}\)</span> Since <span class="process-math">\(\det(B)=\det(A)\text{,}\)</span> we have <span class="process-math">\(\det(A)=16\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-main-results-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
@@ -819,7 +820,7 @@ C = \begin{bmatrix}
 </h4>
 <div class="para" id="thm-det-matrix-product-1-1">Let <span class="process-math">\(A, B \in M_n(\ff)\text{.}\)</span> Then <span class="process-math">\(\det(AB) = \det(A)\det(B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-det-matrix-product-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 4.2.13"><a href="#thm-det-matrix-product" title="Copy permalink for Theorem 4.2.13">🔗</a></div></article><details id="thm-det-matrix-product-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-det-matrix-product-2-1">We will prove this in two cases. First, if <span class="process-math">\(A\)</span> is not invertible, then neither is <span class="process-math">\(AB\text{,}\)</span> by <a href="sec-inverting-matrix.html#exer-invertible-product" class="xref" data-knowl="./knowl/xref/exer-invertible-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.3.5.13">Exercise 3.3.5.13</a>. This means that <span class="process-math">\(\det(AB)=\det(A)\det(B)\)</span> since, by <a href="sec-det-properties.html#thm-det-invertible" class="xref" data-knowl="./knowl/xref/thm-det-invertible.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.11">Theorem 4.2.11</a>, both sides of the equation are zero.<div class="autopermalink" data-description="Paragraph"><a href="#thm-det-matrix-product-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 4.2.13"><a href="#thm-det-matrix-product" title="Copy permalink for Theorem 4.2.13">🔗</a></div></article><details id="thm-det-matrix-product-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-det-matrix-product-2-1">We will prove this in two cases. First, if <span class="process-math">\(A\)</span> is not invertible, then neither is <span class="process-math">\(AB\text{,}\)</span> by <a href="sec-inverting-matrix.html#exer-invertible-product" class="xref" data-knowl="./knowl/xref/exer-invertible-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.3.5.15">Exercise 3.3.5.15</a>. This means that <span class="process-math">\(\det(AB)=\det(A)\det(B)\)</span> since, by <a href="sec-det-properties.html#thm-det-invertible" class="xref" data-knowl="./knowl/xref/thm-det-invertible.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.11">Theorem 4.2.11</a>, both sides of the equation are zero.<div class="autopermalink" data-description="Paragraph"><a href="#thm-det-matrix-product-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-det-matrix-product-2-2">
 <div class="para">If <span class="process-math">\(A\)</span> is invertible, then <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_n\text{,}\)</span> and there exist elementary matrices <span class="process-math">\(E_1, \ldots, E_k\)</span> such that</div>
@@ -869,11 +870,77 @@ AB = \begin{bmatrix}
 <div class="para">We see that <span class="process-math">\(\det(A)=-2\text{,}\)</span> <span class="process-math">\(\det(B)=-20\text{,}\)</span> and <span class="process-math">\(\det(AB)=40\text{,}\)</span> so the relationship <span class="process-math">\(\det(AB)=\det(A)\det(B)\)</span> holds.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#examp-verify-det-product-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 4.2.14"><a href="#examp-verify-det-product" title="Copy permalink for Example 4.2.14">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.2.2: Invertibility and the Determinant"><a href="#subsec-det-main-results" title="Copy permalink for Subsection 4.2.2: Invertibility and the Determinant">🔗</a></div></section><section class="reading-questions" id="sec-det-properties-5"><h3 class="heading hide-type">
-<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="space"> </span><span class="title">Reading Questions</span>
+<div class="autopermalink" data-description="Example 4.2.14"><a href="#examp-verify-det-product" title="Copy permalink for Example 4.2.14">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.2.2: Invertibility and the Determinant"><a href="#subsec-det-main-results" title="Copy permalink for Subsection 4.2.2: Invertibility and the Determinant">🔗</a></div></section><section class="subsection" id="subsec-proving-det-transpose-thm"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="space"> </span><span class="title">Proving Theorem 4.1.9</span>
 </h3>
-<article class="exercise exercise-like" id="sec-det-properties-5-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-det-properties-5-1-1-1">
+<div class="para" id="subsec-proving-det-transpose-thm-2">We will devote the final subsection to the proof of <a href="sec-define-det.html#thm-det-transpose" class="xref" data-knowl="./knowl/xref/thm-det-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.9">Theorem 4.1.9</a>. The reader holding their breath since the statement of this theorem will soon be able to exhale.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-proving-det-transpose-thm-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-proving-det-transpose-thm-3">Results about the multiplicative property of the determinant and the behavior of the transpose under matrix multiplication make this result easy to prove with but a single lemma.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-proving-det-transpose-thm-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-el-mat-det-transpose"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.2.15</span><span class="period">.</span>
+</h4>
+<div class="para" id="lem-el-mat-det-transpose-1-1">If <span class="process-math">\(E\)</span> is an elementary <span class="process-math">\(n\times n\)</span> matrix over a field <span class="process-math">\(\ff\text{,}\)</span> then <span class="process-math">\(\det(E) = \det(E^T)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-el-mat-det-transpose-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 4.2.15"><a href="#lem-el-mat-det-transpose" title="Copy permalink for Lemma 4.2.15">🔗</a></div></article><details id="lem-el-mat-det-transpose-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-el-mat-det-transpose-2-1">We have three cases to consider, but two of the cases are immediate. If <span class="process-math">\(E\)</span> is an elementary matrix that performs the <em class="emphasis">scale</em> or <em class="emphasis">switch</em> row operation, then <span class="process-math">\(E = E^T\text{,}\)</span> so the result follows easily. (We ask the reader to prove this fact in <a href="sec-det-properties.html#el-mat-equals-tr" class="xref" data-knowl="./knowl/xref/el-mat-equals-tr.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.2.5.15">Exercise 4.2.5.15</a>.)<div class="autopermalink" data-description="Paragraph"><a href="#lem-el-mat-det-transpose-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lem-el-mat-det-transpose-2-2">We now suppose that <span class="process-math">\(E\)</span> performs the <em class="emphasis">replace</em> row operation. We assume that <span class="process-math">\(E\)</span> performs the row operation of adding <span class="process-math">\(k\)</span> times row <span class="process-math">\(i\)</span> to row <span class="process-math">\(j\text{,}\)</span> where <span class="process-math">\(i \neq j\text{.}\)</span> This means that <span class="process-math">\(E\)</span> is the matrix <span class="process-math">\(I_n\)</span> with the extra feature of containing the entry <span class="process-math">\(k\)</span> in position <span class="process-math">\((j,i)\text{.}\)</span> From <a href="sec-det-properties.html#prop-det-elem-matrices" class="xref" data-knowl="./knowl/xref/prop-det-elem-matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.2.8">Proposition 4.2.8</a>, we know that <span class="process-math">\(\det(E)=1\text{,}\)</span> so we only need to prove that <span class="process-math">\(\det(E^T)=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-el-mat-det-transpose-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-el-mat-det-transpose-2-3">
+<div class="para">The matrix <span class="process-math">\(E^T\)</span> is <span class="process-math">\(I_n\)</span> except for the fact that it contains the element <span class="process-math">\(k\)</span> in position <span class="process-math">\((i,j)\text{.}\)</span> We will calculate <span class="process-math">\(\det(E^T)\)</span> by using cofactor expansion along row <span class="process-math">\(j\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(E^T) = \sum_{q=1}^n a_{jq}C_{jq}= 1\cdot C_{jj}\text{.}
+\end{equation*}
+</div>
+<div class="para">This calculation reduces to one term because there is only one nonzero element in row <span class="process-math">\(j\)</span> of <span class="process-math">\(E^T\text{.}\)</span> (Choosing row <span class="process-math">\(j\)</span> for expansion means the element <span class="process-math">\(k\)</span> in position <span class="process-math">\((i,j)\)</span> is removed when calculating the determinant of the submatrix.) Since <span class="process-math">\((E^T)_{jj} = I_{n-1}\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(E^T) = (-1)^{j+j} \det((E^T)_{jj}) = (-1)^{2j} \det(I_{n-1}) = 1\cdot 1 = 1\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\det(E^T)=1\)</span> and <span class="process-math">\(\det(E)=1\text{,}\)</span> this concludes our final case.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-el-mat-det-transpose-2-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.2.15.1"><a href="#lem-el-mat-det-transpose-2" title="Copy permalink for Proof 4.2.15.1">🔗</a></div></article></details><div class="para" id="subsec-proving-det-transpose-thm-5">We are now ready for the long-promised proof of <a href="sec-define-det.html#thm-det-transpose" class="xref" data-knowl="./knowl/xref/thm-det-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.9">Theorem 4.1.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-proving-det-transpose-thm-5" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-proving-det-transpose-thm-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of Theorem 4.1.9.</span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-proving-det-transpose-thm-6-2">We assume that <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> If <span class="process-math">\(A\)</span> is not invertible, then <span class="process-math">\(A^T\)</span> is also not invertible (see <a href="sec-inverting-matrix.html#exer-inv-iff-transpose-inv" class="xref" data-knowl="./knowl/xref/exer-inv-iff-transpose-inv.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.3.5.9">Exercise 3.3.5.9</a>), meaning that both <span class="process-math">\(\det(A)=0\)</span> and <span class="process-math">\(\det(A^T)=0\)</span> by <a href="sec-det-properties.html#thm-det-invertible" class="xref" data-knowl="./knowl/xref/thm-det-invertible.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.11">Theorem 4.2.11</a>. This proves that <span class="process-math">\(\det(A) = \det(A^T)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-proving-det-transpose-thm-6-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-proving-det-transpose-thm-6-3">
+<div class="para">We now assume that <span class="process-math">\(A\)</span> is invertible. Using <a href="sec-inverting-matrix.html#prop-el-matrices-rref" class="xref" data-knowl="./knowl/xref/prop-el-matrices-rref.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.3.11">Proposition 3.3.11</a> and <a href="sec-inverting-matrix.html#thm-find-inverse-matrix" class="xref" data-knowl="./knowl/xref/thm-find-inverse-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.13">Theorem 3.3.13</a>, we know that there exist elementary matrices <span class="process-math">\(E_1, \ldots, E_k\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-el-matrices-rref.html ./knowl/xref/thm-find-inverse-matrix.html ./knowl/xref/thm-det-prod-elem.html ./knowl/xref/eq-el-mats.html ./knowl/xref/thm-properties-transpose.html ./knowl/xref/thm-det-prod-elem.html ./knowl/xref/exer-transpose-elem-is-elem.html ./knowl/xref/lem-el-mat-det-transpose.html" id="eq-el-mats">
+\begin{equation}
+A = E_1 \cdots E_k I_n = E_1 \cdots E_k\text{.}\tag{4.1}
+\end{equation}
+</div>
+<div class="para">By repeated use of <a href="sec-det-properties.html#thm-det-prod-elem" class="xref" data-knowl="./knowl/xref/thm-det-prod-elem.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.10">Theorem 4.2.10</a>, we know that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-el-matrices-rref.html ./knowl/xref/thm-find-inverse-matrix.html ./knowl/xref/thm-det-prod-elem.html ./knowl/xref/eq-el-mats.html ./knowl/xref/thm-properties-transpose.html ./knowl/xref/thm-det-prod-elem.html ./knowl/xref/exer-transpose-elem-is-elem.html ./knowl/xref/lem-el-mat-det-transpose.html">
+\begin{equation*}
+\det(A) = \det(E_1) \cdots \det(E_k)\text{.}
+\end{equation*}
+</div>
+<div class="para">We can take the transpose of both sides of <a href="sec-det-properties.html#eq-el-mats" class="xref" data-knowl="./knowl/xref/eq-el-mats.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">(4.1)</a>, and using <a href="sec-matrix-linear-trans.html#thm-properties-transpose" class="xref" data-knowl="./knowl/xref/thm-properties-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.15">Theorem 3.2.15</a> (part 4) repeatedly we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-el-matrices-rref.html ./knowl/xref/thm-find-inverse-matrix.html ./knowl/xref/thm-det-prod-elem.html ./knowl/xref/eq-el-mats.html ./knowl/xref/thm-properties-transpose.html ./knowl/xref/thm-det-prod-elem.html ./knowl/xref/exer-transpose-elem-is-elem.html ./knowl/xref/lem-el-mat-det-transpose.html">
+\begin{equation*}
+A^T = (E_1 \cdots E_k)^T = E_k^T \cdots E_1^T\text{.}
+\end{equation*}
+</div>
+<div class="para">We again use <a href="sec-det-properties.html#thm-det-prod-elem" class="xref" data-knowl="./knowl/xref/thm-det-prod-elem.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.10">Theorem 4.2.10</a> repeatedly (the transpose of an elementary matrix is an elementary matrix, see <a href="sec-inverting-matrix.html#exer-transpose-elem-is-elem" class="xref" data-knowl="./knowl/xref/exer-transpose-elem-is-elem.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.3.5.10">Exercise 3.3.5.10</a>), and we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-el-matrices-rref.html ./knowl/xref/thm-find-inverse-matrix.html ./knowl/xref/thm-det-prod-elem.html ./knowl/xref/eq-el-mats.html ./knowl/xref/thm-properties-transpose.html ./knowl/xref/thm-det-prod-elem.html ./knowl/xref/exer-transpose-elem-is-elem.html ./knowl/xref/lem-el-mat-det-transpose.html">
+\begin{equation*}
+\det(A^T) = \det(E_k^T) \cdots \det(E_1^T)\text{.}
+\end{equation*}
+</div>
+<div class="para">Finally, using <a href="sec-det-properties.html#lem-el-mat-det-transpose" class="xref" data-knowl="./knowl/xref/lem-el-mat-det-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.2.15">Lemma 4.2.15</a> and the fact that multiplication within <span class="process-math">\(\ff\)</span> is commutative, we conclude that <span class="process-math">\(\det(A) = \det(A^T)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-proving-det-transpose-thm-6-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.2.3.1: Proof of Theorem 4.1.9"><a href="#subsec-proving-det-transpose-thm-6" title="Copy permalink for Proof 4.2.3.1: Proof of Theorem 4.1.9">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.2.3: Proving Theorem 4.1.9"><a href="#subsec-proving-det-transpose-thm" title="Copy permalink for Subsection 4.2.3: Proving Theorem 4.1.9">🔗</a></div></section><section class="reading-questions" id="sec-det-properties-6"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="space"> </span><span class="title">Reading Questions</span>
+</h3>
+<article class="exercise exercise-like" id="sec-det-properties-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-1-1-1">
 <div class="para">Consider the following three matrices:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-switch.html ./knowl/xref/thm-det-replace.html">
 \begin{equation*}
@@ -892,47 +959,47 @@ A = \begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-5-1-1-1-2">
-<li id="sec-det-properties-5-1-1-1-2-1">
-<div class="para" id="sec-det-properties-5-1-1-1-2-1-1">Calculate <span class="process-math">\(\det(A)\)</span> using cofactor expansion along some row or column. Show your work.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-5-1-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-6-1-1-1-2">
+<li id="sec-det-properties-6-1-1-1-2-1">
+<div class="para" id="sec-det-properties-6-1-1-1-2-1-1">Calculate <span class="process-math">\(\det(A)\)</span> using cofactor expansion along some row or column. Show your work.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.3.1.a"><a href="#sec-det-properties-5-1-1-1-2-1" title="Copy permalink for Item 4.2.3.1.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.4.1.a"><a href="#sec-det-properties-6-1-1-1-2-1" title="Copy permalink for Item 4.2.4.1.a">🔗</a></div>
 </li>
-<li id="sec-det-properties-5-1-1-1-2-2">
-<div class="para" id="sec-det-properties-5-1-1-1-2-2-1">The matrix <span class="process-math">\(A_1\)</span> was obtained from <span class="process-math">\(A\)</span> by a single elementary row operation. Which one?<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-5-1-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="sec-det-properties-6-1-1-1-2-2">
+<div class="para" id="sec-det-properties-6-1-1-1-2-2-1">The matrix <span class="process-math">\(A_1\)</span> was obtained from <span class="process-math">\(A\)</span> by a single elementary row operation. Which one?<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.3.1.b"><a href="#sec-det-properties-5-1-1-1-2-2" title="Copy permalink for Item 4.2.3.1.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.4.1.b"><a href="#sec-det-properties-6-1-1-1-2-2" title="Copy permalink for Item 4.2.4.1.b">🔗</a></div>
 </li>
-<li id="sec-det-properties-5-1-1-1-2-3">
-<div class="para" id="sec-det-properties-5-1-1-1-2-3-1">Knowing <span class="process-math">\(\det(A)\)</span> and given your answer to (b), what do you predict <span class="process-math">\(\det(A_1)\)</span> to be? (Consult <a href="sec-det-properties.html#thm-det-switch" class="xref" data-knowl="./knowl/xref/thm-det-switch.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.3">Theorem 4.2.3</a>.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-5-1-1-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="sec-det-properties-6-1-1-1-2-3">
+<div class="para" id="sec-det-properties-6-1-1-1-2-3-1">Knowing <span class="process-math">\(\det(A)\)</span> and given your answer to (b), what do you predict <span class="process-math">\(\det(A_1)\)</span> to be? (Consult <a href="sec-det-properties.html#thm-det-switch" class="xref" data-knowl="./knowl/xref/thm-det-switch.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.3">Theorem 4.2.3</a>.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.3.1.c"><a href="#sec-det-properties-5-1-1-1-2-3" title="Copy permalink for Item 4.2.3.1.c">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.4.1.c"><a href="#sec-det-properties-6-1-1-1-2-3" title="Copy permalink for Item 4.2.4.1.c">🔗</a></div>
 </li>
-<li id="sec-det-properties-5-1-1-1-2-4">
-<div class="para" id="sec-det-properties-5-1-1-1-2-4-1">Calculate <span class="process-math">\(\det(A_1)\)</span> using cofactor expansion along some row or column. Show your work.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-5-1-1-1-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="sec-det-properties-6-1-1-1-2-4">
+<div class="para" id="sec-det-properties-6-1-1-1-2-4-1">Calculate <span class="process-math">\(\det(A_1)\)</span> using cofactor expansion along some row or column. Show your work.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.3.1.d"><a href="#sec-det-properties-5-1-1-1-2-4" title="Copy permalink for Item 4.2.3.1.d">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.4.1.d"><a href="#sec-det-properties-6-1-1-1-2-4" title="Copy permalink for Item 4.2.4.1.d">🔗</a></div>
 </li>
-<li id="sec-det-properties-5-1-1-1-2-5">
-<div class="para" id="sec-det-properties-5-1-1-1-2-5-1">The matrix <span class="process-math">\(A_2\)</span> was obtained from <span class="process-math">\(A\)</span> by a single elementary row operation. Which one?<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-5-1-1-1-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="sec-det-properties-6-1-1-1-2-5">
+<div class="para" id="sec-det-properties-6-1-1-1-2-5-1">The matrix <span class="process-math">\(A_2\)</span> was obtained from <span class="process-math">\(A\)</span> by a single elementary row operation. Which one?<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.3.1.e"><a href="#sec-det-properties-5-1-1-1-2-5" title="Copy permalink for Item 4.2.3.1.e">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.4.1.e"><a href="#sec-det-properties-6-1-1-1-2-5" title="Copy permalink for Item 4.2.4.1.e">🔗</a></div>
 </li>
-<li id="sec-det-properties-5-1-1-1-2-6">
-<div class="para" id="sec-det-properties-5-1-1-1-2-6-1">Knowing <span class="process-math">\(\det(A)\)</span> and given your answer to (e), what do you predict <span class="process-math">\(\det(A_2)\)</span> to be? (Consult <a href="sec-det-properties.html#thm-det-replace" class="xref" data-knowl="./knowl/xref/thm-det-replace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.5">Theorem 4.2.5</a>.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-5-1-1-1-2-6-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="sec-det-properties-6-1-1-1-2-6">
+<div class="para" id="sec-det-properties-6-1-1-1-2-6-1">Knowing <span class="process-math">\(\det(A)\)</span> and given your answer to (e), what do you predict <span class="process-math">\(\det(A_2)\)</span> to be? (Consult <a href="sec-det-properties.html#thm-det-replace" class="xref" data-knowl="./knowl/xref/thm-det-replace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.5">Theorem 4.2.5</a>.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1-2-6-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.3.1.f"><a href="#sec-det-properties-5-1-1-1-2-6" title="Copy permalink for Item 4.2.3.1.f">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.4.1.f"><a href="#sec-det-properties-6-1-1-1-2-6" title="Copy permalink for Item 4.2.4.1.f">🔗</a></div>
 </li>
-<li id="sec-det-properties-5-1-1-1-2-7">
-<div class="para" id="sec-det-properties-5-1-1-1-2-7-1">Calculate <span class="process-math">\(\det(A_2)\)</span> using cofactor expansion along some row or column. Show your work.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-5-1-1-1-2-7-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="sec-det-properties-6-1-1-1-2-7">
+<div class="para" id="sec-det-properties-6-1-1-1-2-7-1">Calculate <span class="process-math">\(\det(A_2)\)</span> using cofactor expansion along some row or column. Show your work.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1-2-7-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.3.1.g"><a href="#sec-det-properties-5-1-1-1-2-7" title="Copy permalink for Item 4.2.3.1.g">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.4.1.g"><a href="#sec-det-properties-6-1-1-1-2-7" title="Copy permalink for Item 4.2.4.1.g">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-5-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Reading Question 4.2.3.1"><a href="#sec-det-properties-5-1" title="Copy permalink for Reading Question 4.2.3.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-det-properties-5-2-1-1">
+<div class="autopermalink" data-description="Reading Question 4.2.4.1"><a href="#sec-det-properties-6-1" title="Copy permalink for Reading Question 4.2.4.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-6-2-1-1">
 <div class="para">Verify <a href="sec-det-properties.html#thm-det-matrix-product" class="xref" data-knowl="./knowl/xref/thm-det-matrix-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.13">Theorem 4.2.13</a> for the following two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{:}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-matrix-product.html ./knowl/xref/examp-verify-det-product.html">
@@ -946,88 +1013,88 @@ B = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">(You should follow <a href="sec-det-properties.html#examp-verify-det-product" class="xref" data-knowl="./knowl/xref/examp-verify-det-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.14">Example 4.2.14</a>)</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-5-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="autopermalink" data-description="Reading Question 4.2.3.2"><a href="#sec-det-properties-5-2" title="Copy permalink for Reading Question 4.2.3.2">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 4.2.3"><a href="#sec-det-properties-5" title="Copy permalink for Reading Questions 4.2.3">🔗</a></div></section><section class="exercises" id="sec-det-properties-6"><h3 class="heading hide-type">
-<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="space"> </span><span class="title">Exercises</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="autopermalink" data-description="Reading Question 4.2.4.2"><a href="#sec-det-properties-6-2" title="Copy permalink for Reading Question 4.2.4.2">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 4.2.4"><a href="#sec-det-properties-6" title="Copy permalink for Reading Questions 4.2.4">🔗</a></div></section><section class="exercises" id="sec-det-properties-7"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="sec-det-properties-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-det-properties-6-1-1-1">
+<article class="exercise exercise-like" id="sec-det-properties-7-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-7-1-1-1">
 <div class="para">Find the determinant of the matrix using row reduction.</div>
-<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-6-1-1-1-1">
-<li id="sec-det-properties-6-1-1-1-1-1">
-<div class="para" id="sec-det-properties-6-1-1-1-1-1-1">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-7-1-1-1-1">
+<li id="sec-det-properties-7-1-1-1-1-1">
+<div class="para" id="sec-det-properties-7-1-1-1-1-1-1">
 <span class="process-math">\(\displaystyle A = \begin{bmatrix}
 1 \amp 2 \amp -1 \\ 
 2 \amp -4 \amp -2 \\ 
 -4 \amp -3 \amp 2
-\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-1-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.1.a"><a href="#sec-det-properties-6-1-1-1-1-1" title="Copy permalink for Item 4.2.4.1.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.1.a"><a href="#sec-det-properties-7-1-1-1-1-1" title="Copy permalink for Item 4.2.5.1.a">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-1-1-1-1-2">
-<div class="para" id="sec-det-properties-6-1-1-1-1-2-1">
+<li id="sec-det-properties-7-1-1-1-1-2">
+<div class="para" id="sec-det-properties-7-1-1-1-1-2-1">
 <span class="process-math">\(\displaystyle A = \begin{bmatrix}
 -1 \amp -2 \amp 0 \amp 3 \\ 
 -2 \amp -2 \amp 0 \amp -2 \\ 
 0 \amp 2 \amp 1 \amp 0 \\ 
 3 \amp 8 \amp 3 \amp 7
-\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-1-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.1.b"><a href="#sec-det-properties-6-1-1-1-1-2" title="Copy permalink for Item 4.2.4.1.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.1.b"><a href="#sec-det-properties-7-1-1-1-1-2" title="Copy permalink for Item 4.2.5.1.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.2.4.1"><a href="#sec-det-properties-6-1" title="Copy permalink for Exercise 4.2.4.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-det-properties-6-2-1-1">
+<div class="autopermalink" data-description="Exercise 4.2.5.1"><a href="#sec-det-properties-7-1" title="Copy permalink for Exercise 4.2.5.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-7-2-1-1">
 <div class="para">Find the determinant of the matrix using row reduction.</div>
-<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-6-2-1-1-1">
-<li id="sec-det-properties-6-2-1-1-1-1">
-<div class="para" id="sec-det-properties-6-2-1-1-1-1-1">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-7-2-1-1-1">
+<li id="sec-det-properties-7-2-1-1-1-1">
+<div class="para" id="sec-det-properties-7-2-1-1-1-1-1">
 <span class="process-math">\(\displaystyle A = \begin{bmatrix}
 -2 \amp -1 \amp 2 \\ 
 -1 \amp 0 \amp 2 \\ 
 3 \amp -3 \amp 0
-\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-2-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-2-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.2.a"><a href="#sec-det-properties-6-2-1-1-1-1" title="Copy permalink for Item 4.2.4.2.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.2.a"><a href="#sec-det-properties-7-2-1-1-1-1" title="Copy permalink for Item 4.2.5.2.a">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-2-1-1-1-2">
-<div class="para" id="sec-det-properties-6-2-1-1-1-2-1">
+<li id="sec-det-properties-7-2-1-1-1-2">
+<div class="para" id="sec-det-properties-7-2-1-1-1-2-1">
 <span class="process-math">\(\displaystyle A = \begin{bmatrix}
 1 \amp 0 \amp 2 \amp -1 \\ 
 2 \amp 0 \amp -2 \amp 1 \\ 
 3 \amp 1 \amp 1 \amp -2 \\ 
 -1 \amp -2 \amp -1 \amp 3
-\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-2-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-2-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.2.b"><a href="#sec-det-properties-6-2-1-1-1-2" title="Copy permalink for Item 4.2.4.2.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.2.b"><a href="#sec-det-properties-7-2-1-1-1-2" title="Copy permalink for Item 4.2.5.2.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-det-properties-6-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
-<div class="para logical" id="sec-det-properties-6-2-2-1">
-<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-6-2-2-1-1">
-<li id="sec-det-properties-6-2-2-1-1-1">
-<div class="para" id="sec-det-properties-6-2-2-1-1-1-1">
-<span class="process-math">\(\displaystyle -12\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-2-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="sec-det-properties-7-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="sec-det-properties-7-2-2-1">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-7-2-2-1-1">
+<li id="sec-det-properties-7-2-2-1-1-1">
+<div class="para" id="sec-det-properties-7-2-2-1-1-1-1">
+<span class="process-math">\(\displaystyle -12\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-2-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.2.a"><a href="#sec-det-properties-6-2-2-1-1-1" title="Copy permalink for Item 4.2.4.2.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.2.a"><a href="#sec-det-properties-7-2-2-1-1-1" title="Copy permalink for Item 4.2.5.2.a">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-2-2-1-1-2">
-<div class="para" id="sec-det-properties-6-2-2-1-1-2-1">
-<span class="process-math">\(\displaystyle -3\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-2-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="sec-det-properties-7-2-2-1-1-2">
+<div class="para" id="sec-det-properties-7-2-2-1-1-2-1">
+<span class="process-math">\(\displaystyle -3\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-2-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.2.b"><a href="#sec-det-properties-6-2-2-1-1-2" title="Copy permalink for Item 4.2.4.2.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.2.b"><a href="#sec-det-properties-7-2-2-1-1-2" title="Copy permalink for Item 4.2.5.2.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 4.2.4.2.1"><a href="#sec-det-properties-6-2-2" title="Copy permalink for Answer 4.2.4.2.1">🔗</a></div>
+<div class="autopermalink" data-description="Answer 4.2.5.2.1"><a href="#sec-det-properties-7-2-2" title="Copy permalink for Answer 4.2.5.2.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Exercise 4.2.4.2"><a href="#sec-det-properties-6-2" title="Copy permalink for Exercise 4.2.4.2">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-det-properties-6-3-1-1">
+<div class="autopermalink" data-description="Exercise 4.2.5.2"><a href="#sec-det-properties-7-2" title="Copy permalink for Exercise 4.2.5.2">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-7-3-1-1">
 <div class="para">Find the determinant using a combination of row reduction and cofactor expansion:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1039,10 +1106,10 @@ A = \begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.2.4.3"><a href="#sec-det-properties-6-3" title="Copy permalink for Exercise 4.2.4.3">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-det-properties-6-4-1-1">
+<div class="autopermalink" data-description="Exercise 4.2.5.3"><a href="#sec-det-properties-7-3" title="Copy permalink for Exercise 4.2.5.3">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-7-4-1-1">
 <div class="para">Find the determinant using a combination of row reduction and cofactor expansion:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1054,72 +1121,72 @@ A = \begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-det-properties-6-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
-<div class="para" id="sec-det-properties-6-4-2-1">
-<span class="process-math">\(-10\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="sec-det-properties-7-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="sec-det-properties-7-4-2-1">
+<span class="process-math">\(-10\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 4.2.4.4.1"><a href="#sec-det-properties-6-4-2" title="Copy permalink for Answer 4.2.4.4.1">🔗</a></div>
+<div class="autopermalink" data-description="Answer 4.2.5.4.1"><a href="#sec-det-properties-7-4-2" title="Copy permalink for Answer 4.2.5.4.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Exercise 4.2.4.4"><a href="#sec-det-properties-6-4" title="Copy permalink for Exercise 4.2.4.4">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-det-properties-6-5-1-1">
+<div class="autopermalink" data-description="Exercise 4.2.5.4"><a href="#sec-det-properties-7-4" title="Copy permalink for Exercise 4.2.5.4">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-7-5-1-1">
 <div class="para">Use the determinant to determine whether or not the matrix is invertible. (Note that not all fields are <span class="process-math">\(\rr\text{!}\)</span>)</div>
-<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-6-5-1-1-2">
-<li id="sec-det-properties-6-5-1-1-2-1">
-<div class="para" id="sec-det-properties-6-5-1-1-2-1-1">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-7-5-1-1-2">
+<li id="sec-det-properties-7-5-1-1-2-1">
+<div class="para" id="sec-det-properties-7-5-1-1-2-1-1">
 <span class="process-math">\(A \in M_3(\ff_3)\text{,}\)</span> <span class="process-math">\(A = \begin{bmatrix}
 2 \amp 0 \amp 1 \\ 
 0 \amp 0 \amp 2 \\ 
 2 \amp 2 \amp 0
-\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-5-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-5-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.5.a"><a href="#sec-det-properties-6-5-1-1-2-1" title="Copy permalink for Item 4.2.4.5.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.5.a"><a href="#sec-det-properties-7-5-1-1-2-1" title="Copy permalink for Item 4.2.5.5.a">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-5-1-1-2-2">
-<div class="para" id="sec-det-properties-6-5-1-1-2-2-1">
+<li id="sec-det-properties-7-5-1-1-2-2">
+<div class="para" id="sec-det-properties-7-5-1-1-2-2-1">
 <span class="process-math">\(A \in M_3(\rr)\text{,}\)</span> <span class="process-math">\(A = \begin{bmatrix}
 -3 \amp -1 \amp -1 \\ 
 0 \amp -3 \amp -3 \\ 
 2 \amp -3 \amp 3    
-\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-5-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-5-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.5.b"><a href="#sec-det-properties-6-5-1-1-2-2" title="Copy permalink for Item 4.2.4.5.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.5.b"><a href="#sec-det-properties-7-5-1-1-2-2" title="Copy permalink for Item 4.2.5.5.b">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-5-1-1-2-3">
-<div class="para" id="sec-det-properties-6-5-1-1-2-3-1">
+<li id="sec-det-properties-7-5-1-1-2-3">
+<div class="para" id="sec-det-properties-7-5-1-1-2-3-1">
 <span class="process-math">\(A \in M_3(\ff_5)\text{,}\)</span> <span class="process-math">\(A = \begin{bmatrix}
 3 \amp 1 \amp 0 \\ 
 0 \amp 3 \amp 1 \\ 
 4 \amp 1 \amp 3
-\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-5-1-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-5-1-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.5.c"><a href="#sec-det-properties-6-5-1-1-2-3" title="Copy permalink for Item 4.2.4.5.c">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.5.c"><a href="#sec-det-properties-7-5-1-1-2-3" title="Copy permalink for Item 4.2.5.5.c">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-5-1-1-2-4">
-<div class="para" id="sec-det-properties-6-5-1-1-2-4-1">
+<li id="sec-det-properties-7-5-1-1-2-4">
+<div class="para" id="sec-det-properties-7-5-1-1-2-4-1">
 <span class="process-math">\(A \in M_2(\cc)\text{,}\)</span> <span class="process-math">\(A = \begin{bmatrix}
 2+i \amp 2-3i \\ 
 4-i \amp -2+4i 
-\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-5-1-1-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-5-1-1-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.5.d"><a href="#sec-det-properties-6-5-1-1-2-4" title="Copy permalink for Item 4.2.4.5.d">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.5.d"><a href="#sec-det-properties-7-5-1-1-2-4" title="Copy permalink for Item 4.2.5.5.d">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-5-1-1-2-5">
-<div class="para" id="sec-det-properties-6-5-1-1-2-5-1">
+<li id="sec-det-properties-7-5-1-1-2-5">
+<div class="para" id="sec-det-properties-7-5-1-1-2-5-1">
 <span class="process-math">\(A \in M_3(\cc)\text{,}\)</span> <span class="process-math">\(A = \begin{bmatrix}
 0 \amp 3-2i \amp -2-4i \\ 
 -2 \amp 2+4i \amp 0 \\ 
 3+i \amp -1+i \amp 0
-\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-5-1-1-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-5-1-1-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.5.e"><a href="#sec-det-properties-6-5-1-1-2-5" title="Copy permalink for Item 4.2.4.5.e">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.5.e"><a href="#sec-det-properties-7-5-1-1-2-5" title="Copy permalink for Item 4.2.5.5.e">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.2.4.5"><a href="#sec-det-properties-6-5" title="Copy permalink for Exercise 4.2.4.5">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-det-properties-6-6-1-1">
+<div class="autopermalink" data-description="Exercise 4.2.5.5"><a href="#sec-det-properties-7-5" title="Copy permalink for Exercise 4.2.5.5">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-det-properties-7-6-1-1">
 <div class="para">Calculate <span class="process-math">\(\det(A^3)\)</span> if</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1130,50 +1197,50 @@ A = \begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-det-properties-6-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
-<div class="para" id="sec-det-properties-6-6-2-1">
-<span class="process-math">\(27\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="sec-det-properties-7-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="sec-det-properties-7-6-2-1">
+<span class="process-math">\(27\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 4.2.4.6.1"><a href="#sec-det-properties-6-6-2" title="Copy permalink for Answer 4.2.4.6.1">🔗</a></div>
+<div class="autopermalink" data-description="Answer 4.2.5.6.1"><a href="#sec-det-properties-7-6-2" title="Copy permalink for Answer 4.2.5.6.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Exercise 4.2.4.6"><a href="#sec-det-properties-6-6" title="Copy permalink for Exercise 4.2.4.6">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="sec-det-properties-6-7-1-1">Construct an invertible matrix <span class="process-math">\(A \in M_3(\rr)\text{.}\)</span> For each entry of <span class="process-math">\(A\text{,}\)</span> compute the corresponding cofactor. Create a new <span class="process-math">\(3\times 3\)</span> matrix with these cofactors in the same position as the entry of <span class="process-math">\(A\)</span> on which they were based; call this matrix <span class="process-math">\(C\text{.}\)</span> Calculate <span class="process-math">\(AC^T\text{.}\)</span> What do you observe?<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 4.2.5.6"><a href="#sec-det-properties-7-6" title="Copy permalink for Exercise 4.2.5.6">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="sec-det-properties-7-7-1-1">Construct an invertible matrix <span class="process-math">\(A \in M_3(\rr)\text{.}\)</span> For each entry of <span class="process-math">\(A\text{,}\)</span> compute the corresponding cofactor. Create a new <span class="process-math">\(3\times 3\)</span> matrix with these cofactors in the same position as the entry of <span class="process-math">\(A\)</span> on which they were based; call this matrix <span class="process-math">\(C\text{.}\)</span> Calculate <span class="process-math">\(AC^T\text{.}\)</span> What do you observe?<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.2.4.7"><a href="#sec-det-properties-6-7" title="Copy permalink for Exercise 4.2.4.7">🔗</a></div></article><article class="subexercises" id="sec-det-properties-6-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
-<article class="exercise exercise-like" id="sec-det-properties-6-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para" id="sec-det-properties-6-8-2-1-1">Suppose that <span class="process-math">\(A\)</span> is a square matrix with two identical columns. Prove that <span class="process-math">\(\det(A)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 4.2.5.7"><a href="#sec-det-properties-7-7" title="Copy permalink for Exercise 4.2.5.7">🔗</a></div></article><article class="subexercises" id="sec-det-properties-7-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-det-properties-7-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para" id="sec-det-properties-7-8-2-1-1">Suppose that <span class="process-math">\(A\)</span> is a square matrix with two identical columns. Prove that <span class="process-math">\(\det(A)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-det-properties-6-8-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sec-det-properties-6-8-2-2-1">If <span class="process-math">\(A\)</span> has identical columns, then <span class="process-math">\(A^T\)</span> has identical rows. We can use an elementary row operation to add <span class="process-math">\(-1\)</span> times one of these rows to the other, producing a row of zeros in this matrix we will call <span class="process-math">\(B\text{.}\)</span> Since we used the replace row operation to go from <span class="process-math">\(A^T\)</span> to <span class="process-math">\(B\text{,}\)</span> we have <span class="process-math">\(\det(A^T) = \det(B)\)</span> by <a href="sec-det-properties.html#thm-det-replace" class="xref" data-knowl="./knowl/xref/thm-det-replace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.5">Theorem 4.2.5</a>. Since <span class="process-math">\(B\)</span> has a row of zeros, we know that <span class="process-math">\(\det(B) = 0\)</span> by <a href="sec-det-properties.html#prop-det-row-zeros" class="xref" data-knowl="./knowl/xref/prop-det-row-zeros.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.2.1">Proposition 4.2.1</a>. This means that <span class="process-math">\(\det(A^T)=0\text{,}\)</span> and since we have <span class="process-math">\(\det(A)=\det(A^T)\)</span> by <a href="sec-define-det.html#thm-det-transpose" class="xref" data-knowl="./knowl/xref/thm-det-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.9">Theorem 4.1.9</a>, this means that <span class="process-math">\(\det(A)=0\text{,}\)</span> as desired.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="sec-det-properties-7-8-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec-det-properties-7-8-2-2-1">If <span class="process-math">\(A\)</span> has identical columns, then <span class="process-math">\(A^T\)</span> has identical rows. We can use an elementary row operation to add <span class="process-math">\(-1\)</span> times one of these rows to the other, producing a row of zeros in this matrix we will call <span class="process-math">\(B\text{.}\)</span> Since we used the replace row operation to go from <span class="process-math">\(A^T\)</span> to <span class="process-math">\(B\text{,}\)</span> we have <span class="process-math">\(\det(A^T) = \det(B)\)</span> by <a href="sec-det-properties.html#thm-det-replace" class="xref" data-knowl="./knowl/xref/thm-det-replace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.5">Theorem 4.2.5</a>. Since <span class="process-math">\(B\)</span> has a row of zeros, we know that <span class="process-math">\(\det(B) = 0\)</span> by <a href="sec-det-properties.html#prop-det-row-zeros" class="xref" data-knowl="./knowl/xref/prop-det-row-zeros.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.2.1">Proposition 4.2.1</a>. This means that <span class="process-math">\(\det(A^T)=0\text{,}\)</span> and since we have <span class="process-math">\(\det(A)=\det(A^T)\)</span> by <a href="sec-define-det.html#thm-det-transpose" class="xref" data-knowl="./knowl/xref/thm-det-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.9">Theorem 4.1.9</a>, this means that <span class="process-math">\(\det(A)=0\text{,}\)</span> as desired.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.2.4.8.1"><a href="#sec-det-properties-6-8-2-2" title="Copy permalink for Solution 4.2.4.8.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.2.5.8.1"><a href="#sec-det-properties-7-8-2-2" title="Copy permalink for Solution 4.2.5.8.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Exercise 4.2.4.8"><a href="#sec-det-properties-6-8-2" title="Copy permalink for Exercise 4.2.4.8">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="sec-det-properties-6-8-3-1-1">Suppose that <span class="process-math">\(A \in M_n(\ff)\)</span> is invertible. Prove that <span class="process-math">\(\det(A^{-1})= \dfrac{1}{\det(A)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 4.2.5.8"><a href="#sec-det-properties-7-8-2" title="Copy permalink for Exercise 4.2.5.8">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-8-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="sec-det-properties-7-8-3-1-1">Suppose that <span class="process-math">\(A \in M_n(\ff)\)</span> is invertible. Prove that <span class="process-math">\(\det(A^{-1})= \dfrac{1}{\det(A)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.2.4.9"><a href="#sec-det-properties-6-8-3" title="Copy permalink for Exercise 4.2.4.9">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-det-properties-6-8-4-1-1">
-<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-6-8-4-1-1-1">
-<li id="sec-det-properties-6-8-4-1-1-1-1">
-<div class="para" id="sec-det-properties-6-8-4-1-1-1-1-1">Suppose that <span class="process-math">\(A \in M_n(\rr)\)</span> and that <span class="process-math">\(\det(A^4)=0\text{.}\)</span> Prove that <span class="process-math">\(A\)</span> is not invertible.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-4-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 4.2.5.9"><a href="#sec-det-properties-7-8-3" title="Copy permalink for Exercise 4.2.5.9">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-8-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-det-properties-7-8-4-1-1">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-7-8-4-1-1-1">
+<li id="sec-det-properties-7-8-4-1-1-1-1">
+<div class="para" id="sec-det-properties-7-8-4-1-1-1-1-1">Suppose that <span class="process-math">\(A \in M_n(\rr)\)</span> and that <span class="process-math">\(\det(A^4)=0\text{.}\)</span> Prove that <span class="process-math">\(A\)</span> is not invertible.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-4-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.10.a"><a href="#sec-det-properties-6-8-4-1-1-1-1" title="Copy permalink for Item 4.2.4.10.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.10.a"><a href="#sec-det-properties-7-8-4-1-1-1-1" title="Copy permalink for Item 4.2.5.10.a">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-8-4-1-1-1-2">
-<div class="para" id="sec-det-properties-6-8-4-1-1-1-2-1">Does the result or your argument in part (a) change if <span class="process-math">\(\rr\)</span> is replaced with <span class="process-math">\(\ff_7\text{?}\)</span> Explain.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-4-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="sec-det-properties-7-8-4-1-1-1-2">
+<div class="para" id="sec-det-properties-7-8-4-1-1-1-2-1">Does the result or your argument in part (a) change if <span class="process-math">\(\rr\)</span> is replaced with <span class="process-math">\(\ff_7\text{?}\)</span> Explain.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-4-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.10.b"><a href="#sec-det-properties-6-8-4-1-1-1-2" title="Copy permalink for Item 4.2.4.10.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.10.b"><a href="#sec-det-properties-7-8-4-1-1-1-2" title="Copy permalink for Item 4.2.5.10.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.2.4.10"><a href="#sec-det-properties-6-8-4" title="Copy permalink for Exercise 4.2.4.10">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-5"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
-<div class="para" id="sec-det-properties-6-8-5-1-1">Suppose that <span class="process-math">\(A, B \in M_n(\ff)\text{.}\)</span> Show that <span class="process-math">\(\det(AB)=\det(BA)\)</span> regardless of whether or not <span class="process-math">\(AB=BA\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 4.2.5.10"><a href="#sec-det-properties-7-8-4" title="Copy permalink for Exercise 4.2.5.10">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-8-5"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para" id="sec-det-properties-7-8-5-1-1">Suppose that <span class="process-math">\(A, B \in M_n(\ff)\text{.}\)</span> Show that <span class="process-math">\(\det(AB)=\det(BA)\)</span> regardless of whether or not <span class="process-math">\(AB=BA\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-det-properties-6-8-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="sec-det-properties-6-8-5-2-1">
+<div class="solutions"><details id="sec-det-properties-7-8-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec-det-properties-7-8-5-2-1">
 <div class="para">If <span class="process-math">\(A, B \in M_n(\ff)\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-matrix-product.html">
 \begin{equation*}
@@ -1181,18 +1248,18 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">This string of equations uses <a href="sec-det-properties.html#thm-det-matrix-product" class="xref" data-knowl="./knowl/xref/thm-det-matrix-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.13">Theorem 4.2.13</a> twice as well as the fact that the determinant of a matrix is an element of <span class="process-math">\(\ff\text{,}\)</span> and elements of <span class="process-math">\(\ff\)</span> commute via multiplication.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.2.4.11.1"><a href="#sec-det-properties-6-8-5-2" title="Copy permalink for Solution 4.2.4.11.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.2.5.11.1"><a href="#sec-det-properties-7-8-5-2" title="Copy permalink for Solution 4.2.5.11.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Exercise 4.2.4.11"><a href="#sec-det-properties-6-8-5" title="Copy permalink for Exercise 4.2.4.11">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-6"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
-<div class="para" id="sec-det-properties-6-8-6-1-1">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(k \in \ff\text{.}\)</span> Find a formula for <span class="process-math">\(\det(kA)\)</span> and prove that your formula is correct.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 4.2.5.11"><a href="#sec-det-properties-7-8-5" title="Copy permalink for Exercise 4.2.5.11">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-8-6"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para" id="sec-det-properties-7-8-6-1-1">Let <span class="process-math">\(A \in M_n(\ff)\)</span> and let <span class="process-math">\(k \in \ff\text{.}\)</span> Find a formula for <span class="process-math">\(\det(kA)\)</span> and prove that your formula is correct.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.2.4.12"><a href="#sec-det-properties-6-8-6" title="Copy permalink for Exercise 4.2.4.12">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-7"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-det-properties-6-8-7-1-1">
-<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-6-8-7-1-1-1">
-<li id="sec-det-properties-6-8-7-1-1-1-1">
-<div class="para logical" id="sec-det-properties-6-8-7-1-1-1-1-1">
+<div class="autopermalink" data-description="Exercise 4.2.5.12"><a href="#sec-det-properties-7-8-6" title="Copy permalink for Exercise 4.2.5.12">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-8-7"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-det-properties-7-8-7-1-1">
+<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-7-8-7-1-1-1">
+<li id="sec-det-properties-7-8-7-1-1-1-1">
+<div class="para logical" id="sec-det-properties-7-8-7-1-1-1-1-1">
 <div class="para">Verify that <span class="process-math">\(\det(A) = \det(B) + \det(C)\)</span> where <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\)</span> are</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1207,12 +1274,12 @@ e \amp f \\ c \amp d
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-7-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-7-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.13.a"><a href="#sec-det-properties-6-8-7-1-1-1-1" title="Copy permalink for Item 4.2.4.13.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.13.a"><a href="#sec-det-properties-7-8-7-1-1-1-1" title="Copy permalink for Item 4.2.5.13.a">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-8-7-1-1-1-2">
-<div class="para logical" id="sec-det-properties-6-8-7-1-1-1-2-1">
+<li id="sec-det-properties-7-8-7-1-1-1-2">
+<div class="para logical" id="sec-det-properties-7-8-7-1-1-1-2-1">
 <div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1226,20 +1293,20 @@ a \amp b \\ c \amp d
 </div>
 <div class="para">Show that <span class="process-math">\(\det(A+B) = \det(A) + \det(B)\)</span> if and only if <span class="process-math">\(a+d=0\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-7-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-7-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.13.b"><a href="#sec-det-properties-6-8-7-1-1-1-2" title="Copy permalink for Item 4.2.4.13.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.13.b"><a href="#sec-det-properties-7-8-7-1-1-1-2" title="Copy permalink for Item 4.2.5.13.b">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-8-7-1-1-1-3">
-<div class="para" id="sec-det-properties-6-8-7-1-1-1-3-1">Provide an example where <span class="process-math">\(A, B \in M_3(\rr)\)</span> to prove that <span class="process-math">\(\det(A+B) = \det(A) + \det(B)\)</span> is not always true.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-7-1-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="sec-det-properties-7-8-7-1-1-1-3">
+<div class="para" id="sec-det-properties-7-8-7-1-1-1-3-1">Provide an example where <span class="process-math">\(A, B \in M_3(\rr)\)</span> to prove that <span class="process-math">\({\det(A+B) = \det(A) + \det(B)}\)</span> is not always true.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-7-1-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.13.c"><a href="#sec-det-properties-6-8-7-1-1-1-3" title="Copy permalink for Item 4.2.4.13.c">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.13.c"><a href="#sec-det-properties-7-8-7-1-1-1-3" title="Copy permalink for Item 4.2.5.13.c">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.2.4.13"><a href="#sec-det-properties-6-8-7" title="Copy permalink for Exercise 4.2.4.13">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-6-8-8"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
-<div class="para logical" id="sec-det-properties-6-8-8-1-1">
+<div class="autopermalink" data-description="Exercise 4.2.5.13"><a href="#sec-det-properties-7-8-7" title="Copy permalink for Exercise 4.2.5.13">🔗</a></div></article><article class="exercise exercise-like" id="sec-det-properties-7-8-8"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
+<div class="para logical" id="sec-det-properties-7-8-8-1-1">
 <div class="para">Consider the following matrix (called a <em class="emphasis">Vandermond</em> matrix):</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1250,21 +1317,24 @@ V = \begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-6-8-8-1-1-3">
-<li id="sec-det-properties-6-8-8-1-1-3-1">
-<div class="para" id="sec-det-properties-6-8-8-1-1-3-1-1">Use row operations to explain why <span class="process-math">\(\det(V) = (b-a)(c-a)(c-b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-8-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<ol class="lower-alpha lower-alpha-level-1" id="sec-det-properties-7-8-8-1-1-3">
+<li id="sec-det-properties-7-8-8-1-1-3-1">
+<div class="para" id="sec-det-properties-7-8-8-1-1-3-1-1">Use row operations to explain why <span class="process-math">\(\det(V) = (b-a)(c-a)(c-b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-8-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.14.a"><a href="#sec-det-properties-6-8-8-1-1-3-1" title="Copy permalink for Item 4.2.4.14.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.14.a"><a href="#sec-det-properties-7-8-8-1-1-3-1" title="Copy permalink for Item 4.2.5.14.a">🔗</a></div>
 </li>
-<li id="sec-det-properties-6-8-8-1-1-3-2">
-<div class="para" id="sec-det-properties-6-8-8-1-1-3-2-1">Explain why <span class="process-math">\(V\)</span> is invertible if and only if <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> are all distinct real numbers.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-8-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<li id="sec-det-properties-7-8-8-1-1-3-2">
+<div class="para" id="sec-det-properties-7-8-8-1-1-3-2-1">Explain why <span class="process-math">\(V\)</span> is invertible if and only if <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> are all distinct real numbers.<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-8-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.2.4.14.b"><a href="#sec-det-properties-6-8-8-1-1-3-2" title="Copy permalink for Item 4.2.4.14.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.2.5.14.b"><a href="#sec-det-properties-7-8-8-1-1-3-2" title="Copy permalink for Item 4.2.5.14.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-6-8-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-det-properties-7-8-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.2.4.14"><a href="#sec-det-properties-6-8-8" title="Copy permalink for Exercise 4.2.4.14">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-det-properties-6-8" title="Copy permalink for Subexercises: Writing Exercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 4.2.4"><a href="#sec-det-properties-6" title="Copy permalink for Exercises 4.2.4">🔗</a></div></section><div class="autopermalink" data-description="Section 4.2: Properties of the Determinant"><a href="#sec-det-properties" title="Copy permalink for Section 4.2: Properties of the Determinant">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Exercise 4.2.5.14"><a href="#sec-det-properties-7-8-8" title="Copy permalink for Exercise 4.2.5.14">🔗</a></div></article><article class="exercise exercise-like" id="el-mat-equals-tr"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
+<div class="para" id="el-mat-equals-tr-1-1">Suppose that <span class="process-math">\(\ff\)</span> is a field and that <span class="process-math">\(E \in M_n(\ff)\)</span> is an elementary matrix which performs the <em class="emphasis">scale</em> or <em class="emphasis">switch</em> row operation. Prove that <span class="process-math">\(E\)</span> is a symmetric matrix.<div class="autopermalink" data-description="Paragraph"><a href="#el-mat-equals-tr-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 4.2.5.15"><a href="#el-mat-equals-tr" title="Copy permalink for Exercise 4.2.5.15">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-det-properties-7-8" title="Copy permalink for Subexercises: Writing Exercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 4.2.5"><a href="#sec-det-properties-7" title="Copy permalink for Exercises 4.2.5">🔗</a></div></section><div class="autopermalink" data-description="Section 4.2: Properties of the Determinant"><a href="#sec-det-properties" title="Copy permalink for Section 4.2: Properties of the Determinant">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-define-det.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-dimension.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

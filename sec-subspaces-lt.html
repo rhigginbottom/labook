@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.8.3';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.8e4157bd77a28b29.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -156,7 +156,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\kerr}{\mathrm{ker}}
 \newcommand{\nll}{\mathrm{null}}
 \newcommand{\proj}{\mathrm{proj}}
-\newcommand{\image}{\mathrm{im}}
+\newcommand{\img}{\mathrm{im}}
 \newcommand{\range}{\mathrm{range}}
 \newcommand{\tr}{\mathrm{tr}}
 \newcommand{\col}{\mathrm{col}}
@@ -312,8 +312,9 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#det-elem-row-ops" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Determinant and Elementary Row Operations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#subsec-det-main-results" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Invertibility and the Determinant</span></a></div></li>
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#subsec-proving-det-transpose-thm" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Proving Theorem 4.1.9</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-7" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -641,33 +642,33 @@ p(0) \\ p'(0)
 <article class="note remark-like" id="subsec-range-3"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">3.4.10</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-range-3-1">We will use the notation <span class="process-math">\(\image(T)\)</span> for the image of a linear transformation <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-range-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-range-3-1">We will use the notation <span class="process-math">\(\img(T)\)</span> for the image of a linear transformation <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-range-3-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Note 3.4.10"><a href="#subsec-range-3" title="Copy permalink for Note 3.4.10">🔗</a></div></article><article class="theorem theorem-like" id="thm-range-subspace"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="thm-range-subspace-1-1">Let <span class="process-math">\(T:V\to W\)</span> be a linear transformation between vector spaces over <span class="process-math">\(\ff\text{.}\)</span> Then <span class="process-math">\(\image(T)\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-range-subspace-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="thm-range-subspace-1-1">Let <span class="process-math">\(T:V\to W\)</span> be a linear transformation between vector spaces over <span class="process-math">\(\ff\text{.}\)</span> Then <span class="process-math">\(\img(T)\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-range-subspace-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 3.4.11"><a href="#thm-range-subspace" title="Copy permalink for Theorem 3.4.11">🔗</a></div></article><details id="thm-range-subspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-range-subspace-2-1">Since we know that <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> it follows that <span class="process-math">\(\bfo_W \in \image(T)\text{.}\)</span> We now need to show the other properties demanded by <a href="sec-subspaces.html#thm-prove-subspace" class="xref" data-knowl="./knowl/xref/thm-prove-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.3">Theorem 2.4.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#thm-range-subspace-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 3.4.11"><a href="#thm-range-subspace" title="Copy permalink for Theorem 3.4.11">🔗</a></div></article><details id="thm-range-subspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-range-subspace-2-1">Since we know that <span class="process-math">\(T(\bfo_V) = \bfo_W\text{,}\)</span> it follows that <span class="process-math">\(\bfo_W \in \img(T)\text{.}\)</span> We now need to show the other properties demanded by <a href="sec-subspaces.html#thm-prove-subspace" class="xref" data-knowl="./knowl/xref/thm-prove-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.3">Theorem 2.4.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#thm-range-subspace-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-range-subspace-2-2">
-<div class="para">If <span class="process-math">\(\bfw_1, \bfw_2 \in \image(T)\text{,}\)</span> then there exist vectors <span class="process-math">\(\bfv_1, \bfv_2 \in V\)</span> with <span class="process-math">\(T(\bfv_1)=\bfw_1\)</span> and <span class="process-math">\(T(\bfv_2)=\bfw_2\text{.}\)</span> Then, using the linearity of <span class="process-math">\(T\text{,}\)</span> we have</div>
+<div class="para">If <span class="process-math">\(\bfw_1, \bfw_2 \in \img(T)\text{,}\)</span> then there exist vectors <span class="process-math">\(\bfv_1, \bfv_2 \in V\)</span> with <span class="process-math">\(T(\bfv_1)=\bfw_1\)</span> and <span class="process-math">\(T(\bfv_2)=\bfw_2\text{.}\)</span> Then, using the linearity of <span class="process-math">\(T\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \bfw_1 + \bfw_2 = T(\bfv_1) + T(\bfv_2) = T(\bfv_1+\bfv_2)\text{.}
 \end{equation*}
 </div>
-<div class="para">This proves that <span class="process-math">\(\bfw_1+\bfw_2 \in \image(T)\text{,}\)</span> so <span class="process-math">\(\image(T)\)</span> is closed under addition.</div>
+<div class="para">This proves that <span class="process-math">\(\bfw_1+\bfw_2 \in \img(T)\text{,}\)</span> so <span class="process-math">\(\img(T)\)</span> is closed under addition.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-range-subspace-2-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-range-subspace-2-3">
-<div class="para">Finally, we let <span class="process-math">\(k \in \ff\)</span> and <span class="process-math">\(\bfw \in \image(T)\text{,}\)</span> so there exists a vector <span class="process-math">\(\bfv \in V\)</span> such that <span class="process-math">\(T(\bfv) = \bfw\text{.}\)</span> Then, using the fact that <span class="process-math">\(T\)</span> is a linear transformation, we have</div>
+<div class="para">Finally, we let <span class="process-math">\(k \in \ff\)</span> and <span class="process-math">\(\bfw \in \img(T)\text{,}\)</span> so there exists a vector <span class="process-math">\(\bfv \in V\)</span> such that <span class="process-math">\(T(\bfv) = \bfw\text{.}\)</span> Then, using the fact that <span class="process-math">\(T\)</span> is a linear transformation, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 k\bfw = kT(\bfv) = T(k\bfv)\text{,}
 \end{equation*}
 </div>
-<div class="para">which proves that <span class="process-math">\(k\bfw \in \image(T)\text{.}\)</span> Thus, <span class="process-math">\(\image(T)\)</span> is closed under scalar multiplication. We conclude that <span class="process-math">\(\image(T)\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span>
+<div class="para">which proves that <span class="process-math">\(k\bfw \in \img(T)\text{.}\)</span> Thus, <span class="process-math">\(\img(T)\)</span> is closed under scalar multiplication. We conclude that <span class="process-math">\(\img(T)\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-range-subspace-2-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
@@ -702,7 +703,7 @@ k\bfw = kT(\bfv) = T(k\bfv)\text{,}
 <div class="para">If <span class="process-math">\(T:\ff^n \to \ff^m\)</span> is a linear transformation given by multiplication by a matrix <span class="process-math">\(A\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\image(T) = \col(A)\text{.}
+\img(T) = \col(A)\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#fact-range-col-space-1-1" title="Copy permalink for Paragraph">🔗</a></div>

@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.8.3';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.8e4157bd77a28b29.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -156,7 +156,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\kerr}{\mathrm{ker}}
 \newcommand{\nll}{\mathrm{null}}
 \newcommand{\proj}{\mathrm{proj}}
-\newcommand{\image}{\mathrm{im}}
+\newcommand{\img}{\mathrm{im}}
 \newcommand{\range}{\mathrm{range}}
 \newcommand{\tr}{\mathrm{tr}}
 \newcommand{\col}{\mathrm{col}}
@@ -312,8 +312,9 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#det-elem-row-ops" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Determinant and Elementary Row Operations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#subsec-det-main-results" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Invertibility and the Determinant</span></a></div></li>
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-det-properties.html#subsec-proving-det-transpose-thm" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Proving Theorem 4.1.9</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-det-properties.html#sec-det-properties-7" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -472,7 +473,7 @@ eBookConfig.enable_chatcodes =  false;
 </h3>
 <div class="para" id="initial-defn-det-2">In <a href="sec-results.html#exer-2b2-det" class="xref" data-knowl="./knowl/xref/exer-2b2-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.3.11">Exercise 1.3.11</a>, we saw that when a matrix <span class="process-math">\(A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}\)</span> has the property that <span class="process-math">\(ad-bc \neq 0\text{,}\)</span> <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_2\text{.}\)</span> (In that context we were working over <span class="process-math">\(\rr\text{,}\)</span> but this is true over any field.) The converse is also true, though we haven’t yet established it.<div class="autopermalink" data-description="Paragraph"><a href="#initial-defn-det-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="initial-defn-det-3">If we connect this fact with <a href="sec-inverting-matrix.html#thm-find-inverse-matrix" class="xref" data-knowl="./knowl/xref/thm-find-inverse-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.13">Theorem 3.3.13</a>, we see that when <span class="process-math">\(ad-bc \neq 0\text{,}\)</span> the <span class="process-math">\(2\times 2\)</span> matrix <span class="process-math">\(A\)</span> is invertible. (We will see that the converse of this statement is also true.)<div class="autopermalink" data-description="Paragraph"><a href="#initial-defn-det-3" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="initial-defn-det-3">If we connect this fact with <a href="sec-inverting-matrix.html#thm-find-inverse-matrix" class="xref" data-knowl="./knowl/xref/thm-find-inverse-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.13">Theorem 3.3.13</a>, we see that when <span class="process-math">\({ad-bc \neq 0}\text{,}\)</span> the <span class="process-math">\(2\times 2\)</span> matrix <span class="process-math">\(A\)</span> is invertible. (We will see that the converse of this statement is also true.)<div class="autopermalink" data-description="Paragraph"><a href="#initial-defn-det-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="initial-defn-det-4">This quantity <span class="process-math">\(ad-bc\)</span> for <span class="process-math">\(A\)</span> is special—it is called the <em class="emphasis">determinant</em> of <span class="process-math">\(A\text{,}\)</span> and this relationship between the determinant and invertibility also holds for larger matrices. The goal of this section is to define a number for any <span class="process-math">\(n\times n\)</span> matrix which functions the same way that <span class="process-math">\(ad-bc\)</span> does for a <span class="process-math">\(2\times 2\)</span> matrix.<div class="autopermalink" data-description="Paragraph"><a href="#initial-defn-det-4" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
@@ -572,7 +573,7 @@ A = \begin{bmatrix}
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="initial-defn-det-13-1-1">
-<div class="para">For the purposes of what follows, we will introduce another bit of notation. If <span class="process-math">\(A = [a_{ij}]\text{,}\)</span> then the <dfn class="terminology"><span class="process-math">\((i,j)\)</span>-cofactor</dfn> of <span class="process-math">\(A\text{,}\)</span> by <span class="process-math">\(C_{ij}\text{,}\)</span> is</div>
+<div class="para">For the purposes of what follows, we will introduce another bit of notation. If <span class="process-math">\(A = [a_{ij}]\text{,}\)</span> then the <dfn class="terminology"><span class="process-math">\((i,j)\)</span>-cofactor</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted by <span class="process-math">\(C_{ij}\text{,}\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 C_{ij} = (-1)^{i+j}\det(A_{ij})\text{.}
@@ -628,44 +629,20 @@ A = \begin{bmatrix}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-alternative-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 4.1.8"><a href="#subsec-det-alternative-5" title="Copy permalink for Example 4.1.8">🔗</a></div></article></details><div class="para" id="subsec-det-alternative-6">In addition to expanding along any row of a matrix to calculate the determinant, we can also use any column. Instead of proving this directly using the definition of the determinant, we will follow <a class="external" href="http://linear.ups.edu/fcla/section-DM.html#theorem-DT" target="_blank">Beezer</a><details class="ptx-footnote" aria-live="polite" id="subsec-det-alternative-6-2"><summary class="ptx-footnote__number" title="Footnote 6"><sup> 6 </sup></summary><div class="ptx-footnote__contents" id="subsec-det-alternative-6-2"><code class="code-inline tex2jax_ignore">linear.ups.edu</code></div></details> and prove that a matrix and its transpose have the same determinant. The result about using columns to calculate the determinant will follow.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-alternative-6" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.1.8"><a href="#subsec-det-alternative-5" title="Copy permalink for Example 4.1.8">🔗</a></div></article></details><div class="para" id="subsec-det-alternative-6">In addition to expanding along any row of a matrix to calculate the determinant, we can also use any column. Instead of proving this directly using the definition of the determinant, we will show that a matrix and its transpose have the same determinant. The result about using columns to calculate the determinant will follow.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-alternative-6" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-det-transpose"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-det-transpose-1-1">Let <span class="process-math">\(A \in M_n(\ff)\text{.}\)</span> Then <span class="process-math">\(\det(A) = \det(A^T)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-det-transpose-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 4.1.9"><a href="#thm-det-transpose" title="Copy permalink for Theorem 4.1.9">🔗</a></div></article><details id="thm-det-transpose-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-det-transpose-2-1">We will proceed using induction on the size of the matrix. When <span class="process-math">\(n=1\text{,}\)</span> a matrix <span class="process-math">\(A\)</span> and its transpose are identical, so <span class="process-math">\(\det(A) = \det(A^T)\)</span> trivially.<div class="autopermalink" data-description="Paragraph"><a href="#thm-det-transpose-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 4.1.9"><a href="#thm-det-transpose" title="Copy permalink for Theorem 4.1.9">🔗</a></div></article><article class="note remark-like" id="subsec-det-alternative-8"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">4.1.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-det-alternative-8-1">While we have the machinery to prove this result here, the proof we could offer is clever but not exactly intuitive for some students. (See <a class="external" href="http://linear.ups.edu/fcla/section-DM.html#theorem-DT" target="_blank">Beezer</a><details class="ptx-footnote" aria-live="polite" id="subsec-det-alternative-8-1-2"><summary class="ptx-footnote__number" title="Footnote 6"><sup> 6 </sup></summary><div class="ptx-footnote__contents" id="subsec-det-alternative-8-1-2"><code class="code-inline tex2jax_ignore">linear.ups.edu</code></div></details> for a good example of such a proof.) Instead, we will take advantage of results in the next section and prove this result in <a href="sec-det-properties.html#subsec-proving-det-transpose-thm" class="internal" title="Subsection 4.2.3: Proving Theorem 4.1.9">Subsection 4.2.3</a>. The reader should be aware that some results between the statement and proof of <a href="sec-define-det.html#thm-det-transpose" class="xref" data-knowl="./knowl/xref/thm-det-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.9">Theorem 4.1.9</a> depend on the truth of this theorem. We have resolved the possible inconsistency for ourselves knowing that we <em class="emphasis">could</em> prove this result now but are choosing to offer a <em class="emphasis">clearer</em> proof later.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-alternative-8-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="thm-det-transpose-2-2">
-<div class="para">We now suppose that for any square matrix of size <span class="process-math">\(n-1\text{,}\)</span> the determinant of the matrix and its transpose are equal. In the calculation below, we will employ a trick at the beginning in order to have a second summation sign later on. The first equation here is true because taking the average of one number <span class="process-math">\(n\)</span> times will give the same quantity again. We will use the notation <span class="process-math">\([A^T]_{ij}\)</span> to indicate the <span class="process-math">\((i,j)\)</span>-entry of <span class="process-math">\(A^T\text{.}\)</span> We have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-any-row.html" id="thm-det-transpose-2-2-6">
-\begin{align*}
-\det(A^T) \amp = \frac{1}{n} \sum_{i=1}^n \det(A^T)\\
-\amp = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} [A^T]_{ij} \det(A^T_{ij})\text{.}
-\end{align*}
-</div>
-<div class="para">By the definition of the transpose, we have <span class="process-math">\([A^T]_{ij} = a_{ji}\)</span> and <span class="process-math">\(A^T_{ij} = (A_{ji})^T\text{.}\)</span> So</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-any-row.html">
-\begin{equation*}
-\det(A^T) = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det((A_{ji})^T)\text{.}
-\end{equation*}
-</div>
-<div class="para">We now invoke the induction hypothesis. Since <span class="process-math">\(A_{ji}\)</span> is a square matrix of size <span class="process-math">\(n-1\text{,}\)</span> we have <span class="process-math">\(\det((A_{ji})^T) = \det(A_{ji})\text{.}\)</span> This, along with <a href="sec-define-det.html#thm-det-any-row" class="xref" data-knowl="./knowl/xref/thm-det-any-row.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.7">Theorem 4.1.7</a>, allows us to finish the argument:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-det-any-row.html" id="thm-det-transpose-2-2-14">
-\begin{align*}
-\det(A^T) \amp = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det(A_{ji})\\
-\amp = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{j+i} a_{ji} \det(A_{ji})\\
-\amp = \frac{1}{n} \sum_{j=1}^n \sum_{i=1}^n (-1)^{j+i} a_{ji} \det(A_{ji})\\
-\amp = \frac{1}{n} \sum_{j=1}^n \det(A) = \det(A)\text{.}
-\end{align*}
-</div>
-<div class="para">As a final note, we were able to switch the summation signs toward the end of this calculation due to the fact that addition is commutative in any field <span class="process-math">\(\ff\text{.}\)</span>
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#thm-det-transpose-2-2" title="Copy permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 4.1.9.1"><a href="#thm-det-transpose-2" title="Copy permalink for Proof 4.1.9.1">🔗</a></div></article></details><article class="corollary theorem-like" id="cor-det-columns"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.1.10</span><span class="period">.</span>
+<div class="autopermalink" data-description="Note 4.1.10"><a href="#subsec-det-alternative-8" title="Copy permalink for Note 4.1.10">🔗</a></div></article><article class="corollary theorem-like" id="cor-det-columns"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.1.11</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="cor-det-columns-1-1">
 <div class="para">Suppose that <span class="process-math">\(A = [a_{ij}]\)</span> and that <span class="process-math">\(A \in M_n(\ff)\)</span> with <span class="process-math">\(n \ge 2\text{.}\)</span> Then <span class="process-math">\(\det(A)\)</span> can be calculated using cofactor expansion along any column of <span class="process-math">\(A\text{.}\)</span> In other words, for any <span class="process-math">\(1 \le i \le n\text{,}\)</span> we have</div>
@@ -676,13 +653,13 @@ A = \begin{bmatrix}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#cor-det-columns-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Corollary 4.1.10"><a href="#cor-det-columns" title="Copy permalink for Corollary 4.1.10">🔗</a></div></article><details id="cor-det-columns-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-det-columns-2-1">We note that column <span class="process-math">\(i\)</span> of <span class="process-math">\(A\)</span> is the same as row <span class="process-math">\(i\)</span> of <span class="process-math">\(A^T\text{.}\)</span> So, calculating <span class="process-math">\(\det(A)\)</span> using expansion along column <span class="process-math">\(i\)</span> is the same as calculating <span class="process-math">\(\det(A^T)\)</span> using expansion along row <span class="process-math">\(i\text{.}\)</span> But since <span class="process-math">\(\det(A^T) = \det(A)\text{,}\)</span> this calculation will result in <span class="process-math">\(\det(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-det-columns-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Corollary 4.1.11"><a href="#cor-det-columns" title="Copy permalink for Corollary 4.1.11">🔗</a></div></article><details id="cor-det-columns-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-det-columns-2-1">We note that column <span class="process-math">\(i\)</span> of <span class="process-math">\(A\)</span> is the same as row <span class="process-math">\(i\)</span> of <span class="process-math">\(A^T\text{.}\)</span> So, calculating <span class="process-math">\(\det(A)\)</span> using expansion along column <span class="process-math">\(i\)</span> is the same as calculating <span class="process-math">\(\det(A^T)\)</span> using expansion along row <span class="process-math">\(i\text{.}\)</span> But since <span class="process-math">\(\det(A^T) = \det(A)\text{,}\)</span> this calculation will result in <span class="process-math">\(\det(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-det-columns-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.1.10.1"><a href="#cor-det-columns-2" title="Copy permalink for Proof 4.1.10.1">🔗</a></div></article></details><div class="para" id="subsec-det-alternative-9">The following example shows how we can use this flexibility in calculating the determinant.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-alternative-9" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 4.1.11.1"><a href="#cor-det-columns-2" title="Copy permalink for Proof 4.1.11.1">🔗</a></div></article></details><div class="para" id="subsec-det-alternative-10">The following example shows how we can use this flexibility in calculating the determinant.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-alternative-10" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<details id="subsec-det-alternative-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.11</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-det-alternative-10-1-1">
+<details id="subsec-det-alternative-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.12</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-det-alternative-11-1-1">
 <div class="para">We will calculate the determinant of the following matrix:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -713,7 +690,7 @@ B = \begin{bmatrix}
 </div>
 <div class="para">We will take advantage of the zero in the <span class="process-math">\((3,3)\)</span>-entry of <span class="process-math">\(B\)</span> by expanding along the third row to calculate <span class="process-math">\(\det(B)\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="subsec-det-alternative-10-1-1-11">
+<div class="displaymath process-math" id="subsec-det-alternative-11-1-1-11">
 \begin{align*}
 \det(B) \amp = (-1)^{3+1} (2) \begin{vmatrix} 1 \amp -1 \\ 3 \amp -3 \end{vmatrix} + (-1)^{3+2}(-2) 
 \begin{vmatrix} 3 \amp -1 \\ 1 \amp -3 \end{vmatrix}\\
@@ -722,16 +699,16 @@ B = \begin{bmatrix}
 </div>
 <div class="para">Since we determined that <span class="process-math">\(\det(A) = -2\det(B)\text{,}\)</span> this means that <span class="process-math">\(\det(A) = 32\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-alternative-10-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-alternative-11-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 4.1.11"><a href="#subsec-det-alternative-10" title="Copy permalink for Example 4.1.11">🔗</a></div></article></details><div class="para" id="subsec-det-alternative-11">We will close this section with one final result, the proof of which will be <a href="sec-define-det.html#exer-det-triangular" class="xref" data-knowl="./knowl/xref/exer-det-triangular.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.1.4.10">Exercise 4.1.4.10</a>. The truth of this proposition also relies on rows/columns with many zeros. By a “triangular” matrix we mean either an upper triangular or a lower triangular matrix.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-alternative-11" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.1.12"><a href="#subsec-det-alternative-11" title="Copy permalink for Example 4.1.12">🔗</a></div></article></details><div class="para" id="subsec-det-alternative-12">We will close this section with one final result, the proof of which will be <a href="sec-define-det.html#exer-det-triangular" class="xref" data-knowl="./knowl/xref/exer-det-triangular.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.1.4.10">Exercise 4.1.4.10</a>. The truth of this proposition also relies on rows/columns with many zeros. By a “triangular” matrix we mean either an upper triangular or a lower triangular matrix.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-det-alternative-12" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="proposition theorem-like" id="prop-det-triangular"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.1.12</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.1.13</span><span class="period">.</span>
 </h4>
 <div class="para" id="prop-det-triangular-1-1">Let <span class="process-math">\(A \in M_n(\ff)\)</span> be a triangular matrix. Then <span class="process-math">\(\det(A)\)</span> is the product of the entries along the main diagonal of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-det-triangular-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 4.1.12"><a href="#prop-det-triangular" title="Copy permalink for Proposition 4.1.12">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.1.2: Additional Ways to Calculate the Determinant"><a href="#subsec-det-alternative" title="Copy permalink for Subsection 4.1.2: Additional Ways to Calculate the Determinant">🔗</a></div></section><section class="reading-questions" id="sec-define-det-5"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Proposition 4.1.13"><a href="#prop-det-triangular" title="Copy permalink for Proposition 4.1.13">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.1.2: Additional Ways to Calculate the Determinant"><a href="#subsec-det-alternative" title="Copy permalink for Subsection 4.1.2: Additional Ways to Calculate the Determinant">🔗</a></div></section><section class="reading-questions" id="sec-define-det-5"><h3 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
 <article class="exercise exercise-like" id="sec-define-det-5-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -960,7 +937,7 @@ E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 7 \amp 0 \amp 1  \end{
 <div class="autopermalink" data-description="Solution 4.1.4.6.1"><a href="#sec-define-det-6-6-2" title="Copy permalink for Solution 4.1.4.6.1">🔗</a></div>
 </div></details></div>
 <div class="autopermalink" data-description="Exercise 4.1.4.6"><a href="#sec-define-det-6-6" title="Copy permalink for Exercise 4.1.4.6">🔗</a></div></article><article class="exercise exercise-like" id="sec-define-det-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="sec-define-det-6-7-1-1">Let <span class="process-math">\(A = \begin{bmatrix} 1 \amp -2 \\ 2.5 \amp c \end{bmatrix}\)</span> be a matrix over <span class="process-math">\(\rr\text{.}\)</span> Find a value of <span class="process-math">\(c\)</span> so that <span class="process-math">\(\det(A) = 0\)</span> or explain why this is not possible.<div class="autopermalink" data-description="Paragraph"><a href="#sec-define-det-6-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-define-det-6-7-1-1">Let <span class="process-math">\(A = \begin{bmatrix} 1 \amp -2 \\ 2.5 \amp c \end{bmatrix}\)</span> be a matrix over <span class="process-math">\(\rr\text{.}\)</span> Find a value of <span class="process-math">\(c\)</span> so that <span class="process-math">\({\det(A) = 0}\)</span> or explain why this is not possible.<div class="autopermalink" data-description="Paragraph"><a href="#sec-define-det-6-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Exercise 4.1.4.7"><a href="#sec-define-det-6-7" title="Copy permalink for Exercise 4.1.4.7">🔗</a></div></article><article class="exercise exercise-like" id="sec-define-det-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-define-det-6-8-1-1">
