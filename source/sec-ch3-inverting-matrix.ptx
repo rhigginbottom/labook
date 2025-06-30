@@ -724,6 +724,20 @@
       </p>
     </statement>
   </exercise>
+  <exercise xml:id="exer-inv-iff-transpose-inv">
+    <statement>
+      <p>
+        Let <m>A \in M_n(\ff)</m>. Prove that <m>A</m> is invertible if and only if <m>A^T</m> is invertible.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exer-transpose-elem-is-elem">
+    <statement>
+      <p>
+        Let <m>E \in M_n(\ff)</m> be an elementary matrix. Prove that <m>E^T</m> is also an elementary matrix.
+      </p>
+    </statement>
+  </exercise>
   <!-- <exercise>
     <statement>
       <p>

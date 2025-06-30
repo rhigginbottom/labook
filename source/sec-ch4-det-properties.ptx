@@ -442,6 +442,73 @@
 </example>
 
 </subsection>
+
+<subsection xml:id="subsec-proving-det-transpose-thm">
+  <title>Proving <xref ref="thm-det-transpose"/></title>
+  <p>
+    We will devote the final subsection to the proof of <xref ref="thm-det-transpose"/>. The reader holding their breath since the statement of this theorem will soon be able to exhale.
+  </p>
+  <p>
+    Results about the multiplicative property of the determinant and the behavior of the transpose under matrix multiplication make this result easy to prove with but a single lemma.
+  </p>
+
+  <lemma xml:id="lem-el-mat-det-transpose">
+    <statement>
+      <p>
+        If <m>E</m> is an elementary <m>n\times n</m> matrix over a field <m>\ff</m>, then <m>\det(E) = \det(E^T)</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We have three cases to consider, but two of the cases are immediate. If <m>E</m> is an elementary matrix that performs the <em>scale</em> or <em>switch</em> row operation, then <m>E = E^T</m>, so the result follows easily. (We ask the reader to prove this fact in <xref ref="el-mat-equals-tr"/>.)
+      </p>
+      <p>
+        We now suppose that <m>E</m> performs the <em>replace</em> row operation. We assume that <m>E</m> performs the row operation of adding <m>k</m> times row <m>i</m> to row <m>j</m>, where <m>i \neq j</m>. This means that <m>E</m> is the matrix <m>I_n</m> with the extra feature of containing the entry <m>k</m> in position <m>(j,i)</m>. From <xref ref="prop-det-elem-matrices"/>, we know that <m>\det(E)=1</m>, so we only need to prove that <m>\det(E^T)=1</m>. 
+      </p>
+      <p>
+        The matrix <m>E^T</m> is <m>I_n</m> except for the fact that it contains the element <m>k</m> in position <m>(i,j)</m>. We will calculate <m>\det(E^T)</m> by using cofactor expansion along row <m>j</m>:
+        <me>
+          \det(E^T) = \sum_{q=1}^n a_{jq}C_{jq}= 1\cdot C_{jj}
+        </me>.
+        This calculation reduces to one term because there is only one nonzero element in row <m>j</m> of <m>E^T</m>. (Choosing row <m>j</m> for expansion means the element <m>k</m> in position <m>(i,j)</m> is removed when calculating the determinant of the submatrix.) Since <m>(E^T)_{jj} = I_{n-1}</m>, we have
+        <me>
+          \det(E^T) = (-1)^{j+j} \det((E^T)_{jj}) = (-1)^{2j} \det(I_{n-1}) = 1\cdot 1 = 1
+        </me>.
+        Since <m>\det(E^T)=1</m> and <m>\det(E)=1</m>, this concludes our final case.
+      </p>
+    </proof>
+  </lemma>
+
+  <p>
+    We are now ready for the long-promised proof of <xref ref="thm-det-transpose"/>.
+  </p>
+
+  <proof>
+    <title>Proof of <xref ref="thm-det-transpose"/></title>    
+    <p>
+      We assume that <m>A \in M_n(\ff)</m>. If <m>A</m> is not invertible, then <m>A^T</m> is also not invertible (see <xref ref="exer-inv-iff-transpose-inv"/>), meaning that both <m>\det(A)=0</m> and <m>\det(A^T)=0</m> by <xref ref="thm-det-invertible"/>. This proves that <m>\det(A) = \det(A^T)</m>.
+    </p>
+    <p>
+      We now assume that <m>A</m> is invertible. Using <xref ref="prop-el-matrices-rref"/> and <xref ref="thm-find-inverse-matrix"/>, we know that there exist elementary matrices <m>E_1, \ldots, E_k</m> such that 
+      <men xml:id="eq-el-mats">
+        A = E_1 \cdots E_k I_n = E_1 \cdots E_k
+      </men>.
+      By repeated use of <xref ref="thm-det-prod-elem"/>, we know that 
+      <me>
+        \det(A) = \det(E_1) \cdots \det(E_k)
+      </me>.
+      We can take the transpose of both sides of <xref ref="eq-el-mats"/>, and using <xref ref="thm-properties-transpose"/> (part 4) repeatedly we have
+      <me>
+        A^T = (E_1 \cdots E_k)^T = E_k^T \cdots E_1^T
+      </me>.
+      We again use <xref ref="thm-det-prod-elem"/> repeatedly (the transpose of an elementary matrix is an elementary matrix, see <xref ref="exer-transpose-elem-is-elem"/>), and we have 
+      <me>
+        \det(A^T) = \det(E_k^T) \cdots \det(E_1^T)
+      </me>.
+      Finally, using <xref ref="lem-el-mat-det-transpose"/> and the fact that multiplication within <m>\ff</m> is commutative, we conclude that <m>\det(A) = \det(A^T)</m>.
+    </p>
+  </proof>
+</subsection>
   
 <reading-questions>
   <exercise>
@@ -839,7 +906,7 @@
           </li>
           <li>
             <p>
-              Provide an example where <m>A, B \in M_3(\rr)</m> to prove that <m>\det(A+B) = \det(A) + \det(B)</m> is not always true.
+              Provide an example where <m>A, B \in M_3(\rr)</m> to prove that <m>{\det(A+B) = \det(A) + \det(B)}</m> is not always true.
             </p>
           </li>
         </ol>
@@ -869,6 +936,13 @@
             </p>
           </li>
         </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="el-mat-equals-tr">
+    <statement>
+      <p>
+        Suppose that <m>\ff</m> is a field and that <m>E \in M_n(\ff)</m> is an elementary matrix which performs the <em>scale</em> or <em>switch</em> row operation. Prove that <m>E</m> is a symmetric matrix.
       </p>
     </statement>
   </exercise>

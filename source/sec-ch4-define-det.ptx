@@ -19,7 +19,7 @@
   </p>
 
   <p>
-    If we connect this fact with <xref ref="thm-find-inverse-matrix"/>, we see that when <m>ad-bc \neq 0</m>, the <m>2\times 2</m> matrix <m>A</m> is invertible. (We will see that the converse of this statement is also true.)
+    Connecting this fact with <xref ref="thm-find-inverse-matrix"/>, when <m>{ad-bc \neq 0}</m>, we see that the <m>2\times 2</m> matrix <m>A</m> is invertible. (We will see that the converse of this statement is also true.)
   </p>
 
   <p>
@@ -123,7 +123,7 @@
   <statement>
     <p>
       For the purposes of what follows, we will introduce another bit of notation. If <m>A = [a_{ij}]</m>, then the <term><m>(i,j)</m>-cofactor
-      </term> of <m>A</m>, by <m>C_{ij}</m>, is 
+      </term> of <m>A</m>, denoted by <m>C_{ij}</m>, is 
       <me>
         C_{ij} = (-1)^{i+j}\det(A_{ij})
       </me>.
@@ -178,8 +178,10 @@
 </example>
 
 <p>
-  In addition to expanding along any row of a matrix to calculate the determinant, we can also use any column. Instead of proving this directly using the definition of the determinant, we will follow <url href="http://linear.ups.edu/fcla/section-DM.html#theorem-DT" visual="linear.ups.edu">Beezer</url> and prove that a matrix and its transpose have the same determinant. The result about using columns to calculate the determinant will follow. 
+  In addition to expanding along any row of a matrix to calculate the determinant, we can also use any column. Instead of proving this directly using the definition of the determinant, we will show that a matrix and its transpose have the same determinant. The result about using columns to calculate the determinant will follow. 
 </p>
+
+<!-- follow <url href="http://linear.ups.edu/fcla/section-DM.html#theorem-DT" visual="linear.ups.edu">Beezer</url> and prove that a matrix and its transpose have the same determinant.  -->
 
 <theorem xml:id="thm-det-transpose">
   <statement>
@@ -187,7 +189,7 @@
       Let <m>A \in M_n(\ff)</m>. Then <m>\det(A) = \det(A^T)</m>. 
     </p>
   </statement>
-  <proof>
+  <!-- <proof>
     <p>
       We will proceed using induction on the size of the matrix. When <m>n=1</m>, a matrix <m>A</m> and its transpose are identical, so <m>\det(A) = \det(A^T)</m> trivially. 
     </p>
@@ -210,8 +212,14 @@
       </md>. 
       As a final note, we were able to switch the summation signs toward the end of this calculation due to the fact that addition is commutative in any field <m>\ff</m>.       
     </p>
-  </proof>
+  </proof> -->
 </theorem>
+
+<note>
+  <p>
+    While we have the machinery to prove this result here, the proof we could offer is clever but not exactly intuitive for some students. (See <url href="http://linear.ups.edu/fcla/section-DM.html#theorem-DT" visual="linear.ups.edu">Beezer</url> for a good example of such a proof.) Instead, we will take advantage of results in the next section and prove this result in <xref ref="subsec-proving-det-transpose-thm"/>. The reader should be aware that some results between the statement and proof of <xref ref="thm-det-transpose"/> depend on the truth of this theorem. We have resolved the possible inconsistency for ourselves knowing that we <em>could</em> prove this result now but are choosing to offer a <em>clearer</em> proof later.
+  </p>
+</note>
 
 <corollary xml:id="cor-det-columns">
   <statement>
@@ -509,7 +517,7 @@
   <exercise>
     <statement>
       <p>
-        Let <m>A = \begin{bmatrix} 1 \amp -2 \\ 2.5 \amp c \end{bmatrix}</m> be a matrix over <m>\rr</m>. Find a value of <m>c</m> so that <m>\det(A) = 0</m> or explain why this is not possible.   
+        Let <m>A = \begin{bmatrix} 1 \amp -2 \\ 2.5 \amp c \end{bmatrix}</m> be a matrix over <m>\rr</m>. Find a value of <m>c</m> so that <m>{\det(A) = 0}</m> or explain why this is not possible.   
       </p>
     </statement>
   </exercise>
