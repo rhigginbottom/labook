@@ -37,7 +37,7 @@
 </example>
 
 <p>
-  The definition of <em>linear dependence</em> we have given is the intuitive one, but it is not the one most widely used. The following result provides an equivalent definition of linear dependence which is much easier to deploy.
+  The definition of <em>linear dependence</em> we have given is the intuitive one, but it is not the one most widely used. The following result provides an equivalent definition of linear dependence that is much easier to deploy.
 </p>
 
 <proposition xml:id="prop-defn-lin-dep">
@@ -374,7 +374,7 @@
         0 \amp 0 \amp 1
         \end{bmatrix}
       </me>.
-      This shows that the only solution to this linear system is the trivial one: <m>c_1=c_1=c_3=0</m>. That means that the set <m>\{p_1,p_2,p_3\}</m> is linearly independent.
+      This shows that the only solution to this linear system is the trivial one: <m>{c_1=c_1=c_3=0}</m>. That means that the set <m>\{p_1,p_2,p_3\}</m> is linearly independent.
     </p>
   </statement>
 </example>
@@ -391,7 +391,7 @@
   </statement>
   <proof>
     <p>
-      Let <m>A = [\bfv_1 \cdots \bfv_n ] \in M_n(\ff)</m>. By <xref ref="thm-vectors-span-fm"/>, we know that the set <m>V'=\{ \bfv_1, \ldots, \bfv_n \}</m> spans <m>\ff^n</m> if and only if the RREF of <m>A</m> has a pivot in every row. On the other hand, <xref ref="alg-linear-independence"/> says that <m>V'</m> is linearly independent if and only if the RREF of <m>A</m> has a pivot in every column. Since <m>A</m> is a square matrix, each of these happen exactly when the RREF of <m>A</m> is <m>I_n</m>. 
+      Let <m>A = [\bfv_1 \cdots \bfv_n ] \in M_n(\ff)</m>. By <xref ref="thm-vectors-span-fm"/>, we know that <m>V'=\{ \bfv_1, \ldots, \bfv_n \}</m> spans <m>\ff^n</m> if and only if the RREF of <m>A</m> has a pivot in every row. Further, <xref ref="alg-linear-independence"/> says that <m>V'</m> is linearly independent if and only if the RREF of <m>A</m> has a pivot in every column. Since <m>A</m> is a square matrix, each of these happen exactly when the RREF of <m>A</m> is <m>I_n</m>. 
     </p>
   </proof>
 </corollary>
@@ -428,7 +428,7 @@
 
 <note>
   <p>
-    It is important to record that <xref ref="thm-lin-dep-lemma"/> doesn't say that in linearly dependent sets <em>every</em> vector is a combination of the vectors that preceed it. We merely have the <em>existence</em> of a vector with that property.
+    It is important to record that <xref ref="thm-lin-dep-lemma"/> doesn't say that in linearly dependent sets <em>every</em> vector is a combination of the vectors with smaller subscripts. We merely have the <em>existence</em> of a vector with that property.
   </p>
 </note>
 
@@ -443,10 +443,10 @@
             <m>\{\bfv_1, \bfv_2\}</m> where 
             <me>
               \bfv_1 = \begin{bmatrix}
--2 \\ 4 \\ -10
-\end{bmatrix}, \hspace{6pt} \bfv_2 = \begin{bmatrix}
-3 \\ -6 \\ 15
-\end{bmatrix}
+              -2 \\ 4 \\ -10
+              \end{bmatrix}, \hspace{6pt} \bfv_2 = \begin{bmatrix}
+              3 \\ -6 \\ 15
+              \end{bmatrix}
             </me>
           </p>
           <!-- <p>
@@ -457,12 +457,12 @@
           <p>
           <m>\{\bfv_1, \bfv_2, \bfv_3\}</m> where <me>
             \bfv_1 = \begin{bmatrix}
-2 \\ -3 \\ 1
-\end{bmatrix}, \hspace{6pt} \bfv_2 = \begin{bmatrix}
-0 \\ 0 \\ 0
-\end{bmatrix}, \hspace{6pt} \bfv_3 = \begin{bmatrix}
--8 \\ -9 \\ 3
-\end{bmatrix}
+            2 \\ -3 \\ 1
+            \end{bmatrix}, \hspace{6pt} \bfv_2 = \begin{bmatrix}
+            0 \\ 0 \\ 0
+            \end{bmatrix}, \hspace{6pt} \bfv_3 = \begin{bmatrix}
+            -8 \\ -9 \\ 3
+            \end{bmatrix}
           </me>
           </p>
           <!-- <p>
@@ -473,14 +473,14 @@
           <p>
           <m>\{\bfv_1, \bfv_2, \bfv_3, \bfv_4\}</m> where <me>
             \bfv_1 = \begin{bmatrix}
-2 \\ -3 \\ 1
-\end{bmatrix}, \hspace{6pt} \bfv_2 = \begin{bmatrix}
--4 \\ 5 \\ 0
-\end{bmatrix}, \hspace{6pt} \bfv_3 = \begin{bmatrix}
--8 \\ -9 \\ 3
-\end{bmatrix}, \hspace{6pt} \bfv_4 = \begin{bmatrix}
-10 \\ 7 \\ -2
-\end{bmatrix}
+            2 \\ -3 \\ 1
+            \end{bmatrix}, \hspace{6pt} \bfv_2 = \begin{bmatrix}
+            -4 \\ 5 \\ 0
+            \end{bmatrix}, \hspace{6pt} \bfv_3 = \begin{bmatrix}
+            -8 \\ -9 \\ 3
+            \end{bmatrix}, \hspace{6pt} \bfv_4 = \begin{bmatrix}
+            10 \\ 7 \\ -2
+            \end{bmatrix}
           </me>
           </p>
           <!-- <p>
@@ -491,10 +491,10 @@
           <p>
           <m>\{\bfv_1, \bfv_2\}</m> where <me>
             \bfv_1 = \begin{bmatrix}
-1 \\ 0 \\ -7
-\end{bmatrix}, \hspace{6pt} \bfv_2 = \begin{bmatrix}
-3 \\ 2 \\ 5
-\end{bmatrix}
+            1 \\ 0 \\ -7
+            \end{bmatrix}, \hspace{6pt} \bfv_2 = \begin{bmatrix}
+            3 \\ 2 \\ 5
+            \end{bmatrix}
           </me>
           </p>
           <!-- <p>

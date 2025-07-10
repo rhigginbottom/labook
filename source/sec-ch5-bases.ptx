@@ -18,7 +18,7 @@
 <definition xml:id="def-finite-dimensional">
   <statement>
     <p>
-      A vector space <m>V</m> is <term>finite-dimensional</term> if there is a finite set of vectors which spans <m>V</m>. A vector space is <term>infinite-dimensional</term> if it is not finite-dimensional.
+      A vector space <m>V</m> is <term>finite-dimensional</term> if there is a finite set of vectors that spans <m>V</m>. A vector space is <term>infinite-dimensional</term> if it is not finite-dimensional.
     </p>
   </statement>
 </definition>
@@ -44,7 +44,7 @@
 <example>
   <statement>
     <p>
-      We recall that <m>\bfe_i</m> is the vector in <m>\ff^n</m> with a <m>1</m> in the <m>i</m>th coordinate and zeros elsewhere. Then the set <m>E = \{\bfe_1, \ldots, \bfe_n\}</m> is a basis for <m>\ff^n</m>. If we form the <m>n\times n</m> matrix with these vectors as columns, we see that it is the <m>n\times n</m> identity matrix. Since there is a pivot in every column, <m>E</m> is linearly independent according to <xref ref="alg-linear-independence"/>. Then <xref ref="cor-n-vect-in-f-n"/> tells us that <m>E</m> also spans <m>\ff^n</m>. This proves that <m>E</m> is a basis for <m>\ff^n</m>. 
+      We recall that <m>\bfe_i</m> is the vector in <m>\ff^n</m> with <m>1</m> in the <m>i</m>th coordinate and zeros elsewhere. Then the set <m>E = \{\bfe_1, \ldots, \bfe_n\}</m> is a basis for <m>\ff^n</m>. If we form the <m>n\times n</m> matrix with these vectors as columns, we see that it is the <m>n\times n</m> identity matrix. Since there is a pivot in every column, <m>E</m> is linearly independent according to <xref ref="alg-linear-independence"/>. Then <xref ref="cor-n-vect-in-f-n"/> tells us that <m>E</m> also spans <m>\ff^n</m>. This proves that <m>E</m> is a basis for <m>\ff^n</m>. 
     </p>
     <p>
       We call this basis the <term>standard basis</term> for <m>\ff^n</m>. 
@@ -55,7 +55,7 @@
 <example>
   <statement>
     <p>
-      We now consider the set <m>B = \{1, t, t^2\}</m> within the vector space <m>P_2</m>. Since any vector in <m>P_2</m> can be written as <m>a(1)+b(t)+c(t^2)</m>, it is clear that <m>B</m> spans <m>P_2</m>. It is also true that <m>B</m> is linearly independent: the set <m>\{1, t\}</m> is linearly independent since neither vector is a scalar multiple of the other. And then since <m>t^2</m> is not a linear combination of <m>1</m> and <m>t</m>, we conclude that <m>B</m> is linearly independent by (the contrapositive of) the Linear Dependence Lemma (<xref ref="thm-lin-dep-lemma"/>). This proves that <m>B</m> is a basis for <m>P_2</m>. 
+      We now consider the subset <m>B = \{1, t, t^2\}</m> of the vector space <m>P_2</m>. Since any vector in <m>P_2</m> can be written as <m>a(1)+b(t)+c(t^2)</m>, it is clear that <m>B</m> spans <m>P_2</m>. It is also true that <m>B</m> is linearly independent: the set <m>\{1, t\}</m> is linearly independent since neither vector is a scalar multiple of the other. And then since <m>t^2</m> is not a linear combination of <m>1</m> and <m>t</m>, we conclude that <m>B</m> is linearly independent by (the contrapositive of) the Linear Dependence Lemma (<xref ref="thm-lin-dep-lemma"/>). This proves that <m>B</m> is a basis for <m>P_2</m>. 
     </p>
     <p>
       The analogous basis for <m>P_n</m>, <m>\{1, t, \ldots, t^n \}</m>, is often called the <term>standard basis</term> for <m>P_n</m>. 
@@ -145,7 +145,7 @@
 </example>
 
 <p>
-  Putting some facts together, there is a fairly straightforward condition for when a list of vectors in <m>\ff^n</m> is a basis for that space.
+  Putting some facts together, there is a fairly straightforward condition for when a set of vectors in <m>\ff^n</m> is a basis for that space.
 </p>
   
 <proposition xml:id="prop-basis-of-fn">
@@ -239,11 +239,11 @@
     <title>The Spanning Set Theorem</title>    
     <statement>
       <p>
-        Suppose that <m>V</m> is a nonzero vector space and that <m>V = \spn(B)</m> for some set of vectors <m>B\subseteq V</m>. 
+        Suppose that <m>V</m> is a nonzero, finite-dimensional vector space and that <m>V = \spn(B)</m> for some set of vectors <m>B\subseteq V</m>. 
         <ol>
           <li>
             <p>
-              If <m>B</m> is a linearly dependent set and a vector <m>\bfw \in B</m> can be written as a linear combination of the rest of the vectors in <m>B</m>, then <m>\spn(B) = \spn(B - \{\bfw \})</m>. 
+              If <m>B</m> is a linearly dependent set and a vector <m>\bfw \in B</m> can be written as a linear combination of the rest of the vectors in <m>B</m>, then <m>{\spn(B) = \spn(B - \{\bfw \})}</m>. 
             </p>
           </li>
           <li>
@@ -264,7 +264,7 @@
         <men xml:id="eqn-rep-v">
           \bfv = c_1 \bfv_1 + \cdots + c_{k-1}\bfv_{k-1} + c_k\bfv_k + c_{k+1}\bfv_{k+1} + \cdots + c_n \bfv_n
         </men>. 
-        Using <xref ref="eqn-rep-vk"/>, we can substitute this expression in for <m>\bfv_k</m> in <xref ref="eqn-rep-v"/> and, once the algebraic dust settles, we will have <m>\bfv</m> written as a combination of the vectors in <m>B - \{\bfv_k\}</m>. This shows that <m>\spn(B) = \spn(B - \{\bfv_k\})</m>. (Since <m>B - \{\bfv_k\} \subseteq B</m>, it is true that <m>\spn(B - \{\bfv_k\}) \subseteq \spn(B)</m>. The argument thus far in this proof has established the other subset containment.)
+        Using <xref ref="eqn-rep-vk"/>, we can substitute this expression in for <m>\bfv_k</m> in <xref ref="eqn-rep-v"/> and, once the algebraic dust settles, we will have written <m>\bfv</m> as a combination of the vectors in <m>B - \{\bfv_k\}</m>. This shows that <m>\spn(B) = \spn(B - \{\bfv_k\})</m>. (Since <m>B - \{\bfv_k\} \subseteq B</m>, it is true that <m>\spn(B - \{\bfv_k\}) \subseteq \spn(B)</m>. The argument thus far in this proof has established the other subset containment.)
       </p>
       <p>
         If <m>B</m> is  linearly independent, then it is already a basis for <m>V</m>. If it is linearly dependent, then we can remove a vector according to the above procedure to obtain a set <m>B_1 = B - \{\bfw\}</m> which still spans <m>V</m>. As long as there are two or more vectors in the spanning set, we can repeat this process until we are left with a linearly independent set and thus a basis. If the spanning set is eventually reduced to a single vector, that vector will be nonzero since <m>V</m> is nonzero, and therefore that set will be linearly independent and therefore a basis.
@@ -309,7 +309,7 @@
     </statement>
     <proof>
       <p>
-        We form the matrix <m>A = [\bfv_1 \cdots \bfv_n]</m>. If <m>A</m> is already in RREF, then the non-pivot columns are linear combinations of the pivot columns that preceed them. So, those can be discarded and the pivot columns will be a basis, according to <xref ref="thm-spanning-set"/>. 
+        We form the matrix <m>A = [\bfv_1 \cdots \bfv_n]</m>. If <m>A</m> is already in RREF, then the non-pivot columns are linear combinations of the pivot columns that preceed them (when reading from left to right). So, those can be discarded and the pivot columns will be a basis, according to <xref ref="thm-spanning-set"/>. 
       </p>
       <p>
         We will complete the proof with a reminder about the effect of elementary row operations on the columns of a matrix. If a column <m>\bfv_k</m> of <m>A</m> is a linear combination of the columns that preceed it, then 
@@ -711,6 +711,11 @@
             <li>
               <p>
                 Suppose that <m>T</m> is injective. Must <m>T(B)</m> be a basis for <m>W</m>? If so, prove it. If not, produce a counter-example. 
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose that <m>T</m> is surjective. Must <m>T(B)</m> be a basis for <m>W</m>? If so, prove it. If not, produce a counter-example. 
               </p>
             </li>
           </ol>
