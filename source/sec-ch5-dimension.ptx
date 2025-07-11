@@ -18,14 +18,28 @@
   <lemma xml:id="lem-dim-lin-ind">
     <statement>
       <p>
-        Suppose that <m>V</m> is a vector space and that <m>V \subseteq \spn\{\bfv_1, \ldots \bfv_m \}</m>. If <m>\{\bfw_1, \ldots, \bfw_n \}</m> is a linearly independent subset of <m>V</m>, then <m>m \ge n</m>.
+        Suppose that <m>V</m> is a vector space and that <m>V \subseteq \spn\{\bfv_1, \ldots, \bfv_m \}</m>. If <m>\{\bfw_1, \ldots, \bfw_n \}</m> is a linearly independent subset of <m>V</m>, then <m>m \ge n</m>.
       </p>
     </statement>
-    <!-- <proof>
+    <proof>
       <p>
-        Proof needed. This is lemma 3.17 in Meckes
+        Since <m>\bfw_j \in \spn\{\bfv_1, \ldots, \bfv_m\}</m> for each <m>j=1, \ldots, n</m>, there exist scalars <m>c_{ij} \in \ff</m> such that 
+        <me>
+          \bfw_j = c_{1j}\bfv_1 + \cdots + c_{mj}\bfv_m
+        </me>.
+        We now consider the homogeneous linear system represented by the equation <m>A\bfx = \bfo</m>, where <m>A</m> is the <m>m\times n</m> matrix <m>A = [c_{ij}]</m>. If <m>\bfx</m> is a solution to this system, then we have 
+        <me>
+          0 = c_{i1}x_1 + \cdots + c_{in}x_n
+        </me>
+        for all <m>i = 1,\ldots, m</m>. This means that we have
+        <md>
+          <mrow>\bfo \amp = \sum_{i=1}^m \left(\sum_{j=1}^n c_{ij}x_j \right) \bfv_i</mrow>
+          <mrow> \amp = \sum_{j=1}^n x_j \left(\sum_{i=1}^m c_{ij} \bfv_i \right)</mrow>
+          <mrow> \amp = \sum_{j=1}^n x_j \bfw_j</mrow>
+        </md>.
+        Since <m>\{\bfw_1, \ldots, \bfw_n \}</m> is a linearly independent set, we must have <m>x_j=0</m> for all <m>j</m>, meaning that <m>\bfx = \bfo</m> is the only solution to the equation <m>A\bfx = \bfo</m>. By <xref ref="cor-underdetermined-system"/> (or, rather, the corresponding corollary to <xref ref="thm-unique-soln-system-f"/>), this means that <m>m \ge n</m>, as desired.
       </p>
-    </proof> -->
+    </proof>
   </lemma>
 
   <p>
@@ -40,7 +54,7 @@
   </statement>
   <proof>
     <p>
-      We will prove the contrapositive. If <m>V</m> is finite-dimensional, then there exists a set <m>V' = \{\bfv_1, \ldots, \bfv_m\}</m> such that <m>V = \spn(V')</m>. By <xref ref="lem-dim-lin-ind"/>, for any <m>n > m</m>, <m>V</m> cannot contain a linearly independent set of <m>n</m> vectors. This completes the proof of the contrapositive. 
+      We will prove the contrapositive. If <m>V</m> is finite-dimensional, then there exists a set <m>V' = \{\bfv_1, \ldots, \bfv_m\}</m> such that <m>V = \spn(V')</m>. By <xref ref="lem-dim-lin-ind"/>, for any <m>n > m</m>, <m>V</m> cannot contain a linearly independent subset of <m>n</m> vectors. Thus, there exists a natural number <m>n</m> such that <m>V</m> does not contain a linearly independent subset of that size. This completes the proof of the contrapositive. 
     </p>
   </proof>
 </theorem>
@@ -52,7 +66,7 @@
 <example xml:id="infinite-dim-polys">
   <statement>
     <p>
-      Let <m>P</m> be the vector space of all polynomials with real coefficients. (We do not restrict the degree of polynomials in <m>P</m>.) For any <m>n</m>, <m>P</m> contains the linearly independent set 
+      Let <m>P</m> be the vector space of all polynomials with real coefficients. (We do not restrict the degree of polynomials in <m>P</m>.) For any <m>n \ge 1</m>, <m>P</m> contains the linearly independent set 
       <me>
         \{ 1, t, \ldots, t^n \}
       </me>.
@@ -73,7 +87,7 @@
   </statement>
   <proof>
     <p>
-      Since <m>V \subseteq \spn\{\bfv_1, \ldots, \bfv_m \}</m> and <m>\{ \bfw_1, \ldots, \bfw_n \}</m> is a linearly independent set, <xref ref="lem-dim-lin-ind"/> implies that <m>m \ge n</m>. However, since <m>V \subseteq \spn\{\bfw_1, \ldots, \bfw_n \}</m> and <m>\{ \bfv_1, \ldots, \bfv_m \}</m> is a linearly independent set, <xref ref="lem-dim-lin-ind"/> also implies that <m>n \ge m</m>. Therefore, <m>m=n</m>. 
+      Since <m>V \subseteq \spn\{\bfv_1, \ldots, \bfv_m \}</m> and <m>\{ \bfw_1, \ldots, \bfw_n \}</m> is a linearly independent set, <xref ref="lem-dim-lin-ind"/> implies that <m>m \ge n</m>. However, since <m>{V \subseteq \spn\{\bfw_1, \ldots, \bfw_n \}}</m> and <m>\{ \bfv_1, \ldots, \bfv_m \}</m> is a linearly independent set, <xref ref="lem-dim-lin-ind"/> also implies that <m>n \ge m</m>. Therefore, <m>m=n</m>. 
     </p>
   </proof>
 </theorem>
@@ -134,7 +148,7 @@
 </proposition>
 
 <p>
-  We will now begin to discuss dimension as a tool to compare vector spaces. Linear transformations are the main way we relate vector spaces to each other, so these next results will rely on that machinery.
+  We will now begin to discuss dimension as a tool to compare vector spaces. Linear transformations are the main way we relate vector spaces to each other, so these next results rely on that machinery.
 </p>
 
 <theorem xml:id="thm-lt-basis">
@@ -168,16 +182,16 @@
         <mrow> \amp = \sum_{i=1}^n c_i\bfw_i + \sum_{i=1}^n d_i\bfw_i</mrow>
         <mrow> \amp = T(\bfu) + T(\bfv)</mrow>
       </md>.
-      Now we let <m>\bfv \in V</m> and <m>c \in \ff</m>. Then, if 
+      Now we let <m>\bfv \in V</m> and <m>d \in \ff</m>. Then, if 
       <me>
         \bfv = \sum_{i=1}^n c_i \bfv_i
       </me>,
       we have 
       <md>
-        <mrow> T(c\bfv) \amp = T\left( \sum_{i=1}^n (cc_i) \bfv_i \right)</mrow>
-        <mrow> \amp = \sum_{i=1}^n (cc_i) \bfw_i</mrow>
-        <mrow> \amp = c\sum_{i=1}^n c_i \bfw_i</mrow>
-        <mrow> \amp = cT(\bfv)</mrow>
+        <mrow> T(d\bfv) \amp = T\left( \sum_{i=1}^n (dc_i) \bfv_i \right)</mrow>
+        <mrow> \amp = \sum_{i=1}^n (dc_i) \bfw_i</mrow>
+        <mrow> \amp = d\sum_{i=1}^n c_i \bfw_i</mrow>
+        <mrow> \amp = dT(\bfv)</mrow>
       </md>.      
     </p>
     <p>
@@ -412,13 +426,13 @@
   </statement>
   <proof>
     <p>
-      We will prove these facts in order. If the subspace <m>U</m> is <m>\{\bfo \}</m>, then we have nothing to prove. If not, then there is some non-zero vector <m>\bfu_1 \in U</m>. If <m>U = \spn\{\bfu_1\}</m>, we are done; if not, then there exists <m>\bfu_2 \in U - \spn\{\bfu_1\}</m>. By <xref ref="thm-lin-dep-lemma"/>, the set <m>\{\bfu_1, \bfu_2\}</m> is linearly independent. We can continue to repeat this process. At each stage we have a linearly independent set <m>U_k = \{\bfu_1, \ldots, \bfu_k\}</m>, and this cannot continue indefinitely since <m>U</m> is a subspace of <m>V</m>, which is finite-dimensional. Thus this process must eventually stop when <m>U = \spn(U_j)</m> for some <m>j</m>, and that proves that <m>U</m> is finite dimensional.
+      We will prove these facts in order. If the subspace <m>U</m> is <m>\{\bfo \}</m>, then we have nothing to prove. If not, then there is some non-zero vector <m>\bfu_1 \in U</m>. If <m>U = \spn\{\bfu_1\}</m>, we are done; if not, then there exists <m>\bfu_2 \in U - \spn\{\bfu_1\}</m>. By <xref ref="thm-lin-dep-lemma"/>, the set <m>\{\bfu_1, \bfu_2\}</m> is linearly independent. We can continue to repeat this process. At each stage we have a linearly independent set <m>{U_k = \{\bfu_1, \ldots, \bfu_k\}}</m>, and this cannot continue indefinitely since <m>U</m> is a subspace of <m>V</m>, which is finite-dimensional. Thus this process must eventually stop when <m>U = \spn(U_j)</m> for some <m>j</m>, and that proves that <m>U</m> is finite dimensional.
     </p>
     <p>
       The space <m>U</m> is finite dimensional, so it has a basis <m>B</m>. This is a linearly independent set of vectors in <m>V</m>, so <xref ref="thm-extend-lin-ind-to-basis"/> says that <m>B</m> can be extended to a basis <m>B'</m> of <m>V</m>. This means that <m>B'</m> will have at least as many vectors in it as <m>B</m>, so <m>\dim(V) \ge \dim(U)</m>. 
     </p>
     <p>
-      If <m>U=V</m> it is obvious that <m>\dim(U)=\dim(V)</m>, so we only need to prove the claim in the other direction. We will prove the contrapositive, so we assume <m>U \neq V</m>. Let <m>B = \{\bfu_1, \ldots, \bfu_n \}</m> be a basis for <m>U</m>. Since <m>U \neq V</m>, there exists a vector <m>\bfv_1 \in V - \spn(B)</m>. By <xref ref="thm-lin-dep-lemma"/> the set <m>\{\bfu_1, \ldots, \bfu_n, \bfv_1 \}</m> is linearly independent in <m>V</m>, implying that <m>\dim(V) \ge n+1</m>. Therefore <m>\dim(U) \neq \dim(V)</m>. 
+      If <m>U=V</m> it is obvious that <m>\dim(U)=\dim(V)</m>, so we only need to prove the claim in the other direction. We will prove the contrapositive, so we assume <m>U \neq V</m>. Let <m>B = \{\bfu_1, \ldots, \bfu_n \}</m> be a basis for <m>U</m>. Since <m>U \neq V</m>, there exists a vector <m>\bfv_1 \in V - \spn(B)</m>. By <xref ref="thm-lin-dep-lemma"/> the set <m>\{\bfu_1, \ldots, \bfu_n, \bfv_1 \}</m> is linearly independent in <m>V</m>, implying that <m>\dim(V) \ge n+1</m>. Therefore <m>{\dim(U) \neq \dim(V)}</m>. 
     </p>
   </proof>
 </theorem>
@@ -522,16 +536,16 @@
               <m>\{\bfv_1, \bfv_2, \bfv_3, \bfv_4\}</m> in <m>\rr^3</m> if 
               <me>
                 \bfv_1 = \begin{bmatrix} 
-                -8 \\ 6 \\ -1
+                2 \\ -3 \\ 3
                 \end{bmatrix}, \hspace{6pt} 
                 \bfv_2 = \begin{bmatrix} 
-                5 \\ 3 \\ -3
+                3 \\ 5 \\ -3
                 \end{bmatrix}, \hspace{6pt} 
                 \bfv_3 = \begin{bmatrix} 
-                44 \\ -6 \\ -9
+                9 \\ -4 \\ 6
                 \end{bmatrix}, \hspace{6pt} 
                 \bfv_4 = \begin{bmatrix} 
-                -31 \\ 3 \\ 7
+                6.5 \\ -5 \\ 6
                 \end{bmatrix}
               </me>              
             </p>
@@ -569,10 +583,10 @@
               <m>A \in M_{4,5}(\rr)</m>, 
               <me>
                 A = \begin{bmatrix}
-                7 \amp 5 \amp 73 \amp 0 \amp 11 \\ 
-                2 \amp -3 \amp 12 \amp -7 \amp -26 \\ 
-                -3 \amp 6 \amp -15 \amp 3 \amp 39 \\ 
-                1 \amp 6 \amp 21 \amp -3 \amp 25
+                1 \amp -2.5 \amp 4 \amp 1 \amp 2.5 \\ 
+                -2.5 \amp 6 \amp -9.5 \amp -4.5 \amp -8 \\ 
+                5 \amp 3 \amp -11 \amp 3 \amp -5 \\ 
+                2 \amp -1 \amp 0 \amp -4 \amp -5
                 \end{bmatrix} 
               </me>              
             </p>
@@ -676,7 +690,7 @@
   <exercise>
     <statement>
       <p>
-        The first four Laguerre polynomials are <m>1</m>, <m>1-t</m>, <m>2-4t+t^2</m>, and <m>6-18t+9t^2-t^3</m>. Show that the set of these polynomials is a basis for <m>P_3</m>. 
+        The first four Laguerre polynomials are <m>1</m>, <m>1-t</m>, <m>2-4t+t^2</m>, and <m>{6-18t+9t^2-t^3}</m>. Show that the set of these polynomials is a basis for <m>P_3</m>. 
       </p>
     </statement>
   </exercise>
