@@ -12,15 +12,15 @@
   <title>Defining Rank and Nullity</title>
 
   <p>
-    We begin by defining the dimension of the range of a linear transformation.
+    We begin by defining the dimension of the image of a linear transformation. (Readers should recall that <em>image</em> and <em>range</em> have the same meaning, but we prefer to use <em>image</em>.)
   </p>
 
   <definition xml:id="def-rank">
     <statement>
       <p>
-        Let <m>T</m> be a linear transformation. Then the <term>rank</term> of <m>T</m>, denoted <m>\rank(T)</m>, is the dimension of the range of <m>T</m>: 
+        Let <m>T</m> be a linear transformation. Then the <term>rank</term> of <m>T</m>, denoted <m>\rank(T)</m>, is the dimension of the image of <m>T</m>: 
         <me>
-          \rank(T) = \dim(\range(T))
+          \rank(T) = \dim(\img(T))
         </me>. 
         The <term>rank</term> of a matrix <m>A</m> is the dimension of the column space of <m>A</m>: 
         <me>
@@ -31,7 +31,7 @@
   </definition>
 
   <p>
-    It may seem strange to define the same word in two ways. However, since the range of <m>T</m> is exactly the column space of <m>A</m> when <m>T</m> is multiplication by <m>A</m>, these two definitions coincide. 
+    It may seem strange to define the same word in two ways. However, since the image of <m>T</m> is exactly the column space of <m>A</m> when <m>T</m> is multiplication by <m>A</m>, these two definitions coincide. 
   </p>
 
 <p>
@@ -80,7 +80,7 @@
   </statement>
   <proof>
     <p>
-      If we put <m>A</m> into REF, then <xref ref="prop-row-equiv-row-spaces"/> tells us that the number of pivots is <m>\dim(\row(A))</m> since that is the number of vectors in a basis of <m>\row(A)</m>. However, the number of pivots in a REF (or the RREF) of <m>A</m> is also <m>\rank(A)</m>. (See <xref ref="exer-num-pivots-matrix"/>.) This proves that <m>\rank(A) = \dim(\row(A))</m>. 
+      If we put <m>A</m> into REF, then <xref ref="prop-row-equiv-row-spaces"/> tells us that the number of pivots is <m>\dim(\row(A))</m> since that is the number of vectors in a basis of <m>\row(A)</m>. However, the number of pivots in a REF (or the RREF) of <m>A</m> is also <m>\rank(A)</m>. (See <xref ref="exer-num-pivots-matrix"/>.) This proves that <m>{\rank(A) = \dim(\row(A))}</m>. 
     </p>
   </proof>
 </theorem>
@@ -123,7 +123,7 @@
 </example>
 
 <p>
-  We have defined the dimension of the range of a linear transformation <m>T</m>, so we now turn to the kernel.
+  We have defined the dimension of the image of a linear transformation <m>T</m>, so we now turn to the kernel.
 </p>
 
 <definition xml:id="def-nullity">
@@ -476,7 +476,7 @@
           <ol>
             <li>
               <p>
-                If <m>T</m> is surjective, then <m>\range(T) = W</m>, which means that <m>\dim(\range(T)) = \dim(W)</m>. This implies that <m>\rank(T) = \dim(W)</m>. On the other hand, if <m>\rank(T) = \dim(W)</m>, then <m>\dim(\range(T)) = \dim(W)</m>. Since <m>\range(T)</m> is a subspace of <m>W</m>, <xref ref="thm-dim-subspaces"/> implies that <m>\range(T) = W</m>, which means that <m>T</m> is surjective.
+                If <m>T</m> is surjective, then <m>\img(T) = W</m>, which means that <m>\dim(\img(T)) = \dim(W)</m>. This implies that <m>\rank(T) = \dim(W)</m>. On the other hand, if <m>\rank(T) = \dim(W)</m>, then <m>\dim(\img(T)) = \dim(W)</m>. Since <m>\img(T)</m> is a subspace of <m>W</m>, <xref ref="thm-dim-subspaces"/> implies that <m>\img(T) = W</m>, which means that <m>T</m> is surjective.
               </p>
             </li>
             <li>

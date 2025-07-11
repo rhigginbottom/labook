@@ -170,7 +170,7 @@
         0 \amp 0 \amp 0
         \end{bmatrix}
       </me>.
-      This shows that the set <m>Y</m> is linearly independent in <m>P_3</m>. 
+      Using <xref ref="prop-coord-map-li-span"/>, we conclude that the set <m>Y</m> is linearly independent in <m>P_3</m>. 
     </p>
     <p>
       For dimension reasons, we already knew that the set <m>Y</m> cannot span <m>P_3</m>, however this row-reduced matrix confirms it. Since there is not a pivot in each row, the set of coordinate vectors does not span <m>\rr^4</m>, and this means that <m>Y</m> does not span <m>P_3</m>.
@@ -243,6 +243,38 @@
   </p>
 </note>
 
+<note>
+  <p>
+    There are several linear transformations involved in <xref ref="prop-matrix-linear-tran-coordinates"/><mdash></mdash>the transformation <m>T</m>, multiplication by the matrix <m>A</m>, and the two coordinate mappings. Because it is easy to confuse the roles of these transformations, mathematicians frequently employ a tool called a <em>commutative diagram</em> to keep their ideas and symbols organized.
+  </p>
+  <p>
+    We will produce here the diagram that summarizes the conclusion of <xref ref="prop-matrix-linear-tran-coordinates"/>.
+  </p>
+  <figure>
+      <caption>A commutative diagram illustrating the relationship between a linear transformation and multiplication by a matrix.</caption>
+      <image xml:id="comm-diag-lt-coords" width="30%">
+        <shortdescription>A commutative diagram illustrating the previous proposition. See long description.</shortdescription>
+          <description>
+            <p>
+             A rectangular commutative diagram. The upper left corner contains <m>V</m> with a horizontal arrow to the upper right corner containing <m>W</m>; this arrow is labeled with <m>T</m>. An arrow labeled <m>M_{\mathcal{B}}</m> is drawn from the <m>V</m> in the upper left to <m>\ff^n</m> in the lower left corner. An arrow labeled <m>M_{\mathcal{C}}</m> is drawn from the <m>W</m> in the upper right to <m>\ff^m</m> in the lower right. An arrow labeled <m>T_{A}</m> is drawn from the lower left to the lower right.
+            </p>
+          </description>
+        <latex-image>
+\begin{tikzcd}
+V \ar[r, "T"] \ar[d, "M_{\mathcal{B}}"'] \amp W \ar[d, "M_{\mathcal{C}}"] \\
+\ff^n \ar[r, "T_A"] \amp \ff^m
+\end{tikzcd}
+        </latex-image>
+      </image>
+    </figure>
+    <p>
+      We have labeled the coordinate mappings from <m>V</m> to <m>\ff^n</m> and from <m>W</m> to <m>\ff^m</m> by <m>M_{\mcb}</m> and <m>M_{\mcc}</m>, respectively. Further, we have labeled the linear transformation which is multiplication by <m>A</m>, from <m>\ff^n</m> to <m>\ff^m</m>, with <m>T_A</m>. 
+    </p>
+    <p>
+      The proposition claims that this diagram <em>commutes</em>. In other words, for any vector <m>\bfv \in V</m>, going around the rectangle in either of the possible directions (right then down or down then right) will produce the same result. This would mean that <m>M_{\mcc}(T(\bfv)) = T_A(M_{\mcb}(\bfv))</m>. With different notation, this is exactly the conclusion of <xref ref="prop-matrix-linear-tran-coordinates"/>.
+    </p>
+</note>
+
 <example>
   <statement>
     <p>
@@ -311,18 +343,44 @@
 </example>
 
 <p>
-  We will end this section with two results related to coordinate matrices. This first result says that the composition of linear transformation really does match up with the multiplication of matrices.
+  We will end this section with two results related to coordinate matrices. This first result says that the composition of linear transformation matches the multiplication of matrices in the expected way.
 </p>
 
 <theorem xml:id="thm-mult-coord-matrices">
   <statement>
     <p>
-      Let <m>U</m>, <m>V</m>, and <m>W</m> be finite-dimensional vector spaces with bases <m>\mcb</m>, <m>\mcc</m>, and <m>\mathcal{D}</m>, respectively. Suppose that <m>T \in L(U,V)</m> and that <m>S \in L(V,W)</m>. Then 
+      Let <m>U</m>, <m>V</m>, and <m>W</m> be finite-dimensional vector spaces with bases <m>\mcb</m>, <m>\mcc</m>, and <m>\mathcal{D}</m>, respectively. Suppose that <m>T \in L(U,V)</m> and that <m>{S \in L(V,W)}</m>. Then 
       <me>
         [ST]_{\mcb, \mathcal{D}} = [S]_{\mcc,\mathcal{D}}[T]_{\mcb,\mcc}
       </me>.       
     </p>
   </statement>
+  <proof>
+    <p>
+      We assume that <m>\mcb = \{\bfu_1,\ldots,\bfu_p\}</m>, <m>\mcc = \{\bfv_1,\ldots,\bfv_n\}</m>, and <m>{\mathcal{D} = \{\bfw_1,\ldots,\bfw_m\}}</m>. Further, we let <m>A = [S]_{\mcc,\mathcal{D}}</m>, <m>B = [T]_{\mcb,\mcc}</m>, and <m>C = [ST]_{\mcb, \mathcal{D}}</m>. We want to show that <m>AB = C</m>.
+    </p>
+    <p>
+      The definition of <m>A</m> tells us that, for each <m>k=1,\ldots,n</m>, the <m>k</m>th column of <m>A</m> is the coordinate vector of <m>S(\bfv_k)</m> with respect to <m>\mathcal{D}</m>. So
+      <me>
+        S(\bfv_k) = \sum_{i=1}^m a_{ik}\bfw_i
+      </me>.
+      Also, for each <m>j=1,\ldots,p</m>, 
+      <me>
+        T(\bfu_j) = \sum_{k=1}^n b_{kj}\bfv_k
+      </me>.
+      Using the linearity of these transformations, we have
+      <md>
+        <mrow>(ST)(\bfu_j) \amp = \sum_{k=1}^n b_{kj} S(\bfv_k)</mrow>
+        <mrow> \amp = \sum_{k=1}^n b_{kj} \left(\sum_{i=1}^m a_{ik}\bfw_i \right) </mrow>
+        <mrow> \amp = \sum_{i=1}^m \left( \sum_{k=1}^n a_{ik}b_{kj} \right) \bfw_i</mrow>
+      </md>.
+      This means that 
+      <me>
+        c_{ij} = \sum_{k=1}^n a_{ik}b_{kj}
+      </me>
+      for all <m>i</m> and <m>j</m>. Since this is how the <m>(i,j)</m>-entry of the matrix product <m>AB</m> is formed, this proves that <m>C=AB</m>, as desired.<fn>This proof was taken from <em>Linear Algebra</em> (2018), Meckes and Meckes, pages 193-194.</fn>
+    </p>
+  </proof>
 </theorem>
 
 <p>

@@ -52,7 +52,7 @@
 <!-- for those in the next element.                                 -->
 <latex-image-preamble>
   \usepackage{tikz, pgfplots}
-  \usetikzlibrary{arrows.meta}
+  \usetikzlibrary{arrows.meta,cd}
   \pgfplotsset{compat=1.18}
   <!-- \usepackage{pstricks, pstricks-add} -->
   <!-- \usetikzlibrary{positioning,matrix,arrows}
