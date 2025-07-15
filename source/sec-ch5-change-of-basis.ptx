@@ -22,7 +22,7 @@
 </p>
 
 <p>
-  If we have a vector <m>\bfv \in \rr^2</m>, it is straightforward to calculate both <m>[\bfv]_{\mcb}</m> and <m>[\bfv]_{\mcc}</m>. The question for us is: how do these two coordinate vectors relate to each other? Specifically, how might we calculate one coordinate vector from the other one?
+  If we have a vector <m>\bfv \in \rr^2</m>, it is straightforward to calculate both <m>[\bfv]_{\mcb}</m> and <m>[\bfv]_{\mcc}</m>. The question for us is this: How do these two coordinate vectors relate to each other? Specifically, how might we calculate one coordinate vector from the other one?
 </p>
 
 <p>
@@ -110,7 +110,7 @@
         -9/5 \\ 8/5
         \end{bmatrix}  
       </me>.
-      We can verify that this is the correct coordinate vector for <m>\bfv</m> by calculating it directly:
+      We can verify that this is the correct <m>\mcc</m>-coordinate vector for <m>\bfv</m> by calculating it directly:
       <me>
         \begin{bmatrix}
         -2 \amp -1 \amp 2 \\ 
@@ -145,7 +145,7 @@
 </example>
 
 <p>
-  What we saw in <xref ref="examp-p2-change-basis-standard"/> is an indication that some change-of-basis matrices are easier to calculate than others. In particular, when the standard basis is the <em>target</em> (not the <em>source</em>) basis, the matrix is almost immediate.
+  What we saw in <xref ref="examp-p2-change-basis-standard"/> is an indication that some change-of-basis matrices are easier to calculate than others. In particular, when the standard basis is the <em>target</em> (not the <em>source</em>) basis, the result is almost immediate.
 </p>
 
 <lemma xml:id="lem-change-basis-standard">
@@ -263,7 +263,7 @@
 </corollary>
 
 <p>
-  We will end this section with an example which takes advantage of <xref ref="cor-change-basis-lt"/>.
+  We will end this section with an example that takes advantage of <xref ref="cor-change-basis-lt"/>.
 </p>
 
 <example xml:id="examp-change-basis-lt">
@@ -444,8 +444,69 @@
               Use your work in part (a) to find <m>[p]_{\mcb}</m> if <m>p = -3 + \tfrac{1}{2}t + \tfrac{3}{2}t^2</m>. 
             </p>
           </li>
+          <li>
+            <p>
+              If <m>T:P_2 \to P_2</m> is the linear transformation that takes the derivative, find <m>[T]_{\mcb}</m>.
+            </p>
+          </li>
         </ol>
       </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\mcb = \{ p_1, p_2, p_3 \}</m> be a basis for <m>P_2</m>, where 
+        <me>
+          p_1 = 1+5t-5t^2, \hspace{6pt} p_2 = -2+t+t^2, \hspace{6pt} p_3 = 5-t-4t^2
+        </me>. 
+      </p>
+      <ol>
+        <li>
+          <p>
+            If <m>\mce</m> is the standard basis for <m>P_2</m>, find <m>P_{\mcb,\mce}</m> and <m>P_{\mce, \mcb}</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>T:P_2 \to P_2</m> is the linear transformation
+            <me>
+              T(p) = p(2)t + p(1)t^2
+            </me>,
+            find <m>[T]_{\mcb}</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\mcb = \{A_1, A_2, A_3, A_4 \}</m> be a basis for <m>M_2(\ff_5)</m>, where 
+        <me>
+          A_1 = \begin{bmatrix} 4 \amp 0 \\ 4 \amp 4 \end{bmatrix}, \hspace{3pt}
+          A_2 = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 3 \end{bmatrix}, \hspace{3pt}
+          A_3 = \begin{bmatrix} 0 \amp 2 \\ 0 \amp 1 \end{bmatrix}, \hspace{3pt}
+          A_4 = \begin{bmatrix} 3 \amp 1 \\ 1 \amp 1 \end{bmatrix}
+        </me>. 
+      </p>
+      <ol>
+        <li>
+          <p>
+            If <m>\mce</m> is the standard basis for <m>M_2(\ff_5)</m>, find <m>P_{\mcb,\mce}</m> and <m>P_{\mce, \mcb}</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>T:M_2(\ff_5) \to M_2(\ff_5)</m> is the linear transformation
+            <me>
+              T \left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} \right) =
+              \begin{bmatrix} 2a \amp 4b+c \\ a+d \amp 3b+d \end{bmatrix}
+            </me>,
+            find <m>[T]_{\mcb}</m>.
+          </p>
+        </li>
+      </ol>
     </statement>
   </exercise>
   <exercise>
