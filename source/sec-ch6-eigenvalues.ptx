@@ -4,10 +4,13 @@
   <title>Eigenvalues and Eigenvectors</title>
   <introduction>
     <p>
-      For linear transformations <m>T:V \to W</m>, there isn't often a connection between <m>\bfv</m> and <m>T(\bfv)</m> that is easy to describe. These vectors, after all, live in different vector spaces, so they need not have any obvious relationship to each other. When <m>W=V</m>, we sometimes have a different story to tell (for some vectors).
+      For linear transformations <m>T:V \to W</m>, there isn't often a connection between <m>\bfv \in V</m> and <m>T(\bfv) \in W</m> that is easy to describe. These vectors, after all, live in different vector spaces, so they need not have any obvious relationship to each other. When <m>W=V</m>, we sometimes have a different story to tell (for some vectors).
     </p>
     <p>
-      For a transformation <m>T \in L(V)</m>, <m>\bfv</m> and <m>T(\bfv)</m> live in the same vector space, so there is occasionally an easy-to-define relationship between these two vectors. Sometimes, the action of <m>T</m> on a vector turns out to be rather simple.
+      Suppose that <m>V</m> is a vector space with <m>U</m> as a subspace. If <m>T:V \to V</m> is a linear transformation, then we can ask whether or not <m>T(U) \subseteq U</m>. If <m>T(U) \subseteq U</m>, then <m>U</m> is what is known as an <em>invariant subspace</em> under <m>T</m>. Though <m>T</m> may have all sorts of actions on <m>V</m> outside of <m>U</m>, when <m>T</m> is applied to vectors in <m>U</m> they are sent to other vectors in <m>U</m>. 
+    </p>
+    <p>
+      This section is concerned with a version of an invariant subspace. We will shortly be able to analyze (nonzero) vectors <m>\bfv \in V</m> for which <m>{T(\bfv) \in \spn\{\bfv\}}</m>. This is close to satisfying what we might mean by a one-dimensional invariant subspace of <m>V</m> under <m>T</m>.
     </p>
   </introduction>
 
@@ -80,7 +83,7 @@
 <example>
   <statement>
     <p>
-      Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which is counterclockwise rotation about the origin by an angle of <m>\theta</m>. We can see that <m>T</m> will have an eigenvector if and only if <m>\theta</m> is an integer multiple of <m>\pi</m> radians. If <m>\theta</m> is an even integer multiple of <m>\pi</m>, then every vector in <m>\rr^2</m> is an eigenvector for <m>T</m> with eigenvalue <m>1</m>, and if <m>\theta</m> is an odd integer multiple of <m>\pi</m>, then every vector in <m>\rr^2</m> is an eigenvector for <m>T</m> with eigenvalue <m>-1</m>. 
+      Let <m>T:\rr^2 \to \rr^2</m> be the linear transformation which is counterclockwise rotation about the origin by an angle of <m>\theta</m>. We can see that <m>T</m> will have an eigenvector if and only if <m>\theta</m> is an integer multiple of <m>\pi</m> radians. If <m>\theta</m> is an even integer multiple of <m>\pi</m>, then every nonzero vector in <m>\rr^2</m> is an eigenvector for <m>T</m> with eigenvalue <m>1</m>, and if <m>\theta</m> is an odd integer multiple of <m>\pi</m>, then every nonzero vector in <m>\rr^2</m> is an eigenvector for <m>T</m> with eigenvalue <m>-1</m>. 
     </p>
   </statement>
 </example>
@@ -156,7 +159,7 @@
       <me>
         \mathrm{eig}_{\lambda}(T) = \{ \bfv \in V \mid T(\bfv) = \lambda \bfv \}
       </me>. 
-      We will sometimes refer to the eigenspace corresponding to <m>\lambda</m> as the <term><m>\lambda</m>-eigenspace</term>. 
+      We may refer to the eigenspace corresponding to <m>\lambda</m> as the <term><m>\lambda</m>-eigenspace</term>. 
     </p>
   </statement>
 </definition>
@@ -261,7 +264,7 @@
 </p>
 
 <p>
-  This short argument establishes a connection between the injectivity of <m>T</m> and the presence of <m>\lambda = 0</m> as an eigenvalue for <m>T</m>. Because of previous results, we have the following theorem. (We leave the proof of both statements in this theorem as exercises so the reader might get practice connecting the logic of various chapters of the book.)
+  This short argument establishes a connection between the injectivity of <m>T</m> and the presence of <m>\lambda = 0</m> as an eigenvalue for <m>T</m>. Because of previous results, we have the following theorem. (We leave the proof of both statements in this theorem as exercises so the reader might get practice connecting the logic of results in various chapters of the book.)
 </p>
 
 <theorem xml:id="thm-invertible-0-evalue">
@@ -562,6 +565,23 @@
       <p>
         Let <m>A \in M_n(\rr)</m> be the matrix with the number 1 in every entry. Find all eigenvalues and eigenvectors for <m>A</m>. 
       </p>
+      <ol>
+        <li>
+          <p>
+            Explain why <m>A</m> is not invertible. Based on this fact, use a result from this section to find an eigenvalue for <m>A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the eigenvectors for <m>A</m> that correspond to the eigenvalue found in part a.
+          </p>
+        </li>
+        <li>
+          <p>
+            There is one more eigenvalue of <m>A</m>. Consider the effect multiplication by <m>A</m> has on a vector <m>\bfv \in \rr^n</m>. Using your answer, determine the remaining eigenvalue and eigenvector(s) for <m>A</m>. (Some students may find it easier to locate the eigenvector first; some may not!)
+          </p>
+        </li>
+      </ol>
     </statement>
     <answer>
       <p>
