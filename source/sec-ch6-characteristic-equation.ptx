@@ -4,7 +4,7 @@
   <title>The Characteristic Equation</title>
   <introduction>
     <p>
-      In the previous section we were able to check whether or not a given vector (scalar) was an eigenvector (eigenvalue) for a matrix <m>A</m>. What was missing was a process for finding the eigenvalues and eigenvectors for a matrix from scratch. This section will outline such a process. (Once we find the eigenvalues, we can use the method of <xref ref="sec-eigenvalues"/> to find bases for the eigenspaces.)
+      In the previous section we were able to check whether or not a given vector (scalar) was an eigenvector (eigenvalue) for a matrix <m>A</m>. What was missing was a process for finding the eigenvalues and eigenvectors for a matrix from scratch. This section will outline such a process. (Once we find the eigenvalues, we can use the method of <xref ref="examp-evalues1"/> to find bases for the eigenspaces.)
     </p>
   </introduction>
 
@@ -156,7 +156,7 @@
 <definition xml:id="def-multiplicity">
   <statement>
     <p>
-      The <term>multiplicity</term> of an eigenvalue is the number of times it appears as a root of the characteristic polynomial for a matrix. Sometimes this is referred to as the <term>algebraic multiplicity</term> of an eigenvalue.
+      The <term>algebraic multiplicity</term> of an eigenvalue is the number of times it appears as a root of the characteristic polynomial for a matrix. We will often refer to this number as an eigenvalue's <term>multiplicity</term>.
     </p>
   </statement>
 </definition>
@@ -288,7 +288,7 @@
 </example>
 
 <p>
-  It is important to note the direction of logical implication that <xref ref="thm-similar-matrices-char-poly"/> provides. <em>If</em> two matrices are similar, <em>then</em> they have the same eigenvalues. However, we may have two matrices with the same eigenvalues which are not similar.
+  It is important to note the logical implication that <xref ref="thm-similar-matrices-char-poly"/> provides with care. <em>If</em> two matrices are similar, <em>then</em> they have the same eigenvalues. However, we may have two matrices with the same eigenvalues which are not similar.
 </p>
 
 <example>
@@ -299,7 +299,7 @@
         A = \begin{bmatrix} 5 \amp 0 \\ 0 \amp 5 \end{bmatrix}, \hspace{12pt}
         B = \begin{bmatrix} 5 \amp -2 \\ 0 \amp 5 \end{bmatrix}
       </me>.
-      Since both <m>A</m> and <m>B</m> are triangular matrices, we can see that they have the same eigenvalues (with the same multiplicity). However, these matrices are <em>not</em> similar. In fact, we will show in the exercises that a matrix <m>kI</m>, for <m>k \in \ff</m>, is only similar to itself. In this example, <m>A = 5I</m>. 
+      Since both <m>A</m> and <m>B</m> are triangular matrices, we can see that they have the same eigenvalue (with the same multiplicity). However, these matrices are <em>not</em> similar. In fact, we will show in the exercises that a matrix <m>kI</m>, for <m>k \in \ff</m>, is only similar to itself. In this example, <m>A = 5I</m>. 
     </p>
   </statement>
 </example>
