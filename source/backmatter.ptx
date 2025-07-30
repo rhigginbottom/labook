@@ -72,6 +72,10 @@
       </statement>
     </definition>
 
+    <p>
+      While this is the definition of congruence mod <m>n</m>, there is an equivalent way we can understand the meaning of two numbers being congruent in this way.
+    </p>
+
     <proposition xml:id="prop-congruence-remainder">
       <statement>
         <p>
@@ -81,7 +85,7 @@
     </proposition>
 
     <p>
-      We now define a relation on <m>\zz</m>. Let <m>n</m> be a natural number. If <m>a</m> and <m>b</m> are integers, then we say that <m>a</m> is related to <m>b</m> when <m>a \equiv b \pmod{n}</m>. (<xref ref="prop-congruence-remainder"/> gives us an intuitive way to understand this relation<mdash />two integers are related if they have the same remainder when divided by <m>n</m>.) It is a good (and not terribly difficult) exercise to show that this is an <em>equivalence relation</em> on <m>\zz</m>. For an integer <m>m</m>, we will use the notation <m>[m]</m> to denote the equivalence class of <m>m</m> under this relation.
+      We now define a relation on <m>\zz</m>. Let <m>n</m> be a natural number. If <m>a</m> and <m>b</m> are integers, then we say that <m>a</m> is related to <m>b</m> when <m>a \equiv b \pmod{n}</m>. (<xref ref="prop-congruence-remainder"/> gives the more intuitive way to understand this relation<mdash />two integers are related if they have the same remainder when divided by <m>n</m>.) It is a good (and not terribly difficult) exercise to show that this is an <em>equivalence relation</em> on <m>\zz</m>. For an integer <m>m</m>, we will use the notation <m>[m]</m> to denote the equivalence class of <m>m</m> under this relation.
     </p>
 
     <definition xml:id="def-integers-mod-n">
@@ -144,7 +148,7 @@
     </example>
 
     <p>
-      At this point the reader may see that, for each <m>n</m>, <m>\zz_n</m> is its own mathematical universe, just like <m>\zz</m> or <m>\rr</m>, with its own calculations and quirks. In particular, it is illuminating to think about what properties of addition and multiplication <m>\zz_n</m> shares with <m>\rr</m>. (Also: In which cases does the value of <m>n</m> affect whether or not these properties hold?)
+      At this point the reader may see that, for each <m>n \in \nn</m>, <m>\zz_n</m> is its own mathematical universe, just like <m>\zz</m> or <m>\rr</m>, with its own calculations and quirks. In particular, it is illuminating to think about what properties of addition and multiplication <m>\zz_n</m> shares with <m>\rr</m>. (Also: In which cases does the value of <m>n</m> affect whether or not these properties hold?)
     </p>
 
     <p>

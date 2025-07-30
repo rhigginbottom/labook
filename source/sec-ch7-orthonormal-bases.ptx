@@ -225,14 +225,14 @@
           </p>
         </li>
       </ol>
-      Then <m>\{ \bfe_1, \ldots, \bfe_n \}</m> is an orthonormal basis of <m>V</m>. Additionally, for each <m>j=1, \ldots, n</m>, <m>\spn\{\bfe_1, \ldots, \bfe_j \} = \spn\{\bfv_1, \ldots, \bfv_j \}</m>. 
+      Then <m>\{ \bfe_1, \ldots, \bfe_n \}</m> is an orthonormal basis of <m>V</m>. Additionally, for each <m>{j=1, \ldots, n}</m>, we have <m>\spn\{\bfe_1, \ldots, \bfe_j \} = \spn\{\bfv_1, \ldots, \bfv_j \}</m>. 
     </p>
   </statement>
 </algorithm>
 
 <note>
   <p>
-    We omit the proof that the Gram-Schmidt process does what it claims to do, as the proof is on the long and technical side. However, it may be helpful for the readers to have a non-technical description of the process. Starting with the original basis, for each vector we strip away the parts of the vector that point in the direction of previous basis vectors. (We understand that <q>direction</q> only makes geometric sense in <m>\rr^n</m>, but perhaps the reader will allow this use of analogy.) What remains gets normalized to be a unit vector and then added to the growing orthonormal basis.
+    We omit the proof that the Gram-Schmidt process does what it claims to do, as the proof is on the long and technical side. However, it may be helpful for readers to have a non-technical description of the process. Starting with the original basis, for each vector we strip away the parts of the vector that point in the direction of previous basis vectors. (We understand that <q>direction</q> only makes geometric sense in <m>\rr^n</m>, but perhaps the reader will allow this use of analogy.) What remains gets normalized to be a unit vector and then added to the growing orthonormal basis.
   </p>
 </note>
 
@@ -353,7 +353,7 @@
   </statement>
   <proof>
     <p>
-      By <xref ref="thm-extend-lin-ind-to-basis"/>, <m>V'</m> can be extended to a basis <m>\mcb = \{ \bfv_1, \ldots, \bfv_n \}</m> of <m>V</m>. We can apply the Gram-Schmidt process to <m>\mcb</m>, producing an orthonormal basis <m>\{ \bfe_1, \ldots, \bfe_n \}</m> of <m>V</m>. Since <m>V'</m> is an orthonormal set, the Gram-Schmidt process will produce vectors <m>\bfe_i</m> such that <m>\bfe_j = \bfv_j</m> for <m>j=1, \ldots, k</m>, meaning that <m>V'</m> is a subset of <m>\mcb</m>. This justifies the claim that <m>\mcb</m> is an extension of <m>V'</m>. 
+      By <xref ref="thm-extend-lin-ind-to-basis"/>, <m>V'</m> can be extended to a basis <m>{\mcb = \{ \bfv_1, \ldots, \bfv_n \}}</m> of <m>V</m>. We can apply the Gram-Schmidt process to <m>\mcb</m>, producing an orthonormal basis <m>\{ \bfe_1, \ldots, \bfe_n \}</m> of <m>V</m>. Since <m>V'</m> is an orthonormal set, the Gram-Schmidt process will produce vectors <m>\bfe_i</m> such that <m>\bfe_j = \bfv_j</m> for <m>j=1, \ldots, k</m>, meaning that <m>V'</m> is a subset of <m>\mcb</m>. This justifies the claim that <m>\mcb</m> is an extension of <m>V'</m>. 
     </p>
   </proof>
 </corollary>

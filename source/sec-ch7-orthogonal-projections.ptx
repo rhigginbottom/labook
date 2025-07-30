@@ -151,12 +151,12 @@
         </li>
         <li>
           <p>
-            If <m>\mcb = \{ \bfe_1, \ldots, \bfe_m \}</m> is an orthonormal basis for <m>V</m>, and <m>\{ \bfe_1, \ldots, \bfe_n \}</m> an orthonormal basis of  <m>U</m> (with <m>n \le m</m>), then <m>[\proj_U]_{\mcb}</m> is a diagonal matrix with the first <m>n</m> diagonal entries being 1 and the remaining diagonal entries being 0.
+            If <m>\mcb = \{ \bfe_1, \ldots, \bfe_m \}</m> is an orthonormal basis for <m>V</m>, and <m>\{ \bfe_1, \ldots, \bfe_n \}</m> is an orthonormal basis of  <m>U</m> (with <m>n \le m</m>), then <m>[\proj_U]_{\mcb}</m> is a diagonal matrix with the first <m>n</m> diagonal entries being 1 and the remaining diagonal entries being 0.
           </p>
         </li>
         <li>
           <p>
-            We have <m>\range(\proj_U) = U</m> and <m>\proj_U(\bfu) = \bfu</m> for all <m>\bfu \in U</m>. 
+            We have <m>\img(\proj_U) = U</m> and <m>\proj_U(\bfu) = \bfu</m> for all <m>\bfu \in U</m>. 
           </p>
         </li>
         <li>
@@ -361,7 +361,7 @@
       Equality holds here if and only if <m>\vnorm{\bfv - \proj_U(\bfv)}^2 = 0</m>, which is true if and only if <m>\bfv = \proj_U(\bfv)</m>. This only happens if <m>\bfv \in U</m>.
     </p>
     <p>
-      We now move on to the second part of the theorem. We know that <m>\bfv - \proj_U(\bfv) \in U^{\perp}</m> and that <m>\proj_U(\bfv) - \bfu \in U</m>, so 
+      We now move on to the second part of the theorem. We know that <m>{\bfv - \proj_U(\bfv) \in U^{\perp}}</m> and that <m>\proj_U(\bfv) - \bfu \in U</m>, so 
       <md>
         <mrow>\vnorm{\bfv - \bfu}^2 \amp = \vnorm{(\bfv - \proj_U(\bfv)) + (\proj_U(\bfv) - \bfu)}^2</mrow>
         <mrow> \amp = \vnorm{(\bfv - \proj_U(\bfv))}^2 + \vnorm{(\proj_U(\bfv) - \bfu)}^2</mrow>
@@ -437,9 +437,15 @@
       Since <m>\proj_U(\bfy) = A\bfw</m>, this means that <m>m = \frac{26}{17}</m> and <m>b = -\frac{32}{17}</m>. We can see that this is a believable solution by looking at the graph below which contains the five points as well as the line <m>y = \frac{26}{17}x - \frac{32}{17}</m>. 
     </p>
     <figure>
+    <caption>Graph of least-squares regression line with data</caption>
       <image width="40%" xml:id="least-squares-regression">
+        <shortdescription>The graph of five data points and the least-squares regression line. See long description.</shortdescription>
+          <description>
+            <p>
+             The graph of five data points and the least-squares regression line plotted on coordinate axes. The horizontal axis ranges from <m>0</m> to <m>5</m> and the vertical axis ranges from <m>0</m> to <m>5</m>. The five data points <m>(2,1)</m>, <m>(1,0)</m>, <m>(4,4)</m>, <m>(4,5)</m>, and <m>(3,2)</m> are marked with solid black circles. The regression line <m>y = \frac{26}{17}x - \frac{32}{17}</m> is drawn in red from <m>x=1</m> to <m>x=5</m>.
+            </p>
+          </description>
       <latex-image>
-      <description>Graph of regression line with five points</description>
         \begin{tikzpicture}
           \begin{axis}[axis lines=center, x=.75cm, y=.75cm, xmin=-1,ymin=-1,xmax=6,ymax=6,
           axis line style = {line width=1pt, color=lightgray,Stealth-Stealth}, %xlabel={$x$}, ylabel={$y$},
@@ -451,7 +457,7 @@
           \node at (3,2) [circle, fill, inner sep=1.5pt]{};          
           \node at (4,4) [circle, fill, inner sep=1.5pt]{};          
           \node at (4,5) [circle, fill, inner sep=1.5pt]{};      
-          \addplot [domain=1:5, line width = 1pt, color = red] {(26/17)*x - (32/17)};    
+          \addplot [domain=1:5, line width = 1pt, color = red, Stealth-Stealth] {(26/17)*x - (32/17)};    
           \end{axis}
         \end{tikzpicture}
       </latex-image>       
