@@ -16,7 +16,7 @@
   </p>
 
   <p>
-    However, showing that two mathematical objects are not related is harder when working strictly from the definitions. It is difficult to show that a function with certain properties <em>cannot exist</em><mdash></mdash>not being able to find or think of such a function is not a sufficient argument! This is where <em>invariants</em> enter the picture.
+    However, showing that two mathematical objects are <em>not</em> related is harder when working strictly from the definitions. It is difficult to show that a function with certain properties <em>cannot exist</em><mdash></mdash>not being able to find or think of such a function is not a sufficient argument! This is where <em>invariants</em> enter the picture.
   </p>
 
   <definition xml:id="def-invariant">
@@ -32,7 +32,7 @@
       In our present context, we will be thinking about equivalence relations. This is a good opportunity to think through the logic of invariants. Suppose we have two objects <m>A</m> and <m>B</m> which are related by some equivalence relation. We will write <m>A \sim B</m>. (This tells us that <m>A</m> and <m>B</m> are in the same equivalence class.) If there is an invariant <m>f</m> in view, then <m>A \sim B</m> <em>implies</em> the values of the invariant are equal<mdash></mdash>in other words, <m>A \sim B</m> implies <m>f(A) = f(B)</m>. 
     </p>
     <p>
-      The contrapositive of this implication is what we end up using with great frequency. If <m>f(A) \neq f(B)</m>, then we know that <m>A \not \sim B</m>. (In other words, <m>A</m> and <m>B</m> are not related.) Importantly, knowing that <m>f(A) = f(B)</m> <em>does not</em> prove that <m>A</m> and <m>B</m> are related. The implication goes in one direction, but not the other.
+      The contrapositive of this implication is what we end up using with great frequency. If <m>f(A) \neq f(B)</m>, then we know that <m>A \not \sim B</m>. (In other words, <m>A</m> and <m>B</m> are not related.) Importantly, knowing that <m>f(A) = f(B)</m> <em>does not</em> prove that <m>A</m> and <m>B</m> are related. The implication goes in one direction but not the other.
     </p>
   </note>
 
@@ -79,7 +79,7 @@
 <proposition xml:id="prop-det-charpoly-invariants">
   <statement>
     <p>
-      Let <m>n</m> be a positive integer and let <m>\ff</m> be a field. The determinant and the characteristic polynomial are both invariants on the set <m>M_n(\ff)</m>.
+      Let <m>n</m> be a positive integer and let <m>\ff</m> be a field. The determinant and the characteristic polynomial are both invariants on the set <m>M_n(\ff)</m> with respect to the relation of similarity.
     </p>
   </statement>
 </proposition>
@@ -109,17 +109,17 @@
   </statement>
   <proof>
     <p>
-      Suppose that <m>\mcb = \{ \bfv_1, \ldots, \bfv_n \}</m> and let <m>A = [T]_{\mcb,\mcc}</m>. Since <m>V = \spn(\mcb)</m>, we have <m>\range(T) = \spn\{T(\bfv_1), \ldots, T(\bfv_n) \}</m>. By <xref ref="thm-coord-map-isomorphism"/> we know that <m>\spn\{T(\bfv_1), \ldots, T(\bfv_n) \}</m> is isomorphic to 
+      Suppose that <m>\mcb = \{ \bfv_1, \ldots, \bfv_n \}</m> and let <m>A = [T]_{\mcb,\mcc}</m>. Since <m>V = \spn(\mcb)</m>, we have <m>\img(T) = \spn\{T(\bfv_1), \ldots, T(\bfv_n) \}</m>. By <xref ref="thm-coord-map-isomorphism"/> we know that <m>\spn\{T(\bfv_1), \ldots, T(\bfv_n) \}</m> is isomorphic to 
       <me>
         \spn\{ [T(\bfv_1)]_{\mcc}, \ldots, [T(\bfv_n)]_{\mcc} \}
       </me>.
       The vectors <m>[T(\bfv_i)]_{\mcc}</m> are exactly the columns of <m>A</m>, so 
       <me>
-        \rank(T) = \dim(\range(T)) = \dim(\col(A)) = \rank(A)
+        \rank(T) = \dim(\img(T)) = \dim(\col(A)) = \rank(A)
       </me>.      
     </p>
     <p>
-      For the second equality, we refer to <xref text="custom" ref="thm-rank-nullity">The Rank-Nullity Theorem</xref>. If <m>\dim(V)=n</m> and <m>\dim(W)=m</m>, then <m>A</m> is <m>m\times n</m>. We have proved that <m>\rank(T) = \rank(A)</m>, and comparing the two equations in <xref ref="thm-rank-nullity"/>, we are left with <m>\dim(\nll(A)) = \dim(\kerr(T))</m>, as desired. 
+      For the second equality, we refer to <xref text="custom" ref="thm-rank-nullity">The Rank-Nullity Theorem</xref>. If <m>\dim(V)=n</m> and <m>\dim(W)=m</m>, then <m>A</m> is <m>m\times n</m>. We have proved that <m>{\rank(T) = \rank(A)}</m>, and comparing the two equations in <xref ref="thm-rank-nullity"/>, we are left with <m>\dim(\nll(A)) = \dim(\kerr(T))</m>, as desired. 
     </p>
   </proof>
 </theorem>

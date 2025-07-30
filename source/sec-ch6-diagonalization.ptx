@@ -34,7 +34,7 @@
     <mrow>A^2  \amp = (PDP^{-1})(PDP^{-1}) = PD(P^{-1}P)DP^{-1}</mrow>
     <mrow> \amp = PD(I)DP^{-1} = PD^2P^{-1}</mrow>
     </md>. 
-    Since <m>A^3</m> can be written as <m>AA^2</m>, we have <m>A^3 = PD^3P^{-1}</m>. This holds for any <m>k \ge 2</m>: 
+    Since <m>A^3</m> can be written as <m>AA^2</m>, we have <m>A^3 = PD^3P^{-1}</m>. This pattern holds for any <m>k \ge 2</m>: 
     <me>
       A^k = PD^kP^{-1}
     </me>.    
@@ -314,6 +314,22 @@
     </p>
   </statement>
 </theorem>
+
+<p>
+  In the previous theorem, we used the dimension of an eigenspace several times. This is worthy of a definition.
+</p>
+
+<definition xml:id="def-geo-mult">
+  <statement>
+    <p>
+      The <term>geometric multiplicity</term> of an eigenvalue <m>\lambda</m> of a matrix <m>A</m> is the dimension of the eigenspace <m>\mathrm{eig}_{\lambda}(A)</m>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  The reader will now be able to phrase some of the results contained in <xref ref="thm-diagonalizable-2"/> in terms of how the (algebraic) multiplicity and geometric multiplicity of the eigenvalues of a matrix compare to each other.
+</p>
 
 </subsection>
 
