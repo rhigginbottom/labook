@@ -106,15 +106,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.8.5';
+eBookConfig.runestone_version = '7.9.3';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.a99e275a1e410b98.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.58623b9a3097f5e4.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="_static/prefix-runtime.47a5fea5694fc0ae.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.014cb392a13bd045.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -498,7 +498,7 @@ A^2  \amp = (PDP^{-1})(PDP^{-1}) = PD(P^{-1}P)DP^{-1}\\
 \amp = PD(I)DP^{-1} = PD^2P^{-1}\text{.}
 \end{align*}
 </div>
-<div class="para">Since <span class="process-math">\(A^3\)</span> can be written as <span class="process-math">\(AA^2\text{,}\)</span> we have <span class="process-math">\(A^3 = PD^3P^{-1}\text{.}\)</span> This holds for any <span class="process-math">\(k \ge 2\text{:}\)</span>
+<div class="para">Since <span class="process-math">\(A^3\)</span> can be written as <span class="process-math">\(AA^2\text{,}\)</span> we have <span class="process-math">\(A^3 = PD^3P^{-1}\text{.}\)</span> This pattern holds for any <span class="process-math">\(k \ge 2\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -768,7 +768,16 @@ A = \begin{bmatrix}
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalizable-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 6.3.10"><a href="#thm-diagonalizable-2" title="Copy permalink for Theorem 6.3.10">🔗</a></div></article><div class="autopermalink" data-description="Subsection 6.3.2: How to Diagonalize a Matrix"><a href="#subsec-how-to-diagonalize" title="Copy permalink for Subsection 6.3.2: How to Diagonalize a Matrix">🔗</a></div></section><section class="subsection" id="subsec-diag-linear-transf"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Theorem 6.3.10"><a href="#thm-diagonalizable-2" title="Copy permalink for Theorem 6.3.10">🔗</a></div></article><div class="para" id="subsec-how-to-diagonalize-14">In the previous theorem, we used the dimension of an eigenspace several times. This is worthy of a definition.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-14" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-geo-mult"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-geo-mult-1-1">The <dfn class="terminology">geometric multiplicity</dfn> of an eigenvalue <span class="process-math">\(\lambda\)</span> of a matrix <span class="process-math">\(A\)</span> is the dimension of the eigenspace <span class="process-math">\(\mathrm{eig}_{\lambda}(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-geo-mult-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 6.3.11"><a href="#def-geo-mult" title="Copy permalink for Definition 6.3.11">🔗</a></div></article><div class="para" id="subsec-how-to-diagonalize-16">The reader will now be able to phrase some of the results contained in <a href="sec-diagonalization.html#thm-diagonalizable-2" class="xref" data-knowl="./knowl/xref/thm-diagonalizable-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.10">Theorem 6.3.10</a> in terms of how the (algebraic) multiplicity and geometric multiplicity of the eigenvalues of a matrix compare to each other.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-how-to-diagonalize-16" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 6.3.2: How to Diagonalize a Matrix"><a href="#subsec-how-to-diagonalize" title="Copy permalink for Subsection 6.3.2: How to Diagonalize a Matrix">🔗</a></div></section><section class="subsection" id="subsec-diag-linear-transf"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="space"> </span><span class="title">Linear Transformations and Diagonalizability</span>
 </h3>
 <div class="para" id="subsec-diag-linear-transf-2">In <a href="sec-coordinates.html#subsec-coordinates-matrices" class="internal" title="Subsection 5.5.2: Coordinates and Linear Transformations">Subsection 5.5.2</a> we saw that, for linear transformations between finite-dimensional vector spaces, we could view these transformations as multiplication by a matrix if we were content to handle coordinate vectors. And while we didn’t have the current terminology at that point, in <a href="sec-change-of-basis.html" class="internal" title="Section 5.6: Change of Basis">Section 5.6</a> we were calculating coordinate matrices for linear transformations using similarity. (See <a href="sec-change-of-basis.html#examp-change-basis-lt" class="xref" data-knowl="./knowl/xref/examp-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.6.10">Example 5.6.10</a>.)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-2" title="Copy permalink for Paragraph">🔗</a></div>
@@ -776,19 +785,19 @@ A = \begin{bmatrix}
 <div class="para" id="subsec-diag-linear-transf-3">This means that our discussion of similar matrices has implications for linear transformations broadly. And these implication are, unsurprisingly, related to eigenvalues and eigenvectors.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-diagonalizable-lin-transf"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.11</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.12</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-diagonalizable-lin-transf-1-1">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space and let <span class="process-math">\(T \in L(V)\text{.}\)</span> Then <span class="process-math">\(T\)</span> is <dfn class="terminology">diagonalizable</dfn> if there exists a basis <span class="process-math">\(\mcb\)</span> of <span class="process-math">\(V\)</span> such that <span class="process-math">\([T]_{\mcb}\)</span> is diagonal.<div class="autopermalink" data-description="Paragraph"><a href="#def-diagonalizable-lin-transf-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 6.3.11"><a href="#def-diagonalizable-lin-transf" title="Copy permalink for Definition 6.3.11">🔗</a></div></article><div class="para" id="subsec-diag-linear-transf-5">Based on our discussion thus far in this section, the reader may guess that the vectors in the basis <span class="process-math">\(\mcb\)</span> referenced in <a href="sec-diagonalization.html#def-diagonalizable-lin-transf" class="xref" data-knowl="./knowl/xref/def-diagonalizable-lin-transf.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.3.11">Definition 6.3.11</a> are eigenvectors for <span class="process-math">\(T\text{.}\)</span> What is true for matrices is (generally) true in the proper context for linear transformations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-5" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 6.3.12"><a href="#def-diagonalizable-lin-transf" title="Copy permalink for Definition 6.3.12">🔗</a></div></article><div class="para" id="subsec-diag-linear-transf-5">Based on our discussion thus far in this section, the reader may guess that the vectors in the basis <span class="process-math">\(\mcb\)</span> referenced in <a href="sec-diagonalization.html#def-diagonalizable-lin-transf" class="xref" data-knowl="./knowl/xref/def-diagonalizable-lin-transf.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.3.12">Definition 6.3.12</a> are eigenvectors for <span class="process-math">\(T\text{.}\)</span> What is true for matrices is (generally) true in the proper context for linear transformations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-5" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="proposition theorem-like" id="prop-diag-lin-transf"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.3.12</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.3.13</span><span class="period">.</span>
 </h4>
 <div class="para" id="prop-diag-lin-transf-1-1">A linear transformation <span class="process-math">\(T \in L(V)\)</span> is diagonalizable if and only if there exists a basis <span class="process-math">\(\mcb\)</span> of <span class="process-math">\(V\)</span> consisting entirely of eigenvectors of <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-diag-lin-transf-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 6.3.12"><a href="#prop-diag-lin-transf" title="Copy permalink for Proposition 6.3.12">🔗</a></div></article><details id="subsec-diag-linear-transf-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.13</span><span class="period">.</span>
+<div class="autopermalink" data-description="Proposition 6.3.13"><a href="#prop-diag-lin-transf" title="Copy permalink for Proposition 6.3.13">🔗</a></div></article><details id="subsec-diag-linear-transf-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.14</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-diag-linear-transf-7-1-1">
 <div class="para">In <a href="sec-change-of-basis.html#examp-change-basis-lt" class="xref" data-knowl="./knowl/xref/examp-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.6.10">Example 5.6.10</a>, we considered the linear transformation on <span class="process-math">\(\rr^2\)</span> which is reflection across the line <span class="process-math">\(y = \frac{1}{2}x\text{.}\)</span> In that example, we looked at the basis <span class="process-math">\(\mcb = \{\bfv_1, \bfv_2 \}\)</span> for <span class="process-math">\(\rr^2\text{,}\)</span> where</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-change-basis-lt.html">
@@ -805,28 +814,28 @@ A = \begin{bmatrix}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 6.3.13"><a href="#subsec-diag-linear-transf-7" title="Copy permalink for Example 6.3.13">🔗</a></div></article></details><div class="para" id="subsec-diag-linear-transf-8">The following result is basically a restatement of <a href="sec-change-of-basis.html#cor-change-basis-lt" class="xref" data-knowl="./knowl/xref/cor-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.6.9">Corollary 5.6.9</a>, using the language of similar matrices.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-8" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 6.3.14"><a href="#subsec-diag-linear-transf-7" title="Copy permalink for Example 6.3.14">🔗</a></div></article></details><div class="para" id="subsec-diag-linear-transf-8">The following result is basically a restatement of <a href="sec-change-of-basis.html#cor-change-basis-lt" class="xref" data-knowl="./knowl/xref/cor-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.6.9">Corollary 5.6.9</a>, using the language of similar matrices.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-8" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="proposition theorem-like" id="prop-sim-coord-matrices"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.3.14</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.3.15</span><span class="period">.</span>
 </h4>
 <div class="para" id="prop-sim-coord-matrices-1-1">Suppose that <span class="process-math">\(V\)</span> is a finite-dimensional vector space and that <span class="process-math">\(T \in L(V)\text{.}\)</span> Suppose further that <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\)</span> are bases for <span class="process-math">\(V\text{.}\)</span> Then the coordinate matrices <span class="process-math">\([T]_{\mcb}\)</span> and <span class="process-math">\([T]_{\mcc}\)</span> are similar.<div class="autopermalink" data-description="Paragraph"><a href="#prop-sim-coord-matrices-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 6.3.14"><a href="#prop-sim-coord-matrices" title="Copy permalink for Proposition 6.3.14">🔗</a></div></article><details id="prop-sim-coord-matrices-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-sim-coord-matrices-2-1">Since change-of-basis matrices are invertible, this really is just a restatement of <a href="sec-change-of-basis.html#cor-change-basis-lt" class="xref" data-knowl="./knowl/xref/cor-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.6.9">Corollary 5.6.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#prop-sim-coord-matrices-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proposition 6.3.15"><a href="#prop-sim-coord-matrices" title="Copy permalink for Proposition 6.3.15">🔗</a></div></article><details id="prop-sim-coord-matrices-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-sim-coord-matrices-2-1">Since change-of-basis matrices are invertible, this really is just a restatement of <a href="sec-change-of-basis.html#cor-change-basis-lt" class="xref" data-knowl="./knowl/xref/cor-change-basis-lt.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.6.9">Corollary 5.6.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#prop-sim-coord-matrices-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 6.3.14.1"><a href="#prop-sim-coord-matrices-2" title="Copy permalink for Proof 6.3.14.1">🔗</a></div></article></details><div class="para" id="subsec-diag-linear-transf-10">The final result in this section brings several prior results together, tying the diagonalizability of linear transformations and matrices to each other in a predictable way.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-10" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 6.3.15.1"><a href="#prop-sim-coord-matrices-2" title="Copy permalink for Proof 6.3.15.1">🔗</a></div></article></details><div class="para" id="subsec-diag-linear-transf-10">The final result in this section brings several prior results together, tying the diagonalizability of linear transformations and matrices to each other in a predictable way.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-10" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-diagonalizability-lt-matrices"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.15</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.16</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-diagonalizability-lt-matrices-1-1">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space, let <span class="process-math">\(\mcb\)</span> be a basis for <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(T \in L(V)\text{.}\)</span> Then <span class="process-math">\([T]_{\mcb}\)</span> is a diagonalizable matrix if and only if <span class="process-math">\(T\)</span> is a diagonalizable linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#thm-diagonalizability-lt-matrices-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 6.3.15"><a href="#thm-diagonalizability-lt-matrices" title="Copy permalink for Theorem 6.3.15">🔗</a></div></article><div class="para" id="subsec-diag-linear-transf-12">This theorem says that a linear transformation <span class="process-math">\(T\)</span> is diagonalizable if there is a basis of <span class="process-math">\(V\)</span> with respect to which the coordinate matrix of <span class="process-math">\(T\)</span> is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-12" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 6.3.16"><a href="#thm-diagonalizability-lt-matrices" title="Copy permalink for Theorem 6.3.16">🔗</a></div></article><div class="para" id="subsec-diag-linear-transf-12">This theorem says that a linear transformation <span class="process-math">\(T\)</span> is diagonalizable if there is a basis of <span class="process-math">\(V\)</span> with respect to which the coordinate matrix of <span class="process-math">\(T\)</span> is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-12" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-diag-linear-transf-13">We finish this section with an example which is perhaps a bit contrived but which is also, hopefully, illustrative.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diag-linear-transf-13" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <details id="examp-p1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.16</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.17</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="examp-p1-1-1">
 <div class="para">Let <span class="process-math">\(T:P_1 \to P_1\)</span> be the following linear transformation:</div>
 <div class="displaymath process-math">
@@ -867,7 +876,7 @@ T(a + bt) = (a-4b) + (3a-6b)t\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#examp-p1-1-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 6.3.16"><a href="#examp-p1" title="Copy permalink for Example 6.3.16">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 6.3.3: Linear Transformations and Diagonalizability"><a href="#subsec-diag-linear-transf" title="Copy permalink for Subsection 6.3.3: Linear Transformations and Diagonalizability">🔗</a></div></section><section class="reading-questions" id="sec-diagonalization-6"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 6.3.17"><a href="#examp-p1" title="Copy permalink for Example 6.3.17">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 6.3.3: Linear Transformations and Diagonalizability"><a href="#subsec-diag-linear-transf" title="Copy permalink for Subsection 6.3.3: Linear Transformations and Diagonalizability">🔗</a></div></section><section class="reading-questions" id="sec-diagonalization-6"><h3 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="space"> </span><span class="title">Reading Questions</span>
 </h3>
 <article class="exercise exercise-like" id="sec-diagonalization-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
