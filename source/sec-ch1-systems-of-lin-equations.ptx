@@ -15,9 +15,9 @@
 
     <p>
       We can model this information with a linear equation. Let <m>x</m> be the number of nickels in Alex's hand, and let <m>y</m> be the number of quarters. The equation that captures the information Alex shared is
-        <men xml:id="eqn-coins">
+        <md number="yes" xml:id="eqn-coins">
           5x + 25y = 90
-        </men>.
+        </md>.
     </p>
 
     <p>
@@ -51,9 +51,9 @@
   <statement>
     <p>
       A <term>linear equation</term> in the variables <m>x_1, \ldots, x_n</m> is one which can be written in the form
-      <me>
+      <md>
       a_1x_1 + \cdots + a_nx_n = b,
-      </me>
+      </md>
       where the <m>a_i</m> and <m>b</m> are constants. The numbers <m>a_1,\ldots,a_n,b</m> all come from <m>\mathbb{R}</m>. In the special situation where <m>b=0</m>, this is called a <term>homogeneous linear equation</term>. (Note that when there are only two variables in view we may use <m>x</m> and <m>y</m> instead of <m>x_1</m> and <m>x_2</m>; similarly, when there are only three variables present, we may use <m>x</m>, <m>y</m>, and <m>z</m>.)
     </p>
   </statement>
@@ -67,17 +67,17 @@
   <statement>
     <p>
       The following are linear equations: <!-- (use sidebyside here?) -->
-      <me>
+      <md>
           4x + 2y = 98, \hspace{.3in} -2x_1 -6x_2 + 5x_3=0, \hspace{.3in} 14x_1 - 15x_3 = -7
-      </me>.
+      </md>.
       These are all linear equations because every appearance of a variable term in these equations contains only a single variable raised to the first power.
     </p>
 
     <p>
       The following are not linear equations:
-      <me>
+      <md>
           4x^2-y=9, \hspace{.3in} \ln(x_1) + 3x_2 = 2, \hspace{.3in} x_1x_2 - \tan(x_3) = 0
-      </me>.
+      </md>.
       These are not linear equations because each equation has at least one variable term with something other than a single variable to a single power.
     </p>
   </statement>
@@ -216,7 +216,7 @@
     </p>
 
     <figure>
-      <caption>A graph of two indentical lines</caption>
+      <caption>A graph of two identical lines</caption>
       <image xml:id="identical-lines" width="40%">
         <shortdescription>The graph of one line on coordinate axes. The line has slope -2 and y intercept 5. See long description.</shortdescription>
           <description>

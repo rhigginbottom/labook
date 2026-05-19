@@ -1,2 +1,2 @@
-# This file was automatically generated with PreTeXt 2.19.3.
-pretext == 2.19.3
+# This file was automatically generated with PreTeXt 2.38.3.
+pretext == 2.39.0

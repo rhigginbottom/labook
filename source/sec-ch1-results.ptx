@@ -34,13 +34,13 @@
     <statement>
       <p>
         Consider the following as the augmented matrix corresponding to a system of linear equations:
-        <me>
+        <md>
           A = \left[\begin{array}{@{}ccc|c@{}}
           1 \amp 0 \amp 3 \amp 0 \\
           0 \amp 1 \amp 2 \amp 0 \\
           0 \amp 0 \amp 0 \amp 1
         \end{array}\right]
-      </me>.
+      </md>.
       This is a <m>3\times 4</m> matrix, so the original linear system has three equations and three variables. Hopefully the reader can see that this matrix is indeed in RREF. (Consult <xref ref="def-REF"/> for a refresher.)
       </p>
       <p>
@@ -71,13 +71,13 @@
     <statement>
       <p>
         Consider the following matrix as the augmented matrix of a linear system:
-        <me>
+        <md>
           A = \left[\begin{array}{@{}ccc|c@{}}
             1 \amp 0 \amp -3 \amp 5 \\
             0 \amp 1 \amp 2 \amp 7 \\
             0 \amp 0 \amp 0 \amp 0 \\
           \end{array}\right]
-        </me>.
+        </md>.
         (Again, the reader should verify that this matrix is in reduced row-echelon form.)
       </p>
 
@@ -102,13 +102,13 @@
 
       <p>
         The solutions to this linear system can be written in a number of ways. We will prefer the following form:
-        <me>
+        <md>
           \left\{ \begin{array}{l}
           x_1 = 5 + 3x_3 \\
           x_2 = 7-2x_3 \\
           x_3 \text{ is free.}
           \end{array} \right.
-        </me>
+        </md>
         This is called a <term>parametric description</term> of the solution set. Sometimes solutions like this are written with the letter <m>t</m> or <m>s</m> in place of <m>x_3</m> to better match the usage of the word <q>parameter</q> elsewhere. We will follow the convention of using the free variables as parameters in our solutions.
       </p>
     </statement>
@@ -157,14 +157,14 @@
     </p>
     <p>
       We first suppose that there is a pivot in each of the first <m>n</m> columns of <m>A</m>; this implies that <m>m \ge n</m>. We also recall that the linear system is assumed to be consistent, meaning that the first <m>n</m> rows of <m>A</m> have the following form:
-      <me>
+      <md>
         \left[\begin{array}{@{}cccc|c@{}}
           1 \amp 0 \amp \cdots \amp 0 \amp b_1 \\
           0 \amp 1 \amp \cdots \amp 0 \amp b_2 \\
           \vdots \amp \vdots \amp \ddots \amp \vdots \amp \vdots \\
           0 \amp 0 \amp \cdots \amp 1 \amp b_n
         \end{array}\right]
-      </me>.
+      </md>.
       (The matrix <m>A</m> may have rows of all zeros below the <m>n</m> rows here, but that will not affect our discussion.)
     </p>
     <p>
@@ -249,14 +249,14 @@
   <solution>
     <p>
       We follow <xref ref="alg-solving-system"/> and form the augmented matrix <m>A</m> for this system. When we row reduce this matrix, we find 
-      <me>
+      <md>
         A = \left[\begin{array}{@{}ccc|c@{}} -7 \amp -4 \amp 7 \amp -3 \\ 
         -2 \amp 2 \amp -4 \amp 2 \\ 
         5 \amp 4 \amp 1 \amp 5 \end{array}\right] \sim 
         \left[\begin{array}{@{}ccc|c@{}} 1 \amp 0 \amp 0 \amp -1/9 \\ 
         0 \amp 1 \amp 0 \amp 4/3 \\ 
         0 \amp 0 \amp 1 \amp 2/9 \end{array}\right]
-      </me>.
+      </md>.
       We will refer to the RREF of <m>A</m> as <m>B</m>. Since <m>B</m> has no pivot in the rightmost column, our linear system is consistent. Secondly, since <m>B</m> has a pivot in each of the first three columns, the solution to our linear system is unique. We record this solution as <m>x = -1/9</m>, <m>y = 4/3</m>, and <m>z = 2/9</m>.
     </p>
   </solution>
@@ -356,10 +356,10 @@
         <mrow>-3x_1 - 5x_2 - 12x_3 \amp = -17</mrow>
       </md>.
       Determine which of the variables are basic variables and which are free variables. Explain your answer.
-      <!-- rref: <me>
+      <!-- rref: <md>
         1 \amp 0 \amp -1 \amp 4 \\
         0 \amp 1 \amp 3 \amp 1
-      </me>
+      </md>
       basic: <m>x_1, x_2</m>, free: <m>x_3</m> -->
     </p>
   </statement>
@@ -374,11 +374,11 @@
         <mrow>3x_1 - 6x_2 + 7x_3 \amp = -5</mrow>
       </md>.
       Write a parametric description of the solution set of this system. (Follow <xref ref="ex-matrix-inf-solns"/>.)
-      <!-- rref: <me>
+      <!-- rref: <md>
         1 \amp -2 \amp 0 \amp 3 \\
         0 \amp 0 \amp 1 \amp -2 \\
         0 \amp 0 \amp 0 \amp 0
-        </me> -->      
+        </md> -->      
     </p>
   </statement>
 </exercise>
@@ -448,9 +448,9 @@
         <li>
           <p>
             The solutions can be written parametrically as
-            <me>
+            <md>
               \begin{cases} x_1 = 2x_2 + 2 \\ x_2 \text{ is free} \\ x_3 = -3. \end{cases}
-            </me>            
+            </md>            
           </p>
         </li>
         <li>
@@ -461,7 +461,7 @@
         <li>
           <p>
             The solutions can be written parametrically as 
-            <me>
+            <md>
               \begin{cases} 
               x_1 = -2x_3 + 4x_4 + 7 \\ 
               x_2 = -9x_3 + x_4 - 4 \\ 
@@ -469,7 +469,7 @@
               x_4 \text{ is free} \\
               x_5 = 4.
               \end{cases}
-            </me>            
+            </md>            
           </p>
         </li>
       </ol>

@@ -17,11 +17,11 @@
     <statement>
       <p>
         An <term><m>n</m>-dimensional vector</term> over <m>\rr</m> is an ordered list of <m>n</m> real numbers. We will adopt the convention that, unless stated otherwise, vectors are column vectors written in this form:
-        <me>
+        <md>
           \bfv = \begin{bmatrix}
           v_1 \\ v_2 \\ \vdots \\ v_n
           \end{bmatrix}
-        </me>,
+        </md>,
         where <m>v_i \in \rr</m> for all <m>i</m>. (Column vectors are therefore matrices with a single column.) The set of all <m>n</m>-dimensional vectors over <m>\rr</m> is denoted <m>\rr^n</m>.
       </p>
     </statement>
@@ -44,35 +44,35 @@
       </p>
       <p>
         Let <m>\bfv \in \rr^n</m> have the form
-        <me>
+        <md>
           \bfv = \left[ \begin{array}{c}
           v_1 \\ v_2 \\ \vdots \\ v_n
           \end{array} \right]
-        </me>,
+        </md>,
         and let <m>c \in \rr</m>. Then the <term>scalar multiple</term> of <m>\bfv</m> by <m>c</m> is the vector <m>c\bfv</m> in <m>\rr^n</m> obtained by multiplying each entry of <m>\bfv</m> by <m>c</m>; that is,
-        <me>
+        <md>
           c\bfv = \left[ \begin{array}{c}
           cv_1 \\ cv_2 \\ \vdots \\ cv_n
           \end{array} \right]
-        </me>.
+        </md>.
         In this context, we will often refer to real numbers as <term>scalars</term>.
       </p>
       <p>
         If <m>\bfu</m> and <m>\bfv</m> are vectors in <m>\rr^n</m> with the form
-        <me>
+        <md>
           \bfu = \left[ \begin{array}{@{}c@{}}
           u_1 \\ u_2 \\ \vdots \\ u_n
           \end{array} \right] \hspace{.3in} \text{and} \hspace{.3in}
           \bfv = \left[ \begin{array}{c}
           v_1 \\ v_2 \\ \vdots \\ v_n
           \end{array} \right]
-        </me>,
+        </md>,
         then the <term>sum</term> of <m>\bfu</m> and <m>\bfv</m> is the vector <m>\bfu + \bfv</m> in <m>\rr^n</m> obtained by adding the corresponding entries in <m>\bfu</m> and <m>\bfv</m>. That is,
-        <me>
+        <md>
           \bfu+\bfv = \left[ \begin{array}{c}
           u_1+v_1 \\ u_2+v_2 \\ \vdots \\ u_n+v_n
           \end{array} \right]
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -91,7 +91,7 @@
     <statement>
       <p>
         Let <m>\bfu \in \rr^2</m> and let <m>\bfv, \bfw \in \rr^3</m> such that
-        <me>
+        <md>
           \bfu = \left[\begin{array}{@{}c@{}}
             -3 \\ 5
           \end{array}\right], \hspace{.3in}
@@ -101,16 +101,16 @@
           \bfw = \left[\begin{array}{@{}c@{}}
             -6 \\ -3 \\ 3
           \end{array}\right]
-        </me>.
+        </md>.
         Then we can calculate <m>2\bfu</m> and <m>\bfv + \bfw</m> using <xref ref="def-vectors-algebra"/>:
-        <me>
+        <md>
           2\bfu = \left[\begin{array}{@{}c@{}}
             -6 \\ 10
           \end{array}\right], \hspace{.3in}
           \bfv+\bfw = \left[\begin{array}{@{}c@{}}
             -4 \\ -2 \\ -1
           \end{array}\right]
-        </me>.
+        </md>.
         </p>
     </statement>
   </example>
@@ -123,15 +123,15 @@
   <statement>
     <p>
       Let <m>c_1, c_2, \ldots, c_m</m> be real numbers and let <m>{\bfv_1, \bfv_2, \ldots, \bfv_m \in \rr^n}</m>. Then the <term>linear combination</term> of the vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_m </m> with <term>weights</term> <m>c_1, c_2, \ldots, c_m</m> is
-      <me>
+      <md>
         c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m
-      </me>.
+      </md>.
     </p>
     <p>
     The <term>span</term> of the vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_m</m> is the set of all possible linear combinations of <m>\bfv_1, \bfv_2, \ldots, \bfv_m</m> and is written <m>\spn\{\bfv_1, \ldots, \bfv_m\}</m>. In other words, the span is defined to be
-    <me>
+    <md>
       \spn\{\bfv_1,\ldots,\bfv_m\} = \left\{ \sum_{i=1}^m c_i\bfv_i \mid c_1,\ldots,c_m \in \rr \right\}
-    </me>.
+    </md>.
     </p>
   </statement>
 </definition>
@@ -140,7 +140,7 @@
   <statement>
     <p>
       Taking <m>\bfv</m> and <m>\bfw</m> from <xref ref="ex-vector-sum"/>, we can calculate the linear combination of these vectors with weights <m>2</m> and <m>-1</m>:
-      <me>
+      <md>
         2\bfv - \bfw = \left[\begin{array}{@{}c@{}}
         4 \\ 2 \\ -8
         \end{array}\right] +
@@ -150,7 +150,7 @@
         \left[\begin{array}{@{}c@{}}
           10 \\ 5 \\ -11
         \end{array}\right]
-      </me>.
+      </md>.
     </p>
   </statement>
 </example>
@@ -164,19 +164,19 @@
   </p>
   <p>
     We include two initial calculations as examples. If <m>A</m> and <m>B</m> are defined as
-    <me>
+    <md>
       A = \begin{bmatrix} 2 \amp -1 \amp 0 \\ 
       3 \amp 4 \amp -5 \end{bmatrix}, \hspace{.3in}
       B = \begin{bmatrix} -3 \amp 2 \amp 7 \\ 
       0 \amp -4 \amp 4 \end{bmatrix}
-    </me>,
+    </md>,
     then we have 
-    <me>
+    <md>
       A + B = \begin{bmatrix} -1 \amp 1 \amp 7 \\ 
       3 \amp 0 \amp -1 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt} 
       -2A = \begin{bmatrix} -4 \amp 2 \amp 0 \\ 
       -6 \amp -8 \amp 10 \end{bmatrix}
-    </me>.    
+    </md>.    
   </p>
   <p>
     We finally note that, as with vectors, the sum (and thus the linear combination) of two or more matrices only makes sense if all involved matrices are of the same size.
@@ -189,18 +189,18 @@
 
 <p>
   Let us consider the following simple linear system:
-  <men xml:id="lin-sys-1">
+  <md number="yes" xml:id="lin-sys-1">
     \begin{aligned}
     3x_1 - 8x_2 \amp =9 \\
     -2x_1+5x_2 \amp =-1.
     \end{aligned}
-  </men>
+  </md>
   Solving this linear system involves (as always) investigating whether there are values of <m>x_1</m> and <m>x_2</m> which satisfy both of these equations simultaneously. We will now arrive at this same question from a different angle.
 </p>
 
 <p>
   Let's consider the following three vectors in <m>\rr^2</m>:
-  <me>
+  <md>
     \bfu = \left[\begin{array}{@{}c@{}}
       3 \\ -2
     \end{array}\right], \hspace{.3in}
@@ -210,7 +210,7 @@
     \bfw = \left[\begin{array}{@{}c@{}}
       9 \\ -1
     \end{array}\right]
-  </me>.
+  </md>.
   Since all of these vectors are in <m>\rr^2</m>, we can ask this question: Can <m>\bfw</m> be written as a linear combination of <m>\bfu</m> and <m>\bfv</m>? (This question is equivalent to asking if <m>\bfw</m> belongs to <m>\spn\{\bfu,\bfv\}</m>.) In other words, do there exist scalars <m>x_1</m> and <m>x_2</m> such that <m>x_1\bfu + x_2\bfv = \bfw</m>?
 </p>
 
@@ -245,7 +245,7 @@
   <statement>
     <p>
       Consider the following vectors in <m>\rr^3</m>:
-      <me>
+      <md>
         \bfv_1 = \left[\begin{array}{@{}c@{}}
           0 \\ 2 \\ -1
         \end{array}\right], \hspace{.3in}
@@ -255,7 +255,7 @@
         \bfv_3 = \left[\begin{array}{@{}c@{}}
           5 \\ -3 \\ 1
         \end{array}\right]
-      </me>.
+      </md>.
       Is <m>\bfv_3</m> in <m>\spn\{\bfv_1,\bfv_2\}</m>?
     </p>
     <p>
@@ -269,21 +269,21 @@
         <mrow> -x_1+4x_2 \amp =1</mrow>
       </md>.
       The augmented matrix for this system is
-        <me>
+        <md>
           \left[\begin{array}{@{}cc|c@{}}
             0 \amp 3 \amp 5 \\
             2 \amp -2 \amp -3 \\
             -1 \amp 4 \amp 1
           \end{array}\right]
-        </me>,
+        </md>,
       and the RREF of this matrix is
-      <me>
+      <md>
         \left[\begin{array}{@{}cc|c@{}}
           1 \amp 0 \amp 0 \\
           0 \amp 1 \amp 0 \\
           0 \amp 0 \amp 1
         \end{array}\right]
-      </me>.
+      </md>.
       Since there is a pivot in the final column of this matrix, we conclude (by invoking <xref ref="thm-consistent-system"/>) that the linear system is inconsistent. This means that the answer to the original question is no, <m>\bfv_3</m> is not in <m>\spn\{\bfv_1,\bfv_2\}</m>.
     </p>
   </statement>
@@ -333,21 +333,21 @@
 
 <p>
   Thinking about linear systems through the lens of vectors also brings some structure to the solutions to consistent linear systems. When a linear system is consistent and the solution is unique, we have recorded this in terms of the variables involved. For example, we recorded the solution to the linear system in <xref ref="examp-lin-system-use-alg"/> as <m>x = -1/9</m>, <m>y = 4/3</m>, and <m>z = 2/9</m>. However, if we think of these variables as forming a vector in <m>\rr^3</m>, then we can record the solution this way: 
-  <me>
+  <md>
     \bfx = \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} -1/9 \\ 4/3 \\ 2/9 \end{bmatrix}
-  </me>.  
+  </md>.  
 </p>
 
 <p>
   Similarly, when a consistent system does not have a unique solution, we can again use vector notation. (This would replace the parametric description of the solution set we presented in <xref ref="ex-matrix-inf-solns"/>.) In <xref ref="ex-matrix-inf-solns"/> we considered such a linear system. The solution set can now be written this way: 
-  <me>
+  <md>
     \bfx = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 5 + 3x_3 \\ 7 - 2x_3 \\ x_3 \end{bmatrix} = \begin{bmatrix} 5 \\ 7 \\ 0 \end{bmatrix} + x_3 \begin{bmatrix} 3 \\ -2 \\ 1 \end{bmatrix}
-  </me>.
+  </md>.
   If we label the vectors <m>\bfv</m> and <m>\bfw</m> as 
-  <me>
+  <md>
     \bfv = \begin{bmatrix} 5 \\ 7 \\ 0 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
     \bfw = \begin{bmatrix} 3 \\ -2 \\ 1 \end{bmatrix}
-  </me>,
+  </md>,
   then all solutions to this system can be written as <m>\bfv + t\bfw</m>, where <m>t</m> can be any real number. As we learn more about the geometric interpretations of the solutions to linear systems, this phrasing in terms of vectors will be useful.
 </p>
 
@@ -475,25 +475,25 @@
 
 <p>
   When we ask whether <m>\bfw</m> is in <m>\spn\{\bfu,\bfv\}</m>, this is the same as asking whether we can form <m>\bfw</m> as a linear combination of <m>\bfu</m> and <m>\bfv</m>. We answer this question by forming a matrix with the appropriate columns and row reducing. We find the matrix
-  <me>
+  <md>
     \left[\begin{array}{@{}cc|c@{}}
       \bfu \amp \bfv \amp \bfw
     \end{array}\right] = \left[\begin{array}{@{}cc|c@{}}
       1 \amp -3 \amp 2 \\
       -2 \amp 1 \amp 2
     \end{array}\right]
-  </me>,
+  </md>,
   and the RREF of this matrix is
-  <me>
+  <md>
     \left[\begin{array}{@{}cc|c@{}}
       1 \amp 0 \amp -1.6 \\
       0 \amp 1 \amp -1.2
     \end{array}\right]
-  </me>.
+  </md>.
   This tells us that <m>\bfw</m> <em>is</em> in the span of <m>\bfu</m> and <m>\bfv</m>, and that
-  <me>
+  <md>
     \bfw = -1.6\bfu - 1.2\bfv
-  </me>.
+  </md>.
   Here is the picture illustrating this.
 </p>
 
@@ -543,12 +543,12 @@
   <statement>
     <p>
       Let <m>\bfu</m> and <m>\bfv</m> be the following vectors:
-      <me>
+      <md>
         \bfu = \left[\begin{array}{@{}c@{}}
         2 \\ -7 \\ 4   \end{array}\right], \hspace{.3in}
         \bfv = \left[\begin{array}{@{}c@{}}
         3 \\ 1 \\ -1   \end{array}\right]
-      </me>.
+      </md>.
       Calculate each of the following vectors.
       <ol>
         <li>
@@ -579,19 +579,19 @@
   <statement>
     <p>
       Let <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m> be the following vectors:
-      <me>
+      <md>
         \bfu = \left[\begin{array}{@{}c@{}}
         2 \\ 0 \\ -1   \end{array}\right], \hspace{.3in}
         \bfv = \left[\begin{array}{@{}c@{}}
         -1 \\ 2 \\ 3   \end{array}\right], \hspace{.3in}
         \bfw = \left[\begin{array}{@{}c@{}}
         1 \\ 1 \\ 5   \end{array}\right]
-      </me>.
+      </md>.
       Is the vector 
-      <me>
+      <md>
         \left[\begin{array}{@{}c@{}}
         7 \\ -1 \\ 8   \end{array}\right]
-      </me>
+      </md>
       in <m>\mathrm{Span}\{\bfu,\bfv,\bfw\}</m>? Explain your answer using techniques from this section. (See especially <xref ref="vect-eqn-ex"/>.)
     </p>
   </statement>
@@ -603,9 +603,9 @@
     <statement>
       <p>
         Write a linear system that is equivalent to the following vector equation:
-        <me>
+        <md>
           x\begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix} + y\begin{bmatrix} 0 \\ -3 \\ 1 \end{bmatrix} = \begin{bmatrix} 7 \\ -1 \\ -1 \end{bmatrix}.
-        </me>        
+        </md>        
       </p>
     </statement>
     <answer>
@@ -633,9 +633,9 @@
     <answer>
       <p>
         Here is the vector equation:
-        <me>
+        <md>
           x \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\ 3 \\ -1 \end{bmatrix} + z \begin{bmatrix} -5 \\ 1 \\ -7 \end{bmatrix} = \begin{bmatrix} 9 \\ -1 \\ 0 \end{bmatrix}
-        </me>.        
+        </md>.        
       </p>
     </answer>
   </exercise>
@@ -643,24 +643,24 @@
     <statement>
       <p>
         Let <m>\bfu</m> and <m>\bfv</m> be the following vectors:
-        <me>
+        <md>
           \bfu = \begin{bmatrix}
           -1 \\ 2 \\ 4
           \end{bmatrix}, \hspace{.2in}
           \bfv = \begin{bmatrix}
           3 \\ 1 \\ -2
           \end{bmatrix}
-        </me>.
+        </md>.
         List five vectors in <m>\mathrm{Span}\{\bfu, \bfv\}</m>. For each vector, write down the specific linear combination of <m>\bfu</m> and <m>\bfv</m> used to generate the vector.
       </p>
     </statement>
     <answer>
       <p>
         There are an infinite number of correct answers! Three vectors that are in the span are <m>\bfu = 1\bfu + 0\bfv</m>, <m>\bfv = 0\bfu + 1\bfv</m>, and <m>\bfo = 0\bfu + 0\bfv</m>. Here are two additional vectors in the span:
-        <me>
+        <md>
           \begin{bmatrix} 2 \\ 3 \\ 2 \end{bmatrix} = \bfu + \bfv, \hspace{6pt} \text{and} \hspace{6pt}
           \begin{bmatrix} -4 \\ 1 \\ 6 \end{bmatrix} = \bfu - \bfv
-        </me>.
+        </md>.
       </p>
     </answer>
   </exercise>
@@ -673,9 +673,9 @@
     <answer>
       <p>
         If <m>\bfx = \begin{bmatrix} -1 \\ 1 \end{bmatrix}</m>, <m>\bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}</m>, <m>\bfv = \begin{bmatrix} -1 \\ 0 \end{bmatrix}</m>, and <m>\bfw = \begin{bmatrix} 4 \\ 1 \end{bmatrix}</m>, then <m>\bfx</m> can be written as 
-        <me>
+        <md>
           \bfx = a \bfu + b \bfv + c \bfw
-        </me>,
+        </md>,
         where <m>a = \frac{1}{3} - \frac{1}{3}c</m>, <m>b = \frac{5}{3} + \frac{10}{3}c</m>, and <m>c</m> can be any real number.
       </p>
     </answer>
@@ -687,7 +687,7 @@
         <ol>
           <li>
             <p>
-              <me>
+              <md>
                 \bfu = \begin{bmatrix}
                 -2 \\ -4 \\ 1
                 \end{bmatrix}, \hspace{.15in}
@@ -700,12 +700,12 @@
                 \mathbf{b} = \begin{bmatrix}
                 1 \\ 0 \\ 1.5
                 \end{bmatrix}
-              </me>.              
+              </md>.              
             </p>
           </li>
           <li>
             <p>
-              <me>
+              <md>
                 \bfu = \begin{bmatrix}
                 2 \\ 3 \\ -1
                 \end{bmatrix}, \hspace{.15in}
@@ -718,7 +718,7 @@
                 \mathbf{b} = \begin{bmatrix}
                 10 \\ -1 \\ 4
                 \end{bmatrix}                
-              </me>              
+              </md>              
             </p>
           </li>
         </ol>
@@ -729,7 +729,7 @@
     <statement>
       <p>
         Let <m>\bfu</m>, <m>\bfv</m>, and <m>\mathbf{b}</m> be the following vectors:
-        <me>
+        <md>
           \bfu = \begin{bmatrix}
           1 \\ 3 \\ -2
           \end{bmatrix}, \hspace{.2in}
@@ -739,7 +739,7 @@
           \mathbf{b} = \begin{bmatrix}
           5 \\ -1 \\ h
           \end{bmatrix}
-        </me>.
+        </md>.
         For what value(s) of <m>h</m> is <m>\mathbf{b}</m> in the plane spanned by <m>\bfu</m> and <m>\bfv</m>? Explain your answer.
       </p>
     </statement>
@@ -748,7 +748,7 @@
     <statement>
       <p>
         Let <m>\bfu</m>, <m>\bfv</m>, and <m>\mathbf{b}</m> be the following vectors:
-        <me>
+        <md>
           \bfu = \begin{bmatrix}
           2 \\ -1 \\ 1
           \end{bmatrix}, \hspace{.2in}
@@ -758,16 +758,16 @@
           \mathbf{b} = \begin{bmatrix}
           b_1 \\ b_2 \\ b_3
           \end{bmatrix}
-        </me>.
+        </md>.
         Under what conditions is <m>\mathbf{b}</m> in <m>\mathrm{Span}\{\bfu, \bfv\}</m>? This will be an equation (or equations) satisfied by the <m>b_i</m>. Explain your answer. 
         </p>
     </statement>
     <answer>
       <p>
         The vector <m>\mathbf{b}</m> is in <m>\mathrm{Span}\{\bfu, \bfv\}</m> as long as the following equation is satisfied:
-        <me>
+        <md>
           b_1 + \tfrac{3}{5}b_2 - \tfrac{7}{5}b_3 = 0
-        </me>.        
+        </md>.        
       </p>
     </answer>
   </exercise>
@@ -815,19 +815,19 @@
   <solution>
     <p>
       We must prove that for all real numbers <m>c</m> and all <m>\bfu</m> and <m>\bfv</m> in <m>\rr^n</m> we have 
-      <me>
+      <md>
         c(\bfu + \bfv) = c\bfu + c\bfv
-      </me>.
+      </md>.
       Let <m>\bfu</m> and <m>\bfv</m> be denoted in the following way:
-      <me>
+      <md>
         \bfu = \begin{bmatrix} u_1 \\ \vdots \\ u_n \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
         \bfv = \begin{bmatrix} v_1 \\ \vdots \\ v_n \end{bmatrix}
-      </me>.
+      </md>.
       Then we have 
-      <me>
+      <md>
         c(\bfu + \bfv) = c \begin{bmatrix} u_1 + v_1 \\ \vdots \\ u_n + v_n \end{bmatrix} = 
         \begin{bmatrix} c(u_1 + v_1) \\ \vdots \\ c(u_n + v_n) \end{bmatrix}
-      </me>.
+      </md>.
       Now, since the distributive law holds for real numbers, we have <m>c(u_i + v_i) = cu_i + cv_i</m> for all <m>i = 1, \ldots, n</m>. This means that 
       <md>
         <mrow>c(\bfu + \bfv) \amp = \begin{bmatrix} cu_1 + cv_1 \\ \vdots \\ cu_n + cv_n \end{bmatrix} = 
