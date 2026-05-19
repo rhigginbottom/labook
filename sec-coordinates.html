@@ -5,11 +5,11 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<html lang="en-US" dir="ltr">
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: default-legacy                 *-->
+<!--*  Theme: default-modern                 *-->
 <!--*  Palette:                              *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
@@ -18,73 +18,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
-<script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
-  },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
-  },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
-  },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "_static/pretext/js/lib"
-    }
-  },
-  "startup": {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  }
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<script type="module">import { startMathJax } from './_static/pretext/js/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta property="book:title" content="Linear Algebra">
 <meta property="book:author" content="Ryan Higginbottom">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -106,16 +53,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.9.3';
+eBookConfig.runestone_version = '8.0.0';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.47a5fea5694fc0ae.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.014cb392a13bd045.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.ce7e0a2163cb330f.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.f4a2ffb04bb978bb.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -134,7 +81,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-dimension.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-change-of-basis.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-dimension.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-change-of-basis.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
 \newcommand{\zz}{\mathbb Z}
 \newcommand{\qq}{\mathbb Q}
@@ -173,7 +120,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
@@ -462,95 +409,116 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-coordinates"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">5.5</span><span class="space"> </span><span class="title">Coordinates</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-coordinates">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Coordinates</span>
 </h2>
-<section class="introduction" id="sec-coordinates-2"><div class="para" id="sec-coordinates-2-1">We have recently shown (<a href="sec-dimension.html#cor-iso-fn" class="xref" data-knowl="./knowl/xref/cor-iso-fn.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.3.13">Corollary 5.3.13</a>) that all <span class="process-math">\(n\)</span>-dimensional vector spaces over <span class="process-math">\(\ff\)</span> are isomorphic to <span class="process-math">\(\ff^n\text{.}\)</span> In this section we explore the vast implications of this isomorphism.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-2-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div></section><section class="subsection" id="subsec-coord-vectors"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.5.1</span><span class="space"> </span><span class="title">Coordinates of Vectors</span>
+<section class="introduction" id="sec-coordinates-2">
+<div class="para" id="sec-coordinates-2-1">We have recently shown (<a href="sec-dimension.html#cor-iso-fn" class="xref" data-knowl="./knowl/xref/cor-iso-fn.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.3.13">Corollary 5.3.13</a>) that all <span class="process-math">\(n\)</span>-dimensional vector spaces over <span class="process-math">\(\ff\)</span> are isomorphic to <span class="process-math">\(\ff^n\text{.}\)</span> In this section we explore the vast implications of this isomorphism.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="subsec-coord-vectors">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Coordinates of Vectors</span>
 </h3>
-<div class="para" id="subsec-coord-vectors-2">If <span class="process-math">\(V\)</span> is a finite-dimensional vector space over <span class="process-math">\(\ff\text{,}\)</span> then it has a basis <span class="process-math">\(\mcb\text{.}\)</span> We have seen (<a href="sec-basis.html#thm-unique-rep" class="xref" data-knowl="./knowl/xref/thm-unique-rep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.11: The Unique Representation Theorem">Theorem 5.2.11</a>) that each vector in <span class="process-math">\(V\)</span> then has a <em class="emphasis">unique</em> representation as a linear combination of these basis vectors. In the definition that follows, we focus on the coefficients in these linear combinations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-coord-vectors-2">If <span class="process-math">\(V\)</span> is a finite-dimensional vector space over <span class="process-math">\(\ff\text{,}\)</span> then it has a basis <span class="process-math">\(\mcb\text{.}\)</span> We have seen (<a href="sec-basis.html#thm-unique-rep" class="xref" data-knowl="./knowl/xref/thm-unique-rep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.11: The Unique Representation Theorem">Theorem 5.2.11</a>) that each vector in <span class="process-math">\(V\)</span> then has a <em class="emphasis">unique</em> representation as a linear combination of these basis vectors. In the definition that follows, we focus on the coefficients in these linear combinations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-coordinates"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.1</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="def-coordinates-1-1">
 <div class="para">The <dfn class="terminology">coordinates</dfn> of a vector <span class="process-math">\(\bfv \in V\)</span> with respect to a basis <span class="process-math">\(\mcb = \{\bfv_1, \ldots, \bfv_n\}\)</span> are the unique scalars <span class="process-math">\(c_1, \ldots, c_n\)</span> such that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-coordinates-1-1-5">
 \begin{equation*}
 \bfv = c_1 \bfv_1 + \cdots + c_n\bfv_n\text{.}
 \end{equation*}
 </div>
 <div class="para">The <dfn class="terminology">coordinate vector of <span class="process-math">\(\bfv\)</span> with respect to <span class="process-math">\(\mcb\)</span></dfn> is the vector <span class="process-math">\([\bfv]_{\mcb} \in \ff^n\text{,}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-coordinates-1-1-8">
 \begin{equation*}
 [\bfv]_{\mcb} = \begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#def-coordinates-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-coordinates-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 5.5.1"><a href="#def-coordinates" title="Copy permalink for Definition 5.5.1">🔗</a></div></article><article class="note remark-like" id="subsec-coord-vectors-4"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">5.5.2</span><span class="period">.</span>
+<div class="autopermalink" data-description="Definition 5.5.1"><a href="#def-coordinates" title="Copy heading and permalink for Definition 5.5.1" aria-label="Copy heading and permalink for Definition 5.5.1">🔗</a></div>
+</article>
+<article class="note remark-like" id="subsec-coord-vectors-4"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="subsec-coord-vectors-4-1">When the basis <span class="process-math">\(\mcb\)</span> we are using is unambiguous, we may drop a bit of the cumbersome terminology contained in the phrase “coordinate vector of <span class="process-math">\(\bfv\)</span> with respect to <span class="process-math">\(\mcb\)</span>” and simply refer to the “coordinate vector of <span class="process-math">\(\bfv\text{.}\)</span>”<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-coord-vectors-4-1">When the basis <span class="process-math">\(\mcb\)</span> we are using is unambiguous, we may drop a bit of the cumbersome terminology contained in the phrase “coordinate vector of <span class="process-math">\(\bfv\)</span> with respect to <span class="process-math">\(\mcb\)</span>” and simply refer to the “coordinate vector of <span class="process-math">\(\bfv\text{.}\)</span>”<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Note 5.5.2"><a href="#subsec-coord-vectors-4" title="Copy permalink for Note 5.5.2">🔗</a></div></article><div class="para" id="subsec-coord-vectors-5">This process of assigning to a vector <span class="process-math">\(\bfv \in V\)</span> a vector <span class="process-math">\([\bfv]_{\mcb} \in \ff^n\)</span> is sometimes called a <dfn class="terminology">coordinate mapping</dfn>, and it defines a function <span class="process-math">\(V \to \ff^n\text{.}\)</span> This function is actually an isomorphism of vector spaces.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-5" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Note 5.5.2"><a href="#subsec-coord-vectors-4" title="Copy heading and permalink for Note 5.5.2" aria-label="Copy heading and permalink for Note 5.5.2">🔗</a></div>
+</article>
+<div class="para" id="subsec-coord-vectors-5">This process of assigning to a vector <span class="process-math">\(\bfv \in V\)</span> a vector <span class="process-math">\([\bfv]_{\mcb} \in \ff^n\)</span> is sometimes called a <dfn class="terminology">coordinate mapping</dfn>, and it defines a function <span class="process-math">\(V \to \ff^n\text{.}\)</span> This function is actually an isomorphism of vector spaces.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-coord-map-isomorphism"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="thm-coord-map-isomorphism-1-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be an <span class="process-math">\(n\)</span>-dimensional vector space over <span class="process-math">\(\ff\text{,}\)</span> and let <span class="process-math">\(\mcb\)</span> be a basis for <span class="process-math">\(V\text{.}\)</span> Consider the coordinate map <span class="process-math">\(C_{\mcb}:V \to \ff^n\)</span> given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-coord-map-isomorphism-1-1-7">
 \begin{equation*}
 C_{\mcb}(\bfv) = [\bfv]_{\mcb}\text{.}
 \end{equation*}
 </div>
 <div class="para">Then <span class="process-math">\(C_{\mcb}\)</span> is an isomorphism.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#thm-coord-map-isomorphism-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-coord-map-isomorphism-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 5.5.3"><a href="#thm-coord-map-isomorphism" title="Copy permalink for Theorem 5.5.3">🔗</a></div></article><details id="thm-coord-map-isomorphism-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-coord-map-isomorphism-2-1">The function <span class="process-math">\(C_{\mcb}\)</span> is a linear transformation. (We ask the reader to verify this in the exercises.) We note that <span class="process-math">\(C_{\mcb}\)</span> maps the basis vectors in <span class="process-math">\(\mcb\)</span> to the standard basis in <span class="process-math">\(\ff^n\text{.}\)</span> So, by <a href="sec-dimension.html#thm-isomorphism-basis" class="xref" data-knowl="./knowl/xref/thm-isomorphism-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11">Theorem 5.3.11</a>, <span class="process-math">\(C_{\mcb}\)</span> is an isomorphism.<div class="autopermalink" data-description="Paragraph"><a href="#thm-coord-map-isomorphism-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 5.5.3"><a href="#thm-coord-map-isomorphism" title="Copy heading and permalink for Theorem 5.5.3" aria-label="Copy heading and permalink for Theorem 5.5.3">🔗</a></div>
+</article>
+<details id="thm-coord-map-isomorphism-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="thm-coord-map-isomorphism-2-1">The function <span class="process-math">\(C_{\mcb}\)</span> is a linear transformation. (We ask the reader to verify this in the exercises.) We note that <span class="process-math">\(C_{\mcb}\)</span> maps the basis vectors in <span class="process-math">\(\mcb\)</span> to the standard basis in <span class="process-math">\(\ff^n\text{.}\)</span> So, by <a href="sec-dimension.html#thm-isomorphism-basis" class="xref" data-knowl="./knowl/xref/thm-isomorphism-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11">Theorem 5.3.11</a>, <span class="process-math">\(C_{\mcb}\)</span> is an isomorphism.<div class="autopermalink" data-description="Paragraph"><a href="#thm-coord-map-isomorphism-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 5.5.3.1"><a href="#thm-coord-map-isomorphism-2" title="Copy permalink for Proof 5.5.3.1">🔗</a></div></article></details><div class="para" id="subsec-coord-vectors-7">The existence of coordinate vectors means that just about everything for finite-dimensional vector spaces can be accomplished with vectors and matrices over <span class="process-math">\(\ff\text{.}\)</span> We explore this in the following examples.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-7" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 5.5.3.1"><a href="#thm-coord-map-isomorphism-2" title="Copy heading and permalink for Proof 5.5.3.1" aria-label="Copy heading and permalink for Proof 5.5.3.1">🔗</a></div>
+</article></details>
+<div class="para" id="subsec-coord-vectors-7">The existence of coordinate vectors means that just about everything for finite-dimensional vector spaces can be accomplished with vectors and matrices over <span class="process-math">\(\ff\text{.}\)</span> We explore this in the following examples.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="subsec-coord-vectors-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-coord-vectors-8-1-1">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="subsec-coord-vectors-8-1-1">
 <div class="para">Let <span class="process-math">\(\mcb = \{ 1, t, t^2 \}\)</span> be the standard basis of the vector space <span class="process-math">\(P_2\text{.}\)</span> If <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\)</span> are</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coord-vectors-8-1-1-5">
 \begin{equation*}
 p_1 = 2 - t + 4t^2 \hspace{6pt} \text{and} \hspace{6pt} p_2 = -3t^2 + 10\text{,}
 \end{equation*}
 </div>
 <div class="para">then the coordinate vectors of <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\)</span> are</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coord-vectors-8-1-1-8">
 \begin{equation*}
 [p_1]_{\mcb} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
 [p_2]_{\mcb} = \begin{bmatrix} 10 \\ 0 \\ -3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">Note that the order of the coordinates really matters, so in this case the terms in <span class="process-math">\(p_2\)</span> had to be reordered (in increasing powers of <span class="process-math">\(t\)</span>) before the coefficients were entered as the coordinate vector.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.5.4"><a href="#subsec-coord-vectors-8" title="Copy permalink for Example 5.5.4">🔗</a></div></article></details><details id="subsec-coord-vectors-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.5</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-coord-vectors-9-1-1">
+<div class="autopermalink" data-description="Example 5.5.4"><a href="#subsec-coord-vectors-8" title="Copy heading and permalink for Example 5.5.4" aria-label="Copy heading and permalink for Example 5.5.4">🔗</a></div>
+</article></details>
+<details id="subsec-coord-vectors-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="subsec-coord-vectors-9-1-1">
 <div class="para">Within <span class="process-math">\(\ff_5^3\text{,}\)</span> consider <span class="process-math">\(W = \spn\{\bfv_1, \bfv_2 \}\text{,}\)</span> where</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coord-vectors-9-1-1-3">
 \begin{equation*}
 \bfv_1 = \begin{bmatrix} 2 \\ 3 \\ 1 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
 \bfv_2 = \begin{bmatrix} 1 \\ 0 \\ 3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">Since neither of these vectors is a scalar multiple of the other, <span class="process-math">\(\mcb = \{\bfv_1, \bfv_2 \}\)</span> is a linearly independent set and therefore a basis for <span class="process-math">\(W\text{.}\)</span> If we let <span class="process-math">\(\bfv_3\)</span> be</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coord-vectors-9-1-1-7">
 \begin{equation*}
 \bfv_3 = \begin{bmatrix} 0 \\ 3 \\ 0 \end{bmatrix}\text{,}
 \end{equation*}
 </div>
 <div class="para">we can verify that <span class="process-math">\(\bfv_3 \in W\)</span> by row-reducing the appropriate matrix:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coord-vectors-9-1-1-9">
 \begin{equation*}
 \begin{bmatrix} 
 2 \amp 1 \amp 0 \\ 
@@ -565,40 +533,46 @@ p_1 = 2 - t + 4t^2 \hspace{6pt} \text{and} \hspace{6pt} p_2 = -3t^2 + 10\text{,}
 \end{equation*}
 </div>
 <div class="para">Since there is no pivot in the final column, we see that <span class="process-math">\(\bfv_3 \in W\text{.}\)</span> Further, we can write down the coordinate vector of <span class="process-math">\(\bfv_3\)</span> with respect to <span class="process-math">\(\mcb\)</span> by studying this row-reduced matrix. We see that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coord-vectors-9-1-1-13">
 \begin{equation*}
 [\bfv_3]_{\mcb} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">It may seem strange for a vector in the three-dimensional space <span class="process-math">\(\ff_5^3\)</span> to have a coordinate vector with only two entries, but this is due to the fact that <span class="process-math">\(W\)</span> is two-dimensional. (It has a basis of only two vectors!) The coordinate mapping in this case says that <span class="process-math">\(W\)</span> is isomorphic to <span class="process-math">\(\ff_5^2\text{,}\)</span> and this is why the coordinate vector for any vector in <span class="process-math">\(W\)</span> has only two entries.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-9-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.5.5"><a href="#subsec-coord-vectors-9" title="Copy permalink for Example 5.5.5">🔗</a></div></article></details><div class="para" id="subsec-coord-vectors-10">There are some consequences of <a href="sec-coordinates.html#thm-coord-map-isomorphism" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a> that we want to spell out explicitly because of their usefulness. The proof of the following proposition can be found as part of the proof of <a href="sec-dimension.html#thm-isomorphism-basis" class="xref" data-knowl="./knowl/xref/thm-isomorphism-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11">Theorem 5.3.11</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-10" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 5.5.5"><a href="#subsec-coord-vectors-9" title="Copy heading and permalink for Example 5.5.5" aria-label="Copy heading and permalink for Example 5.5.5">🔗</a></div>
+</article></details>
+<div class="para" id="subsec-coord-vectors-10">There are some consequences of <a href="sec-coordinates.html#thm-coord-map-isomorphism" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a> that we want to spell out explicitly because of their usefulness. The proof of the following proposition can be found as part of the proof of <a href="sec-dimension.html#thm-isomorphism-basis" class="xref" data-knowl="./knowl/xref/thm-isomorphism-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11">Theorem 5.3.11</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="proposition theorem-like" id="prop-coord-map-li-span"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.5.6</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="prop-coord-map-li-span-1-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(m\)</span> over <span class="process-math">\(\ff\text{.}\)</span> Since the coordinate mapping <span class="process-math">\(C_{\mcb}:V \to \ff^m\)</span> is an isomorphism, then the following statements are true.</div>
 <ol class="decimal" id="prop-coord-map-li-span-1-1-5">
 <li id="prop-coord-map-li-span-1-1-5-1">
-<div class="para" id="prop-coord-map-li-span-1-1-5-1-1">A set of vectors <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n \}\)</span> in <span class="process-math">\(V\)</span> is linearly independent if and only if the set of coordinate vectors <span class="process-math">\(\{C_{\mcb}(\bfv_1), \ldots, C_{\mcb}(\bfv_n) \}\)</span> is linearly independent in <span class="process-math">\(\ff^m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-coord-map-li-span-1-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="prop-coord-map-li-span-1-1-5-1-1">A set of vectors <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n \}\)</span> in <span class="process-math">\(V\)</span> is linearly independent if and only if the set of coordinate vectors <span class="process-math">\(\{C_{\mcb}(\bfv_1), \ldots, C_{\mcb}(\bfv_n) \}\)</span> is linearly independent in <span class="process-math">\(\ff^m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-coord-map-li-span-1-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#prop-coord-map-li-span-1-1-5-1" title="Copy permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#prop-coord-map-li-span-1-1-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="prop-coord-map-li-span-1-1-5-2">
-<div class="para" id="prop-coord-map-li-span-1-1-5-2-1">A set of vectors <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n \}\)</span> spans <span class="process-math">\(V\)</span> if and only if the set of coordinate vectors <span class="process-math">\(\{C_{\mcb}(\bfv_1), \ldots, C_{\mcb}(\bfv_n) \}\)</span> spans <span class="process-math">\(\ff^m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-coord-map-li-span-1-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="prop-coord-map-li-span-1-1-5-2-1">A set of vectors <span class="process-math">\(\{\bfv_1, \ldots, \bfv_n \}\)</span> spans <span class="process-math">\(V\)</span> if and only if the set of coordinate vectors <span class="process-math">\(\{C_{\mcb}(\bfv_1), \ldots, C_{\mcb}(\bfv_n) \}\)</span> spans <span class="process-math">\(\ff^m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-coord-map-li-span-1-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#prop-coord-map-li-span-1-1-5-2" title="Copy permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#prop-coord-map-li-span-1-1-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#prop-coord-map-li-span-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-coord-map-li-span-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 5.5.6"><a href="#prop-coord-map-li-span" title="Copy permalink for Proposition 5.5.6">🔗</a></div></article><div class="para" id="subsec-coord-vectors-12">Hopefully the reader can now see exactly how helpful the coordinate mapping isomorphism is. The following example should help to connect the dots.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-12" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proposition 5.5.6"><a href="#prop-coord-map-li-span" title="Copy heading and permalink for Proposition 5.5.6" aria-label="Copy heading and permalink for Proposition 5.5.6">🔗</a></div>
+</article>
+<div class="para" id="subsec-coord-vectors-12">Hopefully the reader can now see exactly how helpful the coordinate mapping isomorphism is. The following example should help to connect the dots.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="subsec-coord-vectors-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.7</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-coord-vectors-13-1-1">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="subsec-coord-vectors-13-1-1">
 <div class="para">Consider the set of vectors <span class="process-math">\(Y = \{p_1, p_2, p_3 \}\)</span> in <span class="process-math">\(P_3\text{,}\)</span> where</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-coord-map-li-span.html" id="subsec-coord-vectors-13-1-1-3">
 \begin{align*}
@@ -608,7 +582,7 @@ p_3 \amp = 1 + 3t +4t^2 - 3t^3\text{.}
 \end{align*}
 </div>
 <div class="para">With respect to the standard basis <span class="process-math">\(\mcb\)</span> of <span class="process-math">\(P_3\text{,}\)</span> these are the coordinate vectors:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-coord-map-li-span.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-coord-map-li-span.html" id="subsec-coord-vectors-13-1-1-6">
 \begin{equation*}
 [p_1]_{\mcb} = \begin{bmatrix} 1 \\ -1 \\ -3 \\ 2 \end{bmatrix}, \hspace{6pt}
 [p_2]_{\mcb} = \begin{bmatrix} -5 \\ 4 \\ 2 \\ -1 \end{bmatrix}, \hspace{6pt}
@@ -617,7 +591,7 @@ p_3 \amp = 1 + 3t +4t^2 - 3t^3\text{.}
 </div>
 <div class="para">By row-reducing the matrix which has these coordinate vectors as its columns, we can see that the set of coordinate vectors <span class="process-math">\(\{[p_1]_{\mcb}, [p_2]_{\mcb}, [p_3]_{\mcb} \}\)</span> is linearly independent in <span class="process-math">\(\rr^4\text{:}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-coord-map-li-span.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-coord-map-li-span.html" id="subsec-coord-vectors-13-1-1-9">
 \begin{equation*}
 \begin{bmatrix} 
 1 \amp -5 \amp 1 \\ 
@@ -635,56 +609,69 @@ p_3 \amp = 1 + 3t +4t^2 - 3t^3\text{.}
 </div>
 <div class="para">Using <a href="sec-coordinates.html#prop-coord-map-li-span" class="xref" data-knowl="./knowl/xref/prop-coord-map-li-span.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.5.6">Proposition 5.5.6</a>, we conclude that the set <span class="process-math">\(Y\)</span> is linearly independent in <span class="process-math">\(P_3\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-13-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec-coord-vectors-13-1-2">For dimension reasons, we already knew that the set <span class="process-math">\(Y\)</span> cannot span <span class="process-math">\(P_3\text{,}\)</span> however this row-reduced matrix confirms it. Since there is not a pivot in each row, the set of coordinate vectors does not span <span class="process-math">\(\rr^4\text{,}\)</span> and this means that <span class="process-math">\(Y\)</span> does not span <span class="process-math">\(P_3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-13-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-coord-vectors-13-1-2">For dimension reasons, we already knew that the set <span class="process-math">\(Y\)</span> cannot span <span class="process-math">\(P_3\text{,}\)</span> however this row-reduced matrix confirms it. Since there is not a pivot in each row, the set of coordinate vectors does not span <span class="process-math">\(\rr^4\text{,}\)</span> and this means that <span class="process-math">\(Y\)</span> does not span <span class="process-math">\(P_3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-coord-vectors-13-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.5.7"><a href="#subsec-coord-vectors-13" title="Copy permalink for Example 5.5.7">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 5.5.1: Coordinates of Vectors"><a href="#subsec-coord-vectors" title="Copy permalink for Subsection 5.5.1: Coordinates of Vectors">🔗</a></div></section><section class="subsection" id="subsec-coordinates-matrices"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.5.2</span><span class="space"> </span><span class="title">Coordinates and Linear Transformations</span>
+<div class="autopermalink" data-description="Example 5.5.7"><a href="#subsec-coord-vectors-13" title="Copy heading and permalink for Example 5.5.7" aria-label="Copy heading and permalink for Example 5.5.7">🔗</a></div>
+</article></details><div class="autopermalink" data-description="Subsection 5.5.1: Coordinates of Vectors"><a href="#subsec-coord-vectors" title="Copy heading and permalink for Subsection 5.5.1: Coordinates of Vectors" aria-label="Copy heading and permalink for Subsection 5.5.1: Coordinates of Vectors">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-coordinates-matrices">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Coordinates and Linear Transformations</span>
 </h3>
-<div class="para" id="subsec-coordinates-matrices-2">Back in <a href="sec-matrix-linear-trans.html" class="internal" title="Section 3.2: The Matrix of a Linear Transformation">Section 3.2</a>, we showed how every linear transformation <span class="process-math">\(\ff^n \to \ff^m\)</span> could be realized as multiplication by a matrix over <span class="process-math">\(\ff\text{.}\)</span> We now bring that understanding into contact with coordinate vectors. While not every linear transformation between vector spaces is multiplication by a matrix, every linear transformation between finite-dimensional vector spaces can be represented as multiplication by a matrix when considering the relevant coordinate vectors.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-coordinates-matrices-2">Back in <a href="sec-matrix-linear-trans.html" class="internal" title="Section 3.2: The Matrix of a Linear Transformation">Section 3.2</a>, we showed how every linear transformation <span class="process-math">\(\ff^n \to \ff^m\)</span> could be realized as multiplication by a matrix over <span class="process-math">\(\ff\text{.}\)</span> We now bring that understanding into contact with coordinate vectors. While not every linear transformation between vector spaces is multiplication by a matrix, every linear transformation between finite-dimensional vector spaces can be represented as multiplication by a matrix when considering the relevant coordinate vectors.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-coordinate-matrix"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.8</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="def-coordinate-matrix-1-1">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be <span class="process-math">\(n\)</span>- and <span class="process-math">\(m\)</span>-dimensional vector spaces over <span class="process-math">\(\ff\text{,}\)</span> respectively, and let <span class="process-math">\(T:V \to W\)</span> be a linear transformation. Further, suppose that <span class="process-math">\(\mcb = \{ \bfv_1, \ldots, \bfv_n \}\)</span> is a basis for <span class="process-math">\(V\)</span> and <span class="process-math">\(\mcc = \{\bfw_1, \ldots, \bfw_m \}\)</span> is a basis for <span class="process-math">\(W\text{.}\)</span> If, for each <span class="process-math">\(j\text{,}\)</span> <span class="process-math">\(1 \le j \le n\text{,}\)</span> we have <span class="process-math">\(a_{1j}, \ldots, a_{mj}\)</span> as the coordinates of <span class="process-math">\(T(\bfv_j)\)</span> with respect to <span class="process-math">\(\mcc\text{,}\)</span> then the <dfn class="terminology">matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\)</span></dfn> is the matrix <span class="process-math">\(A = [a_{ij}]\text{.}\)</span> (In other words, column <span class="process-math">\(j\)</span> of this matrix is the coordinate vector <span class="process-math">\([T(\bfv_j)]_{\mcc}\text{.}\)</span>) We denote this matrix as <span class="process-math">\([T]_{\mcb,\mcc}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-coordinate-matrix-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="def-coordinate-matrix-1-2">When <span class="process-math">\(V = W\)</span> and <span class="process-math">\(\mcb = \mcc\text{,}\)</span> then we use the notation <span class="process-math">\([T]_{\mcb}\)</span> and refer to the <dfn class="terminology">matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\mcb\)</span></dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-coordinate-matrix-1-2" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="def-coordinate-matrix-1-3">Finally, when the basis/bases we are using are unambiguous, we may refer to <span class="process-math">\([T]_{\mcb}\)</span> or <span class="process-math">\([T]_{\mcb,\mcc}\)</span> as the <dfn class="terminology">coordinate matrix</dfn> of <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-coordinate-matrix-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="def-coordinate-matrix-1-1">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be <span class="process-math">\(n\)</span>- and <span class="process-math">\(m\)</span>-dimensional vector spaces over <span class="process-math">\(\ff\text{,}\)</span> respectively, and let <span class="process-math">\(T:V \to W\)</span> be a linear transformation. Further, suppose that <span class="process-math">\(\mcb = \{ \bfv_1, \ldots, \bfv_n \}\)</span> is a basis for <span class="process-math">\(V\)</span> and <span class="process-math">\(\mcc = \{\bfw_1, \ldots, \bfw_m \}\)</span> is a basis for <span class="process-math">\(W\text{.}\)</span> If, for each <span class="process-math">\(j\text{,}\)</span> <span class="process-math">\(1 \le j \le n\text{,}\)</span> we have <span class="process-math">\(a_{1j}, \ldots, a_{mj}\)</span> as the coordinates of <span class="process-math">\(T(\bfv_j)\)</span> with respect to <span class="process-math">\(\mcc\text{,}\)</span> then the <dfn class="terminology">matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\)</span></dfn> is the matrix <span class="process-math">\(A = [a_{ij}]\text{.}\)</span> (In other words, column <span class="process-math">\(j\)</span> of this matrix is the coordinate vector <span class="process-math">\([T(\bfv_j)]_{\mcc}\text{.}\)</span>) We denote this matrix as <span class="process-math">\([T]_{\mcb,\mcc}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-coordinate-matrix-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="def-coordinate-matrix-1-2">When <span class="process-math">\(V = W\)</span> and <span class="process-math">\(\mcb = \mcc\text{,}\)</span> then we use the notation <span class="process-math">\([T]_{\mcb}\)</span> and refer to the <dfn class="terminology">matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\mcb\)</span></dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-coordinate-matrix-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="def-coordinate-matrix-1-3">Finally, when the basis/bases we are using are unambiguous, we may refer to <span class="process-math">\([T]_{\mcb}\)</span> or <span class="process-math">\([T]_{\mcb,\mcc}\)</span> as the <dfn class="terminology">coordinate matrix</dfn> of <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-coordinate-matrix-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 5.5.8"><a href="#def-coordinate-matrix" title="Copy permalink for Definition 5.5.8">🔗</a></div></article><div class="para" id="subsec-coordinates-matrices-4">The point of this rather long (and cumbersome!) definition is that we can represent a linear transformation <span class="process-math">\(T\)</span> as multiplication by a matrix. That’s what the following proposition shows.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-4" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 5.5.8"><a href="#def-coordinate-matrix" title="Copy heading and permalink for Definition 5.5.8" aria-label="Copy heading and permalink for Definition 5.5.8">🔗</a></div>
+</article>
+<div class="para" id="subsec-coordinates-matrices-4">The point of this rather long (and cumbersome!) definition is that we can represent a linear transformation <span class="process-math">\(T\)</span> as multiplication by a matrix. That’s what the following proposition shows.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="proposition theorem-like" id="prop-matrix-linear-tran-coordinates"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.5.9</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="prop-matrix-linear-tran-coordinates-1-1">
 <div class="para">Let <span class="process-math">\(T:V \to W\)</span> be a linear transformation between finite-dimensional vector spaces. Suppose that <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> have bases <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\text{,}\)</span> respectively. Let <span class="process-math">\(A = [T]_{\mcb,\mcc}\text{.}\)</span> Then, for any <span class="process-math">\(\bfv \in V\text{,}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="prop-matrix-linear-tran-coordinates-1-1-8">
 \begin{equation*}
 [T(\bfv)]_{\mcc} = A[\bfv]_{\mcb}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-linear-tran-coordinates-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-linear-tran-coordinates-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 5.5.9"><a href="#prop-matrix-linear-tran-coordinates" title="Copy permalink for Proposition 5.5.9">🔗</a></div></article><details id="prop-matrix-linear-tran-coordinates-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="prop-matrix-linear-tran-coordinates-2-1">
+<div class="autopermalink" data-description="Proposition 5.5.9"><a href="#prop-matrix-linear-tran-coordinates" title="Copy heading and permalink for Proposition 5.5.9" aria-label="Copy heading and permalink for Proposition 5.5.9">🔗</a></div>
+</article>
+<details id="prop-matrix-linear-tran-coordinates-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="prop-matrix-linear-tran-coordinates-2-1">
 <div class="para">Let the bases <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\)</span> be <span class="process-math">\(\mcb = \{\bfv_1, \ldots, \bfv_n \}\)</span> and <span class="process-math">\(\mcc = \{ \bfw_1, \ldots, \bfw_m \}\text{.}\)</span> For <span class="process-math">\(\bfv \in V\text{,}\)</span> suppose that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="prop-matrix-linear-tran-coordinates-2-1-6">
 \begin{equation*}
 \bfv = c_1 \bfv_1 + \cdots + c_n\bfv_n\text{,}
 \end{equation*}
 </div>
 <div class="para">or, in other words,</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="prop-matrix-linear-tran-coordinates-2-1-7">
 \begin{equation*}
 [\bfv]_{\mcb} = \begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix} \text{.}
 \end{equation*}
 </div>
 <div class="para">We also assume that, for each <span class="process-math">\(j\text{,}\)</span> <span class="process-math">\(1 \le j \le n\text{,}\)</span> the coordinates of <span class="process-math">\(T(\bfv_j)\)</span> with respect to <span class="process-math">\(\mcc\)</span> are <span class="process-math">\(a_{1j}, \ldots, a_{mj}\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-linear-tran-coordinates-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-linear-tran-coordinates-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="prop-matrix-linear-tran-coordinates-2-2">
 <div class="para">Then, using the linearity of <span class="process-math">\(T\text{,}\)</span> we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="prop-matrix-linear-tran-coordinates-2-2-2">
 \begin{equation*}
 T(\bfv) = \sum_{j=1}^n c_jT(\bfv_j) = \sum_{j=1}^n c_j \left( \sum_{i=1}^m a_{ij}\bfw_i \right)
 = \sum_{i=1}^m \left( \sum_{j=1}^n a_{ij}c_j \right) \bfw_i\text{.}
@@ -692,34 +679,46 @@ T(\bfv) = \sum_{j=1}^n c_jT(\bfv_j) = \sum_{j=1}^n c_j \left( \sum_{i=1}^m a_{ij
 </div>
 <div class="para">This says that the <span class="process-math">\(i\)</span>th coordinate of <span class="process-math">\(T(\bfv)\)</span> with respect to <span class="process-math">\(\mcc\)</span> is <span class="process-math">\(\sum a_{ij}c_j\text{,}\)</span> which is the same as the <span class="process-math">\(i\)</span>th entry of <span class="process-math">\(A [\bfv]_{\mcb}\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-linear-tran-coordinates-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-linear-tran-coordinates-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 5.5.9.1"><a href="#prop-matrix-linear-tran-coordinates-2" title="Copy permalink for Proof 5.5.9.1">🔗</a></div></article></details><article class="note remark-like" id="subsec-coordinates-matrices-6"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">5.5.10</span><span class="period">.</span>
+<div class="autopermalink" data-description="Proof 5.5.9.1"><a href="#prop-matrix-linear-tran-coordinates-2" title="Copy heading and permalink for Proof 5.5.9.1" aria-label="Copy heading and permalink for Proof 5.5.9.1">🔗</a></div>
+</article></details>
+<article class="note remark-like" id="subsec-coordinates-matrices-6"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="subsec-coordinates-matrices-6-1">According to this proposition, here is the way to realize a linear transformation as a matrix. Form <span class="process-math">\([T]_{\mcb, \mcc}\)</span> by calculating the coordinate vector <span class="process-math">\([T(\bfv_j)]_{\mcc}\)</span> for every vector <span class="process-math">\(\bfv_j \in \mcb\text{.}\)</span> Then, to use this matrix to determine what happens to a vector <span class="process-math">\(\bfv \in V\text{,}\)</span> find the coordinate vector <span class="process-math">\([\bfv]_{\mcb}\text{.}\)</span> After multiplying this vector by <span class="process-math">\([T]_{\mcb, \mcc}\text{,}\)</span> the result will be the coordinate vector <span class="process-math">\([T(\bfv)]_{\mcc}\text{.}\)</span> In order to recover the value of <span class="process-math">\(T(\bfv)\text{,}\)</span> use the basis vectors in <span class="process-math">\(\mcc\)</span> and this coordinate vector to find the correct  linear combination.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-6-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-coordinates-matrices-6-1">According to this proposition, here is the way to realize a linear transformation as a matrix. Form <span class="process-math">\([T]_{\mcb, \mcc}\)</span> by calculating the coordinate vector <span class="process-math">\([T(\bfv_j)]_{\mcc}\)</span> for every vector <span class="process-math">\(\bfv_j \in \mcb\text{.}\)</span> Then, to use this matrix to determine what happens to a vector <span class="process-math">\(\bfv \in V\text{,}\)</span> find the coordinate vector <span class="process-math">\([\bfv]_{\mcb}\text{.}\)</span> After multiplying this vector by <span class="process-math">\([T]_{\mcb, \mcc}\text{,}\)</span> the result will be the coordinate vector <span class="process-math">\([T(\bfv)]_{\mcc}\text{.}\)</span> In order to recover the value of <span class="process-math">\(T(\bfv)\text{,}\)</span> use the basis vectors in <span class="process-math">\(\mcc\)</span> and this coordinate vector to find the correct  linear combination.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Note 5.5.10"><a href="#subsec-coordinates-matrices-6" title="Copy permalink for Note 5.5.10">🔗</a></div></article><article class="note remark-like" id="subsec-coordinates-matrices-7"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">5.5.11</span><span class="period">.</span>
+<div class="autopermalink" data-description="Note 5.5.10"><a href="#subsec-coordinates-matrices-6" title="Copy heading and permalink for Note 5.5.10" aria-label="Copy heading and permalink for Note 5.5.10">🔗</a></div>
+</article>
+<article class="note remark-like" id="subsec-coordinates-matrices-7"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="subsec-coordinates-matrices-7-1">There are several linear transformations involved in <a href="sec-coordinates.html#prop-matrix-linear-tran-coordinates" class="xref" data-knowl="./knowl/xref/prop-matrix-linear-tran-coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.5.9">Proposition 5.5.9</a>—the transformation <span class="process-math">\(T\text{,}\)</span> multiplication by the matrix <span class="process-math">\(A\text{,}\)</span> and the two coordinate mappings. Because it is easy to confuse the roles of these transformations, mathematicians frequently employ a tool called a <em class="emphasis">commutative diagram</em> to keep their ideas and symbols organized.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-7-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-coordinates-matrices-7-1">There are several linear transformations involved in <a href="sec-coordinates.html#prop-matrix-linear-tran-coordinates" class="xref" data-knowl="./knowl/xref/prop-matrix-linear-tran-coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.5.9">Proposition 5.5.9</a>—the transformation <span class="process-math">\(T\text{,}\)</span> multiplication by the matrix <span class="process-math">\(A\text{,}\)</span> and the two coordinate mappings. Because it is easy to confuse the roles of these transformations, mathematicians frequently employ a tool called a <em class="emphasis">commutative diagram</em> to keep their ideas and symbols organized.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-coordinates-matrices-7-2">We will produce here the diagram that summarizes the conclusion of <a href="sec-coordinates.html#prop-matrix-linear-tran-coordinates" class="xref" data-knowl="./knowl/xref/prop-matrix-linear-tran-coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.5.9">Proposition 5.5.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-7-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-coordinates-matrices-7-2">We will produce here the diagram that summarizes the conclusion of <a href="sec-coordinates.html#prop-matrix-linear-tran-coordinates" class="xref" data-knowl="./knowl/xref/prop-matrix-linear-tran-coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.5.9">Proposition 5.5.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="subsec-coordinates-matrices-7-3"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;">
-<img src="generated/latex-image/comm-diag-lt-coords.svg" role="img" class="contained" alt="A commutative diagram illustrating the previous proposition. See long description."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="comm-diag-lt-coords-description"><div class="para" id="comm-diag-lt-coords-2-1">A rectangular commutative diagram. The upper left corner contains <span class="process-math">\(V\)</span> with a horizontal arrow to the upper right corner containing <span class="process-math">\(W\text{;}\)</span> this arrow is labeled with <span class="process-math">\(T\text{.}\)</span> An arrow labeled <span class="process-math">\(M_{\mathcal{B}}\)</span> is drawn from the <span class="process-math">\(V\)</span> in the upper left to <span class="process-math">\(\ff^n\)</span> in the lower left corner. An arrow labeled <span class="process-math">\(M_{\mathcal{C}}\)</span> is drawn from the <span class="process-math">\(W\)</span> in the upper right to <span class="process-math">\(\ff^m\)</span> in the lower right. An arrow labeled <span class="process-math">\(T_{A}\)</span> is drawn from the lower left to the lower right.<div class="autopermalink" data-description="Paragraph"><a href="#comm-diag-lt-coords-2-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div></div></details>
+<img src="generated/latex-image/comm-diag-lt-coords.svg" role="img" class="contained" alt="A commutative diagram illustrating the previous proposition. See long description."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="comm-diag-lt-coords-description">
+<div class="para" id="comm-diag-lt-coords-2-1">A rectangular commutative diagram. The upper left corner contains <span class="process-math">\(V\)</span> with a horizontal arrow to the upper right corner containing <span class="process-math">\(W\text{;}\)</span> this arrow is labeled with <span class="process-math">\(T\text{.}\)</span> An arrow labeled <span class="process-math">\(M_{\mathcal{B}}\)</span> is drawn from the <span class="process-math">\(V\)</span> in the upper left to <span class="process-math">\(\ff^n\)</span> in the lower left corner. An arrow labeled <span class="process-math">\(M_{\mathcal{C}}\)</span> is drawn from the <span class="process-math">\(W\)</span> in the upper right to <span class="process-math">\(\ff^m\)</span> in the lower right. An arrow labeled <span class="process-math">\(T_{A}\)</span> is drawn from the lower left to the lower right.<div class="autopermalink" data-description="Paragraph"><a href="#comm-diag-lt-coords-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.5.12<span class="period">.</span></span><span class="space"> </span>A commutative diagram illustrating the relationship between a linear transformation and multiplication by a matrix.<div class="autopermalink" data-description="Figure 5.5.12"><a href="#subsec-coordinates-matrices-7-3" title="Copy permalink for Figure 5.5.12">🔗</a></div></figcaption></figure><div class="para" id="subsec-coordinates-matrices-7-4">We have labeled the coordinate mappings from <span class="process-math">\(V\)</span> to <span class="process-math">\(\ff^n\)</span> and from <span class="process-math">\(W\)</span> to <span class="process-math">\(\ff^m\)</span> by <span class="process-math">\(M_{\mcb}\)</span> and <span class="process-math">\(M_{\mcc}\text{,}\)</span> respectively. Further, we have labeled the linear transformation which is multiplication by <span class="process-math">\(A\text{,}\)</span> from <span class="process-math">\(\ff^n\)</span> to <span class="process-math">\(\ff^m\text{,}\)</span> with <span class="process-math">\(T_A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-7-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div></details>
 </div>
-<div class="para" id="subsec-coordinates-matrices-7-5">The proposition claims that this diagram <em class="emphasis">commutes</em>. In other words, for any vector <span class="process-math">\(\bfv \in V\text{,}\)</span> going around the rectangle in either of the possible directions (right then down or down then right) will produce the same result. This would mean that <span class="process-math">\(M_{\mcc}(T(\bfv)) = T_A(M_{\mcb}(\bfv))\text{.}\)</span> With different notation, this is exactly the conclusion of <a href="sec-coordinates.html#prop-matrix-linear-tran-coordinates" class="xref" data-knowl="./knowl/xref/prop-matrix-linear-tran-coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.5.9">Proposition 5.5.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-7-5" title="Copy permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A commutative diagram illustrating the relationship between a linear transformation and multiplication by a matrix.<div class="autopermalink" data-description="Figure 5.5.12"><a href="#subsec-coordinates-matrices-7-3" title="Copy heading and permalink for Figure 5.5.12" aria-label="Copy heading and permalink for Figure 5.5.12">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="subsec-coordinates-matrices-7-4">We have labeled the coordinate mappings from <span class="process-math">\(V\)</span> to <span class="process-math">\(\ff^n\)</span> and from <span class="process-math">\(W\)</span> to <span class="process-math">\(\ff^m\)</span> by <span class="process-math">\(M_{\mcb}\)</span> and <span class="process-math">\(M_{\mcc}\text{,}\)</span> respectively. Further, we have labeled the linear transformation which is multiplication by <span class="process-math">\(A\text{,}\)</span> from <span class="process-math">\(\ff^n\)</span> to <span class="process-math">\(\ff^m\text{,}\)</span> with <span class="process-math">\(T_A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Note 5.5.11"><a href="#subsec-coordinates-matrices-7" title="Copy permalink for Note 5.5.11">🔗</a></div></article><details id="subsec-coordinates-matrices-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.13</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-coordinates-matrices-8-1-1">
+<div class="para" id="subsec-coordinates-matrices-7-5">The proposition claims that this diagram <em class="emphasis">commutes</em>. In other words, for any vector <span class="process-math">\(\bfv \in V\text{,}\)</span> going around the rectangle in either of the possible directions (right then down or down then right) will produce the same result. This would mean that <span class="process-math">\(M_{\mcc}(T(\bfv)) = T_A(M_{\mcb}(\bfv))\text{.}\)</span> With different notation, this is exactly the conclusion of <a href="sec-coordinates.html#prop-matrix-linear-tran-coordinates" class="xref" data-knowl="./knowl/xref/prop-matrix-linear-tran-coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.5.9">Proposition 5.5.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 5.5.11"><a href="#subsec-coordinates-matrices-7" title="Copy heading and permalink for Note 5.5.11" aria-label="Copy heading and permalink for Note 5.5.11">🔗</a></div>
+</article>
+<details id="subsec-coordinates-matrices-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="subsec-coordinates-matrices-8-1-1">
 <div class="para">Let <span class="process-math">\(D: P_3 \to P_2\)</span> be the differentiation function. (We proved that a very similar function was a linear transformation in <a href="sec-linear-trans.html#examp-deriv-lin-trans" class="xref" data-knowl="./knowl/xref/examp-deriv-lin-trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.3">Example 3.1.3</a>.) Let <span class="process-math">\(\mcb\)</span> be the standard basis for <span class="process-math">\(P_3\text{,}\)</span> and let <span class="process-math">\(\mcc\)</span> be the standard basis for <span class="process-math">\(P_2\text{.}\)</span> Here we calculate the coordinate vectors for the derivative of each of the polynomials in <span class="process-math">\(\mcb\text{:}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-deriv-lin-trans.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-deriv-lin-trans.html" id="subsec-coordinates-matrices-8-1-1-8">
 \begin{equation*}
 [D(1)]_{\mcc} = \begin{bmatrix} 0 \\  0 \\ 0 \end{bmatrix}, \hspace{6pt}
 [D(t)]_{\mcc} = \begin{bmatrix} 1 \\  0 \\ 0 \end{bmatrix}, \hspace{6pt}
@@ -729,17 +728,18 @@ T(\bfv) = \sum_{j=1}^n c_jT(\bfv_j) = \sum_{j=1}^n c_j \left( \sum_{i=1}^m a_{ij
 </div>
 <div class="para">These coordinate vectors form the columns of the matrix <span class="process-math">\([D]_{\mcb,\mcc}\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="subsec-coordinates-matrices-8-1-2">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="subsec-coordinates-matrices-8-1-2">
 <div class="para">We will now use this matrix to carry out the action of <span class="process-math">\(D\text{.}\)</span> Let’s take the derivative of <span class="process-math">\(p = -2 - 4t - t^2 - t^3\text{.}\)</span> Since the coordinate vector of <span class="process-math">\(p\)</span> with respect to <span class="process-math">\(\mcb\)</span> is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coordinates-matrices-8-1-2-5">
 \begin{equation*}
 [p]_{\mcb} = \begin{bmatrix} -2 \\ -4 \\ -1 \\ -1 \end{bmatrix}\text{,}
 \end{equation*}
 </div>
 <div class="para">we can multiply this vector by <span class="process-math">\([D]_{\mcb,\mcc}\)</span> to get <span class="process-math">\([D(p)]_{\mcc}\text{:}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coordinates-matrices-8-1-2-8">
 \begin{equation*}
 [D(p)]_{\mcc} = \begin{bmatrix}
 0 \amp 1 \amp 0 \amp 0 \\ 
@@ -750,27 +750,31 @@ T(\bfv) = \sum_{j=1}^n c_jT(\bfv_j) = \sum_{j=1}^n c_j \left( \sum_{i=1}^m a_{ij
 \end{equation*}
 </div>
 <div class="para">This tells us that the coordinates for <span class="process-math">\(D(p)\)</span> with respect to <span class="process-math">\(\mcc\)</span> are <span class="process-math">\(-4\text{,}\)</span> <span class="process-math">\(-2\text{,}\)</span> and <span class="process-math">\(-3\text{.}\)</span> In other words,</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coordinates-matrices-8-1-2-14">
 \begin{equation*}
 D(p) = -4(1) - 2(t) - 3(t^2)\text{,}
 \end{equation*}
 </div>
 <div class="para">and this matches what we know to be the derivative of <span class="process-math">\(p\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-8-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-8-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.5.13"><a href="#subsec-coordinates-matrices-8" title="Copy permalink for Example 5.5.13">🔗</a></div></article></details><details id="subsec-coordinates-matrices-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.14</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-coordinates-matrices-9-1-1">
+<div class="autopermalink" data-description="Example 5.5.13"><a href="#subsec-coordinates-matrices-8" title="Copy heading and permalink for Example 5.5.13" aria-label="Copy heading and permalink for Example 5.5.13">🔗</a></div>
+</article></details>
+<details id="subsec-coordinates-matrices-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="subsec-coordinates-matrices-9-1-1">
 <div class="para">We consider a linear transformation <span class="process-math">\(T: \rr^3 \to P_2\)</span> defined by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coordinates-matrices-9-1-1-2">
 \begin{equation*}
 T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) = (a+2b) + (-3a+4b-c)t + (2a - 4c)t^2\text{.}
 \end{equation*}
 </div>
 <div class="para">We let <span class="process-math">\(\mcb\)</span> be the standard basis for <span class="process-math">\(\rr^3\)</span> and <span class="process-math">\(\mcc\)</span> be the standard basis for <span class="process-math">\(P_2\text{.}\)</span> We now write <span class="process-math">\([T(\bfe_i)]_{\mcc}\)</span> for each <span class="process-math">\(\bfe_i \in \mcb\text{:}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coordinates-matrices-9-1-1-9">
 \begin{equation*}
 [T(\bfe_1)]_{\mcc} = \begin{bmatrix} 1 \\ -3 \\ 2 \end{bmatrix}, \hspace{6pt}
 [T(\bfe_2)]_{\mcc} = \begin{bmatrix} 2 \\ 4 \\ 0 \end{bmatrix}, \hspace{6pt}
@@ -778,13 +782,13 @@ T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) = (a+2b) + (-3a+4b-c)
 \end{equation*}
 </div>
 <div class="para">These coordinate vectors make up the columns of the matrix <span class="process-math">\([T]_{\mcb,\mcc}\text{.}\)</span> If we wanted to calculate <span class="process-math">\(T(\bfv)\text{,}\)</span> where</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coordinates-matrices-9-1-1-12">
 \begin{equation*}
 \bfv = \begin{bmatrix} 1 \\ -3 \\ 4 \end{bmatrix}\text{,}
 \end{equation*}
 </div>
 <div class="para">we could do so using coordinate vectors and the matrix <span class="process-math">\([T]_{\mcb, \mcc}\text{.}\)</span> Since the coordinate vector of <span class="process-math">\(\bfv\)</span> with respect to <span class="process-math">\(\mcb\)</span> is fairly obvious—it is <span class="process-math">\(\bfv\)</span> itself—we can proceed with this calculation:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-coordinates-matrices-9-1-1-19">
 \begin{equation*}
 [T(\bfv)]_{\mcc} = [T]_{\mcb,\mcc} [\bfv]_{\mcb} = 
 \begin{bmatrix}
@@ -797,34 +801,40 @@ T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) = (a+2b) + (-3a+4b-c)
 </div>
 <div class="para">This tells us that <span class="process-math">\(T(\bfv) = -5 - 19t - 14t^2\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-9-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.5.14"><a href="#subsec-coordinates-matrices-9" title="Copy permalink for Example 5.5.14">🔗</a></div></article></details><div class="para" id="subsec-coordinates-matrices-10">We will end this section with two results related to coordinate matrices. This first result says that the composition of linear transformation matches the multiplication of matrices in the expected way.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-10" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 5.5.14"><a href="#subsec-coordinates-matrices-9" title="Copy heading and permalink for Example 5.5.14" aria-label="Copy heading and permalink for Example 5.5.14">🔗</a></div>
+</article></details>
+<div class="para" id="subsec-coordinates-matrices-10">We will end this section with two results related to coordinate matrices. This first result says that the composition of linear transformation matches the multiplication of matrices in the expected way.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-mult-coord-matrices"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.15</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="thm-mult-coord-matrices-1-1">
 <div class="para">Let <span class="process-math">\(U\text{,}\)</span> <span class="process-math">\(V\text{,}\)</span> and <span class="process-math">\(W\)</span> be finite-dimensional vector spaces with bases <span class="process-math">\(\mcb\text{,}\)</span> <span class="process-math">\(\mcc\text{,}\)</span> and <span class="process-math">\(\mathcal{D}\text{,}\)</span> respectively. Suppose that <span class="process-math">\(T \in L(U,V)\)</span> and that <span class="process-math">\({S \in L(V,W)}\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-mult-coord-matrices-1-1-9">
 \begin{equation*}
 [ST]_{\mcb, \mathcal{D}} = [S]_{\mcc,\mathcal{D}}[T]_{\mcb,\mcc}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#thm-mult-coord-matrices-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-mult-coord-matrices-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 5.5.15"><a href="#thm-mult-coord-matrices" title="Copy permalink for Theorem 5.5.15">🔗</a></div></article><details id="thm-mult-coord-matrices-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-mult-coord-matrices-2-1">We assume that <span class="process-math">\(\mcb = \{\bfu_1,\ldots,\bfu_p\}\text{,}\)</span> <span class="process-math">\(\mcc = \{\bfv_1,\ldots,\bfv_n\}\text{,}\)</span> and <span class="process-math">\({\mathcal{D} = \{\bfw_1,\ldots,\bfw_m\}}\text{.}\)</span> Further, we let <span class="process-math">\(A = [S]_{\mcc,\mathcal{D}}\text{,}\)</span> <span class="process-math">\(B = [T]_{\mcb,\mcc}\text{,}\)</span> and <span class="process-math">\(C = [ST]_{\mcb, \mathcal{D}}\text{.}\)</span> We want to show that <span class="process-math">\(AB = C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-mult-coord-matrices-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 5.5.15"><a href="#thm-mult-coord-matrices" title="Copy heading and permalink for Theorem 5.5.15" aria-label="Copy heading and permalink for Theorem 5.5.15">🔗</a></div>
+</article>
+<details id="thm-mult-coord-matrices-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="thm-mult-coord-matrices-2-1">We assume that <span class="process-math">\(\mcb = \{\bfu_1,\ldots,\bfu_p\}\text{,}\)</span> <span class="process-math">\(\mcc = \{\bfv_1,\ldots,\bfv_n\}\text{,}\)</span> and <span class="process-math">\({\mathcal{D} = \{\bfw_1,\ldots,\bfw_m\}}\text{.}\)</span> Further, we let <span class="process-math">\(A = [S]_{\mcc,\mathcal{D}}\text{,}\)</span> <span class="process-math">\(B = [T]_{\mcb,\mcc}\text{,}\)</span> and <span class="process-math">\(C = [ST]_{\mcb, \mathcal{D}}\text{.}\)</span> We want to show that <span class="process-math">\(AB = C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-mult-coord-matrices-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-mult-coord-matrices-2-2">
 <div class="para">The definition of <span class="process-math">\(A\)</span> tells us that, for each <span class="process-math">\(k=1,\ldots,n\text{,}\)</span> the <span class="process-math">\(k\)</span>th column of <span class="process-math">\(A\)</span> is the coordinate vector of <span class="process-math">\(S(\bfv_k)\)</span> with respect to <span class="process-math">\(\mathcal{D}\text{.}\)</span> So</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-mult-coord-matrices-2-2-7">
 \begin{equation*}
 S(\bfv_k) = \sum_{i=1}^m a_{ik}\bfw_i\text{.}
 \end{equation*}
 </div>
 <div class="para">Also, for each <span class="process-math">\(j=1,\ldots,p\text{,}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-mult-coord-matrices-2-2-9">
 \begin{equation*}
 T(\bfu_j) = \sum_{k=1}^n b_{kj}\bfv_k\text{.}
 \end{equation*}
@@ -838,47 +848,57 @@ T(\bfu_j) = \sum_{k=1}^n b_{kj}\bfv_k\text{.}
 \end{align*}
 </div>
 <div class="para">This means that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-mult-coord-matrices-2-2-11">
 \begin{equation*}
 c_{ij} = \sum_{k=1}^n a_{ik}b_{kj}
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(i\)</span> and <span class="process-math">\(j\text{.}\)</span> Since this is how the <span class="process-math">\((i,j)\)</span>-entry of the matrix product <span class="process-math">\(AB\)</span> is formed, this proves that <span class="process-math">\(C=AB\text{,}\)</span> as desired.<details class="ptx-footnote" aria-live="polite" id="thm-mult-coord-matrices-2-2-17"><summary class="ptx-footnote__number" title="Footnote 7"><sup> 7 </sup></summary><div class="ptx-footnote__contents" id="thm-mult-coord-matrices-2-2-17">This proof was taken from <em class="emphasis">Linear Algebra</em> (2018), Meckes and Meckes, pages 193-194.</div></details>
+<div class="para">for all <span class="process-math">\(i\)</span> and <span class="process-math">\(j\text{.}\)</span> Since this is how the <span class="process-math">\((i,j)\)</span>-entry of the matrix product <span class="process-math">\(AB\)</span> is formed, this proves that <span class="process-math">\(C=AB\text{,}\)</span> as desired.<details class="ptx-footnote" aria-live="polite" id="thm-mult-coord-matrices-2-2-17"><summary class="ptx-footnote__number" title="Footnote 2"><sup> 2 </sup></summary>
+<div class="ptx-footnote__contents" id="thm-mult-coord-matrices-2-2-17">This proof was taken from <em class="emphasis">Linear Algebra</em> (2018), Meckes and Meckes, pages 193-194.
+</div></details>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#thm-mult-coord-matrices-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-mult-coord-matrices-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 5.5.15.1"><a href="#thm-mult-coord-matrices-2" title="Copy permalink for Proof 5.5.15.1">🔗</a></div></article></details><div class="para" id="subsec-coordinates-matrices-12">This final result states that the invertibility of a linear transformation and the invertibility of its coordinate matrix are tied together in the predictable way.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-12" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 5.5.15.1"><a href="#thm-mult-coord-matrices-2" title="Copy heading and permalink for Proof 5.5.15.1" aria-label="Copy heading and permalink for Proof 5.5.15.1">🔗</a></div>
+</article></details>
+<div class="para" id="subsec-coordinates-matrices-12">This final result states that the invertibility of a linear transformation and the invertibility of its coordinate matrix are tied together in the predictable way.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-coordinates-matrices-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="corollary theorem-like" id="cor-coord-matrix-inverse"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.5.16</span><span class="period">.</span>
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="cor-coord-matrix-inverse-1-1">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be finite-dimensional vector spaces with bases <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\text{,}\)</span> respectively. Suppose that <span class="process-math">\(T \in L(V,W)\)</span> and that <span class="process-math">\(A = [T]_{\mcb,\mcc}\text{.}\)</span> Then <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(T\)</span> is invertible, and in that case, <span class="process-math">\([T^{-1}]_{\mcc,\mcb} = A^{-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-coord-matrix-inverse-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="cor-coord-matrix-inverse-1-1">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be finite-dimensional vector spaces with bases <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\text{,}\)</span> respectively. Suppose that <span class="process-math">\(T \in L(V,W)\)</span> and that <span class="process-math">\(A = [T]_{\mcb,\mcc}\text{.}\)</span> Then <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(T\)</span> is invertible, and in that case, <span class="process-math">\([T^{-1}]_{\mcc,\mcb} = A^{-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-coord-matrix-inverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Corollary 5.5.16"><a href="#cor-coord-matrix-inverse" title="Copy permalink for Corollary 5.5.16">🔗</a></div></article><div class="autopermalink" data-description="Subsection 5.5.2: Coordinates and Linear Transformations"><a href="#subsec-coordinates-matrices" title="Copy permalink for Subsection 5.5.2: Coordinates and Linear Transformations">🔗</a></div></section><section class="reading-questions" id="sec-coordinates-5"><h3 class="heading hide-type">
-<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="space"> </span><span class="title">Reading Questions</span>
+<div class="autopermalink" data-description="Corollary 5.5.16"><a href="#cor-coord-matrix-inverse" title="Copy heading and permalink for Corollary 5.5.16" aria-label="Copy heading and permalink for Corollary 5.5.16">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 5.5.2: Coordinates and Linear Transformations"><a href="#subsec-coordinates-matrices" title="Copy heading and permalink for Subsection 5.5.2: Coordinates and Linear Transformations" aria-label="Copy heading and permalink for Subsection 5.5.2: Coordinates and Linear Transformations">🔗</a></div>
+</section>
+<section class="reading-questions" id="sec-coordinates-5">
+<h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reading Questions</span>
 </h3>
-<article class="exercise exercise-like" id="sec-coordinates-5-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<article class="exercise exercise-like" id="sec-coordinates-5-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-5-1-1-1">
 <div class="para">Let <span class="process-math">\(\bfv_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}\)</span> and <span class="process-math">\(\bfv_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}\text{.}\)</span>
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-5-1-1-1-3">
 <li id="sec-coordinates-5-1-1-1-3-1">
-<div class="para" id="sec-coordinates-5-1-1-1-3-1-1">The set <span class="process-math">\(\mcb = \{\bfv_1, \bfv_2 \}\)</span> is a basis for <span class="process-math">\(\rr^2\text{.}\)</span> Without doing any calculations, explain why this is so. (I’m not looking for the definition of a basis, I want an explanation as to why this set satisfies that definition.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-1-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-5-1-1-1-3-1-1">The set <span class="process-math">\(\mcb = \{\bfv_1, \bfv_2 \}\)</span> is a basis for <span class="process-math">\(\rr^2\text{.}\)</span> Without doing any calculations, explain why this is so. (I’m not looking for the definition of a basis, I want an explanation as to why this set satisfies that definition.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-1-1-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.3.1.a"><a href="#sec-coordinates-5-1-1-1-3-1" title="Copy permalink for Item 5.5.3.1.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.3.1.a"><a href="#sec-coordinates-5-1-1-1-3-1" title="Copy heading and permalink for Item 5.5.3.1.a" aria-label="Copy heading and permalink for Item 5.5.3.1.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-5-1-1-1-3-2">
-<div class="para" id="sec-coordinates-5-1-1-1-3-2-1">Let <span class="process-math">\(\bfw = \begin{bmatrix} 0 \\ 4 \end{bmatrix}\text{.}\)</span> What is the coordinate vector of <span class="process-math">\(\bfw\)</span> with respect to <span class="process-math">\(\mcb\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-1-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-5-1-1-1-3-2-1">Let <span class="process-math">\(\bfw = \begin{bmatrix} 0 \\ 4 \end{bmatrix}\text{.}\)</span> What is the coordinate vector of <span class="process-math">\(\bfw\)</span> with respect to <span class="process-math">\(\mcb\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-1-1-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.3.1.b"><a href="#sec-coordinates-5-1-1-1-3-2" title="Copy permalink for Item 5.5.3.1.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.3.1.b"><a href="#sec-coordinates-5-1-1-1-3-2" title="Copy heading and permalink for Item 5.5.3.1.b" aria-label="Copy heading and permalink for Item 5.5.3.1.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Reading Question 5.5.3.1"><a href="#sec-coordinates-5-1" title="Copy permalink for Reading Question 5.5.3.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Reading Question 5.5.3.1"><a href="#sec-coordinates-5-1" title="Copy heading and permalink for Reading Question 5.5.3.1" aria-label="Copy heading and permalink for Reading Question 5.5.3.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-5-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-5-2-1-1">
 <div class="para">Let <span class="process-math">\(T:P_2 \to P_2\)</span> be the following function:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-5-2-1-1-2">
 \begin{equation*}
 T(p) = p(-1) + p(0)t + p(1)t^2\text{.}
 \end{equation*}
@@ -887,88 +907,99 @@ T(p) = p(-1) + p(0)t + p(1)t^2\text{.}
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-5-2-1-1-5">
 <li id="sec-coordinates-5-2-1-1-5-1">
-<div class="para" id="sec-coordinates-5-2-1-1-5-1-1">Find the coordinate matrix <span class="process-math">\([T]_{\mcb}\)</span> for <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-2-1-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-5-2-1-1-5-1-1">Find the coordinate matrix <span class="process-math">\([T]_{\mcb}\)</span> for <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-2-1-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.3.2.a"><a href="#sec-coordinates-5-2-1-1-5-1" title="Copy permalink for Item 5.5.3.2.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.3.2.a"><a href="#sec-coordinates-5-2-1-1-5-1" title="Copy heading and permalink for Item 5.5.3.2.a" aria-label="Copy heading and permalink for Item 5.5.3.2.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-5-2-1-1-5-2">
 <div class="para logical" id="sec-coordinates-5-2-1-1-5-2-1">
 <div class="para">Use this coordinate matrix to calculate <span class="process-math">\(T(q)\text{,}\)</span> if</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-5-2-1-1-5-2-1-2">
 \begin{equation*}
 q = -3 -5t + 3t^2\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-2-1-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-2-1-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.3.2.b"><a href="#sec-coordinates-5-2-1-1-5-2" title="Copy permalink for Item 5.5.3.2.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.3.2.b"><a href="#sec-coordinates-5-2-1-1-5-2" title="Copy heading and permalink for Item 5.5.3.2.b" aria-label="Copy heading and permalink for Item 5.5.3.2.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Reading Question 5.5.3.2"><a href="#sec-coordinates-5-2" title="Copy permalink for Reading Question 5.5.3.2">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 5.5.3"><a href="#sec-coordinates-5" title="Copy permalink for Reading Questions 5.5.3">🔗</a></div></section><section class="exercises" id="sec-coordinates-6"><h3 class="heading hide-type">
-<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="space"> </span><span class="title">Exercises</span>
+<div class="autopermalink" data-description="Reading Question 5.5.3.2"><a href="#sec-coordinates-5-2" title="Copy heading and permalink for Reading Question 5.5.3.2" aria-label="Copy heading and permalink for Reading Question 5.5.3.2">🔗</a></div>
+</article><div class="autopermalink" data-description="Reading Questions 5.5.3"><a href="#sec-coordinates-5" title="Copy heading and permalink for Reading Questions 5.5.3" aria-label="Copy heading and permalink for Reading Questions 5.5.3">🔗</a></div>
+</section>
+<section class="exercises" id="sec-coordinates-6">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="sec-coordinates-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<article class="exercise exercise-like" id="sec-coordinates-6-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-1-1-1">
 <div class="para">For the given basis <span class="process-math">\(\mcb\)</span> of <span class="process-math">\(\rr^2\)</span> and the given coordinate vector <span class="process-math">\([\bfv]_{\mcb}\text{,}\)</span> find <span class="process-math">\(\bfv\text{.}\)</span>
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-1-1-1-5">
 <li id="sec-coordinates-6-1-1-1-5-1">
 <div class="para" id="sec-coordinates-6-1-1-1-5-1-1">
-<span class="process-math">\([\bfv]_{\mcb} = \begin{bmatrix} -1 \\ -2 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(\mcb = \left\{ \begin{bmatrix} 2 \\ 5 \end{bmatrix}, \begin{bmatrix} -3 \\ 1 \end{bmatrix} \right\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-1-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\([\bfv]_{\mcb} = \begin{bmatrix} -1 \\ -2 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(\mcb = \left\{ \begin{bmatrix} 2 \\ 5 \end{bmatrix}, \begin{bmatrix} -3 \\ 1 \end{bmatrix} \right\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-1-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.1.a"><a href="#sec-coordinates-6-1-1-1-5-1" title="Copy permalink for Item 5.5.4.1.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.1.a"><a href="#sec-coordinates-6-1-1-1-5-1" title="Copy heading and permalink for Item 5.5.4.1.a" aria-label="Copy heading and permalink for Item 5.5.4.1.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-1-1-1-5-2">
 <div class="para" id="sec-coordinates-6-1-1-1-5-2-1">
-<span class="process-math">\([\bfv]_{\mcb} = \begin{bmatrix} 3 \\ -4 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(\mcb = \left\{ \begin{bmatrix} -1 \\ 2 \end{bmatrix}, \begin{bmatrix} 4 \\ 2 \end{bmatrix} \right\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-1-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\([\bfv]_{\mcb} = \begin{bmatrix} 3 \\ -4 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(\mcb = \left\{ \begin{bmatrix} -1 \\ 2 \end{bmatrix}, \begin{bmatrix} 4 \\ 2 \end{bmatrix} \right\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-1-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.1.b"><a href="#sec-coordinates-6-1-1-1-5-2" title="Copy permalink for Item 5.5.4.1.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.1.b"><a href="#sec-coordinates-6-1-1-1-5-2" title="Copy heading and permalink for Item 5.5.4.1.b" aria-label="Copy heading and permalink for Item 5.5.4.1.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-coordinates-6-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="solutions">
+<details id="sec-coordinates-6-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
 <div class="para logical" id="sec-coordinates-6-1-2-1">
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-1-2-1-1">
 <li id="sec-coordinates-6-1-2-1-1-1">
 <div class="para" id="sec-coordinates-6-1-2-1-1-1-1">
-<span class="process-math">\(\displaystyle \bfv = \begin{bmatrix} 4 \\ -7 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle \bfv = \begin{bmatrix} 4 \\ -7 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.1.a"><a href="#sec-coordinates-6-1-2-1-1-1" title="Copy permalink for Item 5.5.4.1.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.1.a"><a href="#sec-coordinates-6-1-2-1-1-1" title="Copy heading and permalink for Item 5.5.4.1.a" aria-label="Copy heading and permalink for Item 5.5.4.1.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-1-2-1-1-2">
 <div class="para" id="sec-coordinates-6-1-2-1-1-2-1">
-<span class="process-math">\(\displaystyle \bfv = \begin{bmatrix} -19 \\ -2 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle \bfv = \begin{bmatrix} -19 \\ -2 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.1.b"><a href="#sec-coordinates-6-1-2-1-1-2" title="Copy permalink for Item 5.5.4.1.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.1.b"><a href="#sec-coordinates-6-1-2-1-1-2" title="Copy heading and permalink for Item 5.5.4.1.b" aria-label="Copy heading and permalink for Item 5.5.4.1.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 5.5.4.1.1"><a href="#sec-coordinates-6-1-2" title="Copy permalink for Answer 5.5.4.1.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 5.5.4.1"><a href="#sec-coordinates-6-1" title="Copy permalink for Exercise 5.5.4.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Answer 5.5.4.1.1"><a href="#sec-coordinates-6-1-2" title="Copy heading and permalink for Answer 5.5.4.1.1" aria-label="Copy heading and permalink for Answer 5.5.4.1.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 5.5.4.1"><a href="#sec-coordinates-6-1" title="Copy heading and permalink for Exercise 5.5.4.1" aria-label="Copy heading and permalink for Exercise 5.5.4.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-2-1-1">
 <div class="para">For the basis <span class="process-math">\(\mcb = \{ p_1, p_2, p_3 \}\)</span> of <span class="process-math">\(P_2\)</span> and the coordinate vector <span class="process-math">\([p]_{\mcb}\text{,}\)</span> find <span class="process-math">\(p\)</span> if</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-6-2-1-1-5">
 \begin{equation*}
 p_1 = 2 - 4t^2, \hspace{6pt} p_2 = -1 - t, \hspace{6pt} p_3 = 3t + 2t^2
 \end{equation*}
 </div>
 <div class="para">and</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-6-2-1-1-6">
 \begin{equation*}
 [p]_{\mcb} = \begin{bmatrix} -2 \\ 0 \\ 5 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.2"><a href="#sec-coordinates-6-2" title="Copy permalink for Exercise 5.5.4.2">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 5.5.4.2"><a href="#sec-coordinates-6-2" title="Copy heading and permalink for Exercise 5.5.4.2" aria-label="Copy heading and permalink for Exercise 5.5.4.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-3-1-1">
 <div class="para">Find the coordinate vectors <span class="process-math">\([\bfv]_{\mcb}\)</span> for each of the following vectors <span class="process-math">\(\bfv\)</span> with respect to the basis <span class="process-math">\(\mcb = \{ \bfv_1, \bfv_2, \bfv_3 \}\)</span> of <span class="process-math">\(\rr^3\text{,}\)</span> if</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-6-3-1-1-5">
 \begin{equation*}
 \bfv_1 = \begin{bmatrix} -2 \\ 5 \\ 3 \end{bmatrix}, \hspace{6pt}
 \bfv_2 = \begin{bmatrix} 7 \\ 4 \\ -4 \end{bmatrix}, \hspace{6pt}
@@ -978,43 +1009,48 @@ p_1 = 2 - 4t^2, \hspace{6pt} p_2 = -1 - t, \hspace{6pt} p_3 = 3t + 2t^2
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-3-1-1-6">
 <li id="sec-coordinates-6-3-1-1-6-1">
 <div class="para" id="sec-coordinates-6-3-1-1-6-1-1">
-<span class="process-math">\(\displaystyle \bfv = \begin{bmatrix} 16 \\ 5 \\ -16 \end{bmatrix} \)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-1-1-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle \bfv = \begin{bmatrix} 16 \\ 5 \\ -16 \end{bmatrix} \)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-1-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.3.a"><a href="#sec-coordinates-6-3-1-1-6-1" title="Copy permalink for Item 5.5.4.3.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.3.a"><a href="#sec-coordinates-6-3-1-1-6-1" title="Copy heading and permalink for Item 5.5.4.3.a" aria-label="Copy heading and permalink for Item 5.5.4.3.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-3-1-1-6-2">
 <div class="para" id="sec-coordinates-6-3-1-1-6-2-1">
-<span class="process-math">\(\displaystyle \bfv = \begin{bmatrix} 6 \\ -23 \\ 11 \end{bmatrix} \)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-1-1-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle \bfv = \begin{bmatrix} 6 \\ -23 \\ 11 \end{bmatrix} \)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-1-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.3.b"><a href="#sec-coordinates-6-3-1-1-6-2" title="Copy permalink for Item 5.5.4.3.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.3.b"><a href="#sec-coordinates-6-3-1-1-6-2" title="Copy heading and permalink for Item 5.5.4.3.b" aria-label="Copy heading and permalink for Item 5.5.4.3.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-coordinates-6-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="solutions">
+<details id="sec-coordinates-6-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
 <div class="para logical" id="sec-coordinates-6-3-2-1">
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-3-2-1-1">
 <li id="sec-coordinates-6-3-2-1-1-1">
 <div class="para" id="sec-coordinates-6-3-2-1-1-1-1">
-<span class="process-math">\(\displaystyle [\bfv]_{\mcb} = \begin{bmatrix} -2 \\ 2 \\ -1 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle [\bfv]_{\mcb} = \begin{bmatrix} -2 \\ 2 \\ -1 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.3.a"><a href="#sec-coordinates-6-3-2-1-1-1" title="Copy permalink for Item 5.5.4.3.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.3.a"><a href="#sec-coordinates-6-3-2-1-1-1" title="Copy heading and permalink for Item 5.5.4.3.a" aria-label="Copy heading and permalink for Item 5.5.4.3.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-3-2-1-1-2">
 <div class="para" id="sec-coordinates-6-3-2-1-1-2-1">
-<span class="process-math">\(\displaystyle [\bfv]_{\mcb} = \begin{bmatrix} 1 \\ 0 \\ 4 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle [\bfv]_{\mcb} = \begin{bmatrix} 1 \\ 0 \\ 4 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.3.b"><a href="#sec-coordinates-6-3-2-1-1-2" title="Copy permalink for Item 5.5.4.3.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.3.b"><a href="#sec-coordinates-6-3-2-1-1-2" title="Copy heading and permalink for Item 5.5.4.3.b" aria-label="Copy heading and permalink for Item 5.5.4.3.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 5.5.4.3.1"><a href="#sec-coordinates-6-3-2" title="Copy permalink for Answer 5.5.4.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 5.5.4.3"><a href="#sec-coordinates-6-3" title="Copy permalink for Exercise 5.5.4.3">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Answer 5.5.4.3.1"><a href="#sec-coordinates-6-3-2" title="Copy heading and permalink for Answer 5.5.4.3.1" aria-label="Copy heading and permalink for Answer 5.5.4.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 5.5.4.3"><a href="#sec-coordinates-6-3" title="Copy heading and permalink for Exercise 5.5.4.3" aria-label="Copy heading and permalink for Exercise 5.5.4.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-4-1-1">
 <div class="para">Find the coordinate vectors <span class="process-math">\([p]_{\mcb}\)</span> for each of the following polynomials <span class="process-math">\(p\)</span> with respect to the basis <span class="process-math">\(\mcb = \{ p_1, p_2, p_3 \}\)</span> of <span class="process-math">\(P_2\text{,}\)</span> if</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-6-4-1-1-5">
 \begin{equation*}
 p_1 = 8 + 4t - 4t^2, \hspace{6pt}
 p_2 = 5 + 8t + 3t^2, \hspace{6pt}
@@ -1024,20 +1060,22 @@ p_3 = -6 - 2t - 5t^2\text{.}
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-4-1-1-6">
 <li id="sec-coordinates-6-4-1-1-6-1">
 <div class="para" id="sec-coordinates-6-4-1-1-6-1-1">
-<span class="process-math">\(\displaystyle p = -2 + 2t - 23t^2\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-4-1-1-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle p = -2 + 2t - 23t^2\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-4-1-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.4.a"><a href="#sec-coordinates-6-4-1-1-6-1" title="Copy permalink for Item 5.5.4.4.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.4.a"><a href="#sec-coordinates-6-4-1-1-6-1" title="Copy heading and permalink for Item 5.5.4.4.a" aria-label="Copy heading and permalink for Item 5.5.4.4.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-4-1-1-6-2">
 <div class="para" id="sec-coordinates-6-4-1-1-6-2-1">
-<span class="process-math">\(\displaystyle p = 23 + 28t + 5t^2\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-4-1-1-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle p = 23 + 28t + 5t^2\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-4-1-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.4.b"><a href="#sec-coordinates-6-4-1-1-6-2" title="Copy permalink for Item 5.5.4.4.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.4.b"><a href="#sec-coordinates-6-4-1-1-6-2" title="Copy heading and permalink for Item 5.5.4.4.b" aria-label="Copy heading and permalink for Item 5.5.4.4.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.4"><a href="#sec-coordinates-6-4" title="Copy permalink for Exercise 5.5.4.4">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 5.5.4.4"><a href="#sec-coordinates-6-4" title="Copy heading and permalink for Exercise 5.5.4.4" aria-label="Copy heading and permalink for Exercise 5.5.4.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-5-1-1">
 <div class="para">Use coordinate vectors to test the linear independence of the following sets of polynomials in <span class="process-math">\(P_3\text{.}\)</span>
 </div>
@@ -1053,9 +1091,9 @@ p_2 \amp = 2t - 4t^2 + 7t^3\\
 p_3 \amp = 2 + 6t - t^2 - 5t^3
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-5-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-5-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.5.a"><a href="#sec-coordinates-6-5-1-1-2-1" title="Copy permalink for Item 5.5.4.5.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.5.a"><a href="#sec-coordinates-6-5-1-1-2-1" title="Copy heading and permalink for Item 5.5.4.5.a" aria-label="Copy heading and permalink for Item 5.5.4.5.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-5-1-1-2-2">
 <div class="para logical" id="sec-coordinates-6-5-1-1-2-2-1">
@@ -1068,14 +1106,16 @@ p_2 \amp = -5 - 7t - 6t^2 + 8t^3\\
 p_3 \amp = 7 + 7t - 8t^2 + 4t^3
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-5-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-5-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.5.b"><a href="#sec-coordinates-6-5-1-1-2-2" title="Copy permalink for Item 5.5.4.5.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.5.b"><a href="#sec-coordinates-6-5-1-1-2-2" title="Copy heading and permalink for Item 5.5.4.5.b" aria-label="Copy heading and permalink for Item 5.5.4.5.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.5"><a href="#sec-coordinates-6-5" title="Copy permalink for Exercise 5.5.4.5">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 5.5.4.5"><a href="#sec-coordinates-6-5" title="Copy heading and permalink for Exercise 5.5.4.5" aria-label="Copy heading and permalink for Exercise 5.5.4.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-6-1-1">
 <div class="para">Use coordinate vectors to test whether the following sets of vectors span <span class="process-math">\(P_2\text{.}\)</span>
 </div>
@@ -1092,9 +1132,9 @@ p_3 \amp = -2 -4t + 2t^2\\
 p_4 \amp = 2 - 4t - t^2
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.6.a"><a href="#sec-coordinates-6-6-1-1-2-1" title="Copy permalink for Item 5.5.4.6.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.6.a"><a href="#sec-coordinates-6-6-1-1-2-1" title="Copy heading and permalink for Item 5.5.4.6.a" aria-label="Copy heading and permalink for Item 5.5.4.6.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-6-1-1-2-2">
 <div class="para logical" id="sec-coordinates-6-6-1-1-2-2-1">
@@ -1108,35 +1148,40 @@ p_3 \amp = 4 + 6t - 4t^2\\
 p_4 \amp = 8 +12t + t^2
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.6.b"><a href="#sec-coordinates-6-6-1-1-2-2" title="Copy permalink for Item 5.5.4.6.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.6.b"><a href="#sec-coordinates-6-6-1-1-2-2" title="Copy heading and permalink for Item 5.5.4.6.b" aria-label="Copy heading and permalink for Item 5.5.4.6.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-coordinates-6-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="solutions">
+<details id="sec-coordinates-6-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
 <div class="para logical" id="sec-coordinates-6-6-2-1">
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-6-2-1-1">
 <li id="sec-coordinates-6-6-2-1-1-1">
-<div class="para" id="sec-coordinates-6-6-2-1-1-1-1">This set of vectors spans <span class="process-math">\(P_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-6-2-1-1-1-1">This set of vectors spans <span class="process-math">\(P_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.6.a"><a href="#sec-coordinates-6-6-2-1-1-1" title="Copy permalink for Item 5.5.4.6.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.6.a"><a href="#sec-coordinates-6-6-2-1-1-1" title="Copy heading and permalink for Item 5.5.4.6.a" aria-label="Copy heading and permalink for Item 5.5.4.6.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-6-2-1-1-2">
-<div class="para" id="sec-coordinates-6-6-2-1-1-2-1">This set of vectors does not span <span class="process-math">\(P_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-6-2-1-1-2-1">This set of vectors does not span <span class="process-math">\(P_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.6.b"><a href="#sec-coordinates-6-6-2-1-1-2" title="Copy permalink for Item 5.5.4.6.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.6.b"><a href="#sec-coordinates-6-6-2-1-1-2" title="Copy heading and permalink for Item 5.5.4.6.b" aria-label="Copy heading and permalink for Item 5.5.4.6.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 5.5.4.6.1"><a href="#sec-coordinates-6-6-2" title="Copy permalink for Answer 5.5.4.6.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 5.5.4.6"><a href="#sec-coordinates-6-6" title="Copy permalink for Exercise 5.5.4.6">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Answer 5.5.4.6.1"><a href="#sec-coordinates-6-6-2" title="Copy heading and permalink for Answer 5.5.4.6.1" aria-label="Copy heading and permalink for Answer 5.5.4.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 5.5.4.6"><a href="#sec-coordinates-6-6" title="Copy heading and permalink for Exercise 5.5.4.6" aria-label="Copy heading and permalink for Exercise 5.5.4.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-7-1-1">
 <div class="para">Let <span class="process-math">\(T: P_2 \to \rr^2\)</span> be the linear transformation</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-6-7-1-1-2">
 \begin{equation*}
 T(p) = \begin{bmatrix} p(0) + p(1) \\ p(1) - p(2) \end{bmatrix} \text{.}
 \end{equation*}
@@ -1145,42 +1190,47 @@ T(p) = \begin{bmatrix} p(0) + p(1) \\ p(1) - p(2) \end{bmatrix} \text{.}
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-7-1-1-7">
 <li id="sec-coordinates-6-7-1-1-7-1">
-<div class="para" id="sec-coordinates-6-7-1-1-7-1-1">Find the coordinate matrix <span class="process-math">\([T]_{\mcb, \mce}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-1-1-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-7-1-1-7-1-1">Find the coordinate matrix <span class="process-math">\([T]_{\mcb, \mce}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-1-1-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.7.a"><a href="#sec-coordinates-6-7-1-1-7-1" title="Copy permalink for Item 5.5.4.7.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.7.a"><a href="#sec-coordinates-6-7-1-1-7-1" title="Copy heading and permalink for Item 5.5.4.7.a" aria-label="Copy heading and permalink for Item 5.5.4.7.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-7-1-1-7-2">
-<div class="para" id="sec-coordinates-6-7-1-1-7-2-1">Use this coordinate matrix to calculate <span class="process-math">\(T(-10 + 3t^2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-1-1-7-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-7-1-1-7-2-1">Use this coordinate matrix to calculate <span class="process-math">\(T(-10 + 3t^2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-1-1-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.7.b"><a href="#sec-coordinates-6-7-1-1-7-2" title="Copy permalink for Item 5.5.4.7.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.7.b"><a href="#sec-coordinates-6-7-1-1-7-2" title="Copy heading and permalink for Item 5.5.4.7.b" aria-label="Copy heading and permalink for Item 5.5.4.7.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-coordinates-6-7-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="solutions">
+<details id="sec-coordinates-6-7-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
 <div class="para logical" id="sec-coordinates-6-7-2-1">
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-7-2-1-1">
 <li id="sec-coordinates-6-7-2-1-1-1">
 <div class="para" id="sec-coordinates-6-7-2-1-1-1-1">
-<span class="process-math">\(\displaystyle [T]_{\mcb,\mce} = \begin{bmatrix} 2 \amp 1 \amp 1 \\ 0 \amp -1 \amp -3 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle [T]_{\mcb,\mce} = \begin{bmatrix} 2 \amp 1 \amp 1 \\ 0 \amp -1 \amp -3 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.7.a"><a href="#sec-coordinates-6-7-2-1-1-1" title="Copy permalink for Item 5.5.4.7.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.7.a"><a href="#sec-coordinates-6-7-2-1-1-1" title="Copy heading and permalink for Item 5.5.4.7.a" aria-label="Copy heading and permalink for Item 5.5.4.7.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-7-2-1-1-2">
 <div class="para" id="sec-coordinates-6-7-2-1-1-2-1">
-<span class="process-math">\(\displaystyle T(-10+3t^2) = [T]_{\mcb,\mce} [p]_{\mcb} = \begin{bmatrix} -17 \\ -9 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle T(-10+3t^2) = [T]_{\mcb,\mce} [p]_{\mcb} = \begin{bmatrix} -17 \\ -9 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.7.b"><a href="#sec-coordinates-6-7-2-1-1-2" title="Copy permalink for Item 5.5.4.7.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.7.b"><a href="#sec-coordinates-6-7-2-1-1-2" title="Copy heading and permalink for Item 5.5.4.7.b" aria-label="Copy heading and permalink for Item 5.5.4.7.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 5.5.4.7.1"><a href="#sec-coordinates-6-7-2" title="Copy permalink for Answer 5.5.4.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 5.5.4.7"><a href="#sec-coordinates-6-7" title="Copy permalink for Exercise 5.5.4.7">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Answer 5.5.4.7.1"><a href="#sec-coordinates-6-7-2" title="Copy heading and permalink for Answer 5.5.4.7.1" aria-label="Copy heading and permalink for Answer 5.5.4.7.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 5.5.4.7"><a href="#sec-coordinates-6-7" title="Copy heading and permalink for Exercise 5.5.4.7" aria-label="Copy heading and permalink for Exercise 5.5.4.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-8-1-1">
 <div class="para">Let <span class="process-math">\(T: \rr^3 \to P_2\)</span> be the linear transformation</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-6-8-1-1-2">
 \begin{equation*}
 T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) = (2a-b) + (b-3c)t + (a-b+c)t^2\text{.}
 \end{equation*}
@@ -1189,29 +1239,31 @@ T \left( \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right) = (2a-b) + (b-3c)t + 
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-8-1-1-7">
 <li id="sec-coordinates-6-8-1-1-7-1">
-<div class="para" id="sec-coordinates-6-8-1-1-7-1-1">Find the coordinate matrix <span class="process-math">\([T]_{\mce, \mcb}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-8-1-1-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-8-1-1-7-1-1">Find the coordinate matrix <span class="process-math">\([T]_{\mce, \mcb}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-8-1-1-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.8.a"><a href="#sec-coordinates-6-8-1-1-7-1" title="Copy permalink for Item 5.5.4.8.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.8.a"><a href="#sec-coordinates-6-8-1-1-7-1" title="Copy heading and permalink for Item 5.5.4.8.a" aria-label="Copy heading and permalink for Item 5.5.4.8.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-8-1-1-7-2">
 <div class="para logical" id="sec-coordinates-6-8-1-1-7-2-1">
 <div class="para">Use this coordinate matrix to calculate <span class="process-math">\(T(\bfv)\)</span> for</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-6-8-1-1-7-2-1-2">
 \begin{equation*}
 \bfv = \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix} \text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-8-1-1-7-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-8-1-1-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.8.b"><a href="#sec-coordinates-6-8-1-1-7-2" title="Copy permalink for Item 5.5.4.8.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.8.b"><a href="#sec-coordinates-6-8-1-1-7-2" title="Copy heading and permalink for Item 5.5.4.8.b" aria-label="Copy heading and permalink for Item 5.5.4.8.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.8"><a href="#sec-coordinates-6-8" title="Copy permalink for Exercise 5.5.4.8">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 5.5.4.8"><a href="#sec-coordinates-6-8" title="Copy heading and permalink for Exercise 5.5.4.8" aria-label="Copy heading and permalink for Exercise 5.5.4.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-9-1-1">
 <div class="para">Let <span class="process-math">\(T: P_2 \to P_2\)</span> be the linear transformation</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-6-9-1-1-2">
 \begin{equation*}
 T(p) = p' + p(1)t^2\text{.}
 \end{equation*}
@@ -1220,55 +1272,59 @@ T(p) = p' + p(1)t^2\text{.}
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-9-1-1-5">
 <li id="sec-coordinates-6-9-1-1-5-1">
-<div class="para" id="sec-coordinates-6-9-1-1-5-1-1">Choose a basis <span class="process-math">\(\mcc\)</span> for <span class="process-math">\(P_2\)</span> which is <em class="emphasis">not</em> the standard basis. Prove that your set of polynomials is a basis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-9-1-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-9-1-1-5-1-1">Choose a basis <span class="process-math">\(\mcc\)</span> for <span class="process-math">\(P_2\)</span> which is <em class="emphasis">not</em> the standard basis. Prove that your set of polynomials is a basis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-9-1-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.9.a"><a href="#sec-coordinates-6-9-1-1-5-1" title="Copy permalink for Item 5.5.4.9.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.9.a"><a href="#sec-coordinates-6-9-1-1-5-1" title="Copy heading and permalink for Item 5.5.4.9.a" aria-label="Copy heading and permalink for Item 5.5.4.9.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-9-1-1-5-2">
-<div class="para" id="sec-coordinates-6-9-1-1-5-2-1">Find the coordinate matrix <span class="process-math">\([T]_{\mcc, \mcb}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-9-1-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-9-1-1-5-2-1">Find the coordinate matrix <span class="process-math">\([T]_{\mcc, \mcb}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-9-1-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.9.b"><a href="#sec-coordinates-6-9-1-1-5-2" title="Copy permalink for Item 5.5.4.9.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.9.b"><a href="#sec-coordinates-6-9-1-1-5-2" title="Copy heading and permalink for Item 5.5.4.9.b" aria-label="Copy heading and permalink for Item 5.5.4.9.b">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-9-1-1-5-3">
-<div class="para" id="sec-coordinates-6-9-1-1-5-3-1">Use this coordinate matrix to calculate <span class="process-math">\(T(2 + t -  4t^2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-9-1-1-5-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-9-1-1-5-3-1">Use this coordinate matrix to calculate <span class="process-math">\(T(2 + t -  4t^2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-9-1-1-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.9.c"><a href="#sec-coordinates-6-9-1-1-5-3" title="Copy permalink for Item 5.5.4.9.c">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.9.c"><a href="#sec-coordinates-6-9-1-1-5-3" title="Copy heading and permalink for Item 5.5.4.9.c" aria-label="Copy heading and permalink for Item 5.5.4.9.c">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-9-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.9"><a href="#sec-coordinates-6-9" title="Copy permalink for Exercise 5.5.4.9">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 5.5.4.9"><a href="#sec-coordinates-6-9" title="Copy heading and permalink for Exercise 5.5.4.9" aria-label="Copy heading and permalink for Exercise 5.5.4.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-10-1-1">
 <div class="para">Let <span class="process-math">\(D:P_3 \to P_2\)</span> be the derivative and let <span class="process-math">\(T:P_2 \to P_3\)</span> be the linear transformation which is multiplication by <span class="process-math">\(t\text{.}\)</span> Let <span class="process-math">\(\mcb\)</span> be the standard basis for <span class="process-math">\(P_2\)</span> and let <span class="process-math">\(\mcc\)</span> be the standard basis for <span class="process-math">\(P_3\text{.}\)</span>
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-10-1-1-8">
 <li id="sec-coordinates-6-10-1-1-8-1">
-<div class="para" id="sec-coordinates-6-10-1-1-8-1-1">Find the coordinate matrix <span class="process-math">\([T]_{\mcb, \mcc}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-10-1-1-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-10-1-1-8-1-1">Find the coordinate matrix <span class="process-math">\([T]_{\mcb, \mcc}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-10-1-1-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.10.a"><a href="#sec-coordinates-6-10-1-1-8-1" title="Copy permalink for Item 5.5.4.10.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.10.a"><a href="#sec-coordinates-6-10-1-1-8-1" title="Copy heading and permalink for Item 5.5.4.10.a" aria-label="Copy heading and permalink for Item 5.5.4.10.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-10-1-1-8-2">
-<div class="para" id="sec-coordinates-6-10-1-1-8-2-1">Find the coordinate matrix <span class="process-math">\([DT]_{\mcb}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-10-1-1-8-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-10-1-1-8-2-1">Find the coordinate matrix <span class="process-math">\([DT]_{\mcb}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-10-1-1-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.10.b"><a href="#sec-coordinates-6-10-1-1-8-2" title="Copy permalink for Item 5.5.4.10.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.10.b"><a href="#sec-coordinates-6-10-1-1-8-2" title="Copy heading and permalink for Item 5.5.4.10.b" aria-label="Copy heading and permalink for Item 5.5.4.10.b">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-10-1-1-8-3">
-<div class="para" id="sec-coordinates-6-10-1-1-8-3-1">Find the coordinate matrix <span class="process-math">\([TD]_{\mcc}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-10-1-1-8-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-10-1-1-8-3-1">Find the coordinate matrix <span class="process-math">\([TD]_{\mcc}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-10-1-1-8-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.10.c"><a href="#sec-coordinates-6-10-1-1-8-3" title="Copy permalink for Item 5.5.4.10.c">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.10.c"><a href="#sec-coordinates-6-10-1-1-8-3" title="Copy heading and permalink for Item 5.5.4.10.c" aria-label="Copy heading and permalink for Item 5.5.4.10.c">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-10-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.10"><a href="#sec-coordinates-6-10" title="Copy permalink for Exercise 5.5.4.10">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 5.5.4.10"><a href="#sec-coordinates-6-10" title="Copy heading and permalink for Exercise 5.5.4.10" aria-label="Copy heading and permalink for Exercise 5.5.4.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-coordinates-6-11-1-1">
 <div class="para">Consider the plane <span class="process-math">\(P\)</span> in <span class="process-math">\(\rr^3\)</span> defined by <span class="process-math">\(x-2y+3z = 0\text{.}\)</span>
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-coordinates-6-11-1-1-4">
 <li id="sec-coordinates-6-11-1-1-4-1">
-<div class="para" id="sec-coordinates-6-11-1-1-4-1-1">Find a basis for <span class="process-math">\(P\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-coordinates-6-11-1-1-4-1-1">Find a basis for <span class="process-math">\(P\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.11.a"><a href="#sec-coordinates-6-11-1-1-4-1" title="Copy permalink for Item 5.5.4.11.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.11.a"><a href="#sec-coordinates-6-11-1-1-4-1" title="Copy heading and permalink for Item 5.5.4.11.a" aria-label="Copy heading and permalink for Item 5.5.4.11.a">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-11-1-1-4-2">
 <div class="para logical" id="sec-coordinates-6-11-1-1-4-2-1">
@@ -1276,70 +1332,88 @@ T(p) = p' + p(1)t^2\text{.}
 <ol class="lower-roman" id="sec-coordinates-6-11-1-1-4-2-1-2">
 <li id="sec-coordinates-6-11-1-1-4-2-1-2-1">
 <div class="para" id="sec-coordinates-6-11-1-1-4-2-1-2-1-1">
-<span class="process-math">\(\displaystyle \bfv_1 = (1,-1,-1)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle \bfv_1 = (1,-1,-1)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.11.b.i"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-1" title="Copy permalink for Item 5.5.4.11.b.i">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.11.b.i"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-1" title="Copy heading and permalink for Item 5.5.4.11.b.i" aria-label="Copy heading and permalink for Item 5.5.4.11.b.i">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-11-1-1-4-2-1-2-2">
 <div class="para" id="sec-coordinates-6-11-1-1-4-2-1-2-2-1">
-<span class="process-math">\(\displaystyle \bfv_2 = (2,3,1)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle \bfv_2 = (2,3,1)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.11.b.ii"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-2" title="Copy permalink for Item 5.5.4.11.b.ii">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.11.b.ii"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-2" title="Copy heading and permalink for Item 5.5.4.11.b.ii" aria-label="Copy heading and permalink for Item 5.5.4.11.b.ii">🔗</a></div>
 </li>
 <li id="sec-coordinates-6-11-1-1-4-2-1-2-3">
 <div class="para" id="sec-coordinates-6-11-1-1-4-2-1-2-3-1">
-<span class="process-math">\(\displaystyle \bfv_3 = (5,-2,-3)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle \bfv_3 = (5,-2,-3)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.11.b.iii"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-3" title="Copy permalink for Item 5.5.4.11.b.iii">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.11.b.iii"><a href="#sec-coordinates-6-11-1-1-4-2-1-2-3" title="Copy heading and permalink for Item 5.5.4.11.b.iii" aria-label="Copy heading and permalink for Item 5.5.4.11.b.iii">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 5.5.4.11.b"><a href="#sec-coordinates-6-11-1-1-4-2" title="Copy permalink for Item 5.5.4.11.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 5.5.4.11.b"><a href="#sec-coordinates-6-11-1-1-4-2" title="Copy heading and permalink for Item 5.5.4.11.b" aria-label="Copy heading and permalink for Item 5.5.4.11.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.11"><a href="#sec-coordinates-6-11" title="Copy permalink for Exercise 5.5.4.11">🔗</a></div></article><article class="subexercises" id="sec-coordinates-6-12"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
-<article class="exercise exercise-like" id="sec-coordinates-6-12-2"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
-<div class="para" id="sec-coordinates-6-12-2-1-1">Prove that the coordinate mapping in <a href="sec-coordinates.html#thm-coord-map-isomorphism" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a> is a linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 5.5.4.11"><a href="#sec-coordinates-6-11" title="Copy heading and permalink for Exercise 5.5.4.11" aria-label="Copy heading and permalink for Exercise 5.5.4.11">🔗</a></div>
+</article>
+<article class="subexercises" id="sec-coordinates-6-12"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-coordinates-6-12-2"><h5 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="sec-coordinates-6-12-2-1-1">Prove that the coordinate mapping in <a href="sec-coordinates.html#thm-coord-map-isomorphism" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a> is a linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.12"><a href="#sec-coordinates-6-12-2" title="Copy permalink for Exercise 5.5.4.12">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-12-3"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
-<div class="para" id="sec-coordinates-6-12-3-1-1">Without using <a href="sec-dimension.html#thm-isomorphism-basis" class="xref" data-knowl="./knowl/xref/thm-isomorphism-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11">Theorem 5.3.11</a>, prove that the coordinate mapping in <a href="sec-coordinates.html#thm-coord-map-isomorphism" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a> is injective.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 5.5.4.12"><a href="#sec-coordinates-6-12-2" title="Copy heading and permalink for Exercise 5.5.4.12" aria-label="Copy heading and permalink for Exercise 5.5.4.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-12-3"><h5 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="sec-coordinates-6-12-3-1-1">Without using <a href="sec-dimension.html#thm-isomorphism-basis" class="xref" data-knowl="./knowl/xref/thm-isomorphism-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11">Theorem 5.3.11</a>, prove that the coordinate mapping in <a href="sec-coordinates.html#thm-coord-map-isomorphism" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a> is injective.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-coordinates-6-12-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec-coordinates-6-12-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec-coordinates-6-12-3-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be an <span class="process-math">\(n\)</span>-dimensional vector space over <span class="process-math">\(\ff\text{,}\)</span> and let</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-6-12-3-2-1-4">
 \begin{equation*}
 \mcb = \{\bfv_1,\ldots,\bfv_n\}
 \end{equation*}
 </div>
 <div class="para">be a basis for <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(C_{\mcb}:V \to \ff^n\)</span> be the coordinate mapping. We will prove that <span class="process-math">\(C_{\mcb}\)</span> is injective by showing that it has a trivial kernel.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec-coordinates-6-12-3-2-2">
 <div class="para">Suppose that <span class="process-math">\(\bfv \in \ker(C_{\mcb})\text{.}\)</span> This means that <span class="process-math">\(C_{\mcb}(\bfv) = \bfo \in \ff^n\text{,}\)</span> so <span class="process-math">\([\bfv]_{\mcb} = \bfo\text{.}\)</span> Since this is the coordinate vector of <span class="process-math">\(\bfv\text{,}\)</span> this tells us that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-coordinates-6-12-3-2-2-5">
 \begin{equation*}
 \bfv = 0 \bfv_1 + \cdots + 0\bfv_n\text{.}
 \end{equation*}
 </div>
 <div class="para">This proves that <span class="process-math">\(\bfv = \bfo \in V\text{,}\)</span> and therefore <span class="process-math">\(\ker(C_{\mcb}) = \{\bfo\}\text{.}\)</span> This proves that the coordinate mapping is injective.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-3-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 5.5.4.13.1"><a href="#sec-coordinates-6-12-3-2" title="Copy permalink for Solution 5.5.4.13.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 5.5.4.13"><a href="#sec-coordinates-6-12-3" title="Copy permalink for Exercise 5.5.4.13">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-12-4"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
-<div class="para" id="sec-coordinates-6-12-4-1-1">Without using <a href="sec-dimension.html#thm-isomorphism-basis" class="xref" data-knowl="./knowl/xref/thm-isomorphism-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11">Theorem 5.3.11</a>, prove that the coordinate mapping in <a href="sec-coordinates.html#thm-coord-map-isomorphism" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a> is surjective.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 5.5.4.13.1"><a href="#sec-coordinates-6-12-3-2" title="Copy heading and permalink for Solution 5.5.4.13.1" aria-label="Copy heading and permalink for Solution 5.5.4.13.1">🔗</a></div>
+</div></details>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.14"><a href="#sec-coordinates-6-12-4" title="Copy permalink for Exercise 5.5.4.14">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-12-5"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
-<div class="para" id="sec-coordinates-6-12-5-1-1">Let <span class="process-math">\(T:V \to W\)</span> be a linear transformation between finite-dimensional vector spaces, and let <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\)</span> be bases for <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{,}\)</span> respectively. Prove that <span class="process-math">\(\rank(T)\)</span> (the rank of <span class="process-math">\(T\)</span> as a linear transformation) is the same as <span class="process-math">\(\rank([T]_{\mcb,\mcc})\)</span> (the rank of the coordinate matrix of <span class="process-math">\(T\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 5.5.4.13"><a href="#sec-coordinates-6-12-3" title="Copy heading and permalink for Exercise 5.5.4.13" aria-label="Copy heading and permalink for Exercise 5.5.4.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-12-4"><h5 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="sec-coordinates-6-12-4-1-1">Without using <a href="sec-dimension.html#thm-isomorphism-basis" class="xref" data-knowl="./knowl/xref/thm-isomorphism-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11">Theorem 5.3.11</a>, prove that the coordinate mapping in <a href="sec-coordinates.html#thm-coord-map-isomorphism" class="xref" data-knowl="./knowl/xref/thm-coord-map-isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a> is surjective.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.15"><a href="#sec-coordinates-6-12-5" title="Copy permalink for Exercise 5.5.4.15">🔗</a></div></article><article class="exercise exercise-like" id="sec-coordinates-6-12-6"><h5 class="heading"><span class="codenumber">16<span class="period">.</span></span></h5>
-<div class="para" id="sec-coordinates-6-12-6-1-1">Prove <a href="sec-coordinates.html#cor-coord-matrix-inverse" class="xref" data-knowl="./knowl/xref/cor-coord-matrix-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.5.16">Corollary 5.5.16</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 5.5.4.14"><a href="#sec-coordinates-6-12-4" title="Copy heading and permalink for Exercise 5.5.4.14" aria-label="Copy heading and permalink for Exercise 5.5.4.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-12-5"><h5 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="sec-coordinates-6-12-5-1-1">Let <span class="process-math">\(T:V \to W\)</span> be a linear transformation between finite-dimensional vector spaces, and let <span class="process-math">\(\mcb\)</span> and <span class="process-math">\(\mcc\)</span> be bases for <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{,}\)</span> respectively. Prove that <span class="process-math">\(\rank(T)\)</span> (the rank of <span class="process-math">\(T\)</span> as a linear transformation) is the same as <span class="process-math">\(\rank([T]_{\mcb,\mcc})\)</span> (the rank of the coordinate matrix of <span class="process-math">\(T\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.5.4.16"><a href="#sec-coordinates-6-12-6" title="Copy permalink for Exercise 5.5.4.16">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-coordinates-6-12" title="Copy permalink for Subexercises: Writing Exercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 5.5.4"><a href="#sec-coordinates-6" title="Copy permalink for Exercises 5.5.4">🔗</a></div></section><div class="autopermalink" data-description="Section 5.5: Coordinates"><a href="#sec-coordinates" title="Copy permalink for Section 5.5: Coordinates">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Exercise 5.5.4.15"><a href="#sec-coordinates-6-12-5" title="Copy heading and permalink for Exercise 5.5.4.15" aria-label="Copy heading and permalink for Exercise 5.5.4.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-coordinates-6-12-6"><h5 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="sec-coordinates-6-12-6-1-1">Prove <a href="sec-coordinates.html#cor-coord-matrix-inverse" class="xref" data-knowl="./knowl/xref/cor-coord-matrix-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.5.16">Corollary 5.5.16</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-coordinates-6-12-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 5.5.4.16"><a href="#sec-coordinates-6-12-6" title="Copy heading and permalink for Exercise 5.5.4.16" aria-label="Copy heading and permalink for Exercise 5.5.4.16">🔗</a></div>
+</article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-coordinates-6-12" title="Copy heading and permalink for Subexercises: Writing Exercises" aria-label="Copy heading and permalink for Subexercises: Writing Exercises">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 5.5.4"><a href="#sec-coordinates-6" title="Copy heading and permalink for Exercises 5.5.4" aria-label="Copy heading and permalink for Exercises 5.5.4">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 5.5: Coordinates"><a href="#sec-coordinates" title="Copy heading and permalink for Section 5.5: Coordinates" aria-label="Copy heading and permalink for Section 5.5: Coordinates">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-change-of-basis.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

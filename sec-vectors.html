@@ -5,11 +5,11 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<html lang="en-US" dir="ltr">
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: default-legacy                 *-->
+<!--*  Theme: default-modern                 *-->
 <!--*  Palette:                              *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
@@ -18,73 +18,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
-<script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
-  },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
-  },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
-  },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "_static/pretext/js/lib"
-    }
-  },
-  "startup": {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  }
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<script type="module">import { startMathJax } from './_static/pretext/js/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta property="book:title" content="Linear Algebra">
 <meta property="book:author" content="Ryan Higginbottom">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -106,16 +53,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.9.3';
+eBookConfig.runestone_version = '8.0.0';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.47a5fea5694fc0ae.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.014cb392a13bd045.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.ce7e0a2163cb330f.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.f4a2ffb04bb978bb.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -134,7 +81,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-results.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-first.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-second.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-results.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-first.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-second.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\nn}{\mathbb N}
 \newcommand{\zz}{\mathbb Z}
 \newcommand{\qq}{\mathbb Q}
@@ -173,7 +120,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
@@ -462,21 +409,26 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-vectors"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.4</span><span class="space"> </span><span class="title">Vectors</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-vectors">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vectors</span>
 </h2>
-<section class="introduction" id="sec-vectors-2"><div class="para" id="sec-vectors-2-1">Up to this point in the chapter, we have been concerned with solving systems of linear equations, and we have used the tool of matrices to great effect. In this section we will connect linear systems to some basic geometric concepts, and this will result in alternate ways of writing linear systems which, at times, will be more helpful.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-2-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div></section><section class="subsection" id="subsec-vector-basics"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="space"> </span><span class="title">The Basics of Vectors</span>
+<section class="introduction" id="sec-vectors-2">
+<div class="para" id="sec-vectors-2-1">Up to this point in the chapter, we have been concerned with solving systems of linear equations, and we have used the tool of matrices to great effect. In this section we will connect linear systems to some basic geometric concepts, and this will result in alternate ways of writing linear systems which, at times, will be more helpful.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="subsec-vector-basics">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Basics of Vectors</span>
 </h3>
-<div class="para" id="subsec-vector-basics-2">Although we will shortly connect “vectors” to geometric notions, at the beginning a vector will be strictly an algebraic object.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-vector-basics-2">Although we will shortly connect “vectors” to geometric notions, at the beginning a vector will be strictly an algebraic object.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-vector"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="def-vector-1-1">
 <div class="para">An <dfn class="terminology"><span class="process-math">\(n\)</span>-dimensional vector</dfn> over <span class="process-math">\(\rr\)</span> is an ordered list of <span class="process-math">\(n\)</span> real numbers. We will adopt the convention that, unless stated otherwise, vectors are column vectors written in this form:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-vector-1-1-4">
 \begin{equation*}
 \bfv = \begin{bmatrix}
 v_1 \\ v_2 \\ \vdots \\ v_n
@@ -485,22 +437,27 @@ v_1 \\ v_2 \\ \vdots \\ v_n
 </div>
 <div class="para">where <span class="process-math">\(v_i \in \rr\)</span> for all <span class="process-math">\(i\text{.}\)</span> (Column vectors are therefore matrices with a single column.) The set of all <span class="process-math">\(n\)</span>-dimensional vectors over <span class="process-math">\(\rr\)</span> is denoted <span class="process-math">\(\rr^n\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#def-vector-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-vector-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.4.1"><a href="#def-vector" title="Copy permalink for Definition 1.4.1">🔗</a></div></article><article class="note remark-like" id="note-equal-vect"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
+<div class="autopermalink" data-description="Definition 1.4.1"><a href="#def-vector" title="Copy heading and permalink for Definition 1.4.1" aria-label="Copy heading and permalink for Definition 1.4.1">🔗</a></div>
+</article>
+<article class="note remark-like" id="note-equal-vect"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="note-equal-vect-1">We say that two vectors <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> in <span class="process-math">\(\rr^n\)</span> are equal if <span class="process-math">\(u_i=v_i\)</span> for each <span class="process-math">\(i=1,\ldots,n\text{.}\)</span> This means that an equation involving vectors in <span class="process-math">\(\rr^n\)</span> captures the same information as <span class="process-math">\(n\)</span> equations involving real numbers.<div class="autopermalink" data-description="Paragraph"><a href="#note-equal-vect-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="note-equal-vect-1">We say that two vectors <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> in <span class="process-math">\(\rr^n\)</span> are equal if <span class="process-math">\(u_i=v_i\)</span> for each <span class="process-math">\(i=1,\ldots,n\text{.}\)</span> This means that an equation involving vectors in <span class="process-math">\(\rr^n\)</span> captures the same information as <span class="process-math">\(n\)</span> equations involving real numbers.<div class="autopermalink" data-description="Paragraph"><a href="#note-equal-vect-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Note 1.4.2"><a href="#note-equal-vect" title="Copy permalink for Note 1.4.2">🔗</a></div></article><div class="para" id="subsec-vector-basics-5">As we have said, vectors should be thought of first as algebraic objects, and there are several ways to combine these objects.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-5" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Note 1.4.2"><a href="#note-equal-vect" title="Copy heading and permalink for Note 1.4.2" aria-label="Copy heading and permalink for Note 1.4.2">🔗</a></div>
+</article>
+<div class="para" id="subsec-vector-basics-5">As we have said, vectors should be thought of first as algebraic objects, and there are several ways to combine these objects.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-vectors-algebra"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="def-vectors-algebra-1-1">We can combine and modify vectors through addition and a form of multiplication. We will describe the multiplication first.<div class="autopermalink" data-description="Paragraph"><a href="#def-vectors-algebra-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="def-vectors-algebra-1-2">
+<div class="para" id="def-vectors-algebra-1-1">We can combine and modify vectors through addition and a form of multiplication. We will describe the multiplication first.<div class="autopermalink" data-description="Paragraph"><a href="#def-vectors-algebra-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="def-vectors-algebra-1-2">
 <div class="para">Let <span class="process-math">\(\bfv \in \rr^n\)</span> have the form</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-vectors-algebra-1-2-2">
 \begin{equation*}
 \bfv = \left[ \begin{array}{c}
 v_1 \\ v_2 \\ \vdots \\ v_n
@@ -508,7 +465,7 @@ v_1 \\ v_2 \\ \vdots \\ v_n
 \end{equation*}
 </div>
 <div class="para">and let <span class="process-math">\(c \in \rr\text{.}\)</span> Then the <dfn class="terminology">scalar multiple</dfn> of <span class="process-math">\(\bfv\)</span> by <span class="process-math">\(c\)</span> is the vector <span class="process-math">\(c\bfv\)</span> in <span class="process-math">\(\rr^n\)</span> obtained by multiplying each entry of <span class="process-math">\(\bfv\)</span> by <span class="process-math">\(c\text{;}\)</span> that is,</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-vectors-algebra-1-2-11">
 \begin{equation*}
 c\bfv = \left[ \begin{array}{c}
 cv_1 \\ cv_2 \\ \vdots \\ cv_n
@@ -516,10 +473,11 @@ cv_1 \\ cv_2 \\ \vdots \\ cv_n
 \end{equation*}
 </div>
 <div class="para">In this context, we will often refer to real numbers as <dfn class="terminology">scalars</dfn>.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#def-vectors-algebra-1-2" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="def-vectors-algebra-1-3">
+<div class="autopermalink" data-description="Paragraph"><a href="#def-vectors-algebra-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="def-vectors-algebra-1-3">
 <div class="para">If <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> are vectors in <span class="process-math">\(\rr^n\)</span> with the form</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-vectors-algebra-1-3-4">
 \begin{equation*}
 \bfu = \left[ \begin{array}{@{}c@{}}
 u_1 \\ u_2 \\ \vdots \\ u_n
@@ -530,27 +488,33 @@ v_1 \\ v_2 \\ \vdots \\ v_n
 \end{equation*}
 </div>
 <div class="para">then the <dfn class="terminology">sum</dfn> of <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> is the vector <span class="process-math">\(\bfu + \bfv\)</span> in <span class="process-math">\(\rr^n\)</span> obtained by adding the corresponding entries in <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\text{.}\)</span> That is,</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-vectors-algebra-1-3-12">
 \begin{equation*}
 \bfu+\bfv = \left[ \begin{array}{c}
 u_1+v_1 \\ u_2+v_2 \\ \vdots \\ u_n+v_n
 \end{array} \right]\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#def-vectors-algebra-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-vectors-algebra-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.4.3"><a href="#def-vectors-algebra" title="Copy permalink for Definition 1.4.3">🔗</a></div></article><article class="note remark-like" id="note-special-vectors"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span>
+<div class="autopermalink" data-description="Definition 1.4.3"><a href="#def-vectors-algebra" title="Copy heading and permalink for Definition 1.4.3" aria-label="Copy heading and permalink for Definition 1.4.3">🔗</a></div>
+</article>
+<article class="note remark-like" id="note-special-vectors"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="note-special-vectors-1">We will use the notation <span class="process-math">\(\mathbf{0}\)</span> to denote the <dfn class="terminology">zero vector</dfn>—that is, the vector in <span class="process-math">\(\rr^n\)</span> whose entries are all <span class="process-math">\(0\text{.}\)</span> We will also use the notation <span class="process-math">\(-\bfu\)</span> to indicate the scalar multiple <span class="process-math">\((-1)\bfu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#note-special-vectors-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="note-special-vectors-1">We will use the notation <span class="process-math">\(\mathbf{0}\)</span> to denote the <dfn class="terminology">zero vector</dfn>—that is, the vector in <span class="process-math">\(\rr^n\)</span> whose entries are all <span class="process-math">\(0\text{.}\)</span> We will also use the notation <span class="process-math">\(-\bfu\)</span> to indicate the scalar multiple <span class="process-math">\((-1)\bfu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#note-special-vectors-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Note 1.4.4"><a href="#note-special-vectors" title="Copy permalink for Note 1.4.4">🔗</a></div></article><div class="para" id="subsec-vector-basics-8">We present some quick calculations in the following example.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-8" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Note 1.4.4"><a href="#note-special-vectors" title="Copy heading and permalink for Note 1.4.4" aria-label="Copy heading and permalink for Note 1.4.4">🔗</a></div>
+</article>
+<div class="para" id="subsec-vector-basics-8">We present some quick calculations in the following example.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="ex-vector-sum" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-vector-sum-1-1">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="ex-vector-sum-1-1">
 <div class="para">Let <span class="process-math">\(\bfu \in \rr^2\)</span> and let <span class="process-math">\(\bfv, \bfw \in \rr^3\)</span> such that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-vectors-algebra.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-vectors-algebra.html" id="ex-vector-sum-1-1-3">
 \begin{equation*}
 \bfu = \left[\begin{array}{@{}c@{}}
 -3 \\ 5
@@ -564,7 +528,7 @@ u_1+v_1 \\ u_2+v_2 \\ \vdots \\ u_n+v_n
 \end{equation*}
 </div>
 <div class="para">Then we can calculate <span class="process-math">\(2\bfu\)</span> and <span class="process-math">\(\bfv + \bfw\)</span> using <a href="sec-vectors.html#def-vectors-algebra" class="xref" data-knowl="./knowl/xref/def-vectors-algebra.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.4.3">Definition 1.4.3</a>:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-vectors-algebra.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-vectors-algebra.html" id="ex-vector-sum-1-1-7">
 \begin{equation*}
 2\bfu = \left[\begin{array}{@{}c@{}}
 -6 \\ 10
@@ -574,36 +538,43 @@ u_1+v_1 \\ u_2+v_2 \\ \vdots \\ u_n+v_n
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-vector-sum-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-vector-sum-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.4.5"><a href="#ex-vector-sum" title="Copy permalink for Example 1.4.5">🔗</a></div></article></details><div class="para" id="subsec-vector-basics-10">When combining vectors, we are limited to adding vectors of the same dimension—that is, vectors with the same number of entries. However, we are not limited to either addition <em class="emphasis">or</em> scalar multiplication; we can certainly do both at once. Nor are we limited to adding only two vectors at a time. The following definition provides the correct generalization.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-10" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 1.4.5"><a href="#ex-vector-sum" title="Copy heading and permalink for Example 1.4.5" aria-label="Copy heading and permalink for Example 1.4.5">🔗</a></div>
+</article></details>
+<div class="para" id="subsec-vector-basics-10">When combining vectors, we are limited to adding vectors of the same dimension—that is, vectors with the same number of entries. However, we are not limited to either addition <em class="emphasis">or</em> scalar multiplication; we can certainly do both at once. Nor are we limited to adding only two vectors at a time. The following definition provides the correct generalization.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-lin-comb-span"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="def-lin-comb-span-1-1">
 <div class="para">Let <span class="process-math">\(c_1, c_2, \ldots, c_m\)</span> be real numbers and let <span class="process-math">\({\bfv_1, \bfv_2, \ldots, \bfv_m \in \rr^n}\text{.}\)</span> Then the <dfn class="terminology">linear combination</dfn> of the vectors <span class="process-math">\(\bfv_1, \bfv_2, \ldots, \bfv_m \)</span> with <dfn class="terminology">weights</dfn> <span class="process-math">\(c_1, c_2, \ldots, c_m\)</span> is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-lin-comb-span-1-1-7">
 \begin{equation*}
 c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#def-lin-comb-span-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="def-lin-comb-span-1-2">
+<div class="autopermalink" data-description="Paragraph"><a href="#def-lin-comb-span-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="def-lin-comb-span-1-2">
 <div class="para">The <dfn class="terminology">span</dfn> of the vectors <span class="process-math">\(\bfv_1, \bfv_2, \ldots, \bfv_m\)</span> is the set of all possible linear combinations of <span class="process-math">\(\bfv_1, \bfv_2, \ldots, \bfv_m\)</span> and is written <span class="process-math">\(\spn\{\bfv_1, \ldots, \bfv_m\}\text{.}\)</span> In other words, the span is defined to be</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-lin-comb-span-1-2-5">
 \begin{equation*}
 \spn\{\bfv_1,\ldots,\bfv_m\} = \left\{ \sum_{i=1}^m c_i\bfv_i \mid c_1,\ldots,c_m \in \rr \right\}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#def-lin-comb-span-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-lin-comb-span-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.4.6"><a href="#def-lin-comb-span" title="Copy permalink for Definition 1.4.6">🔗</a></div></article><details id="subsec-vector-basics-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-vector-basics-12-1-1">
+<div class="autopermalink" data-description="Definition 1.4.6"><a href="#def-lin-comb-span" title="Copy heading and permalink for Definition 1.4.6" aria-label="Copy heading and permalink for Definition 1.4.6">🔗</a></div>
+</article>
+<details id="subsec-vector-basics-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="subsec-vector-basics-12-1-1">
 <div class="para">Taking <span class="process-math">\(\bfv\)</span> and <span class="process-math">\(\bfw\)</span> from <a href="sec-vectors.html#ex-vector-sum" class="xref" data-knowl="./knowl/xref/ex-vector-sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.5">Example 1.4.5</a>, we can calculate the linear combination of these vectors with weights <span class="process-math">\(2\)</span> and <span class="process-math">\(-1\text{:}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-vector-sum.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-vector-sum.html" id="subsec-vector-basics-12-1-1-6">
 \begin{equation*}
 2\bfv - \bfw = \left[\begin{array}{@{}c@{}}
 4 \\ 2 \\ -8
@@ -616,18 +587,20 @@ c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m\text{.}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-12-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.4.7"><a href="#subsec-vector-basics-12" title="Copy permalink for Example 1.4.7">🔗</a></div></article></details><article class="note remark-like" id="note-intro-matrix-ops"><h4 class="heading">
-<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.4.8</span><span class="period">.</span>
+<div class="autopermalink" data-description="Example 1.4.7"><a href="#subsec-vector-basics-12" title="Copy heading and permalink for Example 1.4.7" aria-label="Copy heading and permalink for Example 1.4.7">🔗</a></div>
+</article></details>
+<article class="note remark-like" id="note-intro-matrix-ops"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="note-intro-matrix-ops-1">We have defined addition and scalar multiplication for vectors here, but these concepts also make sense for matrices. We will set the stage briefly here for a return in <a href="sec-vector-spaces.html" class="internal" title="Section 2.3: Vector Spaces">Section 2.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#note-intro-matrix-ops-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="note-intro-matrix-ops-1">We have defined addition and scalar multiplication for vectors here, but these concepts also make sense for matrices. We will set the stage briefly here for a return in <a href="sec-vector-spaces.html" class="internal" title="Section 2.3: Vector Spaces">Section 2.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#note-intro-matrix-ops-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="note-intro-matrix-ops-2">If we think of an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> in terms of its columns, then the <span class="process-math">\(n\)</span> columns of <span class="process-math">\(A\)</span> are all vectors in <span class="process-math">\(\rr^m\text{.}\)</span> For two <span class="process-math">\(m\times n\)</span> matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> we define the sum <span class="process-math">\(A + B\)</span> in this way: column <span class="process-math">\(j\)</span> of <span class="process-math">\(A + B\)</span> is the sum of the two vectors in <span class="process-math">\(\rr^m\)</span> which are the <span class="process-math">\(j\)</span>th columns of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Similarly, if <span class="process-math">\(c \in \rr\text{,}\)</span> then we can define the scalar multiple <span class="process-math">\(cA\)</span> in terms of its columns: column <span class="process-math">\(j\)</span> of <span class="process-math">\(cA\)</span> is the scalar multiple of the <span class="process-math">\(j\)</span>th column of <span class="process-math">\(A\)</span> by <span class="process-math">\(c\text{.}\)</span> In this way these algebraic notions for matrices are built upon the corresponding notions for vectors.<div class="autopermalink" data-description="Paragraph"><a href="#note-intro-matrix-ops-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="note-intro-matrix-ops-2">If we think of an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> in terms of its columns, then the <span class="process-math">\(n\)</span> columns of <span class="process-math">\(A\)</span> are all vectors in <span class="process-math">\(\rr^m\text{.}\)</span> For two <span class="process-math">\(m\times n\)</span> matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> we define the sum <span class="process-math">\(A + B\)</span> in this way: column <span class="process-math">\(j\)</span> of <span class="process-math">\(A + B\)</span> is the sum of the two vectors in <span class="process-math">\(\rr^m\)</span> which are the <span class="process-math">\(j\)</span>th columns of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Similarly, if <span class="process-math">\(c \in \rr\text{,}\)</span> then we can define the scalar multiple <span class="process-math">\(cA\)</span> in terms of its columns: column <span class="process-math">\(j\)</span> of <span class="process-math">\(cA\)</span> is the scalar multiple of the <span class="process-math">\(j\)</span>th column of <span class="process-math">\(A\)</span> by <span class="process-math">\(c\text{.}\)</span> In this way these algebraic notions for matrices are built upon the corresponding notions for vectors.<div class="autopermalink" data-description="Paragraph"><a href="#note-intro-matrix-ops-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="note-intro-matrix-ops-3">
 <div class="para">We include two initial calculations as examples. If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are defined as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="note-intro-matrix-ops-3-3">
 \begin{equation*}
 A = \begin{bmatrix} 2 \amp -1 \amp 0 \\ 
 3 \amp 4 \amp -5 \end{bmatrix}, \hspace{.3in}
@@ -636,7 +609,7 @@ B = \begin{bmatrix} -3 \amp 2 \amp 7 \\
 \end{equation*}
 </div>
 <div class="para">then we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="note-intro-matrix-ops-3-4">
 \begin{equation*}
 A + B = \begin{bmatrix} -1 \amp 1 \amp 7 \\ 
 3 \amp 0 \amp -1 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt} 
@@ -644,11 +617,13 @@ A + B = \begin{bmatrix} -1 \amp 1 \amp 7 \\
 -6 \amp -8 \amp 10 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#note-intro-matrix-ops-3" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#note-intro-matrix-ops-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="note-intro-matrix-ops-4">We finally note that, as with vectors, the sum (and thus the linear combination) of two or more matrices only makes sense if all involved matrices are of the same size.<div class="autopermalink" data-description="Paragraph"><a href="#note-intro-matrix-ops-4" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="note-intro-matrix-ops-4">We finally note that, as with vectors, the sum (and thus the linear combination) of two or more matrices only makes sense if all involved matrices are of the same size.<div class="autopermalink" data-description="Paragraph"><a href="#note-intro-matrix-ops-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Note 1.4.8"><a href="#note-intro-matrix-ops" title="Copy permalink for Note 1.4.8">🔗</a></div></article><div class="para" id="subsec-vector-basics-14">Before we explore the concept of span, we need to discuss the connection between systems of linear equations and vector equations. We saw a glimpse of this connection in <a href="sec-vectors.html#note-equal-vect" class="xref" data-knowl="./knowl/xref/note-equal-vect.html" data-reveal-label="Reveal" data-close-label="Close" title="Note 1.4.2">Note 1.4.2</a>, and we will develop it further here.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-14" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Note 1.4.8"><a href="#note-intro-matrix-ops" title="Copy heading and permalink for Note 1.4.8" aria-label="Copy heading and permalink for Note 1.4.8">🔗</a></div>
+</article>
+<div class="para" id="subsec-vector-basics-14">Before we explore the concept of span, we need to discuss the connection between systems of linear equations and vector equations. We saw a glimpse of this connection in <a href="sec-vectors.html#note-equal-vect" class="xref" data-knowl="./knowl/xref/note-equal-vect.html" data-reveal-label="Reveal" data-close-label="Close" title="Note 1.4.2">Note 1.4.2</a>, and we will develop it further here.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-vector-basics-15">
 <div class="para">Let us consider the following simple linear system:</div>
@@ -661,12 +636,12 @@ A + B = \begin{bmatrix} -1 \amp 1 \amp 7 \\
 \end{equation}
 </div>
 <div class="para">Solving this linear system involves (as always) investigating whether there are values of <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> which satisfy both of these equations simultaneously. We will now arrive at this same question from a different angle.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-15" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-vector-basics-16">
 <div class="para">Let’s consider the following three vectors in <span class="process-math">\(\rr^2\text{:}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-vector-basics-16-2">
 \begin{equation*}
 \bfu = \left[\begin{array}{@{}c@{}}
 3 \\ -2
@@ -681,7 +656,7 @@ A + B = \begin{bmatrix} -1 \amp 1 \amp 7 \\
 </div>
 <div class="para">Since all of these vectors are in <span class="process-math">\(\rr^2\text{,}\)</span> we can ask this question: Can <span class="process-math">\(\bfw\)</span> be written as a linear combination of <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\text{?}\)</span> (This question is equivalent to asking if <span class="process-math">\(\bfw\)</span> belongs to <span class="process-math">\(\spn\{\bfu,\bfv\}\text{.}\)</span>) In other words, do there exist scalars <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> such that <span class="process-math">\(x_1\bfu + x_2\bfv = \bfw\text{?}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-16" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-vector-basics-17">
 <div class="para">The equation in this final question is equivalent to other vector equations:</div>
@@ -710,14 +685,16 @@ x_1 \left[\begin{array}{@{}c@{}}
 \end{align*}
 </div>
 <div class="para">Because of <a href="sec-vectors.html#note-equal-vect" class="xref" data-knowl="./knowl/xref/note-equal-vect.html" data-reveal-label="Reveal" data-close-label="Close" title="Note 1.4.2">Note 1.4.2</a>, this last vector equation is equivalent to the linear system in <a href="sec-vectors.html#lin-sys-1" class="xref" data-knowl="./knowl/xref/lin-sys-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5">(1.5)</a>.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-17" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="vect-eqn-ex" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.9</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="vect-eqn-ex-1-1">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="vect-eqn-ex-1-1">
 <div class="para">Consider the following vectors in <span class="process-math">\(\rr^3\text{:}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="vect-eqn-ex-1-1-2">
 \begin{equation*}
 \bfv_1 = \left[\begin{array}{@{}c@{}}
 0 \\ 2 \\ -1
@@ -732,9 +709,11 @@ x_1 \left[\begin{array}{@{}c@{}}
 </div>
 <div class="para">Is <span class="process-math">\(\bfv_3\)</span> in <span class="process-math">\(\spn\{\bfv_1,\bfv_2\}\text{?}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#vect-eqn-ex-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="vect-eqn-ex-1-2">We have written this question in terms of a vector equation, but by the previous discussion we should be able to translate this question to a more familiar one about solutions to linear systems and answer the question using <a href="sec-results.html#alg-solving-system" class="xref" data-knowl="./knowl/xref/alg-solving-system.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 1.3.8: Algorithm for Solving Linear Systems">Algorithm 1.3.8</a>.<div class="autopermalink" data-description="Paragraph"><a href="#vect-eqn-ex-1-2" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="vect-eqn-ex-1-3">
+<div class="autopermalink" data-description="Paragraph"><a href="#vect-eqn-ex-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="vect-eqn-ex-1-2">We have written this question in terms of a vector equation, but by the previous discussion we should be able to translate this question to a more familiar one about solutions to linear systems and answer the question using <a href="sec-results.html#alg-solving-system" class="xref" data-knowl="./knowl/xref/alg-solving-system.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 1.3.8: Algorithm for Solving Linear Systems">Algorithm 1.3.8</a>.<div class="autopermalink" data-description="Paragraph"><a href="#vect-eqn-ex-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="vect-eqn-ex-1-3">
 <div class="para">The question about vectors is the same as asking if this linear system is consistent:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-consistent-system.html" id="vect-eqn-ex-1-3-1">
 \begin{align*}
@@ -744,7 +723,7 @@ x_1 \left[\begin{array}{@{}c@{}}
 \end{align*}
 </div>
 <div class="para">The augmented matrix for this system is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-consistent-system.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-consistent-system.html" id="vect-eqn-ex-1-3-2">
 \begin{equation*}
 \left[\begin{array}{@{}cc|c@{}}
 0 \amp 3 \amp 5 \\
@@ -754,7 +733,7 @@ x_1 \left[\begin{array}{@{}c@{}}
 \end{equation*}
 </div>
 <div class="para">and the RREF of this matrix is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-consistent-system.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-consistent-system.html" id="vect-eqn-ex-1-3-3">
 \begin{equation*}
 \left[\begin{array}{@{}cc|c@{}}
 1 \amp 0 \amp 0 \\
@@ -765,84 +744,91 @@ x_1 \left[\begin{array}{@{}c@{}}
 </div>
 <div class="para">Since there is a pivot in the final column of this matrix, we conclude (by invoking <a href="sec-results.html#thm-consistent-system" class="xref" data-knowl="./knowl/xref/thm-consistent-system.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.5">Theorem 1.3.5</a>) that the linear system is inconsistent. This means that the answer to the original question is no, <span class="process-math">\(\bfv_3\)</span> is not in <span class="process-math">\(\spn\{\bfv_1,\bfv_2\}\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#vect-eqn-ex-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#vect-eqn-ex-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.4.9"><a href="#vect-eqn-ex" title="Copy permalink for Example 1.4.9">🔗</a></div></article></details><div class="para" id="subsec-vector-basics-19">
-<a href="sec-vectors.html#vect-eqn-ex" class="xref" data-knowl="./knowl/xref/vect-eqn-ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.9">Example 1.4.9</a> illustrates a general workflow for questions like this. There is no need to explicitly write out the intermediate step involving linear systems; instead, we can form a matrix using the given vectors as the appropriate columns, row reduce the matrix, and answer the question.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-19" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 1.4.9"><a href="#vect-eqn-ex" title="Copy heading and permalink for Example 1.4.9" aria-label="Copy heading and permalink for Example 1.4.9">🔗</a></div>
+</article></details>
+<div class="para" id="subsec-vector-basics-19">
+<a href="sec-vectors.html#vect-eqn-ex" class="xref" data-knowl="./knowl/xref/vect-eqn-ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.9">Example 1.4.9</a> illustrates a general workflow for questions like this. There is no need to explicitly write out the intermediate step involving linear systems; instead, we can form a matrix using the given vectors as the appropriate columns, row reduce the matrix, and answer the question.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-vector-basics-20">Combining vectors in <span class="process-math">\(\rr^n\)</span> is already (or soon will be) fairly natural for readers of this chapter. Under the operations of scalar multiplication and addition, vectors in <span class="process-math">\(\rr^n\)</span> have some useful properties, which we record in the following fact. We will not spend time with these properties now, but we will look at them intently in <a href="sec-vector-spaces.html" class="internal" title="Section 2.3: Vector Spaces">Section 2.3</a>. These properties can all be verified using the corresponding properties of addition and multiplication of real numbers. (And the fact that real numbers have these properties is <em class="emphasis">essential</em>!)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-20" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-vector-basics-20">Combining vectors in <span class="process-math">\(\rr^n\)</span> is already (or soon will be) fairly natural for readers of this chapter. Under the operations of scalar multiplication and addition, vectors in <span class="process-math">\(\rr^n\)</span> have some useful properties, which we record in the following fact. We will not spend time with these properties now, but we will look at them intently in <a href="sec-vector-spaces.html" class="internal" title="Section 2.3: Vector Spaces">Section 2.3</a>. These properties can all be verified using the corresponding properties of addition and multiplication of real numbers. (And the fact that real numbers have these properties is <em class="emphasis">essential</em>!)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="fact theorem-like" id="fact-alg-props-vectors-rn"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.4.10</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="fact-alg-props-vectors-rn-1-1">
 <div class="para">For all vectors <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\bfw\)</span> in <span class="process-math">\(\rr^n\text{,}\)</span> and for all real numbers <span class="process-math">\(c\)</span> and <span class="process-math">\(d\text{,}\)</span> the following properties hold.</div>
 <ol class="decimal" id="fact-alg-props-vectors-rn-1-1-7">
 <li id="fact-alg-props-vectors-rn-1-1-7-1">
 <div class="para" id="p-derived-fact-alg-props-vectors-rn-1-1-7-1"><span class="process-math">\(\displaystyle \bfu + \bfv = \bfv + \bfu\)</span></div>
-<div class="autopermalink" data-description="Item 1"><a href="#fact-alg-props-vectors-rn-1-1-7-1" title="Copy permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#fact-alg-props-vectors-rn-1-1-7-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="fact-alg-props-vectors-rn-1-1-7-2">
 <div class="para" id="p-derived-fact-alg-props-vectors-rn-1-1-7-2"><span class="process-math">\(\displaystyle (\bfu + \bfv) + \bfw = \bfu + (\bfv+\bfw)\)</span></div>
-<div class="autopermalink" data-description="Item 2"><a href="#fact-alg-props-vectors-rn-1-1-7-2" title="Copy permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#fact-alg-props-vectors-rn-1-1-7-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 <li id="fact-alg-props-vectors-rn-1-1-7-3">
 <div class="para" id="p-derived-fact-alg-props-vectors-rn-1-1-7-3"><span class="process-math">\(\displaystyle \bfu + \mathbf{0} = \mathbf{0}+\bfu = \bfu\)</span></div>
-<div class="autopermalink" data-description="Item 3"><a href="#fact-alg-props-vectors-rn-1-1-7-3" title="Copy permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="Item 3"><a href="#fact-alg-props-vectors-rn-1-1-7-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 <li id="fact-alg-props-vectors-rn-1-1-7-4">
 <div class="para" id="p-derived-fact-alg-props-vectors-rn-1-1-7-4"><span class="process-math">\(\displaystyle \bfu + (-\bfu) = (-\bfu) + \bfu = \mathbf{0}\)</span></div>
-<div class="autopermalink" data-description="Item 4"><a href="#fact-alg-props-vectors-rn-1-1-7-4" title="Copy permalink for Item 4">🔗</a></div>
+<div class="autopermalink" data-description="Item 4"><a href="#fact-alg-props-vectors-rn-1-1-7-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
 </li>
 <li id="fact-alg-props-vectors-rn-1-1-7-5">
 <div class="para" id="p-derived-fact-alg-props-vectors-rn-1-1-7-5"><span class="process-math">\(\displaystyle c(\bfu+\bfv) = c\bfu + c\bfv\)</span></div>
-<div class="autopermalink" data-description="Item 5"><a href="#fact-alg-props-vectors-rn-1-1-7-5" title="Copy permalink for Item 5">🔗</a></div>
+<div class="autopermalink" data-description="Item 5"><a href="#fact-alg-props-vectors-rn-1-1-7-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
 </li>
 <li id="fact-alg-props-vectors-rn-1-1-7-6">
 <div class="para" id="p-derived-fact-alg-props-vectors-rn-1-1-7-6"><span class="process-math">\(\displaystyle (c+d)\bfu = c\bfu + d\bfu\)</span></div>
-<div class="autopermalink" data-description="Item 6"><a href="#fact-alg-props-vectors-rn-1-1-7-6" title="Copy permalink for Item 6">🔗</a></div>
+<div class="autopermalink" data-description="Item 6"><a href="#fact-alg-props-vectors-rn-1-1-7-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
 </li>
 <li id="fact-alg-props-vectors-rn-1-1-7-7">
 <div class="para" id="p-derived-fact-alg-props-vectors-rn-1-1-7-7"><span class="process-math">\(\displaystyle c(d\bfu) = (cd)\bfu\)</span></div>
-<div class="autopermalink" data-description="Item 7"><a href="#fact-alg-props-vectors-rn-1-1-7-7" title="Copy permalink for Item 7">🔗</a></div>
+<div class="autopermalink" data-description="Item 7"><a href="#fact-alg-props-vectors-rn-1-1-7-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
 </li>
 <li id="fact-alg-props-vectors-rn-1-1-7-8">
 <div class="para" id="p-derived-fact-alg-props-vectors-rn-1-1-7-8"><span class="process-math">\(\displaystyle 1\bfu = \bfu\)</span></div>
-<div class="autopermalink" data-description="Item 8"><a href="#fact-alg-props-vectors-rn-1-1-7-8" title="Copy permalink for Item 8">🔗</a></div>
+<div class="autopermalink" data-description="Item 8"><a href="#fact-alg-props-vectors-rn-1-1-7-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#fact-alg-props-vectors-rn-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#fact-alg-props-vectors-rn-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Fact 1.4.10"><a href="#fact-alg-props-vectors-rn" title="Copy permalink for Fact 1.4.10">🔗</a></div></article><div class="para logical" id="subsec-vector-basics-22">
+<div class="autopermalink" data-description="Fact 1.4.10"><a href="#fact-alg-props-vectors-rn" title="Copy heading and permalink for Fact 1.4.10" aria-label="Copy heading and permalink for Fact 1.4.10">🔗</a></div>
+</article>
+<div class="para logical" id="subsec-vector-basics-22">
 <div class="para">Thinking about linear systems through the lens of vectors also brings some structure to the solutions to consistent linear systems. When a linear system is consistent and the solution is unique, we have recorded this in terms of the variables involved. For example, we recorded the solution to the linear system in <a href="sec-results.html#examp-lin-system-use-alg" class="xref" data-knowl="./knowl/xref/examp-lin-system-use-alg.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.9">Example 1.3.9</a> as <span class="process-math">\(x = -1/9\text{,}\)</span> <span class="process-math">\(y = 4/3\text{,}\)</span> and <span class="process-math">\(z = 2/9\text{.}\)</span> However, if we think of these variables as forming a vector in <span class="process-math">\(\rr^3\text{,}\)</span> then we can record the solution this way:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-lin-system-use-alg.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/examp-lin-system-use-alg.html" id="subsec-vector-basics-22-6">
 \begin{equation*}
 \bfx = \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} -1/9 \\ 4/3 \\ 2/9 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-22" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-vector-basics-23">
 <div class="para">Similarly, when a consistent system does not have a unique solution, we can again use vector notation. (This would replace the parametric description of the solution set we presented in <a href="sec-results.html#ex-matrix-inf-solns" class="xref" data-knowl="./knowl/xref/ex-matrix-inf-solns.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.4">Example 1.3.4</a>.) In <a href="sec-results.html#ex-matrix-inf-solns" class="xref" data-knowl="./knowl/xref/ex-matrix-inf-solns.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.4">Example 1.3.4</a> we considered such a linear system. The solution set can now be written this way:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-matrix-inf-solns.html ./knowl/xref/ex-matrix-inf-solns.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-matrix-inf-solns.html ./knowl/xref/ex-matrix-inf-solns.html" id="subsec-vector-basics-23-3">
 \begin{equation*}
 \bfx = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 5 + 3x_3 \\ 7 - 2x_3 \\ x_3 \end{bmatrix} = \begin{bmatrix} 5 \\ 7 \\ 0 \end{bmatrix} + x_3 \begin{bmatrix} 3 \\ -2 \\ 1 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">If we label the vectors <span class="process-math">\(\bfv\)</span> and <span class="process-math">\(\bfw\)</span> as</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-matrix-inf-solns.html ./knowl/xref/ex-matrix-inf-solns.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-matrix-inf-solns.html ./knowl/xref/ex-matrix-inf-solns.html" id="subsec-vector-basics-23-6">
 \begin{equation*}
 \bfv = \begin{bmatrix} 5 \\ 7 \\ 0 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
 \bfw = \begin{bmatrix} 3 \\ -2 \\ 1 \end{bmatrix}\text{,}
 \end{equation*}
 </div>
 <div class="para">then all solutions to this system can be written as <span class="process-math">\(\bfv + t\bfw\text{,}\)</span> where <span class="process-math">\(t\)</span> can be any real number. As we learn more about the geometric interpretations of the solutions to linear systems, this phrasing in terms of vectors will be useful.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-23" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-vector-basics-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 1.4.1: The Basics of Vectors"><a href="#subsec-vector-basics" title="Copy permalink for Subsection 1.4.1: The Basics of Vectors">🔗</a></div></section><section class="subsection" id="subsec-geometry-vectors"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="space"> </span><span class="title">Vectors and Geometry</span>
+<div class="autopermalink" data-description="Subsection 1.4.1: The Basics of Vectors"><a href="#subsec-vector-basics" title="Copy heading and permalink for Subsection 1.4.1: The Basics of Vectors" aria-label="Copy heading and permalink for Subsection 1.4.1: The Basics of Vectors">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-geometry-vectors">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vectors and Geometry</span>
 </h3>
-<div class="para" id="subsec-geometry-vectors-2">Before we leave this chapter, we need to introduce the connection between vectors and geometry. Readers who have taken multivariable calculus are likely aware of some of these concepts. For the sake of simplicity, we will restrict most of our discussion (and all of our illustrations) to <span class="process-math">\(\rr^2\)</span> in this section.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-geometry-vectors-2">Before we leave this chapter, we need to introduce the connection between vectors and geometry. Readers who have taken multivariable calculus are likely aware of some of these concepts. For the sake of simplicity, we will restrict most of our discussion (and all of our illustrations) to <span class="process-math">\(\rr^2\)</span> in this section.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-geometry-vectors-3">We will visualize a vector <span class="process-math">\(\bfv = \left[\begin{array}{@{}c@{}}
 a \\ b
@@ -850,30 +836,42 @@ a \\ b
 1 \\ -2
 \end{array}\right]\)</span> and <span class="process-math">\(\bfv = \left[\begin{array}{@{}c@{}}
 -3 \\ 1
-\end{array}\right]\)</span> would be visualized in the following picture.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-3" title="Copy permalink for Paragraph">🔗</a></div>
+\end{array}\right]\)</span> would be visualized in the following picture.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="subsec-geometry-vectors-4"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
-<img src="generated/latex-image/two-vectors.svg" role="img" class="contained" alt="Graph of two vectors on coordinate axes. Both vectors begin at the origin ending at (1,-2) and (-3,1). See long description."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="two-vectors-description"><div class="para" id="two-vectors-2-1">The graph of two vectors plotted on coordinate axes. The horizontal axis ranges from <span class="process-math">\(-3\)</span> to <span class="process-math">\(3\)</span> and the vertical axis ranges from <span class="process-math">\(-2\)</span> to <span class="process-math">\(2\text{.}\)</span> The vector <span class="process-math">\(\bfv\)</span> is drawn in red and begins at the origin extending to <span class="process-math">\((-3,1)\text{.}\)</span> The vector <span class="process-math">\(\bfu\)</span> is drawn in blue and begins at the origin extending to the point <span class="process-math">\((1,-2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#two-vectors-2-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div></div></details>
+<img src="generated/latex-image/two-vectors.svg" role="img" class="contained" alt="Graph of two vectors on coordinate axes. Both vectors begin at the origin ending at (1,-2) and (-3,1). See long description."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="two-vectors-description">
+<div class="para" id="two-vectors-2-1">The graph of two vectors plotted on coordinate axes. The horizontal axis ranges from <span class="process-math">\(-3\)</span> to <span class="process-math">\(3\)</span> and the vertical axis ranges from <span class="process-math">\(-2\)</span> to <span class="process-math">\(2\text{.}\)</span> The vector <span class="process-math">\(\bfv\)</span> is drawn in red and begins at the origin extending to <span class="process-math">\((-3,1)\text{.}\)</span> The vector <span class="process-math">\(\bfu\)</span> is drawn in blue and begins at the origin extending to the point <span class="process-math">\((1,-2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#two-vectors-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.11<span class="period">.</span></span><span class="space"> </span>Illustration of two vectors in the plane<div class="autopermalink" data-description="Figure 1.4.11"><a href="#subsec-geometry-vectors-4" title="Copy permalink for Figure 1.4.11">🔗</a></div></figcaption></figure><div class="para" id="subsec-geometry-vectors-5">Scalar multiplication of a vector can be seen as stretching or contracting the vector, if the scalar is positive. If the scalar is negative, the vector will be pointing in the opposite direction, then stretched or contracted. Here is an example using the vector <span class="process-math">\(\bfv\)</span> previously defined.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-5" title="Copy permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Illustration of two vectors in the plane<div class="autopermalink" data-description="Figure 1.4.11"><a href="#subsec-geometry-vectors-4" title="Copy heading and permalink for Figure 1.4.11" aria-label="Copy heading and permalink for Figure 1.4.11">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="subsec-geometry-vectors-5">Scalar multiplication of a vector can be seen as stretching or contracting the vector, if the scalar is positive. If the scalar is negative, the vector will be pointing in the opposite direction, then stretched or contracted. Here is an example using the vector <span class="process-math">\(\bfv\)</span> previously defined.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="subsec-geometry-vectors-6"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
-<img src="generated/latex-image/scalar-mult.svg" role="img" class="contained" alt="Graph of three vectors on axes, starting at the origin ending at (-3,1), (-1.5,0.5), and (3,-1). See long description."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="scalar-mult-description"><div class="para" id="scalar-mult-2-1">The graph of three vectors plotted on coordinate axes. The horizontal axis ranges from <span class="process-math">\(-3\)</span> to <span class="process-math">\(3\)</span> and the vertical axis ranges from <span class="process-math">\(-2\)</span> to <span class="process-math">\(2\text{.}\)</span> The vector <span class="process-math">\(\bfv\)</span> is drawn in red and begins at the origin extending to <span class="process-math">\((-3,1)\text{.}\)</span> The vector <span class="process-math">\(\frac{1}{2}\bfv\)</span> is drawn in blue and begins at the origin extending to the point <span class="process-math">\((-1.5,0.5)\text{.}\)</span> The vector <span class="process-math">\(-\bfv\)</span> is drawn in green and begins at the origin extending to the point <span class="process-math">\((3,-1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#scalar-mult-2-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div></div></details>
+<img src="generated/latex-image/scalar-mult.svg" role="img" class="contained" alt="Graph of three vectors on axes, starting at the origin ending at (-3,1), (-1.5,0.5), and (3,-1). See long description."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="scalar-mult-description">
+<div class="para" id="scalar-mult-2-1">The graph of three vectors plotted on coordinate axes. The horizontal axis ranges from <span class="process-math">\(-3\)</span> to <span class="process-math">\(3\)</span> and the vertical axis ranges from <span class="process-math">\(-2\)</span> to <span class="process-math">\(2\text{.}\)</span> The vector <span class="process-math">\(\bfv\)</span> is drawn in red and begins at the origin extending to <span class="process-math">\((-3,1)\text{.}\)</span> The vector <span class="process-math">\(\frac{1}{2}\bfv\)</span> is drawn in blue and begins at the origin extending to the point <span class="process-math">\((-1.5,0.5)\text{.}\)</span> The vector <span class="process-math">\(-\bfv\)</span> is drawn in green and begins at the origin extending to the point <span class="process-math">\((3,-1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#scalar-mult-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.12<span class="period">.</span></span><span class="space"> </span>Illustration of scalar multiplication<div class="autopermalink" data-description="Figure 1.4.12"><a href="#subsec-geometry-vectors-6" title="Copy permalink for Figure 1.4.12">🔗</a></div></figcaption></figure><div class="para" id="subsec-geometry-vectors-7">Addition of vectors is also easy to visualize. To add two vectors, move the second vector from the origin so that its beginning coincides with the end of the first vector. The vector sum can be represented by the arrow from the origin to the end of this relocated second vector. (The dashed arrow in the following diagram is the relocated vector <span class="process-math">\(\bfv\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-7" title="Copy permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Illustration of scalar multiplication<div class="autopermalink" data-description="Figure 1.4.12"><a href="#subsec-geometry-vectors-6" title="Copy heading and permalink for Figure 1.4.12" aria-label="Copy heading and permalink for Figure 1.4.12">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="subsec-geometry-vectors-7">Addition of vectors is also easy to visualize. To add two vectors, move the second vector from the origin so that its beginning coincides with the end of the first vector. The vector sum can be represented by the arrow from the origin to the end of this relocated second vector. (The dashed arrow in the following diagram is the relocated vector <span class="process-math">\(\bfv\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="subsec-geometry-vectors-8"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
-<img src="generated/latex-image/vector-sum.svg" role="img" class="contained" alt="The graph of four vectors; three vectors go from (0,0) to (-3,1), (1,-2), and (-2,-1). See long description."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="vector-sum-description"><div class="para" id="vector-sum-2-1">The graph of four vectors plotted on coordinate axes. The horizontal axis ranges from <span class="process-math">\(-3\)</span> to <span class="process-math">\(3\)</span> and the vertical axis ranges from <span class="process-math">\(-2\)</span> to <span class="process-math">\(2\text{.}\)</span> The vector <span class="process-math">\(\bfv\)</span> is drawn in red and begins at the origin extending to <span class="process-math">\((-3,1)\text{.}\)</span> The vector <span class="process-math">\(\bfu\)</span> is drawn in blue and begins at the origin extending to the point <span class="process-math">\((1,-2)\text{.}\)</span> A vector drawn in dashed red extends from <span class="process-math">\((1,-2)\)</span> to <span class="process-math">\((-2,-1)\text{;}\)</span> this vector is labeled <span class="process-math">\(\bfv\text{.}\)</span> The vector <span class="process-math">\(\bfu + \bfv\)</span> is drawn in black begins at the origin and extends to <span class="process-math">\((-2,-1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#vector-sum-2-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div></div></details>
+<img src="generated/latex-image/vector-sum.svg" role="img" class="contained" alt="The graph of four vectors; three vectors go from (0,0) to (-3,1), (1,-2), and (-2,-1). See long description."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="vector-sum-description">
+<div class="para" id="vector-sum-2-1">The graph of four vectors plotted on coordinate axes. The horizontal axis ranges from <span class="process-math">\(-3\)</span> to <span class="process-math">\(3\)</span> and the vertical axis ranges from <span class="process-math">\(-2\)</span> to <span class="process-math">\(2\text{.}\)</span> The vector <span class="process-math">\(\bfv\)</span> is drawn in red and begins at the origin extending to <span class="process-math">\((-3,1)\text{.}\)</span> The vector <span class="process-math">\(\bfu\)</span> is drawn in blue and begins at the origin extending to the point <span class="process-math">\((1,-2)\text{.}\)</span> A vector drawn in dashed red extends from <span class="process-math">\((1,-2)\)</span> to <span class="process-math">\((-2,-1)\text{;}\)</span> this vector is labeled <span class="process-math">\(\bfv\text{.}\)</span> The vector <span class="process-math">\(\bfu + \bfv\)</span> is drawn in black begins at the origin and extends to <span class="process-math">\((-2,-1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#vector-sum-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.13<span class="period">.</span></span><span class="space"> </span>Illustration of vector addition<div class="autopermalink" data-description="Figure 1.4.13"><a href="#subsec-geometry-vectors-8" title="Copy permalink for Figure 1.4.13">🔗</a></div></figcaption></figure><div class="para" id="subsec-geometry-vectors-9">We can put these previous two ideas together to explain the way to visualize linear combinations (and spans). Let’s consider the vectors <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> as previously defined, and we will also define <span class="process-math">\(\bfw\)</span> as <span class="process-math">\(\bfw = \left[\begin{array}{@{}c@{}}
-2 \\ 2   \end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-9" title="Copy permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Illustration of vector addition<div class="autopermalink" data-description="Figure 1.4.13"><a href="#subsec-geometry-vectors-8" title="Copy heading and permalink for Figure 1.4.13" aria-label="Copy heading and permalink for Figure 1.4.13">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="subsec-geometry-vectors-9">We can put these previous two ideas together to explain the way to visualize linear combinations (and spans). Let’s consider the vectors <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> as previously defined, and we will also define <span class="process-math">\(\bfw\)</span> as <span class="process-math">\(\bfw = \left[\begin{array}{@{}c@{}}
+2 \\ 2   \end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-geometry-vectors-10">
 <div class="para">When we ask whether <span class="process-math">\(\bfw\)</span> is in <span class="process-math">\(\spn\{\bfu,\bfv\}\text{,}\)</span> this is the same as asking whether we can form <span class="process-math">\(\bfw\)</span> as a linear combination of <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\text{.}\)</span> We answer this question by forming a matrix with the appropriate columns and row reducing. We find the matrix</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-geometry-vectors-10-6">
 \begin{equation*}
 \left[\begin{array}{@{}cc|c@{}}
 \bfu \amp \bfv \amp \bfw
@@ -884,7 +882,7 @@ a \\ b
 \end{equation*}
 </div>
 <div class="para">and the RREF of this matrix is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-geometry-vectors-10-7">
 \begin{equation*}
 \left[\begin{array}{@{}cc|c@{}}
 1 \amp 0 \amp -1.6 \\
@@ -893,29 +891,36 @@ a \\ b
 \end{equation*}
 </div>
 <div class="para">This tells us that <span class="process-math">\(\bfw\)</span> <em class="emphasis">is</em> in the span of <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\text{,}\)</span> and that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-geometry-vectors-10-12">
 \begin{equation*}
 \bfw = -1.6\bfu - 1.2\bfv\text{.}
 \end{equation*}
 </div>
 <div class="para">Here is the picture illustrating this.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-10" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="subsec-geometry-vectors-11"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
-<img src="generated/latex-image/linear-comb.svg" role="img" class="contained" alt="The graph of four vectors; three vectors go from (0,0) to (-1.6,3.2), (2,2), and (3.6,-1.2). See long description."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="linear-comb-description"><div class="para" id="linear-comb-2-1">The graph of four vectors plotted on coordinate axes. The horizontal axis ranges from <span class="process-math">\(-3\)</span> to <span class="process-math">\(3\)</span> and the vertical axis ranges from <span class="process-math">\(-1\)</span> to <span class="process-math">\(3\text{.}\)</span> The vector <span class="process-math">\(-1.2\bfv\)</span> is drawn in red and begins at the origin extending to <span class="process-math">\((3.6,-1.2)\text{.}\)</span> The vector <span class="process-math">\(-1.6\bfu\)</span> is drawn in blue and begins at the origin extending to the point <span class="process-math">\((-1.6,3.2)\text{.}\)</span> A vector drawn in dashed red extends from <span class="process-math">\((-1.6,3.2)\)</span> to <span class="process-math">\((2,2)\text{;}\)</span> this vector is labeled <span class="process-math">\(-1.2\bfv\text{.}\)</span> The vector <span class="process-math">\(\bfw\)</span> is drawn in black begins at the origin and extends to <span class="process-math">\((2,2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linear-comb-2-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div></div></details>
+<img src="generated/latex-image/linear-comb.svg" role="img" class="contained" alt="The graph of four vectors; three vectors go from (0,0) to (-1.6,3.2), (2,2), and (3.6,-1.2). See long description."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="linear-comb-description">
+<div class="para" id="linear-comb-2-1">The graph of four vectors plotted on coordinate axes. The horizontal axis ranges from <span class="process-math">\(-3\)</span> to <span class="process-math">\(3\)</span> and the vertical axis ranges from <span class="process-math">\(-1\)</span> to <span class="process-math">\(3\text{.}\)</span> The vector <span class="process-math">\(-1.2\bfv\)</span> is drawn in red and begins at the origin extending to <span class="process-math">\((3.6,-1.2)\text{.}\)</span> The vector <span class="process-math">\(-1.6\bfu\)</span> is drawn in blue and begins at the origin extending to the point <span class="process-math">\((-1.6,3.2)\text{.}\)</span> A vector drawn in dashed red extends from <span class="process-math">\((-1.6,3.2)\)</span> to <span class="process-math">\((2,2)\text{;}\)</span> this vector is labeled <span class="process-math">\(-1.2\bfv\text{.}\)</span> The vector <span class="process-math">\(\bfw\)</span> is drawn in black begins at the origin and extends to <span class="process-math">\((2,2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linear-comb-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.14<span class="period">.</span></span><span class="space"> </span>Illustration of a linear combination<div class="autopermalink" data-description="Figure 1.4.14"><a href="#subsec-geometry-vectors-11" title="Copy permalink for Figure 1.4.14">🔗</a></div></figcaption></figure><div class="para" id="subsec-geometry-vectors-12">The reader may be able to see that no matter what vector <span class="process-math">\(\bfw\)</span> in <span class="process-math">\(\rr^2\)</span> was chosen in this last instance, that vector would be in <span class="process-math">\(\spn\{\bfu,\bfv\}\text{.}\)</span> (This means that <span class="process-math">\(\spn\{\bfu,\bfv\}=\rr^2\text{.}\)</span>) This has everything to do with the relationship between <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-12" title="Copy permalink for Paragraph">🔗</a></div>
+</div></details>
 </div>
-<div class="para" id="subsec-geometry-vectors-13">We will discuss this more carefully in <a href="ch-dimension.html" class="internal" title="Chapter 5: The Dimension of a Vector Space">Chapter 5</a>, but this brief comment will suffice for now. As long as <span class="process-math">\(\bfu \neq \mathbf{0}\)</span> in <span class="process-math">\(\rr^2\text{,}\)</span> then <span class="process-math">\(\spn\{\bfu\}\)</span> is a line through the origin. (Remember that the span in this case consists of <em class="emphasis">all</em> multiples of <span class="process-math">\(\bfu\text{.}\)</span>) Similarly, as long as neither <span class="process-math">\(\bfu\)</span> nor <span class="process-math">\(\bfv\)</span> is a multiple of the other vector, then <span class="process-math">\(\spn\{\bfu,\bfv\}\)</span> is <em class="emphasis">all of</em> <span class="process-math">\(\rr^2\text{.}\)</span> (If we were talking about vectors in <span class="process-math">\(\rr^3\)</span> instead of <span class="process-math">\(\rr^2\)</span> this span would be a plane through the origin.)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-13" title="Copy permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Illustration of a linear combination<div class="autopermalink" data-description="Figure 1.4.14"><a href="#subsec-geometry-vectors-11" title="Copy heading and permalink for Figure 1.4.14" aria-label="Copy heading and permalink for Figure 1.4.14">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="subsec-geometry-vectors-12">The reader may be able to see that no matter what vector <span class="process-math">\(\bfw\)</span> in <span class="process-math">\(\rr^2\)</span> was chosen in this last instance, that vector would be in <span class="process-math">\(\spn\{\bfu,\bfv\}\text{.}\)</span> (This means that <span class="process-math">\(\spn\{\bfu,\bfv\}=\rr^2\text{.}\)</span>) This has everything to do with the relationship between <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 1.4.2: Vectors and Geometry"><a href="#subsec-geometry-vectors" title="Copy permalink for Subsection 1.4.2: Vectors and Geometry">🔗</a></div></section><section class="reading-questions" id="sec-vectors-5"><h3 class="heading hide-type">
-<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="space"> </span><span class="title">Reading Questions</span>
+<div class="para" id="subsec-geometry-vectors-13">We will discuss this more carefully in <a href="ch-dimension.html" class="internal" title="Chapter 5: The Dimension of a Vector Space">Chapter 5</a>, but this brief comment will suffice for now. As long as <span class="process-math">\(\bfu \neq \mathbf{0}\)</span> in <span class="process-math">\(\rr^2\text{,}\)</span> then <span class="process-math">\(\spn\{\bfu\}\)</span> is a line through the origin. (Remember that the span in this case consists of <em class="emphasis">all</em> multiples of <span class="process-math">\(\bfu\text{.}\)</span>) Similarly, as long as neither <span class="process-math">\(\bfu\)</span> nor <span class="process-math">\(\bfv\)</span> is a multiple of the other vector, then <span class="process-math">\(\spn\{\bfu,\bfv\}\)</span> is <em class="emphasis">all of</em> <span class="process-math">\(\rr^2\text{.}\)</span> (If we were talking about vectors in <span class="process-math">\(\rr^3\)</span> instead of <span class="process-math">\(\rr^2\)</span> this span would be a plane through the origin.)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-geometry-vectors-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.4.2: Vectors and Geometry"><a href="#subsec-geometry-vectors" title="Copy heading and permalink for Subsection 1.4.2: Vectors and Geometry" aria-label="Copy heading and permalink for Subsection 1.4.2: Vectors and Geometry">🔗</a></div>
+</section>
+<section class="reading-questions" id="sec-vectors-5">
+<h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reading Questions</span>
 </h3>
-<article class="exercise exercise-like" id="sec-vectors-5-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<article class="exercise exercise-like" id="sec-vectors-5-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-vectors-5-1-1-1">
 <div class="para">Let <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> be the following vectors:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-5-1-1-1-3">
 \begin{equation*}
 \bfu = \left[\begin{array}{@{}c@{}}
 2 \\ -7 \\ 4   \end{array}\right], \hspace{.3in}
@@ -927,29 +932,31 @@ a \\ b
 <ol class="lower-alpha lower-alpha-level-1" id="sec-vectors-5-1-1-1-4">
 <li id="sec-vectors-5-1-1-1-4-1">
 <div class="para" id="sec-vectors-5-1-1-1-4-1-1">
-<span class="process-math">\(\displaystyle -2\bfu\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5-1-1-1-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle -2\bfu\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5-1-1-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.3.1.a"><a href="#sec-vectors-5-1-1-1-4-1" title="Copy permalink for Item 1.4.3.1.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.3.1.a"><a href="#sec-vectors-5-1-1-1-4-1" title="Copy heading and permalink for Item 1.4.3.1.a" aria-label="Copy heading and permalink for Item 1.4.3.1.a">🔗</a></div>
 </li>
 <li id="sec-vectors-5-1-1-1-4-2">
 <div class="para" id="sec-vectors-5-1-1-1-4-2-1">
-<span class="process-math">\(\displaystyle \bfu - \bfv\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5-1-1-1-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle \bfu - \bfv\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5-1-1-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.3.1.b"><a href="#sec-vectors-5-1-1-1-4-2" title="Copy permalink for Item 1.4.3.1.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.3.1.b"><a href="#sec-vectors-5-1-1-1-4-2" title="Copy heading and permalink for Item 1.4.3.1.b" aria-label="Copy heading and permalink for Item 1.4.3.1.b">🔗</a></div>
 </li>
 <li id="sec-vectors-5-1-1-1-4-3">
 <div class="para" id="sec-vectors-5-1-1-1-4-3-1">
-<span class="process-math">\(\displaystyle 3\bfu - 4\bfv\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5-1-1-1-4-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle 3\bfu - 4\bfv\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5-1-1-1-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.3.1.c"><a href="#sec-vectors-5-1-1-1-4-3" title="Copy permalink for Item 1.4.3.1.c">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.3.1.c"><a href="#sec-vectors-5-1-1-1-4-3" title="Copy heading and permalink for Item 1.4.3.1.c" aria-label="Copy heading and permalink for Item 1.4.3.1.c">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Reading Question 1.4.3.1"><a href="#sec-vectors-5-1" title="Copy permalink for Reading Question 1.4.3.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Reading Question 1.4.3.1"><a href="#sec-vectors-5-1" title="Copy heading and permalink for Reading Question 1.4.3.1" aria-label="Copy heading and permalink for Reading Question 1.4.3.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-5-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-vectors-5-2-1-1">
 <div class="para">Let <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\bfw\)</span> be the following vectors:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/vect-eqn-ex.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/vect-eqn-ex.html" id="sec-vectors-5-2-1-1-4">
 \begin{equation*}
 \bfu = \left[\begin{array}{@{}c@{}}
 2 \\ 0 \\ -1   \end{array}\right], \hspace{.3in}
@@ -960,29 +967,35 @@ a \\ b
 \end{equation*}
 </div>
 <div class="para">Is the vector</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/vect-eqn-ex.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/vect-eqn-ex.html" id="sec-vectors-5-2-1-1-5">
 \begin{equation*}
 \left[\begin{array}{@{}c@{}}
 7 \\ -1 \\ 8   \end{array}\right]
 \end{equation*}
 </div>
 <div class="para">in <span class="process-math">\(\mathrm{Span}\{\bfu,\bfv,\bfw\}\text{?}\)</span> Explain your answer using techniques from this section. (See especially <a href="sec-vectors.html#vect-eqn-ex" class="xref" data-knowl="./knowl/xref/vect-eqn-ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.9">Example 1.4.9</a>.)</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Reading Question 1.4.3.2"><a href="#sec-vectors-5-2" title="Copy permalink for Reading Question 1.4.3.2">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 1.4.3"><a href="#sec-vectors-5" title="Copy permalink for Reading Questions 1.4.3">🔗</a></div></section><section class="exercises" id="sec-vectors-6"><h3 class="heading hide-type">
-<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="space"> </span><span class="title">Exercises</span>
+<div class="autopermalink" data-description="Reading Question 1.4.3.2"><a href="#sec-vectors-5-2" title="Copy heading and permalink for Reading Question 1.4.3.2" aria-label="Copy heading and permalink for Reading Question 1.4.3.2">🔗</a></div>
+</article><div class="autopermalink" data-description="Reading Questions 1.4.3"><a href="#sec-vectors-5" title="Copy heading and permalink for Reading Questions 1.4.3" aria-label="Copy heading and permalink for Reading Questions 1.4.3">🔗</a></div>
+</section>
+<section class="exercises" id="sec-vectors-6">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="sec-vectors-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<article class="exercise exercise-like" id="sec-vectors-6-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-vectors-6-1-1-1">
 <div class="para">Write a linear system that is equivalent to the following vector equation:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-1-1-1-1">
 \begin{equation*}
 x\begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix} + y\begin{bmatrix} 0 \\ -3 \\ 1 \end{bmatrix} = \begin{bmatrix} 7 \\ -1 \\ -1 \end{bmatrix}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-vectors-6-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="solutions">
+<details id="sec-vectors-6-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
 <div class="para logical" id="sec-vectors-6-1-2-1">
 <div class="para">Here is the linear system:</div>
 <div class="displaymath process-math" id="sec-vectors-6-1-2-1-1">
@@ -992,11 +1005,14 @@ x-3y \amp =-1\\
 -2x+y \amp =-1\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 1.4.4.1.1"><a href="#sec-vectors-6-1-2" title="Copy permalink for Answer 1.4.4.1.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.4.4.1"><a href="#sec-vectors-6-1" title="Copy permalink for Exercise 1.4.4.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Answer 1.4.4.1.1"><a href="#sec-vectors-6-1-2" title="Copy heading and permalink for Answer 1.4.4.1.1" aria-label="Copy heading and permalink for Answer 1.4.4.1.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.4.4.1"><a href="#sec-vectors-6-1" title="Copy heading and permalink for Exercise 1.4.4.1" aria-label="Copy heading and permalink for Exercise 1.4.4.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-6-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-vectors-6-2-1-1">
 <div class="para">Write a vector equation that is equivalent to the following linear system:</div>
 <div class="displaymath process-math" id="sec-vectors-6-2-1-1-1">
@@ -1006,24 +1022,29 @@ x + 3y + z \amp = -1\\
 -y - 7z \amp = 0\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-vectors-6-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="solutions">
+<details id="sec-vectors-6-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
 <div class="para logical" id="sec-vectors-6-2-2-1">
 <div class="para">Here is the vector equation:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-2-2-1-1">
 \begin{equation*}
 x \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\ 3 \\ -1 \end{bmatrix} + z \begin{bmatrix} -5 \\ 1 \\ -7 \end{bmatrix} = \begin{bmatrix} 9 \\ -1 \\ 0 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 1.4.4.2.1"><a href="#sec-vectors-6-2-2" title="Copy permalink for Answer 1.4.4.2.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.4.4.2"><a href="#sec-vectors-6-2" title="Copy permalink for Exercise 1.4.4.2">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Answer 1.4.4.2.1"><a href="#sec-vectors-6-2-2" title="Copy heading and permalink for Answer 1.4.4.2.1" aria-label="Copy heading and permalink for Answer 1.4.4.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.4.4.2"><a href="#sec-vectors-6-2" title="Copy heading and permalink for Exercise 1.4.4.2" aria-label="Copy heading and permalink for Exercise 1.4.4.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-6-3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-vectors-6-3-1-1">
 <div class="para">Let <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> be the following vectors:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-3-1-1-3">
 \begin{equation*}
 \bfu = \begin{bmatrix}
 -1 \\ 2 \\ 4
@@ -1034,44 +1055,54 @@ x \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\ 3 \\ -1 \en
 \end{equation*}
 </div>
 <div class="para">List five vectors in <span class="process-math">\(\mathrm{Span}\{\bfu, \bfv\}\text{.}\)</span> For each vector, write down the specific linear combination of <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> used to generate the vector.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-vectors-6-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="solutions">
+<details id="sec-vectors-6-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
 <div class="para logical" id="sec-vectors-6-3-2-1">
 <div class="para">There are an infinite number of correct answers! Three vectors that are in the span are <span class="process-math">\(\bfu = 1\bfu + 0\bfv\text{,}\)</span> <span class="process-math">\(\bfv = 0\bfu + 1\bfv\text{,}\)</span> and <span class="process-math">\(\bfo = 0\bfu + 0\bfv\text{.}\)</span> Here are two additional vectors in the span:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-3-2-1-4">
 \begin{equation*}
 \begin{bmatrix} 2 \\ 3 \\ 2 \end{bmatrix} = \bfu + \bfv, \hspace{6pt} \text{and} \hspace{6pt}
 \begin{bmatrix} -4 \\ 1 \\ 6 \end{bmatrix} = \bfu - \bfv\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 1.4.4.3.1"><a href="#sec-vectors-6-3-2" title="Copy permalink for Answer 1.4.4.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.4.4.3"><a href="#sec-vectors-6-3" title="Copy permalink for Exercise 1.4.4.3">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="sec-vectors-6-4-1-1">Describe all possible ways of writing <span class="process-math">\(\begin{bmatrix} -1 \\ 1 \end{bmatrix}\)</span> as a linear combination of <span class="process-math">\(\begin{bmatrix} 2 \\ 3 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(\begin{bmatrix} -1 \\ 0 \end{bmatrix}\text{,}\)</span> and <span class="process-math">\(\begin{bmatrix} 4 \\ 1 \end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Answer 1.4.4.3.1"><a href="#sec-vectors-6-3-2" title="Copy heading and permalink for Answer 1.4.4.3.1" aria-label="Copy heading and permalink for Answer 1.4.4.3.1">🔗</a></div>
+</div></details>
 </div>
-<div class="solutions"><details id="sec-vectors-6-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="autopermalink" data-description="Exercise 1.4.4.3"><a href="#sec-vectors-6-3" title="Copy heading and permalink for Exercise 1.4.4.3" aria-label="Copy heading and permalink for Exercise 1.4.4.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-6-4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="sec-vectors-6-4-1-1">Describe all possible ways of writing <span class="process-math">\(\begin{bmatrix} -1 \\ 1 \end{bmatrix}\)</span> as a linear combination of <span class="process-math">\(\begin{bmatrix} 2 \\ 3 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(\begin{bmatrix} -1 \\ 0 \end{bmatrix}\text{,}\)</span> and <span class="process-math">\(\begin{bmatrix} 4 \\ 1 \end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="sec-vectors-6-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
 <div class="para logical" id="sec-vectors-6-4-2-1">
 <div class="para">If <span class="process-math">\(\bfx = \begin{bmatrix} -1 \\ 1 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(\bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(\bfv = \begin{bmatrix} -1 \\ 0 \end{bmatrix}\text{,}\)</span> and <span class="process-math">\(\bfw = \begin{bmatrix} 4 \\ 1 \end{bmatrix}\text{,}\)</span> then <span class="process-math">\(\bfx\)</span> can be written as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-4-2-1-6">
 \begin{equation*}
 \bfx = a \bfu + b \bfv + c \bfw\text{,}
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(a = \frac{1}{3} - \frac{1}{3}c\text{,}\)</span> <span class="process-math">\(b = \frac{5}{3} + \frac{10}{3}c\text{,}\)</span> and <span class="process-math">\(c\)</span> can be any real number.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 1.4.4.4.1"><a href="#sec-vectors-6-4-2" title="Copy permalink for Answer 1.4.4.4.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.4.4.4"><a href="#sec-vectors-6-4" title="Copy permalink for Exercise 1.4.4.4">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Answer 1.4.4.4.1"><a href="#sec-vectors-6-4-2" title="Copy heading and permalink for Answer 1.4.4.4.1" aria-label="Copy heading and permalink for Answer 1.4.4.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.4.4.4"><a href="#sec-vectors-6-4" title="Copy heading and permalink for Exercise 1.4.4.4" aria-label="Copy heading and permalink for Exercise 1.4.4.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-6-5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-vectors-6-5-1-1">
 <div class="para">For each of the following, determine whether <span class="process-math">\(\mathbf{b}\)</span> is a linear combination of <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\bfw\text{.}\)</span> Explain your answer.</div>
 <ol class="lower-alpha lower-alpha-level-1" id="sec-vectors-6-5-1-1-5">
 <li id="sec-vectors-6-5-1-1-5-1">
 <div class="para logical" id="sec-vectors-6-5-1-1-5-1-1">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-5-1-1-5-1-1-1">
 \begin{equation*}
 \bfu = \begin{bmatrix}
 -2 \\ -4 \\ 1
@@ -1087,13 +1118,13 @@ x \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\ 3 \\ -1 \en
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-5-1-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-5-1-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.4.5.a"><a href="#sec-vectors-6-5-1-1-5-1" title="Copy permalink for Item 1.4.4.5.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.4.5.a"><a href="#sec-vectors-6-5-1-1-5-1" title="Copy heading and permalink for Item 1.4.4.5.a" aria-label="Copy heading and permalink for Item 1.4.4.5.a">🔗</a></div>
 </li>
 <li id="sec-vectors-6-5-1-1-5-2">
 <div class="para logical" id="sec-vectors-6-5-1-1-5-2-1">
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-5-1-1-5-2-1-1">
 \begin{equation*}
 \bfu = \begin{bmatrix}
 2 \\ 3 \\ -1
@@ -1109,17 +1140,19 @@ x \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\ 3 \\ -1 \en
 \end{bmatrix}                
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-5-1-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-5-1-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.4.5.b"><a href="#sec-vectors-6-5-1-1-5-2" title="Copy permalink for Item 1.4.4.5.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.4.5.b"><a href="#sec-vectors-6-5-1-1-5-2" title="Copy heading and permalink for Item 1.4.4.5.b" aria-label="Copy heading and permalink for Item 1.4.4.5.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.4.4.5"><a href="#sec-vectors-6-5" title="Copy permalink for Exercise 1.4.4.5">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 1.4.4.5"><a href="#sec-vectors-6-5" title="Copy heading and permalink for Exercise 1.4.4.5" aria-label="Copy heading and permalink for Exercise 1.4.4.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-6-6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-vectors-6-6-1-1">
 <div class="para">Let <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\mathbf{b}\)</span> be the following vectors:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-6-1-1-4">
 \begin{equation*}
 \bfu = \begin{bmatrix}
 1 \\ 3 \\ -2
@@ -1133,12 +1166,14 @@ x \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\ 3 \\ -1 \en
 \end{equation*}
 </div>
 <div class="para">For what value(s) of <span class="process-math">\(h\)</span> is <span class="process-math">\(\mathbf{b}\)</span> in the plane spanned by <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\text{?}\)</span> Explain your answer.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.4.4.6"><a href="#sec-vectors-6-6" title="Copy permalink for Exercise 1.4.4.6">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 1.4.4.6"><a href="#sec-vectors-6-6" title="Copy heading and permalink for Exercise 1.4.4.6" aria-label="Copy heading and permalink for Exercise 1.4.4.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-6-7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="sec-vectors-6-7-1-1">
 <div class="para">Let <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> and <span class="process-math">\(\mathbf{b}\)</span> be the following vectors:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-7-1-1-4">
 \begin{equation*}
 \bfu = \begin{bmatrix}
 2 \\ -1 \\ 1
@@ -1152,58 +1187,76 @@ b_1 \\ b_2 \\ b_3
 \end{equation*}
 </div>
 <div class="para">Under what conditions is <span class="process-math">\(\mathbf{b}\)</span> in <span class="process-math">\(\mathrm{Span}\{\bfu, \bfv\}\text{?}\)</span> This will be an equation (or equations) satisfied by the <span class="process-math">\(b_i\text{.}\)</span> Explain your answer.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-vectors-6-7-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="solutions">
+<details id="sec-vectors-6-7-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
 <div class="para logical" id="sec-vectors-6-7-2-1">
 <div class="para">The vector <span class="process-math">\(\mathbf{b}\)</span> is in <span class="process-math">\(\mathrm{Span}\{\bfu, \bfv\}\)</span> as long as the following equation is satisfied:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-7-2-1-3">
 \begin{equation*}
 b_1 + \tfrac{3}{5}b_2 - \tfrac{7}{5}b_3 = 0\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-7-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 1.4.4.7.1"><a href="#sec-vectors-6-7-2" title="Copy permalink for Answer 1.4.4.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.4.4.7"><a href="#sec-vectors-6-7" title="Copy permalink for Exercise 1.4.4.7">🔗</a></div></article><article class="subexercises" id="sec-vectors-6-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
-<article class="exercise exercise-like" id="sec-vectors-6-8-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para" id="sec-vectors-6-8-2-1-1">Let <span class="process-math">\(\bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}\)</span> and <span class="process-math">\(\bfv = \begin{bmatrix} -1 \\ 4 \end{bmatrix}\text{.}\)</span> Show that <span class="process-math">\(\begin{bmatrix} h \\ k \end{bmatrix}\)</span> is in <span class="process-math">\(\mathrm{Span}\{\bfu, \bfv\}\)</span> for all <span class="process-math">\(h\)</span> and <span class="process-math">\(k\text{.}\)</span> Explain your answer.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Answer 1.4.4.7.1"><a href="#sec-vectors-6-7-2" title="Copy heading and permalink for Answer 1.4.4.7.1" aria-label="Copy heading and permalink for Answer 1.4.4.7.1">🔗</a></div>
+</div></details>
 </div>
-<div class="autopermalink" data-description="Exercise 1.4.4.8"><a href="#sec-vectors-6-8-2" title="Copy permalink for Exercise 1.4.4.8">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-6-8-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="sec-vectors-6-8-3-1-1">Two vectors <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> in <span class="process-math">\(\rr^n\)</span> are called <em class="emphasis">collinear</em> if <span class="process-math">\(\bfu = k\bfv\)</span> or <span class="process-math">\(\bfv= k \bfu\)</span> for some <span class="process-math">\(k \in \rr\text{.}\)</span> Show that the span of any two nonzero vectors in <span class="process-math">\(\rr^2\)</span> which are not collinear is all of <span class="process-math">\(\rr^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 1.4.4.7"><a href="#sec-vectors-6-7" title="Copy heading and permalink for Exercise 1.4.4.7" aria-label="Copy heading and permalink for Exercise 1.4.4.7">🔗</a></div>
+</article>
+<article class="subexercises" id="sec-vectors-6-8"><h4 class="heading"><span class="title">Writing Exercises</span></h4>
+<article class="exercise exercise-like" id="sec-vectors-6-8-2"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="sec-vectors-6-8-2-1-1">Let <span class="process-math">\(\bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}\)</span> and <span class="process-math">\(\bfv = \begin{bmatrix} -1 \\ 4 \end{bmatrix}\text{.}\)</span> Show that <span class="process-math">\(\begin{bmatrix} h \\ k \end{bmatrix}\)</span> is in <span class="process-math">\(\mathrm{Span}\{\bfu, \bfv\}\)</span> for all <span class="process-math">\(h\)</span> and <span class="process-math">\(k\text{.}\)</span> Explain your answer.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-vectors-6-8-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content">
-<div class="para" id="sec-vectors-6-8-3-2-1">One might try to prove that <span class="process-math">\(\bfu = \begin{bmatrix} a \\ c \end{bmatrix}\)</span> and <span class="process-math">\(\bfv = \begin{bmatrix} b \\ d \end{bmatrix}\)</span> are collinear if and only if <span class="process-math">\(ad-bc = 0\text{.}\)</span> Then an exercise from section 1.3 can be invoked.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 1.4.4.8"><a href="#sec-vectors-6-8-2" title="Copy heading and permalink for Exercise 1.4.4.8" aria-label="Copy heading and permalink for Exercise 1.4.4.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-6-8-3"><h5 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="sec-vectors-6-8-3-1-1">Two vectors <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> in <span class="process-math">\(\rr^n\)</span> are called <em class="emphasis">collinear</em> if <span class="process-math">\(\bfu = k\bfv\)</span> or <span class="process-math">\(\bfv= k \bfu\)</span> for some <span class="process-math">\(k \in \rr\text{.}\)</span> Show that the span of any two nonzero vectors in <span class="process-math">\(\rr^2\)</span> which are not collinear is all of <span class="process-math">\(\rr^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 1.4.4.9.1"><a href="#sec-vectors-6-8-3-2" title="Copy permalink for Hint 1.4.4.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.4.4.9"><a href="#sec-vectors-6-8-3" title="Copy permalink for Exercise 1.4.4.9">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-6-8-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<div class="para" id="sec-vectors-6-8-4-1-1">Give an example of three vectors <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> <span class="process-math">\(\bfw\)</span> in <span class="process-math">\(\rr^3\)</span> such that no two of them are collinear but <span class="process-math">\(\mathrm{Span}\{\bfu, \bfv, \bfw\} \neq \rr^3\text{.}\)</span> Explain why your example works.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="solutions">
+<details id="sec-vectors-6-8-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="sec-vectors-6-8-3-2-1">One might try to prove that <span class="process-math">\(\bfu = \begin{bmatrix} a \\ c \end{bmatrix}\)</span> and <span class="process-math">\(\bfv = \begin{bmatrix} b \\ d \end{bmatrix}\)</span> are collinear if and only if <span class="process-math">\(ad-bc = 0\text{.}\)</span> Then an exercise from section 1.3 can be invoked.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.4.4.10"><a href="#sec-vectors-6-8-4" title="Copy permalink for Exercise 1.4.4.10">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-6-8-5"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
-<div class="para" id="sec-vectors-6-8-5-1-1">State criteria on vectors <span class="process-math">\(\bfv_1, \bfv_2, \ldots, \bfv_n\)</span> in <span class="process-math">\(\rr^3\)</span> such that <span class="process-math">\({\mathrm{Span}\{\bfv_1,\ldots,\bfv_n\} = \rr^3}\text{.}\)</span> Explain your answer.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Hint 1.4.4.9.1"><a href="#sec-vectors-6-8-3-2" title="Copy heading and permalink for Hint 1.4.4.9.1" aria-label="Copy heading and permalink for Hint 1.4.4.9.1">🔗</a></div>
+</div></details>
 </div>
-<div class="autopermalink" data-description="Exercise 1.4.4.11"><a href="#sec-vectors-6-8-5" title="Copy permalink for Exercise 1.4.4.11">🔗</a></div></article><article class="exercise exercise-like" id="sec-vectors-6-8-6"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
-<div class="para" id="sec-vectors-6-8-6-1-1">Prove property 5 from <a href="sec-vectors.html#fact-alg-props-vectors-rn" class="xref" data-knowl="./knowl/xref/fact-alg-props-vectors-rn.html" data-reveal-label="Reveal" data-close-label="Close" title="Fact 1.4.10">Fact 1.4.10</a>. Note which properties of the real numbers you use in this proof.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 1.4.4.9"><a href="#sec-vectors-6-8-3" title="Copy heading and permalink for Exercise 1.4.4.9" aria-label="Copy heading and permalink for Exercise 1.4.4.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-6-8-4"><h5 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="sec-vectors-6-8-4-1-1">Give an example of three vectors <span class="process-math">\(\bfu\text{,}\)</span> <span class="process-math">\(\bfv\text{,}\)</span> <span class="process-math">\(\bfw\)</span> in <span class="process-math">\(\rr^3\)</span> such that no two of them are collinear but <span class="process-math">\(\mathrm{Span}\{\bfu, \bfv, \bfw\} \neq \rr^3\text{.}\)</span> Explain why your example works.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-vectors-6-8-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="autopermalink" data-description="Exercise 1.4.4.10"><a href="#sec-vectors-6-8-4" title="Copy heading and permalink for Exercise 1.4.4.10" aria-label="Copy heading and permalink for Exercise 1.4.4.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-6-8-5"><h5 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="sec-vectors-6-8-5-1-1">State criteria on vectors <span class="process-math">\(\bfv_1, \bfv_2, \ldots, \bfv_n\)</span> in <span class="process-math">\(\rr^3\)</span> such that <span class="process-math">\({\mathrm{Span}\{\bfv_1,\ldots,\bfv_n\} = \rr^3}\text{.}\)</span> Explain your answer.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.4.4.11"><a href="#sec-vectors-6-8-5" title="Copy heading and permalink for Exercise 1.4.4.11" aria-label="Copy heading and permalink for Exercise 1.4.4.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-vectors-6-8-6"><h5 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="sec-vectors-6-8-6-1-1">Prove property 5 from <a href="sec-vectors.html#fact-alg-props-vectors-rn" class="xref" data-knowl="./knowl/xref/fact-alg-props-vectors-rn.html" data-reveal-label="Reveal" data-close-label="Close" title="Fact 1.4.10">Fact 1.4.10</a>. Note which properties of the real numbers you use in this proof.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="sec-vectors-6-8-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec-vectors-6-8-6-2-1">
 <div class="para">We must prove that for all real numbers <span class="process-math">\(c\)</span> and all <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> in <span class="process-math">\(\rr^n\)</span> we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-8-6-2-1-5">
 \begin{equation*}
 c(\bfu + \bfv) = c\bfu + c\bfv\text{.}
 \end{equation*}
 </div>
 <div class="para">Let <span class="process-math">\(\bfu\)</span> and <span class="process-math">\(\bfv\)</span> be denoted in the following way:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-8-6-2-1-8">
 \begin{equation*}
 \bfu = \begin{bmatrix} u_1 \\ \vdots \\ u_n \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
 \bfv = \begin{bmatrix} v_1 \\ \vdots \\ v_n \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">Then we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-vectors-6-8-6-2-1-9">
 \begin{equation*}
 c(\bfu + \bfv) = c \begin{bmatrix} u_1 + v_1 \\ \vdots \\ u_n + v_n \end{bmatrix} = 
 \begin{bmatrix} c(u_1 + v_1) \\ \vdots \\ c(u_n + v_n) \end{bmatrix}\text{.}
@@ -1218,11 +1271,17 @@ c(\bfu + \bfv) \amp = \begin{bmatrix} cu_1 + cv_1 \\ \vdots \\ cu_n + cv_n \end{
 \end{align*}
 </div>
 <div class="para">This completes the proof.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-8-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 1.4.4.12.1"><a href="#sec-vectors-6-8-6-2" title="Copy permalink for Solution 1.4.4.12.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.4.4.12"><a href="#sec-vectors-6-8-6" title="Copy permalink for Exercise 1.4.4.12">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-vectors-6-8" title="Copy permalink for Subexercises: Writing Exercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 1.4.4"><a href="#sec-vectors-6" title="Copy permalink for Exercises 1.4.4">🔗</a></div></section><div class="autopermalink" data-description="Section 1.4: Vectors"><a href="#sec-vectors" title="Copy permalink for Section 1.4: Vectors">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Solution 1.4.4.12.1"><a href="#sec-vectors-6-8-6-2" title="Copy heading and permalink for Solution 1.4.4.12.1" aria-label="Copy heading and permalink for Solution 1.4.4.12.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.4.4.12"><a href="#sec-vectors-6-8-6" title="Copy heading and permalink for Exercise 1.4.4.12" aria-label="Copy heading and permalink for Exercise 1.4.4.12">🔗</a></div>
+</article><div class="autopermalink" data-description="Subexercises: Writing Exercises"><a href="#sec-vectors-6-8" title="Copy heading and permalink for Subexercises: Writing Exercises" aria-label="Copy heading and permalink for Subexercises: Writing Exercises">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 1.4.4"><a href="#sec-vectors-6" title="Copy heading and permalink for Exercises 1.4.4" aria-label="Copy heading and permalink for Exercises 1.4.4">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 1.4: Vectors"><a href="#sec-vectors" title="Copy heading and permalink for Section 1.4: Vectors" aria-label="Copy heading and permalink for Section 1.4: Vectors">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-results.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-second.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
