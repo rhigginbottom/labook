@@ -23,33 +23,33 @@
     <statement>
       <p>
         Let <m>A \in M_2(\rr)</m> be the following matrix: 
-        <me>
+        <md>
           A = \begin{bmatrix} 2 \amp -2 \\ 2 \amp 7 \end{bmatrix}
-        </me>.
+        </md>.
         A scalar <m>\lambda</m> is an eigenvalue for <m>A</m> if and only if <m>\det(A - \lambda I) = 0</m>. Since <m>A - \lambda I</m> is <m>2\times 2</m>, we can find the determinant with ease:
-        <me>
+        <md>
           \det (A - \lambda I) = \begin{vmatrix} 2-\lambda \amp -2 \\ 2 \amp 7-\lambda \end{vmatrix} = (2-\lambda)(7-\lambda) + 4
-        </me>.
+        </md>.
         With some algebra, we can see that 
-        <me>
+        <md>
           \det(A - \lambda I) = \lambda^2 - 9\lambda + 18 = (\lambda - 6)(\lambda - 3)
-        </me>.
+        </md>.
         Since <m>\lambda</m> is an eigenvalue when <m>\det(A - \lambda I)=0</m>, we see that the eigenvalues of <m>A</m> are <m>\lambda = 6</m> and <m>\lambda = 3</m>. 
       </p>
       <p>
         Let's verify this method by showing that <m>\lambda=6</m> and <m>\lambda=3</m> are eigenvalues for <m>A</m> and finding bases for their eigenspaces. First, if <m>\lambda = 6</m>, then 
-        <me>
+        <md>
           A - 6 I = \begin{bmatrix} -4 \amp -2 \\ 2 \amp 1 \end{bmatrix} \sim 
           \begin{bmatrix} 1 \amp \frac{1}{2} \\ 0 \amp 0 \end{bmatrix}
-        </me>. 
+        </md>. 
         From this we see that <m>\mathrm{eig}_6(A)</m> is one-dimensional with basis <m>\left\{ \begin{bmatrix} -1 \\ 2 \end{bmatrix} \right\}</m>.
       </p>
       <p>
         Now, when <m>\lambda = 3</m>, we have 
-        <me>
+        <md>
           A - 3 I = \begin{bmatrix} -1 \amp -2 \\ 2 \amp 4 \end{bmatrix} \sim 
           \begin{bmatrix} 1 \amp 2 \\ 0 \amp 0 \end{bmatrix}
-        </me>.
+        </md>.
         Thus <m>\mathrm{eig}_3(A)</m> is also one-dimensional with basis <m>\left\{ \begin{bmatrix} -2 \\ 1 \end{bmatrix} \right\}</m>.
       </p>
     </statement>
@@ -91,13 +91,13 @@
   <statement>
     <p>
       Let <m>A \in M_3(\rr)</m> be the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix}
         1 \amp -3 \amp -1 \\ 
         2 \amp 6 \amp 1 \\ 
         -4 \amp -10 \amp -1
         \end{bmatrix} 
-      </me>.
+      </md>.
       To find the characteristic polynomial of <m>A</m>, we will use cofactor expansion along the first row of <m>A - \lambda I</m>:
       <md>
         <mrow><!-- \begin{vmatrix} 1-\lambda \amp -3 \amp -1 \\ 
@@ -130,20 +130,20 @@
   <statement>
     <p>
       Consider the following matrix <m>A \in M_3(\rr)</m> (from the previous example): 
-      <me>
+      <md>
         A = \begin{bmatrix}
         1 \amp -3 \amp -1 \\ 
         2 \amp 6 \amp 1 \\ 
         -4 \amp -10 \amp -1
         \end{bmatrix} 
-      </me>.
+      </md>.
       If we know that <m>\lambda = 1</m> is an eigenvalue for <m>A</m>, we can find all of the eigenvalues.
     </p>
     <p>
       Our previous work showed that <m>p_A(\lambda) = -\lambda^3 + 6\lambda^2 - 11\lambda + 6</m>. If we know that <m>\lambda=1</m> is an eigenvalue, that means that <m>(\lambda - 1)</m> must be a factor of this polynomial. Using long division of polynomials, we can complete the factorization:
-      <me>
+      <md>
         p_A(\lambda) = (\lambda - 1)(-\lambda^2 + 5\lambda - 6) = -(\lambda - 1)(\lambda - 2)(\lambda - 3)
-      </me>.
+      </md>.
       This shows that the eigenvalues for <m>A</m> are <m>\lambda = 1, 2, 3</m>. 
     </p>
   </statement>
@@ -165,17 +165,17 @@
   <statement>
     <p>
       We consider the matrix from <xref ref="examp-evalues1"/> in the previous section: 
-      <me>
+      <md>
         A = \begin{bmatrix}
         4.5 \amp -2.5 \amp -2.5 \\ 
         2.5 \amp -0.5 \amp -2.5 \\ 
         5 \amp -5 \amp -3
         \end{bmatrix}
-      </me>.
+      </md>.
       The characteristic polynomial for this matrix is 
-      <me>
+      <md>
         p_A(\lambda) = -\lambda^3 + \lambda^2 + 8\lambda - 12 = -(\lambda - 2)^2(\lambda + 3)
-      </me>.
+      </md>.
       From this we see that <m>A</m> has an eigenvalue of 2 with multiplicity 2 and an eigenvalue of <m>-3</m> with multiplicity 1.
     </p>
   </statement>
@@ -189,9 +189,9 @@
   <statement>
     <p>
       Let <m>A \in M_2(\rr)</m> be the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix} -5 \amp -4 \\ 5 \amp -6 \end{bmatrix}
-      </me>.
+      </md>.
       We can calculate the characteristic polynomial for <m>A</m>: 
       <md>
       <mrow>\det(A - \lambda I) \amp = \begin{vmatrix} -5-\lambda \amp -4 \\ 5 \amp -6-\lambda \end{vmatrix} </mrow>
@@ -246,9 +246,9 @@
   <proof>
     <p>
       If <m>A</m> and <m>B</m> are similar, then there exists an invertible matrix <m>P</m> such that <m>B = P^{-1}AP</m>. When forming <m>B - \lambda I</m>, we have 
-      <me>
+      <md>
         B - \lambda I = P^{-1}AP - \lambda P^{-1}P = P^{-1}(AP - \lambda P) = P^{-1}(A - \lambda I) P
-      </me>.
+      </md>.
       Since the determinant is multiplicative (<xref ref="thm-det-matrix-product"/>), we have 
       <md>
       <mrow> \det(B - \lambda I) \amp = \det(P^{-1})\det(A - \lambda I) \det(P) </mrow>
@@ -271,14 +271,14 @@
   <statement>
     <p>
       Let <m>A</m> and <m>B</m> be the following matrices over <m>\rr</m>:
-      <me>
+      <md>
         A = \begin{bmatrix} -10 \amp -5 \\ 24 \amp 13 \end{bmatrix}, \hspace{12pt}
         B = \begin{bmatrix} 1 \amp -4 \\ -3 \amp 2 \end{bmatrix}
-      </me>.
+      </md>.
       We will show that these are similar matrices by considering the matrix <m>P</m>:
-      <me>
+      <md>
         P = \begin{bmatrix} -4 \amp -1 \\ -5 \amp -2 \end{bmatrix}
-      </me>.
+      </md>.
       The reader can check that <m>P</m> is invertible and that <m>A = P^{-1}BP</m>. This shows that <m>A</m> and <m>B</m> are similar.
     </p>
     <p>
@@ -295,10 +295,10 @@
   <statement>
     <p>
       Let <m>A, B \in M_2(\rr)</m> be the following matrices: 
-      <me>
+      <md>
         A = \begin{bmatrix} 5 \amp 0 \\ 0 \amp 5 \end{bmatrix}, \hspace{12pt}
         B = \begin{bmatrix} 5 \amp -2 \\ 0 \amp 5 \end{bmatrix}
-      </me>.
+      </md>.
       Since both <m>A</m> and <m>B</m> are triangular matrices, we can see that they have the same eigenvalue (with the same multiplicity). However, these matrices are <em>not</em> similar. In fact, we will show in the exercises that a matrix <m>kI</m>, for <m>k \in \ff</m>, is only similar to itself. In this example, <m>A = 5I</m>. 
     </p>
   </statement>
@@ -315,11 +315,11 @@
   <statement>
     <p>
       Let <m>A</m> be the following matrix over <m>\rr</m>: 
-      <me>
+      <md>
         A = \begin{bmatrix} 
         2 \amp -1 \\ -6 \amp -3
         \end{bmatrix}
-      </me>.      
+      </md>.      
       <ol>
         <li>
           <p>
@@ -358,11 +358,11 @@
   <statement>
     <p>
       Let <m>A \in M_2(\rr)</m> be the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix}
         -7 \amp 8 \\ -6 \amp 7
         \end{bmatrix}
-      </me>. <!-- 1, -1 -->
+      </md>. <!-- 1, -1 -->
       Find the characteristic polynomial and the eigenvalues of <m>A</m>. 
     </p>
   </statement>
@@ -371,11 +371,11 @@
   <statement>
     <p>
       Let <m>A \in M_2(\rr)</m> be the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix}
         7 \amp -3 \\ 6 \amp -2
         \end{bmatrix}
-      </me>. <!-- 1, 4 -->
+      </md>. <!-- 1, 4 -->
       Find the characteristic polynomial and the eigenvalues of <m>A</m>. 
     </p>
   </statement>
@@ -389,11 +389,11 @@
   <statement>
     <p>
       Let <m>A \in M_2(\ff_5)</m> be the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix}
         0 \amp 2 \\ 1 \amp 1
         \end{bmatrix}
-      </me>. <!-- 2, 4 -->
+      </md>. <!-- 2, 4 -->
       Find the characteristic polynomial and the eigenvalues of <m>A</m>. 
     </p>
   </statement>
@@ -402,11 +402,11 @@
   <statement>
     <p>
       Let <m>A \in M_2(\ff_5)</m> be the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix}
         2 \amp 4 \\ 4 \amp 2
         \end{bmatrix}
-      </me>. <!-- 1, 3 -->
+      </md>. <!-- 1, 3 -->
       Find the characteristic polynomial and the eigenvalues of <m>A</m>. 
     </p>
   </statement>
@@ -420,13 +420,13 @@
   <statement>
     <p>
       Let <m>A \in M_3(\rr)</m> be the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix}
         3 \amp 0 \amp 0 \\ 
         5 \amp -1 \amp 1 \\ 
         3 \amp -1 \amp 1
         \end{bmatrix}
-      </me>. <!-- 0, 3 -->
+      </md>. <!-- 0, 3 -->
       Find the characteristic polynomial and the eigenvalues of <m>A</m> by hand. 
     </p>
   </statement>
@@ -435,13 +435,13 @@
   <statement>
     <p>
       Let <m>A \in M_3(\rr)</m> be the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix}
         2 \amp 6 \amp 6 \\
         0 \amp -1 \amp 0 \\
         -3 \amp -6 \amp -7
         \end{bmatrix}
-      </me>. <!-- -1, -1, -4 -->
+      </md>. <!-- -1, -1, -4 -->
       Find the characteristic polynomial and the eigenvalues of <m>A</m> by hand. 
     </p>
   </statement>
@@ -455,13 +455,13 @@
   <statement>
     <p>
       Let <m>A \in M_3(\rr)</m> be the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix}
         5 \amp 8 \amp -8 \\ 
         -4 \amp -11 \amp 16 \\ 
         0 \amp -4 \amp 9
         \end{bmatrix}
-      </me>. <!-- 1, -3, 5 -->
+      </md>. <!-- 1, -3, 5 -->
       Find the characteristic polynomial of <m>A</m> by hand. If <m>\lambda = 1</m> is an eigenvalue of <m>A</m>, find the other eigenvalues of <m>A</m> by hand.
     </p>
   </statement>
@@ -470,13 +470,13 @@
   <statement>
     <p>
       Let <m>A \in M_3(\rr)</m> be the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix}
         1 \amp -4 \amp -4 \\
         -2 \amp -1 \amp -4 \\
         4 \amp 4 \amp 9
         \end{bmatrix}
-      </me>. <!-- 1, 3, 5 -->
+      </md>. <!-- 1, 3, 5 -->
       Find the characteristic polynomial of <m>A</m> by hand. If <m>\lambda = 3</m> is an eigenvalue of <m>A</m>, find the other eigenvalues of <m>A</m> by hand.
     </p>
   </statement>
@@ -492,9 +492,9 @@
   <statement>
     <p>
       Let <m>A \in M_n(\rr)</m> have <m>n</m> real eigenvalues, <m>\lambda_1, \ldots, \lambda_n</m>, repeated according to their multiplicities, so that 
-      <me>
+      <md>
         \det(A - \lambda I) = (\lambda_1 - \lambda) \cdots (\lambda_n - \lambda)
-      </me>.
+      </md>.
       Prove that <m>\det(A)</m> is the product of the <m>n</m> eigenvalues of <m>A</m>. 
     </p>
   </statement>
@@ -514,9 +514,9 @@
     </p>
     <p>
       We now suppose that <m>A, B, C \in M_n(\ff)</m> with <m>A \sim B</m> and <m>B \sim C</m>. This means that we have invertible matrices <m>P</m> and <m>Q</m> such that <m>A = PBP^{-1}</m> and <m>B = QCQ^{-1}</m>. Putting these equations together, we have
-      <me>
+      <md>
         A = P(QCQ^{-1})P^{-1} = (PQ)C(Q^{-1}P^{-1}) = (PQ)C(PQ)^{-1}
-      </me>.
+      </md>.
       In this derivation we have used <xref ref="prop-matrix-inverse-product"/>. Since <m>PQ</m> is invertible (again by <xref ref="prop-matrix-inverse-product"/>), this proves that <m>A \sim C</m>, which shows that the relation is transitive.
     </p>
     <p>

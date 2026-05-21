@@ -35,9 +35,9 @@
     <statement>
       <p>
         The following is an orthonormal basis of either <m>\rr^2</m> or <m>\cc^2</m>: 
-        <me>
+        <md>
           \mcb = \left\{  \begin{bmatrix} \frac{1}{\sqrt{2}} \\[6pt] \frac{1}{\sqrt{2}} \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\[6pt] -\frac{1}{\sqrt{2}} \end{bmatrix} \right\}
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </example>
@@ -46,9 +46,9 @@
     <statement>
       <p>
         For any fixed <m>\theta \in \rr</m>, the following is an orthonormal basis of <m>\rr^2</m> or <m>\cc^2</m>: 
-        <me>
+        <md>
           \mcb = \left\{ \begin{bmatrix} \cos(\theta) \\ \sin(\theta) \end{bmatrix}, \begin{bmatrix} -\sin(\theta) \\ \cos(\theta) \end{bmatrix} \right\}
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </example>
@@ -57,9 +57,9 @@
     <statement>
       <p>
         Because of the requirement that each vector be a unit vector, the vectors in an orthonormal basis aren't the prettiest to behold. Here is an orthonormal basis of <m>\rr^3</m>:
-        <me>
+        <md>
           \mcb = \left\{ \begin{bmatrix} \frac{1}{\sqrt{5}} \\[6pt] \frac{2}{\sqrt{5}} \\[6pt] 0 \end{bmatrix}, \begin{bmatrix} -\frac{\sqrt{2}}{\sqrt{15}} \\[6pt] \frac{1}{\sqrt{30}} \\[6pt] -\frac{\sqrt{5}}{\sqrt{6}} \end{bmatrix}, \begin{bmatrix} -\frac{\sqrt{2}}{\sqrt{3}} \\[6pt] \frac{1}{\sqrt{6}} \\[6pt] \frac{1}{\sqrt{6}} \end{bmatrix} \right\}
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </example>
@@ -68,13 +68,13 @@
     <statement>
       <p>
         Consider the following inner product on the space <m>P_1</m>: 
-        <me>
+        <md>
           \ip{p,q} = p(0)q(0) + p(1)q(1)
-        </me>.
+        </md>.
         The set <m>\mcb = \{t, 1-t \}</m> is an orthonormal basis for <m>P_1</m>. We first verify that this is an orthogonal set: 
-        <me>
+        <md>
           \ip{t, 1-t} = (0)(1) + (1)(0) = 0
-        </me>.
+        </md>.
         We can also see that each of these are unit vectors: 
         <md>
           <mrow>\ip{t,t} \amp = 0^2 + 1^2 = 1</mrow>
@@ -98,40 +98,40 @@
   <statement>
     <p>
       Let <m>V</m> and <m>W</m> be inner product spaces, and let <m>\mcb = \{\bfv_1, \ldots, \bfv_n \}</m> be an orthonormal basis for <m>V</m> and <m>\mcc = \{ \bfw_1, \ldots, \bfw_m \}</m> be an orthonormal basis for <m>W</m>. For every <m>\bfv \in V</m> and every <m>T \in L(V,W)</m>, we have 
-      <men xml:id="eqn-cob-thm-1">
+      <md number="yes" xml:id="eqn-cob-thm-1">
         [\bfv]_{\mcb} = \begin{bmatrix} \ip{\bfv, \bfv_1} \\ \vdots \\ \ip{\bfv,\bfv_n} \end{bmatrix}
-      </men>
+      </md>
       and 
-      <men xml:id="eqn-cob-thm-2">
+      <md number="yes" xml:id="eqn-cob-thm-2">
         [[T]_{\mcb,\mcc}]_{jk} = \ip{T(\bfv_k),\bfw_j}
-      </men>.       
+      </md>.       
     </p>
   </statement>
   <proof>
     <p>
       For <m>\bfv \in V</m>, we have 
-      <me>
+      <md>
         \bfv = \sum_{i=1}^n c_i\bfv_i
-      </me>
+      </md>
       for some <m>c_i \in \ff</m> since <m>\mcb</m> is a basis of <m>V</m>. If we take the inner product of both sides of this equation with <m>\bfv_k</m> and use both the linearity of the inner product and the orthonormality of <m>\mcb</m>, we have 
-      <me>
+      <md>
         \ip{\bfv, \bfv_k} = \ip{\sum_{i=1}^n c_i\bfv_i, \bfv_k} = \sum_{i=1}^n c_i \ip{\bfv_i, \bfv_k} = c_k
-      </me>.
+      </md>.
       This means that 
-      <me>
+      <md>
         \bfv = \sum_{i=1}^n \ip{\bfv, \bfv_i} \bfv_i
-      </me>,
+      </md>,
       which is the same as <xref ref="eqn-cob-thm-1"/>. 
     </p>
     <p>
       We proceed similarly for the second statement in the theorem. For any <m>\bfw \in W</m>, we have 
-      <me>
+      <md>
         \bfw = \sum_{i=1}^m \ip{\bfw,\bfw_i}\bfw_i
-      </me>.
+      </md>.
       Since <m>T(\bfv_i) \in W</m>, this must also be true for each <m>T(\bfv_i)</m>: 
-      <me>
+      <md>
         T(\bfv_i) = \sum_{i=1}^m \ip{T(\bfv_i),\bfw_i}\bfw_i
-      </me>.
+      </md>.
       This is the same as <xref ref="eqn-cob-thm-2"/>.
     </p>
   </proof>
@@ -145,10 +145,10 @@
   <statement>
     <p>
       In <m>\rr^2</m> with the dot product, we consider the basis <m>\mcb = \{\bfv_1, \bfv_2\}</m> from <xref ref="examp-onb1"/>. Then the coordinate vector of <m>\bfv = \begin{bmatrix} 2 \\ -5 \end{bmatrix}</m> with respect to <m>\mcb</m> is 
-      <me>
+      <md>
         [\bfv]_{\mcb} = \begin{bmatrix} \ip{\bfv, \bfv_1} \\ \ip{\bfv, \bfv_2} \end{bmatrix} = 
         \begin{bmatrix} -\frac{3}{\sqrt{2}} \\[6pt] \frac{7}{\sqrt{2}} \end{bmatrix}
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </example>
@@ -161,22 +161,22 @@
   <statement>
     <p>
       Let <m>\mcb = \{ \bfv_1, \ldots, \bfv_n \}</m> be an orthonormal basis for an inner product space <m>V</m>. Then, for any vectors <m>\bfu, \bfv \in V</m>, we have 
-      <me>
+      <md>
         \ip{\bfu, \bfv} = \sum_{i=1}^n \ip{\bfu, \bfv_i} \overline{\ip{\bfv,\bfv_i}}
-      </me>
+      </md>
       and 
-      <me>
+      <md>
         \vnorm{\bfv}^2 = \sum_{i=1}^n |\ip{\bfv, \bfv_i}|^2
-      </me>.      
+      </md>.      
     </p>
   </statement>
   <proof>
     <p>
       By <xref ref="thm-coords-orthonorm-basis"/>, we have 
-      <me>
+      <md>
         \bfu = \sum_{i=1}^n \ip{\bfu, \bfv_i}\bfv_i \hspace{6pt} \text{and} \hspace{6pt} 
         \bfv = \sum_{i=1}^n \ip{\bfv, \bfv_i}\bfv_i
-      </me>.
+      </md>.
       So, using the properties of the inner product and the orthonormality of <m>\mcb</m>, we have 
       <md>
         <mrow>\ip{\bfu, \bfv} \amp = \ip{\sum_{i=1}^n \ip{\bfu, \bfv_i}\bfv_i, \sum_{j=1}^n \ip{\bfv, \bfv_j}\bfv_j}</mrow>
@@ -215,13 +215,13 @@
         <li>
           <p>
             For <m>j = 2, \ldots, n</m>, define <m>\bfe_j</m> recursively by 
-            <me>
+            <md>
               \bfe_j' = \bfv_j - \sum_{k=1}^{j-1} \ip{\bfv_j,\bfe_k} \bfe_k
-            </me>
+            </md>
             and
-            <me>
+            <md>
               \bfe_j = \frac{1}{\vnorm{\bfe_j'}}\bfe_j'
-            </me>.            
+            </md>.            
           </p>
         </li>
       </ol>
@@ -247,17 +247,17 @@
     </p>
     <p>
       First, we calculate that <m>\ip{1,1} = \sqrt{2}</m>, so our first vector in the orthonormal basis should be <m>\bfe_1 = \frac{1}{\sqrt{2}}\bfv_1 = \frac{1}{\sqrt{2}}</m>. Then, for the second calculation we need 
-      <me>
+      <md>
         \ip{t, \bfe_1} = (0)\left(\frac{1}{\sqrt{2}}\right) + (1)\left(\frac{1}{\sqrt{2}}\right) = \frac{1}{\sqrt{2}}
-      </me>.
+      </md>.
       So, we have 
-      <me>
+      <md>
         \bfe_2' = t - \frac{1}{\sqrt{2}}\frac{1}{\sqrt{2}} = t- \frac{1}{2}
-      </me>.
+      </md>.
       Our final step is to normalize <m>\bfe_2'</m>. We find that <m>\vnorm{\bfe_2'} = \frac{1}{\sqrt{2}}</m>, meaning that 
-      <me>
+      <md>
         \bfe_2 = \sqrt{2}\bfe_2' = \sqrt{2}t - \frac{\sqrt{2}}{2}
-      </me>.
+      </md>.
       The reader may want to verify that <m>\{ \bfe_1. \bfe_2\}</m> is indeed an orthonormal set in <m>P_1</m> with this inner product.
     </p>
   </statement>
@@ -267,28 +267,28 @@
   <statement>
     <p>
       We will carry out the Gram-Schmidt process on a basis for <m>\rr^3</m> where we will use the standard dot product in <m>\rr^3</m>. Consider the set <m>\mcb = \{\bfv_1, \bfv_2, \bfv_3 \}</m>, where 
-      <me>
+      <md>
         \bfv_1 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}, \hspace{6pt}
         \bfv_2 = \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix}, \hspace{6pt}
         \bfv_3 = \begin{bmatrix} -1 \\ 1 \\ -1 \end{bmatrix}
-      </me>.
+      </md>.
       It is easily checked that <m>\mcb</m> is a basis for <m>\rr^3</m>. Now <m>\vnorm{\bfv_1} = \sqrt{2}</m>, so we have 
-      <me>
+      <md>
         \bfe_1 = \begin{bmatrix} \frac{1}{\sqrt{2}} \\ 0 \\ \frac{1}{\sqrt{2}} \end{bmatrix}
-      </me>.
+      </md>.
       We need <m>\bfv_2 \cdot \bfe_1 = \frac{2}{\sqrt{2}}</m> for the next calculation: 
-      <me>
+      <md>
         \bfe_2' = \bfv_2 - (\bfv_2 \cdot \bfe_1)\bfe_1 = \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}
-      </me>.
+      </md>.
       Since <m>\vnorm{\bfe_2'} = \sqrt{3}</m>, we have 
-      <me>
+      <md>
         \bfe_2 = \begin{bmatrix} \frac{1}{\sqrt{3}} \\[6pt] \frac{1}{\sqrt{3}} \\[6pt] -\frac{1}{\sqrt{3}} \end{bmatrix}
-      </me>.
+      </md>.
       Finally, we will calculate <m>\bfe_3'</m> and <m>\bfe_3</m>. We need these two dot product calculations first: 
-      <me>
+      <md>
         \bfv_3 \cdot \bfe_1 = -\frac{2}{\sqrt{2}}, \hspace{6pt}
         \bfv_3 \cdot \bfe_2 = \frac{1}{\sqrt{3}}
-      </me>.
+      </md>.
       Then we have 
       <md>
         <mrow>\bfe_3' \amp = \bfv_3 - (\bfv_3 \cdot \bfe_1)\bfe_1 - (\bfv_3 \cdot \bfe_2)\bfe_2</mrow>
@@ -296,9 +296,9 @@
         <mrow> \amp = \begin{bmatrix} -\frac{1}{3} \\[6pt] \frac{2}{3} \\[6pt] \frac{1}{3} \end{bmatrix}</mrow>
       </md>.
       Since <m>\vnorm{\bfe_3'} = \frac{\sqrt{6}}{3}</m>, we have 
-      <me>
+      <md>
         \bfe_3 = \frac{3}{\sqrt{6}} \bfe_3' = \begin{bmatrix} -\frac{1}{\sqrt{6}} \\[6pt] \frac{2}{\sqrt{6}} \\[6pt] \frac{1}{\sqrt{6}} \end{bmatrix}
-      </me>.
+      </md>.
       The set <m>\{ \bfe_1, \bfe_2, \bfe_3 \}</m> is an orthonormal basis of <m>\rr^3</m>. 
     </p>
   </statement>
@@ -308,22 +308,22 @@
   <statement>
     <p>
       In our final example we will consider <m>\rr^2</m> with the alternative inner product introduced in <xref ref="examp-alt-ip-r2"/>. We consider a basis <m>\{\bfv_1, \bfv_2 \}</m> for <m>\rr^2</m>, where 
-      <me>
+      <md>
         \bfv_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \hspace{12pt}
         \bfv_2 = \begin{bmatrix} 3 \\ 0 \end{bmatrix}
-      </me>.
+      </md>.
       For the Gram-Schmidt process, we first need to calculate <m>\vnorm{\bfv_1} = \sqrt{3}</m>. So, we have 
-      <me>
+      <md>
         \bfe_1 = \frac{1}{\sqrt{3}} \bfv_1 = \begin{bmatrix} \frac{1}{\sqrt{3}} \\[6pt] \frac{1}{\sqrt{3}} \end{bmatrix}
-      </me>.
+      </md>.
       Then we need <m>\ip{\bfv_2, \bfe_1} = \frac{6}{\sqrt{3}}</m> for the next step of the process:
-      <me>
+      <md>
         \bfe_2' = \bfv_2 - \ip{\bfv_2,\bfe_1}\bfe_1 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}
-      </me>.
+      </md>.
       Finally, we normalize <m>\bfe_2'</m> in order to get <m>\bfe_2</m>. We find that <m>\vnorm{\bfe_2'} = \sqrt{6}</m>, so 
-      <me>
+      <md>
         \bfe_2 = \begin{bmatrix} \frac{1}{\sqrt{6}} \\[6pt] -\frac{2}{\sqrt{6}} \end{bmatrix}
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </example>
@@ -364,9 +364,9 @@
   <statement>
     <p>
       Define the following inner product on <m>P_1</m>: 
-      <me>
+      <md>
         \ip{p,q} = p(-2)q(-2) + p(2)q(2)
-      </me>.
+      </md>.
       (You do not need to prove that this is an inner product.) Let <m>p_1 = \frac{1}{4}t+\frac{1}{2}</m> and <m>p_2 = \frac{1}{4}t - \frac{1}{2}</m>. Prove or disprove that <m>\{ p_1, p_2 \}</m> is an orthonormal basis of <m>P_1</m>. Show your work.
     </p>
     <!-- <p>
@@ -378,10 +378,10 @@
 <statement>
   <p>
     Consider the set <m>\{ \bfv_1, \bfv_2 \}</m> of vectors in <m>\rr^2</m>, where 
-    <me>
+    <md>
       \bfv_1 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}, \hspace{12pt}
       \bfv_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}
-    </me>.
+    </md>.
     Using the standard dot product in <m>\rr^2</m>, use the Gram-Schmidt process on this basis to produce an orthonormal basis for <m>\rr^2</m>. 
   </p>
   <!-- <p>
@@ -397,12 +397,12 @@
     <statement>
       <p>
         Consider the following basis for <m>\rr^2</m>: 
-        <me>
+        <md>
           \mcb = \left\{ \begin{bmatrix}
           2 \\ -3 \end{bmatrix}, \begin{bmatrix} 
           -1 \\ 2 \end{bmatrix}
           \right\}
-        </me>.
+        </md>.
         <ol>
           <li>
             <p>
@@ -422,13 +422,13 @@
     <statement>
       <p>
         Consider the basis <m> \mcb = \{p_1, p_2 \}</m> for <m>P_1</m>, where 
-        <me>
+        <md>
           p_1 = 2+t, \hspace{12pt} p_2 = 1-2t
-        </me>.
+        </md>.
         Consider the inner product on <m>P_1</m> defined by 
-        <me>
+        <md>
           \ip{p, q} = 2p(0)q(0) + p(1)q(1)
-        </me>.
+        </md>.
         (You do not need to prove that this is an inner product.)
         <ol>
           <li>
@@ -450,17 +450,17 @@
           <li>
             <p>
               The orthonormal basis we obtain is 
-              <me>
+              <md>
                 \left\{ \frac{1}{\sqrt{17}}(2+t), \frac{1}{\sqrt{34}}(3-7t)\right\}
-              </me>.              
+              </md>.              
             </p>
           </li>
           <li>
             <p>
               The coordinate vector is 
-              <me>
+              <md>
                 \begin{bmatrix} 10/ \sqrt{17} \\ -2/\sqrt{34} \end{bmatrix}
-              </me>.              
+              </md>.              
             </p>
           </li>
         </ol>
@@ -471,24 +471,24 @@
     <statement>
       <p>
         Carry out the Gram-Schmidt process on the following set of vectors in <m>\cc^3</m>. Use the standard dot product in <m>\cc^3</m>:
-        <me>
+        <md>
           \left\{ \begin{bmatrix} 
           1 \\ i \\ 0 \end{bmatrix}, \begin{bmatrix} 
           0 \\ 1 \\ i \end{bmatrix}, \begin{bmatrix} 
           i \\ 0 \\ 1
           \end{bmatrix}
           \right\}
-        </me>.        
+        </md>.        
       </p>
     </statement>
     <answer>
       <p>
         The orthonormal basis we obtain is
-        <me>
+        <md>
           \left\{ \begin{bmatrix} 1 / \sqrt{2} \\ i/\sqrt{2} \\ 0 \end{bmatrix}, 
           \begin{bmatrix} i/\sqrt{6} \\ 1/\sqrt{6} \\ 2i / \sqrt{6} \end{bmatrix},
           \frac{\sqrt{3}}{2\sqrt{2}}\begin{bmatrix} -\tfrac{1}{3} + \tfrac{4}{3}i \\ -\tfrac{2}{3} + \tfrac{1}{3}i \\ \tfrac{1}{3} - \tfrac{1}{3}i \end{bmatrix} \right\}
-        </me>.        
+        </md>.        
       </p>
     </answer>
   </exercise>
@@ -496,9 +496,9 @@
     <statement>
       <p>
         Consider the standard basis of the vector space <m>P_2</m>. Carry out the Gram-Schmidt process on this basis with respect to the following inner product on <m>P_2</m>: 
-        <me>
+        <md>
           \ip{p,q} = \int_0^1 p(t)q(t)\; dt
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </exercise>
@@ -506,17 +506,17 @@
     <statement>
       <p>
         Let <m>A</m> be the following matrix in <m>M_3(\rr)</m>: 
-        <me>
+        <md>
           A = \begin{bmatrix} 
           1 \amp 0 \amp 2 \\ 
           -1 \amp 1 \amp 0 \\ 
           0 \amp -2 \amp 1
           \end{bmatrix}
-        </me>.
+        </md>.
         Consider the inner product on <m>\rr^3</m> defined by 
-        <me>
+        <md>
           \ip{\bfu, \bfv} = (A\bfu) \cdot (A\bfv)
-        </me>,
+        </md>,
         where the standard dot product is in view on the right side of this equation. Find an orthonormal basis of <m>\rr^3</m> with respect to this inner product.
       </p>
     </statement>

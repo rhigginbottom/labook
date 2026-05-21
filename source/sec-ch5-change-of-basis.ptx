@@ -12,12 +12,12 @@
     <title>The Change-of-Basis Matrix</title>
 <p>
   We will first describe a situation in which this technique will be useful. Consider the following two bases for <m>\rr^2</m>: <m>\mcb = \{\bfv_1, \bfv_2 \}</m> and <m>\mcc = \{ \bfw_1, \bfw_2 \}</m>, where 
-  <me>
+  <md>
     \bfv_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}, \hspace{6pt} 
     \bfv_2 = \begin{bmatrix} 0 \\ 2 \end{bmatrix}, \hspace{6pt} 
     \bfw_1 = \begin{bmatrix} -2 \\ 1 \end{bmatrix}, \hspace{6pt} 
     \bfw_2 = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
-  </me>.
+  </md>.
   We can verify that <m>\mcb</m> and <m>\mcc</m> are bases for <m>\rr^2</m> since they are both linearly independent sets of two vectors in a two-dimensional space. 
 </p>
 
@@ -33,18 +33,18 @@
   <statement>
     <p>
       Let <m>\mcb</m> and <m>\mcc</m> be two bases for a finite-dimensional vector space <m>V</m>. Then, for any <m>\bfv \in V</m>, we have 
-      <me>
+      <md>
         [\bfv]_{\mcc} = [I]_{\mcb,\mcc} [\bfv]_{\mcb}
-      </me>,
+      </md>,
       where <m>I: V\to V</m> is the identity transformation.
     </p>
   </statement>
   <proof>
     <p>
       This is a simple application of <xref ref="prop-matrix-linear-tran-coordinates"/> to the identity transformation <m>I</m>: 
-      <me>
+      <md>
         [\bfv]_{\mcc} = [I(\bfv)]_{\mcc} = [I]_{\mcb,\mcc} [\bfv]_{\mcb}
-      </me>.       
+      </md>.       
     </p>
   </proof>
 </proposition>
@@ -61,7 +61,7 @@
   <statement>
     <p>
       We will continue the example begun earlier in this section. If <m>\mcb = \{\bfv_1, \bfv_2 \}</m> and <m>\mcc = \{ \bfw_1, \bfw_2 \}</m>, then we can calculate <m>P_{\mcb, \mcc}</m> by determining the coordinate vectors <m>[\bfv_1]_{\mcc}</m> and <m>[\bfv_2]_{\mcc}</m>. We need only to row-reduce two matrices:
-      <me>
+      <md>
         \begin{bmatrix}
         -2 \amp -1 \amp 1 \\ 
         1 \amp 3 \amp -1
@@ -78,18 +78,18 @@
         1 \amp 0 \amp -2/5 \\ 
         0 \amp 1 \amp 4/5
         \end{bmatrix}
-      </me>.
+      </md>.
       From these calculations, we can see how to write the <m>\mcb</m>-basis vectors in terms of the vectors in <m>\mcc</m>, and these form the columns of our change-of-basis matrix:
-      <me>
+      <md>
         P_{\mcb,\mcc} = \begin{bmatrix}
         -2/5 \amp -2/5 \\ 
         -1/5 \amp 4/5
         \end{bmatrix}
-      </me>.      
+      </md>.      
     </p>
     <p>
       We now consider a vector <m>\bfv = \begin{bmatrix} 2 \\ 3 \end{bmatrix}</m> in <m>\rr^2</m>. We can calculate <m>[\bfv]_{\mcb}</m> in this way: 
-      <me>
+      <md>
         \begin{bmatrix}
         1 \amp 0 \amp 2 \\ 
         -1 \amp 2 \amp 3
@@ -98,9 +98,9 @@
         1 \amp 0 \amp 2 \\ 
         0 \amp 1 \amp 5/2
         \end{bmatrix} 
-      </me>.
+      </md>.
       Now that we have <m>[\bfv]_{\mcb} = \begin{bmatrix} 2 \\ 5/2 \end{bmatrix}</m>, we can use the change-of-basis matrix to find <m>[\bfv]_{\mcc}</m>:
-      <me>
+      <md>
         [\bfv]_{\mcc} = P_{\mcb,\mcc} [\bfv]_{\mcb} = 
         \begin{bmatrix}
         -2/5 \amp -2/5 \\ 
@@ -109,9 +109,9 @@
         \begin{bmatrix}
         -9/5 \\ 8/5
         \end{bmatrix}  
-      </me>.
+      </md>.
       We can verify that this is the correct <m>\mcc</m>-coordinate vector for <m>\bfv</m> by calculating it directly:
-      <me>
+      <md>
         \begin{bmatrix}
         -2 \amp -1 \amp 2 \\ 
         1 \amp 3 \amp 3
@@ -120,7 +120,7 @@
         1 \amp 0 \amp -9/5 \\ 
         0 \amp 1 \amp 8/5
         \end{bmatrix}
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </example>
@@ -129,17 +129,17 @@
   <statement>
     <p>
       We consider the vector space <m>P_2</m>. Let <m>\mcc</m> be the standard basis for <m>P_2</m> and let <m>\mcb</m> be the set <m>\{p_1, p_2, p_3 \}</m>, where 
-      <me>
+      <md>
         p_1 = 2+t, \hspace{6pt} p_2 = -1-t+2t^2, \hspace{6pt} p_3 = -2t+3t^2
-      </me>.
+      </md>.
       In order to find the change-of-basis matrix, we need to write the coordinate vectors of the basis vectors of <m>\mcb</m> with respect to <m>\mcc</m>. But since <m>\mcc</m> is the standard basis of <m>P_2</m>, this is an easy task to complete. Here is the change-of-basis matrix:
-      <me>
+      <md>
         P_{\mcb, \mcc} = \begin{bmatrix}
         2 \amp -1 \amp 0 \\ 
         1 \amp -1 \amp -2 \\ 
         0 \amp 2 \amp 3
         \end{bmatrix}
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </example>
@@ -169,17 +169,17 @@
   <statement>
     <p>
       Let <m>\mcb</m> and <m>\mcc</m> be two bases for a finite-dimensional vector space <m>V</m>. Then the relationship between the two change-of-basis matrices is 
-      <me>
+      <md>
         P_{\mcc, \mcb} = \left( P_{\mcb, \mcc} \right)^{-1}
-      </me>.       
+      </md>.       
     </p>
   </statement>
   <proof>
     <p>
       Since <m>P_{\mcb,\mcc} = [I]_{\mcb,\mcc}</m>, by <xref ref="thm-mult-coord-matrices"/> we have 
-      <me>
+      <md>
         P_{\mcb,\mcc}[I]_{\mcc,\mcb} = [I]_{\mcb,\mcc}[I]_{\mcc,\mcb} = [I]_{\mcc,\mcc} = I_n
-      </me>.
+      </md>.
       Since <m>P_{\mcb,\mcc}</m> is square, this proves that <m>[I]_{\mcc,\mcb} = (P_{\mcb,\mcc})^{-1}</m>. 
     </p>
   </proof>
@@ -189,32 +189,32 @@
   <statement>
     <p>
       We consider two bases for <m>\ff_5^3</m>: the standard basis <m>\mce</m> and <m>\mcb = \{\bfv_1, \bfv_2, \bfv_3 \}</m>, where 
-      <me>
+      <md>
         \bfv_1 = \begin{bmatrix} 4 \\ 2 \\ 2 \end{bmatrix}, \hspace{6pt} 
         \bfv_2 = \begin{bmatrix} 3 \\ 1 \\ 0 \end{bmatrix}, \hspace{6pt} 
         \bfv_3 = \begin{bmatrix} 0 \\ 4 \\ 1 \end{bmatrix}
-      </me>.
+      </md>.
       (The reader should verify that <m>\mcb</m> is a basis for <m>\ff_5^3</m>.)
     </p>
     <p>
       <xref ref="lem-change-basis-standard"/> tells us that the change-of-basis matrix <m>P_{\mcb,\mce}</m> is easy to write down: 
-      <me>
+      <md>
         P_{\mcb, \mce} = 
         \begin{bmatrix} 
         4 \amp 3 \amp 0 \\ 
         2 \amp 1 \amp 4 \\ 
         2 \amp 0 \amp 1
         \end{bmatrix} 
-      </me>.
+      </md>.
       Then <xref ref="lem-inverse-change-matrix"/> says that <m>P_{\mce,\mcb} = (P_{\mcb,\mce})^{-1}</m>, so we can find that matrix without too much difficulty as well: 
-      <me>
+      <md>
         P_{\mce,\mcb} = 
         \begin{bmatrix} 
         3 \amp 1 \amp 1 \\ 
         3 \amp 2 \amp 2 \\ 
         4 \amp 3 \amp 4
         \end{bmatrix}
-      </me>.       
+      </md>.       
     </p>
   </statement>
 </example>
@@ -227,17 +227,17 @@
   <statement>
     <p>
       Let <m>V</m> and <m>W</m> be finite-dimensional vector spaces, and let <m>T \in L(V,W)</m>. Additionally, let <m>\mcb_1</m> and <m>\mcb_2</m> be bases for <m>V</m>, and let <m>\mcc_1</m> and <m>\mcc_2</m> be bases for <m>W</m>. Then
-      <me>
+      <md>
         [T]_{\mcb_2,\mcc_2} = [I]_{\mcc_1,\mcc_2}[T]_{\mcb_1,\mcc_1}[I]_{\mcb_2,\mcb_1}
-      </me>.      
+      </md>.      
     </p>
   </statement>
   <proof>
     <p>
       We will use <xref ref="thm-mult-coord-matrices"/>: 
-      <me>
+      <md>
         [T]_{\mcb_2,\mcc_2} = [ITI]_{\mcb_2,\mcc_2} = [I]_{\mcc_1,\mcc_2}[T]_{\mcb_1,\mcc_1}[I]_{\mcb_2,\mcb_1}
-      </me>.      
+      </md>.      
     </p>
   </proof>
 </theorem>
@@ -250,9 +250,9 @@
   <statement>
     <p>
       Let <m>\mcb</m> and <m>\mcc</m> be bases for a finite-dimensional vector space <m>V</m>, and let <m>T \in L(V)</m>. Then 
-      <me>
+      <md>
         [T]_{\mcc} = (P_{\mcc,\mcb})^{-1}[T]_{\mcb}P_{\mcc,\mcb}
-      </me>.      
+      </md>.      
     </p>
   </statement>
   <proof>
@@ -270,38 +270,38 @@
   <statement>
     <p>
       We consider the linear transformation <m>T:\rr^2 \to \rr^2</m> which is reflection across the line <m>y=\tfrac{1}{2}x</m>. While the action of <m>T</m> is not impossible to write down in the usual coordinate system, it is even easier using the alternate basis <m>\mcb = \{\bfv_1, \bfv_2 \}</m>, where 
-      <me>
+      <md>
         \bfv_1 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}, \hspace{12pt}
         \bfv_2 = \begin{bmatrix} -1 \\ 2 \end{bmatrix}
-      </me>.
+      </md>.
       To see why this linear transformation is easier to describe in the <m>\mcb</m>-coordinates, we recall how easy reflection across the <m>y</m>-axis is to describe relative to the standard basis<mdash></mdash>simply negate the first coordinate! The <m>\mcb</m>-basis vectors in this case lie on the axis of reflection and along the line perpendicular to that axis. 
     </p>
     <p>
       We note that <m>T(\bfv_1) = \bfv_1</m> and that <m>T(\bfv_2) = -\bfv_2</m>. This shows that the coordinate matrix of <m>T</m> with respect to <m>\mcb</m> is 
-      <me>
+      <md>
         [T]_{\mcb} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}
-      </me>. 
+      </md>. 
       (Writing the action of <m>T</m> this way makes it especially easy to see that performing this transformation twice puts us back where we started.) We will use <xref ref="cor-change-basis-lt"/> to calculate the matrix for <m>T</m> relative to the standard basis. That is, we wish to calculate <m>[T]_{\mce}</m>. 
     </p>
     <p>
       We first note that the matrix <m>P_{\mcb,\mce}</m> is, according to <xref ref="lem-change-basis-standard"/>,  
-      <me>
+      <md>
         P_{\mcb, \mce} = \begin{bmatrix} 2 \amp -1 \\ 1 \amp 2 \end{bmatrix} 
-      </me>. 
+      </md>. 
       Then, with the help of <xref ref="lem-inverse-change-matrix"/>, we have 
-      <me>
+      <md>
         P_{\mce, \mcb} = (P_{\mcb,\mce})^{-1} = \begin{bmatrix} 2/5 \amp 1/5 \\ -1/5 \amp 2/5 \end{bmatrix}
-      </me>.      
+      </md>.      
     </p>
     <p>
       We can put these together to find <m>[T]_{\mce}</m>: 
-      <me>
+      <md>
         [T]_{\mce} = P_{\mcb,\mce}[T]_{\mcb}P_{\mce,\mcb} = 
         \begin{bmatrix} 2 \amp -1 \\ 1 \amp 2 \end{bmatrix}
         \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}
         \begin{bmatrix} 2/5 \amp 1/5 \\ -1/5 \amp 2/5 \end{bmatrix} = 
         \begin{bmatrix} 3/5 \amp 4/5 \\ 4/5 \amp -3/5 \end{bmatrix}
-      </me>.
+      </md>.
       The action of the transformation, as written in the final line here, is perhaps better understood in words rather than symbols. To reflect across the line <m>y=\frac{1}{2}x</m>, first shift from the standard coordinates to the alternate <m>\mcb</m>-coordinates. (This is accomplished by <m>P_{\mce, \mcb}</m>.) In this new coordinate system, the action of <m>T</m> is easily described. (Thus, <m>[T]_{\mcb}</m>.) After that action is carried out, then we shift back to the standard coordinate system. (That is the work of <m>P_{\mcb, \mce}</m>.) From start to finish, this gives us a matrix which carries out the action of <m>T</m> relative to <m>\mce</m>.        
     </p>
   </statement>
@@ -343,22 +343,22 @@
     <statement>
       <p>
         Let <m>\mcb = \{ \bfv_1, \bfv_2 \}</m> and <m>\mcc = \{ \bfw_1, \bfw_2 \}</m> be bases of <m>\rr^2</m>, where 
-        <me>
+        <md>
           \bfv_1 = \begin{bmatrix} 5 \\ 2 \end{bmatrix}, \hspace{6pt}
           \bfv_2 = \begin{bmatrix} -1 \\ -1 \end{bmatrix}, \hspace{6pt}
           \bfw_1 = \begin{bmatrix} 3 \\ -3 \end{bmatrix}, \hspace{6pt}
           \bfw_2 = \begin{bmatrix} -5 \\ -3 \end{bmatrix}
-        </me>.
+        </md>.
         Find the change-of-basis matrices <m>P_{\mcb, \mcc}</m> and <m>P_{\mcc, \mcb}</m>.
       </p>
     </statement>
     <answer>
       <p>
         Here are the change-of-basis matrices:
-        <me>
+        <md>
           P_{\mcb,\mcc} = \begin{bmatrix} 5/24 \amp 1/12 \\ -7/8 \amp 1/4 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt} 
           P_{\mcc,\mcb} = \begin{bmatrix} 2 \amp -2/3 \\ 7 \amp 5/3 \end{bmatrix}
-        </me>.        
+        </md>.        
       </p>
     </answer>
   </exercise>
@@ -384,10 +384,10 @@
     <statement>
       <p>
         Consider the basis <m>\mcb = \{\bfv_1, \bfv_2 \}</m> of <m>\ff_3^2</m> where 
-        <me>
+        <md>
           \bfv_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \hspace{6pt}
           \bfv_2 = \begin{bmatrix} 0 \\ 2 \end{bmatrix}
-        </me>.
+        </md>.
         <ol>
           <li>
             <p>
@@ -408,18 +408,18 @@
           <li>
             <p>
               Here are the change-of-basis matrices:
-              <me>
+              <md>
                 P_{\mcb,\mce} = \begin{bmatrix} 1 \amp 0 \\ 2 \amp 2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt} P_{\mce,\mcb} = \begin{bmatrix} 1 \amp 0 \\ 2 \amp 2 \end{bmatrix}
-              </me>.
+              </md>.
               (Yes, they are the same!)
             </p>
           </li>
           <li>
             <p>
               We find that 
-              <me>
+              <md>
                 [\bfv]_{\mcb} = P_{\mce,\mcb}[\bfv]_{\mce} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
-              </me>.              
+              </md>.              
             </p>
           </li>
         </ol>
@@ -430,9 +430,9 @@
     <statement>
       <p>
         Let <m>\mcb = \{ p_1, p_2, p_3 \}</m> be a basis for <m>P_2</m>, where 
-        <me>
+        <md>
           p_1 = 3t-5t^2, \hspace{6pt} p_2 = 3-3t+5t^2, \hspace{6pt} p_3 = -1-t-t^2
-        </me>. 
+        </md>. 
         <ol>
           <li>
             <p>
@@ -457,9 +457,9 @@
     <statement>
       <p>
         Let <m>\mcb = \{ p_1, p_2, p_3 \}</m> be a basis for <m>P_2</m>, where 
-        <me>
+        <md>
           p_1 = 1+5t-5t^2, \hspace{6pt} p_2 = -2+t+t^2, \hspace{6pt} p_3 = 5-t-4t^2
-        </me>. 
+        </md>. 
       </p>
       <ol>
         <li>
@@ -470,9 +470,9 @@
         <li>
           <p>
             If <m>T:P_2 \to P_2</m> is the linear transformation
-            <me>
+            <md>
               T(p) = p(2)t + p(1)t^2
-            </me>,
+            </md>,
             find <m>[T]_{\mcb}</m>.
           </p>
         </li>
@@ -483,12 +483,12 @@
     <statement>
       <p>
         Let <m>\mcb = \{A_1, A_2, A_3, A_4 \}</m> be a basis for <m>M_2(\ff_5)</m>, where 
-        <me>
+        <md>
           A_1 = \begin{bmatrix} 4 \amp 0 \\ 4 \amp 4 \end{bmatrix}, \hspace{3pt}
           A_2 = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 3 \end{bmatrix}, \hspace{3pt}
           A_3 = \begin{bmatrix} 0 \amp 2 \\ 0 \amp 1 \end{bmatrix}, \hspace{3pt}
           A_4 = \begin{bmatrix} 3 \amp 1 \\ 1 \amp 1 \end{bmatrix}
-        </me>. 
+        </md>. 
       </p>
       <ol>
         <li>
@@ -499,10 +499,10 @@
         <li>
           <p>
             If <m>T:M_2(\ff_5) \to M_2(\ff_5)</m> is the linear transformation
-            <me>
+            <md>
               T \left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} \right) =
               \begin{bmatrix} 2a \amp 4b+c \\ a+d \amp 3b+d \end{bmatrix}
-            </me>,
+            </md>,
             find <m>[T]_{\mcb}</m>.
           </p>
         </li>
@@ -572,10 +572,10 @@
           <li>
             <p>
               We will use the basis <m>\mcb = \{\bfv_1,\bfv_2\}</m>, where 
-              <me>
+              <md>
                 \bfv_1 = \begin{bmatrix} 4 \\ -1 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt} 
                 \bfv_2 = \begin{bmatrix} 1 \\ 4 \end{bmatrix}
-              </me>.              
+              </md>.              
             </p>
           </li>
           <li>
@@ -586,10 +586,10 @@
           <li>
             <p>
               We find that 
-              <me>
+              <md>
                 P_{\mcb,\mce} = \begin{bmatrix} 4 \amp 1 \\ -1 \amp 4 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt} 
                 P_{\mce,\mcb} = \begin{bmatrix} 4/17 \amp -1/17 \\ 1/17 \amp 4/17 \end{bmatrix}
-              </me>.              
+              </md>.              
             </p>
           </li>
           <li>

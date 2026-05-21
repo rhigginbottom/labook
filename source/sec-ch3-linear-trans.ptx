@@ -109,18 +109,18 @@
     </p>
     <p>
       To justify this claim we must first explain what we mean by <q>multiplication by <m>A</m>.</q> We will let <m>\bfv \in \ff^n</m> and denote entry <m>(i,j)</m> in <m>A</m> by <m>a_{ij}</m>. We will further denote the entries of <m>\bfv</m> by
-      <me>
+      <md>
         \bfv = \left[\begin{array}{@{}c@{}}
           v_1 \\ \vdots \\ v_n
         \end{array}\right]
-      </me>.
+      </md>.
        Then the <term>matrix-vector product</term> <m>A\bfv</m> is defined to be the following vector in <m>\ff^m</m>:
-       <men xml:id="form-matrix-vect-prod">
+       <md number="yes" xml:id="form-matrix-vect-prod">
          A\bfv = \left[\begin{array}{@{}c@{}}
            a_{11}v_1 + \cdots + a_{1n}v_n \\ \vdots \\
            a_{m1}v_1 + \cdots + a_{mn}v_n
          \end{array}\right]
-       </men>.
+       </md>.
        One way to state this is that entry <m>j</m> in <m>A\bfv</m> is the sum of the entry-wise product of row <m>j</m> in <m>A</m> with <m>\bfv</m>. Since <m>A\bfv</m> is an element of <m>\ff^m</m>, the domain and codomain of <m>T_A</m> are correct.
     </p>
     <p>
@@ -128,21 +128,21 @@
     </p>
     <p>
       If the columns of <m>A</m> are thought of as vectors <m>\mathbf{a}_1, \ldots, \mathbf{a}_n</m>, then the product <m>A\bfv</m> is also
-      <men xml:id="matrix-vector-def2">
+      <md number="yes" xml:id="matrix-vector-def2">
         A\bfv = v_1\mathbf{a}_1 + \cdots + v_n\mathbf{a}_n = \sum_{i=1}^n v_i\mathbf{a}_i
-      </men>.
+      </md>.
       In words, <m>A\bfv</m> is a linear combination of the columns of <m>A</m> with weights coming from the entries of <m>\bfv</m>.
       (We have reserved proving the equivalence of these two formulations to <xref ref="exer-matrix-vector-mult"/>.)
     </p>
     <p>
       With this equivalent definition, proving that <m>T_A</m> is a linear transformation is a snap. Let <m>\bfu</m> and <m>\bfv</m> be vectors in <m>\ff^n</m> and let <m>c \in \ff</m>. We will further denote the entries of <m>\bfu</m> and <m>\bfv</m> by
-      <me>
+      <md>
         \bfu = \left[\begin{array}{@{}c@{}}
           u_1 \\ \vdots \\ u_n
         \end{array}\right] \hspace{.3in} \text{and} \hspace{.3in} \bfv = \left[\begin{array}{@{}c@{}}
           v_1 \\ \vdots \\ v_n
         \end{array}\right]
-      </me>. Then we have the following:
+      </md>. Then we have the following:
       <md>
         <mrow>T_A(\bfu + \bfv) \amp = A(\bfu+\bfv) = \sum_{i=1}^n(u_i+v_i)\mathbf{a}_i</mrow>
         <mrow>T_A(\bfu) + T_A(\bfv) \amp = A\bfu + A\bfv = \sum_{i=1}^n u_i\mathbf{a}_i + \sum_{i=1}^n v_i\mathbf{a}_i</mrow>
@@ -189,35 +189,35 @@
   <statement>
     <p>
       Let <m>A</m> and <m>B</m> be the following matrices over <m>\rr</m>:
-      <me>
+      <md>
         A = \begin{bmatrix} 2 \amp 0 \amp 0 \\
         0 \amp -1 \amp 0 \\
         0 \amp 0 \amp -3 \end{bmatrix} \hspace{.3in}
         B = \begin{bmatrix} 1 \amp 0 \amp 0 \\
         0 \amp 1 \amp 0 \\
         0 \amp 0 \amp 1 \end{bmatrix}
-      </me>.
+      </md>.
       We note that both <m>A</m> and <m>B</m> are diagonal matrices and that <m>B</m> is an identity matrix.
     </p>
     <p>
       Building on <xref ref="examp-matrix-vector-prod"/>, both <m>T_A</m> and <m>T_B</m> are linear transformations from <m>\rr^3</m> to <m>\rr^3</m>. Let <m>\bfx</m> be an element of <m>\rr^3</m> where
-      <me>
+      <md>
         \bfx = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
-      </me>.
+      </md>.
       Then we have 
-      <me>
+      <md>
         T_A(\bfx) = \begin{bmatrix} 2 \amp 0 \amp 0 \\
         0 \amp -1 \amp 0 \\
         0 \amp 0 \amp -3 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
         \begin{bmatrix} 2x_1 \\ -x_2 \\ -3x_3 \end{bmatrix}
-      </me>.
+      </md>.
       We also have
-      <me>
+      <md>
         T_B(\bfx) = \begin{bmatrix} 1 \amp 0 \amp 0 \\
         0 \amp 1 \amp 0 \\
         0 \amp 0 \amp 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
         \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \bfx
-      </me>.
+      </md>.
       Since <m>T_B(\bfx) = \bfx</m> for all <m>\bfx \in \rr^3</m>, the linear transformation <m>T_B</m> acts as the identity function on <m>\rr^3</m>. The action of <m>T_A</m> on <m>\rr^3</m> is slightly more complex, but only by a bit. Because of all the zeros in <m>A</m>, the effect of the transformation <m>T_A</m> is just multiplication of each coordinate of a vector in <m>\rr^3</m> by the corresponding diagonal entry in <m>A</m>. What we observe for multiplication by a diagonal or identity matrix in <m>M_3(\rr)</m> can easily be extended to <m>M_n(\ff)</m> for any <m>n \in \nn</m> and any field <m>\ff</m>.
     </p>
   </statement>
@@ -271,13 +271,13 @@
       </p>
       <p>
         The transformation is surjective because we know about the antiderivative. Let <m>q \in P_4</m> have the form 
-        <me>
+        <md>
           q(t) = a_4t^4 + a_3t^3 + a_2t^2 + a_1t + a_0
-        </me>.
+        </md>.
         This is a generic element of <m>P_4</m>, so we only need to supply an element <m>p \in P_5</m> such that <m>D(p)=q</m>, and this will prove that <m>D</m> is surjective. Consider the element <m>p</m> defined as 
-        <me>
+        <md>
           p(t) = \tfrac{1}{5}a_4t^5 + \tfrac{1}{4}a_3t^4 + \tfrac{1}{3}a_2t^3 + \tfrac{1}{2}a_1t^2 + a_0t
-        </me>.
+        </md>.
         It is but the work of a Calculus I student to verify that <m>D(p)=q</m>, thus showing that <m>D</m> is surjective. (We note that we could have chosen <m>p</m> to have any constant term at all; we used the constant term of <m>0</m>.)
       </p>
       <p>
@@ -324,35 +324,35 @@
     <statement>
       <p>
         The vector spaces <m>\rr^2</m> and <m>P_1</m> are isomorphic. To prove this, we consider the function <m>T:\rr^2 \to P_1</m> defined by
-        <me>
+        <md>
           T \left( \begin{bmatrix} a \\ b \end{bmatrix}\right) = a + bt
-        </me>.
+        </md>.
         To justify the claim that <m>\rr^2</m> and <m>P_1</m> are isomorphic, we must prove that <m>T</m> is a bijective linear transformation. We will prove that <m>T</m> is a linear transformation and ask the reader to prove bijectivity in the exercises.
       </p>
       <p>
         We let <m>\bfx_1</m> and <m>\bfx_2</m> be elements of <m>\rr^2</m> where
-        <me>
+        <md>
           \bfx_1 = \begin{bmatrix} a_1 \\ b_1 \end{bmatrix}, \hspace{.3in}
           \bfx_2 = \begin{bmatrix} a_2 \\ b_2 \end{bmatrix}
-        </me>.
+        </md>.
         Then we have
-        <me>
+        <md>
           T(\bfx_1 + \bfx_2) = T \left(\begin{bmatrix} a_1 + a_2 \\ b_1 + b_2 \end{bmatrix}\right) = (a_1 + a_2) + (b_1 + b_2)t
-        </me>,
+        </md>,
         and 
-        <me>
+        <md>
           T(\bfx_1) + T(\bfx_2) = (a_1 + b_1t) + (a_2 + b_2)t
-        </me>.
+        </md>.
         The properties <m>P_1</m> possesses as a vector space show that
-        <me>
+        <md>
           T(\bfx_1 + \bfx_2) = T(\bfx_1) + T(\bfx_2)
-        </me>.
+        </md>.
       </p>
       <p>
         We now suppose that <m>\bfx \in \rr^2</m> and <m>c \in \rr</m>, where
-        <me>
+        <md>
           \bfx = \begin{bmatrix} a \\ b \end{bmatrix}
-        </me>.
+        </md>.
         Then
         <md>
           <mrow>T(c\bfx) \amp = T\left( \begin{bmatrix} ca \\ cb \end{bmatrix}\right) = ca + cbt</mrow>
@@ -398,23 +398,23 @@
     <proof>
       <p>
         We will check the two properties of a linear transformation. (See <xref ref="def-lin-trans"/>.) Suppose that <m>\bfw_1, \bfw_2 \in W</m>. Since <m>T \circ T^{-1} = I_W</m>, we have 
-        <me>
+        <md>
           \bfw_1 + \bfw_2 = T(T^{-1}(\bfw_1)) + T(T^{-1}(\bfw_2)) = T(T^{-1}(\bfw_1) + T^{-1}(\bfw_2))
-        </me>.
+        </md>.
         When we apply <m>T^{-1}</m> to the beginning and end of this equality, using <m>{T^{-1}\circ T = I_V}</m>, we get 
-        <me>
+        <md>
           T^{-1}(\bfw_1 + \bfw_2) = T^{-1}(\bfw_1) + T^{-1}(\bfw_2)
-        </me>.     
+        </md>.     
       </p>
       <p>
         We will now check the scalar multiple property in a similar fashion. Let <m>\bfw \in W</m> and let <m>c \in \ff</m>. Then we have 
-        <me>
+        <md>
           c\bfw = cT(T^{-1}(\bfw)) = T(cT^{-1}(\bfw))
-        </me>.
+        </md>.
         Applying <m>T^{-1}</m> to both sides again we get 
-        <me>
+        <md>
           T^{-1}(c\bfw) = cT^{-1}(\bfw)
-        </me>.
+        </md>.
         This proves that <m>T^{-1} \in L(W,V)</m>. 
       </p>
     </proof>
@@ -461,12 +461,12 @@
   </p>
   <p>
     Let's consider the following system of linear equations over a field <m>\ff</m>, as we saw in <xref ref="sec-linear-systems-fields"/>:
-    <mdn>
+    <md number="yes">
       <mrow number="no">a_{11}x_1 + \cdots + a_{1n}x_n \amp = b_1</mrow>
       <mrow number="no">a_{21}x_1 + \cdots + a_{2n}x_n \amp = b_2</mrow>
       <mrow number="no">\vdots \hspace{10pt} \amp\phantom{ = } \hspace{6pt} \vdots </mrow>
       <mrow number="no">a_{m1}x_1 + \cdots + a_{mn}x_n \amp = b_m</mrow>
-    </mdn>.
+    </md>.
     If we let <m>A</m> be the matrix <m>A = [a_{ij}]</m>, <m>\bfx</m> be the vector of variables <m>\bfx=[x_j]</m>, and <m>\mathbf{b}</m> be the vector of constants <m>\mathbf{b} = [b_j]</m>, then this linear system can be written efficiently as <m>A\bfx = \bfb</m>.
   </p>
   <p>
@@ -476,27 +476,27 @@
     <statement>
       <p>
         Consider the linear transformation <m>T_A:\rr^3 \to \rr^3</m> which is multiplication by this matrix: 
-        <me>
+        <md>
           A = \begin{bmatrix}
           2 \amp 3 \amp 2 \\ 
           1 \amp -2 \amp 8 \\ 
           -1 \amp 4 \amp -12
           \end{bmatrix}
-        </me>.
+        </md>.
         We will show that <m>T_A</m> is neither injective nor surjective.
       </p>
       <p>
         Let <m>\bfu</m> and <m>\bfv</m> be the following vectors in <m>\rr^3</m>:
-        <me>
+        <md>
           \bfu = \begin{bmatrix}
           -1 \\ -2 \\ 3
           \end{bmatrix}, \hspace{12pt}
           \bfv = \begin{bmatrix}
           7 \\ 0 \\ 2
           \end{bmatrix}
-        </me>.
+        </md>.
         By forming and row-reducing the augmented matrices <m>[A \mid \bfu]</m> and <m>[A \mid \bfv]</m>, we can determine how many solutions there are to the equations <m>T_A(\bfx) = \bfu</m> and <m>T_A(\bfx)=\bfv</m>, respectively. Here are the calculations:
-        <men xml:id="eqn-mat-not-surj">
+        <md number="yes" xml:id="eqn-mat-not-surj">
           \left[\begin{array}{@{}c|c@{}}
           A \amp \bfu 
           \end{array}\right] \sim
@@ -505,8 +505,8 @@
           0 \amp 1 \amp -2 \amp 0 \\ 
           0 \amp 0 \amp 0 \amp 1
           \end{array}\right]
-        </men>,
-        <men xml:id="eqn-mat-not-inj">
+        </md>,
+        <md number="yes" xml:id="eqn-mat-not-inj">
           \left[\begin{array}{@{}c|c@{}}
           A \amp \bfv 
           \end{array}\right] \sim
@@ -515,21 +515,21 @@
           0 \amp 1 \amp -2 \amp 1 \\ 
           0 \amp 0 \amp 0 \amp 0
           \end{array}\right]
-        </men>.        
+        </md>.        
       </p>
       <p>
         From <xref ref="eqn-mat-not-surj"/>, since there is a pivot in the final column of the RREF of <m>[A \mid \bfu]</m>, we see that <m>\bfu</m> is not in the image of <m>T_A</m>. This means that the matrix equation <m>A\bfx = \bfu</m> has no solution, so <m>T_A</m> is not surjective; equivalently, the linear system which corresponds to the augmented matrix <m>[A \mid \bfu]</m> is inconsistent.
       </p>
       <p>
         From <xref ref="eqn-mat-not-inj"/>, we see that <m>\bfv</m> is in the image of <m>T_A</m>. Since there is no pivot in the final column of the RREF of <m>[A \mid \bfv]</m>, and since there is a free variable in that same RREF, this means that the matrix equation <m>A\bfx = \bfv</m> has multiple solutions, so <m>T_A</m> is not injective. Specifically, if 
-        <me>
+        <md>
           \bfx_1 = \begin{bmatrix}
           2 \\ 1 \\ 0
           \end{bmatrix}, \hspace{12pt} \text{and} \hspace{12pt}
           \bfx_2 = \begin{bmatrix}
           -2 \\ 3 \\ 1
           \end{bmatrix}
-        </me>,
+        </md>,
         then we have both <m>T_A(\bfx_1)=\bfv</m> and <m>T_A(\bfx_2)=\bfv</m>. (The vector <m>\bfx_1</m> results from setting the free variable equal to <m>0</m>, and we obtain <m>\bfx_2</m> by setting the free variable equal to <m>1</m>.) Finally, we note that the linear system which corresponds to the augmented matrix <m>[A \mid \bfv]</m> is consistent with many solutions<mdash></mdash>that is, a solution is not unique.
       </p>
     </statement>
@@ -566,7 +566,7 @@
     <statement>
       <p>
         Let <m>A</m>, <m>\bfu</m>, <m>\mathbf{b}</m>, and <m>\mathbf{c}</m> be defined as follows:
-        <me>
+        <md>
           A = \begin{bmatrix}
           2 \amp 0 \amp 6 \\
           1 \amp 3 \amp 6 \\
@@ -578,7 +578,7 @@
           \end{bmatrix}, \hspace{6pt} \mathbf{c} = \begin{bmatrix}
           -1 \\ -4 \\ 3
           \end{bmatrix}
-        </me>.
+        </md>.
         Define a linear transformation <m>T_A:\rr^3 \to \rr^3</m> to be multiplication by <m>A</m>. 
         <ol>
           <li>
@@ -683,13 +683,13 @@
     <statement>
       <p>
         Consider the following matrix over <m>\ff_3</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           2 \amp 1 \amp 1 \\ 
           0 \amp 1 \amp 2 \\
           1 \amp 2 \amp 2
           \end{bmatrix}
-        </me>.
+        </md>.
         For each of the following vectors <m>\bfv</m>, calculate the matrix-vector product <m>A\bfv</m>. 
         <ol>
           <li>
@@ -736,12 +736,12 @@
     <statement>
       <p>
         Consider the following matrix over <m>\rr</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           -1 \amp 2 \amp 3 \\
           -2 \amp 5 \amp 0
           \end{bmatrix}
-        </me>.
+        </md>.
         <ol>
           <li>
             <p>
@@ -766,13 +766,13 @@
     <statement>
       <p>
         Let <m>A</m> be the following matrix over <m>\rr</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           3 \amp -2 \\ 
           1 \amp 4 \\ 
           -1 \amp 0
           \end{bmatrix}
-        </me>.
+        </md>.
         Let <m>T</m> be the linear transformation which is multiplication by <m>A</m>. 
         <ol> 
         <li>
@@ -794,14 +794,14 @@
           <li>
             <p>
               No, since 
-              <me>
+              <md>
                 \left[\begin{array}{@{}cc|c@{}} 3 \amp -2 \amp 1 \\
                 1 \amp 4 \amp 1 \\
                 -1 \amp 0 \amp 1 \end{array}\right] \sim 
                 \begin{bmatrix} 1 \amp 0 \amp 0 \\
                 0 \amp 1 \amp 0 \\
                 0 \amp 0 \amp 1 \end{bmatrix}
-              </me>.
+              </md>.
               The pivot in the final column shows that there is no solution to the matrix-vector equation <m>A\bfx = \bfv</m>, where <m>\bfv = (1,1,1)</m>.
             </p>
           </li>
@@ -818,13 +818,13 @@
     <statement>
       <p>
         Let <m>A</m> be the following matrix over <m>\ff_7</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           2 \amp 0 \amp 4 \\ 
           4 \amp 3 \amp 5 \\ 
           5 \amp 1 \amp 2
           \end{bmatrix}
-        </me>.
+        </md>.
         Let <m>T</m> be the linear transformation which is multiplication by <m>A</m>. 
         <ol> 
         <li>
@@ -855,12 +855,12 @@
     <statement>
       <p>
         Let <m>T:\rr^3 \to \rr^2</m> be the linear transformation which is multiplication by the following matrix:
-        <me>
+        <md>
           A = \begin{bmatrix}
           4 \amp -2 \amp 0 \\ 
           3 \amp 2 \amp 3
           \end{bmatrix}
-        </me>. 
+        </md>. 
         Give a description of all vectors <m>\bfx \in \rr^3</m> such that <m>T(\bfx) = \mathbf{0}</m>.
       </p>
     </statement>
@@ -871,9 +871,9 @@
     <statement>
       <p>
         Define the function <m>T:C[0,\infty) \to C[0,\infty)</m> to be the following:
-        <me>
+        <md>
           (T(f))(x) = \int_0^x f(y)\;dy
-        </me>.
+        </md>.
         Prove that <m>T</m> is a linear transformation. (See <xref ref="exer-contin-functions"/> for a reminder of the definition of <m>C[0,\infty)</m>.)
       </p>
     </statement>

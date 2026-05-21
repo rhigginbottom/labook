@@ -22,9 +22,9 @@
   <note xml:id="note-matrix-times-ej">
     <p>
       If <m>A</m> is an <m>m\times n</m> matrix with columns <m>\mathbf{a}_1, \ldots, \mathbf{a}_n</m>, and if we recall the definition of <m>\mathbf{e}_j</m> from <xref ref="note-define-ej"/>, then 
-    <me>
+    <md>
       A(\mathbf{e}_j) = \mathbf{a}_j
-    </me>.
+    </md>.
     The truth of this equality comes by thinking of <m>A(\mathbf{e}_j)</m> in the way expressed in <xref ref="matrix-vector-def2"/>, as a linear combination of the columns of <m>A</m> with weights from the entries in <m>\mathbf{e}_j</m>.
     </p>
   </note>
@@ -39,13 +39,13 @@
 
   <p>
     Since any vector <m>\bfv \in \ff^n</m>, written as <m>\bfv = [v_i]</m>, has the property that 
-    <me>
+    <md>
       \bfv = \sum_{j=1}^n v_j\mathbf{e}_j
-    </me>,
+    </md>,
     we can verify that the action of <m>T</m> is the same as the action of multiplication by <m>A</m>:
-    <me>
+    <md>
       T(\bfv) = T \left( \sum_{j=1}^n v_j \mathbf{e}_j \right) = \sum_{j=1}^n v_j T(\mathbf{e}_j) = \sum_{j=1}^n v_j \mathbf{a}_j = A\bfv
-    </me>.
+    </md>.
     Note that we used the fact that <m>T</m> is a linear transformation in this last string of equalities.
   </p>
 
@@ -79,7 +79,7 @@
       </p>
       <p>
         The calculations we seek are below:
-        <me>
+        <md>
           T(\mathbf{e}_1) = \begin{bmatrix}
           1 \\ 0
           \end{bmatrix}, \hspace{6pt}
@@ -92,16 +92,16 @@
           S(\mathbf{e}_2) = \begin{bmatrix}
           -1 \\ 0
           \end{bmatrix}
-        </me>.
+        </md>.
         This tells us that the matrices <m>A</m> and <m>B</m> are as follows:
-        <me>
+        <md>
           A = \begin{bmatrix}
           1 \amp 0 \\ 0 \amp -1
           \end{bmatrix}, \hspace{12pt}
           B = \begin{bmatrix}
           0 \amp -1 \\ 1 \amp 0
           \end{bmatrix}
-        </me>.
+        </md>.
         Any curious reader can check that these matrices are correct by choosing a vector in <m>\rr^2</m> and multiplying by <m>A</m> and by <m>B</m> separately. The results should align with the actions of <m>T</m> and <m>S</m>, respectively.
       </p>
     </statement>
@@ -124,9 +124,9 @@
     <statement>
       <p>
         Let <m>A</m> be a <m>p\times m</m> matrix over a field <m>\ff</m> and let <m>B</m> be an <m>m\times n</m> matrix over <m>\ff</m>. Then the <term>matrix product</term> <m>AB</m> is the unique <m>p\times n</m> matrix over <m>\ff</m> such that for all <m>\bfu \in \ff^n</m>, 
-        <me>
+        <md>
           A(B\bfu) = (AB)\bfu
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -154,13 +154,13 @@
   <proof>
     <p>
       By our definition of the matrix product, for each <m>j=1, \ldots, p</m> we have 
-      <me>
+      <md>
         (AB)\mathbf{e}_j = A(B\mathbf{e}_j)
-      </me>.
+      </md>.
       The observation in <xref ref="note-matrix-times-ej"/> means that <m>B\mathbf{e}_j=\mathbf{b}_j</m>, so we have 
-      <me>
+      <md>
         (AB)\mathbf{e}_j = A \mathbf{b}_j
-      </me>.
+      </md>.
       Since <m>(AB)\mathbf{e}_j</m> is the <m>j</m>th column of <m>AB</m>, this proves the proposition.
     </p>
   </proof>
@@ -184,9 +184,9 @@
 
 <p>
   When we look again at the formula in <xref ref="form-matrix-vect-prod"/> for the product of a matrix and a vector, we see that 
-  <men xml:id="form-matrix-product-entry">
+  <md number="yes" xml:id="form-matrix-product-entry">
     [AB]_{ij} = \sum_{k=1}^m a_{ik}b_{kj}
-  </men>
+  </md>
   for all <m>1 \le i \le p</m> and all <m>1 \le j \le n</m>. In words, this means that the <m>(i,j)</m>-entry of <m>AB</m> is the entry-wise product of row <m>i</m> in <m>A</m> with column <m>j</m> in <m>B</m>. (In <xref ref="subsec-dot-product"/> we will acknowledge this as the <em>dot product</em> of two vectors in <m>\ff^m</m>.)
 </p>
 
@@ -198,29 +198,29 @@
   <statement>
     <p>
       Let <m>A</m> and <m>B</m> be the following matrices over <m>\rr</m>:
-      <me>
+      <md>
         A = \begin{bmatrix}
         2 \amp -1 \\ 3 \amp 4
         \end{bmatrix}, \hspace{12pt}
         B = \begin{bmatrix}
         -2 \amp 0 \\ 1 \amp -3
         \end{bmatrix}
-      </me>.
+      </md>.
       Note that the product <m>AB</m> makes sense since the number of columns of <m>A</m> is the same as the number of rows of <m>B</m>. Here is the matrix product:
-      <me>
+      <md>
         AB = \begin{bmatrix}
         2(-2)-1(1) \amp 2(0)-1(-3) \\ 3(-2) + 4(1) \amp 3(0)+4(-3)
         \end{bmatrix} = 
         \begin{bmatrix}
         -5 \amp 3 \\ -2 \amp -12
         \end{bmatrix}
-      </me>.      
+      </md>.      
       Since the sizes of <m>A</m> and <m>B</m> allow it, we can also calculate <m>BA</m> in this example:
-      <me>
+      <md>
         BA = \begin{bmatrix}
         -4 \amp 2 \\ -7 \amp -13
         \end{bmatrix}
-      </me>.
+      </md>.
       Finally, we observe that <m>AB \neq BA</m>.
     </p>
   </statement>
@@ -230,24 +230,24 @@
   <statement>
     <p>
       Let <m>A</m> and <m>B</m> be the following matrices over <m>\ff_5</m>:
-      <me>
+      <md>
         A = \begin{bmatrix}
         4 \amp 0 \\ 1 \amp 4 \\ 3 \amp 0
         \end{bmatrix}, \hspace{12pt}
         B = \begin{bmatrix}
         3 \amp 3 \\ 4 \amp 2
         \end{bmatrix}
-      </me>.
+      </md>.
       Since <m>A</m> is <m>3\times 2</m> and <m>B</m> is <m>2\times 2</m>, we can calculate <m>AB</m>, which will be <m>3\times 2</m>. (In this example we cannot calculate <m>BA</m>.)
       Here is the matrix product:
-      <me>
+      <md>
         AB = \begin{bmatrix}
         4(3) + 0(4) \amp 4(3)+0(2) \\ 1(3)+4(4) \amp 1(3)+4(2) \\ 3(3)+0(4) \amp 3(3)+0(2)
         \end{bmatrix} = 
         \begin{bmatrix}
         2 \amp 2 \\ 4 \amp 1 \\ 4 \amp 4
         \end{bmatrix}
-      </me>.
+      </md>.
       To obtain the last equality, we remember that we are working in <m>\ff_5</m>.
     </p>
   </statement>
@@ -264,7 +264,7 @@
     </p>
     <p>
       We have defined matrix multiplication to answer questions exactly like this. We only need to multiply the matrices in the proper order. The matrix for <m>S\circ T</m> is
-      <me>
+      <md>
         BA = \begin{bmatrix}
         0 \amp -1 \\ 1 \amp 0
         \end{bmatrix} \begin{bmatrix}
@@ -273,9 +273,9 @@
         \begin{bmatrix}
         0 \amp 1 \\ 1 \amp 0
         \end{bmatrix}
-      </me>.
+      </md>.
       A related question in this context is whether or not linear transformations <em>commute</em>. In other words, is <m>S\circ T = T\circ S</m>? For this example, answering that question boils down to comparing the matrix product <m>AB</m> with the product <m>BA</m> which we have just calculated:
-      <me>
+      <md>
         AB = \begin{bmatrix}
         1 \amp 0 \\ 0 \amp -1
         \end{bmatrix} \begin{bmatrix}
@@ -284,7 +284,7 @@
         \begin{bmatrix}
         0 \amp -1 \\ -1 \amp 0
         \end{bmatrix}
-      </me>.
+      </md>.
       From this we can see that <m>S\circ T</m> and <m>T\circ S</m> are distinct linear transformations.
     </p>
   </statement>
@@ -345,9 +345,9 @@
     <statement>
       <p>
         If <m>A \in M_{m,n}(\ff)</m>, then the <term>transpose</term> of <m>A</m>, denoted <m>A^T</m>, is the element of <m>M_{n,m}(\ff)</m> whose rows are the columns of <m>A</m>. In other words, 
-        <me>
+        <md>
           [A^T]_{ij} = [A]_{ji}
-        </me>
+        </md>
         for all <m>1 \le i \le n</m> and all <m>1 \le j \le m</m>.
       </p>
     </statement>
@@ -363,17 +363,17 @@
     <statement>
       <p>
         If <m>A</m> is the <m>2\times 3</m> matrix 
-        <me>
+        <md>
           A = \begin{bmatrix}
           2 \amp -1 \amp 0 \\ -2 \amp 4 \amp 5
           \end{bmatrix}
-        </me>,
+        </md>,
         then <m>A^T</m> is the <m>3\times 2</m> matrix 
-        <me>
+        <md>
           A^T = \begin{bmatrix}
           2 \amp -2 \\ -1 \amp 4 \\ 0 \amp 5
           \end{bmatrix}
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </example>
@@ -426,13 +426,13 @@
     <proof>
       <p>
         The first three parts of this theorem are immediate from the definitions and require no proof. To prove the fourth part, we will compare the <m>(i,j)</m>-entry of both <m>(AB)^T</m> and <m>B^TA^T</m>. First, from the definition of the transpose and <xref ref="form-matrix-product-entry"/> we see that 
-        <me>
+        <md>
           [(AB^T)]_{ij} = [AB]_{ji} = \sum_{k=1}^n a_{jk}b_{ki}
-        </me>.
+        </md>.
         To compare, entry <m>(i,j)</m> of <m>B^TA^T</m> is 
-        <me>
+        <md>
           [B^TA^T]_{ij} = \sum_{k=1}^n [B^T]_{ik}[A^T]_{kj} = \sum_{k=1}^n b_{ki}a_{jk}
-        </me>.
+        </md>.
         Since multiplication is commutative in fields, these two expressions are equal.
       </p>
     </proof>
@@ -457,14 +457,14 @@
 <statement>
   <p>
     Consider the following two matrices <m>A</m> and <m>B</m> over <m>\rr</m>:
-    <me>
+    <md>
       A = \begin{bmatrix}
       0 \amp 3 \\ 5 \amp -1 \\ -1 \amp -3
       \end{bmatrix}, \hspace{12pt}
       B = \begin{bmatrix}
       -3 \amp -2 \amp 4 \\ 0 \amp 2 \amp -1
       \end{bmatrix}
-    </me>.
+    </md>.
     Calculate both <m>AB</m> and <m>BA</m>.
   </p>
 </statement>
@@ -483,7 +483,7 @@
     <statement>
       <p>
         Let <m>A</m>, <m>B</m>, and <m>C</m> be the following matrices over <m>\rr</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           2 \amp 0 \amp 1 \\ -1 \amp -2 \amp 2
           \end{bmatrix}, \hspace{6pt}
@@ -493,7 +493,7 @@
           C = \begin{bmatrix}
           0 \amp 4 \amp 1 \\ 3 \amp 2 \amp -2 \\ 4 \amp -3 \amp 3
           \end{bmatrix}
-        </me>.
+        </md>.
         For each of the following, determine whether the given calculation makes sense. If it does, find the requested matrix. (Do this by hand, without technology.) If it doesn't make sense, explain why it doesn't.
         <ol>
           <li>
@@ -601,11 +601,11 @@
     <statement>
       <p>
         Let <m>A \in M_2(\ff_5)</m> be of the form 
-        <me>
+        <md>
           A = \begin{bmatrix}
           a \amp 0 \\ b \amp c
           \end{bmatrix}
-        </me>.
+        </md>.
         <ol>
           <li>
             <p>

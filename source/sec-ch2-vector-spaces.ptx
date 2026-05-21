@@ -71,12 +71,12 @@
   <statement>
     <p>
       Let <m>\ff</m> be a field and let <m>\ff^n</m> be defined in the following way:
-      <me>
+      <md>
         \ff^n = \left\{ \left[\begin{array}{@{}c@{}}
           a_1 \\ a_2 \\ \vdots \\ a_n
         \end{array}\right]
          \Bigm\vert a_i \in \ff \right\}
-      </me>.
+      </md>.
       The operations of scalar multiplication and vector addition are defined for <m>\ff^n</m> over <m>\ff</m> in the same way that the operations of scalar multiplication and vector addition are defined for <m>\rr^n</m> over <m>\rr</m>. Then <m>\ff^n</m> is a vector space.
     </p>
     <p>
@@ -92,13 +92,13 @@
     </p>
     <p>
       If <m>f</m> and <m>g</m> are elements of <m>V</m>, then we define the sum as
-      <me>
+      <md>
         (f+g)(t) = f(t)+g(t)
-      </me>
+      </md>
       for all <m>t \in A</m>. (The vector <m>f+g</m> must be a function <m>A \to \rr</m>, so we here define how to calculate the value of this function for every <m>t \in A</m>.) Additionally, if <m>c \in \rr</m> and <m>f \in V</m>, then we define scalar multiplication as
-      <me>
+      <md>
         (cf)(t) = cf(t)
-      </me>
+      </md>
       for all <m>t \in A</m>. (Again, we are defining the value of the function <m>cf</m> at each element of <m>A</m>.) We will now argue that <m>V</m> is a vector space.
     </p>
     <p>
@@ -109,9 +109,9 @@
     </p>
     <p>
       The additive inverse of a function <m>g \in V</m> is the function <m>(-1)g=-g</m> since
-      <me>
+      <md>
         (g+(-g))(t) = g(t)+(-g)(t)=g(t)-g(t)=0
-      </me>
+      </md>
       for all <m>t \in A</m>. This shows that axiom six holds.
     </p>
     <p>
@@ -141,13 +141,13 @@
   <statement>
     <p>
       Consider the set <m>V=\rr^2</m> but with non-standard operations. (In this example and the next, we will use horizontal instead of vertical notation for <m>\rr^2</m>. This is purely for ease of notation in these limited instances.) We define the sum of two vectors <m>\bfu=(u_1,u_2)</m> and <m>\bfv=(v_1,v_2)</m> to be
-      <me>
+      <md>
         \bfu\oplus \bfv = (u_1v_1,1)
-      </me>,
+      </md>,
       and we define scalar multiplication of a vector <m>\bfu=(u_1,u_2)</m> by a real number <m>c</m> to be
-      <me>
+      <md>
         c\odot \bfu = (cu_1,1)
-      </me>.
+      </md>.
       It is a good exercise to grapple with the axioms and determine whether or not <m>V</m> with these operations is a vector space.
     </p>
     <p>
@@ -161,13 +161,13 @@
     </p>
     <p>
       We will argue by contradiction. Suppose there is a vector <m>\bfu = (u_1,u_2)</m> which has the properties of a zero vector. This means that, for any <m>\bfv \in V</m>, we have <m>\bfu \oplus \bfv = \bfv \oplus \bfu = \bfv</m>. We consider the vector <m>\bfv = (2,2)</m>. If <m>\bfu</m> is the zero vector, then we must have
-      <me>
+      <md>
         (u_1,u_2) \oplus (2,2) = (2,2)
-      </me>,
+      </md>,
       but the addition on this set means
-      <me>
+      <md>
         (u_1,u_2) \oplus (2,2) = (2u_1,1)
-      </me>.
+      </md>.
       Since it is impossible to have <m>(2,2)=(2u_1,1)</m> as the second coordinates are not equal as elements of <m>\rr</m>, we have a contradiction, and therefore there can be no zero vector in <m>V</m> with these operations.
     </p>
   </statement>
@@ -177,9 +177,9 @@
   <statement>
     <p>
       We again consider the set <m>V=\rr^2</m>. Vector addition will be the usual sum in <m>\rr^2</m>, but scalar multiplication will be different. For any real number <m>c</m> and any <m>\bfu = (u_1,u_2) \in \rr^2</m>, we define <m>c\odot \bfu</m> by
-      <me>
+      <md>
         c\odot \bfu = (cu_1,\tfrac{1}{2}cu_2)
-      </me>.
+      </md>.
       Once again we pose the question: Is this a vector space?
     </p>
     <p>
@@ -187,9 +187,9 @@
     </p>
     <p>
       We will examine the scalar product <m>1\odot (1,1)</m>:
-      <me>
+      <md>
         1\odot (1,1) = (1,\tfrac{1}{2})
-      </me>.
+      </md>.
       If axiom 7 were to hold, we would have <m>1\odot (1,1)=(1,1)</m>. Since <m>(1,1)\neq (1,\tfrac{1}{2})</m>, we have shown that axiom 7 does not hold. Therefore, this is not a vector space.
     </p>
   </statement>
@@ -214,15 +214,15 @@
   <statement>
     <p>
       Let <m>\ff</m> be a field and let <m>c_1, c_2, \ldots, c_m \in \ff</m>. Let <m>V</m> be a vector space over <m>\ff</m> and let <m>\bfv_1, \bfv_2, \ldots, \bfv_m \in V</m>. Then the <term>linear combination</term> of the vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_m </m> with <term>weights</term> <m>c_1, c_2, \ldots, c_m</m> is
-      <me>
+      <md>
         c_1\bfv_1 + c_2\bfv_2 + \cdots + c_m\bfv_m
-      </me>.
+      </md>.
     </p>
     <p>
     The <term>span</term> of the vectors <m>\bfv_1, \bfv_2, \ldots, \bfv_m</m> is the set of all possible linear combinations of <m>\bfv_1, \bfv_2, \ldots, \bfv_m</m> and is written <m>\spn\{\bfv_1, \ldots, \bfv_m\}</m>. In other words, the span is defined to be
-    <me>
+    <md>
       \spn\{\bfv_1,\ldots,\bfv_m\} = \left\{ \sum_{i=1}^m c_i\bfv_i \mid c_1,\ldots,c_m \in \ff \right\}
-    </me>.
+    </md>.
     </p>
   </statement>
 </definition>
@@ -266,9 +266,9 @@
     </p>
     <p>
       Since <m>\bfu+\bfv = \mathbf{0}</m> and <m>\bfu+\bfw=\mathbf{0}</m>, we have
-      <me>
+      <md>
         \bfu+\bfv = \bfu+\bfw
-      </me>.
+      </md>.
       Adding <m>\bfv</m> to both sides (and using both the associative law and the properties of the zero vector) we have
       <md>
         <mrow>(\bfv+\bfu)+\bfv \amp = (\bfv+\bfu)+\bfw </mrow>
@@ -278,9 +278,9 @@
     </p>
     <p>
       We will now show that property 4 holds. Since <m>0=0+0</m> in <m>\ff</m>, we can use the distributive property (axiom 10 in <xref ref="def-vector-space"/>) to find the following:
-      <me>
+      <md>
         0\bfv = (0+0)\bfv = 0\bfv + 0\bfv
-      </me>.
+      </md>.
       We have <m>0\bfv=0\bfv+0\bfv</m>, and subtracting <m>0\bfv</m> from both sides gives us <m>\mathbf{0}=0\bfv</m>. (The reader should recall that by <q>subtracting</q> we mean adding the additive inverse, which every vector in a vector space possesses.)
     </p>
     <p>
@@ -381,9 +381,9 @@
     <statement>
       <p>
         Consider the set <m>V = \ff_5^2</m> with the usual scalar multiplication but with vector addition defined this way: 
-        <me>
+        <md>
           (u_1,v_1) \oplus (u_2,v_2) = (u_1 + u_2, v_1+v_2+1)
-        </me>.
+        </md>.
         This is not a vector space over <m>\ff_5</m>. Determine which of the vector space axioms fail, and give an explanation for each such axiom.
       </p>
     </statement>
@@ -392,9 +392,9 @@
     <statement>
       <p>
         Consider the set <m>V = \qq^2</m> with the usual vector addition but with scalar multiplication defined this way: 
-        <me>
+        <md>
           c \odot (x,y) = (0, cy)
-        </me>.
+        </md>.
         This is not a vector space over <m>\qq</m>. Determine which of the vector space axioms fail, and give an explanation for each such axiom.
       </p>
     </statement>
@@ -419,9 +419,9 @@
     <answer>
       <p>
         We calculate that
-        <me>
+        <md>
           2p_1 -3p_2 -2p_3 = -5t^3 + 6t^2 -18t +10
-        </me>.        
+        </md>.        
       </p>
     </answer>
   </exercise>
@@ -429,7 +429,7 @@
     <statement>
       <p>
         Consider the following three elements of <m>\ff_3^2</m>:
-        <me>
+        <md>
           \bfu = \begin{bmatrix}
           1 \\ 2
           \end{bmatrix}, \hspace{6pt}
@@ -439,7 +439,7 @@
           \bfw = \begin{bmatrix}
           1 \\ 1
           \end{bmatrix}
-        </me>.
+        </md>.
         Calculate the linear combination of <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m> with weights <m>1</m>, <m>2</m>, and <m>2</m>, respectively.
       </p>
     </statement>
@@ -457,14 +457,14 @@
           <li>
             <p>
               If <m>\bfu</m> and <m>\bfv</m> are the following vectors, 
-              <me>
+              <md>
                 \bfu = \begin{bmatrix}
                 1 \\ 0 \\ 1
                 \end{bmatrix}, \hspace{12pt}
                 \bfv = \begin{bmatrix}
                 0 \\ 1 \\ 1
                 \end{bmatrix}
-              </me>,
+              </md>,
               how many distinct vectors are in <m>\mathrm{Span}\{\bfu, \bfv\}</m>?
             </p>
           </li>
@@ -492,9 +492,9 @@
     <statement>
       <p>
         Consider the vector space <m>V</m> of all functions <m>\rr \to \rr</m>. (This general setting was introduced in <xref ref="ex-real-functions"/>.) Let <m>f</m> and <m>g</m> be the following vectors in <m>V</m>:
-        <me>
+        <md>
           f(t) = \sin^2(t), \hspace{12pt} g(t) = \cos^2(t)
-        </me>.
+        </md>.
         Is the constant function <m>h(t) = 4</m> an element of <m>\mathrm{Span}\{f, g\}</m>? Explain your answer.
       </p>
     </statement>
@@ -503,7 +503,7 @@
     <statement>
       <p>
         Consider the following vectors in <m>\ff_5^3</m>:
-        <me>
+        <md>
           \bfu = \begin{bmatrix}
           2 \\ 4 \\ 0
           \end{bmatrix}, \hspace{6pt}
@@ -513,7 +513,7 @@
           \bfw = \begin{bmatrix}
           1 \\ 1 \\ 2
           \end{bmatrix}
-        </me>.
+        </md>.
         Is <m>\bfw \in \mathrm{Span}\{\bfu, \bfv\}</m>? Explain your answer.
       </p>
     </statement>
@@ -522,7 +522,7 @@
     <statement>
       <p>
         Consider the following vectors in <m>\cc^3</m>:
-        <me>
+        <md>
           \bfu = \begin{bmatrix}
           2i \\ 1-i \\ 2-i 
           \end{bmatrix}, \hspace{6pt}
@@ -532,16 +532,16 @@
           \bfw = \begin{bmatrix}
           2+2i \\ 2 - i \\ 3i
           \end{bmatrix}
-        </me>.
+        </md>.
         Is <m>\bfw \in \mathrm{Span}\{\bfu, \bfv\}</m>? Explain your answer.
       </p>
     </statement>
     <answer>
       <p>
         No, <m>\bfw</m> is not in <m>\spn\{\bfu,\bfv\}</m>. When we form the matrix with <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m> as its columns, it reduces to the following:
-        <me>
+        <md>
           \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
-        </me>.
+        </md>.
         Since there is a pivot in the final column, the corresponding vector equation <m>x_1\bfu + x_2\bfv = \bfw</m> has no solutions.
       </p>
     </answer>
@@ -552,9 +552,9 @@
     <statement>
       <p>
         Consider the following subset of <m>\rr^2</m>:
-        <me>
+        <md>
           V = \{ (x,y) \mid y = 4x \}
-        </me>.
+        </md>.
         Prove that <m>V</m>, with the usual operations of vector addition and scalar multiplication in <m>\rr^2</m>, is a vector space over <m>\rr</m>. (Hint: Since <m>V</m> is a subset of <m>\rr^2</m> with the same operations as <m>\rr^2</m>, some of the axioms may not need to be proved from scratch.)
       </p>
     </statement>
@@ -601,9 +601,9 @@
     <solution>
       <p>
         Suppose that <m>\bfo</m> is a zero vector in <m>V</m> and that <m>\mathbf{z}</m> also has the properties of a zero vector. Since <m>\bfo</m> is a zero vector, we have <m>\bfo + \mathbf{z} = \mathbf{z}</m>. Since <m>\mathbf{z}</m> has the properties of a zero vector, we have <m>\bfo + \mathbf{z} = \bfo</m>. Therefore, we have
-        <me>
+        <md>
           \mathbf{z} = \bfo + \mathbf{z} = \bfo
-        </me>,
+        </md>,
         so <m>\mathbf{z} = \bfo</m>. This proves that the zero vector is unique.
       </p>
     </solution>

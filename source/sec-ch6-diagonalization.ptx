@@ -17,14 +17,14 @@
 
   <p>
     If <m>D</m> is diagonal, then powers of <m>D</m> are easy to compute. Consider the following matrices <m>D</m> and <m>D^2</m>: 
-    <me>
+    <md>
       D = \begin{bmatrix} -3 \amp 0 \\ 0 \amp 4 \end{bmatrix}, \hspace{6pt}
       D^2 = \begin{bmatrix} 9 \amp 0 \\ 0 \amp 16 \end{bmatrix}
-    </me>.
+    </md>.
     In general, the many zeros in a diagonal matrix make the powers of that matrix easy to calculate. For this specific <m>D</m>, we have, for any integer <m>k \ge 1</m>, 
-    <me>
+    <md>
       D^k = \begin{bmatrix} (-3)^k \amp 0 \\ 0 \amp 4^k \end{bmatrix}
-    </me>.
+    </md>.
     Given the number of calculations that are usually involved in matrix multiplication, this is a huge savings in computing time. 
   </p>
 
@@ -35,9 +35,9 @@
     <mrow> \amp = PD(I)DP^{-1} = PD^2P^{-1}</mrow>
     </md>. 
     Since <m>A^3</m> can be written as <m>AA^2</m>, we have <m>A^3 = PD^3P^{-1}</m>. This pattern holds for any <m>k \ge 2</m>: 
-    <me>
+    <md>
       A^k = PD^kP^{-1}
-    </me>.    
+    </md>.    
   </p>
 
   <p>
@@ -69,13 +69,13 @@
   <proof>
     <p>
       If <m>P</m> is an <m>n\times n</m> matrix with columns <m>\bfv_1, \ldots, \bfv_n</m>, and if <m>D</m> is a diagonal matrix with diagonal entries <m>\lambda_1, \ldots, \lambda_n</m>, then we have 
-      <men xml:id="eqn-diag-thm-1">
+      <md number="yes" xml:id="eqn-diag-thm-1">
         AP = A \begin{bmatrix} \bfv_1 \amp \cdots \amp \bfv_n \end{bmatrix} = \begin{bmatrix} A\bfv_1 \amp \cdots \amp A\bfv_n \end{bmatrix}
-      </men>,
+      </md>,
       and also 
-      <men xml:id="eqn-diag-thm-2">
+      <md number="yes" xml:id="eqn-diag-thm-2">
         PD = \begin{bmatrix} \lambda_1\bfv_1 \amp \cdots \amp \lambda_n\bfv_n \end{bmatrix}
-      </men>.
+      </md>.
       (If the reader has trouble believing <xref ref="eqn-diag-thm-2"/>, thinking of matrix multiplication, in each column of the product, as a linear combination of the columns of <m>P</m> with weights coming from the corresponding column of <m>D</m>, may help!) If <m>A</m> is diagonalizable, then <m>A = PDP^{-1}</m> and <m>AP = PD</m>. From <xref ref="eqn-diag-thm-1"/> and <xref ref="eqn-diag-thm-2"/>, by equating columns in <m>AP</m> and <m>PD</m> we see that <m>A\bfv_i = \lambda_i\bfv_i</m> for <m>1 \le i \le n</m>. Since <m>P</m> is invertible, the columns of <m>P</m> must be linearly independent. Further, since the columns of <m>P</m> cannot be zero vectors, this argument shows that <m>\lambda_i</m> is an eigenvalue of <m>A</m> with eigenvector <m>\bfv_i</m>, for each <m>i</m>. This proves one direction of the theorem.
     </p>
     <p>
@@ -138,34 +138,34 @@
     <statement>
       <p>
         We consider the matrix <m>A \in M_3(\rr)</m>: 
-        <me>
+        <md>
           A = \begin{bmatrix} 
           -2 \amp 2 \amp -2 \\ 
           -4 \amp 4 \amp -2 \\ 
           -6 \amp 3 \amp -1
           \end{bmatrix}
-        </me>.
+        </md>.
         Though the reader can determine this independently, we will provide the characteristic polynomial to save time and space: 
-        <me>
+        <md>
           p_A(\lambda) = -(\lambda+3)(\lambda-2)^2
-        </me>.
+        </md>.
         From this we see that the eigenvalues of <m>A</m> are <m>\lambda = -3</m> and <m>\lambda = 2</m>. 
       </p>
       <p>
         We now find bases for the associated eigenspaces. Again, we will suppress all of the calculations since the previous sections have gone through these in some detail. We find that 
-        <me>
+        <md>
           \mathrm{eig}_{-3}(A) = \spn \left\{ \begin{bmatrix} 2 \\ 2 \\ 3 \end{bmatrix} \right\}
-        </me>,
+        </md>,
         and 
-        <me>
+        <md>
           \mathrm{eig}_{2}(A) = \spn \left\{ \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 2 \end{bmatrix}
            \right\}
-        </me>.
+        </md>.
         Since we have three linearly independent eigenvectors, we know from <xref ref="thm-diagonalization"/> that <m>A</m> is diagonalizable. 
       </p>
       <p>
         We now form the matrices <m>P</m> and <m>D</m> according to the algorithm: 
-        <me>
+        <md>
           P = \begin{bmatrix}
           2 \amp 1 \amp -1 \\ 
           2 \amp 2 \amp 0 \\ 
@@ -176,7 +176,7 @@
           0 \amp 2 \amp 0 \\ 
           0 \amp 0 \amp 2
           \end{bmatrix}
-        </me>.
+        </md>.
         We can check that our diagonalization was successful by calculating <m>AP</m> and <m>PD</m>: 
         <md>
           <mrow>AP \amp = \begin{bmatrix} 
@@ -220,18 +220,18 @@
   <statement>
     <p>
       We consider the matrix <m>A \in M_3(\rr)</m>: 
-        <me>
+        <md>
           A = \begin{bmatrix} 
           0 \amp -6 \amp -4 \\ 
           5 \amp -11 \amp -6 \\ 
           -6 \amp 9 \amp 4
           \end{bmatrix}
-        </me>. <!-- https://metric.ma.ic.ac.uk/metric_public/matrices/eigenvalues_and_eigenvectors/diagonalisable.html  -->
+        </md>. <!-- https://metric.ma.ic.ac.uk/metric_public/matrices/eigenvalues_and_eigenvectors/diagonalisable.html  -->
       The characteristic polynomial for <m>A</m> is <m>p_A(\lambda) = -(\lambda + 2)^2(\lambda +3)</m>. So the eigenvalues of <m>A</m> are <m>\lambda = -2</m> and <m>\lambda = -3</m>. 
     </p>
     <p>
       When we look for eigenvectors, we find the following for <m>A + 2I</m>:
-      <me>
+      <md>
         A + 2I = \begin{bmatrix} 
         2 \amp -6 \amp -4 \\ 
         5 \amp -9 \amp -6 \\ 
@@ -241,7 +241,7 @@
         0 \amp 1 \amp \frac{2}{3} \\ 
         0 \amp 0 \amp 0
         \end{bmatrix}
-      </me>.
+      </md>.
       This shows that <m>\mathrm{eig}_{-2}(A)</m> is only one-dimensional. Since we need three total linearly independent eigenvectors to diagonalize <m>A</m>, and we will only get one from <m>\mathrm{eig}_{-3}(A)</m>, we needed <m>\mathrm{eig}_{-2}(A)</m> to be two-dimensional. This shows that <m>A</m> is not diagonalizable.
     </p>
   </statement>
@@ -268,13 +268,13 @@
   <statement>
     <p>
       We consider the following matrix <m>A \in M_3(\rr)</m>:
-      <me>
+      <md>
         A = \begin{bmatrix} 
         1 \amp 0 \amp 0 \\ 
         -4 \amp -2 \amp 0 \\ 
         3 \amp -1 \amp 5
         \end{bmatrix}
-      </me>.
+      </md>.
       Since <m>A</m> is lower triangular, we can read the eigenvalues off of the main diagonal: <m>\lambda = 1, -2, 5</m>. Since there are three distinct eigenvalues for this <m>3\times 3</m> matrix, then <xref ref="thm-distinct-evalues-diagonalizable"/> says that <m>A</m> is diagonalizable.
     </p>
   </statement>
@@ -368,14 +368,14 @@
   <statement>
     <p>
       In <xref ref="examp-change-basis-lt"/>, we considered the linear transformation on <m>\rr^2</m> which is reflection across the line <m>y = \frac{1}{2}x</m>. In that example, we looked at the basis <m>\mcb = \{\bfv_1, \bfv_2 \}</m> for <m>\rr^2</m>, where 
-      <me>
+      <md>
         \bfv_1 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}, \hspace{12pt} 
         \bfv_2 = \begin{bmatrix} -1 \\ 2 \end{bmatrix}
-      </me>.
+      </md>.
       We saw that the matrix <m>[T]_{\mcb}</m> was diagonal, and now we know that was because the basis vectors are eigenvectors for <m>T</m>. Since <m>\bfv_1</m> lies on the line of reflection, it is an eigenvector for <m>T</m> with eigenvalue 1, and since <m>\bfv_2</m> lies on the line perpendicular to the line of reflection, it is an eigenvector for <m>T</m> with eigenvalue <m>-1</m>. The matrix <m>[T]_{\mcb}</m> is 
-      <me>
+      <md>
         [T]_{\mcb} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </example>
@@ -421,17 +421,17 @@
   <statement>
     <p>
       Let <m>T:P_1 \to P_1</m> be the following linear transformation: 
-      <me>
+      <md>
         T(a + bt) = (a-4b) + (3a-6b)t
-      </me>.
+      </md>.
       If <m>\mcb</m> is the standard basis for <m>P_1</m>, then <m>[T]_{\mcb}</m> is 
-      <me>
+      <md>
         [T]_{\mcb} = \begin{bmatrix} 1 \amp -4 \\ 3 \amp -6 \end{bmatrix}
-      </me>.
+      </md>.
       It is fairly easy to determine that <m>[T]_{\mcb}</m> is diagonalizable, since the characteristic polynomial is 
-      <me>
+      <md>
         \lambda^2+5\lambda + 6 = (\lambda+2)(\lambda + 3)
-      </me>.
+      </md>.
       Since <m>[T]_{\mcb}</m> is diagonalizable, that means that <m>T</m> is a diagonalizable linear transformation.
     </p>
     <p>
@@ -439,14 +439,14 @@
     </p>
     <p>
       Since the eigenvalues of <m>[T]_{\mcb}</m> are <m>\lambda = -2, -3</m>, we can find bases for the related eigenspaces. For ease of notation, let <m>[T]_{\mcb} = A</m>. Now
-      <me>
+      <md>
         \mathrm{eig}_{-2}(A) = \spn \left\{ \begin{bmatrix} 4 \\ 3 \end{bmatrix} \right\}, \hspace{6pt} 
         \mathrm{eig}_{-3}(A) = \spn \left\{ \begin{bmatrix} 1 \\ 1 \end{bmatrix} \right\}
-      </me>.
+      </md>.
       These are the coordinate vectors for the eigenvectors of <m>T</m> with respect to the standard basis. Therefore, an eigenvector basis of <m>P_1</m> is 
-      <me>
+      <md>
         \mcc = \{ 4 + 3t, 1 + t \}
-      </me>,
+      </md>,
       and <m>[T]_{\mcc}</m> is a diagonal matrix with diagonal entries <m>-2</m> and <m>-3</m>. 
     </p>
   </statement>
@@ -459,9 +459,9 @@
   <statement>
     <p>
       Consider the following matrix <m>A \in M_2(\rr)</m>:
-      <me>
+      <md>
         A = \begin{bmatrix} -1 \amp 2 \\ 3 \amp 4 \end{bmatrix}
-      </me>. 
+      </md>. 
       <ol>
         <li>
           <p>
@@ -502,10 +502,10 @@
     <statement>
       <p>
         Let <m>P, D \in M_2(\rr)</m> be the following matrices: 
-        <me>
+        <md>
           P = \begin{bmatrix} 2 \amp 5 \\ 1 \amp 3 \end{bmatrix}, \hspace{6pt} 
           D = \begin{bmatrix} -2 \amp 0 \\ 0 \amp -1 \end{bmatrix}
-        </me>. 
+        </md>. 
         If <m>A = PDP^{-1}</m>, calculate <m>A^4</m>. 
       </p>
     </statement>
@@ -514,12 +514,12 @@
     <statement>
       <p>
         Consider the following matrix <m>A \in M_2(\rr)</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           -5 \amp -3 \\ 
           6 \amp 4
           \end{bmatrix}
-        </me>. <!-- 1, -2, diagonalizable -->
+        </md>. <!-- 1, -2, diagonalizable -->
         Determine whether or not <m>A</m> is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't.
       </p>
     </statement>
@@ -528,12 +528,12 @@
     <statement>
       <p>
         Consider the following matrix <m>A \in M_2(\rr)</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           3 \amp 1 \\ 
           -1 \amp 5
           \end{bmatrix}
-        </me>. <!-- 4, 4, not diagonalizable -->
+        </md>. <!-- 4, 4, not diagonalizable -->
         Determine whether or not <m>A</m> is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't.
       </p>
     </statement>
@@ -547,13 +547,13 @@
     <statement>
       <p>
         Consider the following matrix <m>A \in M_3(\rr)</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           14 \amp 3 \amp 12 \\ 
           -2 \amp 3 \amp -2 \\ 
           -7 \amp -1 \amp -5
           \end{bmatrix}
-        </me>. <!-- 2, 5, 5, not diagonalizable  -->
+        </md>. <!-- 2, 5, 5, not diagonalizable  -->
         Determine whether or not <m>A</m> is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't. (Hint: One of the eigenvalues of <m>A</m> is <m>\lambda = 5</m>.)
       </p>
     </statement>
@@ -562,27 +562,27 @@
     <statement>
       <p>
         Consider the following matrix <m>A \in M_3(\rr)</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           -9 \amp -8 \amp -16 \\ 
           -4 \amp -5 \amp -8 \\ 
           4 \amp 4 \amp 7
           \end{bmatrix}
-        </me>. <!-- -1, -1, -5, diagonalizable  -->
+        </md>. <!-- -1, -1, -5, diagonalizable  -->
         Determine whether or not <m>A</m> is diagonalizable. If it is, diagonalize it. If it isn't, explain why it isn't. (Hint: One of the eigenvalues of <m>A</m> is <m>\lambda = -1</m>.)
       </p>
     </statement>
     <answer>
       <p>
         This matrix is diagonalizable using the following matrices <m>P</m> and <m>D</m>:
-        <me>
+        <md>
           P = \begin{bmatrix} -1 \amp -2 \amp -2 \\
           1 \amp 0 \amp -1 \\
           0 \amp 1 \amp 1 \end{bmatrix}, \hspace{6pt}
           D = \begin{bmatrix} -1 \amp 0 \amp 0 \\
           0 \amp -1 \amp 0 \\
           0 \amp 0 \amp -5 \end{bmatrix}
-        </me>.        
+        </md>.        
       </p>
     </answer>
   </exercise>
@@ -602,26 +602,26 @@
     <statement>
       <p>
         Consider the following matrix <m>A \in M_2(\rr)</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           4 \amp -1 \\ -4 \amp 4
           \end{bmatrix}
-        </me>.
+        </md>.
         Show that a diagonalization <m>A = PDP^{-1}</m> is not unique by finding two pairs of matrices <m>(P,D)</m> which diagonalize <m>A</m>.
       </p>
     </statement>
     <answer>
       <p>
         Here is one pair of matrices that diagonalizes <m>A</m>:
-        <me>
+        <md>
           P = \begin{bmatrix} 1 \amp -1 \\ 2 \amp 2 \end{bmatrix}, \hspace{6pt}
           D = \begin{bmatrix} 2 \amp 0 \\ 0 \amp 6 \end{bmatrix}
-        </me>.
+        </md>.
         We can make subtle manipulations to these matrices to find another pair which diagonalizes <m>A</m>:
-        <me>
+        <md>
           P = \begin{bmatrix} -1 \amp 1 \\ 2 \amp 2 \end{bmatrix}, \hspace{6pt}
           D = \begin{bmatrix} 6 \amp 0 \\ 0 \amp 2 \end{bmatrix}
-        </me>.
+        </md>.
         There are many, many other pairs of matrices that diagonalize <m>A</m>, mainly because the matrix <m>P</m> can have infinitely many different columns.
       </p>
     </answer>
@@ -644,13 +644,13 @@
       <solution>
         <p>
           If <m>A</m> has <m>n</m> linearly independent eigenvectors, then it is diagonalizable by <xref ref="thm-diagonalization"/>. This means there exist matrices <m>P</m> and <m>D</m> such that <m>A = PDP^{-1}</m>. If we take the transpose of both sides of this equation, we get
-          <me>
+          <md>
             A^T = (PDP^{-1})^T = (P^{-1})^TD^TP^T
-          </me>.
+          </md>.
           Since <m>D</m> is diagonal, <m>D^T=D</m>. Also, <xref ref="transpose-invertible"/> tells us that <m>(P^{-1})^T=(P^T)^{-1}</m>. So, we have 
-          <me>
+          <md>
             A^T = (P^T)^{-1}DP^T
-          </me>.
+          </md>.
           This proves that <m>A^T</m> is diagonalizable, and <xref ref="thm-diagonalization"/> allows us to conclude that <m>A^T</m> has <m>n</m> linearly independent eigenvectors.
         </p>
       </solution>

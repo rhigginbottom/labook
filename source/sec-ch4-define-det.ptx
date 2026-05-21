@@ -38,15 +38,15 @@
   <statement>
     <p>
       If <m>A</m> is the following matrix, 
-      <me>
+      <md>
         A = \begin{bmatrix}
         3 \amp -7 \amp -4 \amp -7 \\ 
         2 \amp 0 \amp -8 \amp -2 \\
         8 \amp 6 \amp 2 \amp 2
         \end{bmatrix}
-      </me>,
+      </md>,
       then the submatrices <m>A_{13}</m> and <m>A_{22}</m> are  
-      <me>
+      <md>
         A_{13} = \begin{bmatrix}
         2 \amp 0 \amp -2 \\ 
         8 \amp 6 \amp 2
@@ -55,7 +55,7 @@
         3 \amp -4 \amp -7 \\
         8 \amp 2 \amp 2
         \end{bmatrix}
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </example>
@@ -101,13 +101,13 @@
   <statement>
     <p>
       Let <m>A</m> be the following matrix over <m>\rr</m>:
-      <me>
+      <md>
         A = \begin{bmatrix} 
         2 \amp -4 \amp -1 \\ 
         6 \amp -6 \amp 0 \\ 
         -5 \amp -3 \amp -5
         \end{bmatrix}
-      </me>.
+      </md>.
       We will find <m>\det(A)</m> using the formula: 
       <md>
         <mrow>\det(A) \amp = 2 \begin{vmatrix} -6 \amp 0 \\ -3 \amp -5 \end{vmatrix} - (-4) \begin{vmatrix} 6 \amp 0 \\ -5 \amp -5 \end{vmatrix} + (-1) \begin{vmatrix} 6 \amp -6 \\ -5 \amp -3 \end{vmatrix}</mrow>
@@ -124,13 +124,13 @@
     <p>
       For the purposes of what follows, we will introduce another bit of notation. If <m>A = [a_{ij}]</m>, then the <term><m>(i,j)</m>-cofactor
       </term> of <m>A</m>, denoted by <m>C_{ij}</m>, is 
-      <me>
+      <md>
         C_{ij} = (-1)^{i+j}\det(A_{ij})
-      </me>.
+      </md>.
       Our first determinant formula could then be written
-      <me>
+      <md>
         \det(A) = \sum_{j=1}^n a_{1j}C_{1j}
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </note>
@@ -147,9 +147,9 @@
   <statement>
     <p>
       Suppose that <m>A = [a_{ij}]</m> and that <m>A \in M_n(\ff)</m> with <m>n \ge 2</m>. Then <m>\det(A)</m> can be calculated using cofactor expansion across any row of <m>A</m>. In other words, for any <m>1 \le i \le n</m>, we have 
-      <me>
+      <md>
         \det(A) = \sum_{j=1}^n a_{ij}C_{ij}
-      </me>.       
+      </md>.       
     </p>
   </statement>
 </theorem>
@@ -162,11 +162,11 @@
   <statement>
     <p>
       We consider the following matrix <m>A</m>:
-      <me>
+      <md>
         A = \begin{bmatrix} 
         2 \amp 1 \amp -3 \\ 0 \amp 4 \amp 0 \\ -1 \amp -5 \amp -2
         \end{bmatrix} 
-      </me>.
+      </md>.
       Since we can expand along any row to calculate the determinant, and since the second row contains two zeros, we will expand along the second row. The zeros make it unnecessary to calculate the cofactors <m>C_{21}</m> and <m>C_{23}</m>:
       <md>
         <mrow>\det(A) \amp = 0\cdot C_{21} + 4\cdot C_{22} + 0\cdot C_{23}</mrow>
@@ -200,9 +200,9 @@
         <mrow> \amp = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} [A^T]_{ij} \det(A^T_{ij})</mrow>        
       </md>. 
       By the definition of the transpose, we have <m>[A^T]_{ij} = a_{ji}</m> and <m>A^T_{ij} = (A_{ji})^T</m>. So 
-      <me>
+      <md>
         \det(A^T) = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det((A_{ji})^T)
-      </me>. 
+      </md>. 
       We now invoke the induction hypothesis. Since <m>A_{ji}</m> is a square matrix of size <m>n-1</m>, we have <m>\det((A_{ji})^T) = \det(A_{ji})</m>. This, along with <xref ref="thm-det-any-row"/>, allows us to finish the argument: 
       <md>
         <mrow>\det(A^T) \amp = \frac{1}{n} \sum_{i=1}^n \sum_{j=1}^n (-1)^{i+j} a_{ji} \det(A_{ji})</mrow>
@@ -225,9 +225,9 @@
   <statement>
     <p>
       Suppose that <m>A = [a_{ij}]</m> and that <m>A \in M_n(\ff)</m> with <m>n \ge 2</m>. Then <m>\det(A)</m> can be calculated using cofactor expansion along any column of <m>A</m>. In other words, for any <m>1 \le i \le n</m>, we have 
-      <me>
+      <md>
         \det(A) = \sum_{j=1}^n a_{ji}C_{ji}
-      </me>.    
+      </md>.    
     </p>
   </statement>
   <proof>
@@ -245,26 +245,26 @@
   <statement>
     <p>
       We will calculate the determinant of the following matrix: 
-      <me>
+      <md>
         A = \begin{bmatrix} 
         3 \amp 1 \amp 0 \amp -1 \\ 
         -2 \amp -1 \amp 2 \amp 4 \\ 
         1 \amp 3 \amp 0 \amp -3 \\ 
         2 \amp -2 \amp 0 \amp 0
         \end{bmatrix} 
-      </me>. 
+      </md>. 
       Since the third column of <m>A</m> has three zeros, we will expand along that column: 
-      <me>
+      <md>
         \det(A) = \sum_{i=1}^4 a_{i3}C_{i3} = 2 \cdot C_{23}
-      </me>. 
+      </md>. 
       Just for this example, we will rename <m>A_{23} = B</m>, so <m>\det(A) = -2\det(B)</m>. Here is <m>B</m>: 
-      <me>
+      <md>
         B = \begin{bmatrix} 
         3 \amp 1 \amp -1 \\ 
         1 \amp 3 \amp -3 \\ 
         2 \amp -2 \amp 0 
         \end{bmatrix}
-      </me>. 
+      </md>. 
       We will take advantage of the zero in the <m>(3,3)</m>-entry of <m>B</m> by expanding along the third row to calculate <m>\det(B)</m>: 
       <md>
         <mrow>\det(B) \amp = (-1)^{3+1} (2) \begin{vmatrix} 1 \amp -1 \\ 3 \amp -3 \end{vmatrix} + (-1)^{3+2}(-2) 
@@ -299,13 +299,13 @@
   <statement>
     <p>
       Compute the determinant of the matrix <m>A</m> by cofactor expansion across the first row. Write out all of your calculations.
-      <me>
+      <md>
         A = \begin{bmatrix}
         2 \amp 1 \amp -1 \\
         0 \amp 3 \amp 4 \\
         1 \amp -1 \amp 5
         \end{bmatrix}
-      </me>.       
+      </md>.       
     </p> <!-- 45 -->
   </statement>
 </exercise>
@@ -313,13 +313,13 @@
 <statement>
   <p>
     Consider the following matrix <m>B</m>:
-    <me>
+    <md>
       B = \begin{bmatrix}
       2 \amp 3 \amp 1 \\
       6 \amp -2 \amp -1 \\
       0 \amp 0 \amp 4
       \end{bmatrix}
-    </me>. 
+    </md>. 
     <ol>
       <li>
         <p>
@@ -424,13 +424,13 @@
     <statement>
       <p>
         Consider the following matrix <m>A</m> with entries in <m>\ff_5</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           3 \amp 1 \amp 4 \\ 
           0 \amp 4 \amp 1 \\ 
           4 \amp 2 \amp 4
           \end{bmatrix}
-        </me>.
+        </md>.
         Find <m>\det(A)</m> by hand using cofactor expansion along a row or column of your choice. (The answer should be a number in <m>\ff_5</m>.)
       </p>
     </statement>
@@ -464,27 +464,27 @@
           <li>
             <p>
               The elementary matrix is 
-              <me>
+              <md>
                 E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -3 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
-              </me>,
+              </md>,
               and <m>\det(E) = -3</m>.
             </p>
           </li>
           <li>
             <p>
               The elementary matrix is 
-              <me>
+              <md>
                 E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0  \end{bmatrix}
-              </me>,
+              </md>,
               and <m>\det(E) = -1</m>.
             </p>
           </li>
           <li>
             <p>
               The elementary matrix is 
-              <me>
+              <md>
                 E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 7 \amp 0 \amp 1  \end{bmatrix}
-              </me>,
+              </md>,
               and <m>\det(E) = 1</m>.
             </p>
           </li>
@@ -508,9 +508,9 @@
     <solution>
       <p>
         We note that <m>kA = \begin{bmatrix} ka \amp kb \\ kc \amp kd \end{bmatrix}</m>, and 
-        <me>
+        <md>
           \det(kA) = kakd - kbkc = k^2ad - k^2bc = k^2(ad-bc) = k^2\det(A)
-        </me>.        
+        </md>.        
       </p>
     </solution>
   </exercise>
@@ -525,9 +525,9 @@
     <statement>
       <p>
         Let <m>A</m> be the following matrix over <m>\rr</m>: 
-        <me>
+        <md>
         A = \begin{bmatrix} 2 \amp -2 \amp 1 \\ 3 \amp -2 \amp 0 \\ 2 \amp 3 \amp c \end{bmatrix}  
-        </me>.        
+        </md>.        
         Find a value of <m>c</m> so that <m>\det(A) = 0</m> or explain why this is not possible.
       </p>
     </statement>
@@ -541,11 +541,11 @@
     <statement>
       <p>
         Let <m>A</m> be the following matrix over <m>\rr</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           x-5 \amp 1 \\ 4 \amp x-2
           \end{bmatrix}
-        </me>.
+        </md>.
         Find all values of <m>x</m> such that <m>\det(A) = 0</m>.
       </p>
     </statement>
@@ -580,9 +580,9 @@
     <answer>
       <p>
         We let <m>A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m>, and we consider the case of adding <m>k</m> times row 1 to row 2. We will call the resulting matrix <m>B</m>, and it has this appearance:
-        <me>
+        <md>
           B = \begin{bmatrix} a \amp b \\ ka + c \amp kb + d \end{bmatrix}
-        </me>.
+        </md>.
         We know that <m>\det(A) = ad-bc</m>, and we will now calculate <m>\det(B)</m>:
         <md>
           <mrow>\det(B) \amp = a(kb+d) - b(ka+c)</mrow>

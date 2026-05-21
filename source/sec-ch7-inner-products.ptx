@@ -19,9 +19,9 @@
     <statement>
       <p>
         For two vectors <m>\bfx, \bfy \in \rr^n</m>, we have the <term>dot product</term> of <m>\bfx</m> and <m>\bfy</m> given by 
-        <me>
+        <md>
           \bfx \cdot \bfy = \sum_{i=1}^n x_iy_i
-        </me>,
+        </md>,
         where <m>\bfx = [x_i]</m> and <m>\bfy = [y_i]</m>.
       </p>
     </statement>
@@ -31,10 +31,10 @@
   <statement>
     <p>
       Suppose that <m>\bfx</m> and <m>\bfy</m> are the following two vectors in <m>\rr^3</m>: 
-      <me>
+      <md>
         \bfx = \begin{bmatrix} -1 \\ 2 \\ -2 \end{bmatrix}, \hspace{12pt}
         \bfy = \begin{bmatrix} 0 \\ 1 \\ -3 \end{bmatrix}
-      </me>.
+      </md>.
       Then <m>\bfx \cdot \bfy = (-1)(0) + 2(1) + (-2)(-3) = 8</m>.
     </p>
   </statement>
@@ -50,9 +50,9 @@
     <statement>
       <p>
         The <term>length</term> or <term>norm</term> of a vector <m>\bfx \in \rr^n</m> is the nonnegative scalar <m>\vnorm{\bfx}</m> defined by 
-        <me>
+        <md>
           \vnorm{\bfx} = \sqrt{\bfx \cdot \bfx} = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </definition>
@@ -61,9 +61,9 @@
     <statement>
       <p>
         If <m>\bfx \in \rr^3</m> is the same as in <xref ref="dot-prod-ex1"/>, then 
-        <me>
+        <md>
           \vnorm{\bfx} = \sqrt{(-1)^2 + 2^2 + (-2)^2} = \sqrt{9} = 3
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </example>
@@ -90,11 +90,11 @@
     <statement>
       <p>
         Let <m>\bfu</m>, <m>\bfv</m>, and <m>\bfw</m> be the following vectors in <m>\rr^2</m>:
-        <me>
+        <md>
           \bfu = \begin{bmatrix} -2 \\ 3 \end{bmatrix}, \hspace{6pt}
           \bfv = \begin{bmatrix} 1 \\ 4 \end{bmatrix}, \hspace{6pt}
           \bfw = \begin{bmatrix} 6 \\ 4 \end{bmatrix}
-        </me>.
+        </md>.
         We can see that <m>\bfu</m> and <m>\bfv</m> are not orthogonal, since <m>\bfu \cdot \bfv = 10</m>. However, <m>\bfu</m> and <m>\bfw</m> are orthogonal, as <m>\bfu \cdot \bfw = 0</m>. 
       </p>
     </statement>
@@ -117,9 +117,9 @@
   <proof>
     <p>
       By definition of the dot product, we have 
-      <me>
+      <md>
         \bfv \cdot \bfe_i = \sum_{j=1}^n v_j (\bfe_i)_j = v_i
-      </me>,
+      </md>,
       since the only nonzero entry of <m>\bfe_i</m> is <m>(\bfe_i)_i = 1</m>. 
     </p>
   </proof>
@@ -202,17 +202,17 @@
   <statement>
     <p>
       For vectors <m>\bfu, \bfv \in \cc^n</m>, the <em>standard inner product</em> is defined by 
-      <me>
+      <md>
         \lla \bfu, \bfv \rra = \sum_{i=1}^n u_i\overline{v_i}
-      </me>,
+      </md>,
       where <m>\bfu = [u_i]</m> and <m>\bfv = [v_i]</m>. 
     </p>
     <p>
       As an example calculation, we consider the following two vectors in <m>\cc^2</m>: 
-      <me>
+      <md>
         \bfu = \begin{bmatrix} 1 + i \\ -2i \end{bmatrix}, \hspace{6pt} 
         \bfv = \begin{bmatrix} 2-i \\ 3+4i \end{bmatrix}
-      </me>.
+      </md>.
       Then we have 
       <md>
       <mrow>\lla \bfu, \bfv \rra \amp = (1+i)\overline{(2-i)} + (-2i)\overline{(3+4i)}</mrow>         
@@ -230,13 +230,13 @@
   <statement>
     <p>
       Let <m>C([0,1])</m> denote the vector space of continuous real-valued functions on the interval <m>[0,1]</m>. (See <xref ref="ex-real-functions"/> for a discussion of vector spaces like this one.) We can study an inner product on this space defined by the following: 
-      <me>
+      <md>
         \lla f,g \rra = \int_0^1 f(x)g(x)\; dx
-      </me>.
+      </md>.
       Again, we provide an example of a calculation. If <m>f(x) = 2x</m> and <m>g(x) = x^2-4</m>, then 
-      <me>
+      <md>
         \lla f,g \rra = \int_0^1 2x(x^2-4)\; dx = \int_0^1 (2x^3 - 8x)\; dx = -\frac{7}{2}
-      </me>.      
+      </md>.      
     </p>
     <p>
       Proving that the inner product axioms hold requires recalling a few facts from calculus. We leave this to the exercises.
@@ -248,9 +248,9 @@
   <statement>
     <p>
       We consider an inner product on <m>P_2</m>, the vector space of all real-valued polynomials of degree at most two. For <m>p, q \in P_2</m>, we define the function
-      <me>
+      <md>
         \ip{p, q} = p(0)q(0) + p(1)q(1) + p(2)q(2)
-      </me>.
+      </md>.
       To become familiar with this function, we can calculate the inner product of <m>p = t-2t^2</m> and <m>q = 3 + 4t</m>. Calculating <m>\ip{p,q}</m> only involves evaluating these polynomials at <m>t=0</m>, <m>t=1</m>, and <m>t=2</m> and then finding the sum of the products. We find that 
       <md>
         <mrow>\ip{p,q} \amp = p(0)q(0) + p(1)q(1) + p(2)q(2)</mrow>
@@ -298,10 +298,10 @@
   <proof>
     <p>
       We will prove the second property and leave the others for the exercises. Using the first and third axioms from the definition of the inner product, we have 
-      <me>
+      <md>
         \lla \bfu, c\bfv \rra = \overline{\lla c\bfv, \bfu \rra} = \overline{c\lla \bfv, \bfu \rra} = 
         \overline{c} \overline{\lla \bfv, \bfu \rra } = \overline{c} \lla \bfu, \bfv \rra
-      </me>.      
+      </md>.      
     </p>
   </proof>
 </proposition>
@@ -314,9 +314,9 @@
   <statement>
     <p>
       Let <m>V</m> be an inner product space and let <m>\bfv \in V</m>. Then the <term>norm</term> of <m>\bfv</m> is 
-      <me>
+      <md>
         \vnorm{\bfv} = \sqrt{\ip{\bfv, \bfv}}
-      </me>.
+      </md>.
       If <m>\vnorm{\bfv} = 1</m>, then <m>\bfv</m> is called a <term>unit vector</term>. 
     </p>
   </statement>
@@ -330,13 +330,13 @@
   <statement>
     <p>
       We consider the following vector in <m>\cc^3</m>:
-      <me>
+      <md>
         \bfv = \begin{bmatrix} 2 + 4i \\ -2 + 4i \\ 2i \end{bmatrix}
-      </me>.
+      </md>.
       Using the standard inner product on <m>\cc^3</m>, we have 
-      <me>
+      <md>
         \vnorm{\bfv} = \sqrt{(4+16) + (4+16) +4} = \sqrt{44}
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </example>
@@ -345,9 +345,9 @@
   <statement>
     <p>
       Returning to the vector space <m>C([0,1])</m> with the inner product defined in <xref ref="examp-ip-fn-space"/>, we can find the norm of <m>f(x)=2+x</m>:
-      <me>
+      <md>
         \int_0^1 (2+x)^2\; dx = \int_0^1 (4+4x+x^2)\; = \frac{19}{3}
-      </me>.      
+      </md>.      
       This means that <m>\vnorm{f} = \sqrt{\frac{19}{3}}</m>. 
     </p>
   </statement>
@@ -355,9 +355,9 @@
 
 <p>
   Using the definition of the norm, we can examine what happens to the <q>length</q> of a vector when it is multiplied by a scalar: 
-  <me>
+  <md>
     \vnorm{c\bfv} = \sqrt{\ip{c\bfv, c\bfv}} = \sqrt{|c|^2\ip{\bfv, \bfv}} = |c| \vnorm{\bfv}
-  </me>.
+  </md>.
   (Note that when <m>\cc</m> is our field, <m>|c|</m> for a scalar <m>c = a + bi</m> is <m>|c| = \sqrt{a^2+b^2}</m>.) From this calculation we can see that when a vector is multiplied by a scalar, its length is multiplied by that same scalar, in a way. (We can make the most geometric sense of this when <m>\rr</m> is our field and when <m>c</m> is positive.)
 </p>
 
@@ -368,13 +368,13 @@
     </p>
     <p>
       If we consider the vector <m>\bfv = \begin{bmatrix} -1 \\ 4 \end{bmatrix}</m> in <m>\rr^2</m> with the dot product, then we have 
-      <me>
+      <md>
         \vnorm{\bfv} = \sqrt{1 + 16} = \sqrt{17}
-      </me>.
+      </md>.
       Therefore, a unit vector in the direction of <m>\bfv</m> would be 
-      <me>
+      <md>
         \frac{1}{\sqrt{17}} \bfv = \begin{bmatrix} -\frac{1}{\sqrt{17}} \\[6pt] \frac{4}{\sqrt{17}} \end{bmatrix}
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </example>
@@ -410,13 +410,13 @@
   <proof>
     <p>
       Let <m>V' = \{\bfv_1, \ldots, \bfv_n\}</m> be an orthogonal set of vectors in <m>V</m>. Suppose that 
-      <me>
+      <md>
         c_1 \bfv_1 + \cdots + c_n\bfv_n = \bfo
-      </me>
+      </md>
       for some scalars <m>c_1, \ldots, c_n \in \ff</m>. We want to show that all the scalars must be zero. Then, for each <m>k</m>, we have 
-      <me>
+      <md>
         0 = \ip{\bfo, \bfv_k} = \ip{\sum_{i=1}^n c_i\bfv_i, \bfv_k} = \sum_{i=1}^n c_i \ip{\bfv_i, \bfv_k} = c_k \ip{\bfv_k, \bfv_k} = c_k \vnorm{\bfv_k}^2
-      </me>.
+      </md>.
       Since <m>c_k \vnorm{\bfv_k}^2 = 0</m> but <m>\bfv_k \neq \bfo</m>, we know that <m>\vnorm{\bfv_k}^2 \neq 0</m>, so <m>c_k = 0</m>. This is true for each <m>k</m>, <m>1 \le k \le n</m>, so <m>V'</m> is linearly independent.
     </p>
   </proof>
@@ -430,9 +430,9 @@
   <statement>
     <p>
       If <m>\{ \bfv_1, \ldots, \bfv_n \}</m> is an orthogonal set of vectors in an inner product space <m>V</m>, then 
-      <me>
+      <md>
         \vnorm{\bfv_1 + \cdots + \bfv_n}^2 = \vnorm{\bfv_1}^2 + \cdots + \vnorm{\bfv_n}^2
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </theorem>
@@ -451,14 +451,14 @@
   <statement>
     <p>
       Let <m>V</m> be an inner product space and let <m>\bfu, \bfv \in V</m>. Then <m>\bfu</m> can be written as 
-      <men xml:id="eqn-pair-orthog">
+      <md number="yes" xml:id="eqn-pair-orthog">
         \bfu = c\bfv + \bfw
-      </men>,
+      </md>,
       where <m>c \in \ff</m> and <m>\bfw</m> is orthogonal to <m>\bfv</m>. Specifically, if <m>\bfv \neq \bfo</m>, then 
-      <me>
+      <md>
         c = \frac{\ip{\bfu, \bfv}}{\vnorm{\bfv}^2}, \hspace{6pt} \text{and} \hspace{6pt} 
         \bfw = \bfu - \frac{\ip{\bfu, \bfv}}{\vnorm{\bfv}^2}\bfv
-      </me>.      
+      </md>.      
     </p>
   </statement>
   <proof>
@@ -467,9 +467,9 @@
     </p>
     <p>
       If there exists <m>c \in \ff</m> such that <m>\bfu = c\bfv + \bfw</m> with <m>\bfw</m> orthogonal to <m>\bfv</m>, then we must have
-      <me>
+      <md>
         \ip{\bfu, \bfv} = \ip{c\bfv + \bfw, \bfv} = c\ip{\bfv,\bfv} + \ip{\bfw, \bfv} = c \vnorm{\bfv}^2
-      </me>.
+      </md>.
       This shows that the only possibility for <m>c</m> is <m>c = \frac{\ip{\bfu, \bfv}}{\vnorm{\bfv}^2}</m>. 
     </p>
     <p>
@@ -482,23 +482,23 @@
   <statement>
     <p>
       We consider two vectors in <m>\rr^2</m> to understand the relationship in this lemma: 
-      <me>
+      <md>
         \bfu = \begin{bmatrix} 2 \\ 3 \end{bmatrix}, \hspace{12pt} 
         \bfv = \begin{bmatrix} -1 \\ 2 \end{bmatrix}
-      </me>.
+      </md>.
       The lemma specifies our calculations: 
-      <me>
+      <md>
         c = \frac{\ip{\bfu,\bfv}}{\vnorm{\bfv}^2} = \frac{4}{5}, \hspace{6pt} 
         \bfw = \bfu - c\bfv = \begin{bmatrix} \frac{14}{5} \\[6pt] \frac{7}{5} \end{bmatrix}
-      </me>.
+      </md>.
       We will verify the properties specified by the lemma. Since
-      <me>
+      <md>
         \bfv \cdot \bfw = -\frac{14}{5} + \frac{14}{5} = 0
-      </me>,
+      </md>,
       we have <m>\ip{\bfv,\bfw}=0</m>. Additionally, since
-      <me>
+      <md>
         c\bfv + \bfw = \begin{bmatrix} -\frac{4}{5} \\[6pt] \frac{8}{5} \end{bmatrix} + \begin{bmatrix} \frac{14}{5} \\[6pt] \frac{7}{5} \end{bmatrix} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
-      </me>,
+      </md>,
       we see that <m>\bfu = c\bfv + \bfw</m>.
     </p>
   </statement>
@@ -513,9 +513,9 @@
   <statement>
     <p>
       For every pair of vectors <m>\bfu, \bfv</m> in an inner product space <m>V</m>, we have 
-      <me>
+      <md>
         |\ip{\bfu,\bfv}| \le \vnorm{\bfu}\vnorm{\bfv}
-      </me>,
+      </md>,
       with equality holding if and only if one vector is a scalar multiple of the other.
     </p>
   </statement>
@@ -526,9 +526,9 @@
   <statement>
     <p>
       For every pair of vectors <m>\bfu, \bfv</m> in an inner product space <m>V</m>, we have 
-      <me>
+      <md>
         \vnorm{\bfu + \bfv} \le \vnorm{\bfu} + \vnorm{\bfv}
-      </me>.      
+      </md>.      
     </p>
   </statement>
 </theorem>
@@ -541,9 +541,9 @@
   <statement>
     <p>
       We consider the vector space <m>\rr^2</m> with a modified inner product:
-      <me>
+      <md>
         \ip{\bfu,\bfv} = 2u_1v_1 + u_2v_2
-      </me>.
+      </md>.
       The only change from the dot product in <m>\rr^2</m> is the coefficient 2 on the first term. It is not difficult to verify that this is an inner product.
     </p>
     <p>
@@ -586,9 +586,9 @@
 <statement>
   <p>
     Consider the following function on <m>P_1</m>. For polynomials <m>p</m> and <m>q</m>, define <m>\ip{p,q}</m> by 
-    <me>
+    <md>
       \ip{p,q} = p(0)q(0) - p(1)q(1)
-    </me>.
+    </md>.
     Explain why this function is not an inner product on <m>P_1</m>. (You must show why one of the inner product axioms fails, and to do this you should use an example.)
   </p>
   <!-- <p>
@@ -603,9 +603,9 @@
     <statement>
       <p>
         Consider the following inner product on <m>P_2</m>. For <m>p, q \in P_2</m>, 
-        <me>
+        <md>
           \ip{p,q} = p(-1)q(-1) + p(0)q(0) + p(1)q(1)
-        </me>.
+        </md>.
         (You do not need to prove that this is an inner product.)
         <ol>
           <li>
@@ -631,11 +631,11 @@
     <statement>
       <p>
         Use <xref ref="prop-orthogonality-lin-ind"/> to prove that the following set of vectors in <m>\cc^3</m> is linearly independent: <m>\{\bfv_1, \bfv_2, \bfv_3 \}</m>, where 
-        <me>
+        <md>
           \bfv_1 = \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}, \hspace{6pt} 
           \bfv_2 = \begin{bmatrix} 1-i \\ 3+2i \\ 4+i \end{bmatrix}, \hspace{6pt} 
           \bfv_3 = \begin{bmatrix} 8+38i \\ 5-25i \\ 13+13i \end{bmatrix}
-        </me>.         
+        </md>.         
       </p>
     </statement>
     <answer>
@@ -655,9 +655,9 @@
     <statement>
       <p>
         Consider the following inner product on <m>\rr^2</m>: 
-        <me>
+        <md>
           \ip{\bfu,\bfv} = u_1v_1 + 3u_2v_2
-        </me>.
+        </md>.
         <ol>
           <li>
             <p>
@@ -678,20 +678,20 @@
           <li>
             <p>
               We let <m>\bfu</m> and <m>\bfv</m> be the following vectors:
-              <me>
+              <md>
                 \bfu = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
                 \bfv = \begin{bmatrix} -2 \\ 1 \end{bmatrix}
-              </me>.
+              </md>.
               Then it is easy to see that <m>\bfu \cdot \bfv = 0</m>, but <m>\ip{\bfu, \bfv} = 4</m>.
             </p>
           </li>
           <li>
             <p>
               We let <m>\bfu</m> and <m>\bfv</m> be the following vectors:
-              <me>
+              <md>
                 \bfu = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
                 \bfv = \begin{bmatrix} -6 \\ 1 \end{bmatrix}
-              </me>.
+              </md>.
               Then it is easy to see that <m>\ip{\bfu, \bfv} = 0</m>, but <m>\bfu \cdot \bfv = -4</m>.
             </p>
           </li>
@@ -703,22 +703,22 @@
     <statement>
       <p>
        Let <m>A</m> be the following matrix over <m>\rr</m>:
-       <me>
+       <md>
         A = \begin{bmatrix} 1 \amp 1 \\ 3 \amp 0 \end{bmatrix}
-       </me>.
+       </md>.
        Define a function on <m>\rr^2</m> by 
-       <me>
+       <md>
         \ip{\bfu, \bfv} = (A\bfu) \cdot (A\bfv)
-       </me>,
+       </md>,
        where the right side of the equals sign uses the standard dot product in <m>\rr^2</m>. (This function defines an inner product, but you do not need to prove this right now.)
        <ol>
         <li>
           <p>
             Let <m>\bfu</m> and <m>\bfv</m> be the following vectors:
-            <me>
+            <md>
               \bfu = \begin{bmatrix} 1 \\ -2 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
               \bfv = \begin{bmatrix} 2 \\ 4 \end{bmatrix}
-            </me>.
+            </md>.
             Calculate <m>\ip{\bfu, \bfv}</m> using this inner product.
           </p>
         </li>
@@ -740,18 +740,18 @@
     <statement>
       <p>
        Define the following function on <m>M_2(\rr)</m>: 
-       <me>
+       <md>
         \ip{A,B} = \tr(A^TB)
-       </me>.
+       </md>.
        (This function defines an inner product, but you do not need to prove this right now.)
        <ol>
         <li>
           <p>
             Let <m>A</m> and <m>B</m> be the following matrices:
-            <me>
+            <md>
               A = \begin{bmatrix} 2 \amp 0 \\ 1 \amp -3 \end{bmatrix}, \hspace{6pt} \text{and} \hspace{6pt}
               B = \begin{bmatrix} -4 \amp 1 \\ 1 \amp 2 \end{bmatrix}
-            </me>.
+            </md>.
             Calculate <m>\ip{A, B}</m> using this inner product.
           </p>
         </li>
@@ -773,18 +773,18 @@
     <statement>
       <p>
         Consider the following function defined on <m>M_2(\rr)</m>: 
-        <me>
+        <md>
           \ip{A,B} = \det(A) \cdot \det(B)
-        </me>.
+        </md>.
         Show that this function is not an inner product.
       </p>
     </statement>
     <answer>
       <p>
         Let <m>A = \begin{bmatrix} 1 \amp 1 \\ 2 \amp 2 \end{bmatrix}</m>. It is fairly easy to see that <m>\det(A) = 0</m>, so we have
-        <me>
+        <md>
           \ip{A, A} = 0 \cdot 0 = 0
-        </me>.
+        </md>.
         However, since <m>A</m> is not the zero matrix (i.e., the zero vector for the vector space <m>M_2(\rr)</m>), the fourth axiom of the inner product does not hold for this function.
       </p>
     </answer>
@@ -793,9 +793,9 @@
     <statement>
       <p>
         Consider the following function defined on <m>P_2</m>: 
-        <me>
+        <md>
           \ip{p,q} = p(-1)q(-1) + p(2)q(2)
-        </me>.
+        </md>.
         Show that this function is not an inner product.
       </p>
     </statement>
@@ -806,18 +806,18 @@
     <statement>
       <p>
         Consider the following function defined on <m>\rr^2</m>: 
-        <me>
+        <md>
           \ip{\bfu,\bfv} = u_1v_2 + u_2v_1
-        </me>.
+        </md>.
         Prove or disprove: this function is an inner product.
       </p>
     </statement>
     <solution>
       <p>
         This function is not an inner product. Consider the vector <m>\bfu = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>. We have
-        <me>
+        <md>
           \ip{\bfu, \bfu} = (1)(0) + (0)(1) = 0
-        </me>.
+        </md>.
         However, since <m>\bfu</m> is not the zero vector in <m>\rr^2</m>, the fourth axiom of the inner product does not hold.
       </p>
     </solution>
@@ -879,9 +879,9 @@
       </p>
       <p>
         Let <m>f\in C([0,1])</m>. We observe that <m>f(x)^2</m> is a function with values that are always non-negative (since each value of this function is a real number squared). Since the definite integral can be interpreted as calculating signed area between the graph of a function and the <m>x</m>-axis, we know that 
-        <me>
+        <md>
           \ip{f,f} = \int_0^1 f(x)^2\;dx \ge 0
-        </me>.
+        </md>.
         Finally, using this same signed area interpretation of the definite integral, the only way a non-negative function could produce a zero value for the definite integral is if the function was uniformly the zero function. This means that if <m>\ip{f,f}=0</m>, we must have <m>f(x)^2 = 0</m> and therefore <m>f(x) = 0</m>. This proves that the fourth axiom holds.
       </p>
     </solution>
@@ -890,9 +890,9 @@
     <statement>
       <p>
         Suppose that <m>V</m> is a vector space, <m>W</m> is an inner product space, and that <m>T \in L(V,W)</m> is injective. For <m>\bfv_1, \bfv_2 \in V</m>, define <m>\ip{\bfv_1,\bfv_2}_T</m> by 
-        <me>
+        <md>
           \ip{\bfv_1,\bfv_2}_T = \ip{T(\bfv_1),T(\bfv_2)}
-        </me>,
+        </md>,
         where the right-hand side is the inner product on <m>W</m>. Prove that this defines an inner product on <m>V</m>. 
       </p>
     </statement>

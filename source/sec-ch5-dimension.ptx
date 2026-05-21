@@ -24,13 +24,13 @@
     <proof>
       <p>
         Since <m>\bfw_j \in \spn\{\bfv_1, \ldots, \bfv_m\}</m> for each <m>j=1, \ldots, n</m>, there exist scalars <m>c_{ij} \in \ff</m> such that 
-        <me>
+        <md>
           \bfw_j = c_{1j}\bfv_1 + \cdots + c_{mj}\bfv_m
-        </me>.
+        </md>.
         We now consider the homogeneous linear system represented by the equation <m>A\bfx = \bfo</m>, where <m>A</m> is the <m>m\times n</m> matrix <m>A = [c_{ij}]</m>. If <m>\bfx</m> is a solution to this system, then we have 
-        <me>
+        <md>
           0 = c_{i1}x_1 + \cdots + c_{in}x_n
-        </me>
+        </md>
         for all <m>i = 1,\ldots, m</m>. This means that we have
         <md>
           <mrow>\bfo \amp = \sum_{i=1}^m \left(\sum_{j=1}^n c_{ij}x_j \right) \bfv_i</mrow>
@@ -67,9 +67,9 @@
   <statement>
     <p>
       Let <m>P</m> be the vector space of all polynomials with real coefficients. (We do not restrict the degree of polynomials in <m>P</m>.) For any <m>n \ge 1</m>, <m>P</m> contains the linearly independent set 
-      <me>
+      <md>
         \{ 1, t, \ldots, t^n \}
-      </me>.
+      </md>.
       Therefore, by <xref ref="thm-inf-dimensional"/>, <m>P</m> is infinite-dimensional.
     </p>
   </statement>
@@ -160,21 +160,21 @@
   <proof>
     <p>
       Given <m>\bfv \in V</m>, there exists a unique linear combination 
-      <me>
+      <md>
         \bfv = \sum_{i=1}^n c_i \bfv_i
-      </me>
+      </md>
       by <xref ref="thm-unique-rep"/>. We define the function <m>T</m> by 
-      <me>
+      <md>
         T(\bfv) = \sum_{i=1}^n c_i \bfw_i
-      </me>. 
+      </md>. 
       In words, we send a vector <m>\bfv</m> to the linear combination of the <m>\bfw_i</m> vectors using the same weights as those needed to form <m>\bfv</m> from the basis <m>V'</m>. This gives <m>T(\bfv_i)=\bfw_i</m> for each <m>i</m>, so we only need to show that <m>T</m> is a linear transformation. 
     </p>
     <p>
       Suppose that <m>\bfu, \bfv \in V</m> with 
-      <me>
+      <md>
         \bfv = \sum_{i=1}^n c_i \bfv_i \hspace{6pt} \text{and} \hspace{6pt}
         \bfu = \sum_{i=1}^n d_i \bfv_i
-      </me>.
+      </md>.
       Then we have 
       <md>
         <mrow>T(\bfu + \bfv)  \amp = T \left( \sum_{i=1}^n (c_i+d_i)\bfv_i \right)</mrow>
@@ -183,9 +183,9 @@
         <mrow> \amp = T(\bfu) + T(\bfv)</mrow>
       </md>.
       Now we let <m>\bfv \in V</m> and <m>d \in \ff</m>. Then, if 
-      <me>
+      <md>
         \bfv = \sum_{i=1}^n c_i \bfv_i
-      </me>,
+      </md>,
       we have 
       <md>
         <mrow> T(d\bfv) \amp = T\left( \sum_{i=1}^n (dc_i) \bfv_i \right)</mrow>
@@ -196,13 +196,13 @@
     </p>
     <p>
       We will complete the proof by justifying the claim that <m>T</m> is unique. Suppose that <m>T' \in L(V,W)</m> with <m>T'(\bfv_i)=\bfw_i</m> for each <m>i</m>. Then, if <m>\bfv \in V</m> with 
-      <me>
+      <md>
         \bfv = \sum_{i=1}^n c_i \bfv_i
-      </me>,
+      </md>,
       we have 
-      <me>
+      <md>
         T'(\bfv) = T'\left( \sum_{i=1}^n c_i \bfv_i \right) = \sum_{i=1}^n c_i T'(\bfv_i) = \sum_{i=1}^n c_i \bfw_i
-      </me>.
+      </md>.
       This shows that <m>T'(\bfv)=T(\bfv)</m> for every <m>\bfv \in V</m>, so <m>T'=T</m> and <m>T</m> is unique. 
     </p>
   </proof>
@@ -221,54 +221,54 @@
   <proof>
     <p>
       We first suppose that <m>T</m> is an isomorphism. We want to show that <m>T(B)</m> is a basis for <m>W</m>, so we begin with linear independence. Suppose that <m>c_1, \ldots, c_n \in \ff</m> such that 
-      <me>
+      <md>
         \bfo = \sum_{i=1}^n c_i T(\bfv_i)
-      </me>. 
+      </md>. 
       Then we have 
-      <me>
+      <md>
         \bfo = \sum_{i=1}^n T(c_i\bfv_i) = T\left( \sum_{i=1}^n c_i\bfv_i \right)
-      </me>. 
+      </md>. 
       Since <m>T</m> is injective, by <xref ref="thm-injective-kernel"/> we must have 
-      <me>
+      <md>
         \bfo = \sum_{i=1}^n c_i\bfv_i
-      </me>. 
+      </md>. 
       But since <m>B</m> is a linearly independent set, we have <m>c_i=0</m> for all <m>i</m>. This proves that <m>T(B)</m> is linearly independent. 
     </p>
     <p>
       We now prove that <m>T(B)</m> spans <m>W</m>. Let <m>\bfw \in W</m>. Since <m>T</m> is surjective, there exists <m>\bfv \in V</m> such that <m>T(\bfv)=\bfw</m>. Since <m>B</m> is a basis for <m>V</m>, we have 
-      <me>
+      <md>
         \bfv = \sum_{i=1}^n c_i\bfv_i
-      </me>.
+      </md>.
       Then 
-      <me>
+      <md>
         \bfw = T(\bfv) = T\left( \sum_{i=1}^n c_i\bfv_i \right) = \sum_{i=1}^n c_iT(\bfv_i)
-      </me>. 
+      </md>. 
       This proves that <m>W = \spn(T(B))</m>, so <m>T(B)</m> is a basis for <m>W</m>.  
     </p>
     <p>
       We now need to prove the other implication, and we assume that <m>T(B)</m> is a basis for <m>W</m>. We need to show that <m>T</m> is an isomorphism. To show that <m>T</m> is injective, suppose that <m>\bfv \in V</m> such that <m>T(\bfv)=\bfo</m>. We have 
-      <me>
+      <md>
         \bfv = \sum_{i=1}^n c_i\bfv_i
-      </me>,
+      </md>,
       so 
-      <me>
+      <md>
         \bfo = T(\bfv) = T\left( \sum_{i=1}^n c_i\bfv_i \right) = \sum_{i=1}^n c_iT(\bfv_i)
-      </me>.
+      </md>.
       But since <m>T(B)</m> is a linearly independent set by assumption, this implies that <m>c_i=0</m> for all <m>i</m>. This means that <m>\bfv = \bfo</m>, so <m>T</m> is injective. 
     </p>
     <p>
       To prove that <m>T</m> is surjective, we assume that <m>\bfw \in W</m>. Since <m>T(B)</m> spans <m>W</m>, we have 
-      <me>
+      <md>
         \bfw = \sum_{i=1}^n d_iT(\bfv_i)
-      </me>
+      </md>
       for some <m>d_i \in \ff</m>. We claim that if 
-      <me>
+      <md>
         \bfv = \sum_{i=1}^n d_i \bfv_i
-      </me>,
+      </md>,
       then <m>T(\bfv) = \bfw</m>. Here is the justification:
-      <me>
+      <md>
         T(\bfv) = T\left( \sum_{i=1}^n d_i \bfv_i \right) = \sum_{i=1}^n d_i T(\bfv_i) = \bfw
-      </me>.
+      </md>.
       This proves that <m>T</m> is surjective and is thus an isomorphism.
     </p>
   </proof>
@@ -475,10 +475,10 @@
   <statement>
     <p>
       Consider the following vectors in <m>\rr^2</m>:
-      <me>
+      <md>
         \bfv_1 = \begin{bmatrix} 3 \\ 2 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
         \bfv_2 = \begin{bmatrix} -2 \\ 1 \end{bmatrix}
-      </me>. 
+      </md>. 
       By inspection, why is the set <m>\{\bfv_1, \bfv_2 \}</m> a basis for <m>\rr^2</m>? Explain your answer.
     </p>
     <!-- <p>
@@ -534,7 +534,7 @@
           <li>
             <p>
               <m>\{\bfv_1, \bfv_2, \bfv_3, \bfv_4\}</m> in <m>\rr^3</m> if 
-              <me>
+              <md>
                 \bfv_1 = \begin{bmatrix} 
                 2 \\ -3 \\ 3
                 \end{bmatrix}, \hspace{6pt} 
@@ -547,13 +547,13 @@
                 \bfv_4 = \begin{bmatrix} 
                 6.5 \\ -5 \\ 6
                 \end{bmatrix}
-              </me>              
+              </md>              
             </p>
           </li>
           <li>
             <p>
               <m>\{\bfv_1, \bfv_2, \bfv_3, \bfv_4\}</m> in <m>\ff_5^3</m> if 
-              <me>
+              <md>
                 \bfv_1 = \begin{bmatrix} 
                 2 \\ 0 \\ 0
                 \end{bmatrix}, \hspace{6pt} 
@@ -566,7 +566,7 @@
                 \bfv_4 = \begin{bmatrix} 
                 3 \\ 1 \\ 1
                 \end{bmatrix}
-              </me> 
+              </md> 
             </p>
           </li>
         </ol>
@@ -581,25 +581,25 @@
           <li>
             <p>
               <m>A \in M_{4,5}(\rr)</m>, 
-              <me>
+              <md>
                 A = \begin{bmatrix}
                 1 \amp -2.5 \amp 4 \amp 1 \amp 2.5 \\ 
                 -2.5 \amp 6 \amp -9.5 \amp -4.5 \amp -8 \\ 
                 5 \amp 3 \amp -11 \amp 3 \amp -5 \\ 
                 2 \amp -1 \amp 0 \amp -4 \amp -5
                 \end{bmatrix} 
-              </me>              
+              </md>              
             </p>
           </li>
           <li>
             <p>
               <m>A \in M_{2,4}(\ff_5)</m>, 
-              <me>
+              <md>
                 A = \begin{bmatrix}
                 3 \amp 1 \amp 3 \amp 0 \\ 
                 1 \amp 2 \amp 0 \amp 1
                 \end{bmatrix} 
-              </me>              
+              </md>              
             </p>
           </li>
         </ol>

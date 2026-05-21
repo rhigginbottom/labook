@@ -14,7 +14,7 @@
 
 <p>
   The most basic concept in this book is the linear equation. What properties of the real numbers are used to solve a simple linear equation? In what follows we will solve the equation <m>2x+7=12</m> and draw to the surface some of these important properties:
-  <mdn>
+  <md number="yes">
     <mrow>2x + 7 \amp =12</mrow>
     <mrow xml:id="lin-eqn-st2">(2x+7)-7 \amp =12-7</mrow>
     <mrow xml:id="lin-eqn-st3"> 2x + (7-7) \amp =5</mrow>
@@ -24,7 +24,7 @@
     <mrow xml:id="lin-eqn-st7"> (\frac{1}{2}2)x \amp = \frac{5}{2}</mrow>
     <mrow xml:id="lin-eqn-st8"> (1)x \amp = \frac{5}{2}</mrow>
     <mrow xml:id="lin-eqn-st9"> x \amp = \frac{5}{2}</mrow>
-  </mdn>.
+  </md>.
 </p>
 
 <p>
@@ -155,9 +155,9 @@ No student wants to write out all of these steps, and no instructor wants to gra
   <statement>
     <p>
       The complex numbers are defined in this way:
-      <me>
+      <md>
         \cc = \{a + bi \mid a, b \in \rr \}
-      </me>,
+      </md>,
       where <m>i^2 = -1</m>. Addition and multiplication are defined in this way:
       <md>
         <mrow>(a+bi) + (c+di) \amp =(a+c) + (b+d)i</mrow>
@@ -178,18 +178,18 @@ No student wants to write out all of these steps, and no instructor wants to gra
     </p>
     <p>
       The definitions of <m>+</m> and <m>\cdot</m> in <m>\cc</m> show that <m>\cc</m> is closed under addition and multiplication. (Notably, this relies on <m>\rr</m> being closed under addition and multiplication!) To prove that the addition in <m>\cc</m> is commutative, we consider two complex numbers <m>a+bi</m> and <m>c+di</m>. Then
-      <mdn>
+      <md number="yes">
         <mrow xml:id="c-comm-st1">(a+bi) + (c+di) \amp = (a+c) + (b+d)i </mrow>
         <mrow xml:id="c-comm-st2"> \amp = (c+a) + (d+b)i</mrow>
         <mrow xml:id="c-comm-st3">  \amp = (c+di) + (a+bi)</mrow>
-      </mdn>.
+      </md>.
       (We note that line <xref ref="c-comm-st2"/> used the fact that addition of real numbers is commutative.) This proves that addition in <m>\cc</m> is commutative.
     </p>
     <p>
       We will also prove that <m>0</m> is an additive identity in <m>\cc</m>. If <m>a+bi \in \cc</m>, then
-      <me>
+      <md>
         (a+bi)+ (0+0i) = (a+0) + (b+0)i = a+bi
-      </me>.
+      </md>.
       (This uses the fact that <m>0 \in \rr</m> is an additive identity.) We note that although the definition of a field requires us to examine addition by <m>0</m> <q>on both sides,</q> since we just proved that addition is commutative, what we have already shown is sufficient.
     </p>
   </statement>
@@ -206,9 +206,9 @@ No student wants to write out all of these steps, and no instructor wants to gra
   <statement>
     <p>
       The set of <term>rational numbers</term> <m>\qq</m> is a field. The rational numbers are defined as the set of all quotients (hence the symbol <m>\qq</m>) of integers; more formally,
-      <me>
+      <md>
         \qq = \left\{ \frac{a}{b} \mid a, b \in \zz, b \neq 0 \right\}
-      </me>.
+      </md>.
       We do not need to show that all of the field axioms hold in order to prove that <m>\qq</m> is a field. Since <m>\qq</m> is a subset of <m>\rr</m>, and since it therefore inherits its operations from <m>\rr</m>, some of the field axioms hold automatically. (These would include the associativity and commutativity of addition. What else holds <q>by inheritance?</q>) Checking some of these details is left to the exercises.
     </p>
   </statement>
@@ -307,9 +307,9 @@ No student wants to write out all of these steps, and no instructor wants to gra
     </p>
     <p>
       To prove (<xref ref="thm-pt1"/>) that the additive identity is unique, we must prove that <m>0</m> is the only element in <m>\ff</m> which has the properties of an additive identity. We suppose that <m>a \in \ff</m> is such that <m>a+x=x+a=x</m> for every element <m>x \in \ff</m>. Since this must be true for every <m>x</m>, it must be true for <m>x=0</m>. The previous equation then becomes
-        <me>
+        <md>
           a+0=0+a=0
-        </me>.
+        </md>.
       Since <m>0</m> is an additive identity, <m>a+0=a</m>, which combined with the fact that <m>a+0=0</m> means that <m>a=0</m>. This proves that the additive identity, <m>0</m>, is unique.
     </p>
     <p>
@@ -455,9 +455,9 @@ No student wants to write out all of these steps, and no instructor wants to gra
   <statement>
     <p>
       Let <m>A</m> be a set and let <m>n</m> be a nonnegative integer. Define a polynomial <m>p(x)</m> of degree <m>n</m> over <m>A</m> by
-      <me>
+      <md>
         p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n,
-      </me>
+      </md>
       where <m>a_i \in A</m> for all <m>i</m>. Define <m>A[x]</m> as the set of polynomials of any degree over <m>A</m>.
       <ol>
         <li>
@@ -484,9 +484,9 @@ No student wants to write out all of these steps, and no instructor wants to gra
         <li>
           <p>
             No, <m>\rr[x]</m> is not a field. The element <m>x \in \rr[x]</m> has no multiplicative inverse. We can argue this by contradiction. If <m>b = a_0 + a_1x + a_2x^2 + \cdots</m> was the multiplicative inverse of <m>x</m>, then 
-            <me>
+            <md>
               1 = xb = a_0x + a_1x^2 + a_2x^3 + \cdots
-            </me>.
+            </md>.
             But since the constant term on the right side of this equation is <m>0</m> and the constant term on the left side is <m>1</m>, and since those are not equal, we have a contradiction.
           </p>
         </li>
@@ -498,9 +498,9 @@ No student wants to write out all of these steps, and no instructor wants to gra
   <statement>
     <p>
       In this problem we consider <q>adding</q> an element to <m>\ff_3</m>. If <m>\ff_3[\alpha]</m> is defined by
-      <me>
+      <md>
         \ff_3[\alpha] = \{a + b\alpha \mid a,b \in \ff_3, \alpha^2 = 2\},
-      </me>
+      </md>
       is <m>\ff_3[\alpha]</m> a field? Justify your answer.  
     </p>
   </statement>
@@ -513,18 +513,18 @@ No student wants to write out all of these steps, and no instructor wants to gra
         <li>
           <p>
             If <m>\ff_5[\alpha]</m> is defined by
-            <me>
+            <md>
               \ff_5[\alpha] = \{a + b\alpha \mid a,b \in \ff_5, \alpha^2 = 4\},
-            </me>
+            </md>
             is <m>\ff_5[\alpha]</m> a field? Justify your answer.            
           </p>
         </li>
         <li>
           <p>
             If <m>\ff_5[\alpha]</m> is defined by
-            <me>
+            <md>
               \ff_5[\alpha] = \{a + b\alpha \mid a,b \in \ff_5, \alpha^2 = 2\},
-            </me>
+            </md>
             is <m>\ff_5[\alpha]</m> a field? Justify your answer.            
           </p>
         </li>
@@ -542,9 +542,9 @@ No student wants to write out all of these steps, and no instructor wants to gra
         <li>
           <p>
             Yes, this is a field. The most difficult axiom to check is the one about multiplicative inverses. It turns out that the multiplicative inverse of <m>a + b\alpha</m> is <m>c + d\alpha</m> where
-            <me>
+            <md>
               c = \frac{1}{a^2-2b^2}, \hspace{6pt} \text{and} \hspace{6pt} d = -\frac{b}{a^2-2b^2}
-            </me>.
+            </md>.
             One needs to check that for all non-zero elements <m>a + b\alpha</m> of <m>\ff_5[\alpha]</m> we have <m>a^2-2b^2 \neq 0</m>. But this is relatively easy to verify.
           </p>
         </li>
@@ -556,9 +556,9 @@ No student wants to write out all of these steps, and no instructor wants to gra
   <statement>
     <p>
       Define <m>\qq[\sqrt{2}]</m> by 
-      <me>
+      <md>
         \qq[\sqrt{2}] = \{a + b\sqrt{2} \mid a,b \in \qq\}. 
-      </me>
+      </md>
       Is <m>\qq[\sqrt{2}]</m> a field? Justify your answer.
     </p>
   </statement>
@@ -577,9 +577,9 @@ No student wants to write out all of these steps, and no instructor wants to gra
   <answer>
     <p>
       Yes, this is a field. Some of the axioms are quite tedious to check. It is perhaps worth noting that the multiplicative inverse of <m>(a,b)</m> is 
-      <me>
+      <md>
         \left(\frac{a}{a^2+2b^2}, -\frac{b}{a^2+2b^2}\right)
-      </me>.      
+      </md>.      
     </p>
   </answer>
 </exercise>

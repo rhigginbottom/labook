@@ -67,26 +67,26 @@
   <statement>
     <p>
       Consider the following matrix <m>A \in M_{3,5}(\rr)</m>: 
-      <me>
+      <md>
         A = \begin{bmatrix} 
         3 \amp -2 \amp -4 \amp -4 \amp 3 \\ 
         1 \amp -2 \amp 1 \amp 1 \amp 2 \\ 
         0 \amp 0 \amp 4 \amp 0 \amp -4
         \end{bmatrix}
-      </me>. 
+      </md>. 
       We will find a basis for <m>\nll(A)</m>. 
     </p>
     <p>
       Following the procedure we first encountered in <xref ref="examp-find-null-space"/>, we start by finding the RREF of <m>A</m>:
-      <me>
+      <md>
         A \sim \begin{bmatrix}
         1 \amp 0 \amp 0 \amp -5/2 \amp -2 \\ 
         0 \amp 1 \amp 0 \amp -7/4 \amp -5/2 \\ 
         0 \amp 0 \amp 1 \amp 0 \amp -1
         \end{bmatrix}
-      </me>. 
+      </md>. 
       We see that <m>x_4</m> and <m>x_5</m> are free variables, and that any vector <m>\bfx</m> in <m>\nll(A)</m> can be written as 
-      <me>
+      <md>
         \bfx = \begin{bmatrix}
         x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 
         \end{bmatrix} = 
@@ -98,16 +98,16 @@
         \end{bmatrix} + x_5 \begin{bmatrix} 
         2 \\ 5/2 \\ 1 \\ 0 \\ 1 
         \end{bmatrix}
-      </me>. 
+      </md>. 
       If we label the vectors 
-      <me>
+      <md>
         \bfv_1 = \begin{bmatrix} 
         5/2 \\ 7/4 \\ 0 \\ 1 \\ 0 
         \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
         \bfv_2 = \begin{bmatrix} 
         2 \\ 5/2 \\ 1 \\ 0 \\ 1 
         \end{bmatrix}
-      </me>, 
+      </md>, 
       then we can see that <m>\nll(A) = \spn\{\bfv_1, \bfv_2 \}</m>. Further, we see that <m>\{\bfv_1, \bfv_2 \}</m> is linearly independent (neither vector is a scalar multiple of the other), so <m>\{ \bfv_1, \bfv_2 \}</m> is a basis for <m>\nll(A)</m>. 
     </p>
   </statement>
@@ -127,18 +127,18 @@
   <statement>
     <p>
       It turns out that it is fairly easy to tell whether a set of two vectors in <m>\rr^2</m> forms a basis for <m>\rr^2</m>. Since linear independence is easy to check with two vectors<mdash></mdash>is either vector a scalar multiple of the other?<mdash></mdash>we can focus on this characteristic. This means that the set <m>\{\bfv_1, \bfv_2 \}</m>, where 
-      <me>
+      <md>
         \bfv_1 = \begin{bmatrix} 1 \\ -3 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
         \bfv_2 = \begin{bmatrix} -2 \\ 5 \end{bmatrix}
-      </me>
+      </md>
       is a basis for <m>\rr^2</m>. Neither vector is a scalar multiple of the other, so the set is linearly independent. And then <xref ref="cor-n-vect-in-f-n"/> tells us that this set must also span <m>\rr^2</m>. (We could also easily see this by row reducing the matrix <m>[\bfv_1\; \bfv_2]</m>.)      
     </p>
     <p>
       On the other hand, the set <m>W' = \{ \bfw_1, \bfw_2 \}</m>, where 
-      <me>
+      <md>
         \bfw_1 = \begin{bmatrix} 2 \\ -1 \end{bmatrix} \hspace{6pt} \text{and} \hspace{6pt}
         \bfw_2 = \begin{bmatrix} -4 \\ 2 \end{bmatrix}
-      </me>
+      </md>
       is not a basis for <m>\rr^2</m>. Since <m>\bfw_2 = -2\bfw_1</m>, <m>W'</m> is not linearly independent, so it cannot be a basis.
     </p>
   </statement>
@@ -169,29 +169,29 @@
   <statement>
     <p>
       Let <m>A \in M_3(\ff_5)</m> be the following matrix:
-      <me>
+      <md>
         A = \begin{bmatrix} 3 \amp 4 \amp 4 \\
         3 \amp 0 \amp 1 \\
         4 \amp 3 \amp 4 \end{bmatrix}
-      </me>.
+      </md>.
       We will label column <m>i</m> in <m>A</m> as the vector <m>\bfv_i \in \ff_5^3</m>.
     </p>
     <p>
       Since the RREF of <m>A</m> is 
-      <me>
+      <md>
         \begin{bmatrix} 1 \amp 0 \amp 2 \\
         0 \amp 1 \amp 2 \\
         0 \amp 0 \amp 0 \end{bmatrix}
-      </me>,
+      </md>,
       the set <m>\{\bfv_1,\bfv_2,\bfv_3\}</m> is not a basis for <m>\ff_5^3</m>.
     </p>
     <p>
       On the other hand, if <m>B \in M_3(\ff_5)</m> is the matrix
-      <me>
+      <md>
         B = \begin{bmatrix} 1 \amp 1 \amp 0 \\
         1 \amp 2 \amp 3 \\
         0 \amp 3 \amp 0 \end{bmatrix}
-      </me>,
+      </md>,
       then the columns of <m>B</m> form a basis for <m>\ff_5^3</m> since the RREF of <m>B</m> is <m>I_3</m>.
     </p>
   </statement>
@@ -216,13 +216,13 @@
     <proof>
       <p>
         We will prove the forward direction of this biconditional statement directly. Suppose that <m>V' = \{\bfv_1, \ldots, \bfv_n \}</m> is a basis of <m>V</m>. Since <m>V = \spn(V')</m>, every vector in <m>V</m> can be written as a linear combination of the vectors in <m>V'</m>. Let <m>\bfv</m> be a vector in <m>V</m>, and suppose that <m>\bfv</m> can be written as a linear combination of the vectors in <m>V'</m> in two ways: 
-        <me>
+        <md>
           \bfv  = \sum_{i=1}^n a_i\bfv_i \hspace{6pt} \text{and} \hspace{6pt} \bfv = \sum_{i=1}^n b_i\bfv_i 
-        </me>.
+        </md>.
         We want to show that <m>a_i = b_i</m> for each <m>i</m>, <m>1 \le i \le n</m>. Since both of these representations are equal to <m>\bfv</m>, they are equal to each other, so we have 
-        <me>
+        <md>
           \bfo = \sum_{i=1}^n a_i\bfv_i - \sum_{i=1}^n b_i\bfv_i = \sum_{i=1}^n (a_i-b_i)\bfv_i
-        </me>. 
+        </md>. 
         Since <m>V'</m> is a linearly independent set (since we are assuming it is a basis), it must be that <m>a_i-b_i=0</m> for each <m>i</m>. Therefore, <m>a_i=b_i</m> and the representation of <m>\bfv</m> is unique. 
       </p>
       <p>
@@ -257,13 +257,13 @@
     <proof>
       <p>
         We suppose that <m>B = \{\bfv_1, \ldots, \bfv_n \}</m>. If <m>B</m> is linearly dependent, then by the Linear Dependence Lemma (<xref ref="thm-lin-dep-lemma"/>), there exists a vector <m>\bfv_k \in B</m> such that <m>\bfv_k</m> can be written as a linear combination of the vectors <m>\bfv_1, \ldots, \bfv_{k-1}</m>. We suppose this combination is 
-        <men xml:id="eqn-rep-vk">
+        <md number="yes" xml:id="eqn-rep-vk">
           \bfv_k = a_1\bfv_1 + \cdots + a_{k-1}\bfv_{k-1}
-        </men>. 
+        </md>. 
         Now suppose <m>\bfv</m> is a vector in <m>V</m>. We have 
-        <men xml:id="eqn-rep-v">
+        <md number="yes" xml:id="eqn-rep-v">
           \bfv = c_1 \bfv_1 + \cdots + c_{k-1}\bfv_{k-1} + c_k\bfv_k + c_{k+1}\bfv_{k+1} + \cdots + c_n \bfv_n
-        </men>. 
+        </md>. 
         Using <xref ref="eqn-rep-vk"/>, we can substitute this expression in for <m>\bfv_k</m> in <xref ref="eqn-rep-v"/> and, once the algebraic dust settles, we will have written <m>\bfv</m> as a combination of the vectors in <m>B - \{\bfv_k\}</m>. This shows that <m>\spn(B) = \spn(B - \{\bfv_k\})</m>. (Since <m>B - \{\bfv_k\} \subseteq B</m>, it is true that <m>\spn(B - \{\bfv_k\}) \subseteq \spn(B)</m>. The argument thus far in this proof has established the other subset containment.)
       </p>
       <p>
@@ -313,9 +313,9 @@
       </p>
       <p>
         We will complete the proof with a reminder about the effect of elementary row operations on the columns of a matrix. If a column <m>\bfv_k</m> of <m>A</m> is a linear combination of the columns that preceed it, then 
-        <me>
+        <md>
           \bfv_k = \sum_{i=1}^{k-1} c_i\bfv_i 
-        </me>
+        </md>
         for some scalars <m>c_i</m>. This means that the column vector <m>[c_i]</m> is a solution to the linear system represented by the augmented matrix <m>[\bfv_1 \cdots \bfv_{k-1} \mid \bfv_k ]</m>. One of the earliest facts we learned about elementary row operations is that they preserve the solution sets of linear systems, so the same vector <m>[c_i]</m> will be a solution to the linear system represented by the RREF of <m>[\bfv_1 \cdots \bfv_{k-1} \mid \bfv_k ]</m>. This proves that the relationships between the columns of a matrix are the same as the relationships between the columns of the RREF of that matrix. 
       </p>
       <p>
@@ -334,29 +334,29 @@
     <statement>
       <p>
         Consider the following matrix <m>A \in M_{4,5}(\ff_5)</m>: 
-        <me>
+        <md>
           A = \begin{bmatrix}
           3 \amp 2 \amp 3 \amp 3 \amp 3 \\ 
           0 \amp 0 \amp 1 \amp 4 \amp 0 \\ 
           3 \amp 2 \amp 0 \amp 1 \amp 2 \\ 
           0 \amp 0 \amp 2 \amp 3 \amp 1
           \end{bmatrix}
-        </me>. 
+        </md>. 
         We will find a basis for <m>\col(A)</m> using <xref ref="alg-find-basis"/>. When we put <m>A</m> into RREF, we find 
-        <me>
+        <md>
           A \sim \begin{bmatrix}
           1 \amp 4 \amp 0 \amp 2 \amp 0 \\ 
           0 \amp 0 \amp 1 \amp 4 \amp 0 \\ 
           0 \amp 0 \amp 0 \amp 0 \amp 1 \\ 
           0 \amp 0 \amp 0 \amp 0 \amp 0
           \end{bmatrix}
-        </me>. 
+        </md>. 
         The pivots are in columns 1, 3, and 5, so a basis for <m>\col(A)</m> is <m>\{ \bfv_1, \bfv_3, \bfv_5 \}</m>, where 
-          <me>
+          <md>
             \bfv_1 = \begin{bmatrix} 3 \\ 0 \\ 3 \\ 0 \end{bmatrix}, \hspace{6pt} 
             \bfv_3 = \begin{bmatrix} 3 \\ 1 \\ 0 \\ 2 \end{bmatrix}, \hspace{6pt} 
             \bfv_5 = \begin{bmatrix} 3 \\ 0 \\ 2 \\ 1 \end{bmatrix}, \hspace{6pt} 
-          </me>.           
+          </md>.           
       </p>
     </statement>
   </example>
@@ -373,7 +373,7 @@
   <statement>
     <p>
       Consider the set <m>V' = \{\bfv_1, \bfv_2, \bfv_3, \bfv_4\}</m> in <m>\rr^3</m> where 
-      <me>
+      <md>
         \bfv_1 = \begin{bmatrix} 
         -3 \\ 1 \\ 4 
         \end{bmatrix}, \hspace{6pt}
@@ -386,7 +386,7 @@
         \bfv_4 = \begin{bmatrix} 
         2 \\ -2 \\ 7
         \end{bmatrix}
-      </me>. 
+      </md>. 
       Find a basis for <m>\spn(V')</m>. Follow <xref ref="examp-colA-basis"/> and explain your answer.
     </p>
     <!-- <p>
@@ -400,7 +400,7 @@
 <statement>
   <p>
     Determine whether or not the set <m>\{ \bfv_1, \bfv_2, \bfv_3 \}</m> forms a basis for <m>\ff_7^3</m>, where 
-    <me>
+    <md>
       \bfv_1 = \begin{bmatrix} 
         4 \\ 1 \\ 0 
         \end{bmatrix}, \hspace{6pt}
@@ -410,7 +410,7 @@
         \bfv_3 = \begin{bmatrix} 
         5 \\ 6 \\ 2  
         \end{bmatrix}
-    </me>.    
+    </md>.    
     Explain your answer.
   </p>
   <!-- <p>
@@ -429,7 +429,7 @@
           <li>
           <p>
             <m>\{\bfv_1, \bfv_2, \bfv_3\}</m> in <m>\rr^3</m> if 
-            <me>
+            <md>
               \bfv_1 = \begin{bmatrix} 
               -2 \\ 0.5 \\ -1
               \end{bmatrix}, \hspace{6pt}
@@ -439,28 +439,28 @@
               \bfv_3 = \begin{bmatrix} 
               4.5 \\ 1.5 \\ -4.5
               \end{bmatrix}
-            </me>            
+            </md>            
           </p>
         </li>
         <li>
           <p>
             <m>\{\bfv_1, \bfv_2 \}</m> in <m>\ff_5^2</m> if 
-            <me>
+            <md>
               \bfv_1 = \begin{bmatrix} 
               1 \\ 4
               \end{bmatrix}, \hspace{6pt}
               \bfv_2 = \begin{bmatrix} 
               3 \\ 2
               \end{bmatrix}
-            </me>            
+            </md>            
           </p>
         </li>
         <li>
           <p>
             <m>\{p_1, p_2, p_3\}</m> in <m>P_2</m> if 
-            <me>
+            <md>
               p_1 = 4 + 2t + 4t^2, \hspace{6pt} p_2 = -3+4t, \hspace{6pt} p_3 = 2-2t-4t^2
-            </me>            
+            </md>            
           </p>
         </li>
       </ol>
@@ -475,7 +475,7 @@
           <li>
             <p>
               <m>\{\bfv_1, \bfv_2, \bfv_3, \bfv_4\}</m> in <m>\rr^4</m> if 
-              <me>
+              <md>
               \bfv_1 = \begin{bmatrix} 
               0 \\ -2 \\ 1 \\ -3
               \end{bmatrix}, \hspace{6pt}
@@ -488,13 +488,13 @@
               \bfv_4 = \begin{bmatrix} 
               3 \\ 0 \\ 1 \\ 0
               \end{bmatrix}
-              </me>              
+              </md>              
             </p>
           </li>
           <li>
             <p>
               <m>\{\bfv_1, \bfv_2, \bfv_3 \}</m> in <m>\ff_3^3</m> if 
-              <me>
+              <md>
                 \bfv_1 = \begin{bmatrix} 
                 1 \\ 0 \\ 2
                 \end{bmatrix}, \hspace{6pt}
@@ -504,15 +504,15 @@
                 \bfv_3 = \begin{bmatrix} 
                 0 \\ 1 \\ 1
                 \end{bmatrix} 
-              </me>              
+              </md>              
             </p>
           </li>
           <li>
             <p>
               <m>\{p_1, p_2, p_3 \}</m> in <m>P_2</m> if 
-              <me>
+              <md>
                 p_1 = 3+3t-4t^2, \hspace{6pt} p_2 = 3-3t, \hspace{6pt} p_3 = 12 + 6t -12t^2
-              </me>              
+              </md>              
             </p>
           </li>
         </ol>
@@ -548,26 +548,26 @@
           <li>
             <p>
               <m>A \in M_{3,4}(\rr)</m>, 
-              <me>
+              <md>
                 A = \begin{bmatrix} 
                 -3 \amp 2 \amp -2 \amp 0.5 \\ 
                 2.5 \amp 5 \amp 15 \amp 5 \\ 
                 -5 \amp -1.5 \amp -13 \amp 0.5
                 \end{bmatrix}
-              </me>              
+              </md>              
             </p>
           </li>
           <li>
             <p>
               <m>A \in M_{4,6}(\ff_5)</m>,
-              <me>
+              <md>
                 A = \begin{bmatrix} 
                 3 \amp 2 \amp 0 \amp 4 \amp 3 \amp 4 \\ 
                 3 \amp 3 \amp 3 \amp 1 \amp 3 \amp 1 \\ 
                 4 \amp 0 \amp 2 \amp 0 \amp 3 \amp 3 \\ 
                 4 \amp 4 \amp 1 \amp 2 \amp 0 \amp 2
                 \end{bmatrix}
-              </me>              
+              </md>              
             </p>
           </li>
         </ol>
@@ -583,9 +583,9 @@
     <answer>
       <p>
         Any matrix that has two pivot columns and two non-pivot columns will work as an answer here. This is one of many such matrices:
-        <me>
+        <md>
           \begin{bmatrix} 1 \amp 2 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 3 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix}
-        </me>.
+        </md>.
         Of course, any matrix row equivalent to a matrix like this one would also work as an answer.
       </p>
     </answer>
@@ -594,7 +594,7 @@
     <statement>
       <p>
         Find a basis for <m>\spn\{\bfv_1, \bfv_2, \bfv_3, \bfv_4, \bfv_5 \} \subseteq \rr^4</m>, if 
-        <me>
+        <md>
           \bfv_1 = \begin{bmatrix} 
           -2 \\ -3 \\ -2 \\ 1
           \end{bmatrix}, \hspace{6pt}
@@ -610,7 +610,7 @@
           \bfv_5 = \begin{bmatrix} 
           12 \\ -16 \\ 5 \\ 1
           \end{bmatrix}
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </exercise>
@@ -618,7 +618,7 @@
     <statement>
       <p>
         Find a basis for <m>\spn\{\bfv_1, \bfv_2, \bfv_3, \bfv_4, \bfv_5 \} \subseteq \ff_5^4</m>, if 
-        <me>
+        <md>
           \bfv_1 = \begin{bmatrix} 
           0 \\ 0 \\ 2 \\ 3
           \end{bmatrix}, \hspace{6pt}
@@ -634,7 +634,7 @@
           \bfv_5 = \begin{bmatrix} 
           1 \\ 4 \\ 3 \\ 3
           \end{bmatrix}
-        </me>.  
+        </md>.  
       </p>
     </statement>
     <answer>
@@ -647,9 +647,9 @@
     <statement>
       <p>
         Let <m>V</m> be the vector space of all functions <m>\rr \to \rr</m>. Find a basis for the subspace <m>H</m>, if 
-        <me>
+        <md>
           H = \spn\{\sin(t), \sin(2t), \sin(t)\cos(t) \}
-        </me>.        
+        </md>.        
       </p>
     </statement>
     <answer>
@@ -662,10 +662,10 @@
     <statement>
       <p>
         Find a matrix <m>A \in M_2(\rr)</m> such that 
-        <me>
+        <md>
           A \begin{bmatrix} 1 \\ 3 \end{bmatrix} = \begin{bmatrix} 2 \\ 0 \end{bmatrix}, \hspace{6pt} 
           A \begin{bmatrix} -1 \\ -2 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
-        </me>. 
+        </md>. 
         Is <m>A</m> unique? Explain.
       </p> <!-- -7 & 3 \\ -3 & 1, unique -->
     </statement>
@@ -674,15 +674,15 @@
     <statement>
       <p>
         Suppose that <m>T:\rr^3 \to \rr^2</m> is a linear transformation which satisfies the following: 
-        <me>
+        <md>
           T \left( \begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix}  \right) = \begin{bmatrix} 2 \\ -1 \end{bmatrix}, \hspace{6pt}
           T \left( \begin{bmatrix} -1 \\ 0 \\ 2 \end{bmatrix}  \right) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \hspace{6pt}
           T \left( \begin{bmatrix} 3 \\ -2 \\ 0 \end{bmatrix}  \right) = \begin{bmatrix} 3 \\ -2 \end{bmatrix}
-        </me>. 
+        </md>. 
         Calculate 
-        <me>
+        <md>
           T \left( \begin{bmatrix} -1 \\ 4 \\ 6 \end{bmatrix}  \right)
-        </me>.         
+        </md>.         
       </p>
     </statement>
   </exercise>
@@ -690,9 +690,9 @@
     <statement>
       <p>
         Find a subset of the following set which is a basis for <m>P_2</m>:
-        <me>
+        <md>
           \{t-1, t^2-2t, t^2-2, t^2+1 \}
-        </me>.         
+        </md>.         
       </p>
     </statement>
   </exercise>
@@ -726,9 +726,9 @@
       <statement>
         <p>
           Suppose that <m>\{\bfv_1, \ldots, \bfv_n \}</m> is a basis for a vector space <m>V</m>. Prove that 
-          <me>
+          <md>
             \{ \bfv_1 + \bfv_2, \bfv_2 + \bfv_3, \ldots, \bfv_{n-1} + \bfv_n, \bfv_n \}
-          </me>
+          </md>
           is also a basis for <m>V</m>. 
         </p>
       </statement>
@@ -738,28 +738,28 @@
         </p>
         <p>
           We first suppose that <m>c_1, \ldots, c_n</m> are scalars such that
-          <me>
+          <md>
             c_1(\bfv_1 + \bfv_2) + \cdots + c_{n-1}(\bfv_{n-1} + \bfv_n) + c_n\bfv_n = \bfo
-          </me>.
+          </md>.
           Rearranging this equation, we see that it is equivalent to 
-          <me>
+          <md>
             c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1} + c_n)\bfv_n = \bfo
-          </me>.
+          </md>.
           However, since we were given that <m>B' = \{\bfv_1, \ldots, \bfv_n \}</m> is a basis for <m>V</m>, this means that the coefficients in this last equation must all be zero, since <m>B'</m> is linearly independent. This means that <m>c_1 = 0</m>, and then since we must also have <m>c_1+c_2 = 0</m>, we have <m>c_2 = 0</m>, and so on. The result is that <m>c_i = 0</m> for all <m>i</m>, <m>i=1,\ldots,n</m>. This proves that <m>B</m> is linearly independent.
         </p>
         <p>
           We will now show that <m>B</m> spans <m>V</m>. Let <m>\bfv \in V</m>. We want to argue that <m>\bfv</m> can be written as a linear combination of the vectors in <m>B</m>. Since <m>B'</m> is a basis for <m>V</m>, there exist scalars <m>d_1,\ldots, d_n</m> such that 
-          <men xml:id="d-coeffs">
+          <md number="yes" xml:id="d-coeffs">
             \bfv = d_1\bfv_1 + \cdots + d_n\bfv_n
-          </men>.
+          </md>.
           We want to argue that we can always find scalars <m>c_1, \ldots, c_n</m> such that 
-          <me>
+          <md>
             \bfv = c_1(\bfv_1 + \bfv_2) + \cdots + c_n\bfv_n
-          </me>.
+          </md>.
           This equation can be rewritten as 
-          <men xml:id="c-coeffs">
+          <md number="yes" xml:id="c-coeffs">
             \bfv = c_1\bfv_1 + (c_1+c_2)\bfv_2 + \cdots + (c_{n-1}+c_n)\bfv_n
-          </men>,
+          </md>,
           and by The Unique Representation Theorem (<xref ref="thm-unique-rep"/>), we know that the coefficients on the right sides of <xref ref="d-coeffs"/> and <xref ref="c-coeffs"/> must be equal. Immediately we see that <m>c_1 = d_1</m> and then since we must have <m>c_1 + c_2 = d_2</m>, we conclude <m>c_2 = d_2 - d_1</m>. We can continue on in this way, eventually producing an expression for each <m>c_i</m> in terms of the <m>d_i</m> coefficients.  
         </p>
         <p>

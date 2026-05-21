@@ -21,9 +21,9 @@
     <statement>
       <p>
         Let <m>A \in M_n(\ff)</m>. The matrix <m>B</m> is an <term>inverse</term> matrix for <m>A</m> if 
-        <me>
+        <md>
           AB = BA = I_n
-        </me>.        
+        </md>.        
       </p>
       <p>
         If a matrix <m>A</m> has an inverse, we say that <m>A</m> is <term>invertible</term> or <term>non-singular</term>. If <m>A</m> is a matrix for which no inverse matrix exists, we say that <m>A</m> is <term>singular</term> or not invertible.
@@ -59,9 +59,9 @@
     <proof>
       <p>
         Let <m>A \in M_n(\ff)</m> and suppose that both <m>B,C \in M_n(\ff)</m> are inverses for <m>A</m>. Then we have 
-        <me>
+        <md>
           B = BI_n = B(AC) = (BA)C = I_nC = C
-        </me>.        
+        </md>.        
       </p>
     </proof>
   </proposition>
@@ -74,9 +74,9 @@
     <statement>
       <p>
         Suppose that <m>A,B \in M_n(\ff)</m> are both invertible. Then <m>AB</m> is invertible as well and 
-        <me>
+        <md>
           (AB)^{-1} = B^{-1}A^{-1}
-        </me>.        
+        </md>.        
       </p>
     </statement>
     <proof>
@@ -110,32 +110,32 @@
     <statement>
       <p>
         Consider the following matrix <m>A \in M_2(\rr)</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           3 \amp 5 \\ 1 \amp 2
           \end{bmatrix}
-        </me>.
+        </md>.
         We can verify that <m>A^{-1}</m> is 
-        <me>
+        <md>
           A^{-1} = \begin{bmatrix}
           2 \amp -5 \\ -1 \amp 3
           \end{bmatrix}
-        </me>
+        </md>
         by computing the product in both orders and verifying that the result is <m>I_2</m> in both cases.
       </p>
       <p>
         Similarly, here is a <m>3\times 3</m> matrix over <m>\ff_3</m> which is invertible:
-        <me>
+        <md>
           B = \begin{bmatrix}
           1 \amp 2 \amp 1 \\ 0 \amp 2 \amp 0 \\ 1 \amp 2 \amp 0
           \end{bmatrix}
-        </me>.
+        </md>.
         The reader is encouraged to verify that the following matrix satisfies the properties of the inverse of <m>B</m>:
-        <me>
+        <md>
           B^{-1} = \begin{bmatrix}
           0 \amp 2 \amp 1 \\ 0 \amp 2 \amp 0 \\ 1 \amp 0 \amp 2
           \end{bmatrix}
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </example>
@@ -164,29 +164,29 @@
     <statement>
       <p>
         Our first elementary matrix results from switching the second and third rows in <m>I_3</m>:
-        <me>
+        <md>
           \begin{bmatrix}
           1 \amp 0 \amp 0 \\ 
           0 \amp 0 \amp 1 \\ 
           0 \amp 1 \amp 0
           \end{bmatrix}
-        </me>.
+        </md>.
         Next we will look at a matrix which comes about by adding 4 times the first row of <m>I_2</m> to the second row:
-        <men xml:id="el-matrix-2">
+        <md number="yes" xml:id="el-matrix-2">
           \begin{bmatrix}
           1 \amp 0 \\ 
           4 \amp 1
           \end{bmatrix}
-        </men>.
+        </md>.
         Finally, we have a matrix which is formed by multiplying the second row of <m>I_4</m> by 7:
-        <me>
+        <md>
           \begin{bmatrix}
           1 \amp 0 \amp 0 \amp 0 \\ 
           0 \amp 7 \amp 0 \amp 0 \\ 
           0 \amp 0 \amp 1 \amp 0 \\ 
           0 \amp 0 \amp 0 \amp 1
           \end{bmatrix}
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </example>
@@ -199,13 +199,13 @@
     <statement>
       <p>
         Let <m>A</m> be the following matrix over <m>\rr</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           -2 \amp 1 \\ 3 \amp 2
           \end{bmatrix}
-        </me>.
+        </md>.
         If we label as <m>E</m> the matrix in <xref ref="el-matrix-2"/>, then we can calculate <m>EA</m>:
-        <me>
+        <md>
           EA = \begin{bmatrix}
           1 \amp 0 \\ 
           4 \amp 1
@@ -214,7 +214,7 @@
           \end{bmatrix} = \begin{bmatrix}
           -2 \amp 1 \\ -5 \amp 6
           \end{bmatrix}
-        </me>.
+        </md>.
         The reader can verify that <m>EA</m> is the result of adding four times the first row of <m>A</m> to the second row of <m>A</m>.        
       </p>
     </statement>
@@ -241,9 +241,9 @@
     <proof>
       <p>
         Let <m>E</m> be an elementary matrix and let <m>E'</m> denote the elementary matrix which represents the reverse elementary row operation from <m>E</m>. By the definition of these matrices and <xref ref="thm-el-matrices-action"/>, we see that 
-        <me>
+        <md>
           EE' = I_n, \hspace{6pt} \text{and} \hspace{6pt} E'E = I_n 
-        </me>.
+        </md>.
         This shows that <m>E</m> and <m>E'</m> are inverses of each other and, in particular, this proves that <m>E</m> is invertible.
       </p>
     </proof>
@@ -257,21 +257,21 @@
     <statement>
       <p>
         If <m>A \in M_{m,n}(\ff)</m>, then there exists <m>B \in M_{m,n}(\ff)</m> in RREF and elementary matrices <m>E_1,\ldots,E_k \in M_m(\ff)</m> such that 
-        <me>
+        <md>
           A = E_1\cdots E_kB
-        </me>.        
+        </md>.        
       </p>
     </statement>
     <proof>
       <p>
         Since each matrix can be reduced to a matrix in RREF, and since elementary row operations are accomplished by multiplying by elementary matrices, there exist elementary matrices <m>D_1, \ldots, D_k \in M_m(\ff)</m> such that 
-        <me>
+        <md>
           B = D_k\cdots D_1A
-        </me>.
+        </md>.
         Since elementary matrices are invertible, by repeated application of <xref ref="prop-matrix-inverse-product"/> we see that <m>D_k\cdots D_1</m> is invertible and 
-        <me>
+        <md>
           (D_k\cdots D_1)^{-1} = D_1^{-1}\cdots D_k^{-1}
-        </me>.
+        </md>.
         Then we have 
         <md>
           <mrow>B \amp = (D_k\cdots D_1)A</mrow>
@@ -300,9 +300,9 @@
     <proof>
       <p>
         Let <m>\bfb</m> be any vector in <m>\ff^n</m>. Since <m>A</m> is invertible, <m>A^{-1}</m> exists, and we can show that <m>\bfx = A^{-1}\bfb</m> is a solution to the equation <m>A\bfx = \bfb</m>:
-        <me>
+        <md>
           A(A^{-1}\bfb) = (AA^{-1})\bfb = I_n\bfb = \bfb
-        </me>. 
+        </md>. 
         To show that this solution is unique, suppose <m>\bfv</m> is another solution to this equation, so <m>A\bfv = \bfb</m>. Then we have 
         <md>
           <mrow>A\bfv \amp = \bfb</mrow>
@@ -326,21 +326,21 @@
         If <m>A</m> is invertible, then by <xref ref="lem-inv-matrix-unique-sol"/> the equation <m>A\bfx = \bfb</m> has a unique solution for every <m>\bfb \in \ff^n</m>. Now <xref ref="thm-unique-soln-system"/> means that the RREF of <m>A</m> has a pivot in each of its <m>n</m> columns. Since <m>A</m> is square, this means the RREF has a pivot in each row as well, meaning that the RREF of <m>A</m> must be <m>I_n</m>. 
       </p>
       <p>
-        Conversely, suppose that <m>A</m> is row equivalent to <m>I_n</m>. By <xref ref="prop-el-matrices-rref"/>, there exist elementary matrices <m>E_1,\ldots,E_k</m> such that <men xml:id="eqn-reduce-A">A = E_1\cdots E_kI_n</men>. This means that <m>A = E_1\cdots E_k</m>, and since the product of invertible matrices is invertible, this proves that <m>A</m> is invertible. 
+        Conversely, suppose that <m>A</m> is row equivalent to <m>I_n</m>. By <xref ref="prop-el-matrices-rref"/>, there exist elementary matrices <m>E_1,\ldots,E_k</m> such that <md number="yes" xml:id="eqn-reduce-A">A = E_1\cdots E_kI_n</md>. This means that <m>A = E_1\cdots E_k</m>, and since the product of invertible matrices is invertible, this proves that <m>A</m> is invertible. 
       </p>
       <p>
         If we multiply both sides of <xref ref="eqn-reduce-A"/> by <m>(E_1\cdots E_k)^{-1}</m>, we get 
-        <me>
+        <md>
           E_k^{-1}\cdots E_1^{-1}A = I_n
-        </me>,
+        </md>,
         which shows the sequence of elementary row operations (through multiplication by elementary matrices) used to transform <m>A</m> into <m>I_n</m>. On the other hand, if we take the equation <m>A = E_1\cdots E_k</m> from the previous paragraph and invert both sides, we get 
-        <me>
+        <md>
           A^{-1} = E_k^{-1}\cdots E_1^{-1}
-        </me>,
+        </md>,
         which we can easily adjust to
-        <me>
+        <md>
           A^{-1} = E_k^{-1}\cdots E_1^{-1}I_n
-        </me>.
+        </md>.
         This establishes the final claim in the theorem.
       </p>
     </proof>
@@ -383,15 +383,15 @@
     <statement>
       <p>
         Consider the following matrix <m>A \in M_3(\rr)</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           2 \amp 0 \amp -3 \\ 
           1 \amp -1 \amp -2 \\ 
           0 \amp 3 \amp 2
           \end{bmatrix}
-        </me>.
+        </md>.
         To determine whether or not this matrix is invertible, we row reduce the matrix <m>[A \mid I_3]</m>: 
-        <me>
+        <md>
           \left[\begin{array}{@{}ccc|ccc@{}}
           2 \amp 0 \amp  -3 \amp  1 \amp 0 \amp 0 \\ 
           1 \amp -1 \amp -2 \amp 0 \amp 1 \amp 0 \\ 
@@ -402,15 +402,15 @@
           0 \amp 1 \amp 0 \amp 2 \amp -4 \amp -1 \\ 
           0 \amp 0 \amp 1 \amp -3 \amp 6 \amp 2
           \end{array}\right]
-        </me>.
+        </md>.
         We see that <m>A</m> is invertible and that 
-        <me>
+        <md>
           A^{-1} = \begin{bmatrix}
           -4 \amp 9 \amp 3 \\ 
           2 \amp -4 \amp -1 \\ 
           -3 \amp 6 \amp 2
           \end{bmatrix}
-        </me>.                
+        </md>.                
       </p>
     </statement>
   </example>
@@ -419,23 +419,23 @@
     <statement>
       <p>
         Consider the following matrix <m>A \in M_4(\qq)</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           2 \amp 3 \amp 0 \amp 1 \\ 
           1 \amp 1 \amp -3 \amp 7 \\ 
           0 \amp -2 \amp 1 \amp 0 \\ 
           -1 \amp -4 \amp 2 \amp -2
           \end{bmatrix}
-        </me>. 
+        </md>. 
         We now row reduce <m>[A \mid I_4]</m> to determine whether or not <m>A</m> is invertible. We find that <m>[A\mid I_4]</m> is row equivalent to 
-        <me>
+        <md>
           \left[\begin{array}{@{}cccc|cccc@{}}
           1 \amp 0 \amp 0 \amp 2 \amp 0 \amp 0 \amp 2 \amp -1 \\ 
           0 \amp 1 \amp 0 \amp -1 \amp 0 \amp -1/5 \amp -1/5 \amp -1/5 \\ 
           0 \amp 0 \amp 1 \amp -2 \amp 0 \amp -2/5 \amp 3/5 \amp -2/5 \\ 
           0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 3/5 \amp -17/5 \amp 13/5
           \end{array}\right]
-        </me>.
+        </md>.
         This calculation shows that <m>A</m> is not invertible.
       </p>
     </statement>
@@ -445,13 +445,13 @@
     <statement>
       <p>
         Consider the following matrix <m>A \in M_2(\ff_3)</m>:
-        <me>
+        <md>
           A = \begin{bmatrix}
           1 \amp 2 \\ 2 \amp 0
           \end{bmatrix}
-        </me>.
+        </md>.
         We now row reduce <m>[A \mid I_2]</m>:
-        <me>
+        <md>
           \left[\begin{array}{@{}cc|cc@{}}
           1 \amp 2 \amp 1 \amp 0 \\
           2 \amp 0 \amp 0 \amp 1
@@ -460,13 +460,13 @@
           1 \amp 0 \amp 0 \amp 2 \\ 
           0 \amp 1 \amp 2 \amp 2
           \end{array}\right]
-        </me>.
+        </md>.
         This proves that <m>A</m> is invertible and that 
-        <me>
+        <md>
           A^{-1} = \begin{bmatrix}
           0 \amp 2 \\ 2 \amp 2
           \end{bmatrix}
-        </me>.        
+        </md>.        
       </p>
     </statement>
   </example>
@@ -479,11 +479,11 @@
   <statement>
     <p>
       Consider the following matrix defined over <m>\rr</m>:
-      <me>
+      <md>
         A = \begin{bmatrix}
         2 \amp 1 \\ -1 \amp -1
         \end{bmatrix}
-      </me>.
+      </md>.
       Write down elementary matrices <m>E_1, \ldots, E_n</m> which reduce <m>A</m> to <m>I_2</m>. In other words, find elementary matrices <m>E_1, \ldots, E_n</m> such that <m>I_2 = E_n\cdots E_1A</m>.
     </p>
     <!-- <p>
@@ -500,13 +500,13 @@
 <statement>
   <p>
     Consider the following matrix defined over <m>\ff_5</m>:
-    <me>
+    <md>
       A = \begin{bmatrix}
       4 \amp 0 \amp 4 \\ 
       3 \amp 3 \amp 1 \\ 
       1 \amp 0 \amp 3
       \end{bmatrix}
-    </me>.
+    </md>.
     Determine whether or not <m>A</m> is invertible. Explain your answer. If <m>A</m> is invertible, find the inverse.
   </p>
   <!-- <p>
@@ -525,31 +525,31 @@
           <li>
             <p>
               <m>A \in M_{2,3}(\rr)</m>: 
-              <me>
+              <md>
                 A = \begin{bmatrix}
                 -4 \amp 6 \amp 1 \\ -5 \amp 2 \amp -1
                 \end{bmatrix}
-              </me>              
+              </md>              
             </p>
           </li>
           <li>
             <p>
               <m>A \in M_2(\ff_5)</m>: 
-              <me>
+              <md>
                 A = \begin{bmatrix} 
                 1 \amp 4 \\ 3 \amp 0 
                 \end{bmatrix}
-              </me>              
+              </md>              
             </p>
           </li>
           <li>
             <p>
               <m>A \in M_2(\cc)</m>: 
-              <me>
+              <md>
                 A = \begin{bmatrix} 
                 -1-i \amp -3 \\ -3 \amp 2-3i 
                 \end{bmatrix}
-              </me>              
+              </md>              
             </p>
           </li>
         </ol>
@@ -564,21 +564,21 @@
           <li>
             <p>
               <m>A \in M_3(\rr)</m>: 
-              <me>
+              <md>
                 A = \begin{bmatrix} 
                 3 \amp 2 \amp -2 \\ 2 \amp -3 \amp 1 \\ -2 \amp -2 \amp 0 
                 \end{bmatrix}
-              </me>              
+              </md>              
             </p>
           </li>
           <li>
             <p>
               <m>A \in M_3(\ff_3)</m>: 
-              <me>
+              <md>
                 A = \begin{bmatrix} 
                 1 \amp 1 \amp 2 \\ 1 \amp 1 \amp 1 \\ 0 \amp 1 \amp 1 
                 \end{bmatrix}
-              </me>              
+              </md>              
             </p>
           </li>
         </ol>
@@ -656,17 +656,17 @@
           <li>
             <p>
               The matrix <m>A</m> is invertible and the inverse of <m>A</m> is 
-              <me>
+              <md>
                 \begin{bmatrix} 0 \amp 2 \amp 1 \\ 2 \amp 4 \amp 2 \\ 4 \amp 0 \amp 2 \end{bmatrix}
-              </me>.              
+              </md>.              
             </p>
           </li>
           <li>
             <p>
               The matrix <m>A</m> is not invertible since its RREF is
-              <me>
+              <md>
                 \begin{bmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 3 \\ 0 \amp 0 \amp 0 \end{bmatrix}
-              </me>.              
+              </md>.              
             </p>
           </li>
         </ol>
@@ -697,9 +697,9 @@
     <answer>
       <p>
         If <m>A = \begin{bmatrix} 2 \amp 4 \\ 1 \amp 3 \end{bmatrix}</m>, then the inverse over <m>\ff_5</m> is <m>A^{-1} = \begin{bmatrix} 4 \amp 3 \\ 2 \amp 1 \end{bmatrix}</m>. Then we have
-        <me>
+        <md>
           \begin{bmatrix} 4 \amp 3 \\ 2 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \\ 4 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
-        </me>.        
+        </md>.        
       </p>
     </answer>
   </exercise>
@@ -835,9 +835,9 @@
           <li>
             <p>
               Suppose that <m>B = \begin{bmatrix} 1 \amp 3 \\ 1 \amp 2 \end{bmatrix}</m>, <m>C = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m>, and <m>D = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}</m>. Then, it is true that <m>D</m> is not invertible. We obviously have <m>B \neq C</m>. But we do have <m>B - C = \begin{bmatrix} 0 \amp 2 \\ 0 \amp 2 \end{bmatrix}</m> and then 
-              <me>
+              <md>
                 (B-C)D = \begin{bmatrix} 0 \amp 2 \\ 0 \amp 2 \end{bmatrix} \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}
-              </me>.              
+              </md>.              
             </p>
           </li>
         </ol>        
