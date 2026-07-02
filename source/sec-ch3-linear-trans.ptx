@@ -376,23 +376,10 @@
     We can now prove that two concepts we have defined in this section are one and the same for linear transformations.
   </p>
   
-  <proposition xml:id="prop-isomorphism-invertible">
-    <statement>
-      <p>
-        Let <m>V</m> and <m>W</m> be vector spaces over <m>\ff</m>, and let <m>T \in L(V,W)</m>. Then <m>T</m> is an isomorphism if and only if <m>T</m> is invertible. 
-      </p>
-    </statement>
-    <proof>
-      <p>
-        This fact is true for functions without any of the linear transformation properties being involved. (A function is bijective if and only if it has an inverse.)
-      </p>
-    </proof>
-  </proposition>
-  
   <proposition xml:id="prop-inverse-lt">
     <statement>
       <p>
-        If <m>T \in L(V,W)</m> is invertible, then <m>T^{-1}:W \to V</m> is also a linear transformation. 
+        Let <m>T \in L(V,W)</m>. If <m>T^{-1}:W \to V</m> exists, then <m>T^{-1}</m> is also a linear transformation. 
       </p>
     </statement>
     <proof>
@@ -416,6 +403,22 @@
           T^{-1}(c\bfw) = cT^{-1}(\bfw)
         </md>.
         This proves that <m>T^{-1} \in L(W,V)</m>. 
+      </p>
+    </proof>
+  </proposition>
+
+  <proposition xml:id="prop-isomorphism-invertible">
+    <statement>
+      <p>
+        Let <m>V</m> and <m>W</m> be vector spaces over <m>\ff</m>, and let <m>{T \in L(V,W)}</m>. Then <m>T</m> is an isomorphism if and only if <m>T</m> is invertible. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Most of this result is true without worrying about any of the linear transformation properties. (A function is bijective if and only if it has an inverse.)
+      </p>
+      <p>
+        Here, then, is the brief argument in full. If <m>T</m> is an isomorphism, then <m>T^{-1}</m> exists because <m>T</m> is bijective. Then <xref ref="prop-inverse-lt"/> tells us that <m>T^{-1}</m> is a linear transformation. This shows that <m>T</m> is invertible (see <xref ref="def-lin-trans-invertible"/>). On the other hand, if <m>T</m> is invertible, this implies both the existence of <m>T^{-1}</m> and the fact that <m>T^{-1}</m> is a linear transformation. This proves that <m>T</m> is an isomorphism.
       </p>
     </proof>
   </proposition>
