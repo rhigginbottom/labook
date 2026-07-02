@@ -300,6 +300,12 @@
       </p>
     </statement>
   </definition>
+
+  <note>
+    <p>
+      In <xref ref="def-lin-trans-invertible"/>, we usually use the notation <m>T^{-1}</m> in place of <m>S</m>. Considered only as a function, <m>S</m> is unique and therefore using <m>T^{-1}</m> is not ambiguous.
+    </p>
+  </note>
 </subsection>
 
 <subsection xml:id="subsec-isomorphisms">
@@ -379,7 +385,7 @@
   <proposition xml:id="prop-inverse-lt">
     <statement>
       <p>
-        Let <m>T \in L(V,W)</m>. If <m>T^{-1}:W \to V</m> exists, then <m>T^{-1}</m> is also a linear transformation. 
+        Let <m>T \in L(V,W)</m>. If <m>T</m> is bijective, meaning <m>{T^{-1}:W \to V}</m> exists, then <m>T^{-1}</m> is also a linear transformation. 
       </p>
     </statement>
     <proof>
@@ -394,7 +400,7 @@
         </md>.     
       </p>
       <p>
-        We will now check the scalar multiple property in a similar fashion. Let <m>\bfw \in W</m> and let <m>c \in \ff</m>. Then we have 
+        We will now check the scalar multiple property in a similar fashion. Let <m>{\bfw \in W}</m> and let <m>c \in \ff</m>. Then we have 
         <md>
           c\bfw = cT(T^{-1}(\bfw)) = T(cT^{-1}(\bfw))
         </md>.
